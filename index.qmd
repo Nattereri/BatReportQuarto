@@ -38,6 +38,8 @@ There are three interrelated rules which make a dataset tidy, such as the data s
 * Each observation must have its own row.
 * Each value must have its own cell.
 
+![](Images/TidyDataBats.PNG)
+
 ## Minimal Data Requirement
 
 To undertake meaningful data analysis, it is recommended that data collected from  bat activity surveys is wrangled into _tidy data_ that has the following five variables (columns) as a minimum: 
