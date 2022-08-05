@@ -3,10 +3,6 @@ title: "Tidy Data"
 ---
 
 
-
-
-## Tidy Data
-
 _Tidy Data_ is a consistent way to organise your data [@wickham_tidy_2014]. Getting your data into this format requires some initial work, but that effort pays off in the long term. Once you have tidy data you will spend _less_ time wrangling data from one representation to another, allowing you to spend more time on the analytic questions at hand. Unfortunately, there is a rule of thumb; 80% of time doing data science is spent wrangling data; particularly the effort required in sorting and rearranging the data into the _tidy_ and therefore usable format. 
 
 There are three interrelated rules which make a dataset tidy, such as the data shown in Table \@ref(tab:table01):
@@ -40,3 +36,14 @@ The rationale for these variables is as follows:
 
 
 ## Making Bat Data _Tidy_
+
+Results of bat sound analysis can be untidy:
+
+* two or more species in one cell (see Table \@ref(tab:table02));
+* count of bats (Tables \@ref(tab:table03)); and, 
+* two of more columns with species of same date and time.
+* Longitude and Latitude columns with missing values
+
+While the bat survey results shown in Table \@ref(tab:table01) is an example of a _tidy_ data set; the data sets in Tables \@ref(tab:table02) and \@ref(tab:table03) are _untidy_ and would need to be made tidy to undertake analysis.
+
+Data preparation is not just a first step but must be repeated many times over during analysis; as new problems come to light, or new data is collected. Apart from making bat data into a _tidy format_, there are many other tasks involved in cleaning data: parsing dates and numbers, identifying missing values, correcting character encodings, matching similar but not identical values (such as those created by typos).
