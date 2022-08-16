@@ -42,7 +42,7 @@ static_data_with_night <- iBats::date_time_info(static_data)
 
 ```{r}
 #| label: tbl-night
-#| tbl-cap: "The Night from a DateTime Column"
+#| tbl-cap: "The Night from the DateTime Column"
 
 static_data_with_night %>% 
   sample_n(5) %>% 
@@ -67,6 +67,42 @@ static_data_with_night %>%
       ),
     locations = cells_column_labels(
       columns = Night
+    )
+  )
+```
+
+### Other Date and Time Information added  
+
+The function `iBats::date_time_info()`  adds other date and time information: month, year and time see @tbl-other (note: not all columns are shown).
+
+
+```{r}
+#| label: tbl-other
+#| tbl-cap: "Other Date and Time Information from the DateTime Column"
+
+static_data_with_night %>% 
+  sample_n(5) %>% 
+  select(Description, Month, MonthFull, Year, JustTime, DateTime, Species, Latitude, Longitude) %>% 
+  #Table made with library(gt)
+  gt() %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "lightcyan"),
+      cell_text(color = "black"),
+      cell_text(weight = "normal")
+      ),
+    locations = cells_body(
+      columns = c(Month, MonthFull, Year, JustTime)
+    )
+  ) %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "lightcyan"),
+      cell_text(color = "black"),
+      cell_text(weight = "bold")
+      ),
+    locations = cells_column_labels(
+      columns = c(Month, MonthFull, Year, JustTime)
     )
   )
 ```
