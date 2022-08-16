@@ -15,6 +15,69 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -148,13 +211,245 @@ ul.task-list{list-style: none;}
 <h2 class="anchored" data-anchor-id="making-bat-data-tidy">Making Bat Data <em>Tidy</em></h2>
 <p>Results of bat sound analysis can be untidy:</p>
 <ul>
-<li>two or more species in one cell (see Table @ref(tab:table02));</li>
-<li>count of bats (Tables @ref(tab:table03)); and,</li>
+<li>two or more species in one cell (see Table <a href="#tbl-untidy1">Table&nbsp;2</a>);</li>
+<li>count of bats (Tables <a href="#tbl-untidy2">Table&nbsp;3</a>); and,</li>
 <li>two of more columns with species of same date and time.</li>
 <li>Longitude and Latitude columns with missing values</li>
 </ul>
-<p>While the bat survey results shown in Table @ref(tab:table01) is an example of a <em>tidy</em> data set; the data sets in Tables @ref(tab:table02) and @ref(tab:table03) are <em>untidy</em> and would need to be made tidy to undertake analysis.</p>
+<p>While the bat survey results shown in Table <a href="#tbl-tidy">Table&nbsp;1</a> is an example of a <em>tidy</em> data set; the data sets in Tables @ref(tab:table02) and <a href="#tbl-untidy1">Table&nbsp;2</a> are <em>untidy</em> and would need to be made tidy to undertake analysis.</p>
 <p>Data preparation is not just a first step but must be repeated many times over during analysis; as new problems come to light, or new data is collected. Apart from making bat data into a <em>tidy format</em>, there are many other tasks involved in cleaning data: parsing dates and numbers, identifying missing values, correcting character encodings, matching similar but not identical values (such as those created by typos).</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Table <span class="ot">&lt;-</span> static_data <span class="sc">%&gt;%</span> <span class="co"># static_data is a tidy data set from the iBats package</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="co">#select(DateTime, Species, Latitude, Longitude, Description) %&gt;% </span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">`</span><span class="at">Date and Time</span><span class="st">`</span> <span class="ot">=</span> DateTime,  <span class="st">`</span><span class="at">Bat Species</span><span class="st">`</span> <span class="ot">=</span> Species) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="st">`</span><span class="at">Date and Time</span><span class="st">`</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(Table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="tbl-tidy" class="anchored">
+<table class="table table-sm table-striped">
+<caption>Table 1: Tidy Bat data</caption>
+<colgroup>
+<col style="width: 15%">
+<col style="width: 26%">
+<col style="width: 33%">
+<col style="width: 12%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Date and Time</th>
+<th style="text-align: left;">Bat Species</th>
+<th style="text-align: right;">Longitude</th>
+<th style="text-align: right;">Latitude</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Static 4</td>
+<td style="text-align: left;">2016-07-26T22:55:06Z</td>
+<td style="text-align: left;">Pipistrellus pipistrellus</td>
+<td style="text-align: right;">-3.591748</td>
+<td style="text-align: right;">50.33133</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Static 4</td>
+<td style="text-align: left;">2016-07-27T22:29:00Z</td>
+<td style="text-align: left;">Pipistrellus pipistrellus</td>
+<td style="text-align: right;">-3.591908</td>
+<td style="text-align: right;">50.33141</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Static 4</td>
+<td style="text-align: left;">2016-07-28T02:07:47Z</td>
+<td style="text-align: left;">Pipistrellus pipistrellus</td>
+<td style="text-align: right;">-3.591908</td>
+<td style="text-align: right;">50.33141</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Static 4</td>
+<td style="text-align: left;">2016-07-28T22:37:16Z</td>
+<td style="text-align: left;">Pipistrellus pipistrellus</td>
+<td style="text-align: right;">-3.591878</td>
+<td style="text-align: right;">50.33141</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Static 4</td>
+<td style="text-align: left;">2016-07-29T22:45:52Z</td>
+<td style="text-align: left;">Pipistrellus pipistrellus</td>
+<td style="text-align: right;">-3.591728</td>
+<td style="text-align: right;">50.33129</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Static 5</td>
+<td style="text-align: left;">2016-07-31T23:39:38Z</td>
+<td style="text-align: left;">Pipistrellus spp.</td>
+<td style="text-align: right;">-3.590898</td>
+<td style="text-align: right;">50.33102</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Static 4</td>
+<td style="text-align: left;">2016-08-02T23:18:03Z</td>
+<td style="text-align: left;">Pipistrellus pipistrellus</td>
+<td style="text-align: right;">-3.591748</td>
+<td style="text-align: right;">50.33136</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Static 3</td>
+<td style="text-align: left;">2016-08-12T22:46:22Z</td>
+<td style="text-align: left;">Pipistrellus pipistrellus</td>
+<td style="text-align: right;">-3.593048</td>
+<td style="text-align: right;">50.33089</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Static 3</td>
+<td style="text-align: left;">2016-08-14T01:49:13Z</td>
+<td style="text-align: left;">Pipistrellus pipistrellus</td>
+<td style="text-align: right;">-3.593258</td>
+<td style="text-align: right;">50.33081</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Static 5</td>
+<td style="text-align: left;">2016-08-28T20:33:04Z</td>
+<td style="text-align: left;">Pipistrellus pipistrellus</td>
+<td style="text-align: right;">-3.591258</td>
+<td style="text-align: right;">50.33082</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>Species <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"PIPPYG"</span>, </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>             <span class="st">"PIPPYG, NYCLEI"</span>, </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>             <span class="st">"PIPPYG"</span>, </span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>             <span class="st">"PIPPIP, PIPPYG, NYCLEI"</span>, </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>             <span class="st">"PIPPIP"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>DateTime <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"2019-10-03 20:55:30"</span>, </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>              <span class="st">"2019-10-03 20:58:30"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>              <span class="st">"2019-10-03 21:15:30"</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>              <span class="st">"2019-10-03 21:25:30"</span>,</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>              <span class="st">"2019-10-03 21:35:30"</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>Table <span class="ot">&lt;-</span> <span class="fu">tibble</span>(DateTime, Species)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(Table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="tbl-untidy1" class="anchored">
+<table class="table table-sm table-striped">
+<caption>Table 2: Untidy Bat Data Too Many Species in a Cell</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">DateTime</th>
+<th style="text-align: left;">Species</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2019-10-03 20:55:30</td>
+<td style="text-align: left;">PIPPYG</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2019-10-03 20:58:30</td>
+<td style="text-align: left;">PIPPYG, NYCLEI</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2019-10-03 21:15:30</td>
+<td style="text-align: left;">PIPPYG</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2019-10-03 21:25:30</td>
+<td style="text-align: left;">PIPPIP, PIPPYG, NYCLEI</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2019-10-03 21:35:30</td>
+<td style="text-align: left;">PIPPIP</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell" data-tab.cap="Untidy Bat Data a Column of Counting the Bats" data-tab.id="table03">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>DateTime <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"2019-10-05 20:35:15"</span>, </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>              <span class="st">"2019-10-05 20:38:30"</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>              <span class="st">"2019-10-05 20:49:40"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>              <span class="st">"2019-10-05 21:05:15"</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>              <span class="st">"2019-10-05 21:15:30"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>              <span class="st">"2019-10-05 21:25:45"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>Species <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Pipistrellus pipistrellus"</span>, </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Pipistrellus pygmaeus"</span>, </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Nyctalus noctula"</span>,</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Pipistrellus pipistrellus"</span>, </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Pipistrellus pygmaeus"</span>, </span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>             <span class="st">"Pipistrellus pipistrellus"</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>Number <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>Table <span class="ot">&lt;-</span> <span class="fu">tibble</span>(DateTime, Species, Number)</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(Table)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="tbl-untidy2" class="anchored">
+<table class="table table-sm table-striped">
+<caption>Table 3: Untidy Bat Data a Column of Counting the Bats</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">DateTime</th>
+<th style="text-align: left;">Species</th>
+<th style="text-align: right;">Number</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2019-10-05 20:35:15</td>
+<td style="text-align: left;">Pipistrellus pipistrellus</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2019-10-05 20:38:30</td>
+<td style="text-align: left;">Pipistrellus pygmaeus</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2019-10-05 20:49:40</td>
+<td style="text-align: left;">Nyctalus noctula</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2019-10-05 21:05:15</td>
+<td style="text-align: left;">Pipistrellus pipistrellus</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2019-10-05 21:15:30</td>
+<td style="text-align: left;">Pipistrellus pygmaeus</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2019-10-05 21:25:45</td>
+<td style="text-align: left;">Pipistrellus pipistrellus</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 
 
 </section>

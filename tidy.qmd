@@ -1,6 +1,20 @@
 ---
 title: "Tidy Data"
+format: 
+  html:
+     code-fold: true
 ---
+
+```{r}
+#| include=FALSE
+
+library(knitr)
+library(tidyverse)
+library(iBats)
+
+
+```
+
 
 
 _Tidy Data_ is a consistent way to organise your data [@wickham_tidy_2014]. Getting your data into this format requires some initial work, but that effort pays off in the long term. Once you have tidy data you will spend _less_ time wrangling data from one representation to another, allowing you to spend more time on the analytic questions at hand. Unfortunately, there is a rule of thumb; 80% of time doing data science is spent wrangling data; particularly the effort required in sorting and rearranging the data into the _tidy_ and therefore usable format. 
@@ -39,11 +53,73 @@ The rationale for these variables is as follows:
 
 Results of bat sound analysis can be untidy:
 
-* two or more species in one cell (see Table \@ref(tab:table02));
-* count of bats (Tables \@ref(tab:table03)); and, 
+* two or more species in one cell (see Table @tbl-untidy1);
+* count of bats (Tables @tbl-untidy2); and, 
 * two of more columns with species of same date and time.
 * Longitude and Latitude columns with missing values
 
-While the bat survey results shown in Table \@ref(tab:table01) is an example of a _tidy_ data set; the data sets in Tables \@ref(tab:table02) and \@ref(tab:table03) are _untidy_ and would need to be made tidy to undertake analysis.
+While the bat survey results shown in Table @tbl-tidy is an example of a _tidy_ data set; the data sets in Tables \@ref(tab:table02) and @tbl-untidy1 are _untidy_ and would need to be made tidy to undertake analysis.
 
 Data preparation is not just a first step but must be repeated many times over during analysis; as new problems come to light, or new data is collected. Apart from making bat data into a _tidy format_, there are many other tasks involved in cleaning data: parsing dates and numbers, identifying missing values, correcting character encodings, matching similar but not identical values (such as those created by typos).
+
+```{r}
+#| label: tbl-tidy
+#| tbl-cap: "Tidy Bat data"
+
+Table <- static_data %>% # static_data is a tidy data set from the iBats package
+  #select(DateTime, Species, Latitude, Longitude, Description) %>% 
+  rename(`Date and Time` = DateTime,  `Bat Species` = Species) %>% 
+  sample_n(10) %>% 
+  arrange(`Date and Time`)
+
+knitr::kable(Table)
+```
+
+
+```{r}
+#| label: tbl-untidy1
+#| tbl-cap: "Untidy Bat Data Too Many Species in a Cell"
+
+Species <- c("PIPPYG", 
+             "PIPPYG, NYCLEI", 
+             "PIPPYG", 
+             "PIPPIP, PIPPYG, NYCLEI", 
+             "PIPPIP")
+
+DateTime <- c("2019-10-03 20:55:30", 
+              "2019-10-03 20:58:30",
+              "2019-10-03 21:15:30",
+              "2019-10-03 21:25:30",
+              "2019-10-03 21:35:30")
+
+Table <- tibble(DateTime, Species)
+
+knitr::kable(Table)
+
+```
+
+```{r tab.cap="Untidy Bat Data a Column of Counting the Bats", tab.id="table03"}
+#| label: tbl-untidy2
+#| tbl-cap: "Untidy Bat Data a Column of Counting the Bats"
+
+
+DateTime <- c("2019-10-05 20:35:15", 
+              "2019-10-05 20:38:30",
+              "2019-10-05 20:49:40",
+              "2019-10-05 21:05:15",
+              "2019-10-05 21:15:30",
+              "2019-10-05 21:25:45")
+
+Species <- c("Pipistrellus pipistrellus", 
+             "Pipistrellus pygmaeus", 
+             "Nyctalus noctula",
+             "Pipistrellus pipistrellus", 
+             "Pipistrellus pygmaeus", 
+             "Pipistrellus pipistrellus")
+
+Number <- c(1, 1, 2, 1, 3, 1)
+
+Table <- tibble(DateTime, Species, Number)
+
+knitr::kable(Table)
+```
