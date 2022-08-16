@@ -2,13 +2,14 @@ project:
   type: website
 
 website:
-  title: "BatReportQuarto"
+  title: "Reporting Bat Survey Data"
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
       - tidy.qmd
+      - meta.qmd
+      - about.qmd
 
 format:
   html:

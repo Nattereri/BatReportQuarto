@@ -1,8 +1,6 @@
 ---
-title: "BatReportQuarto"
+title: "Getting Started"
 ---
-
-# INTRODUCTION
 
 A simple bat report from minimal data demonstrating literate programming with Quarto (or the world beyond Excel).
 

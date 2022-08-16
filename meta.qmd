@@ -1,0 +1,23 @@
+---
+title: "Meta Data"
+format: 
+  html:
+     code-fold: true
+     code-summary: "Show the code"
+---
+
+```{r}
+#| include=FALSE
+
+library(knitr)
+library(tidyverse)
+library(iBats)
+
+
+```
+
+Many other columns would be added to a tidy dataset so it becomes more useful for analysis; some of these are described below.
+
+## The _Night_ 
+
+Bats are active through the night; the date of the night is the date at sunset and lasts to sunrise the morning of the following day. The _Night_ is a variable column that is added to the _tidy_ data; it is useful convention that helps avoid the confusion of having contiguous bat activity over two dates.
