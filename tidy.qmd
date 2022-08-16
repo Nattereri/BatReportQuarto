@@ -16,52 +16,58 @@ library(iBats)
 
 ```
 
-
-
-_Tidy Data_ is a consistent way to organise your data [@wickham_tidy_2014]. Getting your data into this format requires some initial work, but that effort pays off in the long term. Once you have tidy data you will spend _less_ time wrangling data from one representation to another, allowing you to spend more time on the analytic questions at hand. Unfortunately, there is a rule of thumb; 80% of time doing data science is spent wrangling data; particularly the effort required in sorting and rearranging the data into the _tidy_ and therefore usable format. 
+*Tidy Data* is a consistent way to organise your data [@wickham_tidy_2014]. Getting your data into this format requires some initial work, but that effort pays off in the long term. Once you have tidy data you will spend *less* time wrangling data from one representation to another, allowing you to spend more time on the analytic questions at hand. Unfortunately, there is a rule of thumb; 80% of time doing data science is spent wrangling data; particularly the effort required in sorting and rearranging the data into the *tidy* and therefore usable format.
 
 There are three interrelated rules which make a dataset tidy, such as the data shown in Table \@ref(tab:table01):
 
-* Each variable must have its own column.
-* Each observation must have its own row.
-* Each value must have its own cell.
+-   Each variable must have its own column.
+-   Each observation must have its own row.
+-   Each value must have its own cell.
 
 ![](Images/TidyDataBats.PNG)
 
 ## Minimal Data Requirement
 
-To undertake meaningful data analysis, it is recommended that data collected from  bat activity surveys is wrangled into _tidy data_ that has the following five variables (columns) as a minimum: 
+To undertake meaningful data analysis, it is recommended that data collected from bat activity surveys is wrangled into *tidy data* that has the following five variables (columns) as a minimum:
 
-* Description
-* DateTime
-* Species
-* Latitude
-* Longitude
+-   Description
+-   DateTime
+-   Species
+-   Latitude
+-   Longitude
 
 The rationale for these variables is as follows:
 
 `Description` a column to help identify the observation for example a location, surveyor or survey number.
 
+`DateTime`: the date and time of the bat observation to BS ISO 8601:2004 i.e. `yyyymmdd hh:mm:ss`. The use of BS ISO 8601:2004 prevents confusion over the date format [^1] . Reference bat activity to the local time and specifying an *iana*[^2] time zone allows for daylight saving times to considered; the *iana* code for the UK is `Europe/London`.
 
-`DateTime`: the date and time of the bat observation to  BS ISO 8601:2004 i.e. `yyyymmdd hh:mm:ss`. The use of BS ISO 8601:2004 prevents confusion over the date format ^[the standard is recommended by .gov.uk<https://www.gov.uk/government/publications/open-standards-for-government/date-times-and-time-stamps-standard>] .  Reference bat activity to the local time and specifying an _iana_^[a full list of time zones can be found here <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones>] time zone allows for daylight saving times to considered; the _iana_ code for the UK is `Europe/London`.
+[^1]: the standard is recommended by .gov.uk<https://www.gov.uk/government/publications/open-standards-for-government/date-times-and-time-stamps-standard>
 
-`Species`: bat species names should follow the "binomial nomenclature" from the International Code of Zoological Nomenclature (ICZN)^[<https://www.iczn.org/the-code/the-international-code-of-zoological-nomenclature/the-code-online/>] - e.g. _Barbastella barbastellus_, _Eptesicus serotinus_, etc... A column of local common names can always be added to the _tidy_ data, i.e. in a separate column see Appendix 8. Sound analysis may not be able to distinguish calls to species level; in practice some calls may only be identified to genus or less; Table  \@ref(tab:table04) gives a practical and consistent guide to naming^[Adapted from the Ecobat guide.].
+[^2]: a full list of time zones can be found here <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones>
 
-`Longitude` and `Latitude`: World Geodetic System 1984^[ <https://en.wikipedia.org/wiki/World_Geodetic_System>] (WGS84); as used by Google earth. A digital, numeric, format should be used. Any other spatial reference system can be used (e.g. British National Grid Easting/Northing), as this can be stored as an extra column in the _tidy data_, the prerequisite is that the reference system can be converted to WGS84; which is the case for most national or state co-ordinate systems. Using a global co-ordinate system such as WSG84 give access to the many open-source application programming interfaces (API) available that assist with data analysis (e.g. assessing sunset and sunrise times or the adjustment to daylight saving).
+`Species`: bat species names should follow the "binomial nomenclature" from the International Code of Zoological Nomenclature (ICZN)[^3] - e.g. *Barbastella barbastellus*, *Eptesicus serotinus*, etc... A column of local common names can always be added to the *tidy* data, i.e. in a separate column see Appendix 8. Sound analysis may not be able to distinguish calls to species level; in practice some calls may only be identified to genus or less; Table \@ref(tab:table04) gives a practical and consistent guide to naming[^4].
 
+[^3]: <https://www.iczn.org/the-code/the-international-code-of-zoological-nomenclature/the-code-online/>
 
-## Making Bat Data _Tidy_
+[^4]: Adapted from the Ecobat guide.
+
+`Longitude` and `Latitude`: World Geodetic System 1984[^5] (WGS84); as used by Google earth. A digital, numeric, format should be used. Any other spatial reference system can be used (e.g. British National Grid Easting/Northing), as this can be stored as an extra column in the *tidy data*, the prerequisite is that the reference system can be converted to WGS84; which is the case for most national or state co-ordinate systems. Using a global co-ordinate system such as WSG84 give access to the many open-source application programming interfaces (API) available that assist with data analysis (e.g. assessing sunset and sunrise times or the adjustment to daylight saving).
+
+[^5]:  <https://en.wikipedia.org/wiki/World_Geodetic_System>
+
+## Making Bat Data *Tidy*
 
 Results of bat sound analysis can be untidy:
 
-* two or more species in one cell (see Table @tbl-untidy1);
-* count of bats (Tables @tbl-untidy2); and, 
-* two of more columns with species of same date and time.
-* Longitude and Latitude columns with missing values
+-   two or more species in one cell (see Table @tbl-untidy1);
+-   count of bats (Tables @tbl-untidy2); and,
+-   two of more columns with species of same date and time.
+-   Longitude and Latitude columns with missing values
 
-While the bat survey results shown in Table @tbl-tidy is an example of a _tidy_ data set; the data sets in @tbl-untidy1 and @tbl-untidy2 are _untidy_ and would need to be made tidy to undertake analysis.
+While the bat survey results shown in Table @tbl-tidy is an example of a *tidy* data set; the data sets in @tbl-untidy1 and @tbl-untidy2 are *untidy* and would need to be made tidy to undertake analysis.
 
-Data preparation is not just a first step but must be repeated many times over during analysis; as new problems come to light, or new data is collected. Apart from making bat data into a _tidy format_, there are many other tasks involved in cleaning data: parsing dates and numbers, identifying missing values, correcting character encodings, matching similar but not identical values (such as those created by typos).
+Data preparation is not just a first step but must be repeated many times over during analysis; as new problems come to light, or new data is collected. Apart from making bat data into a *tidy format*, there are many other tasks involved in cleaning data: parsing dates and numbers, identifying missing values, correcting character encodings, matching similar but not identical values (such as those created by typos).
 
 ```{r}
 #| label: tbl-tidy
@@ -141,7 +147,6 @@ untidy2 <- tibble(DateTime, Species, Number)
 
 knitr::kable(untidy2)
 ```
-
 
 A count of species, as in @tbl-untidy2, can be made tidy by un-counting the data so each species observed is in it's own row; as shown below in @tbl-tidied2
 
