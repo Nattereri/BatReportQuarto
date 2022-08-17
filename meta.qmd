@@ -29,13 +29,13 @@ The *Night* can be obtained from the *iBats* package using the `date_time_info` 
 
 [^1]: a full list of time zones can be found here <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones>
 
-The code below takes the `static_data` set from the *iBats* package and adds the *Night* column, @tbl-night shows a random selection of 5 rows from the `static_data` set.
+The code below takes the `statics` set from the *iBats* package and adds the *Night* column, @tbl-night shows a random selection of 5 rows from the `statics` data.
 
 ```{r}
 #| code-fold: show
 
 
-static_data_with_night <- iBats::date_time_info(static_data)
+statics_with_night <- iBats::date_time_info(statics)
 
 ```
 
@@ -43,7 +43,7 @@ static_data_with_night <- iBats::date_time_info(static_data)
 #| label: tbl-night
 #| tbl-cap: "The Night from the DateTime Column"
 
-static_data_with_night %>% 
+statics_with_night %>% 
   sample_n(5) %>% 
   select(Description, Night, DateTime, Species) %>% 
   # Table made with library(gt)
@@ -72,13 +72,13 @@ static_data_with_night %>%
 
 ### Other Date and Time Information added
 
-The function `iBats::date_time_info()` adds other date and time information: month, year and time see @tbl-other (note: not all columns are shown). @tbl-other shows a random selection of 5 rows from the `static_data` set.
+The function `iBats::date_time_info()` adds other date and time information: month, year and time see @tbl-other (note: not all columns are shown). @tbl-other shows a random selection of 5 rows from the `statics` set.
 
 ```{r}
 #| label: tbl-other
 #| tbl-cap: "Other Date and Time Information from the DateTime Column"
 
-static_data_with_night %>% 
+statics_with_night %>% 
   sample_n(5) %>% 
   select(Description, Month, MonthFull, Year, JustTime, DateTime, Species) %>% 
   #Table made with library(gt)

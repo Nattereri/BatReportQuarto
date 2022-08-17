@@ -1,0 +1,58 @@
+---
+title: "Aggregation"
+format: 
+  html:
+     code-fold: true
+     code-summary: "Show the code"
+---
+
+```{r}
+#| include=FALSE
+
+library(knitr)
+library(tidyverse)
+library(iBats)
+library(broman)
+library(gt)
+
+
+```
+
+Data aggregation is one of the pillars of data analysis, the process where *tidy* data is gathered and expressed in a summary form. Bat survey data tends to be aggregated in two ways:
+
+1.  over a given time period, or
+2.  spatially for locations or a factor related to a location (e.g. woodland)
+
+
+The simplest form of aggregation is a count of bats^[note:- in this case it is a count of bat passes]. The bat survey data `statics` in the `iBats` package has `r add_commas(nrow(statics))` bat observations; a random selection of 5 rows is shown in @tbl-aggtidy. 
+
+```{r}
+#| label: tbl-aggtidy
+#| tbl-cap: "Statics Bat Survey Data (5 random selected rows)"
+
+statics %>% # statics is a tidy data set from the iBats package
+  sample_n(5) %>% 
+  arrange(DateTime) %>% 
+  # Table made with gt
+  gt()
+
+```
+
+
+
+```{r}
+#| code-fold: show
+#| label: tbl-simplecount
+#| tbl-cap: "A Count of Bats Grouped by Species"
+
+statics %>%
+  group_by(Species) %>% 
+  count() %>% 
+  #arrange descending
+  arrange(desc(n)) %>% 
+  # rename n as count
+  rename(`Bat Species` = Species, count = n) %>% 
+  knitr::kable()
+  
+
+```

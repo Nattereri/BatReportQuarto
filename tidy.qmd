@@ -73,7 +73,7 @@ Data preparation is not just a first step but must be repeated many times over d
 #| label: tbl-tidy
 #| tbl-cap: "Tidy Bat data"
 
-tidydata <- static_data %>% # static_data is a tidy data set from the iBats package
+tidydata <- statics %>% # statics is a tidy data set from the iBats package
   #select(DateTime, Species, Latitude, Longitude, Description) %>% 
   rename(`Date and Time` = DateTime,  `Bat Species` = Species) %>% 
   sample_n(10) %>% 

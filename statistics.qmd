@@ -1,0 +1,21 @@
+---
+title: "Statistics"
+format: 
+  html:
+     code-fold: true
+     code-summary: "Show the code"
+---
+
+```{r}
+#| include=FALSE
+
+library(knitr)
+library(tidyverse)
+library(iBats)
+library(gt)
+
+
+```
+
+
+Statistical modeling is a method of mathematically approximating the world.

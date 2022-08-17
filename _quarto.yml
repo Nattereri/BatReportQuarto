@@ -9,6 +9,10 @@ website:
         text: Home
       - tidy.qmd
       - meta.qmd
+      - aggregation.qmd
+      - visualisation.qmd
+      - statistics.qmd
+      - reporting.qmd
       - about.qmd
 
 format:

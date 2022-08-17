@@ -145,6 +145,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link active" href="./meta.html" aria-current="page">Meta Data</a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./aggregation.html">Aggregation</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./visualisation.html">Visualisation</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./statistics.html">Statistics</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./reporting.html">1 Click Reporting</a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./about.html">About</a>
   </li>  
 </ul>
@@ -196,17 +208,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 class="anchored" data-anchor-id="the-night">The <em>Night</em></h3>
 <p>Bats are active through the night; the date of the night is the date at sunset and lasts until sunrise the morning of the following day. The <em>Night</em> is a variable column that is added to the <em>tidy</em> data; it is useful convention that helps avoid the confusion of having contiguous bat activity over two dates.</p>
 <p>The <em>Night</em> can be obtained from the <em>iBats</em> package using the <code>date_time_info</code> function. It requires a data.frame or tibble with a <code>DateTime</code> column, the <em>iana</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> time zone can be specified; the default is <code>Europe/London</code>.</p>
-<p>The code below takes the <code>static_data</code> set from the <em>iBats</em> package and adds the <em>Night</em> column, <a href="#tbl-night">Table&nbsp;1</a> shows a random selection of 5 rows from the <code>static_data</code> set.</p>
+<p>The code below takes the <code>statics</code> set from the <em>iBats</em> package and adds the <em>Night</em> column, <a href="#tbl-night">Table&nbsp;1</a> shows a random selection of 5 rows from the <code>statics</code> data.</p>
 <div class="cell">
 <details open="">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>static_data_with_night <span class="ot">&lt;-</span> iBats<span class="sc">::</span><span class="fu">date_time_info</span>(static_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>statics_with_night <span class="ot">&lt;-</span> iBats<span class="sc">::</span><span class="fu">date_time_info</span>(statics)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>static_data_with_night <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>statics_with_night <span class="sc">%&gt;%</span> </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Description, Night, DateTime, Species) <span class="sc">%&gt;%</span> </span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Table made with library(gt)</span></span>
@@ -235,12 +247,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output-display">
 <div id="tbl-night" class="anchored">
 
-<div id="odztqnoilh" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="npzsqkraft" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#odztqnoilh .gt_table {
+#npzsqkraft .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -265,7 +277,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-left-color: #D3D3D3;
 }
 
-#odztqnoilh .gt_heading {
+#npzsqkraft .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -277,7 +289,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#odztqnoilh .gt_title {
+#npzsqkraft .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -289,7 +301,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-#odztqnoilh .gt_subtitle {
+#npzsqkraft .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -301,13 +313,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-#odztqnoilh .gt_bottom_border {
+#npzsqkraft .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#odztqnoilh .gt_col_headings {
+#npzsqkraft .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -322,7 +334,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#odztqnoilh .gt_col_heading {
+#npzsqkraft .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -342,7 +354,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#odztqnoilh .gt_column_spanner_outer {
+#npzsqkraft .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -354,15 +366,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 4px;
 }
 
-#odztqnoilh .gt_column_spanner_outer:first-child {
+#npzsqkraft .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#odztqnoilh .gt_column_spanner_outer:last-child {
+#npzsqkraft .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#odztqnoilh .gt_column_spanner {
+#npzsqkraft .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -374,7 +386,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   width: 100%;
 }
 
-#odztqnoilh .gt_group_heading {
+#npzsqkraft .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -399,7 +411,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-#odztqnoilh .gt_empty_group_heading {
+#npzsqkraft .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -414,15 +426,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-#odztqnoilh .gt_from_md > :first-child {
+#npzsqkraft .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#odztqnoilh .gt_from_md > :last-child {
+#npzsqkraft .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#odztqnoilh .gt_row {
+#npzsqkraft .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -441,7 +453,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#odztqnoilh .gt_stub {
+#npzsqkraft .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -454,7 +466,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#odztqnoilh .gt_stub_row_group {
+#npzsqkraft .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -468,11 +480,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: top;
 }
 
-#odztqnoilh .gt_row_group_first td {
+#npzsqkraft .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#odztqnoilh .gt_summary_row {
+#npzsqkraft .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -482,16 +494,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#odztqnoilh .gt_first_summary_row {
+#npzsqkraft .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#odztqnoilh .gt_first_summary_row.thick {
+#npzsqkraft .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#odztqnoilh .gt_last_summary_row {
+#npzsqkraft .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -501,7 +513,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#odztqnoilh .gt_grand_summary_row {
+#npzsqkraft .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -511,7 +523,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#odztqnoilh .gt_first_grand_summary_row {
+#npzsqkraft .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -521,11 +533,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-#odztqnoilh .gt_striped {
+#npzsqkraft .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#odztqnoilh .gt_table_body {
+#npzsqkraft .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -534,7 +546,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#odztqnoilh .gt_footnotes {
+#npzsqkraft .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -548,7 +560,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#odztqnoilh .gt_footnote {
+#npzsqkraft .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -557,7 +569,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#odztqnoilh .gt_sourcenotes {
+#npzsqkraft .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -571,7 +583,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#odztqnoilh .gt_sourcenote {
+#npzsqkraft .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -579,36 +591,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#odztqnoilh .gt_left {
+#npzsqkraft .gt_left {
   text-align: left;
 }
 
-#odztqnoilh .gt_center {
+#npzsqkraft .gt_center {
   text-align: center;
 }
 
-#odztqnoilh .gt_right {
+#npzsqkraft .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#odztqnoilh .gt_font_normal {
+#npzsqkraft .gt_font_normal {
   font-weight: normal;
 }
 
-#odztqnoilh .gt_font_bold {
+#npzsqkraft .gt_font_bold {
   font-weight: bold;
 }
 
-#odztqnoilh .gt_font_italic {
+#npzsqkraft .gt_font_italic {
   font-style: italic;
 }
 
-#odztqnoilh .gt_super {
+#npzsqkraft .gt_super {
   font-size: 65%;
 }
 
-#odztqnoilh .gt_two_val_uncert {
+#npzsqkraft .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -617,31 +629,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   margin-left: 0.1em;
 }
 
-#odztqnoilh .gt_footnote_marks {
+#npzsqkraft .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#odztqnoilh .gt_asterisk {
+#npzsqkraft .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#odztqnoilh .gt_slash_mark {
+#npzsqkraft .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#odztqnoilh .gt_fraction_numerator {
+#npzsqkraft .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#odztqnoilh .gt_fraction_denominator {
+#npzsqkraft .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -658,26 +670,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_left">Static 3</td>
-<td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-08-12</td>
-<td class="gt_row gt_left">2016-08-12 21:23:41</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
-    <tr><td class="gt_row gt_left">Static 2</td>
-<td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-07-31</td>
-<td class="gt_row gt_left">2016-07-31 21:05:12</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
-    <tr><td class="gt_row gt_left">Static 1</td>
-<td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-06-05</td>
-<td class="gt_row gt_left">2016-06-06 00:17:31</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
-    <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-10-16</td>
-<td class="gt_row gt_left">2016-10-16 21:23:35</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
     <tr><td class="gt_row gt_left">Static 4</td>
 <td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-07-28</td>
-<td class="gt_row gt_left">2016-07-29 01:19:25</td>
+<td class="gt_row gt_left">2016-07-29 00:54:24</td>
 <td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
+    <tr><td class="gt_row gt_left">Static 4</td>
+<td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-07-30</td>
+<td class="gt_row gt_left">2016-07-31 00:06:40</td>
+<td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
+    <tr><td class="gt_row gt_left">Static 5</td>
+<td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-10-11</td>
+<td class="gt_row gt_left">2016-10-11 21:02:42</td>
+<td class="gt_row gt_left">Barbastella barbastellus</td></tr>
+    <tr><td class="gt_row gt_left">Static 2</td>
+<td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-08-29</td>
+<td class="gt_row gt_left">2016-08-29 21:24:43</td>
+<td class="gt_row gt_left">Nyctalus noctula</td></tr>
+    <tr><td class="gt_row gt_left">Static 4</td>
+<td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-06-12</td>
+<td class="gt_row gt_left">2016-06-13 01:22:33</td>
+<td class="gt_row gt_left">Barbastella barbastellus</td></tr>
   </tbody>
   
   
@@ -689,11 +701,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </section>
 <section id="other-date-and-time-information-added" class="level3">
 <h3 class="anchored" data-anchor-id="other-date-and-time-information-added">Other Date and Time Information added</h3>
-<p>The function <code>iBats::date_time_info()</code> adds other date and time information: month, year and time see <a href="#tbl-other">Table&nbsp;2</a> (note: not all columns are shown). <a href="#tbl-other">Table&nbsp;2</a> shows a random selection of 5 rows from the <code>static_data</code> set.</p>
+<p>The function <code>iBats::date_time_info()</code> adds other date and time information: month, year and time see <a href="#tbl-other">Table&nbsp;2</a> (note: not all columns are shown). <a href="#tbl-other">Table&nbsp;2</a> shows a random selection of 5 rows from the <code>statics</code> set.</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>static_data_with_night <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>statics_with_night <span class="sc">%&gt;%</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Description, Month, MonthFull, Year, JustTime, DateTime, Species) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Table made with library(gt)</span></span>
@@ -722,12 +734,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output-display">
 <div id="tbl-other" class="anchored">
 
-<div id="ukluesabhu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="pmdrfraspy" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#ukluesabhu .gt_table {
+#pmdrfraspy .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -752,7 +764,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-left-color: #D3D3D3;
 }
 
-#ukluesabhu .gt_heading {
+#pmdrfraspy .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -764,7 +776,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#ukluesabhu .gt_title {
+#pmdrfraspy .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -776,7 +788,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-#ukluesabhu .gt_subtitle {
+#pmdrfraspy .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -788,13 +800,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-#ukluesabhu .gt_bottom_border {
+#pmdrfraspy .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ukluesabhu .gt_col_headings {
+#pmdrfraspy .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -809,7 +821,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#ukluesabhu .gt_col_heading {
+#pmdrfraspy .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -829,7 +841,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#ukluesabhu .gt_column_spanner_outer {
+#pmdrfraspy .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -841,15 +853,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 4px;
 }
 
-#ukluesabhu .gt_column_spanner_outer:first-child {
+#pmdrfraspy .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ukluesabhu .gt_column_spanner_outer:last-child {
+#pmdrfraspy .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ukluesabhu .gt_column_spanner {
+#pmdrfraspy .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -861,7 +873,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   width: 100%;
 }
 
-#ukluesabhu .gt_group_heading {
+#pmdrfraspy .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -886,7 +898,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-#ukluesabhu .gt_empty_group_heading {
+#pmdrfraspy .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -901,15 +913,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-#ukluesabhu .gt_from_md > :first-child {
+#pmdrfraspy .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ukluesabhu .gt_from_md > :last-child {
+#pmdrfraspy .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ukluesabhu .gt_row {
+#pmdrfraspy .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -928,7 +940,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#ukluesabhu .gt_stub {
+#pmdrfraspy .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -941,7 +953,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#ukluesabhu .gt_stub_row_group {
+#pmdrfraspy .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -955,11 +967,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: top;
 }
 
-#ukluesabhu .gt_row_group_first td {
+#pmdrfraspy .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ukluesabhu .gt_summary_row {
+#pmdrfraspy .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -969,16 +981,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#ukluesabhu .gt_first_summary_row {
+#pmdrfraspy .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ukluesabhu .gt_first_summary_row.thick {
+#pmdrfraspy .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ukluesabhu .gt_last_summary_row {
+#pmdrfraspy .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -988,7 +1000,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#ukluesabhu .gt_grand_summary_row {
+#pmdrfraspy .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -998,7 +1010,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#ukluesabhu .gt_first_grand_summary_row {
+#pmdrfraspy .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1008,11 +1020,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-#ukluesabhu .gt_striped {
+#pmdrfraspy .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ukluesabhu .gt_table_body {
+#pmdrfraspy .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1021,7 +1033,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#ukluesabhu .gt_footnotes {
+#pmdrfraspy .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1035,7 +1047,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#ukluesabhu .gt_footnote {
+#pmdrfraspy .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1044,7 +1056,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#ukluesabhu .gt_sourcenotes {
+#pmdrfraspy .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1058,7 +1070,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#ukluesabhu .gt_sourcenote {
+#pmdrfraspy .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1066,36 +1078,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#ukluesabhu .gt_left {
+#pmdrfraspy .gt_left {
   text-align: left;
 }
 
-#ukluesabhu .gt_center {
+#pmdrfraspy .gt_center {
   text-align: center;
 }
 
-#ukluesabhu .gt_right {
+#pmdrfraspy .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ukluesabhu .gt_font_normal {
+#pmdrfraspy .gt_font_normal {
   font-weight: normal;
 }
 
-#ukluesabhu .gt_font_bold {
+#pmdrfraspy .gt_font_bold {
   font-weight: bold;
 }
 
-#ukluesabhu .gt_font_italic {
+#pmdrfraspy .gt_font_italic {
   font-style: italic;
 }
 
-#ukluesabhu .gt_super {
+#pmdrfraspy .gt_super {
   font-size: 65%;
 }
 
-#ukluesabhu .gt_two_val_uncert {
+#pmdrfraspy .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -1104,31 +1116,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   margin-left: 0.1em;
 }
 
-#ukluesabhu .gt_footnote_marks {
+#pmdrfraspy .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#ukluesabhu .gt_asterisk {
+#pmdrfraspy .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ukluesabhu .gt_slash_mark {
+#pmdrfraspy .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#ukluesabhu .gt_fraction_numerator {
+#pmdrfraspy .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#ukluesabhu .gt_fraction_denominator {
+#pmdrfraspy .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -1148,40 +1160,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_left">Static 4</td>
+    <tr><td class="gt_row gt_left">Static 1</td>
 <td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Jun</td>
 <td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">June</td>
 <td class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">14:24:20</td>
-<td class="gt_row gt_left">2016-06-13 02:24:20</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
+<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">10:24:35</td>
+<td class="gt_row gt_left">2016-06-03 22:24:35</td>
+<td class="gt_row gt_left">Nyctalus noctula</td></tr>
     <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Jun</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">June</td>
+<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Jul</td>
+<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">July</td>
 <td class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">14:14:51</td>
-<td class="gt_row gt_left">2016-06-13 02:14:51</td>
+<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">12:31:53</td>
+<td class="gt_row gt_left">2016-07-27 00:31:53</td>
 <td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
     <tr><td class="gt_row gt_left">Static 4</td>
 <td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Jul</td>
 <td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">July</td>
 <td class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">12:26:41</td>
-<td class="gt_row gt_left">2016-07-27 00:26:41</td>
+<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">09:33:35</td>
+<td class="gt_row gt_left">2016-07-30 21:33:35</td>
 <td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
-    <tr><td class="gt_row gt_left">Static 4</td>
+    <tr><td class="gt_row gt_left">Static 2</td>
 <td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Aug</td>
 <td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">August</td>
 <td class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">12:20:12</td>
-<td class="gt_row gt_left">2016-08-30 00:20:12</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
+<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">17:10:13</td>
+<td class="gt_row gt_left">2016-08-29 05:10:13</td>
+<td class="gt_row gt_left">Plecotus spp.</td></tr>
     <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Aug</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">August</td>
+<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Jul</td>
+<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">July</td>
 <td class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">10:21:12</td>
-<td class="gt_row gt_left">2016-08-03 22:21:12</td>
+<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">13:07:50</td>
+<td class="gt_row gt_left">2016-07-27 01:07:50</td>
 <td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
   </tbody>
   

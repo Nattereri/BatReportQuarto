@@ -1,0 +1,24 @@
+---
+title: "Visualisation"
+format: 
+  html:
+     code-fold: true
+     code-summary: "Show the code"
+---
+
+```{r}
+#| include=FALSE
+
+library(knitr)
+library(tidyverse)
+library(iBats)
+library(gt)
+
+
+```
+
+
+Data aggregation is one of the pillars of data analysis, the process where _tidy_ data is gathered and expressed in a summary form. Bat survey data tends to be aggregated in two ways:  
+
+1. over a given time period, or
+2. spatially for locations or a factor related to a location (e.g. woodland) 

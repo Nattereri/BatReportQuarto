@@ -1,0 +1,21 @@
+---
+title: "1 Click Reporting"
+format: 
+  html:
+     code-fold: true
+     code-summary: "Show the code"
+---
+
+```{r}
+#| include=FALSE
+
+library(knitr)
+library(tidyverse)
+library(iBats)
+library(gt)
+
+
+```
+
+
+This page shows how a bat survey report can be produced, __with 1 click__, from a minimal data set. It also demonstrates literate programming with Quarto the next generation of R Markdown.
