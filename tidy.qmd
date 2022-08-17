@@ -18,7 +18,7 @@ library(iBats)
 
 *Tidy Data* is a consistent way to organise your data [@wickham_tidy_2014]. Getting your data into this format requires some initial work, but that effort pays off in the long term. Once you have tidy data you will spend *less* time wrangling data from one representation to another, allowing you to spend more time on the analytic questions at hand. Unfortunately, there is a rule of thumb; 80% of time doing data science is spent wrangling data; particularly the effort required in sorting and rearranging the data into the *tidy* and therefore usable format.
 
-There are three interrelated rules which make a dataset tidy, such as the data shown in Table \@ref(tab:table01):
+There are three interrelated rules which make a data set tidy, such as the data shown in @tbl-tidy:
 
 -   Each variable must have its own column.
 -   Each observation must have its own row.
@@ -60,12 +60,12 @@ The rationale for these variables is as follows:
 
 Results of bat sound analysis can be untidy:
 
--   two or more species in one cell (see Table @tbl-untidy1);
--   count of bats (Tables @tbl-untidy2); and,
+-   two or more species in one cell (see @tbl-untidy1);
+-   count of bats (@tbl-untidy2); and,
 -   two of more columns with species of same date and time.
 -   Longitude and Latitude columns with missing values
 
-While the bat survey results shown in Table @tbl-tidy is an example of a *tidy* data set; the data sets in @tbl-untidy1 and @tbl-untidy2 are *untidy* and would need to be made tidy to undertake analysis.
+While the bat survey results shown in @tbl-tidy is an example of a *tidy* data set; the data sets in @tbl-untidy1 and @tbl-untidy2 are *untidy* and would need to be made tidy to undertake analysis.
 
 Data preparation is not just a first step but must be repeated many times over during analysis; as new problems come to light, or new data is collected. Apart from making bat data into a *tidy format*, there are many other tasks involved in cleaning data: parsing dates and numbers, identifying missing values, correcting character encodings, matching similar but not identical values (such as those created by typos).
 
@@ -73,13 +73,14 @@ Data preparation is not just a first step but must be repeated many times over d
 #| label: tbl-tidy
 #| tbl-cap: "Tidy Bat data"
 
-Table <- static_data %>% # static_data is a tidy data set from the iBats package
+tidydata <- static_data %>% # static_data is a tidy data set from the iBats package
   #select(DateTime, Species, Latitude, Longitude, Description) %>% 
   rename(`Date and Time` = DateTime,  `Bat Species` = Species) %>% 
   sample_n(10) %>% 
   arrange(`Date and Time`)
 
-knitr::kable(Table)
+# Table made with knitr::kable
+knitr::kable(tidydata)
 ```
 
 ### Too Many Species in a Cell
@@ -102,6 +103,7 @@ DateTime <- c("2019-10-03 20:55:30",
 
 untidy1 <- tibble(DateTime, Species)
 
+# Table made with knitr::kable
 knitr::kable(untidy1)
 
 ```
@@ -116,13 +118,14 @@ Too many species in a cell, as in @tbl-untidy1, can be made tidy by expanding th
 tidied1 <- untidy1 %>% 
   tidyr::separate_rows(Species)
 
+# Table made with knitr::kable
 knitr::kable(tidied1)
 
 ```
 
 ### A Column of Bat Counts
 
-```{r tab.cap="Untidy Bat Data a Column of Counting the Bats", tab.id="table03"}
+```{r}
 #| label: tbl-untidy2
 #| tbl-cap: "Untidy Bat Data a Column of Counting the Bats"
 
@@ -145,6 +148,7 @@ Number <- c(1, 1, 2, 1, 3, 1)
 
 untidy2 <- tibble(DateTime, Species, Number)
 
+# Table made with knitr::kable
 knitr::kable(untidy2)
 ```
 
@@ -158,6 +162,118 @@ A count of species, as in @tbl-untidy2, can be made tidy by un-counting the data
 tidied2 <- untidy2 %>% 
   tidyr::uncount(Number)
 
+# Table made with knitr::kable
 knitr::kable(tidied2)
+
+```
+
+### Two or More Columns of Bat Species  
+
+```{r}
+#| label: tbl-untidy3
+#| tbl-cap: "Two or More Columns of Bat Species"
+
+Species <- c("Common pipistrelle", 
+             "Soprano pipistrelle", 
+             "Common pipistrelle", 
+             "Soprano pipistrelle", 
+             "Common pipistrelle")
+
+Species2nd <- c("", 
+                "Noctule", 
+                "", 
+                "Common pipistrelle", 
+                "Common pipistrelle")
+
+Species3rd <- c("", 
+                "", 
+                "", 
+                "Noctule", 
+                "")
+
+DateTime <- c("2019-10-04 20:35:15", 
+              "2019-10-04 20:38:30",
+              "2019-10-04 21:05:15",
+              "2019-10-04 21:15:30",
+              "2019-10-04 21:25:45")
+
+untidy3 <- tibble(DateTime, Species, Species2nd, Species3rd)
+
+# Table made with knitr::kable
+knitr::kable(untidy3)
+
+```
+
+
+Several columns of species, as in @tbl-untidy3, can be made tidy by un-counting the data so each species observed is in it's own row; as shown below in @tbl-tidied3.
+
+```{r}
+#| code-fold: show
+#| label: tbl-tidied3
+#| tbl-cap: "Tidied Bat Data with Two or More Columns put into One"
+
+# Select Species column and remove (Species2nd & Species3rd)
+data1 <- untidy3 %>% 
+    select(-Species2nd, -Species3rd)
+
+# Select Species2nd column and remove (Species & Species3rd)
+data2 <- untidy3 %>% 
+  select(-Species, -Species3rd) %>% 
+  filter(Species2nd != "") %>% # Remove blank rows
+  rename(Species = Species2nd) # Rename column
+
+# Select Species3rd column and remove (Species & Species2nd)
+data3 <- untidy3 %>% 
+  select(-Species, -Species2nd) %>% 
+  filter(Species3rd != "") %>% # Remove blank rows
+  rename(Species = Species3rd) # Rename column
+
+#Add the datasets together into one 
+tidied3 <- dplyr::bind_rows(data1, data2, data3)
+
+
+# Table made with knitr::kable
+knitr::kable(tidied3)
+
+```
+
+
+### Convert Bat Names to Scientific  
+
+
+@tbl-tidied1 is still _untidy_ because the bat species are represented as codes and not in a binomial nomenclature(scientific name). The `iBats::make_scientific()` function can take a named vector of codes and the scientific name; such as the `BatScientific` vector below. The case of the bat name codes are ignored; they are all converted to lower case.
+
+```{r}
+#| code-fold: show
+
+BatScientific <- c("nyclei" = "Nyctalus leisleri",
+                   "nycnoc" = "Nyctalus noctula",
+                   "pippip" = "Pipistrellus pipistrellus",
+                   "pipnat" = "Pipistrellus nathusii",
+                   "pippyg" = "Pipistrellus pygmaeus",
+                   "45 pip" = "Pipistrellus pipistrellus",
+                   "55 pip" = "Pipistrellus pygmaeus",
+                   "bleb" = "Plecotus auritus",
+                   # If already a scientific name keep it
+                   "myotis daubentonii" = "Myotis daubentonii") 
+
+```
+
+The `BatScientific` vector is then used to covert the survey vector of bat names (the Species column in  @tbl-tidied1) so they are all scientific; using the `iBats::make_scientific()` function.  The `BatScientific` can be expanded to cover many names and codes, if there are duplicate names or codes a conversion will not take place for that name or code. The tidied data with scientific species names is shown in @tbl-tidied4
+
+```{r}
+#| code-fold: show
+
+tidied1$Species <- iBats::make_scientific(BatScientific, tidied1$Species)
+
+```
+
+
+```{r}
+#| label: tbl-tidied4
+#| tbl-cap: "Tidied Bat Data with Scientific Names"
+
+# Table made with knitr::kable
+knitr::kable(tidied1)
 
 ```

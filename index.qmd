@@ -2,7 +2,7 @@
 title: "Getting Started"
 ---
 
-A simple bat report from minimal data demonstrating literate programming with Quarto (or the world beyond Excel).
+A simple bat report from minimal data demonstrating literate programming with Quarto (_the world beyond Excel_).
 
 ## Install R RStudio and Packages  
 

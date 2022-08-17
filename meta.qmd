@@ -17,19 +17,19 @@ library(gt)
 
 ```
 
-Many other columns would be added to a tidy dataset so it becomes more useful for analysis; some of these are described below.
+Many columns would be added to a tidy data set so it becomes more useful for analysis; some of these are described below.
 
 ## Date and Time Information
 
-### The _Night_ 
+### The *Night*
 
-Bats are active through the night; the date of the night is the date at sunset and lasts to sunrise the morning of the following day. The _Night_ is a variable column that is added to the _tidy_ data; it is useful convention that helps avoid the confusion of having contiguous bat activity over two dates.
+Bats are active through the night; the date of the night is the date at sunset and lasts until sunrise the morning of the following day. The *Night* is a variable column that is added to the *tidy* data; it is useful convention that helps avoid the confusion of having contiguous bat activity over two dates.
 
-The _Night_ can be obtained from the _iBats_ package using the `date_time_info` function. It requires a
-data.frame or tibble with a `DateTime` column, the time zone can be specified the default is `Europe/London`.  
+The *Night* can be obtained from the *iBats* package using the `date_time_info` function. It requires a data.frame or tibble with a `DateTime` column, the *iana*[^1] time zone can be specified; the default is `Europe/London`.
 
+[^1]: a full list of time zones can be found here <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones>
 
-The code below takes the `static_data` set from the _iBats_ package and adds the _Night_ column, @tbl-night shows a random selection of 5 rows from the `static_data` set.
+The code below takes the `static_data` set from the *iBats* package and adds the *Night* column, @tbl-night shows a random selection of 5 rows from the `static_data` set.
 
 ```{r}
 #| code-fold: show
@@ -39,21 +39,20 @@ static_data_with_night <- iBats::date_time_info(static_data)
 
 ```
 
-
 ```{r}
 #| label: tbl-night
 #| tbl-cap: "The Night from the DateTime Column"
 
 static_data_with_night %>% 
   sample_n(5) %>% 
-  select(Description, Night, DateTime, Species, Latitude, Longitude) %>% 
-  #Table made with library(gt)
+  select(Description, Night, DateTime, Species) %>% 
+  # Table made with library(gt)
   gt() %>% 
   tab_style(
     style = list(
       cell_fill(color = "midnightblue"),
       cell_text(color = "white"),
-      cell_text(weight = "bold")
+      cell_text(weight = "normal")
       ),
     locations = cells_body(
       columns = Night
@@ -71,10 +70,9 @@ static_data_with_night %>%
   )
 ```
 
-### Other Date and Time Information added  
+### Other Date and Time Information added
 
-The function `iBats::date_time_info()`  adds other date and time information: month, year and time see @tbl-other (note: not all columns are shown).
-
+The function `iBats::date_time_info()` adds other date and time information: month, year and time see @tbl-other (note: not all columns are shown). @tbl-other shows a random selection of 5 rows from the `static_data` set.
 
 ```{r}
 #| label: tbl-other
@@ -82,7 +80,7 @@ The function `iBats::date_time_info()`  adds other date and time information: mo
 
 static_data_with_night %>% 
   sample_n(5) %>% 
-  select(Description, Month, MonthFull, Year, JustTime, DateTime, Species, Latitude, Longitude) %>% 
+  select(Description, Month, MonthFull, Year, JustTime, DateTime, Species) %>% 
   #Table made with library(gt)
   gt() %>% 
   tab_style(
