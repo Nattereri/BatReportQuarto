@@ -81,7 +81,7 @@ The function `iBats::date_time_info()` adds other date and time information: mon
 statics_with_night %>% 
   sample_n(5) %>% 
   select(Description, Month, MonthFull, Year, JustTime, DateTime, Species) %>% 
-  #Table made with library(gt)
+  # Table made with library(gt)
   gt() %>% 
   tab_style(
     style = list(

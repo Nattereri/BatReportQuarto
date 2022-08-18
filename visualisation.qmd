@@ -13,12 +13,213 @@ library(knitr)
 library(tidyverse)
 library(iBats)
 library(gt)
+library(flextable)
 
 
 ```
 
+A good visualisation tells a story, removing the noise from the data and illuminating the useful information. Visualise to present data to a lay audience, it also helps interpretation during analysis within the survey team.
 
-Data aggregation is one of the pillars of data analysis, the process where _tidy_ data is gathered and expressed in a summary form. Bat survey data tends to be aggregated in two ways:  
 
-1. over a given time period, or
-2. spatially for locations or a factor related to a location (e.g. woodland) 
+## Bat Colours  
+
+To help with accessibility it is recommended that a consistent colour is used for each species throughout the report and the colours used are _readable_ to people with a visual impairment. Unfortunately, accessibility for the visually impaired is challenging when more than 8 or 10 colours are used; if this is the case consider separating the visualisation into different components, creating more than one graph or just highlighting the key species.
+
+@tbl-batcolours lists the set of colours used for the visualisations on this page.
+
+
+```{r}
+#| label: tbl-batcolours
+#| tbl-cap: "Bat Name and Colour"
+
+
+bat_colours_sci <- c("Barbastella barbastellus" = "#1f78b4", 
+                     "Myotis alcathoe" = "#a52a2a",
+                     "Myotis bechsteinii" = "#7fff00",
+                     "Myotis brandtii" = "#b2df8a", 
+                     "Myotis mystacinus" = "#6a3d9a", 
+                     "Myotis nattereri" = "#ff7f00", 
+                     "Myotis daubentonii" = "#a6cee3", 
+                      "Myotis spp." = "#bcee68",
+                      "Plecotus auritus" = "#8b0000", 
+                      "Plecotus spp." = "#8b0000", 
+                      "Plecotus austriacus" = "#000000",
+                      "Pipistrellus pipistrellus" = "#ffff99", 
+                      "Pipistrellus nathusii" = "#8a2be2", 
+                      "Pipistrellus pygmaeus" = "#b15928", 
+                      "Pipistrellus spp." = "#fdbf6f", 
+                      "Rhinolophus ferrumequinum" = "#e31a1c", 
+                      "Rhinolophus hipposideros" = "#33a02c", 
+                      "Nyctalus noctula" = "#cab2d6", 
+                      "Nyctalus leisleri" = "#fb9a99", 
+                      "Nyctalus spp." = "#eee8cd", 
+                      "Eptesicus serotinus" = "#008b8b")
+
+bat_colour_table <- tibble(names(bat_colours_sci), unname(bat_colours_sci))
+
+colnames(bat_colour_table) <- c("Scientific Name", "Colour (Hex)")
+
+bat_colour_table %>% 
+  # Table made with library(flextable)
+    flextable(col_keys = colnames(.)) %>% 
+    bold(part = "header") %>% 
+    autofit(add_w = 0.1, add_h = 0.1) %>% 
+    #bg(bg = "black", part = "header") %>% 
+    bg(j = 2, i = 1, bg = bat_colour_table$`Colour (Hex)`[1], part = "body") %>% 
+    bg(j = 2, i = 2, bg = bat_colour_table$`Colour (Hex)`[2], part = "body") %>% 
+    bg(j = 2, i = 3, bg = bat_colour_table$`Colour (Hex)`[3], part = "body") %>% 
+    bg(j = 2, i = 4, bg = bat_colour_table$`Colour (Hex)`[4], part = "body") %>% 
+    bg(j = 2, i = 5, bg = bat_colour_table$`Colour (Hex)`[5], part = "body") %>% 
+    bg(j = 2, i = 6, bg = bat_colour_table$`Colour (Hex)`[6], part = "body") %>% 
+    bg(j = 2, i = 7, bg = bat_colour_table$`Colour (Hex)`[7], part = "body") %>% 
+    bg(j = 2, i = 8, bg = bat_colour_table$`Colour (Hex)`[8], part = "body") %>% 
+    bg(j = 2, i = 9, bg = bat_colour_table$`Colour (Hex)`[9], part = "body") %>% 
+    bg(j = 2, i = 10, bg = bat_colour_table$`Colour (Hex)`[10], part = "body") %>% 
+    bg(j = 2, i = 11, bg = bat_colour_table$`Colour (Hex)`[11], part = "body") %>% 
+    color(j = 2, i = 11, color = "white", part = "body") %>% 
+    bg(j = 2, i = 12, bg = bat_colour_table$`Colour (Hex)`[12], part = "body") %>% 
+    bg(j = 2, i = 13, bg = bat_colour_table$`Colour (Hex)`[13], part = "body") %>% 
+    bg(j = 2, i = 14, bg = bat_colour_table$`Colour (Hex)`[14], part = "body") %>% 
+    bg(j = 2, i = 15, bg = bat_colour_table$`Colour (Hex)`[15], part = "body") %>% 
+    bg(j = 2, i = 16, bg = bat_colour_table$`Colour (Hex)`[16], part = "body") %>% 
+    bg(j = 2, i = 17, bg = bat_colour_table$`Colour (Hex)`[17], part = "body") %>% 
+    bg(j = 2, i = 18, bg = bat_colour_table$`Colour (Hex)`[18], part = "body") %>% 
+    bg(j = 2, i = 19, bg = bat_colour_table$`Colour (Hex)`[19], part = "body") %>% 
+    bg(j = 2, i = 20, bg = bat_colour_table$`Colour (Hex)`[20], part = "body") %>% 
+    bg(j = 2, i = 21, bg = bat_colour_table$`Colour (Hex)`[21], part = "body") %>% 
+   # color(color = "white", part = "header") %>% 
+    align(align = "center", part = "header" ) %>% 
+    align(j = 2, align = "right", part = "body") %>% 
+    italic(j = 1, italic = TRUE, part = "body") 
+```
+
+
+## Time Bats Were Active
+
+@fig-timebat illustrates bat activity through one night near an Oak tree in the River Tavy valley, Devon.  Rather than depicting a _bat pass_ the time the bat was present is shown. The y-axis is expanded to spread the bat activity making the graph more readable.
+
+The data used `TavyOak` is from the `iBats` package. The bat species colour for the graph were made using the `iBats::bat_colours()` function; this provided the colour values used by `ggplot's` manual scale function `scale_fill_manual()`.
+
+
+```{r}
+#| label: fig-timebat
+#| fig-cap: "Time Bats Were Active Through The Night"
+
+bat_colours_sci <- c("Barbastella barbastellus" = "#1f78b4", 
+                     "Myotis alcathoe" = "#a52a2a",
+                     "Myotis bechsteinii" = "#7fff00",
+                     "Myotis brandtii" = "#b2df8a", 
+                     "Myotis mystacinus" = "#6a3d9a", 
+                     "Myotis nattereri" = "#ff7f00", 
+                     "Myotis daubentonii" = "#a6cee3", 
+                      "Myotis spp." = "#bcee68",
+                      "Plecotus auritus" = "#8b0000", 
+                      "Plecotus spp." = "#8b0000", 
+                      "Plecotus austriacus" = "#000000",
+                      "Pipistrellus pipistrellus" = "#ffff99", 
+                      "Pipistrellus nathusii" = "#8a2be2", 
+                      "Pipistrellus pygmaeus" = "#b15928", 
+                      "Pipistrellus spp." = "#fdbf6f", 
+                      "Rhinolophus ferrumequinum" = "#e31a1c", 
+                      "Rhinolophus hipposideros" = "#33a02c", 
+                      "Nyctalus noctula" = "#cab2d6", 
+                      "Nyctalus leisleri" = "#fb9a99", 
+                      "Nyctalus spp." = "#eee8cd", 
+                      "Eptesicus serotinus" = "#008b8b")
+
+
+
+# graph anotation
+graph_sunrise <- TavyOak$sunrise[1]
+graph_sunset <-  TavyOak$sunset[1]
+
+#graph time limits x-axis
+graph_limit1 <- TavyOak$sunset[1] - lubridate::hours(1)
+graph_limit2 <- TavyOak$sunrise[1] + lubridate::hours(1)
+
+# colour values used by scale_fill_manual()
+graph_bat_colours <- bat_colours(TavyOak$Species, colour_vector = bat_colours_sci)
+
+
+ggplot(TavyOak, aes(y = 1, x = DateTime, fill = Species, size = bat_time)) +
+    geom_jitter(shape = 21, alpha = 0.7) +
+    geom_vline(xintercept = graph_sunset, 
+               colour = "brown1", 
+               linetype = "dashed", 
+               size = 1,
+               alpha = 0.8) +
+    geom_vline(xintercept = graph_sunrise, 
+               colour = "mediumblue", 
+               linetype = "dashed", 
+               size = 1,
+               alpha = 0.8) +
+    annotate("text", 
+           x = graph_sunset - lubridate::minutes(20), 
+           y = 1, 
+           label = "Sunset", 
+           color = "brown1", 
+           angle = 270) +
+    annotate("text", 
+           x = graph_sunrise + lubridate::minutes(20), 
+           y = 1, 
+           label = "Sunrise", 
+           color = "mediumblue", 
+           angle = 270) +
+    scale_fill_manual(values = graph_bat_colours) +
+    scale_size_area(max_size = 12) +
+    scale_x_datetime(date_labels = "%H:%M hrs", 
+                     date_breaks = "1 hour", 
+                     limits = c(graph_limit1, graph_limit2)) +
+    labs(fill = "Species",
+         size = "Time Bat Was Present\n(seconds)",
+         y = "For clarity activity is spread across the verstical scale") +
+    theme_bw() + 
+    theme(legend.position = "right", 
+          panel.grid.major.x = element_line(), 
+          panel.grid.major.y = element_blank(),
+          panel.grid.minor = element_blank(),
+          axis.text.x = element_text(size=10, angle = 270), 
+          axis.text.y = element_blank(), 
+          axis.ticks.y = element_blank(),
+          strip.text = element_text(size=12, face="bold", colour = "white"), 
+          legend.text=element_text(face="italic"),
+          axis.title.x = element_blank(), 
+          axis.title.y = element_text(size=10))
+
+
+  
+  
+```
+
+## Emergence Time of Bats  
+
+@fig-andrews illustrates emergence times for UK bats based on the work of Andrews & Pearson (2022) [^1].
+[^1]: the reference is available from: https://drive.google.com/file/d/1DeGHxyr9-p5XH6R6CRimsmquVD188WY8/view
+
+```{r}
+#| label: fig-andrews
+#| fig-cap: "Roost Emergence Times After Sunset"
+#| warning: false
+
+# colour values used by scale_fill_manual()
+graph_bat_colours <- bat_colours(Andrews$Species, colour_vector = bat_colours_sci)
+
+ggplot(Andrews) +
+  geom_segment(aes(x=reorder(Species, -meanExit), xend=Species, y=firstExit95, yend=lastExit95), color="grey", size = 2) +
+  geom_point( aes(x=reorder(Species, -meanExit), y=meanExit, fill = Species), color="black", size=4, shape = 21) +
+  scale_y_continuous(breaks=c(-20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
+  geom_hline(yintercept = 0, linetype = "dashed", colour = "purple", size = 1) +
+  scale_fill_manual(values = graph_bat_colours) +
+  coord_flip() +
+  labs(y = "Minutes After Sunset",
+       caption = "adapted from (Andrews and Pearson, 2022)\ngrey bar is indicative of the emergence time range\nyellow triangle is the mean emergence time") +  
+  theme_bw() +
+  theme (legend.position = "none", 
+         axis.text.y = element_text(face = 'italic'),
+         axis.title.y = element_blank(),
+         panel.grid = element_blank()) 
+
+
+
+
+```

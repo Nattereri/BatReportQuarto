@@ -15,6 +15,69 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -53,6 +116,8 @@ ul.task-list{list-style: none;}
     "search-submit-button-title": "Submit"
   }
 }</script>
+<link href="site_libs/tabwid-1.0.0/tabwid.css" rel="stylesheet">
+<link href="site_libs/tabwid-1.0.0/scrool.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="styles.css">
@@ -107,7 +172,15 @@ ul.task-list{list-style: none;}
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#bat-colours" id="toc-bat-colours" class="nav-link active" data-scroll-target="#bat-colours">Bat Colours</a></li>
+  <li><a href="#time-bats-were-active" id="toc-time-bats-were-active" class="nav-link" data-scroll-target="#time-bats-were-active">Time Bats Were Active</a></li>
+  <li><a href="#emergence-time-of-bats" id="toc-emergence-time-of-bats" class="nav-link" data-scroll-target="#emergence-time-of-bats">Emergence Time of Bats</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -128,13 +201,216 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<p>Data aggregation is one of the pillars of data analysis, the process where <em>tidy</em> data is gathered and expressed in a summary form. Bat survey data tends to be aggregated in two ways:</p>
-<ol type="1">
-<li>over a given time period, or</li>
-<li>spatially for locations or a factor related to a location (e.g.&nbsp;woodland)</li>
-</ol>
+<p>A good visualisation tells a story, removing the noise from the data and illuminating the useful information. Visualise to present data to a lay audience, it also helps interpretation during analysis within the survey team.</p>
+<section id="bat-colours" class="level2">
+<h2 class="anchored" data-anchor-id="bat-colours">Bat Colours</h2>
+<p>To help with accessibility it is recommended that a consistent colour is used for each species throughout the report and the colours used are <em>readable</em> to people with a visual impairment. Unfortunately, accessibility for the visually impaired is challenging when more than 8 or 10 colours are used; if this is the case consider separating the visualisation into different components, creating more than one graph or just highlighting the key species.</p>
+<p><a href="#tbl-batcolours">Table&nbsp;1</a> lists the set of colours used for the visualisations on this page.</p>
+<div class="cell">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>bat_colours_sci <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Barbastella barbastellus"</span> <span class="ot">=</span> <span class="st">"#1f78b4"</span>, </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Myotis alcathoe"</span> <span class="ot">=</span> <span class="st">"#a52a2a"</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Myotis bechsteinii"</span> <span class="ot">=</span> <span class="st">"#7fff00"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Myotis brandtii"</span> <span class="ot">=</span> <span class="st">"#b2df8a"</span>, </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Myotis mystacinus"</span> <span class="ot">=</span> <span class="st">"#6a3d9a"</span>, </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Myotis nattereri"</span> <span class="ot">=</span> <span class="st">"#ff7f00"</span>, </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Myotis daubentonii"</span> <span class="ot">=</span> <span class="st">"#a6cee3"</span>, </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Myotis spp."</span> <span class="ot">=</span> <span class="st">"#bcee68"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Plecotus auritus"</span> <span class="ot">=</span> <span class="st">"#8b0000"</span>, </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Plecotus spp."</span> <span class="ot">=</span> <span class="st">"#8b0000"</span>, </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Plecotus austriacus"</span> <span class="ot">=</span> <span class="st">"#000000"</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Pipistrellus pipistrellus"</span> <span class="ot">=</span> <span class="st">"#ffff99"</span>, </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Pipistrellus nathusii"</span> <span class="ot">=</span> <span class="st">"#8a2be2"</span>, </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Pipistrellus pygmaeus"</span> <span class="ot">=</span> <span class="st">"#b15928"</span>, </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Pipistrellus spp."</span> <span class="ot">=</span> <span class="st">"#fdbf6f"</span>, </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Rhinolophus ferrumequinum"</span> <span class="ot">=</span> <span class="st">"#e31a1c"</span>, </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Rhinolophus hipposideros"</span> <span class="ot">=</span> <span class="st">"#33a02c"</span>, </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Nyctalus noctula"</span> <span class="ot">=</span> <span class="st">"#cab2d6"</span>, </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Nyctalus leisleri"</span> <span class="ot">=</span> <span class="st">"#fb9a99"</span>, </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Nyctalus spp."</span> <span class="ot">=</span> <span class="st">"#eee8cd"</span>, </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Eptesicus serotinus"</span> <span class="ot">=</span> <span class="st">"#008b8b"</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>bat_colour_table <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="fu">names</span>(bat_colours_sci), <span class="fu">unname</span>(bat_colours_sci))</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(bat_colour_table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Scientific Name"</span>, <span class="st">"Colour (Hex)"</span>)</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>bat_colour_table <span class="sc">%&gt;%</span> </span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Table made with library(flextable)</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">flextable</span>(<span class="at">col_keys =</span> <span class="fu">colnames</span>(.)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bold</span>(<span class="at">part =</span> <span class="st">"header"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">autofit</span>(<span class="at">add_w =</span> <span class="fl">0.1</span>, <span class="at">add_h =</span> <span class="fl">0.1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="co">#bg(bg = "black", part = "header") %&gt;% </span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">i =</span> <span class="dv">1</span>, <span class="at">bg =</span> bat_colour_table<span class="sc">$</span><span class="st">`</span><span class="at">Colour (Hex)</span><span class="st">`</span>[<span class="dv">1</span>], <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">i =</span> <span class="dv">2</span>, <span class="at">bg =</span> bat_colour_table<span class="sc">$</span><span class="st">`</span><span class="at">Colour (Hex)</span><span class="st">`</span>[<span class="dv">2</span>], <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">i =</span> <span class="dv">3</span>, <span class="at">bg =</span> bat_colour_table<span class="sc">$</span><span class="st">`</span><span class="at">Colour (Hex)</span><span class="st">`</span>[<span class="dv">3</span>], <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">i =</span> <span class="dv">4</span>, <span class="at">bg =</span> bat_colour_table<span class="sc">$</span><span class="st">`</span><span class="at">Colour (Hex)</span><span class="st">`</span>[<span class="dv">4</span>], <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">i =</span> <span class="dv">5</span>, <span class="at">bg =</span> bat_colour_table<span class="sc">$</span><span class="st">`</span><span class="at">Colour (Hex)</span><span class="st">`</span>[<span class="dv">5</span>], <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">i =</span> <span class="dv">6</span>, <span class="at">bg =</span> bat_colour_table<span class="sc">$</span><span class="st">`</span><span class="at">Colour (Hex)</span><span class="st">`</span>[<span class="dv">6</span>], <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">i =</span> <span class="dv">7</span>, <span class="at">bg =</span> bat_colour_table<span class="sc">$</span><span class="st">`</span><span class="at">Colour (Hex)</span><span class="st">`</span>[<span class="dv">7</span>], <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">i =</span> <span class="dv">8</span>, <span class="at">bg =</span> bat_colour_table<span class="sc">$</span><span class="st">`</span><span class="at">Colour (Hex)</span><span class="st">`</span>[<span class="dv">8</span>], <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">i =</span> <span class="dv">9</span>, <span class="at">bg =</span> bat_colour_table<span class="sc">$</span><span class="st">`</span><span class="at">Colour (Hex)</span><span class="st">`</span>[<span class="dv">9</span>], <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">i =</span> <span class="dv">10</span>, <span class="at">bg =</span> bat_colour_table<span class="sc">$</span><span class="st">`</span><span class="at">Colour (Hex)</span><span class="st">`</span>[<span class="dv">10</span>], <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">i =</span> <span class="dv">11</span>, <span class="at">bg =</span> bat_colour_table<span class="sc">$</span><span class="st">`</span><span class="at">Colour (Hex)</span><span class="st">`</span>[<span class="dv">11</span>], <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    <span class="fu">color</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">i =</span> <span class="dv">11</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">i =</span> <span class="dv">12</span>, <span class="at">bg =</span> bat_colour_table<span class="sc">$</span><span class="st">`</span><span class="at">Colour (Hex)</span><span class="st">`</span>[<span class="dv">12</span>], <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">i =</span> <span class="dv">13</span>, <span class="at">bg =</span> bat_colour_table<span class="sc">$</span><span class="st">`</span><span class="at">Colour (Hex)</span><span class="st">`</span>[<span class="dv">13</span>], <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">i =</span> <span class="dv">14</span>, <span class="at">bg =</span> bat_colour_table<span class="sc">$</span><span class="st">`</span><span class="at">Colour (Hex)</span><span class="st">`</span>[<span class="dv">14</span>], <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">i =</span> <span class="dv">15</span>, <span class="at">bg =</span> bat_colour_table<span class="sc">$</span><span class="st">`</span><span class="at">Colour (Hex)</span><span class="st">`</span>[<span class="dv">15</span>], <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">i =</span> <span class="dv">16</span>, <span class="at">bg =</span> bat_colour_table<span class="sc">$</span><span class="st">`</span><span class="at">Colour (Hex)</span><span class="st">`</span>[<span class="dv">16</span>], <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">i =</span> <span class="dv">17</span>, <span class="at">bg =</span> bat_colour_table<span class="sc">$</span><span class="st">`</span><span class="at">Colour (Hex)</span><span class="st">`</span>[<span class="dv">17</span>], <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">i =</span> <span class="dv">18</span>, <span class="at">bg =</span> bat_colour_table<span class="sc">$</span><span class="st">`</span><span class="at">Colour (Hex)</span><span class="st">`</span>[<span class="dv">18</span>], <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">i =</span> <span class="dv">19</span>, <span class="at">bg =</span> bat_colour_table<span class="sc">$</span><span class="st">`</span><span class="at">Colour (Hex)</span><span class="st">`</span>[<span class="dv">19</span>], <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">i =</span> <span class="dv">20</span>, <span class="at">bg =</span> bat_colour_table<span class="sc">$</span><span class="st">`</span><span class="at">Colour (Hex)</span><span class="st">`</span>[<span class="dv">20</span>], <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">i =</span> <span class="dv">21</span>, <span class="at">bg =</span> bat_colour_table<span class="sc">$</span><span class="st">`</span><span class="at">Colour (Hex)</span><span class="st">`</span>[<span class="dv">21</span>], <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>   <span class="co"># color(color = "white", part = "header") %&gt;% </span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    <span class="fu">align</span>(<span class="at">align =</span> <span class="st">"center"</span>, <span class="at">part =</span> <span class="st">"header"</span> ) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>    <span class="fu">align</span>(<span class="at">j =</span> <span class="dv">2</span>, <span class="at">align =</span> <span class="st">"right"</span>, <span class="at">part =</span> <span class="st">"body"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    <span class="fu">italic</span>(<span class="at">j =</span> <span class="dv">1</span>, <span class="at">italic =</span> <span class="cn">TRUE</span>, <span class="at">part =</span> <span class="st">"body"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="tbl-batcolours" class="anchored">
+
+<div class="tabwid"><style>.cl-4681d3b6{}.cl-46739f12{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-46739f26{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-46739f30{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-46739f31{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-4673c3d4{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4673c3de{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4673c3df{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-46743292{width:86.5pt;background-color:rgba(31, 120, 180, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4674329c{width:158.7pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4674329d{width:158.7pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432a6{width:86.5pt;background-color:rgba(139, 0, 0, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432a7{width:86.5pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432a8{width:86.5pt;background-color:rgba(255, 255, 153, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432b0{width:86.5pt;background-color:rgba(138, 43, 226, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432b1{width:86.5pt;background-color:rgba(177, 89, 40, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432ba{width:158.7pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432bb{width:86.5pt;background-color:rgba(253, 191, 111, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432bc{width:86.5pt;background-color:rgba(227, 26, 28, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432bd{width:158.7pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432c4{width:86.5pt;background-color:rgba(51, 160, 44, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432c5{width:86.5pt;background-color:rgba(202, 178, 214, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432c6{width:86.5pt;background-color:rgba(251, 154, 153, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432ce{width:86.5pt;background-color:rgba(165, 42, 42, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432cf{width:86.5pt;background-color:rgba(238, 232, 205, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432d0{width:86.5pt;background-color:rgba(0, 139, 139, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432d8{width:158.7pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432d9{width:86.5pt;background-color:rgba(127, 255, 0, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432e2{width:86.5pt;background-color:rgba(178, 223, 138, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432e3{width:86.5pt;background-color:rgba(106, 61, 154, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432e4{width:86.5pt;background-color:rgba(255, 127, 0, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432e5{width:86.5pt;background-color:rgba(166, 206, 227, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432ec{width:86.5pt;background-color:rgba(188, 238, 104, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432ed{width:86.5pt;background-color:rgba(139, 0, 0, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432ee{width:86.5pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-467432f6{width:158.7pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class="cl-4681d3b6"><caption>Table 1:  Bat Name and Colour </caption>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-467432f6"><p class="cl-4673c3d4"><span class="cl-46739f12">Scientific Name</span></p></td><td class="cl-467432ee"><p class="cl-4673c3d4"><span class="cl-46739f12">Colour (Hex)</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-4674329c"><p class="cl-4673c3de"><span class="cl-46739f26">Barbastella barbastellus</span></p></td><td class="cl-46743292"><p class="cl-4673c3df"><span class="cl-46739f30">#1f78b4</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-467432ba"><p class="cl-4673c3de"><span class="cl-46739f26">Myotis alcathoe</span></p></td><td class="cl-467432ce"><p class="cl-4673c3df"><span class="cl-46739f30">#a52a2a</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-467432ba"><p class="cl-4673c3de"><span class="cl-46739f26">Myotis bechsteinii</span></p></td><td class="cl-467432d9"><p class="cl-4673c3df"><span class="cl-46739f30">#7fff00</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-467432ba"><p class="cl-4673c3de"><span class="cl-46739f26">Myotis brandtii</span></p></td><td class="cl-467432e2"><p class="cl-4673c3df"><span class="cl-46739f30">#b2df8a</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-467432ba"><p class="cl-4673c3de"><span class="cl-46739f26">Myotis mystacinus</span></p></td><td class="cl-467432e3"><p class="cl-4673c3df"><span class="cl-46739f30">#6a3d9a</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-467432ba"><p class="cl-4673c3de"><span class="cl-46739f26">Myotis nattereri</span></p></td><td class="cl-467432e4"><p class="cl-4673c3df"><span class="cl-46739f30">#ff7f00</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-467432ba"><p class="cl-4673c3de"><span class="cl-46739f26">Myotis daubentonii</span></p></td><td class="cl-467432e5"><p class="cl-4673c3df"><span class="cl-46739f30">#a6cee3</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-467432ba"><p class="cl-4673c3de"><span class="cl-46739f26">Myotis spp.</span></p></td><td class="cl-467432ec"><p class="cl-4673c3df"><span class="cl-46739f30">#bcee68</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4674329c"><p class="cl-4673c3de"><span class="cl-46739f26">Plecotus auritus</span></p></td><td class="cl-467432ed"><p class="cl-4673c3df"><span class="cl-46739f30">#8b0000</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4674329d"><p class="cl-4673c3de"><span class="cl-46739f26">Plecotus spp.</span></p></td><td class="cl-467432a6"><p class="cl-4673c3df"><span class="cl-46739f30">#8b0000</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4674329c"><p class="cl-4673c3de"><span class="cl-46739f26">Plecotus austriacus</span></p></td><td class="cl-467432a7"><p class="cl-4673c3df"><span class="cl-46739f31">#000000</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4674329d"><p class="cl-4673c3de"><span class="cl-46739f26">Pipistrellus pipistrellus</span></p></td><td class="cl-467432a8"><p class="cl-4673c3df"><span class="cl-46739f30">#ffff99</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4674329d"><p class="cl-4673c3de"><span class="cl-46739f26">Pipistrellus nathusii</span></p></td><td class="cl-467432b0"><p class="cl-4673c3df"><span class="cl-46739f30">#8a2be2</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-467432ba"><p class="cl-4673c3de"><span class="cl-46739f26">Pipistrellus pygmaeus</span></p></td><td class="cl-467432b1"><p class="cl-4673c3df"><span class="cl-46739f30">#b15928</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4674329d"><p class="cl-4673c3de"><span class="cl-46739f26">Pipistrellus spp.</span></p></td><td class="cl-467432bb"><p class="cl-4673c3df"><span class="cl-46739f30">#fdbf6f</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-467432bd"><p class="cl-4673c3de"><span class="cl-46739f26">Rhinolophus ferrumequinum</span></p></td><td class="cl-467432bc"><p class="cl-4673c3df"><span class="cl-46739f30">#e31a1c</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4674329d"><p class="cl-4673c3de"><span class="cl-46739f26">Rhinolophus hipposideros</span></p></td><td class="cl-467432c4"><p class="cl-4673c3df"><span class="cl-46739f30">#33a02c</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-467432ba"><p class="cl-4673c3de"><span class="cl-46739f26">Nyctalus noctula</span></p></td><td class="cl-467432c5"><p class="cl-4673c3df"><span class="cl-46739f30">#cab2d6</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-467432ba"><p class="cl-4673c3de"><span class="cl-46739f26">Nyctalus leisleri</span></p></td><td class="cl-467432c6"><p class="cl-4673c3df"><span class="cl-46739f30">#fb9a99</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-467432ba"><p class="cl-4673c3de"><span class="cl-46739f26">Nyctalus spp.</span></p></td><td class="cl-467432cf"><p class="cl-4673c3df"><span class="cl-46739f30">#eee8cd</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-467432d8"><p class="cl-4673c3de"><span class="cl-46739f26">Eptesicus serotinus</span></p></td><td class="cl-467432d0"><p class="cl-4673c3df"><span class="cl-46739f30">#008b8b</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+</section>
+<section id="time-bats-were-active" class="level2">
+<h2 class="anchored" data-anchor-id="time-bats-were-active">Time Bats Were Active</h2>
+<p><a href="#fig-timebat">Figure&nbsp;1</a> illustrates bat activity through one night near an Oak tree in the River Tavy valley, Devon. Rather than depicting a <em>bat pass</em> the time the bat was present is shown. The y-axis is expanded to spread the bat activity making the graph more readable.</p>
+<p>The data used <code>TavyOak</code> is from the <code>iBats</code> package. The bat species colour for the graph were made using the <code>iBats::bat_colours()</code> function; this provided the colour values used by <code>ggplot's</code> manual scale function <code>scale_fill_manual()</code>.</p>
+<div class="cell">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>bat_colours_sci <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Barbastella barbastellus"</span> <span class="ot">=</span> <span class="st">"#1f78b4"</span>, </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Myotis alcathoe"</span> <span class="ot">=</span> <span class="st">"#a52a2a"</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Myotis bechsteinii"</span> <span class="ot">=</span> <span class="st">"#7fff00"</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Myotis brandtii"</span> <span class="ot">=</span> <span class="st">"#b2df8a"</span>, </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Myotis mystacinus"</span> <span class="ot">=</span> <span class="st">"#6a3d9a"</span>, </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Myotis nattereri"</span> <span class="ot">=</span> <span class="st">"#ff7f00"</span>, </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                     <span class="st">"Myotis daubentonii"</span> <span class="ot">=</span> <span class="st">"#a6cee3"</span>, </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Myotis spp."</span> <span class="ot">=</span> <span class="st">"#bcee68"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Plecotus auritus"</span> <span class="ot">=</span> <span class="st">"#8b0000"</span>, </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Plecotus spp."</span> <span class="ot">=</span> <span class="st">"#8b0000"</span>, </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Plecotus austriacus"</span> <span class="ot">=</span> <span class="st">"#000000"</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Pipistrellus pipistrellus"</span> <span class="ot">=</span> <span class="st">"#ffff99"</span>, </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Pipistrellus nathusii"</span> <span class="ot">=</span> <span class="st">"#8a2be2"</span>, </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Pipistrellus pygmaeus"</span> <span class="ot">=</span> <span class="st">"#b15928"</span>, </span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Pipistrellus spp."</span> <span class="ot">=</span> <span class="st">"#fdbf6f"</span>, </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Rhinolophus ferrumequinum"</span> <span class="ot">=</span> <span class="st">"#e31a1c"</span>, </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Rhinolophus hipposideros"</span> <span class="ot">=</span> <span class="st">"#33a02c"</span>, </span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Nyctalus noctula"</span> <span class="ot">=</span> <span class="st">"#cab2d6"</span>, </span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Nyctalus leisleri"</span> <span class="ot">=</span> <span class="st">"#fb9a99"</span>, </span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Nyctalus spp."</span> <span class="ot">=</span> <span class="st">"#eee8cd"</span>, </span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>                      <span class="st">"Eptesicus serotinus"</span> <span class="ot">=</span> <span class="st">"#008b8b"</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a><span class="co"># graph anotation</span></span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>graph_sunrise <span class="ot">&lt;-</span> TavyOak<span class="sc">$</span>sunrise[<span class="dv">1</span>]</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>graph_sunset <span class="ot">&lt;-</span>  TavyOak<span class="sc">$</span>sunset[<span class="dv">1</span>]</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co">#graph time limits x-axis</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>graph_limit1 <span class="ot">&lt;-</span> TavyOak<span class="sc">$</span>sunset[<span class="dv">1</span>] <span class="sc">-</span> lubridate<span class="sc">::</span><span class="fu">hours</span>(<span class="dv">1</span>)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>graph_limit2 <span class="ot">&lt;-</span> TavyOak<span class="sc">$</span>sunrise[<span class="dv">1</span>] <span class="sc">+</span> lubridate<span class="sc">::</span><span class="fu">hours</span>(<span class="dv">1</span>)</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="co"># colour values used by scale_fill_manual()</span></span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>graph_bat_colours <span class="ot">&lt;-</span> <span class="fu">bat_colours</span>(TavyOak<span class="sc">$</span>Species, <span class="at">colour_vector =</span> bat_colours_sci)</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(TavyOak, <span class="fu">aes</span>(<span class="at">y =</span> <span class="dv">1</span>, <span class="at">x =</span> DateTime, <span class="at">fill =</span> Species, <span class="at">size =</span> bat_time)) <span class="sc">+</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_jitter</span>(<span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> graph_sunset, </span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>               <span class="at">colour =</span> <span class="st">"brown1"</span>, </span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>               <span class="at">linetype =</span> <span class="st">"dashed"</span>, </span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>               <span class="at">size =</span> <span class="dv">1</span>,</span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>               <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> graph_sunrise, </span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>               <span class="at">colour =</span> <span class="st">"mediumblue"</span>, </span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>               <span class="at">linetype =</span> <span class="st">"dashed"</span>, </span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>               <span class="at">size =</span> <span class="dv">1</span>,</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>               <span class="at">alpha =</span> <span class="fl">0.8</span>) <span class="sc">+</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>    <span class="fu">annotate</span>(<span class="st">"text"</span>, </span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>           <span class="at">x =</span> graph_sunset <span class="sc">-</span> lubridate<span class="sc">::</span><span class="fu">minutes</span>(<span class="dv">20</span>), </span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> <span class="dv">1</span>, </span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"Sunset"</span>, </span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">"brown1"</span>, </span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>           <span class="at">angle =</span> <span class="dv">270</span>) <span class="sc">+</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>    <span class="fu">annotate</span>(<span class="st">"text"</span>, </span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>           <span class="at">x =</span> graph_sunrise <span class="sc">+</span> lubridate<span class="sc">::</span><span class="fu">minutes</span>(<span class="dv">20</span>), </span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>           <span class="at">y =</span> <span class="dv">1</span>, </span>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="st">"Sunrise"</span>, </span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">"mediumblue"</span>, </span>
+<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a>           <span class="at">angle =</span> <span class="dv">270</span>) <span class="sc">+</span></span>
+<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> graph_bat_colours) <span class="sc">+</span></span>
+<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_size_area</span>(<span class="at">max_size =</span> <span class="dv">12</span>) <span class="sc">+</span></span>
+<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_datetime</span>(<span class="at">date_labels =</span> <span class="st">"%H:%M hrs"</span>, </span>
+<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a>                     <span class="at">date_breaks =</span> <span class="st">"1 hour"</span>, </span>
+<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a>                     <span class="at">limits =</span> <span class="fu">c</span>(graph_limit1, graph_limit2)) <span class="sc">+</span></span>
+<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Species"</span>,</span>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>         <span class="at">size =</span> <span class="st">"Time Bat Was Present</span><span class="sc">\n</span><span class="st">(seconds)"</span>,</span>
+<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a>         <span class="at">y =</span> <span class="st">"For clarity activity is spread across the verstical scale"</span>) <span class="sc">+</span></span>
+<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"right"</span>, </span>
+<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.major.x =</span> <span class="fu">element_line</span>(), </span>
+<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.major.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>, <span class="at">angle =</span> <span class="dv">270</span>), </span>
+<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.text.y =</span> <span class="fu">element_blank</span>(), </span>
+<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.ticks.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>          <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">12</span>, <span class="at">face=</span><span class="st">"bold"</span>, <span class="at">colour =</span> <span class="st">"white"</span>), </span>
+<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.text=</span><span class="fu">element_text</span>(<span class="at">face=</span><span class="st">"italic"</span>),</span>
+<span id="cb2-79"><a href="#cb2-79" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(), </span>
+<span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-timebat" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisation_files/figure-html/fig-timebat-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1: Time Bats Were Active Through The Night</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="emergence-time-of-bats" class="level2">
+<h2 class="anchored" data-anchor-id="emergence-time-of-bats">Emergence Time of Bats</h2>
+<p><a href="#fig-andrews">Figure&nbsp;2</a> illustrates emergence times for UK bats based on the work of Andrews &amp; Pearson (2022) [^1]. [^1]: the reference is available from: https://drive.google.com/file/d/1DeGHxyr9-p5XH6R6CRimsmquVD188WY8/view</p>
+<div class="cell">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># colour values used by scale_fill_manual()</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>graph_bat_colours <span class="ot">&lt;-</span> <span class="fu">bat_colours</span>(Andrews<span class="sc">$</span>Species, <span class="at">colour_vector =</span> bat_colours_sci)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(Andrews) <span class="sc">+</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_segment</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Species, <span class="sc">-</span>meanExit), <span class="at">xend=</span>Species, <span class="at">y=</span>firstExit95, <span class="at">yend=</span>lastExit95), <span class="at">color=</span><span class="st">"grey"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>( <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">reorder</span>(Species, <span class="sc">-</span>meanExit), <span class="at">y=</span>meanExit, <span class="at">fill =</span> Species), <span class="at">color=</span><span class="st">"black"</span>, <span class="at">size=</span><span class="dv">4</span>, <span class="at">shape =</span> <span class="dv">21</span>) <span class="sc">+</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">20</span>, <span class="sc">-</span><span class="dv">10</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">100</span>)) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">colour =</span> <span class="st">"purple"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> graph_bat_colours) <span class="sc">+</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">"Minutes After Sunset"</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"adapted from (Andrews and Pearson, 2022)</span><span class="sc">\n</span><span class="st">grey bar is indicative of the emergence time range</span><span class="sc">\n</span><span class="st">yellow triangle is the mean emergence time"</span>) <span class="sc">+</span>  </span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span> (<span class="at">legend.position =</span> <span class="st">"none"</span>, </span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>         <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">'italic'</span>),</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>         <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>         <span class="at">panel.grid =</span> <span class="fu">element_blank</span>()) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-andrews" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualisation_files/figure-html/fig-andrews-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2: Roost Emergence Times After Sunset</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
