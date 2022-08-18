@@ -193,8 +193,10 @@ ggplot(TavyOak, aes(y = 1, x = DateTime, fill = Species, size = bat_time)) +
 
 ## Emergence Time of Bats  
 
-@fig-andrews illustrates emergence times for UK bats based on the work of Andrews & Pearson (2022) [^1].
-[^1]: the reference is available from: https://drive.google.com/file/d/1DeGHxyr9-p5XH6R6CRimsmquVD188WY8/view
+@fig-andrews illustrates emergence times for UK bats based on the work of Andrews & Pearson (2022) [^1].  
+
+[^1]: the reference is available from: <https://drive.google.com/file/d/1DeGHxyr9-p5XH6R6CRimsmquVD188WY8/view>  
+
 
 ```{r}
 #| label: fig-andrews
