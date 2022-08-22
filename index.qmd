@@ -41,6 +41,14 @@ knitr::write_bib(c('base',
 
 #Then add `bibliography: packages.bib` to the YAML frontmatter. Now you can cite packages. For example: the R language [@R-base] is awesome. We used the **knitr** package [@R-knitr; @knitr2015] in our analysis. We also build a Shiny app [@R-shiny].
 
+
+# @Manual{,
+#   title = {tidyr: Tidy Messy Data},
+#   author = {Hadley Wickham and Maximilian Girlich},
+#   year = {2022},
+#   note = {https://tidyr.tidyverse.org, https://github.com/tidyverse/tidyr},
+# }
+
 ```
 
 

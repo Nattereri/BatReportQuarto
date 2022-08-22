@@ -14,6 +14,31 @@ library(tidyverse)
 library(iBats)
 library(gt)
 library(flextable)
+library(broman)
+library(ggrepel)
+library(treemapify)
+
+bat_colours_sci <- c("Barbastella barbastellus" = "#1f78b4", 
+                     "Myotis alcathoe" = "#a52a2a",
+                     "Myotis bechsteinii" = "#7fff00",
+                     "Myotis brandtii" = "#b2df8a", 
+                     "Myotis mystacinus" = "#6a3d9a", 
+                     "Myotis nattereri" = "#ff7f00", 
+                     "Myotis daubentonii" = "#a6cee3", 
+                      "Myotis spp." = "#bcee68",
+                      "Plecotus auritus" = "#8b0000", 
+                      "Plecotus spp." = "#8b0000", 
+                      "Plecotus austriacus" = "#000000",
+                      "Pipistrellus pipistrellus" = "#ffff99", 
+                      "Pipistrellus nathusii" = "#8a2be2", 
+                      "Pipistrellus pygmaeus" = "#b15928", 
+                      "Pipistrellus spp." = "#fdbf6f", 
+                      "Rhinolophus ferrumequinum" = "#e31a1c", 
+                      "Rhinolophus hipposideros" = "#33a02c", 
+                      "Nyctalus noctula" = "#cab2d6", 
+                      "Nyctalus leisleri" = "#fb9a99", 
+                      "Nyctalus spp." = "#eee8cd", 
+                      "Eptesicus serotinus" = "#008b8b")
 
 
 ```
@@ -204,7 +229,7 @@ ggplot(TavyOak, aes(y = 1, x = DateTime, fill = Species, size = bat_time)) +
 #| warning: false
 
 # colour values used by scale_fill_manual()
-graph_bat_colours <- bat_colours(Andrews$Species, colour_vector = bat_colours_sci)
+graph_bat_colours <- iBats::bat_colours(Andrews$Species, colour_vector = bat_colours_sci)
 
 ggplot(Andrews) +
   geom_segment(aes(x=reorder(Species, -meanExit), xend=Species, y=firstExit95, yend=lastExit95), color="grey", size = 2) +
@@ -214,7 +239,7 @@ ggplot(Andrews) +
   scale_fill_manual(values = graph_bat_colours) +
   coord_flip() +
   labs(y = "Minutes After Sunset",
-       caption = "adapted from (Andrews and Pearson, 2022)\ngrey bar is indicative of the emergence time range\nyellow triangle is the mean emergence time") +  
+       caption = "adapted from (Andrews and Pearson, 2022)\ngrey bar is indicative of the emergence time range\ncoloured point is the mean emergence time") +  
   theme_bw() +
   theme (legend.position = "none", 
          axis.text.y = element_text(face = 'italic'),
@@ -225,3 +250,102 @@ ggplot(Andrews) +
 
 
 ```
+
+## Graphing a Count of Bats
+
+One of the problems with presenting a count of bat passes observed in the UK is the relative abundance of the Common Pipistrelle (_Pipistrellus pipistrellus_). @fig-dotgraph tries to resolve this issue by using a log scale, not a friendly scale to the lay reader but some mitigation is achieved by placing the actual count of bat passes on the graph. @fig-dotgraph shows the count of bat species in the 
+
+
+### Dot Graph
+
+@fig-dotgraph tries to resolve this issue by using a log scale, not a friendly scale for the lay reader although mitigated by placing the actual count of bat passes on the graph. @fig-dotgraph shows the count of bat species in the `statics` data.
+
+```{r}
+#| label: fig-dotgraph
+#| fig-cap: "Count of All Species Observations"
+
+
+graph_data <- statics %>% 
+  group_by(Species) %>% 
+  count() %>% 
+  #Add a graph species label; commas added with library(broman)
+  mutate(total = add_commas(n),
+         label = stringr::str_c(Species, ": ", total))
+
+
+# colour values used by scale_fill_manual()
+graph_bat_colours <- iBats::bat_colours(graph_data$Species, colour_vector = bat_colours_sci)
+
+ggplot(graph_data, aes(y = reorder(Species, n), x = n, fill = Species)) +
+  geom_point(colour = "black", size = 5) +
+  geom_label_repel(data = graph_data, aes(label = label),
+                   nudge_y = -0.25,
+                   nudge_x = ifelse(graph_data$n < 100, 0.33, -0.33),
+                   alpha = 0.7) +
+  scale_fill_manual(values = graph_bat_colours) +
+  scale_x_log10(sec.axis = dup_axis()) +
+  annotation_logticks(sides = "tb") +
+  labs(x = "Bat Observations (Number of Passes)",
+       caption = "Note: Log scale used") +
+  theme_bw() + 
+  theme(legend.position = "none", 
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        axis.text.x = element_text(size=12, face="bold"), 
+        axis.text.y = element_blank(), 
+        axis.ticks.y = element_blank(),
+        strip.text = element_text(size=12, face="bold", colour = "white"), 
+        axis.title.x = element_text(size=12, face="bold"), 
+        axis.title.y = element_blank())
+  
+  
+  
+
+```
+
+
+### Tree Map  
+
+
+```{r}
+#| label: fig-treemap1
+#| fig-cap: "Species and Location with the Area as the Number of Passes"
+
+
+
+graph_data <- statics %>%
+  group_by(Species, Description) %>% 
+  tally() 
+
+# colour values used by scale_fill_manual()
+graph_bat_colours <- iBats::bat_colours(graph_data$Species, colour_vector = bat_colours_sci)
+
+ggplot(graph_data, aes(area = n, fill = Species, label = Species, subgroup = Description)) +
+  scale_fill_manual(values = graph_bat_colours) +
+  geom_treemap(colour = "white", size = 2, alpha = 0.9) +
+  geom_treemap_subgroup_border(colour = "black", size = 5, alpha = 0.9) +
+  geom_treemap_subgroup_text(place = "centre", grow = T, alpha = 0.9, colour =
+                             "grey20",  min.size = 0) +
+  geom_treemap_text(colour = "grey90", place = "topleft", fontface = "italic", 
+                    reflow = T,  min.size = 0, alpha = 0.9) + 
+  theme_bw() + 
+  theme(legend.position = "none") # No legend
+  
+
+```
+
+
+## Identifying Roosts  
+
+### Potential Roost and Observed Emergence Time  
+
+```{r}
+
+# Add data and time information to the statics data using theiBats::date_time_info
+statics_plus <- iBats::date_time_info(statics)
+
+# Add sun and night time metrics to the statics data using the iBats::sun_night_metrics() function.
+statics_plus <- iBats::sun_night_metrics(statics_plus)
+
+```
+
