@@ -263,6 +263,7 @@ One of the problems with presenting a count of bat passes observed in the UK is 
 ```{r}
 #| label: fig-dotgraph
 #| fig-cap: "Count of All Species Observations"
+#| fig.height: 7
 
 
 graph_data <- statics %>% 
@@ -310,7 +311,8 @@ ggplot(graph_data, aes(y = reorder(Species, n), x = n, fill = Species)) +
 ```{r}
 #| label: fig-treemap1
 #| fig-cap: "Species and Location with the Area as the Number of Passes"
-
+#| warning: false
+#| fig.height: 7
 
 
 graph_data <- statics %>%
@@ -337,15 +339,61 @@ ggplot(graph_data, aes(area = n, fill = Species, label = Species, subgroup = Des
 
 ## Identifying Roosts  
 
-### Potential Roost and Observed Emergence Time  
+### Observed Emergence Time and Roost Potential 
 
 ```{r}
+#| label: fig-emergence1
+#| fig-cap: "Observed Emergence Time and Roost Potential"
+#| warning: false
+#| fig.height: 8
 
 # Add data and time information to the statics data using theiBats::date_time_info
 statics_plus <- iBats::date_time_info(statics)
 
 # Add sun and night time metrics to the statics data using the iBats::sun_night_metrics() function.
 statics_plus <- iBats::sun_night_metrics(statics_plus)
+
+# Add roost emergence times adapted from (Andrews and Pearson, 2022)
+statics_plus <- dplyr::left_join(statics_plus, Andrews, by = "Species") 
+
+# Graph text    
+yLab <- "Time after sunset (mins)"
+Caption <- "First 90 minutes after sunset. \nWhite bars are emergence times adapted from (Andrews and Pearson, 2022)"
+
+# Just choose Observations 90 mins or less after sunset
+graph_data <- statics_plus %>%
+  filter(post_set_min <= 90)
+
+graph_bat_colours <- iBats::bat_colours(graph_data$Species, colour_vector = bat_colours_sci)
+
+ggplot(graph_data, aes(x=Species, y=post_set_min, fill=Species)) +
+    geom_linerange(aes(x=Species, ymin=firstExit95, ymax=lastExit95), 
+                   size = 3, colour="floralwhite") +
+    geom_jitter(size=3, alpha=0.8, shape=21) +
+    facet_grid(Description~., scales = "free_y") +
+    scale_fill_manual(values = graph_bat_colours) +
+    labs(y = yLab,
+           caption = Caption) +
+      scale_y_continuous(breaks=c(0, 15, 30, 45, 60, 75, 90), limits = c(0, 90)) +
+      coord_flip() +
+      theme_bw() +
+    theme (legend.position = "none",
+   plot.caption = element_text(colour = "grey30", face = "bold"), #white
+   axis.title.y = element_blank(),
+   axis.title.x = element_text(colour = "grey30", size = 12),
+   axis.text.x = element_text(hjust = 1, colour = "grey30", face = "bold"),
+   axis.text.y = element_text(colour = "grey30", face = "bold.italic"),
+   strip.text = element_text(size=12, face="bold", colour = "white"), # Bold facet names
+   panel.background = element_rect(fill = "midnightblue"),
+   panel.grid.major.x = element_line(colour = "transparent", linetype = "dotted"), #grey70
+   panel.grid.minor.x = element_blank(),
+   panel.grid.major.y = element_blank(),
+   panel.grid.minor.y = element_blank(),
+   plot.background = element_rect(fill = "transparent"), #grey70
+   axis.ticks = element_blank(),
+  strip.background = element_rect(fill = "black"))
+
+
 
 ```
 
