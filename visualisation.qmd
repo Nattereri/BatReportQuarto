@@ -17,6 +17,7 @@ library(flextable)
 library(broman)
 library(ggrepel)
 library(treemapify)
+library(scales)
 
 bat_colours_sci <- c("Barbastella barbastellus" = "#1f78b4", 
                      "Myotis alcathoe" = "#a52a2a",
@@ -130,35 +131,37 @@ The data used `TavyOak` is from the `iBats` package. The bat species colour for 
 #| label: fig-timebat
 #| fig-cap: "Time Bats Were Active Through The Night"
 
-bat_colours_sci <- c("Barbastella barbastellus" = "#1f78b4", 
-                     "Myotis alcathoe" = "#a52a2a",
-                     "Myotis bechsteinii" = "#7fff00",
-                     "Myotis brandtii" = "#b2df8a", 
-                     "Myotis mystacinus" = "#6a3d9a", 
-                     "Myotis nattereri" = "#ff7f00", 
-                     "Myotis daubentonii" = "#a6cee3", 
-                      "Myotis spp." = "#bcee68",
-                      "Plecotus auritus" = "#8b0000", 
-                      "Plecotus spp." = "#8b0000", 
-                      "Plecotus austriacus" = "#000000",
-                      "Pipistrellus pipistrellus" = "#ffff99", 
-                      "Pipistrellus nathusii" = "#8a2be2", 
-                      "Pipistrellus pygmaeus" = "#b15928", 
-                      "Pipistrellus spp." = "#fdbf6f", 
-                      "Rhinolophus ferrumequinum" = "#e31a1c", 
-                      "Rhinolophus hipposideros" = "#33a02c", 
-                      "Nyctalus noctula" = "#cab2d6", 
-                      "Nyctalus leisleri" = "#fb9a99", 
-                      "Nyctalus spp." = "#eee8cd", 
-                      "Eptesicus serotinus" = "#008b8b")
+bat_colours_sci <- c(
+  "Barbastella barbastellus" = "#1f78b4",
+  "Myotis alcathoe" = "#a52a2a",
+  "Myotis bechsteinii" = "#7fff00",
+  "Myotis brandtii" = "#b2df8a",
+  "Myotis mystacinus" = "#6a3d9a",
+  "Myotis nattereri" = "#ff7f00",
+  "Myotis daubentonii" = "#a6cee3",
+  "Myotis spp." = "#bcee68",
+  "Plecotus auritus" = "#8b0000",
+  "Plecotus spp." = "#8b0000",
+  "Plecotus austriacus" = "#000000",
+  "Pipistrellus pipistrellus" = "#ffff99",
+  "Pipistrellus nathusii" = "#8a2be2",
+  "Pipistrellus pygmaeus" = "#b15928",
+  "Pipistrellus spp." = "#fdbf6f",
+  "Rhinolophus ferrumequinum" = "#e31a1c",
+  "Rhinolophus hipposideros" = "#33a02c",
+  "Nyctalus noctula" = "#cab2d6",
+  "Nyctalus leisleri" = "#fb9a99",
+  "Nyctalus spp." = "#eee8cd",
+  "Eptesicus serotinus" = "#008b8b"
+)
 
 
 
 # graph anotation
 graph_sunrise <- TavyOak$sunrise[1]
-graph_sunset <-  TavyOak$sunset[1]
+graph_sunset <- TavyOak$sunset[1]
 
-#graph time limits x-axis
+# graph time limits x-axis
 graph_limit1 <- TavyOak$sunset[1] - lubridate::hours(1)
 graph_limit2 <- TavyOak$sunrise[1] + lubridate::hours(1)
 
@@ -167,49 +170,61 @@ graph_bat_colours <- bat_colours(TavyOak$Species, colour_vector = bat_colours_sc
 
 
 ggplot(TavyOak, aes(y = 1, x = DateTime, fill = Species, size = bat_time)) +
-    geom_jitter(shape = 21, alpha = 0.7) +
-    geom_vline(xintercept = graph_sunset, 
-               colour = "brown1", 
-               linetype = "dashed", 
-               size = 1,
-               alpha = 0.8) +
-    geom_vline(xintercept = graph_sunrise, 
-               colour = "mediumblue", 
-               linetype = "dashed", 
-               size = 1,
-               alpha = 0.8) +
-    annotate("text", 
-           x = graph_sunset - lubridate::minutes(20), 
-           y = 1, 
-           label = "Sunset", 
-           color = "brown1", 
-           angle = 270) +
-    annotate("text", 
-           x = graph_sunrise + lubridate::minutes(20), 
-           y = 1, 
-           label = "Sunrise", 
-           color = "mediumblue", 
-           angle = 270) +
-    scale_fill_manual(values = graph_bat_colours) +
-    scale_size_area(max_size = 12) +
-    scale_x_datetime(date_labels = "%H:%M hrs", 
-                     date_breaks = "1 hour", 
-                     limits = c(graph_limit1, graph_limit2)) +
-    labs(fill = "Species",
-         size = "Time Bat Was Present\n(seconds)",
-         y = "For clarity activity is spread across the verstical scale") +
-    theme_bw() + 
-    theme(legend.position = "right", 
-          panel.grid.major.x = element_line(), 
-          panel.grid.major.y = element_blank(),
-          panel.grid.minor = element_blank(),
-          axis.text.x = element_text(size=10, angle = 270), 
-          axis.text.y = element_blank(), 
-          axis.ticks.y = element_blank(),
-          strip.text = element_text(size=12, face="bold", colour = "white"), 
-          legend.text=element_text(face="italic"),
-          axis.title.x = element_blank(), 
-          axis.title.y = element_text(size=10))
+  geom_jitter(shape = 21, alpha = 0.7) +
+  geom_vline(
+    xintercept = graph_sunset,
+    colour = "brown1",
+    linetype = "dashed",
+    size = 1,
+    alpha = 0.8
+  ) +
+  geom_vline(
+    xintercept = graph_sunrise,
+    colour = "mediumblue",
+    linetype = "dashed",
+    size = 1,
+    alpha = 0.8
+  ) +
+  annotate("text",
+    x = graph_sunset - lubridate::minutes(20),
+    y = 1,
+    label = "Sunset",
+    color = "brown1",
+    angle = 270
+  ) +
+  annotate("text",
+    x = graph_sunrise + lubridate::minutes(20),
+    y = 1,
+    label = "Sunrise",
+    color = "mediumblue",
+    angle = 270
+  ) +
+  scale_fill_manual(values = graph_bat_colours) +
+  scale_size_area(max_size = 12) +
+  scale_x_datetime(
+    date_labels = "%H:%M hrs",
+    date_breaks = "1 hour",
+    limits = c(graph_limit1, graph_limit2)
+  ) +
+  labs(
+    fill = "Species",
+    size = "Time Bat Was Present\n(seconds)",
+    y = "For clarity activity is spread across the verstical scale"
+  ) +
+  theme_bw() +
+  theme(
+    legend.position = "right",
+    panel.grid.major.x = element_line(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size = 10, angle = 270),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    strip.text = element_text(size = 12, face = "bold", colour = "white"),
+    legend.text = element_text(face = "italic"),
+    axis.title.x = element_blank(),
+    axis.title.y = element_text(size = 10)
+  )
 
 
   
@@ -232,19 +247,23 @@ ggplot(TavyOak, aes(y = 1, x = DateTime, fill = Species, size = bat_time)) +
 graph_bat_colours <- iBats::bat_colours(Andrews$Species, colour_vector = bat_colours_sci)
 
 ggplot(Andrews) +
-  geom_segment(aes(x=reorder(Species, -meanExit), xend=Species, y=firstExit95, yend=lastExit95), color="grey", size = 2) +
-  geom_point( aes(x=reorder(Species, -meanExit), y=meanExit, fill = Species), color="black", size=4, shape = 21) +
-  scale_y_continuous(breaks=c(-20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
+  geom_segment(aes(x = reorder(Species, -meanExit), xend = Species, y = firstExit95, yend = lastExit95), color = "grey", size = 2) +
+  geom_point(aes(x = reorder(Species, -meanExit), y = meanExit, fill = Species), color = "black", size = 4, shape = 21) +
+  scale_y_continuous(breaks = c(-20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
   geom_hline(yintercept = 0, linetype = "dashed", colour = "purple", size = 1) +
   scale_fill_manual(values = graph_bat_colours) +
   coord_flip() +
-  labs(y = "Minutes After Sunset",
-       caption = "adapted from (Andrews and Pearson, 2022)\ngrey bar is indicative of the emergence time range\ncoloured point is the mean emergence time") +  
+  labs(
+    y = "Minutes After Sunset",
+    caption = "adapted from (Andrews and Pearson, 2022)\ngrey bar is indicative of the emergence time range\ncoloured point is the mean emergence time"
+  ) +
   theme_bw() +
-  theme (legend.position = "none", 
-         axis.text.y = element_text(face = 'italic'),
-         axis.title.y = element_blank(),
-         panel.grid = element_blank()) 
+  theme(
+    legend.position = "none",
+    axis.text.y = element_text(face = "italic"),
+    axis.title.y = element_blank(),
+    panel.grid = element_blank()
+  )
 
 
 
@@ -266,12 +285,14 @@ One of the problems with presenting a count of bat passes observed in the UK is 
 #| fig.height: 7
 
 
-graph_data <- statics %>% 
-  group_by(Species) %>% 
-  count() %>% 
-  #Add a graph species label; commas added with library(broman)
-  mutate(total = add_commas(n),
-         label = stringr::str_c(Species, ": ", total))
+graph_data <- statics %>%
+  group_by(Species) %>%
+  count() %>%
+  # Add a graph species label; commas added with library(broman)
+  mutate(
+    total = add_commas(n),
+    label = stringr::str_c(Species, ": ", total)
+  )
 
 
 # colour values used by scale_fill_manual()
@@ -279,25 +300,31 @@ graph_bat_colours <- iBats::bat_colours(graph_data$Species, colour_vector = bat_
 
 ggplot(graph_data, aes(y = reorder(Species, n), x = n, fill = Species)) +
   geom_point(colour = "black", size = 5) +
-  geom_label_repel(data = graph_data, aes(label = label),
-                   nudge_y = -0.25,
-                   nudge_x = ifelse(graph_data$n < 100, 0.33, -0.33),
-                   alpha = 0.7) +
+  geom_label_repel(
+    data = graph_data, aes(label = label),
+    nudge_y = -0.25,
+    nudge_x = ifelse(graph_data$n < 100, 0.33, -0.33),
+    alpha = 0.7
+  ) +
   scale_fill_manual(values = graph_bat_colours) +
   scale_x_log10(sec.axis = dup_axis()) +
   annotation_logticks(sides = "tb") +
-  labs(x = "Bat Observations (Number of Passes)",
-       caption = "Note: Log scale used") +
-  theme_bw() + 
-  theme(legend.position = "none", 
-        panel.grid.major = element_blank(), 
-        panel.grid.minor = element_blank(),
-        axis.text.x = element_text(size=12, face="bold"), 
-        axis.text.y = element_blank(), 
-        axis.ticks.y = element_blank(),
-        strip.text = element_text(size=12, face="bold", colour = "white"), 
-        axis.title.x = element_text(size=12, face="bold"), 
-        axis.title.y = element_blank())
+  labs(
+    x = "Bat Observations (Number of Passes)",
+    caption = "Note: Log scale used"
+  ) +
+  theme_bw() +
+  theme(
+    legend.position = "none",
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size = 12, face = "bold"),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    strip.text = element_text(size = 12, face = "bold", colour = "white"),
+    axis.title.x = element_text(size = 12, face = "bold"),
+    axis.title.y = element_blank()
+  )
   
   
   
@@ -316,8 +343,8 @@ ggplot(graph_data, aes(y = reorder(Species, n), x = n, fill = Species)) +
 
 
 graph_data <- statics %>%
-  group_by(Species, Description) %>% 
-  tally() 
+  group_by(Species, Description) %>%
+  tally()
 
 # colour values used by scale_fill_manual()
 graph_bat_colours <- iBats::bat_colours(graph_data$Species, colour_vector = bat_colours_sci)
@@ -326,24 +353,27 @@ ggplot(graph_data, aes(area = n, fill = Species, label = Species, subgroup = Des
   scale_fill_manual(values = graph_bat_colours) +
   geom_treemap(colour = "white", size = 2, alpha = 0.9) +
   geom_treemap_subgroup_border(colour = "black", size = 5, alpha = 0.9) +
-  geom_treemap_subgroup_text(place = "centre", grow = T, alpha = 0.9, colour =
-                             "grey20",  min.size = 0) +
-  geom_treemap_text(colour = "grey90", place = "topleft", fontface = "italic", 
-                    reflow = T,  min.size = 0, alpha = 0.9) + 
-  theme_bw() + 
+  geom_treemap_subgroup_text(
+    place = "centre", grow = T, alpha = 0.9, colour =
+      "grey20", min.size = 0
+  ) +
+  geom_treemap_text(
+    colour = "grey90", place = "topleft", fontface = "italic",
+    reflow = T, min.size = 0, alpha = 0.9
+  ) +
+  theme_bw() +
   theme(legend.position = "none") # No legend
-  
 
 ```
 
 
 ## Identifying Roosts  
 
-### Observed Emergence Time and Roost Potential 
+### Evening Bats and Roost Potential 
 
 ```{r}
 #| label: fig-emergence1
-#| fig-cap: "Observed Emergence Time and Roost Potential"
+#| fig-cap: "Bats Observed Around Dusk and Roost Potential"
 #| warning: false
 #| fig.height: 8
 
@@ -354,44 +384,180 @@ statics_plus <- iBats::date_time_info(statics)
 statics_plus <- iBats::sun_night_metrics(statics_plus)
 
 # Add roost emergence times adapted from (Andrews and Pearson, 2022)
-statics_plus <- dplyr::left_join(statics_plus, Andrews, by = "Species") 
+statics_plus <- dplyr::left_join(statics_plus, Andrews, by = "Species")
 
-# Graph text    
-yLab <- "Time after sunset (mins)"
-Caption <- "First 90 minutes after sunset. \nWhite bars are emergence times adapted from (Andrews and Pearson, 2022)"
+# Graph text
+yLab <- "Time before and after sunset (mins)"
+Caption <- "Vertical dotted line represents sunset \nHorizontal bars are emergence times from (Andrews and Pearson, 2022)"
 
 # Just choose Observations 90 mins or less after sunset
 graph_data <- statics_plus %>%
   filter(post_set_min <= 90)
 
+# colour values used by scale_fill_manual()
 graph_bat_colours <- iBats::bat_colours(graph_data$Species, colour_vector = bat_colours_sci)
 
-ggplot(graph_data, aes(x=Species, y=post_set_min, fill=Species)) +
-    geom_linerange(aes(x=Species, ymin=firstExit95, ymax=lastExit95), 
-                   size = 3, colour="floralwhite") +
-    geom_jitter(size=3, alpha=0.8, shape=21) +
-    facet_grid(Description~., scales = "free_y") +
-    scale_fill_manual(values = graph_bat_colours) +
-    labs(y = yLab,
-           caption = Caption) +
-      scale_y_continuous(breaks=c(0, 15, 30, 45, 60, 75, 90), limits = c(0, 90)) +
-      coord_flip() +
-      theme_bw() +
-    theme (legend.position = "none",
-   plot.caption = element_text(colour = "grey30", face = "bold"), #white
-   axis.title.y = element_blank(),
-   axis.title.x = element_text(colour = "grey30", size = 12),
-   axis.text.x = element_text(hjust = 1, colour = "grey30", face = "bold"),
-   axis.text.y = element_text(colour = "grey30", face = "bold.italic"),
-   strip.text = element_text(size=12, face="bold", colour = "white"), # Bold facet names
-   panel.background = element_rect(fill = "midnightblue"),
-   panel.grid.major.x = element_line(colour = "transparent", linetype = "dotted"), #grey70
-   panel.grid.minor.x = element_blank(),
-   panel.grid.major.y = element_blank(),
-   panel.grid.minor.y = element_blank(),
-   plot.background = element_rect(fill = "transparent"), #grey70
-   axis.ticks = element_blank(),
-  strip.background = element_rect(fill = "black"))
+ggplot(graph_data, aes(x = Species, y = post_set_min, fill = Species)) +
+  geom_linerange(aes(x = Species, ymin = firstExit95, ymax = lastExit95),
+    size = 3, colour = "floralwhite"
+  ) +
+  geom_jitter(size = 3, alpha = 0.8, shape = 21) +
+  geom_hline(yintercept = 0, linetype = "dotted", colour = "floralwhite", size = 2) +
+  facet_grid(Description ~ ., scales = "free_y") +
+  scale_fill_manual(values = graph_bat_colours) +
+  labs(
+    y = yLab,
+    caption = Caption
+  ) +
+  scale_y_continuous(breaks = c(-15, 0, 15, 30, 45, 60, 75, 90), limits = c(-15, 90)) +
+  coord_flip() +
+  theme_bw() +
+  theme(
+    legend.position = "none",
+    plot.caption = element_text(colour = "grey30", face = "bold"), # white
+    axis.title.y = element_blank(),
+    axis.title.x = element_text(colour = "grey30", size = 12),
+    axis.text.x = element_text(hjust = 1, colour = "grey30", face = "bold"),
+    axis.text.y = element_text(colour = "grey30", face = "bold.italic"),
+    strip.text = element_text(size = 12, face = "bold", colour = "white"), # Bold facet names
+    panel.background = element_rect(fill = "midnightblue"),
+    panel.grid.major.x = element_line(colour = "transparent", linetype = "dotted"), # grey70
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    plot.background = element_rect(fill = "transparent"), # grey70
+    axis.ticks = element_blank(),
+    strip.background = element_rect(fill = "black")
+  )
+
+
+```
+
+### Morning Bats and Roost Potential 
+
+```{r}
+#| label: fig-reentry1
+#| fig-cap: "Bats Observed Around Dawn and Roost Potential"
+#| warning: false
+#| fig.height: 8
+
+# Add data and time information to the statics data using theiBats::date_time_info
+statics_plus <- iBats::date_time_info(statics)
+
+# Add sun and night time metrics to the statics data using the iBats::sun_night_metrics() function.
+statics_plus <- iBats::sun_night_metrics(statics_plus)
+
+# Add roost emergence times adapted from (Andrews and Pearson, 2022)
+statics_plus <- dplyr::left_join(statics_plus, Andrews, by = "Species")
+
+# Graph text
+yLab <- "Time before and after sunrise (mins)"
+Caption <- "Vertical dotted line represents sunrise"
+
+# Just choose Observations 90 mins or less after sunset
+graph_data <- statics_plus %>%
+  filter(pre_rise_min <= 90) %>%
+  mutate(pre_rise_min = pre_rise_min * (-1)) # For correct orientation on the graph
+
+# colour values used by scale_fill_manual()
+graph_bat_colours <- iBats::bat_colours(graph_data$Species, colour_vector = bat_colours_sci)
+
+ggplot(graph_data, aes(x = Species, y = pre_rise_min, fill = Species)) +
+  geom_jitter(size = 3, alpha = 0.8, shape = 21) +
+  geom_hline(yintercept = 0, linetype = "dotted", colour = "floralwhite", size = 2) +
+  facet_grid(Description ~ ., scales = "free_y") +
+  scale_fill_manual(values = graph_bat_colours) +
+  labs(
+    y = yLab,
+    caption = Caption
+  ) +
+  scale_y_continuous(breaks = c(-90, -75, -60, -45, -30, -15, 0, 15), limits = c(-90, 15)) +
+  coord_flip() +
+  theme_bw() +
+  theme(
+    legend.position = "none",
+    plot.caption = element_text(colour = "grey30", face = "bold"), # white
+    axis.title.y = element_blank(),
+    axis.title.x = element_text(colour = "grey30", size = 12),
+    axis.text.x = element_text(hjust = 1, colour = "grey30", face = "bold"),
+    axis.text.y = element_text(colour = "grey30", face = "bold.italic"),
+    strip.text = element_text(size = 12, face = "bold", colour = "white"), # Bold facet names
+    panel.background = element_rect(fill = "midnightblue"),
+    panel.grid.major.x = element_line(colour = "transparent", linetype = "dotted"), # grey70
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    plot.background = element_rect(fill = "transparent"), # grey70
+    axis.ticks = element_blank(),
+    strip.background = element_rect(fill = "black")
+  )
+
+
+
+```
+
+
+## Graphs to Avoid 
+
+```{r}
+#| label: fig-avoidgraphs
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "Pie Chart"
+#|   - "Bar Chart"
+
+graph_data <- statics %>%
+  group_by(Species) %>%
+  count()
+
+# colour values used by scale_fill_manual()
+graph_bat_colours <- iBats::bat_colours(graph_data$Species, colour_vector = bat_colours_sci)
+
+g1 <- ggplot(graph_data, aes(x = "", y = n, fill = Species)) +
+  geom_bar(width = 1, stat = "identity") +
+  coord_polar(theta = "y") +
+  scale_fill_manual(values = graph_bat_colours) +
+  labs(
+    y = "Bat Pass Observations (Nr)",
+    fill = "Species"
+  ) +
+  theme_bw() +
+  theme(
+    legend.position = "right",
+    legend.text = element_text(face = "italic"),
+    axis.text.x = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks = element_blank(),
+    strip.text = element_blank(),
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.background = element_blank(),
+    panel.border = element_blank()
+  )
+
+
+g2 <- ggplot(graph_data, aes(x = reorder(Species, n), y = n, fill = Species)) +
+  geom_col() +
+  scale_y_continuous(label = comma) +
+  coord_flip() +
+  scale_fill_manual(values = graph_bat_colours) +
+  theme_bw() +
+  theme(
+    legend.position = "none", # No legend
+    axis.text.x = element_text(size = 12, angle = 0, face = "bold"),
+    axis.text.y = element_text(size = 12, face = "bold.italic"), # bat names italic
+    axis.title.y = element_blank(), # no y title (just bat names)
+    axis.title.x = element_blank(), # no x title
+    panel.grid.major = element_blank(), # remove grid lines
+    panel.grid.minor = element_blank(),
+    panel.border = element_blank(),
+    panel.grid.major.x = element_line(colour = "grey20", size = 0.1, linetype = "dashed")
+  )
+
+g1
+g2
 
 
 
