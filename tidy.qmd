@@ -13,6 +13,7 @@ library(knitr)
 library(tidyverse)
 library(iBats)
 
+set.seed(214)
 
 ```
 

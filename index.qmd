@@ -5,6 +5,9 @@ bibliography: packages.bib
 
 A simple bat report from minimal data demonstrating literate programming with Quarto (_the world beyond Excel_).
 
+![](Images/homesunrise2.png)
+
+
 ## Install R RStudio and Packages  
 
 1. Download and install the latest version of R  <https://cran.r-project.org/bin/windows/base/>. Download the version for your operating system; R can be downloaded for Windows, Mac & Linux.    

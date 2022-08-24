@@ -2,8 +2,12 @@
 title: "About"
 ---
 
-About this site
+![](Images/photo.jpg){fig-align="left"}
 
-```{r}
-1 + 1
-```
+__Reporting Bat Survey Data__ compliments the _data science_ chapters of the forthcoming BCT Bat Survey Guidelines 4^th^ Edition. Unlike the guidelines it has the R code that make the analysis; which can be copied an used.
+
+These pages were written by Steve Markham, Director and Data Scientist at _Marquis & Lord Ltd._ over my career I have developed and applied software applications to water management and more recently, the last 15 years, applied _data science_ to a wide range of projects using the R software environment. Since 1997 I have held a Natural England Roost Visitors Licence and have undertaken numerous commercial bat projects and voluntary bat work, including being a Trustee of the Bat Conservation Trust.  I have been on the editorial board of all the editions of the Bat Survey Guidelines were I have encouraged ecologists to make the most of their bat survey data; these web pages hopefully make it easier to do this, and more rewarding - its good for bats! 
+
+This web site also introduces the `iBats` package. `iBats` is a package with a range of functions that hopefully enhance and smooth the _data science_ of bat data collected from bat detectors post sound identification.  
+
+The `iBats` name is borrowed from Prof Kate Jones and follows in the citizen science spirit of the original __iBats__.

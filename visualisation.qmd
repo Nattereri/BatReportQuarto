@@ -18,6 +18,7 @@ library(broman)
 library(ggrepel)
 library(treemapify)
 library(scales)
+library(ggthemes)
 
 bat_colours_sci <- c("Barbastella barbastellus" = "#1f78b4", 
                      "Myotis alcathoe" = "#a52a2a",
@@ -248,7 +249,7 @@ graph_bat_colours <- iBats::bat_colours(Andrews$Species, colour_vector = bat_col
 
 ggplot(Andrews) +
   geom_segment(aes(x = reorder(Species, -meanExit), xend = Species, y = firstExit95, yend = lastExit95), color = "grey", size = 2) +
-  geom_point(aes(x = reorder(Species, -meanExit), y = meanExit, fill = Species), color = "black", size = 4, shape = 21) +
+  geom_point(aes(x = reorder(Species, -meanExit), y = meanExit, fill = Species), color = "black", size = 5, shape = 21) +
   scale_y_continuous(breaks = c(-20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100)) +
   geom_hline(yintercept = 0, linetype = "dashed", colour = "purple", size = 1) +
   scale_fill_manual(values = graph_bat_colours) +
@@ -332,7 +333,7 @@ ggplot(graph_data, aes(y = reorder(Species, n), x = n, fill = Species)) +
 ```
 
 
-### Tree Map  
+### Tree Map Description  
 
 
 ```{r}
@@ -366,6 +367,40 @@ ggplot(graph_data, aes(area = n, fill = Species, label = Species, subgroup = Des
 
 ```
 
+### Tree Map Month  
+
+
+```{r}
+#| label: fig-treemap2
+#| fig-cap: "Species and Month with the Area as the Number of Passes"
+#| warning: false
+#| fig.height: 7
+
+# Add data and time information to the statics data using the iBats::date_time_info
+statics_plus <- iBats::date_time_info(statics)
+
+graph_data <- statics_plus %>%
+  group_by(Species, Month) %>%
+  tally()
+
+
+ggplot(graph_data, aes(area = n, fill = Month, label = Species, subgroup = Month)) +
+  scale_fill_tableau(palette = "Tableau 10") + # library(ggthemes)
+  geom_treemap(colour = "white", size = 2, alpha = 0.9) +
+  geom_treemap_subgroup_border(colour = "black", size = 5, alpha = 0.9) +
+  geom_treemap_subgroup_text(
+    place = "centre", grow = T, alpha = 0.9, colour =
+      "grey20", min.size = 0
+  ) +
+  geom_treemap_text(
+    colour = "grey90", place = "topleft", fontface = "italic",
+    reflow = T, min.size = 0, alpha = 0.9
+  ) +
+  theme_bw() +
+  theme(legend.position = "none") # No legend
+
+```
+
 
 ## Identifying Roosts  
 
@@ -377,7 +412,7 @@ ggplot(graph_data, aes(area = n, fill = Species, label = Species, subgroup = Des
 #| warning: false
 #| fig.height: 8
 
-# Add data and time information to the statics data using theiBats::date_time_info
+# Add data and time information to the statics data using the iBats::date_time_info
 statics_plus <- iBats::date_time_info(statics)
 
 # Add sun and night time metrics to the statics data using the iBats::sun_night_metrics() function.
@@ -497,7 +532,7 @@ ggplot(graph_data, aes(x = Species, y = pre_rise_min, fill = Species)) +
 ```
 
 
-## Graphs to Avoid 
+## Other Graphs
 
 ```{r}
 #| label: fig-avoidgraphs
