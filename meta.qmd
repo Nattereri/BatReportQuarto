@@ -1,5 +1,6 @@
 ---
 title: "Meta Data"
+bibliography: packages.bib
 format: 
   html:
      code-fold: true
@@ -14,6 +15,7 @@ library(tidyverse)
 library(iBats)
 library(gt)
 
+set.seed(214)
 
 ```
 
@@ -29,7 +31,7 @@ The *Night* can be obtained from the *iBats* package using the `date_time_info` 
 
 [^1]: a full list of time zones can be found here <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones>
 
-The code below takes the `statics` set from the *iBats* package and adds the *Night* column, @tbl-night shows a random selection of 5 rows from the `statics` data.
+The code below takes the `statics` set from the *iBats* package and adds the *Night* column, @tbl-night shows a selection of 5 rows from the `statics` data.
 
 ```{r}
 #| code-fold: show
@@ -80,7 +82,7 @@ The function `iBats::date_time_info()` adds other date and time information: mon
 
 statics_with_night %>% 
   sample_n(5) %>% 
-  select(Description, Month, MonthFull, Year, JustTime, DateTime, Species) %>% 
+  select(Description, DateTime, Species, Month, MonthFull, Year, JustTime) %>% 
   # Table made with library(gt)
   gt() %>% 
   tab_style(
@@ -104,3 +106,64 @@ statics_with_night %>%
     )
   )
 ```
+
+## Sun Times
+
+A useful approach for bat data analysis is to reference all bat activity (i.e. `DateTime`) to the time of sunset and sunrise for the `Night` and location(i.e. `Latitude` and `Longitude`). From this starting point, the minutes after sunset (and minutes before sunrise) that each bat activity occurred can be calculated; these can then be converted to decimal hours and integer hours so bat activity can be visualised in ways that help interpret the bat activity.
+
+Referencing the `DateTime` of bat activity to sunset and sunrise is achieved with the use of the `suncalc` package [@R-suncalc]. The `iBats` package makes use of `suncalc` in its `sun_night_metrics` fuction; this takes a dataframe that must include the columns: `Night`, `DateTime`, `Latitude` and, `Longitude` - and calculates the following columns:
+
+* `sunset` - sun set time for the `Night` date and `Latitude` and, `Longitude`
+* `sunrise` - sun rise time for the `Night` date and `Latitude` and, `Longitude`
+* `post_set_min`- time in minutes the bat was observed after sun set
+* `pre_rise_min` - time in minutes the bat was observed before sun rise 
+* `post_set_hr` - time in hours (decimal) the bat was observed after sun set
+* `pre_rise_hr` - time in hours (decimal) the bat was observed before sun rise
+* `post_set_hr_int` - time in hours (integer) the bat was observed after sun set
+* `pre_rise_hr_int` - time in hours (integer) the bat was observed before sun rise  
+* `night_length_hr` - night length in hours (decimal) difference between `sunset` and `sunrise`
+
+@tbl-suntimes  shows a selection of 5 rows from the `statics` data that includes the columns `Species` and `DateTime` and then calculates the columns listed above, the following columns are shown: `sunset`, `post_set_min`, `post_set_hr` and, `post_set_hr_int`.
+
+```{r}
+#| label: tbl-suntimes
+#| tbl-cap: "Sun Time Information from the Night and DateTime Columns"
+
+# Add data and time information to the statics data using the iBats::date_time_info
+statics_plus <- iBats::date_time_info(statics)
+
+# Add sun and night time metrics to the statics data using the iBats::sun_night_metrics() function.
+statics_plus <- iBats::sun_night_metrics(statics_plus)
+
+statics_plus %>% 
+  sample_n(5) %>% 
+  select(Species, DateTime, sunset, post_set_min, post_set_hr, post_set_hr_int) %>% 
+  # Table made with library(gt)
+  gt() %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "pink"),
+      cell_text(color = "black"),
+      cell_text(weight = "normal")
+      ),
+    locations = cells_body(
+      columns = c(sunset, post_set_min, post_set_hr, post_set_hr_int)
+    )
+  ) %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "pink"),
+      cell_text(color = "black"),
+      cell_text(weight = "bold")
+      ),
+    locations = cells_column_labels(
+      columns = c(sunset, post_set_min, post_set_hr, post_set_hr_int)
+    )
+  )
+
+
+
+```
+
+
+

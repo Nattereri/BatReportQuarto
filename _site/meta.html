@@ -78,6 +78,25 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 
@@ -179,6 +198,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#the-night" id="toc-the-night" class="nav-link" data-scroll-target="#the-night">The <em>Night</em></a></li>
   <li><a href="#other-date-and-time-information-added" id="toc-other-date-and-time-information-added" class="nav-link" data-scroll-target="#other-date-and-time-information-added">Other Date and Time Information added</a></li>
   </ul></li>
+  <li><a href="#sun-times" id="toc-sun-times" class="nav-link" data-scroll-target="#sun-times">Sun Times</a></li>
   </ul>
 </nav>
     </div>
@@ -208,7 +228,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 class="anchored" data-anchor-id="the-night">The <em>Night</em></h3>
 <p>Bats are active through the night; the date of the night is the date at sunset and lasts until sunrise the morning of the following day. The <em>Night</em> is a variable column that is added to the <em>tidy</em> data; it is useful convention that helps avoid the confusion of having contiguous bat activity over two dates.</p>
 <p>The <em>Night</em> can be obtained from the <em>iBats</em> package using the <code>date_time_info</code> function. It requires a data.frame or tibble with a <code>DateTime</code> column, the <em>iana</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> time zone can be specified; the default is <code>Europe/London</code>.</p>
-<p>The code below takes the <code>statics</code> set from the <em>iBats</em> package and adds the <em>Night</em> column, <a href="#tbl-night">Table&nbsp;1</a> shows a random selection of 5 rows from the <code>statics</code> data.</p>
+<p>The code below takes the <code>statics</code> set from the <em>iBats</em> package and adds the <em>Night</em> column, <a href="#tbl-night">Table&nbsp;1</a> shows a selection of 5 rows from the <code>statics</code> data.</p>
 <div class="cell">
 <details open="">
 <summary>Show the code</summary>
@@ -247,12 +267,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output-display">
 <div id="tbl-night" class="anchored">
 
-<div id="niwqfrpvqi" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="epsuwfvagd" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#niwqfrpvqi .gt_table {
+#epsuwfvagd .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -277,7 +297,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-left-color: #D3D3D3;
 }
 
-#niwqfrpvqi .gt_heading {
+#epsuwfvagd .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -289,7 +309,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#niwqfrpvqi .gt_title {
+#epsuwfvagd .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -301,7 +321,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-#niwqfrpvqi .gt_subtitle {
+#epsuwfvagd .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -313,13 +333,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-#niwqfrpvqi .gt_bottom_border {
+#epsuwfvagd .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#niwqfrpvqi .gt_col_headings {
+#epsuwfvagd .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -334,7 +354,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#niwqfrpvqi .gt_col_heading {
+#epsuwfvagd .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -354,7 +374,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#niwqfrpvqi .gt_column_spanner_outer {
+#epsuwfvagd .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -366,15 +386,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 4px;
 }
 
-#niwqfrpvqi .gt_column_spanner_outer:first-child {
+#epsuwfvagd .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#niwqfrpvqi .gt_column_spanner_outer:last-child {
+#epsuwfvagd .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#niwqfrpvqi .gt_column_spanner {
+#epsuwfvagd .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -386,7 +406,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   width: 100%;
 }
 
-#niwqfrpvqi .gt_group_heading {
+#epsuwfvagd .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -411,7 +431,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-#niwqfrpvqi .gt_empty_group_heading {
+#epsuwfvagd .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -426,15 +446,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-#niwqfrpvqi .gt_from_md > :first-child {
+#epsuwfvagd .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#niwqfrpvqi .gt_from_md > :last-child {
+#epsuwfvagd .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#niwqfrpvqi .gt_row {
+#epsuwfvagd .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -453,7 +473,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#niwqfrpvqi .gt_stub {
+#epsuwfvagd .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -466,7 +486,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#niwqfrpvqi .gt_stub_row_group {
+#epsuwfvagd .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -480,11 +500,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: top;
 }
 
-#niwqfrpvqi .gt_row_group_first td {
+#epsuwfvagd .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#niwqfrpvqi .gt_summary_row {
+#epsuwfvagd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -494,16 +514,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#niwqfrpvqi .gt_first_summary_row {
+#epsuwfvagd .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#niwqfrpvqi .gt_first_summary_row.thick {
+#epsuwfvagd .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#niwqfrpvqi .gt_last_summary_row {
+#epsuwfvagd .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -513,7 +533,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#niwqfrpvqi .gt_grand_summary_row {
+#epsuwfvagd .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -523,7 +543,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#niwqfrpvqi .gt_first_grand_summary_row {
+#epsuwfvagd .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -533,11 +553,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-#niwqfrpvqi .gt_striped {
+#epsuwfvagd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#niwqfrpvqi .gt_table_body {
+#epsuwfvagd .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -546,7 +566,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#niwqfrpvqi .gt_footnotes {
+#epsuwfvagd .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -560,7 +580,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#niwqfrpvqi .gt_footnote {
+#epsuwfvagd .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -569,7 +589,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#niwqfrpvqi .gt_sourcenotes {
+#epsuwfvagd .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -583,7 +603,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#niwqfrpvqi .gt_sourcenote {
+#epsuwfvagd .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -591,36 +611,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#niwqfrpvqi .gt_left {
+#epsuwfvagd .gt_left {
   text-align: left;
 }
 
-#niwqfrpvqi .gt_center {
+#epsuwfvagd .gt_center {
   text-align: center;
 }
 
-#niwqfrpvqi .gt_right {
+#epsuwfvagd .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#niwqfrpvqi .gt_font_normal {
+#epsuwfvagd .gt_font_normal {
   font-weight: normal;
 }
 
-#niwqfrpvqi .gt_font_bold {
+#epsuwfvagd .gt_font_bold {
   font-weight: bold;
 }
 
-#niwqfrpvqi .gt_font_italic {
+#epsuwfvagd .gt_font_italic {
   font-style: italic;
 }
 
-#niwqfrpvqi .gt_super {
+#epsuwfvagd .gt_super {
   font-size: 65%;
 }
 
-#niwqfrpvqi .gt_two_val_uncert {
+#epsuwfvagd .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -629,31 +649,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   margin-left: 0.1em;
 }
 
-#niwqfrpvqi .gt_footnote_marks {
+#epsuwfvagd .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#niwqfrpvqi .gt_asterisk {
+#epsuwfvagd .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#niwqfrpvqi .gt_slash_mark {
+#epsuwfvagd .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#niwqfrpvqi .gt_fraction_numerator {
+#epsuwfvagd .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#niwqfrpvqi .gt_fraction_denominator {
+#epsuwfvagd .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -670,26 +690,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_left">Static 3</td>
-<td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-09-17</td>
-<td class="gt_row gt_left">2016-09-17 22:48:16</td>
-<td class="gt_row gt_left">Rhinolophus ferrumequinum</td></tr>
     <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-07-30</td>
-<td class="gt_row gt_left">2016-07-31 00:35:53</td>
+<td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-08-24</td>
+<td class="gt_row gt_left">2016-08-25 01:58:59</td>
 <td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
-    <tr><td class="gt_row gt_left">Static 5</td>
-<td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-08-26</td>
-<td class="gt_row gt_left">2016-08-26 23:02:54</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
-    <tr><td class="gt_row gt_left">Static 5</td>
-<td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-08-25</td>
-<td class="gt_row gt_left">2016-08-26 05:20:18</td>
-<td class="gt_row gt_left">Myotis spp.</td></tr>
     <tr><td class="gt_row gt_left">Static 4</td>
 <td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-08-04</td>
-<td class="gt_row gt_left">2016-08-05 01:54:27</td>
+<td class="gt_row gt_left">2016-08-04 23:11:37</td>
 <td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
+    <tr><td class="gt_row gt_left">Static 4</td>
+<td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-06-12</td>
+<td class="gt_row gt_left">2016-06-13 01:50:48</td>
+<td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
+    <tr><td class="gt_row gt_left">Static 4</td>
+<td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-07-30</td>
+<td class="gt_row gt_left">2016-07-31 01:08:12</td>
+<td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
+    <tr><td class="gt_row gt_left">Static 2</td>
+<td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-10-10</td>
+<td class="gt_row gt_left">2016-10-10 19:39:35</td>
+<td class="gt_row gt_left">Plecotus spp.</td></tr>
   </tbody>
   
   
@@ -707,7 +727,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>statics_with_night <span class="sc">%&gt;%</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Description, Month, MonthFull, Year, JustTime, DateTime, Species) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Description, DateTime, Species, Month, MonthFull, Year, JustTime) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Table made with library(gt)</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
@@ -734,12 +754,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output-display">
 <div id="tbl-other" class="anchored">
 
-<div id="fhfiplitsx" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="giftspehwa" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#fhfiplitsx .gt_table {
+#giftspehwa .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -764,7 +784,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-left-color: #D3D3D3;
 }
 
-#fhfiplitsx .gt_heading {
+#giftspehwa .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -776,7 +796,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#fhfiplitsx .gt_title {
+#giftspehwa .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -788,7 +808,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-#fhfiplitsx .gt_subtitle {
+#giftspehwa .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -800,13 +820,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-#fhfiplitsx .gt_bottom_border {
+#giftspehwa .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fhfiplitsx .gt_col_headings {
+#giftspehwa .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -821,7 +841,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#fhfiplitsx .gt_col_heading {
+#giftspehwa .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -841,7 +861,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#fhfiplitsx .gt_column_spanner_outer {
+#giftspehwa .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -853,15 +873,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 4px;
 }
 
-#fhfiplitsx .gt_column_spanner_outer:first-child {
+#giftspehwa .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fhfiplitsx .gt_column_spanner_outer:last-child {
+#giftspehwa .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fhfiplitsx .gt_column_spanner {
+#giftspehwa .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -873,7 +893,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   width: 100%;
 }
 
-#fhfiplitsx .gt_group_heading {
+#giftspehwa .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -898,7 +918,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-#fhfiplitsx .gt_empty_group_heading {
+#giftspehwa .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -913,15 +933,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-#fhfiplitsx .gt_from_md > :first-child {
+#giftspehwa .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fhfiplitsx .gt_from_md > :last-child {
+#giftspehwa .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fhfiplitsx .gt_row {
+#giftspehwa .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -940,7 +960,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#fhfiplitsx .gt_stub {
+#giftspehwa .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -953,7 +973,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#fhfiplitsx .gt_stub_row_group {
+#giftspehwa .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -967,11 +987,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: top;
 }
 
-#fhfiplitsx .gt_row_group_first td {
+#giftspehwa .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#fhfiplitsx .gt_summary_row {
+#giftspehwa .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -981,16 +1001,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#fhfiplitsx .gt_first_summary_row {
+#giftspehwa .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#fhfiplitsx .gt_first_summary_row.thick {
+#giftspehwa .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#fhfiplitsx .gt_last_summary_row {
+#giftspehwa .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1000,7 +1020,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#fhfiplitsx .gt_grand_summary_row {
+#giftspehwa .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1010,7 +1030,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#fhfiplitsx .gt_first_grand_summary_row {
+#giftspehwa .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1020,11 +1040,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-#fhfiplitsx .gt_striped {
+#giftspehwa .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fhfiplitsx .gt_table_body {
+#giftspehwa .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1033,7 +1053,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#fhfiplitsx .gt_footnotes {
+#giftspehwa .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1047,7 +1067,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#fhfiplitsx .gt_footnote {
+#giftspehwa .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1056,7 +1076,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#fhfiplitsx .gt_sourcenotes {
+#giftspehwa .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1070,7 +1090,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#fhfiplitsx .gt_sourcenote {
+#giftspehwa .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1078,36 +1098,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#fhfiplitsx .gt_left {
+#giftspehwa .gt_left {
   text-align: left;
 }
 
-#fhfiplitsx .gt_center {
+#giftspehwa .gt_center {
   text-align: center;
 }
 
-#fhfiplitsx .gt_right {
+#giftspehwa .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fhfiplitsx .gt_font_normal {
+#giftspehwa .gt_font_normal {
   font-weight: normal;
 }
 
-#fhfiplitsx .gt_font_bold {
+#giftspehwa .gt_font_bold {
   font-weight: bold;
 }
 
-#fhfiplitsx .gt_font_italic {
+#giftspehwa .gt_font_italic {
   font-style: italic;
 }
 
-#fhfiplitsx .gt_super {
+#giftspehwa .gt_super {
   font-size: 65%;
 }
 
-#fhfiplitsx .gt_two_val_uncert {
+#giftspehwa .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -1116,31 +1136,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   margin-left: 0.1em;
 }
 
-#fhfiplitsx .gt_footnote_marks {
+#giftspehwa .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#fhfiplitsx .gt_asterisk {
+#giftspehwa .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#fhfiplitsx .gt_slash_mark {
+#giftspehwa .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#fhfiplitsx .gt_fraction_numerator {
+#giftspehwa .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#fhfiplitsx .gt_fraction_denominator {
+#giftspehwa .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -1151,50 +1171,570 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <thead class="gt_col_headings">
     <tr>
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Description</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">DateTime</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Species</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #E0FFFF; color: #000000; font-weight: bold;">Month</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #E0FFFF; color: #000000; font-weight: bold;">MonthFull</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #E0FFFF; color: #000000; font-weight: bold;">Year</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #E0FFFF; color: #000000; font-weight: bold;">JustTime</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">DateTime</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Species</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">Static 2</td>
+<td class="gt_row gt_left">2016-08-15 01:44:55</td>
+<td class="gt_row gt_left">Pipistrellus pygmaeus</td>
+<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Aug</td>
+<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">August</td>
+<td class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
+<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">13:44:55</td></tr>
+    <tr><td class="gt_row gt_left">Static 3</td>
+<td class="gt_row gt_left">2016-08-13 22:10:52</td>
+<td class="gt_row gt_left">Pipistrellus pipistrellus</td>
+<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Aug</td>
+<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">August</td>
+<td class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
+<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">10:10:52</td></tr>
+    <tr><td class="gt_row gt_left">Static 2</td>
+<td class="gt_row gt_left">2016-06-26 00:19:49</td>
+<td class="gt_row gt_left">Rhinolophus ferrumequinum</td>
+<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Jun</td>
+<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">June</td>
+<td class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
+<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">12:19:49</td></tr>
+    <tr><td class="gt_row gt_left">Static 2</td>
+<td class="gt_row gt_left">2016-06-05 04:11:35</td>
+<td class="gt_row gt_left">Pipistrellus pipistrellus</td>
+<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Jun</td>
+<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">June</td>
+<td class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
+<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">16:11:35</td></tr>
     <tr><td class="gt_row gt_left">Static 4</td>
+<td class="gt_row gt_left">2016-07-31 21:16:24</td>
+<td class="gt_row gt_left">Pipistrellus pipistrellus</td>
 <td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Jul</td>
 <td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">July</td>
 <td class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">14:46:05</td>
-<td class="gt_row gt_left">2016-07-27 02:46:05</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
-    <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Oct</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">October</td>
-<td class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">09:22:30</td>
-<td class="gt_row gt_left">2016-10-16 21:22:30</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
-    <tr><td class="gt_row gt_left">Static 3</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">May</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">May</td>
-<td class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">12:24:43</td>
-<td class="gt_row gt_left">2016-05-28 00:24:43</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
-    <tr><td class="gt_row gt_left">Static 3</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Sep</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">September</td>
-<td class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">10:50:26</td>
-<td class="gt_row gt_left">2016-09-17 22:50:26</td>
-<td class="gt_row gt_left">Rhinolophus ferrumequinum</td></tr>
-    <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Jul</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">July</td>
-<td class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">13:13:28</td>
-<td class="gt_row gt_left">2016-07-29 01:13:28</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
+<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">09:16:24</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="sun-times" class="level2">
+<h2 class="anchored" data-anchor-id="sun-times">Sun Times</h2>
+<p>A useful approach for bat data analysis is to reference all bat activity (i.e.&nbsp;<code>DateTime</code>) to the time of sunset and sunrise for the <code>Night</code> and location(i.e.&nbsp;<code>Latitude</code> and <code>Longitude</code>). From this starting point, the minutes after sunset (and minutes before sunrise) that each bat activity occurred can be calculated; these can then be converted to decimal hours and integer hours so bat activity can be visualised in ways that help interpret the bat activity.</p>
+<p>Referencing the <code>DateTime</code> of bat activity to sunset and sunrise is achieved with the use of the <code>suncalc</code> package <span class="citation" data-cites="R-suncalc">(<a href="#ref-R-suncalc" role="doc-biblioref">Thieurmel and Elmarhraoui 2019</a>)</span>. The <code>iBats</code> package makes use of <code>suncalc</code> in its <code>sun_night_metrics</code> fuction; this takes a dataframe that must include the columns: <code>Night</code>, <code>DateTime</code>, <code>Latitude</code> and, <code>Longitude</code> - and calculates the following columns:</p>
+<ul>
+<li><code>sunset</code> - sun set time for the <code>Night</code> date and <code>Latitude</code> and, <code>Longitude</code></li>
+<li><code>sunrise</code> - sun rise time for the <code>Night</code> date and <code>Latitude</code> and, <code>Longitude</code></li>
+<li><code>post_set_min</code>- time in minutes the bat was observed after sun set</li>
+<li><code>pre_rise_min</code> - time in minutes the bat was observed before sun rise</li>
+<li><code>post_set_hr</code> - time in hours (decimal) the bat was observed after sun set</li>
+<li><code>pre_rise_hr</code> - time in hours (decimal) the bat was observed before sun rise</li>
+<li><code>post_set_hr_int</code> - time in hours (integer) the bat was observed after sun set</li>
+<li><code>pre_rise_hr_int</code> - time in hours (integer) the bat was observed before sun rise<br>
+</li>
+<li><code>night_length_hr</code> - night length in hours (decimal) difference between <code>sunset</code> and <code>sunrise</code></li>
+</ul>
+<p><a href="#tbl-suntimes">Table&nbsp;3</a> shows a selection of 5 rows from the <code>statics</code> data that includes the columns <code>Species</code> and <code>DateTime</code> and then calculates the columns listed above, the following columns are shown: <code>sunset</code>, <code>post_set_min</code>, <code>post_set_hr</code> and, <code>post_set_hr_int</code>.</p>
+<div class="cell">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add data and time information to the statics data using the iBats::date_time_info</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>statics_plus <span class="ot">&lt;-</span> iBats<span class="sc">::</span><span class="fu">date_time_info</span>(statics)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Add sun and night time metrics to the statics data using the iBats::sun_night_metrics() function.</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>statics_plus <span class="ot">&lt;-</span> iBats<span class="sc">::</span><span class="fu">sun_night_metrics</span>(statics_plus)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>statics_plus <span class="sc">%&gt;%</span> </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Species, DateTime, sunset, post_set_min, post_set_hr, post_set_hr_int) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Table made with library(gt)</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">"pink"</span>),</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"black"</span>),</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"normal"</span>)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(sunset, post_set_min, post_set_hr, post_set_hr_int)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">"pink"</span>),</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"black"</span>),</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">weight =</span> <span class="st">"bold"</span>)</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(sunset, post_set_min, post_set_hr, post_set_hr_int)</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="tbl-suntimes" class="anchored">
+
+<div id="bovfmtvsha" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#bovfmtvsha .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#bovfmtvsha .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bovfmtvsha .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#bovfmtvsha .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#bovfmtvsha .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bovfmtvsha .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#bovfmtvsha .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#bovfmtvsha .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#bovfmtvsha .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#bovfmtvsha .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#bovfmtvsha .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#bovfmtvsha .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#bovfmtvsha .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#bovfmtvsha .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#bovfmtvsha .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#bovfmtvsha .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#bovfmtvsha .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bovfmtvsha .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#bovfmtvsha .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#bovfmtvsha .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bovfmtvsha .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#bovfmtvsha .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#bovfmtvsha .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bovfmtvsha .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bovfmtvsha .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#bovfmtvsha .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#bovfmtvsha .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#bovfmtvsha .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bovfmtvsha .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bovfmtvsha .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#bovfmtvsha .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#bovfmtvsha .gt_left {
+  text-align: left;
+}
+
+#bovfmtvsha .gt_center {
+  text-align: center;
+}
+
+#bovfmtvsha .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#bovfmtvsha .gt_font_normal {
+  font-weight: normal;
+}
+
+#bovfmtvsha .gt_font_bold {
+  font-weight: bold;
+}
+
+#bovfmtvsha .gt_font_italic {
+  font-style: italic;
+}
+
+#bovfmtvsha .gt_super {
+  font-size: 65%;
+}
+
+#bovfmtvsha .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#bovfmtvsha .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#bovfmtvsha .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#bovfmtvsha .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#bovfmtvsha .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#bovfmtvsha .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table"><caption>Table 3:  Sun Time Information from the Night and DateTime Columns </caption>
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Species</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">DateTime</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #FFC0CB; color: #000000; font-weight: bold;">sunset</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #FFC0CB; color: #000000; font-weight: bold;">post_set_min</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #FFC0CB; color: #000000; font-weight: bold;">post_set_hr</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #FFC0CB; color: #000000; font-weight: bold;">post_set_hr_int</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">Pipistrellus pipistrellus</td>
+<td class="gt_row gt_left">2016-07-30 03:04:26</td>
+<td class="gt_row gt_left" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2016-07-29 21:04:06</td>
+<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">360.33333</td>
+<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">6.0055556</td>
+<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">6</td></tr>
+    <tr><td class="gt_row gt_left">Pipistrellus pipistrellus</td>
+<td class="gt_row gt_left">2016-08-04 22:47:09</td>
+<td class="gt_row gt_left" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2016-08-04 20:54:49</td>
+<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">112.33333</td>
+<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">1.8722222</td>
+<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2</td></tr>
+    <tr><td class="gt_row gt_left">Pipistrellus pipistrellus</td>
+<td class="gt_row gt_left">2016-06-07 22:45:34</td>
+<td class="gt_row gt_left" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2016-06-07 21:23:08</td>
+<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">82.43333</td>
+<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">1.3738889</td>
+<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">1</td></tr>
+    <tr><td class="gt_row gt_left">Pipistrellus pipistrellus</td>
+<td class="gt_row gt_left">2016-07-30 05:15:40</td>
+<td class="gt_row gt_left" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2016-07-29 21:04:06</td>
+<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">491.56667</td>
+<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">8.1927778</td>
+<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">8</td></tr>
+    <tr><td class="gt_row gt_left">Myotis spp.</td>
+<td class="gt_row gt_left">2016-06-07 22:00:01</td>
+<td class="gt_row gt_left" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2016-06-07 21:23:08</td>
+<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">36.88333</td>
+<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">0.6147222</td>
+<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">1</td></tr>
   </tbody>
   
   
@@ -1205,11 +1745,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 
 
-</section>
+
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-R-suncalc" class="csl-entry" role="doc-biblioentry">
+Thieurmel, Benoit, and Achraf Elmarhraoui. 2019. <em>Suncalc: Compute Sun Position, Sunlight Phases, Moon Position and Lunar Phase</em>. <a href="https://github.com/datastorm-open/suncalc">https://github.com/datastorm-open/suncalc</a>.
+</div>
+</div></section><section class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
 <li id="fn1" role="doc-endnote"><p>a full list of time zones can be found here <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" class="uri">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
