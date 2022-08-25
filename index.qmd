@@ -3,12 +3,17 @@ title: "Getting Started"
 bibliography: packages.bib
 ---
 
-A simple bat report from minimal data demonstrating literate programming with Quarto (_the world beyond Excel_).
+*__These web pages are under active construction__*
+(so many things won't look right)
+
+These web pages compliment the _data science_ chapters of the forthcoming BCT Bat Survey Guidelines 4^th^ Edition, and hopefully encourage ecologists to make the most of their bat survey data. They also demonstrate literate programming with Quarto®[^1] which can vastly improve workflow (_welcome to the world beyond Excel_).
+
+[^1]: Quarto® is an open-source scientific and technical publishing system: see <https://quarto.org/>
 
 ![](Images/homesunrise2.png)
 
 
-## Install R RStudio and Packages  
+## Install R, RStudio and Packages  
 
 1. Download and install the latest version of R  <https://cran.r-project.org/bin/windows/base/>. Download the version for your operating system; R can be downloaded for Windows, Mac & Linux.    
 2. It is recommended R is used through the _RStudio_ IDE. Download and install the latest version of RStudio from their web page <https://www.rstudio.com/products/rstudio/#Desktop>.  Download the _free_ desktop version.

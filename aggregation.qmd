@@ -90,8 +90,8 @@ statics_plus %>%
   # rename n as count
   rename(Month = MonthFull,`Bat Species` = Species, Count = n) %>% 
  flextable(col_keys = colnames(.)) %>% 
-  fontsize(part = "header", size = 8) %>% 
-    fontsize(part = "body", size = 8)  %>% 
+  fontsize(part = "header", size = 12) %>% 
+    fontsize(part = "body", size = 12)  %>% 
       colformat_double(j = "Count", digits = 4, big.mark = ",") %>% 
   width(j = c(1, 3), width = 0.6) %>% 
     width(j = 2, width = 1.7) %>% 
