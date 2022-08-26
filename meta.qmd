@@ -8,7 +8,7 @@ format:
 ---
 
 ```{r}
-#| include=FALSE
+#| include: false
 
 library(knitr)
 library(tidyverse)

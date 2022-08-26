@@ -1,5 +1,6 @@
 ---
 title: "1 Click Reporting"
+bibliography: references.bib
 format: 
   html:
      code-fold: true
@@ -7,7 +8,7 @@ format:
 ---
 
 ```{r}
-#| include=FALSE
+#| include: false
 
 library(knitr)
 library(tidyverse)
@@ -18,4 +19,32 @@ library(gt)
 ```
 
 
-This page shows how a bat survey report can be produced, __with 1 click__, from a minimal data set. It also demonstrates literate programming with Quarto the next generation of R Markdown.
+A bat survey report produced, *__with 1 mouse click__*, from a minimal data set, such as the one shown in @tbl-surveydata; demonstrating literate programming [@knuth84] with Quarto®[^1] 
+
+[^1]: Quarto® the next generation of R Markdown.
+
+
+```{r}
+#| label: tbl-surveydata
+#| tbl-cap: "Bat Survey Data- First Ten Rows"
+
+surveydata <- statics %>% # statics is a tidy data set from the iBats package
+  #select(DateTime, Species, Latitude, Longitude, Description) %>% 
+  rename(`Date and Time` = DateTime,  `Bat Species` = Species) %>% 
+  sample_n(10) %>% 
+  arrange(`Date and Time`)
+
+
+# Table made with gt()
+gt(head(surveydata, n = 10L)) %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white"),
+      cell_text(weight = "bold")
+      ),
+    locations = cells_column_labels(
+      columns = everything()
+    )
+  )
+```

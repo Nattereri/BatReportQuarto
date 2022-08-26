@@ -1,9 +1,5 @@
 ---
 title: "About"
-format: 
-  html:
-    fig-width: 8
-    fig-height: 6
 ---
 
 ![](Images/photo.jpg){fig-align="left"}
@@ -16,7 +12,7 @@ This web site also introduces the `iBats` package[^2]. `iBats` is a package with
 
 <!-- The `iBats` name is borrowed from Prof Kate Jones and follows in the citizen science spirit of the original __iBats__. -->
 
-Finally a special thanks to the bat workers that have put with my incessant data talk, especially: Amanda, Anna, Kevin, Liat, Phil, Richard and, Suzy.
+Finally a special thanks to the bat workers who have put up with my incessant data talk, especially: Amanda, Anna, Kevin, Liat, Phil, Richard and, Suzy.
 
 [^1]: the current version of the Bat Survey Guidelines can be found here:   <https://www.bats.org.uk/resources/guidance-for-professionals/bat-surveys-for-professional-ecologists-good-practice-guidelines-3rd-edition>
 
