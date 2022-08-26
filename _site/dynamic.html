@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.587">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Reporting Bat Survey Data - Interactive Reports</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
+<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+<script src="site_libs/leaflet-binding-2.1.1/leaflet.js"></script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Reporting Bat Survey Data</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tidy.html">Tidy Data</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./meta.html">Meta Data</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./aggregation.html">Aggregation</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./visualisation.html">Visualisation</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./statistics.html">Statistics</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./reporting.html">1 Click Reporting</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./dynamic.html" aria-current="page">Interactive Reports</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html">About</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#maps" id="toc-maps" class="nav-link active" data-scroll-target="#maps">Maps</a>
+  <ul class="collapse">
+  <li><a href="#lydford-school-transect" id="toc-lydford-school-transect" class="nav-link" data-scroll-target="#lydford-school-transect">Lydford School Transect</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Interactive Reports</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="maps" class="level2">
+<h2 class="anchored" data-anchor-id="maps">Maps</h2>
+<section id="lydford-school-transect" class="level3">
+<h3 class="anchored" data-anchor-id="lydford-school-transect">Lydford School Transect</h3>
+<p><a href="#fig-lydfordtransect">Figure&nbsp;1</a> shows Lydford Primary School’s bat walk observations from Wednesday evening 18<sup>th</sup> September 2019. The walk, between the School and the River Lyd, on the western edge of Dartmoor, started at sunset 6:27pm and continued for just over an hour. The observations were made with a <a href="https://www.batlogger.com/en/products/batlogger_m/">Batlogger M</a> bat detector that records the sound of the bat as it passes together with the time and postion; using a built-in Global Positioning System (GPS). These sounds where then analysed with software designed to help determine which species made the echolocation; <a href="https://www.batlogger.com/en/products/batexplorer/">BatExplorer</a> was the software used.</p>
+<p><a href="#fig-lydfordtransect">Figure&nbsp;1</a> is an interactive map; hovering the mouse over the coloured point will show the species and the time, in minutes, after sunset the bat was observed.</p>
+<div class="cell">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pallet of colours for bat species on Leaflet map</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pal <span class="ot">&lt;-</span> <span class="fu">colorFactor</span>(ColourVector<span class="sc">$</span>LeafColours, <span class="at">domain =</span> ColourVector<span class="sc">$</span>Species)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>Lydford <span class="sc">%&gt;%</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Popup_text =</span> stringr<span class="sc">::</span><span class="fu">str_c</span>(Common, <span class="co"># Make popup text string</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">" "</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                                       <span class="fu">as.character</span>(<span class="fu">round</span>(post_set_min, <span class="dv">0</span>)), </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">" minutes after sunset"</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">leaflet</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">addCircleMarkers</span>(</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">lng =</span> <span class="sc">~</span>Longitude, <span class="at">lat =</span> <span class="sc">~</span>Latitude,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">radius =</span> <span class="dv">7</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="sc">~</span><span class="fu">pal</span>(Species),</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">stroke =</span> <span class="cn">TRUE</span>, <span class="at">fillOpacity =</span> <span class="fl">0.7</span>,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">popup =</span> <span class="sc">~</span>Popup_text, <span class="at">label =</span> <span class="sc">~</span>Popup_text</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="fig-lydfordtransect" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<div id="htmlwidget-61cf9169fe534dd30751" style="width:100%;height:464px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-61cf9169fe534dd30751">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addCircleMarkers","args":[[50.645288,50.645473,50.644955,50.645052,50.644623,50.644748,50.64469,50.644718,50.644718,50.644402,50.643667,50.643667,50.643772,50.64359,50.64359,50.643345,50.643473,50.643427,50.643423,50.643423,50.643423,50.643423,50.64259,50.642572,50.642572,50.642557,50.642507,50.642507,50.6425,50.642517,50.64259,50.642417,50.642418,50.642432,50.642432,50.642007,50.642347,50.642785,50.64274,50.643338,50.64336,50.643333,50.643405,50.643405,50.643427,50.643427,50.645313,50.645665,50.645688,50.645712,50.64572,50.64668,50.646637,50.646697,50.646668,50.646645,50.646642,50.646713,50.646745,50.646745,50.646958,50.647057],[-4.103227,-4.103498,-4.103527,-4.103513,-4.103302,-4.103382,-4.103322,-4.103233,-4.103233,-4.103525,-4.103458,-4.103458,-4.10342,-4.103588,-4.103588,-4.103483,-4.103492,-4.103408,-4.10354,-4.10354,-4.10354,-4.10354,-4.102753,-4.102697,-4.102697,-4.102695,-4.10274,-4.10274,-4.102633,-4.102777,-4.102723,-4.10267,-4.102652,-4.102663,-4.102663,-4.102765,-4.102762,-4.103177,-4.102958,-4.105023,-4.104318,-4.104278,-4.103785,-4.103785,-4.103508,-4.103508,-4.103262,-4.103302,-4.103275,-4.103175,-4.103413,-4.104568,-4.104397,-4.104632,-4.104787,-4.104843,-4.104778,-4.104433,-4.104213,-4.104213,-4.103815,-4.103617],7,null,null,{"interactive":true,"className":"","stroke":true,"color":["#B15928","#B15928","#B15928","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#B15928","#B15928","#A6CEE3","#A6CEE3","#A6CEE3","#A6CEE3","#A6CEE3","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#B15928","#A6CEE3","#FFFF99","#B15928","#FFFF99","#FFFF99","#FFFF99","#FF7F00","#B15928","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#B15928","#B15928","#8B0000","#33A02C","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#B15928","#FFFF99"],"weight":5,"opacity":0.5,"fill":true,"fillColor":["#B15928","#B15928","#B15928","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#B15928","#B15928","#A6CEE3","#A6CEE3","#A6CEE3","#A6CEE3","#A6CEE3","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#B15928","#A6CEE3","#FFFF99","#B15928","#FFFF99","#FFFF99","#FFFF99","#FF7F00","#B15928","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#B15928","#B15928","#8B0000","#33A02C","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#FFFF99","#B15928","#FFFF99"],"fillOpacity":0.7},null,null,["Soprano pipistrelle 14 minutes after sunset","Soprano pipistrelle 14 minutes after sunset","Soprano pipistrelle 17 minutes after sunset","Common pipistrelle 18 minutes after sunset","Common pipistrelle 19 minutes after sunset","Common pipistrelle 19 minutes after sunset","Common pipistrelle 19 minutes after sunset","Common pipistrelle 19 minutes after sunset","Common pipistrelle 20 minutes after sunset","Common pipistrelle 23 minutes after sunset","Common pipistrelle 25 minutes after sunset","Common pipistrelle 25 minutes after sunset","Common pipistrelle 25 minutes after sunset","Common pipistrelle 26 minutes after sunset","Common pipistrelle 26 minutes after sunset","Common pipistrelle 26 minutes after sunset","Soprano pipistrelle 26 minutes after sunset","Soprano pipistrelle 28 minutes after sunset","Daubenton's 29 minutes after sunset","Daubenton's 29 minutes after sunset","Daubenton's 29 minutes after sunset","Daubenton's 29 minutes after sunset","Daubenton's 33 minutes after sunset","Common pipistrelle 33 minutes after sunset","Common pipistrelle 34 minutes after sunset","Common pipistrelle 35 minutes after sunset","Common pipistrelle 35 minutes after sunset","Common pipistrelle 35 minutes after sunset","Soprano pipistrelle 35 minutes after sunset","Daubenton's 36 minutes after sunset","Common pipistrelle 37 minutes after sunset","Soprano pipistrelle 40 minutes after sunset","Common pipistrelle 40 minutes after sunset","Common pipistrelle 40 minutes after sunset","Common pipistrelle 40 minutes after sunset","Natterer's 44 minutes after sunset","Soprano pipistrelle 51 minutes after sunset","Common pipistrelle 53 minutes after sunset","Common pipistrelle 54 minutes after sunset","Common pipistrelle 54 minutes after sunset","Common pipistrelle 55 minutes after sunset","Common pipistrelle 55 minutes after sunset","Common pipistrelle 55 minutes after sunset","Common pipistrelle 55 minutes after sunset","Common pipistrelle 55 minutes after sunset","Common pipistrelle 56 minutes after sunset","Common pipistrelle 59 minutes after sunset","Soprano pipistrelle 60 minutes after sunset","Soprano pipistrelle 60 minutes after sunset","Brown long-eared 60 minutes after sunset","Lesser horseshoe 63 minutes after sunset","Common pipistrelle 67 minutes after sunset","Common pipistrelle 67 minutes after sunset","Common pipistrelle 68 minutes after sunset","Common pipistrelle 68 minutes after sunset","Common pipistrelle 69 minutes after sunset","Common pipistrelle 69 minutes after sunset","Common pipistrelle 70 minutes after sunset","Common pipistrelle 71 minutes after sunset","Common pipistrelle 71 minutes after sunset","Soprano pipistrelle 71 minutes after sunset","Common pipistrelle 73 minutes after sunset"],null,["Soprano pipistrelle 14 minutes after sunset","Soprano pipistrelle 14 minutes after sunset","Soprano pipistrelle 17 minutes after sunset","Common pipistrelle 18 minutes after sunset","Common pipistrelle 19 minutes after sunset","Common pipistrelle 19 minutes after sunset","Common pipistrelle 19 minutes after sunset","Common pipistrelle 19 minutes after sunset","Common pipistrelle 20 minutes after sunset","Common pipistrelle 23 minutes after sunset","Common pipistrelle 25 minutes after sunset","Common pipistrelle 25 minutes after sunset","Common pipistrelle 25 minutes after sunset","Common pipistrelle 26 minutes after sunset","Common pipistrelle 26 minutes after sunset","Common pipistrelle 26 minutes after sunset","Soprano pipistrelle 26 minutes after sunset","Soprano pipistrelle 28 minutes after sunset","Daubenton's 29 minutes after sunset","Daubenton's 29 minutes after sunset","Daubenton's 29 minutes after sunset","Daubenton's 29 minutes after sunset","Daubenton's 33 minutes after sunset","Common pipistrelle 33 minutes after sunset","Common pipistrelle 34 minutes after sunset","Common pipistrelle 35 minutes after sunset","Common pipistrelle 35 minutes after sunset","Common pipistrelle 35 minutes after sunset","Soprano pipistrelle 35 minutes after sunset","Daubenton's 36 minutes after sunset","Common pipistrelle 37 minutes after sunset","Soprano pipistrelle 40 minutes after sunset","Common pipistrelle 40 minutes after sunset","Common pipistrelle 40 minutes after sunset","Common pipistrelle 40 minutes after sunset","Natterer's 44 minutes after sunset","Soprano pipistrelle 51 minutes after sunset","Common pipistrelle 53 minutes after sunset","Common pipistrelle 54 minutes after sunset","Common pipistrelle 54 minutes after sunset","Common pipistrelle 55 minutes after sunset","Common pipistrelle 55 minutes after sunset","Common pipistrelle 55 minutes after sunset","Common pipistrelle 55 minutes after sunset","Common pipistrelle 55 minutes after sunset","Common pipistrelle 56 minutes after sunset","Common pipistrelle 59 minutes after sunset","Soprano pipistrelle 60 minutes after sunset","Soprano pipistrelle 60 minutes after sunset","Brown long-eared 60 minutes after sunset","Lesser horseshoe 63 minutes after sunset","Common pipistrelle 67 minutes after sunset","Common pipistrelle 67 minutes after sunset","Common pipistrelle 68 minutes after sunset","Common pipistrelle 68 minutes after sunset","Common pipistrelle 69 minutes after sunset","Common pipistrelle 69 minutes after sunset","Common pipistrelle 70 minutes after sunset","Common pipistrelle 71 minutes after sunset","Common pipistrelle 71 minutes after sunset","Soprano pipistrelle 71 minutes after sunset","Common pipistrelle 73 minutes after sunset"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[50.642007,50.647057],"lng":[-4.105023,-4.102633]}},"evals":[],"jsHooks":[]}</script>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1: Bat Observations From Lydford School’s Bat Walk</figcaption><p></p>
+</figure>
+</div>
+</div>
+<p>The data shown in <a href="#fig-lydfordtransect">Figure&nbsp;1</a>, <code>Lydford</code> is available from the <code>iBats</code> package.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

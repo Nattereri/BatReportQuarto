@@ -20,7 +20,7 @@ These web pages compliment the _data science_ chapters of the forthcoming BCT Ba
 
 ### Install the _iBats_ Package from GitHub
 
-The `iBats` package contains functions that help with the _Data Science_ of bat survey results. To install this package use the code below in the console (see Figure ); _one line at a time_. The package is installed from GitHub.   
+The `iBats` package contains example data and functions that help with the _Data Science_ of bat survey results. To install this package use the code below in the console (see Figure ); _one line at a time_. The package is installed from GitHub.   
 ```{r}
 #| echo=FALSE,  
 #| eval=FALSE

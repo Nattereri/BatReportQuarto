@@ -13,6 +13,7 @@ website:
       - visualisation.qmd
       - statistics.qmd
       - reporting.qmd
+      - dynamic.qmd
       - about.qmd
 
 format:

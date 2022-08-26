@@ -1,0 +1,109 @@
+---
+title: "Interactive Reports"
+format: 
+  html:
+     code-fold: true
+     code-summary: "Show the code"
+---
+
+
+## Maps
+
+### Lydford School Transect
+
+```{r}
+#| include=FALSE
+
+library(tidyverse)
+library(leaflet)
+library(iBats)
+
+
+
+# Leaflet  bat colours
+LeafColours<- c("#ffff99",
+                  "#b15928",
+                  "#1f78b4",
+                  "#A52A2A",
+                  "#7FFF00",
+                  "#b2df8a",
+                  "#6a3d9a",
+                  "#ff7f00",
+                  "#a6cee3",
+                  "#BCEE68",
+                  "#8B0000",
+                  "#8B0000",
+                  "#000000",
+                  "#8A2BE2",
+                  "#fdbf6f",
+                  "#e31a1c",
+                  "#33a02c",
+                  "#cab2d6",
+                  "#fb9a99",
+                  "#EEE8CD",
+                  "#008B8B",
+                  "#000000")
+
+# Species list for colours
+Species <- c("Pipistrellus pipistrellus",
+             "Pipistrellus pygmaeus",
+             "Barbastella barbastellus",
+             "Myotis alcathoe",
+             "Myotis bechsteinii",
+             "Myotis brandtii",
+             "Myotis mystacinus",
+             "Myotis nattereri",
+             "Myotis daubentonii",
+             "Myotis spp.",
+             "Plecotus auritus",
+             "Plecotus spp.",
+             "Plecotus austriacus",
+             "Pipistrellus nathusii",
+             "Pipistrellus spp.",
+             "Rhinolophus ferrumequinum",
+             "Rhinolophus hipposideros",
+             "Nyctalus noctula",
+             "Nyctalus leisleri",
+             "Nyctalus spp.",
+             "Eptesicus serotinus",
+             "Pipistrelle Social")
+
+ColourVector <- tibble(Species, LeafColours)
+
+ColourVector <- ColourVector %>% 
+  arrange(Species)
+
+
+```
+
+@fig-lydfordtransect shows Lydford Primary School's bat walk observations from Wednesday evening 18^th^ September 2019.  The walk, between the School and the River Lyd, on the western edge of Dartmoor, started at sunset 6:27pm and continued for just over an hour.  The observations were made with a [Batlogger M](https://www.batlogger.com/en/products/batlogger_m/) bat detector that records the sound of the bat as it passes together with the time and postion; using a built-in Global Positioning System (GPS).  These sounds where then analysed with software designed to help determine which species made the echolocation; [BatExplorer](https://www.batlogger.com/en/products/batexplorer/) was the software used.   
+
+
+@fig-lydfordtransect is an interactive map; hovering the mouse over the coloured point will show the species and the time, in minutes, after sunset the bat was observed.
+
+```{r}
+#| label: fig-lydfordtransect
+#| fig-cap: "Bat Observations From Lydford School's Bat Walk"
+
+# Pallet of colours for bat species on Leaflet map
+pal <- colorFactor(ColourVector$LeafColours, domain = ColourVector$Species)
+
+Lydford %>%
+    mutate(Popup_text = stringr::str_c(Common, # Make popup text string
+                                       " ",
+                                       as.character(round(post_set_min, 0)), 
+                                       " minutes after sunset")) %>% 
+    leaflet() %>% 
+    addTiles() %>% 
+    addCircleMarkers(
+      lng = ~Longitude, lat = ~Latitude,
+      radius = 7,
+      color = ~pal(Species),
+      stroke = TRUE, fillOpacity = 0.7,
+      popup = ~Popup_text, label = ~Popup_text
+    )
+
+```
+
+
+The data shown in  @fig-lydfordtransect, `Lydford` is available from the `iBats` package.
