@@ -17,7 +17,7 @@ format:
 library(tidyverse)
 library(leaflet)
 library(iBats)
-
+library(DT)
 
 
 # Leaflet  bat colours
@@ -107,3 +107,28 @@ Lydford %>%
 @fig-lydfordtransect is an interactive map; hovering the mouse over the coloured point will show the species and the time, in minutes, after sunset the bat was observed.
 
 The data shown in  @fig-lydfordtransect, `Lydford` is available from the `iBats` package.
+
+
+## Interactive Table 
+
+
+Below is an interactive table created with the `Lydford` data available from the `iBats` package. 
+
+* `DateTime`
+* `Species`
+* `post_set_min`- time in minutes the bat was observed after sun set
+* `bat_time`
+
+
+```{r}
+
+Lydford %>% 
+  select(DateTime, Species, post_set_min, bat_time) %>% 
+  mutate(post_set_min = round(post_set_min, 2)) %>% 
+  # show the data with datatable function from the DT packag
+  DT::datatable(options = list(pageLength = 10), 
+                caption = 'Principal Lydford Transect Data')
+
+
+```
+
