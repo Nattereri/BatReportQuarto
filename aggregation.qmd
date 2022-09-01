@@ -57,17 +57,20 @@ statics %>%
   arrange(desc(n)) %>% 
   # rename n as count
   rename(`Bat Species` = Species, count = n) %>% 
+  # Table made with knitr::kable()
   knitr::kable()
   
 
 ```
 
 
-More informative tables can be made by adding meta data such as the Month and Year of the observations.  This is easy done on a _tidy data_ conforming to the _minimal data requirement_  with the `date_time_info` function in the `iBats` package. @tbl-countannex2 shows the monthly count (bat passes) of _Annex 2_ species;  .
+More informative tables can be made by adding meta data such as the Month and Year of the observations.  This is easy done on a _tidy data_ conforming to the _minimal data requirement_  with the `date_time_info` function in the `iBats` package. @tbl-countannex2 shows the monthly count (bat passes) of _Annex II_ species[^1];  .
+
+[^1]: <https://ec.europa.eu/environment/nature/conservation/species/habitats_dir_en.htm>
 
 ```{r}
 #| label: tbl-countannex2
-#| tbl-cap: "A Count of Annex 2 Bats Grouped by Month"
+#| tbl-cap: "A Count of Annex II Bats Grouped by Month"
 
 # Add data and time information to the statics data using the iBats::date_time_info
 statics_plus <- iBats::date_time_info(statics)
@@ -90,6 +93,7 @@ statics_plus %>%
   rename(Month = MonthFull, `Bat Species` = Species, Count = n) %>%
   # Table made with flextable
   flextable(col_keys = colnames(.)) %>%
+  italic(j = 2, italic = TRUE, part = "body") %>% 
   fontsize(part = "header", size = 12) %>%
   fontsize(part = "body", size = 12) %>%
   colformat_double(j = "Count", digits = 4, big.mark = ",") %>%
@@ -107,11 +111,11 @@ statics_plus %>%
 ```
 
 
-Tables of numbers can be frustrating to read.  To help readability the table can be annotated highlighting the  count on colour scale linked to the magnitude of the result. This is shown in @tbl-countannex2c for the count of bats shown in  @tbl-countannex2. 
+Tables of numbers can be frustrating to read.  To help readability the table can be annotated highlighting the  count on a colour scale linked to the magnitude of the result. This is shown in @tbl-countannex2c for the count of bats shown in  @tbl-countannex2. 
 
 ```{r}
 #| label: tbl-countannex2c
-#| tbl-cap: "A Count (Highlighted) of Annex 2 Bats Grouped by Month"
+#| tbl-cap: "A Count (Highlighted) of Annex II Bats Grouped by Month"
 
 # Add data and time information to the statics data using the iBats::date_time_info
 statics_plus <- iBats::date_time_info(statics)
@@ -145,6 +149,7 @@ colourer <- scales::col_numeric(
 # Table made with flextable
 table_data %>% 
   flextable(col_keys = colnames(.)) %>%
+  italic(j = 2, italic = TRUE, part = "body") %>% 
   fontsize(part = "header", size = 12) %>%
   fontsize(part = "body", size = 12) %>%
   colformat_double(j = "Count", digits = 4, big.mark = ",") %>%

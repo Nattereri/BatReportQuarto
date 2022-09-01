@@ -23,6 +23,8 @@ Statistical modeling is a method of mathematically approximating the world.
 
 ## Comparison of Activity
 
+### An Obvious Difference 
+
 The `statics` data in the `iBats` package has some interesting Barbastelle (_Barbastella barbastellus_) bat activity, it would be interesting and aid  our understanding if we compare the activity between static locations and see if they are significantly different. 
 
 Before undertaking any statistical test always visualise the data the statistical test is applied to. Barbastelle has been recorded at several locations see @fig-kwbarb.
@@ -130,7 +132,11 @@ stat_pvalue <- kruskal.test(ave_act_per_hr ~ Description, data = test_data)$p.va
 
 ```
 
-The Kruskal-Wallis test was undertaken for the Barbastelle bat at the following static locations: `r knitr::combine_words(StaticsWithPlus5)`. The Kruskal-Wallis test gives a p-value of `r formatC(stat_pvalue, format = "e", digits = 2)`; therefore the null hypothesis is rejected at P<0.05. The Kruskal-Wallis test shows there is a likely difference in Barbestelle activity between some static locations.  What the Kruskal-Wallis test does not indicate, is which static locations are different; to determine this we need to undertake _post hoc_ testing, this can be undertaken with the Dunn’s Test.  
+With reference to @fig-kwbarb there are several static locations where the activity can be compared, this is more than two locations, therefore the Kruskal-Wallis test is undertaken rather than the Mann-Whitney-Wilcoxon test. Location 1 with only three results is excluded from the test.   
+
+The Kruskal-Wallis test  undertaken for the Barbastelle at the following static locations: `r knitr::combine_words(StaticsWithPlus5)` produced a P value (`r formatC(stat_pvalue, format = "e", digits = 2)`) less than the chosen threshold for statistical significance of 0.05; therefore the null hypothesis is rejected, activity between some static locations is likely to be different.   
+
+What the Kruskal-Wallis test does not indicate, is which static locations are different; to determine this we need to undertake _post hoc_ testing, this can be undertaken with the Dunn’s Test.  
 
 ```{r}
 #| include: false
@@ -176,3 +182,152 @@ resultsTable %>%
   bold(j = 1, bold = TRUE, part = "body")     
 ```
 
+The Dunn’s Test carries out multiple comparisons therefore a P value adjustment needs to be made to avoid a false significant result. For this P value adjustment the Bonferroni method is applied; a simple technique for controlling the overall probability of a false significant result when multiple comparisons are to be carried out.
+
+@tbl-dunns gives the results of the _post hoc_ testing with the Dunn’s test and shows that Barbastelle activity at Location 4 is significantly different (at P<0.05) to activity at Locations 2, 3, and 5.  
+
+The statistical tests show that Barbastelle bat activity recorded at Location 4 is significantly different; this knowledge is evidence based and can be stated with confidence when reporting. 
+
+
+### Less Obvious Difference 
+
+@fig-kwpip shows Common pipistrelle activity for the static locations comparison of activity can be undertaken with the Kruskal-Wallis test with the following hypothesis:
+
+* __The Null Hypothesis:__ bat pass rates per hour are from distributions with the same median.
+
+* __The Alternative Hypothesis:__ bat pass rates per hour are from distributions with a different median.
+
+```{r}
+#| label: fig-kwpip
+#| fig-cap: "Common Pipistrelle Activity at Each Static (Nighly Average Passes per Hour)"
+
+
+# Add data and time information to the statics data using the iBats::date_time_info
+statics_plus <- iBats::date_time_info(statics)
+
+# Add sun and night time metrics to the statics data using the iBats::sun_night_metrics() function.
+statics_plus <- iBats::sun_night_metrics(statics_plus)
+
+
+graph_data <- statics_plus %>%
+    filter(Species == "Pipistrellus pipistrellus") %>% 
+    group_by(Description, Night, night_length_hr) %>%
+    # count number of passes per night by species - makes coloumn "n""
+    tally() %>% 
+    # calculate average bat passes per hour for each Night and species
+    mutate(ave_act_per_hr = n / night_length_hr) %>%
+    # Remove Night Length column from the Table
+    select(-night_length_hr, -n) 
+
+ggplot(graph_data, aes(y = ave_act_per_hr, x = Description)) +
+                  geom_jitter(fill = "#ffff99", #Common Pipistrelle colour
+                              colour = "black", 
+                              shape = 23, 
+                              alpha = 0.7, 
+                              size = 3) +
+                  geom_boxplot(colour = "grey30", fill = "transparent") + 
+                  labs(y = "Common Pipistrelle Activity  \n(Nightly Average Passes per Hour)") +
+                  theme_bw() + 
+                  theme(legend.position = "none", # No legend
+                  axis.text.x = element_text(size=12, face="bold"), 
+                  axis.text.y = element_text(size=12,face="bold"), 
+                  axis.title.y = element_text(face="bold"), 
+                  axis.title.x = element_blank(), # no y title (just bat names)
+                  panel.grid.major = element_blank(), #remove grid lines
+                  panel.grid.minor = element_blank())
+
+
+
+```
+
+
+```{r}
+
+# Add data and time information to the statics data using the iBats::date_time_info
+statics_plus <- iBats::date_time_info(statics)
+
+# Add sun and night time metrics to the statics data using the iBats::sun_night_metrics() function.
+statics_plus <- iBats::sun_night_metrics(statics_plus)
+
+
+test_data <- statics_plus %>%
+  filter(Species == "Pipistrellus pipistrellus") %>%
+  group_by(Description, Night, night_length_hr) %>%
+  # count number of passes per night by species - makes coloumn "n""
+  tally() %>%
+  # calculate average bat passes per hour for each Night and species
+  mutate(ave_act_per_hr = n / night_length_hr) %>%
+  # Remove Night Length column from the Table
+  select(-night_length_hr, -n)
+
+
+# Check at least 2 locations and a minimum of 5 observations per location
+# Only do KW on locations with 5 or more observations
+# if just two locations do Mann Whitney
+check_data <- test_data %>%
+  group_by(Description) %>%
+  tally()
+
+# filter for Statics with more than 5 values
+StaticsWithPlus5 <- check_data %>%
+  filter(n >= 5) %>%
+  pull(Description)
+
+test_data <- test_data %>%
+  filter(Description %in% StaticsWithPlus5)
+
+# Extract the p-value from the kruskal.test
+stat_pvalue <- kruskal.test(ave_act_per_hr ~ Description, data = test_data)$p.value
+
+```
+The Kruskal-Wallis test undertaken for the Common pipistrelle at the following static locations: `r knitr::combine_words(StaticsWithPlus5)` produced a P value (`r formatC(stat_pvalue, format = "e", digits = 2)`) less than the chosen threshold for statistical significance of 0.05; therefore the null hypothesis is rejected, activity between some static locations is likely to be different. The Dunn’s test can be applied to determine the static locations that are different. 
+
+
+```{r}
+#| include: false
+
+dunn_result <- dunn.test(test_data$ave_act_per_hr, factor(test_data$Description), method = "bonferroni")
+
+```
+
+```{r}
+#| eval: false
+
+dunn_result <- dunn.test(test_data$ave_act_per_hr, factor(test_data$Description), method = "bonferroni")
+
+```
+
+
+Results of the Dunn’s test, performed after the Kruskal-Wallis test (_post hoc_), are shown in @tbl-dunns2.
+
+
+```{r}
+#| label: tbl-dunns2
+#| tbl-cap: "Results of Post-hoc testing with the Dunn’s Test"
+
+
+df <- tibble(dunn_result$comparisons, dunn_result$P.adjusted)
+
+colnames(df) <- c("Comparison", "P.adj")
+
+resultsTable <- df %>%
+  filter(P.adj < 0.05) %>%
+  select(`Locations with a significant difference (P<0.05)` = Comparison, `adjusted P ` = P.adj)
+
+resultsTable %>%
+  flextable(col_keys = colnames(.)) %>%
+  fontsize(part = "header", size = 12) %>%
+  fontsize(part = "body", size = 12) %>%
+  bold(part = "header") %>%
+  autofit(add_w = 0.1, add_h = 0.1) %>%
+  bg(bg = "black", part = "header") %>%
+  color(color = "white", part = "header") %>%
+  align(align = "center", part = "header") %>%
+  align(j = 2, align = "right", part = "body") %>%
+  bold(j = 1, bold = TRUE, part = "body")     
+```
+
+@tbl-dunns2 gives the results of the _post hoc_ testing with the Dunn’s test; post P value adjustment with the Bonferroni method showing:
+
+* Common pipistrelle activity at static 4 is significantly different (at P<0.05) to all the other static locations.  
+* Common pipistrelle activity at static 1 is significantly different to static locations 2, 3 and 4.  The significant difference (at P<0.05) between static 1 and static 3 is not easily determined from @fig-kwpip.
