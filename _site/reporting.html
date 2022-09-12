@@ -192,7 +192,13 @@ div.csl-indent {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why-do-this" id="toc-why-do-this" class="nav-link active" data-scroll-target="#why-do-this">Why Do This?</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -213,8 +219,8 @@ div.csl-indent {
 
 </header>
 
-<p>A full bat survey report produced, <strong><em>with one mouse click</em></strong>, from sound analysis data (i.e after identifying the bat to species or genus with sound analysis). <em>One click reporting</em> is achieved through literate programming <span class="citation" data-cites="knuth84">(<a href="#ref-knuth84" role="doc-biblioref">Knuth 1984</a>)</span>; a procedure of mixing code and descriptive writing, in order to undertake and explain data analysis simultaneously in the same document.</p>
-<p>The first few rows of bat survey data, post sound analysis, is shown in <a href="#tbl-surveydata">Table&nbsp;1</a>; this is from of the <code>statics</code> data in the <code>iBats</code> package, is <em>tidy</em> and has the minimum columns for undertaking effective analysis:</p>
+<p>A full bat survey report produced, <strong><em>with one mouse click</em></strong>, from sound analysis data (i.e after identifying the bat detector calls to species or genus with sound analysis). <em>One click reporting</em> is achieved through literate programming <span class="citation" data-cites="knuth84">(<a href="#ref-knuth84" role="doc-biblioref">Knuth 1984</a>)</span>; a procedure of mixing code and descriptive writing, in order to undertake and explain data analysis simultaneously in the same document.</p>
+<p>The first few rows of some bat survey data, post sound analysis, is shown in <a href="#tbl-surveydata">Table&nbsp;1</a>; this is from of the <code>statics</code> data in the <code>iBats</code> package, it is <em>tidy</em> data and has the minimum columns for undertaking effective analysis:</p>
 <ul>
 <li>Description</li>
 <li>DateTime</li>
@@ -249,12 +255,12 @@ div.csl-indent {
 <div class="cell-output-display">
 <div id="tbl-surveydata" class="anchored">
 
-<div id="ixktobhxfp" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="vdibvuautr" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#ixktobhxfp .gt_table {
+#vdibvuautr .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -279,7 +285,7 @@ div.csl-indent {
   border-left-color: #D3D3D3;
 }
 
-#ixktobhxfp .gt_heading {
+#vdibvuautr .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -291,7 +297,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ixktobhxfp .gt_title {
+#vdibvuautr .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -303,7 +309,7 @@ div.csl-indent {
   border-bottom-width: 0;
 }
 
-#ixktobhxfp .gt_subtitle {
+#vdibvuautr .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -315,13 +321,13 @@ div.csl-indent {
   border-top-width: 0;
 }
 
-#ixktobhxfp .gt_bottom_border {
+#vdibvuautr .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ixktobhxfp .gt_col_headings {
+#vdibvuautr .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -336,7 +342,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ixktobhxfp .gt_col_heading {
+#vdibvuautr .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -356,7 +362,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#ixktobhxfp .gt_column_spanner_outer {
+#vdibvuautr .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -368,15 +374,15 @@ div.csl-indent {
   padding-right: 4px;
 }
 
-#ixktobhxfp .gt_column_spanner_outer:first-child {
+#vdibvuautr .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ixktobhxfp .gt_column_spanner_outer:last-child {
+#vdibvuautr .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ixktobhxfp .gt_column_spanner {
+#vdibvuautr .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -388,7 +394,7 @@ div.csl-indent {
   width: 100%;
 }
 
-#ixktobhxfp .gt_group_heading {
+#vdibvuautr .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -413,7 +419,7 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#ixktobhxfp .gt_empty_group_heading {
+#vdibvuautr .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -428,15 +434,15 @@ div.csl-indent {
   vertical-align: middle;
 }
 
-#ixktobhxfp .gt_from_md > :first-child {
+#vdibvuautr .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ixktobhxfp .gt_from_md > :last-child {
+#vdibvuautr .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ixktobhxfp .gt_row {
+#vdibvuautr .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -455,7 +461,7 @@ div.csl-indent {
   overflow-x: hidden;
 }
 
-#ixktobhxfp .gt_stub {
+#vdibvuautr .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -468,7 +474,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ixktobhxfp .gt_stub_row_group {
+#vdibvuautr .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -482,11 +488,11 @@ div.csl-indent {
   vertical-align: top;
 }
 
-#ixktobhxfp .gt_row_group_first td {
+#vdibvuautr .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ixktobhxfp .gt_summary_row {
+#vdibvuautr .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -496,16 +502,16 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ixktobhxfp .gt_first_summary_row {
+#vdibvuautr .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ixktobhxfp .gt_first_summary_row.thick {
+#vdibvuautr .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ixktobhxfp .gt_last_summary_row {
+#vdibvuautr .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -515,7 +521,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#ixktobhxfp .gt_grand_summary_row {
+#vdibvuautr .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -525,7 +531,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ixktobhxfp .gt_first_grand_summary_row {
+#vdibvuautr .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -535,11 +541,11 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
-#ixktobhxfp .gt_striped {
+#vdibvuautr .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ixktobhxfp .gt_table_body {
+#vdibvuautr .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -548,7 +554,7 @@ div.csl-indent {
   border-bottom-color: #D3D3D3;
 }
 
-#ixktobhxfp .gt_footnotes {
+#vdibvuautr .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -562,7 +568,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ixktobhxfp .gt_footnote {
+#vdibvuautr .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -571,7 +577,7 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ixktobhxfp .gt_sourcenotes {
+#vdibvuautr .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -585,7 +591,7 @@ div.csl-indent {
   border-right-color: #D3D3D3;
 }
 
-#ixktobhxfp .gt_sourcenote {
+#vdibvuautr .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -593,36 +599,36 @@ div.csl-indent {
   padding-right: 5px;
 }
 
-#ixktobhxfp .gt_left {
+#vdibvuautr .gt_left {
   text-align: left;
 }
 
-#ixktobhxfp .gt_center {
+#vdibvuautr .gt_center {
   text-align: center;
 }
 
-#ixktobhxfp .gt_right {
+#vdibvuautr .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ixktobhxfp .gt_font_normal {
+#vdibvuautr .gt_font_normal {
   font-weight: normal;
 }
 
-#ixktobhxfp .gt_font_bold {
+#vdibvuautr .gt_font_bold {
   font-weight: bold;
 }
 
-#ixktobhxfp .gt_font_italic {
+#vdibvuautr .gt_font_italic {
   font-style: italic;
 }
 
-#ixktobhxfp .gt_super {
+#vdibvuautr .gt_super {
   font-size: 65%;
 }
 
-#ixktobhxfp .gt_two_val_uncert {
+#vdibvuautr .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -631,31 +637,31 @@ div.csl-indent {
   margin-left: 0.1em;
 }
 
-#ixktobhxfp .gt_footnote_marks {
+#vdibvuautr .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#ixktobhxfp .gt_asterisk {
+#vdibvuautr .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ixktobhxfp .gt_slash_mark {
+#vdibvuautr .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#ixktobhxfp .gt_fraction_numerator {
+#vdibvuautr .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#ixktobhxfp .gt_fraction_denominator {
+#vdibvuautr .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -673,56 +679,56 @@ div.csl-indent {
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left">2016-06-10 00:45:11</td>
-<td class="gt_row gt_left">Rhinolophus hipposideros</td>
-<td class="gt_row gt_right">-3.591798</td>
-<td class="gt_row gt_right">50.33102</td></tr>
-    <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left">2016-06-13 02:42:07</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right">-3.591858</td>
-<td class="gt_row gt_right">50.33123</td></tr>
-    <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left">2016-07-29 23:50:47</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right">-3.591728</td>
-<td class="gt_row gt_right">50.33129</td></tr>
-    <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left">2016-07-30 02:31:57</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right">-3.591728</td>
-<td class="gt_row gt_right">50.33129</td></tr>
     <tr><td class="gt_row gt_left">Static 2</td>
-<td class="gt_row gt_left">2016-07-30 03:32:56</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right">-3.592583</td>
-<td class="gt_row gt_right">50.33323</td></tr>
-    <tr><td class="gt_row gt_left">Static 2</td>
-<td class="gt_row gt_left">2016-08-16 00:20:54</td>
-<td class="gt_row gt_left">Myotis spp.</td>
-<td class="gt_row gt_right">-3.592583</td>
-<td class="gt_row gt_right">50.33323</td></tr>
-    <tr><td class="gt_row gt_left">Static 2</td>
-<td class="gt_row gt_left">2016-08-16 01:00:41</td>
+<td class="gt_row gt_left">2016-06-03 00:01:22</td>
 <td class="gt_row gt_left">Pipistrellus pipistrellus</td>
 <td class="gt_row gt_right">-3.592583</td>
 <td class="gt_row gt_right">50.33323</td></tr>
     <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left">2016-08-27 00:11:56</td>
+<td class="gt_row gt_left">2016-06-07 02:14:11</td>
+<td class="gt_row gt_left">Barbastella barbastellus</td>
+<td class="gt_row gt_right">-3.591808</td>
+<td class="gt_row gt_right">50.33130</td></tr>
+    <tr><td class="gt_row gt_left">Static 5</td>
+<td class="gt_row gt_left">2016-06-13 04:16:40</td>
+<td class="gt_row gt_left">Barbastella barbastellus</td>
+<td class="gt_row gt_right">-3.590775</td>
+<td class="gt_row gt_right">50.33095</td></tr>
+    <tr><td class="gt_row gt_left">Static 4</td>
+<td class="gt_row gt_left">2016-08-04 03:39:37</td>
+<td class="gt_row gt_left">Pipistrellus pipistrellus</td>
+<td class="gt_row gt_right">-3.591748</td>
+<td class="gt_row gt_right">50.33136</td></tr>
+    <tr><td class="gt_row gt_left">Static 4</td>
+<td class="gt_row gt_left">2016-08-05 05:26:16</td>
+<td class="gt_row gt_left">Pipistrellus pipistrellus</td>
+<td class="gt_row gt_right">-3.591748</td>
+<td class="gt_row gt_right">50.33136</td></tr>
+    <tr><td class="gt_row gt_left">Static 4</td>
+<td class="gt_row gt_left">2016-08-24 02:37:10</td>
+<td class="gt_row gt_left">Pipistrellus pipistrellus</td>
+<td class="gt_row gt_right">-3.592228</td>
+<td class="gt_row gt_right">50.33091</td></tr>
+    <tr><td class="gt_row gt_left">Static 4</td>
+<td class="gt_row gt_left">2016-08-26 02:47:38</td>
 <td class="gt_row gt_left">Pipistrellus pygmaeus</td>
-<td class="gt_row gt_right">-3.591718</td>
-<td class="gt_row gt_right">50.33129</td></tr>
+<td class="gt_row gt_right">-3.591738</td>
+<td class="gt_row gt_right">50.33133</td></tr>
+    <tr><td class="gt_row gt_left">Static 2</td>
+<td class="gt_row gt_left">2016-08-29 05:27:15</td>
+<td class="gt_row gt_left">Nyctalus noctula</td>
+<td class="gt_row gt_right">-3.592583</td>
+<td class="gt_row gt_right">50.33323</td></tr>
+    <tr><td class="gt_row gt_left">Static 2</td>
+<td class="gt_row gt_left">2016-10-15 06:05:40</td>
+<td class="gt_row gt_left">Pipistrellus spp.</td>
+<td class="gt_row gt_right">-3.592583</td>
+<td class="gt_row gt_right">50.33323</td></tr>
     <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left">2016-08-27 02:12:47</td>
+<td class="gt_row gt_left">2016-10-16 19:19:42</td>
 <td class="gt_row gt_left">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right">-3.591718</td>
-<td class="gt_row gt_right">50.33129</td></tr>
-    <tr><td class="gt_row gt_left">Static 3</td>
-<td class="gt_row gt_left">2016-09-14 20:45:46</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right">-3.593018</td>
-<td class="gt_row gt_right">50.33101</td></tr>
+<td class="gt_row gt_right">-3.591798</td>
+<td class="gt_row gt_right">50.33132</td></tr>
   </tbody>
   
   
@@ -731,9 +737,22 @@ div.csl-indent {
 </div>
 </div>
 </div>
+<section id="why-do-this" class="level2">
+<h2 class="anchored" data-anchor-id="why-do-this">Why Do This?</h2>
+<p>The advantages of this approach to bat data science are appreciable:</p>
+<ol type="1">
+<li>Workflow
+<ol type="i">
+<li>Reduces (and can eliminate) any copy and paste activity)</li>
+<li>Reports are easily created with new data or updated with revised data</li>
+</ol></li>
+<li>Reproducible</li>
+</ol>
+<p>What’s the disadvantage?</p>
 
 
 
+</section>
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">

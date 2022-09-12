@@ -19,9 +19,9 @@ library(glue)
 
 ```
 
-A full bat survey report produced, ***with one mouse click***, from sound analysis data (i.e after identifying the bat to species or genus with sound analysis). _One click reporting_ is achieved through literate programming [@knuth84]; a procedure of mixing code and descriptive writing, in order to undertake and explain data analysis simultaneously in the same document.  
+A full bat survey report produced, ***with one mouse click***, from sound analysis data (i.e after identifying the bat detector calls to species or genus with sound analysis). _One click reporting_ is achieved through literate programming [@knuth84]; a procedure of mixing code and descriptive writing, in order to undertake and explain data analysis simultaneously in the same document.  
 
-The first few rows of bat survey data, post sound analysis, is shown in @tbl-surveydata; this is from of the `statics` data in the `iBats` package, is _tidy_ and has the minimum columns for undertaking effective analysis:
+The first few rows of some bat survey data, post sound analysis, is shown in @tbl-surveydata; this is from of the `statics` data in the `iBats` package, it is _tidy_ data and has the minimum columns for undertaking effective analysis:
 
 -   Description
 -   DateTime
@@ -57,3 +57,15 @@ gt(head(surveydata, n = 10L)) %>%
     )
   )
 ```
+
+
+## Why Do This?
+
+The advantages of this approach to bat data science are appreciable:
+
+1. Workflow
+    i) Reduces (and can eliminate) any copy and paste activity)
+    ii) Reports are easily created with new data or updated with revised data 
+2. Reproducible
+
+What's the disadvantage?
