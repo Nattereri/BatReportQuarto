@@ -189,11 +189,7 @@ The Dunn’s Test carries out multiple comparisons therefore a P value adjustmen
 The statistical tests show that Barbastelle bat activity recorded at Location 4 is significantly different; this knowledge is evidence based and can be stated with confidence when reporting. 
 
 
-<<<<<<< HEAD
-### Less Obvious Differences 
-=======
 ### Less Obvious Difference 
->>>>>>> bf674129f9f2e75c5f7d6b2c184c8dc08e941ed4
 
 @fig-kwpip shows Common pipistrelle activity for the static locations comparison of activity can be undertaken with the Kruskal-Wallis test with the following hypothesis:
 
