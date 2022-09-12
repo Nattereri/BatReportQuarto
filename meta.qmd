@@ -113,17 +113,17 @@ A useful approach for bat data analysis is to reference all bat activity (i.e. `
 
 Referencing the `DateTime` of bat activity to sunset and sunrise is achieved with the use of the `suncalc` package [@R-suncalc]. The `iBats` package makes use of `suncalc` in its `sun_night_metrics` fuction; this takes a dataframe that must include the columns: `Night`, `DateTime`, `Latitude` and, `Longitude` - and calculates the following columns:
 
-* `sunset` - sun set time for the `Night` date and `Latitude` and, `Longitude`
-* `sunrise` - sun rise time for the `Night` date and `Latitude` and, `Longitude`
-* `post_set_min`- time in minutes the bat was observed after sun set
-* `pre_rise_min` - time in minutes the bat was observed before sun rise 
-* `post_set_hr` - time in hours (decimal) the bat was observed after sun set
-* `pre_rise_hr` - time in hours (decimal) the bat was observed before sun rise
-* `post_set_hr_int` - time in hours (integer) the bat was observed after sun set
-* `pre_rise_hr_int` - time in hours (integer) the bat was observed before sun rise  
-* `night_length_hr` - night length in hours (decimal) difference between `sunset` and `sunrise`
+-   `sunset` - sun set time for the `Night` date and `Latitude` and, `Longitude`
+-   `sunrise` - sun rise time for the `Night` date and `Latitude` and, `Longitude`
+-   `post_set_min`- time in minutes the bat was observed after sun set
+-   `pre_rise_min` - time in minutes the bat was observed before sun rise
+-   `post_set_hr` - time in hours (decimal) the bat was observed after sun set
+-   `pre_rise_hr` - time in hours (decimal) the bat was observed before sun rise
+-   `post_set_hr_int` - time in hours (integer) the bat was observed after sun set
+-   `pre_rise_hr_int` - time in hours (integer) the bat was observed before sun rise\
+-   `night_length_hr` - night length in hours (decimal) difference between `sunset` and `sunrise`
 
-@tbl-suntimes  shows a selection of 5 rows from the `statics` data that includes the columns `Species` and `DateTime` and then calculates the columns listed above, the following columns are shown: `sunset`, `post_set_min`, `post_set_hr` and, `post_set_hr_int`.
+@tbl-suntimes shows a selection of 5 rows from the `statics` data that includes the columns `Species` and `DateTime` and then calculates the columns listed above, the following columns are shown: `sunset`, `post_set_min`, `post_set_hr` and, `post_set_hr_int`.
 
 ```{r}
 #| label: tbl-suntimes
@@ -164,6 +164,3 @@ statics_plus %>%
 
 
 ```
-
-
-

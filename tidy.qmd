@@ -55,7 +55,7 @@ The rationale for these variables is as follows:
 
 `Longitude` and `Latitude`: World Geodetic System 1984[^5] (WGS84); as used by Google earth. A digital, numeric, format should be used. Any other spatial reference system can be used (e.g. British National Grid Easting/Northing), as this can be stored as an extra column in the *tidy data*, the prerequisite is that the reference system can be converted to WGS84; which is the case for most national or state co-ordinate systems. Using a global co-ordinate system such as WSG84 give access to the many open-source application programming interfaces (API) available that assist with data analysis (e.g. assessing sunset and sunrise times or the adjustment to daylight saving).
 
-[^5]:  <https://en.wikipedia.org/wiki/World_Geodetic_System>
+[^5]: <https://en.wikipedia.org/wiki/World_Geodetic_System>
 
 ## Making Bat Data *Tidy*
 
@@ -168,7 +168,7 @@ knitr::kable(tidied2)
 
 ```
 
-### Two or More Columns of Bat Species  
+### Two or More Columns of Bat Species
 
 ```{r}
 #| label: tbl-untidy3
@@ -205,7 +205,6 @@ knitr::kable(untidy3)
 
 ```
 
-
 Several columns of species, as in @tbl-untidy3, can be made tidy by un-counting the data so each species observed is in it's own row; as shown below in @tbl-tidied3.
 
 ```{r}
@@ -238,11 +237,9 @@ knitr::kable(tidied3)
 
 ```
 
+### Convert Bat Names to Scientific
 
-### Convert Bat Names to Scientific  
-
-
-@tbl-tidied1 is still _untidy_ because the bat species are represented as codes and not in a binomial nomenclature(scientific name). The `iBats::make_scientific()` function can take a named vector of codes and the scientific name; such as the `BatScientific` vector below. The case of the bat name codes are ignored; they are all converted to lower case.
+@tbl-tidied1 is still *untidy* because the bat species are represented as codes and not in a binomial nomenclature(scientific name). The `iBats::make_scientific()` function can take a named vector of codes and the scientific name; such as the `BatScientific` vector below. The case of the bat name codes are ignored; they are all converted to lower case.
 
 ```{r}
 #| code-fold: show
@@ -260,7 +257,7 @@ BatScientific <- c("nyclei" = "Nyctalus leisleri",
 
 ```
 
-The `BatScientific` vector is then used to covert the survey vector of bat names (the Species column in  @tbl-tidied1) so they are all scientific; using the `iBats::make_scientific()` function.  The `BatScientific` can be expanded to cover many names and codes, if there are duplicate names or codes a conversion will not take place for that name or code. The tidied data with scientific species names is shown in @tbl-tidied4
+The `BatScientific` vector is then used to covert the survey vector of bat names (the Species column in @tbl-tidied1) so they are all scientific; using the `iBats::make_scientific()` function. The `BatScientific` can be expanded to cover many names and codes, if there are duplicate names or codes a conversion will not take place for that name or code. The tidied data with scientific species names is shown in @tbl-tidied4
 
 ```{r}
 #| code-fold: show
@@ -268,7 +265,6 @@ The `BatScientific` vector is then used to covert the survey vector of bat names
 tidied1$Species <- iBats::make_scientific(BatScientific, tidied1$Species)
 
 ```
-
 
 ```{r}
 #| label: tbl-tidied4

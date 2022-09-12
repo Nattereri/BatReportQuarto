@@ -1,5 +1,5 @@
 ---
-title: "1 Click Reporting"
+title: "One Click Reporting"
 bibliography: references.bib
 format: 
   html:
@@ -14,19 +14,28 @@ library(knitr)
 library(tidyverse)
 library(iBats)
 library(gt)
-
+library(broman)
+library(glue)
 
 ```
 
+A full bat survey report produced, ***with one mouse click***, from sound analysis data (i.e after identifying the bat to species or genus with sound analysis). _One click reporting_ is achieved through literate programming [@knuth84]; a procedure of mixing code and descriptive writing, in order to undertake and explain data analysis simultaneously in the same document.  
 
-A bat survey report produced, *__with 1 mouse click__*, from a minimal data set, such as the one shown in @tbl-surveydata; demonstrating literate programming [@knuth84] with Quarto®[^1] 
+The first few rows of bat survey data, post sound analysis, is shown in @tbl-surveydata; this is from of the `statics` data in the `iBats` package, is _tidy_ and has the minimum columns for undertaking effective analysis:
+
+-   Description
+-   DateTime
+-   Species
+-   Latitude
+-   Longitude
+
+The `r nrBats <- add_commas(nrow(statics)); nrBats` rows in the `statics` data is used here to demonstrate literate programming with Quarto®[^1].
 
 [^1]: Quarto® the next generation of R Markdown.
 
-
 ```{r}
 #| label: tbl-surveydata
-#| tbl-cap: "Bat Survey Data- First Ten Rows"
+#| tbl-cap: !expr glue::glue("Bat Survey Data- First Ten Rows of the {nrBats} in the 'statics' Data")
 
 surveydata <- statics %>% # statics is a tidy data set from the iBats package
   #select(DateTime, Species, Latitude, Longitude, Description) %>% 
