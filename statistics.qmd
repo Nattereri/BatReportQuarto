@@ -43,7 +43,7 @@ _AverageActivity_ = average (mean) number of bat passes per hour for each night 
 
 ```{r}
 #| label: fig-kwbarb
-#| fig-cap: "Barbastelle Activity at Each Static (Nighly Average Passes per Hour)"
+#| fig-cap: "Barbastelle Activity at Each Static (Nightly Average Passes per Hour)"
 
 
 # Add data and time information to the statics data using the iBats::date_time_info
@@ -199,7 +199,7 @@ The statistical tests show that Barbastelle bat activity recorded at Location 4 
 
 ```{r}
 #| label: fig-kwpip
-#| fig-cap: "Common Pipistrelle Activity at Each Static (Nighly Average Passes per Hour)"
+#| fig-cap: "Common Pipistrelle Activity at Each Static (Nightly Average Passes per Hour)"
 
 
 # Add data and time information to the statics data using the iBats::date_time_info

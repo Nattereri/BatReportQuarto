@@ -64,8 +64,11 @@ gt(head(surveydata, n = 10L)) %>%
 The advantages of this approach to bat data science are appreciable:
 
 1. Workflow
-    i) Reduces (and can eliminate) any copy and paste activity)
-    ii) Reports are easily created with new data or updated with revised data 
+    i) Reduces (and can eliminate) any copy and paste activity
+    ii) Reports are easily created (_one click_) with new data or updated with revised data 
 2. Reproducible
+    i) The report is reproducible by yourself (and others[^2]); convenient when returning to a project after many months or years!  
+
+[^2]: the exact results can be reproduced if given access to the original data and Quarto® document containing the literate programming text of code and descriptive writing.
 
 What's the disadvantage?
