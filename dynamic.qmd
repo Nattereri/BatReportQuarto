@@ -6,7 +6,6 @@ format:
      code-summary: "Show the code"
 ---
 
-
 ## Maps
 
 ### Lydford School Transect
@@ -14,9 +13,20 @@ format:
 ```{r}
 #| include: false
 
+library(knitr)
 library(tidyverse)
-library(leaflet)
 library(iBats)
+library(gt)
+library(flextable)
+library(broman)
+library(ggrepel)
+library(treemapify)
+library(scales)
+library(ggthemes)
+
+
+library(leaflet)
+library(plotly)
 library(DT)
 
 
@@ -73,6 +83,30 @@ ColourVector <- tibble(Species, LeafColours)
 ColourVector <- ColourVector %>% 
   arrange(Species)
 
+# Colours for ggplotly
+
+bat_colours_sci <- c("Barbastella barbastellus" = "#1f78b4", 
+                     "Myotis alcathoe" = "#a52a2a",
+                     "Myotis bechsteinii" = "#7fff00",
+                     "Myotis brandtii" = "#b2df8a", 
+                     "Myotis mystacinus" = "#6a3d9a", 
+                     "Myotis nattereri" = "#ff7f00", 
+                     "Myotis daubentonii" = "#a6cee3", 
+                      "Myotis spp." = "#bcee68",
+                      "Plecotus auritus" = "#8b0000", 
+                      "Plecotus spp." = "#8b0000", 
+                      "Plecotus austriacus" = "#000000",
+                      "Pipistrellus pipistrellus" = "#ffff99", 
+                      "Pipistrellus nathusii" = "#8a2be2", 
+                      "Pipistrellus pygmaeus" = "#b15928", 
+                      "Pipistrellus spp." = "#fdbf6f", 
+                      "Rhinolophus ferrumequinum" = "#e31a1c", 
+                      "Rhinolophus hipposideros" = "#33a02c", 
+                      "Nyctalus noctula" = "#cab2d6", 
+                      "Nyctalus leisleri" = "#fb9a99", 
+                      "Nyctalus spp." = "#eee8cd", 
+                      "Eptesicus serotinus" = "#008b8b")
+
 
 ```
 
@@ -100,25 +134,84 @@ Lydford %>%
 
 ```
 
-
-@fig-lydfordtransect shows Lydford Primary School's bat walk observations from Wednesday evening 18^th^ September 2019.  The walk, between the School and the River Lyd, on the western edge of Dartmoor, started at sunset 6:27pm and continued for just over an hour.  The observations were made with a [Batlogger M](https://www.batlogger.com/en/products/batlogger_m/) bat detector that records the sound of the bat as it passes together with the time and postion; using a built-in Global Positioning System (GPS).  These sounds where then analysed with software designed to help determine which species made the echolocation; [BatExplorer](https://www.batlogger.com/en/products/batexplorer/) was the software used.   
-
+@fig-lydfordtransect shows Lydford Primary School's bat walk observations from Wednesday evening 18^th^ September 2019. The walk, between the School and the River Lyd, on the western edge of Dartmoor, started at sunset 6:27pm and continued for just over an hour. The observations were made with a [Batlogger M](https://www.batlogger.com/en/products/batlogger_m/) bat detector that records the sound of the bat as it passes together with the time and postion; using a built-in Global Positioning System (GPS). These sounds where then analysed with software designed to help determine which species made the echolocation; [BatExplorer](https://www.batlogger.com/en/products/batexplorer/) was the software used.
 
 @fig-lydfordtransect is an interactive map; hovering the mouse over the coloured point will show the species and the time, in minutes, after sunset the bat was observed.
 
-The data shown in  @fig-lydfordtransect, `Lydford` is available from the `iBats` package.
+The data shown in @fig-lydfordtransect, `Lydford` is available from the `iBats` package.
+
+## Graphs 
+
+Plotly[^1] allows easy translation of `ggplot2` graphics to an interactive web-based version. Hovering the mouse over a graph point will reveal the bat species, the time bat was recorded and the length in seconds of the activity.  The graph can be copied to the clip board plus zoomed and panned; the home symbol will reset the axes. 
+
+[^1]: See the htmlwidgets for R page <https://www.htmlwidgets.org/showcase_plotly.html> plus the plotly r references <https://plot.ly/r/> and <https://plotly.com/ggplot2/>.
+
+```{r}
+#| label: fig-intertimebat
+#| fig-cap: "Time Bats Were Active Through The Night"
+#| warning: false
+#| fig.height: 7
+
+# graph anotation
+graph_sunrise <- TavyOak$sunrise[1]
+graph_sunset <- TavyOak$sunset[1]
+
+# graph time limits x-axis
+graph_limit1 <- TavyOak$sunset[1] - lubridate::hours(1)
+graph_limit2 <- TavyOak$sunrise[1] + lubridate::hours(1)
+
+# colour values used by scale_fill_manual()
+graph_bat_colours <- bat_colours(TavyOak$Species, colour_vector = bat_colours_sci)
 
 
-## Interactive Table 
+p <- TavyOak %>% 
+  rename(`Date & Time` = DateTime,
+         `Bat species` = Species,
+         `Activity time (secs)` = bat_time) %>% 
+  ggplot(aes(x = `Date & Time`, 
+                      y = 1, 
+                      fill = `Bat species`, 
+                      size = `Activity time (secs)`)) +
+  geom_jitter(shape = 21, alpha = 0.7) +
+  scale_fill_manual(values = graph_bat_colours) +
+  scale_size_area(max_size = 12) +
+  scale_x_datetime(
+    date_labels = "%H:%M hrs",
+    date_breaks = "1 hour",
+    limits = c(graph_limit1, graph_limit2)
+  ) +
+  labs(
+    y = "For clarity activity is spread across the verstical scale"
+  ) +
+  theme_bw() +
+  theme(
+    legend.position = "none",
+    panel.grid.major.x = element_line(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor = element_blank(),
+    plot.background = element_rect(fill = "midnightblue", colour = "black"),
+    axis.text.x = element_text(size = 12, angle = 45, colour = "white"),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    axis.title.x = element_blank(),
+    axis.title.y = element_text(size = 12, colour = "white")
+  )
 
 
-Below is an interactive table created with the `Lydford` data available from the `iBats` package. 
+ggplotly(p) 
+  
 
-* `DateTime`
-* `Species`
-* `post_set_min`- time in minutes the bat was observed after sun set
-* `bat_time`
+```
 
+
+## Tables
+
+Below is an interactive table created with the `Lydford` data available from the `iBats` package.
+
+-   `DateTime`
+-   `Species`
+-   `post_set_min`- time in minutes the bat was observed after sun set
+-   `bat_time`
 
 ```{r}
 
@@ -131,4 +224,3 @@ Lydford %>%
 
 
 ```
-
