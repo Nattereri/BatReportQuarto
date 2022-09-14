@@ -181,6 +181,7 @@ p <- TavyOak %>%
     limits = c(graph_limit1, graph_limit2)
   ) +
   labs(
+    title = "One Night's Bat Activity Around a West Devon Oak Tree - June 2018",
     y = "For clarity activity is spread across the verstical scale"
   ) +
   theme_bw() +
@@ -194,7 +195,8 @@ p <- TavyOak %>%
     axis.text.y = element_blank(),
     axis.ticks.y = element_blank(),
     axis.title.x = element_blank(),
-    axis.title.y = element_text(size = 12, colour = "white")
+    axis.title.y = element_text(size = 12, colour = "white"),
+    plot.title = element_text(size=16, colour = "white", hjust = 0.5)
   )
 
 
