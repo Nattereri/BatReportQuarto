@@ -18,7 +18,7 @@ library(dunn.test)
 
 ```
 
-Statistical modeling is a method of mathematically approximating the world.
+Statistical tests are undertaken to improve ecological understanding, separating the single from the noise. It enhances the ecological description when writing reports, making the report more evidenced based and therefore more robust and reproducible by others. When the data is not clear, or there is too much data to see, good statistics brings comprehension. Then there is a tendency to perceive connections or meaningful patterns between unrelated or random things, termed apophenia; here statistical testing can demonstrate it is random or unrelated.
 
 
 ## Comparison of Activity
@@ -31,7 +31,9 @@ Before undertaking any statistical test always visualise the data the statistica
 
 The average bat pass rate per hour can been calculated for each night and each static location using the formula: 
 
-$$AverageActivity = \frac{Batpasses}{Nightlength}$$
+$$
+AverageActivity = \frac{Batpasses}{Nightlength}
+$$
 
 Where: 
 _Batpasses_ = number of bat pass during the night at the location   

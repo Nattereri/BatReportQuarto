@@ -142,7 +142,7 @@ The data shown in @fig-lydfordtransect, `Lydford` is available from the `iBats` 
 
 ## Graphs 
 
-Plotly[^1] allows easy translation of `ggplot2` graphics to an interactive web-based version. Hovering the mouse over a graph point will reveal the bat species, the time bat was recorded and the length in seconds of the activity.  The graph can be copied to the clip board plus zoomed and panned; the home symbol will reset the axes. 
+Plotly[^1] allows easy translation of `ggplot2` graphics to an interactive web-based version. Hovering the mouse over a graph point will reveal the bat species, the time bat was recorded and the length in seconds of the activity.  The graph can be copied to the clipboard plus zoomed and panned; the home symbol will reset the axes. 
 
 [^1]: See the htmlwidgets for R page <https://www.htmlwidgets.org/showcase_plotly.html> plus the plotly r references <https://plot.ly/r/> and <https://plotly.com/ggplot2/>.
 
