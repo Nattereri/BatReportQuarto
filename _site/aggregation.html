@@ -209,17 +209,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(DateTime) <span class="sc">%&gt;%</span> </span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Table made with gt</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">"black"</span>),</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">weight =</span> <span class="st">"bold"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(<span class="fu">everything</span>())</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Make bat scientific name italic</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">style =</span> <span class="st">"italic"</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(Species)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div id="tbl-aggtidy" class="anchored">
 
-<div id="aoucmzivdy" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="eijfvnldob" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#aoucmzivdy .gt_table {
+#eijfvnldob .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -244,7 +262,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-left-color: #D3D3D3;
 }
 
-#aoucmzivdy .gt_heading {
+#eijfvnldob .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -256,7 +274,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#aoucmzivdy .gt_title {
+#eijfvnldob .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -268,7 +286,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-#aoucmzivdy .gt_subtitle {
+#eijfvnldob .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -280,13 +298,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-#aoucmzivdy .gt_bottom_border {
+#eijfvnldob .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#aoucmzivdy .gt_col_headings {
+#eijfvnldob .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -301,7 +319,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#aoucmzivdy .gt_col_heading {
+#eijfvnldob .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -321,7 +339,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#aoucmzivdy .gt_column_spanner_outer {
+#eijfvnldob .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -333,15 +351,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 4px;
 }
 
-#aoucmzivdy .gt_column_spanner_outer:first-child {
+#eijfvnldob .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#aoucmzivdy .gt_column_spanner_outer:last-child {
+#eijfvnldob .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#aoucmzivdy .gt_column_spanner {
+#eijfvnldob .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -353,7 +371,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   width: 100%;
 }
 
-#aoucmzivdy .gt_group_heading {
+#eijfvnldob .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -378,7 +396,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-#aoucmzivdy .gt_empty_group_heading {
+#eijfvnldob .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -393,15 +411,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-#aoucmzivdy .gt_from_md > :first-child {
+#eijfvnldob .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#aoucmzivdy .gt_from_md > :last-child {
+#eijfvnldob .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#aoucmzivdy .gt_row {
+#eijfvnldob .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -420,7 +438,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-#aoucmzivdy .gt_stub {
+#eijfvnldob .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -433,7 +451,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#aoucmzivdy .gt_stub_row_group {
+#eijfvnldob .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -447,11 +465,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: top;
 }
 
-#aoucmzivdy .gt_row_group_first td {
+#eijfvnldob .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#aoucmzivdy .gt_summary_row {
+#eijfvnldob .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -461,16 +479,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#aoucmzivdy .gt_first_summary_row {
+#eijfvnldob .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#aoucmzivdy .gt_first_summary_row.thick {
+#eijfvnldob .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#aoucmzivdy .gt_last_summary_row {
+#eijfvnldob .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -480,7 +498,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#aoucmzivdy .gt_grand_summary_row {
+#eijfvnldob .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -490,7 +508,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#aoucmzivdy .gt_first_grand_summary_row {
+#eijfvnldob .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -500,11 +518,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-#aoucmzivdy .gt_striped {
+#eijfvnldob .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#aoucmzivdy .gt_table_body {
+#eijfvnldob .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -513,7 +531,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-#aoucmzivdy .gt_footnotes {
+#eijfvnldob .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -527,7 +545,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#aoucmzivdy .gt_footnote {
+#eijfvnldob .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -536,7 +554,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#aoucmzivdy .gt_sourcenotes {
+#eijfvnldob .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -550,7 +568,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-#aoucmzivdy .gt_sourcenote {
+#eijfvnldob .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -558,36 +576,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-#aoucmzivdy .gt_left {
+#eijfvnldob .gt_left {
   text-align: left;
 }
 
-#aoucmzivdy .gt_center {
+#eijfvnldob .gt_center {
   text-align: center;
 }
 
-#aoucmzivdy .gt_right {
+#eijfvnldob .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#aoucmzivdy .gt_font_normal {
+#eijfvnldob .gt_font_normal {
   font-weight: normal;
 }
 
-#aoucmzivdy .gt_font_bold {
+#eijfvnldob .gt_font_bold {
   font-weight: bold;
 }
 
-#aoucmzivdy .gt_font_italic {
+#eijfvnldob .gt_font_italic {
   font-style: italic;
 }
 
-#aoucmzivdy .gt_super {
+#eijfvnldob .gt_super {
   font-size: 65%;
 }
 
-#aoucmzivdy .gt_two_val_uncert {
+#eijfvnldob .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -596,31 +614,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   margin-left: 0.1em;
 }
 
-#aoucmzivdy .gt_footnote_marks {
+#eijfvnldob .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#aoucmzivdy .gt_asterisk {
+#eijfvnldob .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#aoucmzivdy .gt_slash_mark {
+#eijfvnldob .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#aoucmzivdy .gt_fraction_numerator {
+#eijfvnldob .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#aoucmzivdy .gt_fraction_denominator {
+#eijfvnldob .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -630,37 +648,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Description</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">DateTime</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Species</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Longitude</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">Latitude</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;">Description</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;">DateTime</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;">Species</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;">Longitude</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;">Latitude</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">Static 3</td>
+<td class="gt_row gt_left">2016-06-06 02:23:21</td>
+<td class="gt_row gt_left" style="font-style: italic;">Rhinolophus hipposideros</td>
+<td class="gt_row gt_right">-3.593018</td>
+<td class="gt_row gt_right">50.33101</td></tr>
     <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left">2016-06-13 01:58:00</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right">-3.591858</td>
-<td class="gt_row gt_right">50.33123</td></tr>
+<td class="gt_row gt_left">2016-06-08 22:49:25</td>
+<td class="gt_row gt_left" style="font-style: italic;">Barbastella barbastellus</td>
+<td class="gt_row gt_right">-3.591798</td>
+<td class="gt_row gt_right">50.33102</td></tr>
     <tr><td class="gt_row gt_left">Static 2</td>
-<td class="gt_row gt_left">2016-06-21 03:27:49</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td>
+<td class="gt_row gt_left">2016-08-01 00:35:33</td>
+<td class="gt_row gt_left" style="font-style: italic;">Myotis spp.</td>
 <td class="gt_row gt_right">-3.592583</td>
 <td class="gt_row gt_right">50.33323</td></tr>
     <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left">2016-07-27 22:40:40</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right">-3.591908</td>
-<td class="gt_row gt_right">50.33141</td></tr>
-    <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left">2016-07-27 22:47:25</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right">-3.591908</td>
-<td class="gt_row gt_right">50.33141</td></tr>
+<td class="gt_row gt_left">2016-08-28 23:26:13</td>
+<td class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td class="gt_row gt_right">-3.591758</td>
+<td class="gt_row gt_right">50.33132</td></tr>
     <tr><td class="gt_row gt_left">Static 2</td>
-<td class="gt_row gt_left">2016-08-23 22:43:51</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td>
+<td class="gt_row gt_left">2016-10-12 05:17:09</td>
+<td class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
 <td class="gt_row gt_right">-3.592583</td>
 <td class="gt_row gt_right">50.33323</td></tr>
   </tbody>
@@ -681,79 +699,487 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="co">#arrange descending</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">%&gt;%</span> </span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># rename n as count</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">`</span><span class="at">Bat Species</span><span class="st">`</span> <span class="ot">=</span> Species, <span class="at">count =</span> n) <span class="sc">%&gt;%</span> </span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Table made with knitr::kable()</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">`</span><span class="at">Bat Species</span><span class="st">`</span> <span class="ot">=</span> Species, <span class="at">Count =</span> n) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># so table is produced with individual species on one row</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Table made gt()</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">"black"</span>),</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">weight =</span> <span class="st">"bold"</span>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(<span class="fu">everything</span>())</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Make bat scientific name italic</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">style =</span> <span class="st">"italic"</span>)</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">`</span><span class="at">Bat Species</span><span class="st">`</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div id="tbl-simplecount" class="anchored">
-<table class="table table-sm table-striped">
-<caption>Table 2: A Count of Bats Grouped by Species</caption>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Bat Species</th>
-<th style="text-align: right;">count</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Pipistrellus pipistrellus</td>
-<td style="text-align: right;">4972</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Myotis spp.</td>
-<td style="text-align: right;">435</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Barbastella barbastellus</td>
-<td style="text-align: right;">419</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Nyctalus noctula</td>
-<td style="text-align: right;">315</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Pipistrellus spp.</td>
-<td style="text-align: right;">283</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Rhinolophus ferrumequinum</td>
-<td style="text-align: right;">160</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Plecotus spp.</td>
-<td style="text-align: right;">136</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Pipistrellus pygmaeus</td>
-<td style="text-align: right;">86</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Rhinolophus hipposideros</td>
-<td style="text-align: right;">73</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Pipistrellus nathusii</td>
-<td style="text-align: right;">32</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Eptesicus serotinus</td>
-<td style="text-align: right;">12</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Nyctalus leisleri</td>
-<td style="text-align: right;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Myotis nattereri</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Nyctalus spp.</td>
-<td style="text-align: right;">2</td>
-</tr>
-</tbody>
+
+<div id="sadwzekhff" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#sadwzekhff .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#sadwzekhff .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#sadwzekhff .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#sadwzekhff .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#sadwzekhff .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sadwzekhff .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#sadwzekhff .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#sadwzekhff .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#sadwzekhff .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#sadwzekhff .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#sadwzekhff .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#sadwzekhff .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#sadwzekhff .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#sadwzekhff .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#sadwzekhff .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#sadwzekhff .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#sadwzekhff .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sadwzekhff .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#sadwzekhff .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#sadwzekhff .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sadwzekhff .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#sadwzekhff .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#sadwzekhff .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sadwzekhff .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sadwzekhff .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#sadwzekhff .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#sadwzekhff .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sadwzekhff .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#sadwzekhff .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sadwzekhff .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#sadwzekhff .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sadwzekhff .gt_left {
+  text-align: left;
+}
+
+#sadwzekhff .gt_center {
+  text-align: center;
+}
+
+#sadwzekhff .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#sadwzekhff .gt_font_normal {
+  font-weight: normal;
+}
+
+#sadwzekhff .gt_font_bold {
+  font-weight: bold;
+}
+
+#sadwzekhff .gt_font_italic {
+  font-style: italic;
+}
+
+#sadwzekhff .gt_super {
+  font-size: 65%;
+}
+
+#sadwzekhff .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#sadwzekhff .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#sadwzekhff .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#sadwzekhff .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#sadwzekhff .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#sadwzekhff .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table"><caption>Table 2:  A Count by Species </caption>
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;">Bat Species</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;">Count</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td class="gt_row gt_right">4972</td></tr>
+    <tr><td class="gt_row gt_left" style="font-style: italic;">Myotis spp.</td>
+<td class="gt_row gt_right">435</td></tr>
+    <tr><td class="gt_row gt_left" style="font-style: italic;">Barbastella barbastellus</td>
+<td class="gt_row gt_right">419</td></tr>
+    <tr><td class="gt_row gt_left" style="font-style: italic;">Nyctalus noctula</td>
+<td class="gt_row gt_right">315</td></tr>
+    <tr><td class="gt_row gt_left" style="font-style: italic;">Pipistrellus spp.</td>
+<td class="gt_row gt_right">283</td></tr>
+    <tr><td class="gt_row gt_left" style="font-style: italic;">Rhinolophus ferrumequinum</td>
+<td class="gt_row gt_right">160</td></tr>
+    <tr><td class="gt_row gt_left" style="font-style: italic;">Plecotus spp.</td>
+<td class="gt_row gt_right">136</td></tr>
+    <tr><td class="gt_row gt_left" style="font-style: italic;">Pipistrellus pygmaeus</td>
+<td class="gt_row gt_right">86</td></tr>
+    <tr><td class="gt_row gt_left" style="font-style: italic;">Rhinolophus hipposideros</td>
+<td class="gt_row gt_right">73</td></tr>
+    <tr><td class="gt_row gt_left" style="font-style: italic;">Pipistrellus nathusii</td>
+<td class="gt_row gt_right">32</td></tr>
+    <tr><td class="gt_row gt_left" style="font-style: italic;">Eptesicus serotinus</td>
+<td class="gt_row gt_right">12</td></tr>
+    <tr><td class="gt_row gt_left" style="font-style: italic;">Nyctalus leisleri</td>
+<td class="gt_row gt_right">3</td></tr>
+    <tr><td class="gt_row gt_left" style="font-style: italic;">Myotis nattereri</td>
+<td class="gt_row gt_right">2</td></tr>
+    <tr><td class="gt_row gt_left" style="font-style: italic;">Nyctalus spp.</td>
+<td class="gt_row gt_right">2</td></tr>
+  </tbody>
+  
+  
 </table>
+</div>
 </div>
 </div>
 </div>
@@ -798,8 +1224,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output-display">
 <div id="tbl-countannex2" class="anchored">
 
-<div class="tabwid"><style>.cl-c7d82238{}.cl-c7caba8a{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-c7caba94{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-c7caba9e{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-c7cadb6e{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-c7cadb78{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-c7cb3fe6{width:72pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c7cb3ff0{width:180pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c7cb3ffa{width:144pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c7cb3ffb{width:144pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c7cb4004{width:180pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c7cb4005{width:72pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c7cb400e{width:180pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c7cb400f{width:72pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c7cb4018{width:144pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class="cl-c7d82238"><caption>Table 3:  A Count of Annex II Bats Grouped by Month </caption>
-<thead><tr style="overflow-wrap:break-word;"><td class="cl-c7cb4018"><p class="cl-c7cadb6e"><span class="cl-c7caba8a">Month</span></p></td><td class="cl-c7cb400e"><p class="cl-c7cadb6e"><span class="cl-c7caba8a">Bat Species</span></p></td><td class="cl-c7cb400f"><p class="cl-c7cadb78"><span class="cl-c7caba8a">Count</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-c7cb3ffa"><p class="cl-c7cadb6e"><span class="cl-c7caba94">May</span></p></td><td class="cl-c7cb3ff0"><p class="cl-c7cadb6e"><span class="cl-c7caba9e">Barbastella barbastellus</span></p></td><td class="cl-c7cb3fe6"><p class="cl-c7cadb78"><span class="cl-c7caba94">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c7cb4004"><p class="cl-c7cadb6e"><span class="cl-c7caba9e">Rhinolophus ferrumequinum</span></p></td><td class="cl-c7cb4005"><p class="cl-c7cadb78"><span class="cl-c7caba94">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c7cb4004"><p class="cl-c7cadb6e"><span class="cl-c7caba9e">Rhinolophus hipposideros</span></p></td><td class="cl-c7cb4005"><p class="cl-c7cadb78"><span class="cl-c7caba94">10</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-c7cb3ffb"><p class="cl-c7cadb6e"><span class="cl-c7caba94">June</span></p></td><td class="cl-c7cb4004"><p class="cl-c7cadb6e"><span class="cl-c7caba9e">Barbastella barbastellus</span></p></td><td class="cl-c7cb4005"><p class="cl-c7cadb78"><span class="cl-c7caba94">198</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c7cb4004"><p class="cl-c7cadb6e"><span class="cl-c7caba9e">Rhinolophus ferrumequinum</span></p></td><td class="cl-c7cb4005"><p class="cl-c7cadb78"><span class="cl-c7caba94">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c7cb4004"><p class="cl-c7cadb6e"><span class="cl-c7caba9e">Rhinolophus hipposideros</span></p></td><td class="cl-c7cb4005"><p class="cl-c7cadb78"><span class="cl-c7caba94">11</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-c7cb3ffb"><p class="cl-c7cadb6e"><span class="cl-c7caba94">July</span></p></td><td class="cl-c7cb4004"><p class="cl-c7cadb6e"><span class="cl-c7caba9e">Barbastella barbastellus</span></p></td><td class="cl-c7cb4005"><p class="cl-c7cadb78"><span class="cl-c7caba94">49</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c7cb4004"><p class="cl-c7cadb6e"><span class="cl-c7caba9e">Rhinolophus ferrumequinum</span></p></td><td class="cl-c7cb4005"><p class="cl-c7cadb78"><span class="cl-c7caba94">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c7cb4004"><p class="cl-c7cadb6e"><span class="cl-c7caba9e">Rhinolophus hipposideros</span></p></td><td class="cl-c7cb4005"><p class="cl-c7cadb78"><span class="cl-c7caba94">4</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-c7cb3ffb"><p class="cl-c7cadb6e"><span class="cl-c7caba94">August</span></p></td><td class="cl-c7cb4004"><p class="cl-c7cadb6e"><span class="cl-c7caba9e">Barbastella barbastellus</span></p></td><td class="cl-c7cb4005"><p class="cl-c7cadb78"><span class="cl-c7caba94">109</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c7cb4004"><p class="cl-c7cadb6e"><span class="cl-c7caba9e">Rhinolophus ferrumequinum</span></p></td><td class="cl-c7cb4005"><p class="cl-c7cadb78"><span class="cl-c7caba94">31</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c7cb4004"><p class="cl-c7cadb6e"><span class="cl-c7caba9e">Rhinolophus hipposideros</span></p></td><td class="cl-c7cb4005"><p class="cl-c7cadb78"><span class="cl-c7caba94">23</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-c7cb3ffb"><p class="cl-c7cadb6e"><span class="cl-c7caba94">September</span></p></td><td class="cl-c7cb4004"><p class="cl-c7cadb6e"><span class="cl-c7caba9e">Barbastella barbastellus</span></p></td><td class="cl-c7cb4005"><p class="cl-c7cadb78"><span class="cl-c7caba94">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c7cb4004"><p class="cl-c7cadb6e"><span class="cl-c7caba9e">Rhinolophus ferrumequinum</span></p></td><td class="cl-c7cb4005"><p class="cl-c7cadb78"><span class="cl-c7caba94">64</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c7cb4004"><p class="cl-c7cadb6e"><span class="cl-c7caba9e">Rhinolophus hipposideros</span></p></td><td class="cl-c7cb4005"><p class="cl-c7cadb78"><span class="cl-c7caba94">17</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-c7cb3ffb"><p class="cl-c7cadb6e"><span class="cl-c7caba94">October</span></p></td><td class="cl-c7cb4004"><p class="cl-c7cadb6e"><span class="cl-c7caba9e">Barbastella barbastellus</span></p></td><td class="cl-c7cb4005"><p class="cl-c7cadb78"><span class="cl-c7caba94">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c7cb4004"><p class="cl-c7cadb6e"><span class="cl-c7caba9e">Rhinolophus ferrumequinum</span></p></td><td class="cl-c7cb4005"><p class="cl-c7cadb78"><span class="cl-c7caba94">2</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c7cb4004"><p class="cl-c7cadb6e"><span class="cl-c7caba9e">Rhinolophus hipposideros</span></p></td><td class="cl-c7cb4005"><p class="cl-c7cadb78"><span class="cl-c7caba94">8</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-b56ab864{}.cl-b55ca170{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-b55ca184{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-b55ca185{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-b55cc290{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-b55cc29a{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-b55d2780{width:72pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b55d2781{width:180pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b55d278a{width:144pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b55d2794{width:144pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b55d2795{width:180pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b55d279e{width:72pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b55d279f{width:180pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b55d27a8{width:72pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b55d27a9{width:144pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class="cl-b56ab864"><caption>Table 3:  A Count of Annex II Bats Grouped by Month </caption>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-b55d27a9"><p class="cl-b55cc290"><span class="cl-b55ca170">Month</span></p></td><td class="cl-b55d279f"><p class="cl-b55cc290"><span class="cl-b55ca170">Bat Species</span></p></td><td class="cl-b55d27a8"><p class="cl-b55cc29a"><span class="cl-b55ca170">Count</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-b55d278a"><p class="cl-b55cc290"><span class="cl-b55ca184">May</span></p></td><td class="cl-b55d2781"><p class="cl-b55cc290"><span class="cl-b55ca185">Barbastella barbastellus</span></p></td><td class="cl-b55d2780"><p class="cl-b55cc29a"><span class="cl-b55ca184">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b55d2795"><p class="cl-b55cc290"><span class="cl-b55ca185">Rhinolophus ferrumequinum</span></p></td><td class="cl-b55d279e"><p class="cl-b55cc29a"><span class="cl-b55ca184">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b55d2795"><p class="cl-b55cc290"><span class="cl-b55ca185">Rhinolophus hipposideros</span></p></td><td class="cl-b55d279e"><p class="cl-b55cc29a"><span class="cl-b55ca184">10</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-b55d2794"><p class="cl-b55cc290"><span class="cl-b55ca184">June</span></p></td><td class="cl-b55d2795"><p class="cl-b55cc290"><span class="cl-b55ca185">Barbastella barbastellus</span></p></td><td class="cl-b55d279e"><p class="cl-b55cc29a"><span class="cl-b55ca184">198</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b55d2795"><p class="cl-b55cc290"><span class="cl-b55ca185">Rhinolophus ferrumequinum</span></p></td><td class="cl-b55d279e"><p class="cl-b55cc29a"><span class="cl-b55ca184">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b55d2795"><p class="cl-b55cc290"><span class="cl-b55ca185">Rhinolophus hipposideros</span></p></td><td class="cl-b55d279e"><p class="cl-b55cc29a"><span class="cl-b55ca184">11</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-b55d2794"><p class="cl-b55cc290"><span class="cl-b55ca184">July</span></p></td><td class="cl-b55d2795"><p class="cl-b55cc290"><span class="cl-b55ca185">Barbastella barbastellus</span></p></td><td class="cl-b55d279e"><p class="cl-b55cc29a"><span class="cl-b55ca184">49</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b55d2795"><p class="cl-b55cc290"><span class="cl-b55ca185">Rhinolophus ferrumequinum</span></p></td><td class="cl-b55d279e"><p class="cl-b55cc29a"><span class="cl-b55ca184">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b55d2795"><p class="cl-b55cc290"><span class="cl-b55ca185">Rhinolophus hipposideros</span></p></td><td class="cl-b55d279e"><p class="cl-b55cc29a"><span class="cl-b55ca184">4</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-b55d2794"><p class="cl-b55cc290"><span class="cl-b55ca184">August</span></p></td><td class="cl-b55d2795"><p class="cl-b55cc290"><span class="cl-b55ca185">Barbastella barbastellus</span></p></td><td class="cl-b55d279e"><p class="cl-b55cc29a"><span class="cl-b55ca184">109</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b55d2795"><p class="cl-b55cc290"><span class="cl-b55ca185">Rhinolophus ferrumequinum</span></p></td><td class="cl-b55d279e"><p class="cl-b55cc29a"><span class="cl-b55ca184">31</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b55d2795"><p class="cl-b55cc290"><span class="cl-b55ca185">Rhinolophus hipposideros</span></p></td><td class="cl-b55d279e"><p class="cl-b55cc29a"><span class="cl-b55ca184">23</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-b55d2794"><p class="cl-b55cc290"><span class="cl-b55ca184">September</span></p></td><td class="cl-b55d2795"><p class="cl-b55cc290"><span class="cl-b55ca185">Barbastella barbastellus</span></p></td><td class="cl-b55d279e"><p class="cl-b55cc29a"><span class="cl-b55ca184">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b55d2795"><p class="cl-b55cc290"><span class="cl-b55ca185">Rhinolophus ferrumequinum</span></p></td><td class="cl-b55d279e"><p class="cl-b55cc29a"><span class="cl-b55ca184">64</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b55d2795"><p class="cl-b55cc290"><span class="cl-b55ca185">Rhinolophus hipposideros</span></p></td><td class="cl-b55d279e"><p class="cl-b55cc29a"><span class="cl-b55ca184">17</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-b55d2794"><p class="cl-b55cc290"><span class="cl-b55ca184">October</span></p></td><td class="cl-b55d2795"><p class="cl-b55cc290"><span class="cl-b55ca185">Barbastella barbastellus</span></p></td><td class="cl-b55d279e"><p class="cl-b55cc29a"><span class="cl-b55ca184">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b55d2795"><p class="cl-b55cc290"><span class="cl-b55ca185">Rhinolophus ferrumequinum</span></p></td><td class="cl-b55d279e"><p class="cl-b55cc29a"><span class="cl-b55ca184">2</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b55d2795"><p class="cl-b55cc290"><span class="cl-b55ca185">Rhinolophus hipposideros</span></p></td><td class="cl-b55d279e"><p class="cl-b55cc29a"><span class="cl-b55ca184">8</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </div>
@@ -857,8 +1283,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output-display">
 <div id="tbl-countannex2c" class="anchored">
 
-<div class="tabwid"><style>.cl-c847f522{}.cl-c838e938{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-c838e956{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-c838e957{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-c839252e{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-c8392542{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-c839e266{width:72pt;background-color:rgba(255, 250, 248, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c839e27a{width:180pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c839e27b{width:144pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c839e284{width:144pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c839e28e{width:180pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c839e28f{width:72pt;background-color:rgba(255, 157, 120, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c839e298{width:72pt;background-color:rgba(255, 229, 217, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c839e299{width:72pt;background-color:rgba(255, 236, 228, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c839e2a2{width:72pt;background-color:rgba(255, 249, 246, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c839e2ac{width:72pt;background-color:rgba(255, 199, 175, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c839e2ad{width:72pt;background-color:rgba(255, 241, 235, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c839e2b6{width:72pt;background-color:rgba(255, 214, 197, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c839e2c0{width:72pt;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c839e2d4{width:72pt;background-color:rgba(255, 250, 247, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c839e2d5{width:72pt;background-color:rgba(255, 248, 244, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c839e2de{width:72pt;background-color:rgba(238, 64, 0, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c839e2df{width:72pt;background-color:rgba(255, 247, 243, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c839e2f2{width:72pt;background-color:rgba(255, 212, 194, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c839e2fc{width:72pt;background-color:rgba(255, 250, 248, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c839e2fd{width:72pt;background-color:rgba(255, 253, 252, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c839e306{width:180pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c839e307{width:72pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c839e310{width:144pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class="cl-c847f522"><caption>Table 4:  A Count (Highlighted) of Annex II Bats Grouped by Month </caption>
-<thead><tr style="overflow-wrap:break-word;"><td class="cl-c839e310"><p class="cl-c839252e"><span class="cl-c838e938">Month</span></p></td><td class="cl-c839e306"><p class="cl-c839252e"><span class="cl-c838e938">Bat Species</span></p></td><td class="cl-c839e307"><p class="cl-c8392542"><span class="cl-c838e938">Count</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-c839e27b"><p class="cl-c839252e"><span class="cl-c838e956">May</span></p></td><td class="cl-c839e27a"><p class="cl-c839252e"><span class="cl-c838e957">Barbastella barbastellus</span></p></td><td class="cl-c839e266"><p class="cl-c8392542"><span class="cl-c838e956">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c839e28e"><p class="cl-c839252e"><span class="cl-c838e957">Rhinolophus ferrumequinum</span></p></td><td class="cl-c839e2a2"><p class="cl-c8392542"><span class="cl-c838e956">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c839e28e"><p class="cl-c839252e"><span class="cl-c838e957">Rhinolophus hipposideros</span></p></td><td class="cl-c839e2d5"><p class="cl-c8392542"><span class="cl-c838e956">10</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-c839e284"><p class="cl-c839252e"><span class="cl-c838e956">June</span></p></td><td class="cl-c839e28e"><p class="cl-c839252e"><span class="cl-c838e957">Barbastella barbastellus</span></p></td><td class="cl-c839e2de"><p class="cl-c8392542"><span class="cl-c838e956">198</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c839e28e"><p class="cl-c839252e"><span class="cl-c838e957">Rhinolophus ferrumequinum</span></p></td><td class="cl-c839e2b6"><p class="cl-c8392542"><span class="cl-c838e956">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c839e28e"><p class="cl-c839252e"><span class="cl-c838e957">Rhinolophus hipposideros</span></p></td><td class="cl-c839e2df"><p class="cl-c8392542"><span class="cl-c838e956">11</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-c839e284"><p class="cl-c839252e"><span class="cl-c838e956">July</span></p></td><td class="cl-c839e28e"><p class="cl-c839252e"><span class="cl-c838e957">Barbastella barbastellus</span></p></td><td class="cl-c839e2f2"><p class="cl-c8392542"><span class="cl-c838e956">49</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c839e28e"><p class="cl-c839252e"><span class="cl-c838e957">Rhinolophus ferrumequinum</span></p></td><td class="cl-c839e2fc"><p class="cl-c8392542"><span class="cl-c838e956">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c839e28e"><p class="cl-c839252e"><span class="cl-c838e957">Rhinolophus hipposideros</span></p></td><td class="cl-c839e2fd"><p class="cl-c8392542"><span class="cl-c838e956">4</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-c839e284"><p class="cl-c839252e"><span class="cl-c838e956">August</span></p></td><td class="cl-c839e28e"><p class="cl-c839252e"><span class="cl-c838e957">Barbastella barbastellus</span></p></td><td class="cl-c839e28f"><p class="cl-c8392542"><span class="cl-c838e956">109</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c839e28e"><p class="cl-c839252e"><span class="cl-c838e957">Rhinolophus ferrumequinum</span></p></td><td class="cl-c839e298"><p class="cl-c8392542"><span class="cl-c838e956">31</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c839e28e"><p class="cl-c839252e"><span class="cl-c838e957">Rhinolophus hipposideros</span></p></td><td class="cl-c839e299"><p class="cl-c8392542"><span class="cl-c838e956">23</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-c839e284"><p class="cl-c839252e"><span class="cl-c838e956">September</span></p></td><td class="cl-c839e28e"><p class="cl-c839252e"><span class="cl-c838e957">Barbastella barbastellus</span></p></td><td class="cl-c839e2a2"><p class="cl-c8392542"><span class="cl-c838e956">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c839e28e"><p class="cl-c839252e"><span class="cl-c838e957">Rhinolophus ferrumequinum</span></p></td><td class="cl-c839e2ac"><p class="cl-c8392542"><span class="cl-c838e956">64</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c839e28e"><p class="cl-c839252e"><span class="cl-c838e957">Rhinolophus hipposideros</span></p></td><td class="cl-c839e2ad"><p class="cl-c8392542"><span class="cl-c838e956">17</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-c839e284"><p class="cl-c839252e"><span class="cl-c838e956">October</span></p></td><td class="cl-c839e28e"><p class="cl-c839252e"><span class="cl-c838e957">Barbastella barbastellus</span></p></td><td class="cl-c839e2b6"><p class="cl-c8392542"><span class="cl-c838e956">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c839e28e"><p class="cl-c839252e"><span class="cl-c838e957">Rhinolophus ferrumequinum</span></p></td><td class="cl-c839e2c0"><p class="cl-c8392542"><span class="cl-c838e956">2</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c839e28e"><p class="cl-c839252e"><span class="cl-c838e957">Rhinolophus hipposideros</span></p></td><td class="cl-c839e2d4"><p class="cl-c8392542"><span class="cl-c838e956">8</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-b5d7240e{}.cl-b5c9104e{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-b5c91062{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-b5c91063{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-b5c92bf6{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-b5c92c00{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-b5c98614{width:72pt;background-color:rgba(255, 250, 248, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5c9861e{width:180pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5c9861f{width:144pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5c98628{width:144pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5c98629{width:180pt;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5c98632{width:72pt;background-color:rgba(255, 157, 120, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5c98633{width:72pt;background-color:rgba(255, 229, 217, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5c9863c{width:72pt;background-color:rgba(255, 236, 228, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5c9863d{width:72pt;background-color:rgba(255, 249, 246, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5c9863e{width:72pt;background-color:rgba(255, 199, 175, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5c98646{width:72pt;background-color:rgba(255, 241, 235, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5c98647{width:72pt;background-color:rgba(255, 214, 197, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5c98650{width:72pt;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5c98651{width:72pt;background-color:rgba(255, 250, 247, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5c9865a{width:72pt;background-color:rgba(255, 248, 244, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5c98664{width:72pt;background-color:rgba(238, 64, 0, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5c98665{width:72pt;background-color:rgba(255, 247, 243, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5c98666{width:72pt;background-color:rgba(255, 212, 194, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5c9866e{width:72pt;background-color:rgba(255, 250, 248, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5c9866f{width:72pt;background-color:rgba(255, 253, 252, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5c98678{width:180pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5c98679{width:72pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b5c9867a{width:144pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class="cl-b5d7240e"><caption>Table 4:  A Count (Highlighted) of Annex II Bats Grouped by Month </caption>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-b5c9867a"><p class="cl-b5c92bf6"><span class="cl-b5c9104e">Month</span></p></td><td class="cl-b5c98678"><p class="cl-b5c92bf6"><span class="cl-b5c9104e">Bat Species</span></p></td><td class="cl-b5c98679"><p class="cl-b5c92c00"><span class="cl-b5c9104e">Count</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-b5c9861f"><p class="cl-b5c92bf6"><span class="cl-b5c91062">May</span></p></td><td class="cl-b5c9861e"><p class="cl-b5c92bf6"><span class="cl-b5c91063">Barbastella barbastellus</span></p></td><td class="cl-b5c98614"><p class="cl-b5c92c00"><span class="cl-b5c91062">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5c98629"><p class="cl-b5c92bf6"><span class="cl-b5c91063">Rhinolophus ferrumequinum</span></p></td><td class="cl-b5c9863d"><p class="cl-b5c92c00"><span class="cl-b5c91062">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5c98629"><p class="cl-b5c92bf6"><span class="cl-b5c91063">Rhinolophus hipposideros</span></p></td><td class="cl-b5c9865a"><p class="cl-b5c92c00"><span class="cl-b5c91062">10</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-b5c98628"><p class="cl-b5c92bf6"><span class="cl-b5c91062">June</span></p></td><td class="cl-b5c98629"><p class="cl-b5c92bf6"><span class="cl-b5c91063">Barbastella barbastellus</span></p></td><td class="cl-b5c98664"><p class="cl-b5c92c00"><span class="cl-b5c91062">198</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5c98629"><p class="cl-b5c92bf6"><span class="cl-b5c91063">Rhinolophus ferrumequinum</span></p></td><td class="cl-b5c98647"><p class="cl-b5c92c00"><span class="cl-b5c91062">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5c98629"><p class="cl-b5c92bf6"><span class="cl-b5c91063">Rhinolophus hipposideros</span></p></td><td class="cl-b5c98665"><p class="cl-b5c92c00"><span class="cl-b5c91062">11</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-b5c98628"><p class="cl-b5c92bf6"><span class="cl-b5c91062">July</span></p></td><td class="cl-b5c98629"><p class="cl-b5c92bf6"><span class="cl-b5c91063">Barbastella barbastellus</span></p></td><td class="cl-b5c98666"><p class="cl-b5c92c00"><span class="cl-b5c91062">49</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5c98629"><p class="cl-b5c92bf6"><span class="cl-b5c91063">Rhinolophus ferrumequinum</span></p></td><td class="cl-b5c9866e"><p class="cl-b5c92c00"><span class="cl-b5c91062">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5c98629"><p class="cl-b5c92bf6"><span class="cl-b5c91063">Rhinolophus hipposideros</span></p></td><td class="cl-b5c9866f"><p class="cl-b5c92c00"><span class="cl-b5c91062">4</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-b5c98628"><p class="cl-b5c92bf6"><span class="cl-b5c91062">August</span></p></td><td class="cl-b5c98629"><p class="cl-b5c92bf6"><span class="cl-b5c91063">Barbastella barbastellus</span></p></td><td class="cl-b5c98632"><p class="cl-b5c92c00"><span class="cl-b5c91062">109</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5c98629"><p class="cl-b5c92bf6"><span class="cl-b5c91063">Rhinolophus ferrumequinum</span></p></td><td class="cl-b5c98633"><p class="cl-b5c92c00"><span class="cl-b5c91062">31</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5c98629"><p class="cl-b5c92bf6"><span class="cl-b5c91063">Rhinolophus hipposideros</span></p></td><td class="cl-b5c9863c"><p class="cl-b5c92c00"><span class="cl-b5c91062">23</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-b5c98628"><p class="cl-b5c92bf6"><span class="cl-b5c91062">September</span></p></td><td class="cl-b5c98629"><p class="cl-b5c92bf6"><span class="cl-b5c91063">Barbastella barbastellus</span></p></td><td class="cl-b5c9863d"><p class="cl-b5c92c00"><span class="cl-b5c91062">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5c98629"><p class="cl-b5c92bf6"><span class="cl-b5c91063">Rhinolophus ferrumequinum</span></p></td><td class="cl-b5c9863e"><p class="cl-b5c92c00"><span class="cl-b5c91062">64</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5c98629"><p class="cl-b5c92bf6"><span class="cl-b5c91063">Rhinolophus hipposideros</span></p></td><td class="cl-b5c98646"><p class="cl-b5c92c00"><span class="cl-b5c91062">17</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-b5c98628"><p class="cl-b5c92bf6"><span class="cl-b5c91062">October</span></p></td><td class="cl-b5c98629"><p class="cl-b5c92bf6"><span class="cl-b5c91063">Barbastella barbastellus</span></p></td><td class="cl-b5c98647"><p class="cl-b5c92c00"><span class="cl-b5c91062">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5c98629"><p class="cl-b5c92bf6"><span class="cl-b5c91063">Rhinolophus ferrumequinum</span></p></td><td class="cl-b5c98650"><p class="cl-b5c92c00"><span class="cl-b5c91062">2</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b5c98629"><p class="cl-b5c92bf6"><span class="cl-b5c91063">Rhinolophus hipposideros</span></p></td><td class="cl-b5c98651"><p class="cl-b5c92c00"><span class="cl-b5c91062">8</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </div>
