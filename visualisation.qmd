@@ -244,6 +244,51 @@ ggplot(TavyOak, aes(y = 1, x = DateTime, fill = Species, size = bat_time)) +
 #| fig-cap: "Roost Emergence Times After Sunset"
 #| warning: false
 
+### Libraries Used
+library(tidyverse) # Data Science packages - see https://www.tidyverse.org/
+
+# Install devtools if not installed 
+# devtools is used to install the iBats package from GitHub
+if(!require(devtools)){
+  install.packages("devtools")
+}
+
+# If iBats not installed load from Github
+if(!require(iBats)){
+  devtools::install_github("Nattereri/iBats")
+}
+library(iBats)
+
+###
+
+# A vector used to give the species a specific colour in the graphic; the colours
+# can be changed and other species added.
+bat_colours_sci <- c(
+  "Barbastella barbastellus" = "#1f78b4",
+  "Myotis alcathoe" = "#a52a2a",
+  "Myotis bechsteinii" = "#7fff00",
+  "Myotis brandtii" = "#b2df8a",
+  "Myotis mystacinus" = "#6a3d9a",
+  "Myotis nattereri" = "#ff7f00",
+  "Myotis daubentonii" = "#a6cee3",
+  "Myotis spp." = "#bcee68",
+  "Plecotus auritus" = "#8b0000",
+  "Plecotus spp." = "#8b0000",
+  "Plecotus austriacus" = "#000000",
+  "Pipistrellus pipistrellus" = "#ffff99",
+  "Pipistrellus nathusii" = "#8a2be2",
+  "Pipistrellus pygmaeus" = "#b15928",
+  "Pipistrellus spp." = "#fdbf6f",
+  "Rhinolophus ferrumequinum" = "#e31a1c",
+  "Rhinolophus hipposideros" = "#33a02c",
+  "Nyctalus noctula" = "#cab2d6",
+  "Nyctalus leisleri" = "#fb9a99",
+  "Nyctalus spp." = "#eee8cd",
+  "Eptesicus serotinus" = "#008b8b"
+)
+
+###
+
 # colour values used by scale_fill_manual()
 graph_bat_colours <- iBats::bat_colours(Andrews$Species, colour_vector = bat_colours_sci)
 
@@ -284,6 +329,55 @@ One of the problems with presenting a count of bat passes observed in the UK is 
 #| label: fig-dotgraph
 #| fig-cap: "Count of All Species Observations"
 #| fig.height: 7
+
+### Libraries Used 
+library(tidyverse) # Data Science packages - see https://www.tidyverse.org/
+library(broman) # useful add_commas function - 
+# see https://cran.r-project.org/web/packages/broman/index.html
+library(ggrepel) # for tidy graph labels
+
+
+# Install devtools if not installed 
+# devtools is used to install the iBats package from GitHub
+if(!require(devtools)){
+  install.packages("devtools")
+}
+
+# If iBats not installed load from Github
+if(!require(iBats)){
+  devtools::install_github("Nattereri/iBats")
+}
+library(iBats)
+
+###
+
+# A vector used to give the species a specific colour in the graphic; the colours
+# can be changed and other species added.
+bat_colours_sci <- c(
+  "Barbastella barbastellus" = "#1f78b4",
+  "Myotis alcathoe" = "#a52a2a",
+  "Myotis bechsteinii" = "#7fff00",
+  "Myotis brandtii" = "#b2df8a",
+  "Myotis mystacinus" = "#6a3d9a",
+  "Myotis nattereri" = "#ff7f00",
+  "Myotis daubentonii" = "#a6cee3",
+  "Myotis spp." = "#bcee68",
+  "Plecotus auritus" = "#8b0000",
+  "Plecotus spp." = "#8b0000",
+  "Plecotus austriacus" = "#000000",
+  "Pipistrellus pipistrellus" = "#ffff99",
+  "Pipistrellus nathusii" = "#8a2be2",
+  "Pipistrellus pygmaeus" = "#b15928",
+  "Pipistrellus spp." = "#fdbf6f",
+  "Rhinolophus ferrumequinum" = "#e31a1c",
+  "Rhinolophus hipposideros" = "#33a02c",
+  "Nyctalus noctula" = "#cab2d6",
+  "Nyctalus leisleri" = "#fb9a99",
+  "Nyctalus spp." = "#eee8cd",
+  "Eptesicus serotinus" = "#008b8b"
+)
+
+###
 
 
 graph_data <- statics %>%
@@ -341,6 +435,54 @@ ggplot(graph_data, aes(y = reorder(Species, n), x = n, fill = Species)) +
 #| fig-cap: "Species and Location with the Area as the Number of Passes"
 #| warning: false
 #| fig.height: 7
+
+### Libraries Used 
+library(tidyverse) # Data Science packages - see https://www.tidyverse.org/
+library(treemapify) # extension to ggplot for plotting treemaps - 
+# see https://cran.r-project.org/web/packages/treemapify/vignettes/introduction-to-treemapify.html
+
+
+# Install devtools if not installed 
+# devtools is used to install the iBats package from GitHub
+if(!require(devtools)){
+  install.packages("devtools")
+}
+
+# If iBats not installed load from Github
+if(!require(iBats)){
+  devtools::install_github("Nattereri/iBats")
+}
+library(iBats)
+
+###
+
+# A vector used to give the species a specific colour in the graphic; the colours
+# can be changed and other species added.
+bat_colours_sci <- c(
+  "Barbastella barbastellus" = "#1f78b4",
+  "Myotis alcathoe" = "#a52a2a",
+  "Myotis bechsteinii" = "#7fff00",
+  "Myotis brandtii" = "#b2df8a",
+  "Myotis mystacinus" = "#6a3d9a",
+  "Myotis nattereri" = "#ff7f00",
+  "Myotis daubentonii" = "#a6cee3",
+  "Myotis spp." = "#bcee68",
+  "Plecotus auritus" = "#8b0000",
+  "Plecotus spp." = "#8b0000",
+  "Plecotus austriacus" = "#000000",
+  "Pipistrellus pipistrellus" = "#ffff99",
+  "Pipistrellus nathusii" = "#8a2be2",
+  "Pipistrellus pygmaeus" = "#b15928",
+  "Pipistrellus spp." = "#fdbf6f",
+  "Rhinolophus ferrumequinum" = "#e31a1c",
+  "Rhinolophus hipposideros" = "#33a02c",
+  "Nyctalus noctula" = "#cab2d6",
+  "Nyctalus leisleri" = "#fb9a99",
+  "Nyctalus spp." = "#eee8cd",
+  "Eptesicus serotinus" = "#008b8b"
+)
+
+###
 
 
 graph_data <- statics %>%
