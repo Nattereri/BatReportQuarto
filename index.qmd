@@ -1,5 +1,9 @@
 ---
 title: "Getting Started"
+format: 
+  html:
+     code-fold: true
+     code-summary: "Show the code"
 bibliography: packages.bib
 ---
 
@@ -10,6 +14,56 @@ These web pages compliment the *data science* chapters of the forthcoming BCT Ba
 [^1]: Quarto® is an open-source scientific and technical publishing system: see <https://quarto.org/>
 
 ![](Images/homesunrise2.png)
+
+To help ecologists get started, the code making all the graphs and analysis is freely available to copy and use; just click on  _Show the code_, copy to the clipboard [^2], paste into the R environment and run (to get going in R - see the Install R... section below). 
+
+[^2]: Clip board icon is in the top right hand corner of the code window.
+
+A _Show the code_ is given below, the code produces @fig-example.  The code copied to the clipboard is designed to run as a standalone _chunk_; with all the R libraries, data and code.
+
+```{r}
+#| code-fold: show
+#| label: fig-example
+#| fig-cap: "Example Graph: Monthly Bat Activity from the statics data set in the iBats Package"
+#| warning: false
+#| fig.height: 7
+
+### Libraries Used
+library(tidyverse) # Data Science packages - see https://www.tidyverse.org/
+library(treemapify) # extension to ggplot for plotting treemaps -
+# see https://cran.r-project.org/web/packages/treemapify/vignettes/introduction-to-treemapify.html
+library(ggthemes) # for colour pallet "Tableau 10"
+
+# Install devtools if not installed
+# devtools is used to install the iBats package from GitHub
+if (!require(devtools)) {
+  install.packages("devtools")
+}
+
+# If iBats not installed load from Github
+if (!require(iBats)) {
+  devtools::install_github("Nattereri/iBats")
+}
+library(iBats)
+###
+
+# Add data and time information to the iBats statics bat survey data set using the iBats::date_time_info
+statics_plus <- iBats::date_time_info(statics)
+
+graph_data <- statics_plus %>%
+  group_by(Species, Month) %>%
+  tally()
+
+ggplot(graph_data, aes(area = n, fill = Month, label = Species, subgroup = Month)) +
+  scale_fill_tableau(palette = "Tableau 10") + #
+  geom_treemap(colour = "white", size = 2, alpha = 0.9) +
+  geom_treemap_subgroup_border(colour = "black", size = 5, alpha = 0.9) +
+  geom_treemap_subgroup_text(place = "centre", grow = T, alpha = 0.9, colour = "grey20", min.size = 0) +
+  geom_treemap_text(colour = "grey90", place = "topleft", fontface = "italic", reflow = T, min.size = 0, alpha = 0.9) +
+  theme_bw() +
+  theme(legend.position = "none") # No legend
+```
+
 
 ## Install R, RStudio and Packages
 
