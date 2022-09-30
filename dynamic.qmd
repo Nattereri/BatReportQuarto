@@ -142,6 +142,8 @@ The data shown in @fig-lydfordtransect, `Lydford` is available from the `iBats` 
 
 ## Graphs 
 
+### Making `ggplot` Interactive
+
 Plotly[^1] allows easy translation of `ggplot2` graphics to an interactive web-based version. Hovering the mouse over a graph point will reveal the bat species, the time bat was recorded and the length in seconds of the activity.  The graph can be copied to the clipboard plus zoomed and panned; the home symbol will reset the axes. 
 
 [^1]: See the htmlwidgets for R page <https://www.htmlwidgets.org/showcase_plotly.html> plus the plotly r references <https://plot.ly/r/> and <https://plotly.com/ggplot2/>.
@@ -200,9 +202,48 @@ p <- TavyOak %>%
     plot.title = element_text(size=16, colour = "white")
   )
 
-
+# Make `ggplot` interactive
 ggplotly(p) 
   
+
+```
+
+
+### Bar Chart
+
+@fig-plotlybar shows a bar chart of monthly activity, it was drawn with the plotly library[^1]. Hovering the mouse over a bar will reveal the bat species and the number of bat passes; toggling the species name in the legend will remove (or add) the species bar from the chart, and; at any view the graph can be copied to the clipboard. 
+
+[^1]: For more information see <https://plotly.com/r/>
+
+```{r}
+#| label: fig-plotlybar
+#| fig-cap: "Monthly Activity of Annex II Species"
+
+library(tidyverse)
+library(iBats)
+library(plotly)
+
+# Annex II Species of Bat in the UK
+AnnexII <- c("Barbastella barbastellus", 
+             "Rhinolophus ferrumequinum", 
+             "Rhinolophus hipposideros", 
+             "Myotis bechsteinii")
+
+# Add data and time information to the iBats statics bat survey data set using the iBats::date_time_info
+statics_plus <- iBats::date_time_info(statics) %>% 
+   filter(Species %in% AnnexII)
+
+statics_plus %>% 
+  count(MonthFull, Species) %>% 
+  plot_ly(x = ~MonthFull, y = ~n, color = ~Species,
+          hoverinfo = "text",
+          text = ~paste("Species:", Species, "<br>",
+                        "Count:", n)) %>%
+  add_bars(colors = c("#1f78b4", "#e31a1c", "#33a02c")) %>%
+  layout(barmode = "stack",
+         xaxis = list(title=""),
+         yaxis = list(title="Count of Bat Passes (Nr)"))
+
 
 ```
 

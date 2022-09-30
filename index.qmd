@@ -7,7 +7,7 @@ format:
 bibliography: packages.bib
 ---
 
-***These web pages are under active construction*** (so many things won't look right)
+***Pages are under active construction*** (so many things won't look right!)
 
 These web pages compliment the *data science* chapters of the forthcoming BCT Bat Survey Guidelines 4^th^ Edition, and hopefully encourage ecologists to make the most of their bat survey data. They also demonstrate literate programming with Quarto®[^1] which can vastly improve workflow (*welcome to the world beyond Excel*).
 
