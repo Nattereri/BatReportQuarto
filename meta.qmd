@@ -164,3 +164,85 @@ statics_plus %>%
 
 
 ```
+
+## Common Bat Names
+
+Common bat names are readily understood by the lay reader and should be available for graphs and tables; it is easily added as column using the _Scientific_ names column as a starting point.
+
+```{r}
+#| code-fold: show
+
+library(iBats)
+
+# List of bat common names and the scientific names
+BatCommon <- c(#Make Commom name
+  "Barbastella barbastellus" = "Barbastelle",
+  "Myotis alcathoe" = "Alcathoe",
+  "Myotis bechsteinii" = "Bechstein's",
+  "Myotis brandtii" = "Brandt's",
+  "Myotis daubentonii" = "Daubenton's",
+  "Myotis mystacinus" = "Whiskered",
+  "Myotis spp." = "Myotis",
+  "Rhinolophus ferrumequinum" = "Greater horseshoe",
+  "Rhinolophus hipposideros" = "Lesser horseshoe",
+  "Nyctalus leisleri" = "Leisler's",
+  "Plecotus auritus" = "Brown long-eared",
+  "Plecotus austriacus" = "Grey long-eared",
+  "Pipistrellus nathusii" = "Nathusius pipistrelle",
+  "Myotis nattereri" = "Natterer's",
+  "Nyctalus noctula" = "Noctule",
+  "Nyctalus spp." = "Noctule or Leisler's",
+  "Eptesicus serotinus" = "Serotine",
+  "Pipistrellus pipistrellus" = "Common pipistrelle",
+  "Pipistrellus pygmaeus" = "Soprano pipistrelle",
+  "Pipistrellus spp." = "Pipistrelle",
+  "Plecotus spp." = "Long-eared")
+
+# From Scientific name create a Common Name Vector 
+statics$Common <-  unname(BatCommon[statics$Species])
+
+```
+
+
+```{r}
+#| label: tbl-common
+#| tbl-cap: "#From the Scientific Name Create a Common Name Vector"
+
+library(tidyverse)
+library(gt)
+
+statics %>% 
+  sample_n(10) %>% 
+  select(Description, DateTime, Species, Common) %>% 
+  # Table made with library(gt)
+  gt() %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")
+      ),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  ) %>% 
+  # Make bat scientific name italic
+  tab_style(
+    style = list(
+      cell_text(style = "italic")
+      ),
+    locations = cells_body(
+      columns = c(Species)
+  )) %>% 
+     # Make bat common name bold
+  tab_style(
+    style = list(
+      cell_text(weight = "bold")
+      ),
+    locations = cells_body(
+      columns = Common
+    )
+  )
+  
+
+```
+

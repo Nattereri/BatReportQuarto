@@ -144,9 +144,9 @@ The data shown in @fig-lydfordtransect, `Lydford` is available from the `iBats` 
 
 ### Making `ggplot` Interactive
 
-Plotly[^1] allows easy translation of `ggplot2` graphics to an interactive web-based version. Hovering the mouse over a graph point will reveal the bat species, the time bat was recorded and the length in seconds of the activity.  The graph can be copied to the clipboard plus zoomed and panned; the home symbol will reset the axes. 
+Plotly[^1] allows easy translation of `ggplot2` graphics into an interactive web-based version. Hovering the mouse over a graph point will reveal the bat species, the time bat was recorded and the length in seconds of the activity.  The graph can be copied to the clipboard plus zoomed and panned; the home symbol will reset the axes. 
 
-[^1]: See the htmlwidgets for R page <https://www.htmlwidgets.org/showcase_plotly.html> plus the plotly r references <https://plot.ly/r/> and <https://plotly.com/ggplot2/>.
+[^1]: See the htmlwidgets for R page <https://www.htmlwidgets.org/showcase_plotly.html> plus the plotly r reference <https://plotly.com/ggplot2/>.
 
 ```{r}
 #| label: fig-intertimebat
@@ -211,9 +211,9 @@ ggplotly(p)
 
 ### Bar Chart
 
-@fig-plotlybar shows a bar chart of monthly activity, it was drawn with the plotly library[^1]. Hovering the mouse over a bar will reveal the bat species and the number of bat passes; toggling the species name in the legend will remove (or add) the species bar from the chart, and; at any view the graph can be copied to the clipboard. 
+@fig-plotlybar shows a bar chart of monthly activity, it was drawn with the plotly library[^2]. Hovering the mouse over a bar will reveal the bat species and the number of bat passes; toggling the species name in the legend will remove (or add) the species bar from the chart, and; at any view the graph can be copied to the clipboard. 
 
-[^1]: For more information see <https://plotly.com/r/>
+[^2]: For more information see <https://plotly.com/r/>
 
 ```{r}
 #| label: fig-plotlybar
