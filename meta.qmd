@@ -167,7 +167,9 @@ statics_plus %>%
 
 ## Common Bat Names
 
-Common bat names are readily understood by the lay reader and should be available for graphs and tables; it is easily added as column using the _Scientific_ names column as a starting point.
+Common bat names are readily understood by the lay reader and should be available for graphs and tables; it is easily added as an additional column using the _Scientific_ names column as a starting point.
+
+By convention scientific names are written as _italic_; to highlight the common names in @tbl-common the column is written in __bold__.
 
 ```{r}
 #| code-fold: show
@@ -206,7 +208,7 @@ statics$Common <-  unname(BatCommon[statics$Species])
 
 ```{r}
 #| label: tbl-common
-#| tbl-cap: "#From the Scientific Name Create a Common Name Vector"
+#| tbl-cap: "From the Scientific Name Create a Common Name Vector"
 
 library(tidyverse)
 library(gt)
