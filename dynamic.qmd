@@ -84,7 +84,6 @@ ColourVector <- ColourVector %>%
   arrange(Species)
 
 # Colours for ggplotly
-
 bat_colours_sci <- c("Barbastella barbastellus" = "#1f78b4", 
                      "Myotis alcathoe" = "#a52a2a",
                      "Myotis bechsteinii" = "#7fff00",
@@ -211,9 +210,8 @@ ggplotly(p)
 
 ### Bar Chart
 
-@fig-plotlybar shows a bar chart of monthly activity, it was drawn with the plotly library[^2]. Hovering the mouse over a bar will reveal the bat species and the number of bat passes; toggling the species name in the legend will remove (or add) the species bar from the chart, and; at any view the graph can be copied to the clipboard. 
+@fig-plotlybar shows a bar chart of monthly activity, it was drawn with the plotly library^[For more information see <https://plotly.com/r/bar-charts/>]. Hovering the mouse over a bar will reveal the bat species and the number of bat passes; toggling the species name in the legend will remove (or add) the species bar from the chart, and; at any view the graph can be copied to the clipboard. 
 
-[^2]: For more information see <https://plotly.com/r/>
 
 ```{r}
 #| label: fig-plotlybar
@@ -244,6 +242,123 @@ statics_plus %>%
          xaxis = list(title=""),
          yaxis = list(title="Count of Bat Passes (Nr)"))
 
+
+```
+
+
+@fig-plotlybar2 shows a bar chart of species activity relative to the static location, it was drawn with the plotly library^[For more information see <https://plotly.com/r/bar-charts/>]. Hovering the mouse over a bar will reveal the bat species and the number of bat passes; toggling the species name in the legend will remove (or add) the species bar from the chart, and; at any view the graph can be copied to the clipboard. 
+
+
+```{r}
+#| label: fig-plotlybar2
+#| fig-cap: "Species Activity for Each Static Location"
+#| warnings: false
+
+library(tidyverse)
+library(iBats)
+library(plotly)
+
+# bat species colours
+bat_colours_sci <- c(
+  "Barbastella barbastellus" = "#1f78b4",
+  "Myotis alcathoe" = "#a52a2a",
+  "Myotis bechsteinii" = "#7fff00",
+  "Myotis brandtii" = "#b2df8a",
+  "Myotis mystacinus" = "#6a3d9a",
+  "Myotis nattereri" = "#ff7f00",
+  "Myotis daubentonii" = "#a6cee3",
+  "Myotis spp." = "#bcee68",
+  "Plecotus auritus" = "#8b0000",
+  "Plecotus spp." = "#8b0000",
+  "Plecotus austriacus" = "#000000",
+  "Pipistrellus pipistrellus" = "#ffff99",
+  "Pipistrellus nathusii" = "#8a2be2",
+  "Pipistrellus pygmaeus" = "#b15928",
+  "Pipistrellus spp." = "#fdbf6f",
+  "Rhinolophus ferrumequinum" = "#e31a1c",
+  "Rhinolophus hipposideros" = "#33a02c",
+  "Nyctalus noctula" = "#cab2d6",
+  "Nyctalus leisleri" = "#fb9a99",
+  "Nyctalus spp." = "#eee8cd",
+  "Eptesicus serotinus" = "#008b8b"
+)
+location_count <- statics %>% 
+  count(Description, Species) 
+
+list_species <- levels(factor(location_count$Species))
+
+# get a vector of colours from the bat_pass_counts data.frame
+colors <- unname(bat_colours_sci[list_species])
+
+
+  plot_ly(location_count, y = ~Description, x = ~n, color = ~Species,
+          orientation = 'h') %>%
+  add_bars(colors = colors) %>%
+  layout(barmode = "stack",
+         yaxis = list(title=""),
+         xaxis = list(title="Count of Bat Passes (Nr)"))
+
+
+```
+
+### Pie Chart
+
+@fig-plotlypie shows a pie chart of bat activity, it was drawn with the plotly library^[For more information see <https://plotly.com/r/pie-charts/>]. Hovering the mouse over a bar will reveal the bat species and the number of bat passes; toggling the species name in the legend will remove (or add) the species slice from the chart, and; at any view the graph can be copied to the clipboard. 
+
+```{r}
+#| label: fig-plotlypie
+#| fig-cap: "Interactive Pie Chart of Species Passes"
+
+library(tidyverse)
+library(iBats)
+library(plotly)
+
+# Add data and time information to the iBats statics bat survey data set using the iBats::date_time_info
+statics_plus <- iBats::date_time_info(statics)
+
+# bat species colours
+bat_colours_sci <- c(
+  "Barbastella barbastellus" = "#1f78b4",
+  "Myotis alcathoe" = "#a52a2a",
+  "Myotis bechsteinii" = "#7fff00",
+  "Myotis brandtii" = "#b2df8a",
+  "Myotis mystacinus" = "#6a3d9a",
+  "Myotis nattereri" = "#ff7f00",
+  "Myotis daubentonii" = "#a6cee3",
+  "Myotis spp." = "#bcee68",
+  "Plecotus auritus" = "#8b0000",
+  "Plecotus spp." = "#8b0000",
+  "Plecotus austriacus" = "#000000",
+  "Pipistrellus pipistrellus" = "#ffff99",
+  "Pipistrellus nathusii" = "#8a2be2",
+  "Pipistrellus pygmaeus" = "#b15928",
+  "Pipistrellus spp." = "#fdbf6f",
+  "Rhinolophus ferrumequinum" = "#e31a1c",
+  "Rhinolophus hipposideros" = "#33a02c",
+  "Nyctalus noctula" = "#cab2d6",
+  "Nyctalus leisleri" = "#fb9a99",
+  "Nyctalus spp." = "#eee8cd",
+  "Eptesicus serotinus" = "#008b8b"
+)
+
+# count the number of pass per species
+bat_pass_counts <- statics_plus %>%
+  count(Species)
+
+# get a vector of colours from the bat_pass_counts data.frame
+colors <- unname(bat_colours_sci[bat_pass_counts$Species])
+
+# plot a pie chart with plotly
+plot_ly(bat_pass_counts,
+  labels = ~Species, values = ~n,
+  type = "pie",
+  marker = list(colors = colors)
+) %>%
+  layout(
+    title = "Bat Species Passes",
+    xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+    yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE)
+  )
 
 ```
 

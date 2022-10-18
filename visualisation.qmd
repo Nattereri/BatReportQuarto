@@ -696,14 +696,17 @@ ggplot(graph_data, aes(x = Species, y = pre_rise_min, fill = Species)) +
 ```
 
 
-## Other Graphs
+## Standard Graphs
+
+Bar charts (@fig-plots-1) and pie charts (@fig-plots-2) are part of the standard repertoire for reporting bat surveys. These _flat_ graphs can be hard to interpret when there are a large number of variables to display, as in this case with the number of different species in @fig-plots; and/or a high value, such as the _Pipistrellus pipistrellus_ species in @fig-plots, that can _hide_ other values.  These bar and pie charts are more effective when they are interactive, as demonstrated on the "Interactive Reports" page^[<https://bat-survey-reporting.netlify.app/dynamic.html>].
 
 ```{r}
-#| label: fig-avoidgraphs
-#| layout-ncol: 2
-#| fig-cap: 
+#| label: fig-plots
+#| fig-cap: "Conventional Graphs used for Reporting Bat Surveys" 
+#| fig-subcap: 
 #|   - "Pie Chart"
 #|   - "Bar Chart"
+#| layout-ncol: 2
 
 graph_data <- statics %>%
   group_by(Species) %>%
