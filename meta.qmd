@@ -248,3 +248,121 @@ statics %>%
 
 ```
 
+
+## National Grid Coordinates 
+
+Adding a A Country's grid reference coordinates as meta data is useful; it allows a friendly export to other GIS and engineering drawing software (e.g. QGIS, ArcView® and AutoCAD®).  A Country's grid reference coordinates can be transformed from the `Longitude` and `Latitude`; in the tidy `statics` data longitude and latitude are based on the World Geodetic System 1984[^2] (WGS84), the green column in @tbl-NGR shows the British National Grid coordinates obtained from these longitude and latitude.
+
+[^2]: <https://en.wikipedia.org/wiki/World_Geodetic_System>
+
+```{r}
+#| code-fold: show
+#| warning: false
+#| message: false
+
+### Libraries Used 
+library(tidyverse) # Data Science packages - see https://www.tidyverse.org/
+library(sf) # Simple features access between data and GIS
+
+# Install devtools if not installed 
+# devtools is used to install the iBats package from GitHub
+if(!require(devtools)){
+  install.packages("devtools")
+}
+
+# If iBats is not installed load from Github
+if(!require(iBats)){
+  devtools::install_github("Nattereri/iBats")
+}
+library(iBats)
+
+# Select Longitude & Latitude from the statics data in the iBats package
+lon_lat <- statics %>% 
+  select(lon = Longitude, lat = Latitude)
+
+lon_lat = st_as_sf(lon_lat, coords = c("lon", "lat"))
+
+# Set the original coordinate reference system (CRS)
+# The EPSG code is used to define the CRS
+data_WSG84 = st_set_crs(lon_lat, 4326)
+
+# Transform the existing coordinates to the new projection
+# British National Grid is the new projection which as an EPSG:27700
+data_BNG = st_transform(data_WSG84, 27700)
+
+# Create simple feature geometry list column
+data_BNG_geom <- st_geometry(data_BNG)
+nc2 = st_sf(geom=data_BNG_geom)
+
+# retrieve coordinates in matrix form
+data_BNG_matrix <- st_coordinates(nc2) 
+
+#Assign Eastings and Northings to seperate columns
+Easting <- data_BNG_matrix[,1]
+Northing <- data_BNG_matrix[,2]
+
+# Make a data.frame
+data_BNG_df <- tibble(Easting, Northing)
+
+# Make a British National Grid Reference column ("GridRef) 
+# keep the Easting & Northings columns
+data_BNG_df <- data_BNG_df %>% 
+  unite("GridRef", c("Easting", "Northing"), sep = ",", remove = FALSE) 
+
+# Add columns to the statics data set
+statics_plus <- cbind(statics, data_BNG_df)
+
+```
+
+```{r}
+#| label: tbl-NGR
+#| tbl-cap: "From the Longitude and Latitude Create a Vector of the British National Grid Coordinates"
+
+library(tidyverse)
+library(gt)
+
+statics_plus %>% 
+  sample_n(10) %>% 
+  select(Species, Longitude, Latitude, GridRef) %>% 
+  # Table made with library(gt)
+  gt() %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")
+      ),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  ) %>% 
+  # Make bat scientific name italic
+  tab_style(
+    style = list(
+      cell_text(style = "italic")
+      ),
+    locations = cells_body(
+      columns = c(Species)
+  )) %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "forestgreen"),
+      cell_text(color = "white"),
+      cell_text(weight = "normal")
+      ),
+    locations = cells_body(
+      columns = c(GridRef)
+    )
+  ) %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "forestgreen"),
+      cell_text(color = "white"),
+      cell_text(weight = "normal")
+      ),
+    locations = cells_column_labels(
+      columns = c(GridRef)
+    )
+  )
+  
+
+```

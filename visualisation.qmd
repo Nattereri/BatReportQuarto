@@ -531,7 +531,7 @@ if(!require(devtools)){
   install.packages("devtools")
 }
 
-# If iBats not installed load from Github
+# If iBats is not installed load from Github
 if(!require(iBats)){
   devtools::install_github("Nattereri/iBats")
 }
