@@ -57,40 +57,133 @@ What's the disadvantage?
 
 ## Bat Report from Tidy Data
 
-The first few rows of bat survey data, post sound analysis, is shown in @tbl-surveydata; this is from of the `statics` data in the `iBats` package, it is _tidy_ data and has the minimum columns for undertaking effective analysis:
-
--   Description
--   DateTime
--   Species
--   Latitude
--   Longitude
-
-The `r nrBats <- add_commas(nrow(statics)); nrBats` rows in the `statics` data is used here to demonstrate literate programming with Quarto®[^1].
-
-[^1]: Quarto® is seen as the next generation of R Markdown (and is more integrated with Python).
-
-```{r}
-#| label: tbl-surveydata
-#| tbl-cap: !expr glue::glue("Bat Survey Data- First Ten Rows of the {nrBats} in the 'statics' Data")
-
-surveydata <- statics %>% # statics is a tidy data set from the iBats package
-  #select(DateTime, Species, Latitude, Longitude, Description) %>% 
-  rename(`Date and Time` = DateTime,  `Bat Species` = Species) %>% 
-  sample_n(10) %>% 
-  arrange(`Date and Time`)
+The complete R Markdown text (the .Rmd file) that produces a simple bat report from the `statics` tidy data[^4] is shown below; it can be copied to the clip board and rendered (knitted) into the Word report illustrated.
 
 
-# Table made with gt()
-gt(head(surveydata, n = 10L)) %>% 
-  tab_style(
-    style = list(
-      cell_fill(color = "black"),
-      cell_text(color = "white"),
-      cell_text(weight = "bold")
-      ),
-    locations = cells_column_labels(
-      columns = everything()
-    )
-  )
+[^4]: From the iBats package.
+
+````markdown
+---
+title: "Simple Bat Report"
+output: 
+  officedown::rdocx_document: default
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+author: "An Ecologist"
+---
+
+`r ''````{r include=FALSE}
+library(knitr)
+library(tidyverse)
+library(iBats)
+library(ggrepel)
+library(broman)
+library(flextable)
+library(officer)
+library(officedown)
+
+knitr::opts_chunk$set(echo = FALSE, warnings = FALSE, message = FALSE)
+knitr::opts_chunk$set(fig.cap = TRUE)
+
+# A vector used to give the species a specific colour in the graphic; the colours
+# can be changed and other species added.
+bat_colours_sci <- c(
+  "Barbastella barbastellus" = "#1f78b4",
+  "Myotis alcathoe" = "#a52a2a",
+  "Myotis bechsteinii" = "#7fff00",
+  "Myotis brandtii" = "#b2df8a",
+  "Myotis mystacinus" = "#6a3d9a",
+  "Myotis nattereri" = "#ff7f00",
+  "Myotis daubentonii" = "#a6cee3",
+  "Myotis spp." = "#bcee68",
+  "Plecotus auritus" = "#8b0000",
+  "Plecotus spp." = "#8b0000",
+  "Plecotus austriacus" = "#000000",
+  "Pipistrellus pipistrellus" = "#ffff99",
+  "Pipistrellus nathusii" = "#8a2be2",
+  "Pipistrellus pygmaeus" = "#b15928",
+  "Pipistrellus spp." = "#fdbf6f",
+  "Rhinolophus ferrumequinum" = "#e31a1c",
+  "Rhinolophus hipposideros" = "#33a02c",
+  "Nyctalus noctula" = "#cab2d6",
+  "Nyctalus leisleri" = "#fb9a99",
+  "Nyctalus spp." = "#eee8cd",
+  "Eptesicus serotinus" = "#008b8b"
+)
 ```
 
+__CONTENTS__
+<!---BLOCK_TOC--->
+__List of Figures__
+<!---BLOCK_TOC{seq_id: 'fig'}--->
+__List of Tables__
+<!---BLOCK_TOC{seq_id: 'tab'}--->
+
+`r ''````{r include=FALSE}
+# Tidy bat data - example data from the iBats package
+TidyBatData <- statics
+```
+
+\newpage
+# TABLES
+
+The simplest form of aggregation is a count of bats[^1]; as shown in Table \@ref(tab:table01)
+[^1]: note:- in this case it is a count of bat passes
+
+`r ''````{r tab.id="table01", tab.cap="Species and Number of Bat Passes"}
+TidyBatData %>%
+  group_by(Species) %>% 
+  count() %>% 
+  #arrange descending
+  arrange(desc(n)) %>% 
+  # rename n as count
+  rename(`Bat Species` = Species, Count = n) %>% 
+  # so table is produced with individual species on one row
+  ungroup() %>% 
+  flextable() %>%
+  width(j = 1, width = 2.5) %>%
+  italic(j = 1, italic = TRUE, part = "body") %>%
+  bg(bg = "black", part = "header") %>%
+  color(color = "white", part = "header")
+```
+
+\newpage
+# FIGURES  
+
+Figure \@ref(fig:graph01): shows the count of all the species observations as a dot chart.
+
+`r ''````{r graph01, fig.cap="Count of All Species Observations", fig.height=7, fig.width=6}
+
+g_data <- TidyBatData %>% 
+group_by(Species) %>% 
+count() %>% 
+mutate(total = add_commas(n),
+       label = stringr::str_c(Species, ": ", total))
+  
+graph_bat_colours <- iBats::bat_colours(g_data$Species, colour_vector = bat_colours_sci)
+
+p <- ggplot(g_data, aes(y = reorder(Species, n), x = n, fill = Species)) +
+  geom_point(colour = "black", size = 5) +
+  geom_label_repel(data = g_data, aes(label = label),
+                   nudge_y = -0.25,
+                   nudge_x = ifelse(g_data$n < 100, 0.33, -0.33),
+                   alpha = 0.7) +
+  scale_fill_manual(values = graph_bat_colours) +
+  scale_x_log10(sec.axis = dup_axis()) +
+  annotation_logticks(sides = "tb") +
+  labs(x = "Bat Observations (Number of Passes)",
+       caption = "Note: Log scale used") +
+  theme_bw() + 
+  theme(legend.position = "none", 
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(),
+        axis.text.x = element_text(size=12, face="bold"), 
+        axis.text.y = element_blank(), 
+        axis.ticks.y = element_blank(),
+        strip.text = element_text(size=12, face="bold", colour = "white"), 
+        axis.title.x = element_text(size=12, face="bold"), 
+        axis.title.y = element_blank())
+
+p
+```
+
+````
