@@ -5,6 +5,7 @@ format:
   html:
      code-fold: true
      code-summary: "Show the code"
+fig-cap-location: top
 ---
 
 ```{r}
@@ -19,10 +20,10 @@ library(glue)
 
 ```
 
-A full bat survey report produced, ***with one mouse click***, from sound analysis data (i.e. after identifying the bat detector calls to species or genus with sound analysis). _One click_ reporting is achieved through literate programming [@knuth84]; a procedure of mixing code and descriptive writing, in order to undertake and explain data analysis simultaneously in the same document. This is an efficient practice of workflow! 
+A full bat survey report produced, ***with one mouse click***, from sound analysis data (i.e. after identifying the bat detector calls to species or genus with sound analysis) see @fig-workflow. _One click_ reporting is achieved through literate programming [@knuth84]; a procedure of mixing code and descriptive writing, in order to undertake and explain data analysis simultaneously in the same document. This is an efficient practice of workflow! 
 
 
-![Workflow In Practice](Images/workflow.png)
+![Workflow In Practice](Images/workflow.png){#fig-workflow}
 
 
 
@@ -34,11 +35,11 @@ The advantages of this approach to bat data science are appreciable:
 1. Workflow
     i) Reduces (and can eliminate) any copy and paste activity
     ii) Reports are easily created (_one click_) with new data or updated with revised data 
-    iii) The time and effort producing reports can be reduced by several orders of magnitude! 
+    iii) The time and effort producing reports can be reduced; by several orders of magnitude! 
 2. Reproducible
     i) The report is reproducible by yourself (and others[^2]); convenient when returning to a project after many months or years!  
 3. Open Source
-    i) The Quarto or R Markdown file, the literate program document, is simple text that can be edited with any text editor as well as user friendly integrated development environments like RStudio[^4].  
+    i) The Quarto or R Markdown file, the literate program document, is simple text that can be edited with any text editor; although it's recommended to use friendly integrated development environments like RStudio[^4].  
     ii) The software[^3] which reads the literate program document and makes the report in: Word, PDF, PowerPoint or Dashboard are open source and free to use. 
 
 [^2]: the exact results can be reproduced if given access to the original data and Quarto® document containing the literate programming text of code and descriptive writing.
@@ -52,12 +53,12 @@ What's the disadvantage?
 
 1. Coding
     i)  The literate program document requires coding skills to write (these web pages are designed to help with the coding).
-    ii) Coding skills in ecology are generally underdeveloped (although university education of ecology is increasingly taking a coding approach to data science)
+    ii) Coding skills in ecology are generally underdeveloped (although university education of ecology is increasingly taking a coding approach to data science); _it should be noted little or no coding skills are required to render the report._
 
 
 ## Bat Report from Tidy Data
 
-The complete R Markdown text (the .Rmd file) that produces a simple bat report from the `statics` tidy data[^4] is shown below; it can be copied to the clip board and rendered (knitted) into the Word report illustrated.
+The complete R Markdown text (the .Rmd file) that produces a simple bat report from the `statics` tidy data[^4] is shown below; it can be copied to the clip board and rendered (knitted) into the Word report illustrated in @fig-wordreport.
 
 
 [^4]: From the iBats package.
@@ -187,3 +188,18 @@ p
 ```
 
 ````
+
+The three page Word report shown in @fig-wordreport is a rudimentary example; it could be expanded to include any of the tables and graphs shown on these web pages.  The .Rmd file is rendered into a Microsoft Word document; this is a convenient file format easily allowing further editing by others in the survey team. The simple report in @fig-wordreport has a tables of contents and cross referencing it can also be rendered directly into the _house/company_ style by specifying a `reference_docx` file[^5].
+
+[^5]: More information on the production of Word documents and PowerPoint presentations from R and R Markdown is available from the work of David Gohel see <https://ardata-fr.github.io/officeverse/index.html>.
+
+::: {#fig-wordreport layout-ncol=1}
+
+![](images/page1.png)
+
+
+![](images/page2.png)
+![](images/page3.png)
+
+Bat Survey Word Report 
+:::

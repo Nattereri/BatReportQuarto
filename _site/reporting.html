@@ -220,11 +220,11 @@ div.csl-indent {
 
 </header>
 
-<p>A full bat survey report produced, <strong><em>with one mouse click</em></strong>, from sound analysis data (i.e.&nbsp;after identifying the bat detector calls to species or genus with sound analysis). <em>One click</em> reporting is achieved through literate programming <span class="citation" data-cites="knuth84">(<a href="#ref-knuth84" role="doc-biblioref">Knuth 1984</a>)</span>; a procedure of mixing code and descriptive writing, in order to undertake and explain data analysis simultaneously in the same document. This is an efficient practice of workflow!</p>
-<div class="quarto-figure quarto-figure-center">
+<p>A full bat survey report produced, <strong><em>with one mouse click</em></strong>, from sound analysis data (i.e.&nbsp;after identifying the bat detector calls to species or genus with sound analysis) see <a href="#fig-workflow">Figure&nbsp;1</a>. <em>One click</em> reporting is achieved through literate programming <span class="citation" data-cites="knuth84">(<a href="#ref-knuth84" role="doc-biblioref">Knuth 1984</a>)</span>; a procedure of mixing code and descriptive writing, in order to undertake and explain data analysis simultaneously in the same document. This is an efficient practice of workflow!</p>
+<div id="fig-workflow" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1: Workflow In Practice</figcaption><p></p>
 <p><img src="Images/workflow.png" class="img-fluid figure-img"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Workflow In Practice</figcaption><p></p>
 </figure>
 </div>
 <section id="why-do-this" class="level2">
@@ -235,7 +235,7 @@ div.csl-indent {
 <ol type="i">
 <li>Reduces (and can eliminate) any copy and paste activity</li>
 <li>Reports are easily created (<em>one click</em>) with new data or updated with revised data</li>
-<li>The time and effort producing reports can be reduced by several orders of magnitude!</li>
+<li>The time and effort producing reports can be reduced; by several orders of magnitude!</li>
 </ol></li>
 <li>Reproducible
 <ol type="i">
@@ -244,7 +244,7 @@ div.csl-indent {
 </ol></li>
 <li>Open Source
 <ol type="i">
-<li>The Quarto or R Markdown file, the literate program document, is simple text that can be edited with any text editor as well as user friendly integrated development environments like RStudio<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.<br>
+<li>The Quarto or R Markdown file, the literate program document, is simple text that can be edited with any text editor; although it’s recommended to use friendly integrated development environments like RStudio<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.<br>
 </li>
 <li>The software<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> which reads the literate program document and makes the report in: Word, PDF, PowerPoint or Dashboard are open source and free to use.</li>
 </ol></li>
@@ -254,18 +254,18 @@ div.csl-indent {
 <li>Coding
 <ol type="i">
 <li>The literate program document requires coding skills to write (these web pages are designed to help with the coding).</li>
-<li>Coding skills in ecology are generally underdeveloped (although university education of ecology is increasingly taking a coding approach to data science)</li>
+<li>Coding skills in ecology are generally underdeveloped (although university education of ecology is increasingly taking a coding approach to data science); <em>it should be noted little or no coding skills are required to render the report.</em></li>
 </ol></li>
 </ol>
 </section>
 <section id="bat-report-from-tidy-data" class="level2">
 <h2 class="anchored" data-anchor-id="bat-report-from-tidy-data">Bat Report from Tidy Data</h2>
-<p>The complete R Markdown text (the .Rmd file) that produces a simple bat report from the <code>statics</code> tidy data<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> is shown below; it can be copied to the clip board and rendered (knitted) into the Word report illustrated.</p>
+<p>The complete R Markdown text (the .Rmd file) that produces a simple bat report from the <code>statics</code> tidy data<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> is shown below; it can be copied to the clip board and rendered (knitted) into the Word report illustrated in <a href="#fig-wordreport">Figure&nbsp;2</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Simple Bat Report"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> </span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  officedown::rdocx_document: default</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "14 November, 2022"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "15 November, 2022"</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "An Ecologist"</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
@@ -383,6 +383,22 @@ div.csl-indent {
 <span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>p</span>
 <span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The three page Word report shown in <a href="#fig-wordreport">Figure&nbsp;2</a> is a rudimentary example; it could be expanded to include any of the tables and graphs shown on these web pages. The .Rmd file is rendered into a Microsoft Word document; this is a convenient file format easily allowing further editing by others in the survey team. The simple report in <a href="#fig-wordreport">Figure&nbsp;2</a> has a tables of contents and cross referencing it can also be rendered directly into the <em>house/company</em> style by specifying a <code>reference_docx</code> file<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
+<div id="fig-wordreport" class="quarto-layout-panel">
+<p></p><figcaption aria-hidden="true">Figure 2: Bat Survey Word Report</figcaption><p></p>
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img src="images/page1.png" class="img-fluid figure-img"></p>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<p><img src="images/page2.png" class="img-fluid figure-img"> <img src="images/page3.png" class="img-fluid figure-img"></p>
+</div>
+</div>
+</figure>
+</div>
 
 
 
@@ -400,6 +416,7 @@ Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</
 <li id="fn2" role="doc-endnote"><p>From the iBats package.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3" role="doc-endnote"><p>e.g.&nbsp;R <a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a>, Python <a href="https://www.python.org/" class="uri">https://www.python.org/</a>, R Markdown <a href="https://rmarkdown.rstudio.com/" class="uri">https://rmarkdown.rstudio.com/</a>, Quarto® <a href="https://quarto.org/" class="uri">https://quarto.org/</a>, RStudio <a href="https://posit.co/" class="uri">https://posit.co/</a>, Jupyter <a href="https://jupyter.org/" class="uri">https://jupyter.org/</a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4" role="doc-endnote"><p>From the iBats package.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5" role="doc-endnote"><p>More information on the production of Word documents and PowerPoint presentations from R and R Markdown is available from the work of David Gohel see <a href="https://ardata-fr.github.io/officeverse/index.html" class="uri">https://ardata-fr.github.io/officeverse/index.html</a>.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
