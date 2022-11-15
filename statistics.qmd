@@ -21,7 +21,7 @@ library(dunn.test)
 Statistical tests are undertaken to improve ecological understanding, separating the single from the noise. It enhances the ecological description when writing reports, making the report more evidenced based and therefore more robust and reproducible by others. When the data is not clear, or there is too much data to see, good statistics brings comprehension. Then there is a tendency to perceive connections or meaningful patterns between unrelated or random things, termed apophenia; here statistical testing can demonstrate it is random or unrelated.
 
 
-## Comparison of Activity
+## Individual Species Activity
 
 ### An Obvious Difference 
 
@@ -335,3 +335,206 @@ resultsTable %>%
 * Common pipistrelle activity at static 1 is significantly different to static locations 2, 3 and 4.  The significant difference (at P<0.05) between static 1 and static 3 is not easily determined from @fig-kwpip.  
 * Common pipistrelle activity at static 2, static 3, and static 5 are not significantly different (at P<0.05).
 
+
+## Bat Assemblage
+
+The assessment of individual species ignores the fact there is also the species assemblage; the taxonomically related group of species (i.e. bats) occupying the same geographical area at the same time. The assemblage of bat species can be explored using __multivariate methods__.
+
+For most surveys the number of species observed is greater than one, making it a biological assemblage. We can relate this assemblage to other factors such as _location, habitat, time, weather, etc._
+Multivariate analysis gives a way of exploring the bat assemblage differences with respect to factors such as the location/habitat or month/year or combination of both.
+
+### Cluster Analysis
+
+@tbl-table04 shows a summary matrix of bat passes per species for each static (i.e. location)  We would like to know which locations are similar/dissimilar. 
+
+
+```{r}
+#| label: tbl-table04
+#| tbl-cap: "Matrix of Location by Species"
+
+
+Tab_L_S <- statics %>% # Location - Species
+  group_by(Species, Description) %>% 
+  count() 
+
+maxValue <- max(Tab_L_S$n, na.rm = T)
+
+Tab_L_S <- Tab_L_S %>% 
+  pivot_wider(names_from = Species, values_from = n) %>% 
+  replace(is.na(.), 0)
+
+ncols <- ncol(Tab_L_S)
+
+#Make coloured palette
+colourer <- scales::col_numeric(
+  palette = c("transparent", "forestgreen"),
+  domain = c(0, maxValue))
+
+Tab_L_S %>% 
+  flextable() %>% 
+    bold(part = "header") %>% 
+    bg(bg = "black", part = "header") %>% 
+    color(color = "white", part = "header") %>% 
+    rotate(j = 2:ncols, rotation = "tbrl", align = "center", part = "header") %>% 
+    height_all(height = 2.3, part = "header") %>% 
+    hrule(rule = "exact", part = "header") %>%
+    bg(bg = colourer, j = 2:ncols, part = "body") %>%
+    width(j = 2:ncols, width = 0.4) %>% 
+    width(j = 1, width = 0.8)
+
+```
+
+
+In multivariate analysis the pre-treament of data (sometimes in more than one way) is usually desirable. For assemblage data, _transformations_ will reduce the dominant contribution of abundant species (i.e. all those pips). Transformations include (None, Square root, Fourth root, Log(X+1), Presence/absence). @tbl-table05 shows @tbl-table04 transformed with the species $\sqrt[2]{count}$.
+
+```{r}
+#| warning: false
+#| label: tbl-table05
+#| tbl-cap: "Transformed Matrix"
+
+SpeciesC <- Tab_L_S %>% 
+  ungroup() %>% 
+  select(2:ncol(.)) %>% 
+  mutate_all(funs(sqrt(.)))
+
+Table <- SpeciesC %>% 
+  mutate_all(funs(round(., 2)))
+
+Matrix <- Tab_L_S %>%
+  ungroup() %>% 
+  select(Description) %>% 
+  bind_cols(SpeciesC)
+
+
+MatrixTable <- Tab_L_S %>%
+  ungroup() %>% 
+  select(Description) %>% 
+  bind_cols(Table)
+
+Matrix <- data.matrix(Matrix[, 2:ncol(Matrix)])
+
+r_names <- Tab_L_S %>%
+  ungroup() %>% 
+  pull(Description)
+
+rownames(Matrix) <- r_names
+
+ncols <- ncol(MatrixTable)
+
+#Make coloured palette
+colourer <- scales::col_numeric(
+  palette = c("transparent", "forestgreen"),
+  domain = c(0, maxValue))
+
+MatrixTable %>% 
+  flextable() %>% 
+    bold(part = "header") %>% 
+    bg(bg = "black", part = "header") %>% 
+    color(color = "white", part = "header") %>% 
+    rotate(j = 2:ncols, rotation = "tbrl", align = "center", part = "header") %>% 
+    height_all(height = 2.3, part = "header") %>% 
+    hrule(rule = "exact", part = "header") %>%
+    bg(bg = colourer, j = 2:ncols, part = "body") %>%
+    width(j = 2:ncols, width = 0.4) %>% 
+    width(j = 1, width = 0.8)
+
+```
+
+To assess the differences of activity (in the bat assemblage) between locations (or months, habitat, etc.) we measure the distance between every point of activity with every other point. So activity (e.g. a median or count) at one location for a species is compared(measured) with every other activity for all the species and locations.
+
+There are many _distance_ measurements to investigate species similarity/dissimilarity^[note it is the dissimilarity that is used, 1- similarity]:   
+
+* _Euclidean distance_ natural distance between two points  
+* _Manhattan distance_ walking around a New York block  
+* _Bray-Curtis_ a dissimilarity very useful for ecologists  
+
+For species similarities it may be worth considering the removal of the rarer species (_i.e. the less observed_) and repeating the analysis. 
+
+In this example the _Bray-Curtis_ distance measurement has been applied to @tbl-table05 to produce the Bray-Curtis dissimilarity matrix in @tbl-table06.
+
+```{r}
+#| warning: false
+#| label: tbl-table06
+#| tbl-cap: "Bray-Curtis Dissimilarity Matrix"
+
+library(vegan)
+
+dist_bray <- vegdist(Matrix, method="bray")
+
+dist_df <- tibble(dist_bray)
+
+fmt2 <- function(dist_num) {
+  
+  temp <- as.character(dist_num)
+  
+  stringr::str_sub(temp, 1L, 7L)
+  
+}
+
+c1 <- c("Static 2", "Static 3", "Static 4", "Static 5")
+c2 <- c(fmt2(dist_df[1,1]), fmt2(dist_df[2,1]), fmt2(dist_df[3,1]), fmt2(dist_df[4,1]))
+c3 <- c(" ", fmt2(dist_df[5,1]), fmt2(dist_df[6,1]), fmt2(dist_df[7,1]))
+c4 <- c(" ", " ", fmt2(dist_df[8,1]), fmt2(dist_df[9,1]))
+c5 <- c(" ", " ", " ", fmt2(dist_df[10,1]))
+
+dist_tbl <- tibble(c1, c2, c3, c4, c5)
+
+colnames(dist_tbl) <- c(" ", "Static 1", "Static 2", "Static 3", "Static 4")
+
+ft <- dist_tbl
+ncols <- ncol(ft)
+
+ft %>% 
+  flextable() %>% 
+    bold(part = "header") %>% 
+    bold(j=1, part = "body") %>% 
+    bg(bg = "black", part = "header") %>% 
+    bg(j=1, bg = "black", part = "body") %>% 
+    color(color = "white", part = "header") %>% 
+    color(j=1, color = "white", part = "body")
+    
+```
+
+
+
+The Bray-Curtis dissimilarity matrix can be used in many multivariate methods; here the matix is used in _Hierarchical Clustering_. Hierarchical clustering is useful because it can create a tree-based representation of the observations called a dendrogram; that is easy to interpret visually.  The dendrogram from the Bray-Curtis dissimilarity matrix in @tbl-table06 is shown in @fig-graph21. 
+
+```{r}
+#| label: fig-graph21
+#| fig-cap: "Dendrogram Between Static Locations"
+
+# Hierarchical cluster function hclust
+hc_bray <- hclust(dist_bray, method = "complete")
+
+# Always visualse
+library(ggdendro)
+#Creates Dendrogram Plot Using ggplot.
+ggdendrogram(hc_bray, rotate = TRUE, size = 2) +
+  labs(title = "Static Location - Complete Cluster - Bray-Curtis")
+
+dhc <- as.dendrogram(hc_bray)
+
+
+```
+
+
+Clustering refers to a very broad set of techniques for finding subgroups, or _clusters_, in a data set.  Clustering involves grouping a set of objects in such a way that objects in the same group (called a cluster) are more similar (in some sense) to each other than to those in other groups (clusters). Referring to the dendrogram in @fig-graph21 the lower in the tree fusions occur, the more similar the groups of observations are to each other. While observations that fuse later, near the top of the tree, can be considered less similar.  
+
+For @fig-graph21 we can see that for the bat assemblage:  
+
+* Statics 3 & 2 are similar
+* Statics 1 & 5 are similar
+* Static 4 is more similar to Statics 2 & 3 than Statics 1 & 5
+* Statics 2 & 3 and Statics 1 & 5 are more similar to Static 4 -  than Statics 2 & 3 and Statics 1 & 5 are to each other   
+
+
+Note, the dendrogram is illustrative and we cannot draw conclusions about the degree of similarity of two observations based on their proximity along the vertical axis.
+
+This is just an introduction to _Hierarchical Clustering_, there are many variations and other types of clustering (e.g. _k-means_). Key variations for hierarchical clustering are:
+
+* distance measurement used e.g.  Bray-Curtis, Euclidean, etc.
+* type of linkage e.g. complete, average, single or centroid.
+
+### K-Means Clustering
+
+K-means clustering is a simple approach for partitioning a data set into $K$ distinct non-overlapping clusters. To perform $K$ means clustering we must specify the desired number of clusters first.
