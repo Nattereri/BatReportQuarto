@@ -15,6 +15,7 @@ library(iBats)
 library(gt)
 library(flextable)
 library(dunn.test)
+library(broom)
 
 ```
 
@@ -537,4 +538,89 @@ This is just an introduction to _Hierarchical Clustering_, there are many variat
 
 ### K-Means Clustering
 
-K-means clustering is a simple approach for partitioning a data set into $K$ distinct non-overlapping clusters. To perform $K$ means clustering we must specify the desired number of clusters first.
+K-means clustering is a simple approach for partitioning a data set into $K$ distinct non-overlapping clusters. To perform $K$ means clustering we must specify the desired number of clusters first.  The code below applies k-means clustering to the Bray-Curtis dissimilarity matrix in @tbl-table06 with $K=2$.
+
+```{r}
+#| code-fold: show
+
+result_km <- kmeans(dist_bray, centers = 2)
+```
+
+
+```{r}
+#| label: tbl-kmcluster
+#| tbl-cap: "k-means Cluster and Location"
+
+clusters <- tibble(names(result_km$cluster), result_km$cluster)
+
+colnames(clusters) <- c("Location", "Cluster")
+
+clusters %>% 
+  gt() %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")
+      ),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  ) %>% 
+  cols_width(everything() ~ px(150))
+```
+
+```{r}
+#| label: tbl-kmtidy
+#| tbl-cap: "Summary on a Per-Cluster Level"
+
+tidy(result_km) %>% 
+  gt() %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")
+      ),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  )
+
+```
+
+
+```{r}
+#| label: tbl-kmglance
+#| tbl-cap: "k-means Overall Summary Statistics"
+glance(result_km) %>% 
+  gt() %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")
+      ),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  )
+```
+
+
+
+The output of `kmeans` is a list of information; the most important:
+
+* `cluster`: @tbl-kmcluster & @tbl-kmtidy A vector of integers (from 1:K) indicating the cluster to which each point is allocated.
+* `centers`: A matrix of cluster centers.
+* `totss`: @tbl-kmglance The total sum of squares.
+* `withinss`: @tbl-kmtidy Vector of within-cluster sum of squares, one component per cluster.
+* `tot.withinss`: @tbl-kmglance Total within-cluster sum of squares, i.e. sum(withinss).
+* `betweenss`: @tbl-kmglance The between-cluster sum of squares, i.e. $totss-tot.withinss$.
+* `size`: The number of points in each cluster.
+* `iter`: @tbl-kmglance The number of (outer) iterations.
+
+
+```{r}
+#| include: false
+
+# https://www.tidymodels.org/learn/statistics/k-means/
+```
+
