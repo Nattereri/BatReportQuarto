@@ -5,17 +5,18 @@ format:
      code-fold: true
      code-summary: "Show the code"
 bibliography: packages.bib
+number-sections: true
 ---
 
 These web pages compliment the *data science* chapters of the forthcoming BCT Bat Survey Guidelines 4^th^ Edition, and hopefully encourage ecologists to make the most of their bat survey data. They also demonstrate literate programming with Quarto®[^1] which can vastly improve workflow (*welcome to the world beyond Excel*).
 
 [^1]: Quarto® is an open-source scientific and technical publishing system: see <https://quarto.org/>
 
-***Note: pages are under active construction*** (so many things won't look right!)
+***Note: pages are under active construction*** (so some things won't look right!)
 
 ![](Images/homesunrise2.png)
 
-To help ecologists get started, the code making all the graphs and analysis is freely available to copy and use; just click on  _Show the code_, copy to the clipboard [^2], paste into the R environment and run (to get going in R - see the Install R... section below). 
+To help ecologists get started, the code making all the graphs and analysis is freely available to copy and use; just click on  _Show the code_, copy to the clipboard [^2], paste into the R environment and run (to get going in R see @sec-installr). 
 
 [^2]: Clip board icon is in the top right hand corner of the code window.
 
@@ -65,7 +66,7 @@ ggplot(graph_data, aes(area = n, fill = Month, label = Species, subgroup = Month
 ```
 
 
-## Install R, RStudio and Packages
+## Install R, RStudio and Packages {#sec-installr}
 
 1.  Download and install the latest version of R <https://cran.r-project.org/bin/windows/base/>. Download the version for your operating system; R can be downloaded for Windows, Mac & Linux.\
 2.  It is recommended R is used through the *RStudio* IDE. Download and install the latest version of RStudio from their web page <https://www.rstudio.com/products/rstudio/#Desktop>. Download the *free* desktop version.

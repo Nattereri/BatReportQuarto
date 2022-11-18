@@ -5,6 +5,7 @@ format:
      code-fold: true
      code-summary: "Show the code"
 bibliography: MyLibrary.bib
+number-sections: true
 ---
 
 ```{r}
@@ -20,13 +21,13 @@ set.seed(214)
 
 *Tidy Data* is a consistent way to organise your data [@wickham_tidy_2014]. Getting your data into this format requires some initial work, but that effort pays off in the long term. Once you have tidy data you will spend *less* time wrangling data from one representation to another, allowing you to spend more time on the analytic questions at hand. Unfortunately, there is a rule of thumb; 80% of time doing data science is spent wrangling data; particularly the effort required in sorting and rearranging the data into the *tidy* and therefore usable format.
 
-There are three interrelated rules which make a data set tidy, such as the data shown in @tbl-tidy:
+There are three interrelated rules which make a data set tidy see @fig-threerules:
 
 -   Each variable must have its own column.
 -   Each observation must have its own row.
 -   Each value must have its own cell.
 
-![](Images/TidyDataBats.PNG)
+![Rules for Tidy Data](Images/TidyDataBats.PNG){#fig-threerules}
 
 ## Minimal Data Requirement
 

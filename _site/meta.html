@@ -196,14 +196,14 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#date-and-time-information" id="toc-date-and-time-information" class="nav-link active" data-scroll-target="#date-and-time-information">Date and Time Information</a>
+  <li><a href="#date-and-time-information" id="toc-date-and-time-information" class="nav-link active" data-scroll-target="#date-and-time-information"> <span class="header-section-number">1</span> Date and Time Information</a>
   <ul class="collapse">
-  <li><a href="#the-night" id="toc-the-night" class="nav-link" data-scroll-target="#the-night">The <em>Night</em></a></li>
-  <li><a href="#other-date-and-time-information-added" id="toc-other-date-and-time-information-added" class="nav-link" data-scroll-target="#other-date-and-time-information-added">Other Date and Time Information added</a></li>
+  <li><a href="#the-night" id="toc-the-night" class="nav-link" data-scroll-target="#the-night"> <span class="header-section-number">1.1</span> The <em>Night</em></a></li>
+  <li><a href="#other-date-and-time-information-added" id="toc-other-date-and-time-information-added" class="nav-link" data-scroll-target="#other-date-and-time-information-added"> <span class="header-section-number">1.2</span> Other Date and Time Information added</a></li>
   </ul></li>
-  <li><a href="#sun-times" id="toc-sun-times" class="nav-link" data-scroll-target="#sun-times">Sun Times</a></li>
-  <li><a href="#common-bat-names" id="toc-common-bat-names" class="nav-link" data-scroll-target="#common-bat-names">Common Bat Names</a></li>
-  <li><a href="#national-grid-coordinates" id="toc-national-grid-coordinates" class="nav-link" data-scroll-target="#national-grid-coordinates">National Grid Coordinates</a></li>
+  <li><a href="#sun-times" id="toc-sun-times" class="nav-link" data-scroll-target="#sun-times"> <span class="header-section-number">2</span> Sun Times</a></li>
+  <li><a href="#common-bat-names" id="toc-common-bat-names" class="nav-link" data-scroll-target="#common-bat-names"> <span class="header-section-number">3</span> Common Bat Names</a></li>
+  <li><a href="#national-grid-coordinates" id="toc-national-grid-coordinates" class="nav-link" data-scroll-target="#national-grid-coordinates"> <span class="header-section-number">4</span> National Grid Coordinates</a></li>
   </ul>
 </nav>
     </div>
@@ -227,10 +227,10 @@ div.csl-indent {
 </header>
 
 <p>Many columns would be added to a tidy data set so it becomes more useful for analysis; some of these are described below.</p>
-<section id="date-and-time-information" class="level2">
-<h2 class="anchored" data-anchor-id="date-and-time-information">Date and Time Information</h2>
-<section id="the-night" class="level3">
-<h3 class="anchored" data-anchor-id="the-night">The <em>Night</em></h3>
+<section id="date-and-time-information" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="date-and-time-information"><span class="header-section-number">1</span> Date and Time Information</h2>
+<section id="the-night" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="the-night"><span class="header-section-number">1.1</span> The <em>Night</em></h3>
 <p>Bats are active through the night; the date of the night is the date at sunset and lasts until sunrise the morning of the following day. The <em>Night</em> is a variable column that is added to the <em>tidy</em> data; it is useful convention that helps avoid the confusion of having contiguous bat activity over two dates.</p>
 <p>The <em>Night</em> can be obtained from the <em>iBats</em> package using the <code>date_time_info</code> function. It requires a data.frame or tibble with a <code>DateTime</code> column, the <em>iana</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> time zone can be specified; the default is <code>Europe/London</code>.</p>
 <p>The code below takes the <code>statics</code> set from the <em>iBats</em> package and adds the <em>Night</em> column, <a href="#tbl-night">Table&nbsp;1</a> shows a selection of 5 rows from the <code>statics</code> data.</p>
@@ -724,8 +724,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="other-date-and-time-information-added" class="level3">
-<h3 class="anchored" data-anchor-id="other-date-and-time-information-added">Other Date and Time Information added</h3>
+<section id="other-date-and-time-information-added" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="other-date-and-time-information-added"><span class="header-section-number">1.2</span> Other Date and Time Information added</h3>
 <p>The function <code>iBats::date_time_info()</code> adds other date and time information: month, year and time see <a href="#tbl-other">Table&nbsp;2</a> (note: not all columns are shown). <a href="#tbl-other">Table&nbsp;2</a> shows a random selection of 5 rows from the <code>statics</code> set.</p>
 <div class="cell">
 <details>
@@ -1230,8 +1230,8 @@ div.csl-indent {
 </div>
 </section>
 </section>
-<section id="sun-times" class="level2">
-<h2 class="anchored" data-anchor-id="sun-times">Sun Times</h2>
+<section id="sun-times" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="sun-times"><span class="header-section-number">2</span> Sun Times</h2>
 <p>A useful approach for bat data analysis is to reference all bat activity (i.e.&nbsp;<code>DateTime</code>) to the time of sunset and sunrise for the <code>Night</code> and location(i.e.&nbsp;<code>Latitude</code> and <code>Longitude</code>). From this starting point, the minutes after sunset (and minutes before sunrise) that each bat activity occurred can be calculated; these can then be converted to decimal hours and integer hours so bat activity can be visualised in ways that help interpret the bat activity.</p>
 <p>Referencing the <code>DateTime</code> of bat activity to sunset and sunrise is achieved with the use of the <code>suncalc</code> package <span class="citation" data-cites="R-suncalc">(<a href="#ref-R-suncalc" role="doc-biblioref">Thieurmel and Elmarhraoui 2019</a>)</span>. The <code>iBats</code> package makes use of <code>suncalc</code> in its <code>sun_night_metrics</code> fuction; this takes a dataframe that must include the columns: <code>Night</code>, <code>DateTime</code>, <code>Latitude</code> and, <code>Longitude</code> - and calculates the following columns:</p>
 <ul>
@@ -1749,8 +1749,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="common-bat-names" class="level2">
-<h2 class="anchored" data-anchor-id="common-bat-names">Common Bat Names</h2>
+<section id="common-bat-names" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="common-bat-names"><span class="header-section-number">3</span> Common Bat Names</h2>
 <p>Common bat names are readily understood by the lay reader and should be available for graphs and tables; it is easily added as an additional column using the <em>Scientific</em> names column as a starting point.</p>
 <p>By convention scientific names are written as <em>italic</em>; to highlight the common names in <a href="#tbl-common">Table&nbsp;4</a> the column is written in <strong>bold</strong>.</p>
 <div class="cell">
@@ -2299,8 +2299,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="national-grid-coordinates" class="level2">
-<h2 class="anchored" data-anchor-id="national-grid-coordinates">National Grid Coordinates</h2>
+<section id="national-grid-coordinates" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="national-grid-coordinates"><span class="header-section-number">4</span> National Grid Coordinates</h2>
 <p>Adding a A Country’s grid reference coordinates as meta data is useful; it allows a friendly export to other GIS and engineering drawing software (e.g.&nbsp;QGIS, ArcView® and AutoCAD®). A Country’s grid reference coordinates can be transformed from the <code>Longitude</code> and <code>Latitude</code>; in the tidy <code>statics</code> data longitude and latitude are based on the World Geodetic System 1984<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> (WGS84), the green column in <a href="#tbl-NGR">Table&nbsp;5</a> shows the British National Grid coordinates obtained from these longitude and latitude.</p>
 <div class="cell">
 <details open="">

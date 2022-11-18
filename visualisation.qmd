@@ -4,6 +4,7 @@ format:
   html:
      code-fold: true
      code-summary: "Show the code"
+number-sections: true
 ---
 
 ```{r}
@@ -632,7 +633,7 @@ ggplot(graph_data, aes(x = Species, y = post_set_min, fill = Species)) +
 
 ```
 
-### Morning Bats and Roost Potential 
+### Dawn Bats and Roost Potential 
 
 ```{r}
 #| label: fig-reentry1

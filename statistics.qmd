@@ -4,6 +4,7 @@ format:
   html:
      code-fold: true
      code-summary: "Show the code"
+number-sections: true
 ---
 
 ```{r}
@@ -538,7 +539,7 @@ This is just an introduction to _Hierarchical Clustering_, there are many variat
 
 ### K-Means Clustering
 
-K-means clustering is a simple approach for partitioning a data set into $K$ distinct non-overlapping clusters. To perform $K$ means clustering we must specify the desired number of clusters first.  The code below applies k-means clustering to the Bray-Curtis dissimilarity matrix in @tbl-table06 with $K=2$.
+K-means clustering is a simple approach for partitioning a data set into **_K_** distinct non-overlapping clusters. To perform **_K_** means clustering we must specify the desired number of clusters first.  The code below applies k-means clustering to the Bray-Curtis dissimilarity matrix in @tbl-table06 with **_K=2_**.
 
 ```{r}
 #| code-fold: show

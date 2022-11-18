@@ -196,13 +196,13 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#minimal-data-requirement" id="toc-minimal-data-requirement" class="nav-link active" data-scroll-target="#minimal-data-requirement">Minimal Data Requirement</a></li>
-  <li><a href="#making-bat-data-tidy" id="toc-making-bat-data-tidy" class="nav-link" data-scroll-target="#making-bat-data-tidy">Making Bat Data <em>Tidy</em></a>
+  <li><a href="#minimal-data-requirement" id="toc-minimal-data-requirement" class="nav-link active" data-scroll-target="#minimal-data-requirement"> <span class="header-section-number">1</span> Minimal Data Requirement</a></li>
+  <li><a href="#making-bat-data-tidy" id="toc-making-bat-data-tidy" class="nav-link" data-scroll-target="#making-bat-data-tidy"> <span class="header-section-number">2</span> Making Bat Data <em>Tidy</em></a>
   <ul class="collapse">
-  <li><a href="#too-many-species-in-a-cell" id="toc-too-many-species-in-a-cell" class="nav-link" data-scroll-target="#too-many-species-in-a-cell">Too Many Species in a Cell</a></li>
-  <li><a href="#a-column-of-bat-counts" id="toc-a-column-of-bat-counts" class="nav-link" data-scroll-target="#a-column-of-bat-counts">A Column of Bat Counts</a></li>
-  <li><a href="#two-or-more-columns-of-bat-species" id="toc-two-or-more-columns-of-bat-species" class="nav-link" data-scroll-target="#two-or-more-columns-of-bat-species">Two or More Columns of Bat Species</a></li>
-  <li><a href="#convert-bat-names-to-scientific" id="toc-convert-bat-names-to-scientific" class="nav-link" data-scroll-target="#convert-bat-names-to-scientific">Convert Bat Names to Scientific</a></li>
+  <li><a href="#too-many-species-in-a-cell" id="toc-too-many-species-in-a-cell" class="nav-link" data-scroll-target="#too-many-species-in-a-cell"> <span class="header-section-number">2.1</span> Too Many Species in a Cell</a></li>
+  <li><a href="#a-column-of-bat-counts" id="toc-a-column-of-bat-counts" class="nav-link" data-scroll-target="#a-column-of-bat-counts"> <span class="header-section-number">2.2</span> A Column of Bat Counts</a></li>
+  <li><a href="#two-or-more-columns-of-bat-species" id="toc-two-or-more-columns-of-bat-species" class="nav-link" data-scroll-target="#two-or-more-columns-of-bat-species"> <span class="header-section-number">2.3</span> Two or More Columns of Bat Species</a></li>
+  <li><a href="#convert-bat-names-to-scientific" id="toc-convert-bat-names-to-scientific" class="nav-link" data-scroll-target="#convert-bat-names-to-scientific"> <span class="header-section-number">2.4</span> Convert Bat Names to Scientific</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -227,15 +227,20 @@ div.csl-indent {
 </header>
 
 <p><em>Tidy Data</em> is a consistent way to organise your data <span class="citation" data-cites="wickham_tidy_2014">(<a href="#ref-wickham_tidy_2014" role="doc-biblioref">Wickham 2014</a>)</span>. Getting your data into this format requires some initial work, but that effort pays off in the long term. Once you have tidy data you will spend <em>less</em> time wrangling data from one representation to another, allowing you to spend more time on the analytic questions at hand. Unfortunately, there is a rule of thumb; 80% of time doing data science is spent wrangling data; particularly the effort required in sorting and rearranging the data into the <em>tidy</em> and therefore usable format.</p>
-<p>There are three interrelated rules which make a data set tidy, such as the data shown in <a href="#tbl-tidy">Table&nbsp;1</a>:</p>
+<p>There are three interrelated rules which make a data set tidy see <a href="#fig-threerules">Figure&nbsp;1</a>:</p>
 <ul>
 <li>Each variable must have its own column.</li>
 <li>Each observation must have its own row.</li>
 <li>Each value must have its own cell.</li>
 </ul>
-<p><img src="Images/TidyDataBats.PNG" class="img-fluid"></p>
-<section id="minimal-data-requirement" class="level2">
-<h2 class="anchored" data-anchor-id="minimal-data-requirement">Minimal Data Requirement</h2>
+<div id="fig-threerules" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Images/TidyDataBats.PNG" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1: Rules for Tidy Data</figcaption><p></p>
+</figure>
+</div>
+<section id="minimal-data-requirement" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="minimal-data-requirement"><span class="header-section-number">1</span> Minimal Data Requirement</h2>
 <p>To undertake meaningful data analysis, it is recommended that data collected from bat activity surveys is wrangled into <em>tidy data</em> that has the following five variables (columns) as a minimum:</p>
 <ul>
 <li>Description</li>
@@ -250,8 +255,8 @@ div.csl-indent {
 <p><code>Species</code>: bat species names should follow the “binomial nomenclature” from the International Code of Zoological Nomenclature (ICZN)<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> - e.g.&nbsp;<em>Barbastella barbastellus</em>, <em>Eptesicus serotinus</em>, etc… A column of local common names can always be added to the <em>tidy</em> data, i.e.&nbsp;in a separate column see Appendix 8. Sound analysis may not be able to distinguish calls to species level; in practice some calls may only be identified to genus or less; Table @ref(tab:table04) gives a practical and consistent guide to naming<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
 <p><code>Longitude</code> and <code>Latitude</code>: World Geodetic System 1984<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> (WGS84); as used by Google earth. A digital, numeric, format should be used. Any other spatial reference system can be used (e.g.&nbsp;British National Grid Easting/Northing), as this can be stored as an extra column in the <em>tidy data</em>, the prerequisite is that the reference system can be converted to WGS84; which is the case for most national or state co-ordinate systems. Using a global co-ordinate system such as WSG84 give access to the many open-source application programming interfaces (API) available that assist with data analysis (e.g.&nbsp;assessing sunset and sunrise times or the adjustment to daylight saving).</p>
 </section>
-<section id="making-bat-data-tidy" class="level2">
-<h2 class="anchored" data-anchor-id="making-bat-data-tidy">Making Bat Data <em>Tidy</em></h2>
+<section id="making-bat-data-tidy" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="making-bat-data-tidy"><span class="header-section-number">2</span> Making Bat Data <em>Tidy</em></h2>
 <p>Results of bat sound analysis can be untidy:</p>
 <ul>
 <li>two or more species in one cell (see <a href="#tbl-untidy1">Table&nbsp;2</a>);</li>
@@ -369,8 +374,8 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<section id="too-many-species-in-a-cell" class="level3">
-<h3 class="anchored" data-anchor-id="too-many-species-in-a-cell">Too Many Species in a Cell</h3>
+<section id="too-many-species-in-a-cell" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="too-many-species-in-a-cell"><span class="header-section-number">2.1</span> Too Many Species in a Cell</h3>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -486,8 +491,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="a-column-of-bat-counts" class="level3">
-<h3 class="anchored" data-anchor-id="a-column-of-bat-counts">A Column of Bat Counts</h3>
+<section id="a-column-of-bat-counts" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="a-column-of-bat-counts"><span class="header-section-number">2.2</span> A Column of Bat Counts</h3>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -622,8 +627,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="two-or-more-columns-of-bat-species" class="level3">
-<h3 class="anchored" data-anchor-id="two-or-more-columns-of-bat-species">Two or More Columns of Bat Species</h3>
+<section id="two-or-more-columns-of-bat-species" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="two-or-more-columns-of-bat-species"><span class="header-section-number">2.3</span> Two or More Columns of Bat Species</h3>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -790,8 +795,8 @@ div.csl-indent {
 </div>
 </div>
 </section>
-<section id="convert-bat-names-to-scientific" class="level3">
-<h3 class="anchored" data-anchor-id="convert-bat-names-to-scientific">Convert Bat Names to Scientific</h3>
+<section id="convert-bat-names-to-scientific" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="convert-bat-names-to-scientific"><span class="header-section-number">2.4</span> Convert Bat Names to Scientific</h3>
 <p><a href="#tbl-tidied1">Table&nbsp;3</a> is still <em>untidy</em> because the bat species are represented as codes and not in a binomial nomenclature(scientific name). The <code>iBats::make_scientific()</code> function can take a named vector of codes and the scientific name; such as the <code>BatScientific</code> vector below. The case of the bat name codes are ignored; they are all converted to lower case.</p>
 <div class="cell">
 <details open="">

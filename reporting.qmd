@@ -6,6 +6,7 @@ format:
      code-fold: true
      code-summary: "Show the code"
 fig-cap-location: top
+number-sections: true
 ---
 
 ```{r}
@@ -120,6 +121,9 @@ __List of Tables__
 <!---BLOCK_TOC{seq_id: 'tab'}--->
 
 `r ''````{r include=FALSE}
+##### Load your TIDY bat data here:
+# TidyBatData <- read_csv("YourTidyData.csv", col_names = TRUE)
+
 # Tidy bat data - example data from the iBats package
 TidyBatData <- statics
 ```
