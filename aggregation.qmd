@@ -61,6 +61,9 @@ statics %>% # statics is a tidy data set from the iBats package
   )
 ```
 
+
+## Count of Bats
+
 The simplest form of aggregation is a count of bats[^1]; as shown in @tbl-simplecount
 
 [^1]: note:- in this case it is a count of bat passes
@@ -104,7 +107,7 @@ statics %>%
 
 More informative tables can be made by adding meta data such as the Month and Year of the observations. This is easy done on a *tidy data* conforming to the *minimal data requirement* with the `date_time_info` function in the `iBats` package. @tbl-countannex2 shows the monthly count (bat passes) of *Annex II* species[^2]; .
 
-[^2]: <https://ec.europa.eu/environment/nature/conservation/species/habitats_dir_en.htm>
+
 
 ```{r}
 #| label: tbl-countannex2
@@ -204,3 +207,181 @@ table_data %>%
 
   
 ```
+
+
+## Summary Statistics  
+
+
+Summary statistics for the Common pipistrelle (_Pipistrellus pipistrellus_) observations at all `static` locations for each night is shown in @tbl-sumstatcount; to make the table easier to read, the median column is highlighted with a graduated colour scale.  The summary statistics are calculated with the `favstats` function from the `mosaic` package.
+
+```{r}
+#| label: tbl-sumstatcount
+#| tbl-cap: "Common Pipstrelle Observations (Passes) at the Static Locations"
+#| warning: false
+
+
+library(mosaic)
+library(gt)
+library(gtExtras)
+
+
+# Add data and time information to the statics data using the iBats::date_time_info
+statics_plus <- iBats::date_time_info(statics)
+
+# Group by Description and Night and Count the Observations
+grouped_data <- statics_plus %>% 
+  filter(Species == "Pipistrellus pipistrellus") %>% 
+  group_by(Description, Night) %>% 
+  tally()
+
+# The summary statistics are saved into a variable riven_cond_stats 
+cond_stats <- favstats(n~Description, data = grouped_data)
+
+# riven_cond_stats is made into a the table (using the code below)
+cond_stats %>% 
+  # Create the table with the gt package
+  gt() %>% 
+  # Style the header to black fill and white text
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  ) %>% 
+  gt_color_rows(median, palette = "ggsci::yellow_material")
+
+```
+
+@tbl-monspec shows the summary statistics for Annex II Bat Species[^2] observations by month. The table can be grouped by Month through switching `Common` and `MonthFull` names in the code below; this alternative table is shown in @tbl-monspecb with the mean (average) highlighted.
+
+[^2]: <https://ec.europa.eu/environment/nature/conservation/species/habitats_dir_en.htm>
+
+```{r}
+#| label: tbl-monspec
+#| tbl-cap: "Species Observations (Passes) by Month"
+#| warning: false
+
+
+library(mosaic)
+library(gt)
+library(gtExtras)
+
+# Annex II Bats (in the static)
+AnnexII <- c("Barbastella barbastellus", "Rhinolophus ferrumequinum", "Rhinolophus hipposideros")
+
+# Add data and time information to the statics data using the iBats::date_time_info
+statics_plus <- iBats::date_time_info(statics)
+
+# List of bat common names and the scientific names
+BatCommon <- c(
+  "Barbastella barbastellus" = "Barbastelle",
+  "Rhinolophus ferrumequinum" = "Greater horseshoe",
+  "Rhinolophus hipposideros" = "Lesser horseshoe")
+
+# From Scientific name create a Common Name Vector 
+statics_plus$Common <-  unname(BatCommon[statics_plus$Species])
+
+# Group by Description and Night and Count the Observations
+grouped_data <- statics_plus %>% 
+  filter(Species %in% AnnexII) %>%
+  group_by(Common, MonthFull, Night) %>% 
+  tally() %>% 
+  summarise(Minimum = round(min(n, na.rm = T), 2),
+              Q1 = round(quantile(n, c(0.25), na.rm = T), 2),
+              Mean = round(mean(n, na.rm = T), 2),
+              Median = round(median(n, na.rm = T), 2),
+              Q3 = round(quantile(n, c(0.75), na.rm = T), 2),
+              Maximum = round(max(n, na.rm = T), 2),
+              SD = round(min(n, na.rm = T), 2),
+              Nr = n())
+
+
+
+# riven_cond_stats is made into a the table (using the code below)
+grouped_data %>% 
+  # Create the table with the gt package
+  gt(rowname_col = "MonthFull",
+    groupname_col = "Common") %>% 
+  # Style the header to black fill and white text
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  ) %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "midnightblue"),
+      cell_text(color = "white"),
+      cell_text(weight = "normal")
+      ),
+    locations = cells_body(
+      columns = MonthFull
+    ))
+
+```
+
+
+```{r}
+#| label: tbl-monspecb
+#| tbl-cap: "Species Observations (Passes) by Month (Alternative Grouping)"
+#| warning: false
+
+
+library(mosaic)
+library(gt)
+library(gtExtras)
+
+# Annex II Bats (in the static)
+AnnexII <- c("Barbastella barbastellus", "Rhinolophus ferrumequinum", "Rhinolophus hipposideros")
+
+# Add data and time information to the statics data using the iBats::date_time_info
+statics_plus <- iBats::date_time_info(statics)
+
+# List of bat common names and the scientific names
+BatCommon <- c(
+  "Barbastella barbastellus" = "Barbastelle",
+  "Rhinolophus ferrumequinum" = "Greater horseshoe",
+  "Rhinolophus hipposideros" = "Lesser horseshoe")
+
+# From Scientific name create a Common Name Vector 
+statics_plus$Common <-  unname(BatCommon[statics_plus$Species])
+
+# Group by Description and Night and Count the Observations
+grouped_data <- statics_plus %>% 
+  filter(Species %in% AnnexII) %>%
+  group_by(Common, MonthFull, Night) %>% 
+  tally() %>% 
+  summarise(Minimum = round(min(n, na.rm = T), 2),
+              Q1 = round(quantile(n, c(0.25), na.rm = T), 2),
+              Mean = round(mean(n, na.rm = T), 2),
+              Median = round(median(n, na.rm = T), 2),
+              Q3 = round(quantile(n, c(0.75), na.rm = T), 2),
+              Maximum = round(max(n, na.rm = T), 2),
+              SD = round(min(n, na.rm = T), 2),
+              Nr = n())
+
+
+
+# riven_cond_stats is made into a the table (using the code below)
+grouped_data %>% 
+  # Create the table with the gt package
+  gt(rowname_col = "Common",
+    groupname_col = "MonthFull") %>% 
+  # Style the header to black fill and white text
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  ) %>% 
+  gt_color_rows(Mean, palette = "ggsci::green_material")
+
+```
+

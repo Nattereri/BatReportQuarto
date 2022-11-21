@@ -178,7 +178,7 @@ By convention scientific names are written as _italic_; to highlight the common 
 library(iBats)
 
 # List of bat common names and the scientific names
-BatCommon <- c(#Make Commom name
+BatCommon <- c(
   "Barbastella barbastellus" = "Barbastelle",
   "Myotis alcathoe" = "Alcathoe",
   "Myotis bechsteinii" = "Bechstein's",
