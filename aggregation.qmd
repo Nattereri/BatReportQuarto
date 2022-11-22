@@ -254,13 +254,13 @@ cond_stats %>%
 
 ```
 
-@tbl-monspec shows the summary statistics for Annex II Bat Species[^2] observations by month. The table can be grouped by Month through switching `Common` and `MonthFull` names in the code below; this alternative table is shown in @tbl-monspecb with the mean (average) highlighted.
+@tbl-monspec shows the summary statistics for Annex II Bat Species[^2] observations by month; with the maximum number of nightly bat passes highlighted. The table can be grouped by Month through switching `Common` and `MonthFull` names in the code below; this alternative table is shown in @tbl-monspecb with the mean (average) number of nightly bat passes highlighted.
 
 [^2]: <https://ec.europa.eu/environment/nature/conservation/species/habitats_dir_en.htm>
 
 ```{r}
 #| label: tbl-monspec
-#| tbl-cap: "Species Observations (Passes) by Month"
+#| tbl-cap: "Nightly Species Observations (Passes) by Month"
 #| warning: false
 
 
@@ -294,7 +294,7 @@ grouped_data <- statics_plus %>%
               Median = round(median(n, na.rm = T), 2),
               Q3 = round(quantile(n, c(0.75), na.rm = T), 2),
               Maximum = round(max(n, na.rm = T), 2),
-              SD = round(min(n, na.rm = T), 2),
+              SD = round(sd(n, na.rm = T), 2),
               Nr = n())
 
 
@@ -321,14 +321,15 @@ grouped_data %>%
       ),
     locations = cells_body(
       columns = MonthFull
-    ))
+    )) %>% 
+  gt_color_rows(Maximum, palette = "ggsci::purple_material")
 
 ```
 
 
 ```{r}
 #| label: tbl-monspecb
-#| tbl-cap: "Species Observations (Passes) by Month (Alternative Grouping)"
+#| tbl-cap: "Nightly Species Observations by Month (Alternative Grouping)"
 #| warning: false
 
 
@@ -362,7 +363,7 @@ grouped_data <- statics_plus %>%
               Median = round(median(n, na.rm = T), 2),
               Q3 = round(quantile(n, c(0.75), na.rm = T), 2),
               Maximum = round(max(n, na.rm = T), 2),
-              SD = round(min(n, na.rm = T), 2),
+              SD = round(sd(n, na.rm = T), 2),
               Nr = n())
 
 

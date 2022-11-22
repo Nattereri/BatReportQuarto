@@ -252,7 +252,7 @@ statics %>%
 
 ## National Grid Coordinates 
 
-Adding a A Country's grid reference coordinates as meta data is useful; it allows a friendly export to other GIS and engineering drawing software (e.g. QGIS, ArcView® and AutoCAD®).  A Country's grid reference coordinates can be transformed from the `Longitude` and `Latitude`; in the tidy `statics` data longitude and latitude are based on the World Geodetic System 1984[^2] (WGS84), the green column in @tbl-NGR shows the British National Grid coordinates obtained from these longitude and latitude.
+Adding a A Country's grid reference coordinates as meta data is useful; it allows a friendly export to other GIS and engineering drawing software (e.g. QGIS, ArcView® and AutoCAD®).  A Country's grid reference coordinates can be transformed from the `Longitude` and `Latitude`; in the tidy `statics` data longitude and latitude are based on the World Geodetic System 1984[^2] (WGS84), the green column in @tbl-NGR shows the British National Grid coordinates obtained from the longitude and latitude.
 
 [^2]: <https://en.wikipedia.org/wiki/World_Geodetic_System>
 
@@ -367,3 +367,30 @@ statics_plus %>%
   
 
 ```
+
+
+## Bat Activity Time  
+
+Bat identification software that use full spectrum recording, generate other characteristics from a bat call, or sequence of calls; these characteristics can be used to calculate indices of activity. Elekon's BatExplorer[^3] and Wildlife Acoustics' Kaleidoscope[^4] produce the number of `calls` or `pulses` in an recording together with the:
+
+[^3]: <http://www.batlogger.com/en/real-time-systems/batexplorer-2-software.html>
+[^4]: <https://www.wildlifeacoustics.com/products/kaleidoscope-software-ultrasonic>
+
+* average `duration` of the call or sequence of calls    
+* average `span` of time between calls
+
+The `calls`, `duration` and `span` characteristics, see @fig-btm, supply an opportunity to calculate the time a bat is present (i.e near the detector); this _bat activity time_ provides the length of time a bat is nearby during the _observation_, and is a helpful measurement when assessing bat activity.
+
+The _Bat Activity Time_ , in seconds, can be calculated with @eq-btm:
+
+$$BatActivityTime\ =\ \dfrac{calls\left(duration\ + span\right)}{1000}$$ {#eq-btm}
+
+_Where:_  
+*__calls__* - number of calls  
+*__duration__* - average call length (ms)       
+*__span__* - average time between calls (ms)    
+The division by *__1000__* is to convert milliseconds(ms) to seconds   
+
+
+![Calculating Bat Activity Time](Images/BTM2.png){#fig-btm}
+

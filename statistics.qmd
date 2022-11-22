@@ -31,11 +31,9 @@ The `statics` data in the `iBats` package has some interesting Barbastelle (_Bar
 
 Before undertaking any statistical test always visualise the data the statistical test is applied to. Barbastelle has been recorded at several locations see @fig-kwbarb.
 
-The average bat pass rate per hour can been calculated for each night and each static location using the formula: 
+The average bat pass rate per hour can been calculated for each night and each static location using the formula shown in @eq-aa: 
 
-$$
-AverageActivity = \frac{Batpasses}{Nightlength}
-$$
+$$AverageActivity = \frac{Batpasses}{Nightlength}$$ {#eq-aa}
 
 Where: 
 _Batpasses_ = number of bat pass during the night at the location   

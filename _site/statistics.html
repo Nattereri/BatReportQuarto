@@ -219,10 +219,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3 data-number="1.1" class="anchored" data-anchor-id="an-obvious-difference"><span class="header-section-number">1.1</span> An Obvious Difference</h3>
 <p>The <code>statics</code> data in the <code>iBats</code> package has some interesting Barbastelle (<em>Barbastella barbastellus</em>) bat activity, it would be interesting and aid our understanding if we compare the activity between static locations and see if they are significantly different.</p>
 <p>Before undertaking any statistical test always visualise the data the statistical test is applied to. Barbastelle has been recorded at several locations see <a href="#fig-kwbarb">Figure&nbsp;1</a>.</p>
-<p>The average bat pass rate per hour can been calculated for each night and each static location using the formula:</p>
-<p><span class="math display">\[
-AverageActivity = \frac{Batpasses}{Nightlength}
-\]</span></p>
+<p>The average bat pass rate per hour can been calculated for each night and each static location using the formula shown in <a href="#eq-aa">Equation&nbsp;1</a>:</p>
+<p><span id="eq-aa"><span class="math display">\[AverageActivity = \frac{Batpasses}{Nightlength} \tag{1}\]</span></span></p>
 <p>Where: <em>Batpasses</em> = number of bat pass during the night at the location<br>
 <em>Nightlength</em> = length of the night in decimal hours<br>
 <em>AverageActivity</em> = average (mean) number of bat passes per hour for each night there was activity</p>
@@ -354,8 +352,8 @@ AverageActivity = \frac{Batpasses}{Nightlength}
 <div class="cell-output-display">
 <div id="tbl-dunns" class="anchored">
 
-<div class="tabwid"><style>.cl-5af2df68{}.cl-5ae3686c{font-family:'Arial';font-size:12pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-5ae36894{font-family:'Arial';font-size:12pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-5ae3689e{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-5ae3b8a8{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-5ae3b8c6{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-5ae3b8d0{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-5ae4b28a{width:117.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5ae4b2a8{width:288.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5ae4b2b2{width:117.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5ae4b2bc{width:288.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5ae4b2c6{width:117.3pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5ae4b2d0{width:288.3pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5ae4b2da{width:117.3pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5ae4b2e4{width:288.3pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class="cl-5af2df68"><caption>Table 1:  Results of Post-hoc testing with the Dunn’s Test </caption>
-<thead><tr style="overflow-wrap:break-word;"><td class="cl-5ae4b2e4"><p class="cl-5ae3b8a8"><span class="cl-5ae3686c">Locations with a significant difference (P&lt;0.05)</span></p></td><td class="cl-5ae4b2da"><p class="cl-5ae3b8a8"><span class="cl-5ae3686c">adjusted P </span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-5ae4b2a8"><p class="cl-5ae3b8c6"><span class="cl-5ae36894">Static 2 - Static 4</span></p></td><td class="cl-5ae4b28a"><p class="cl-5ae3b8d0"><span class="cl-5ae3689e">0.0000002372373</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5ae4b2bc"><p class="cl-5ae3b8c6"><span class="cl-5ae36894">Static 3 - Static 4</span></p></td><td class="cl-5ae4b2b2"><p class="cl-5ae3b8d0"><span class="cl-5ae3689e">0.0004837731033</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5ae4b2d0"><p class="cl-5ae3b8c6"><span class="cl-5ae36894">Static 4 - Static 5</span></p></td><td class="cl-5ae4b2c6"><p class="cl-5ae3b8d0"><span class="cl-5ae3689e">0.0013231129871</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-837e5698{}.cl-8371b92e{font-family:'Arial';font-size:12pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-8371b942{font-family:'Arial';font-size:12pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-8371b94c{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-8371da62{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8371da6c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8371da76{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8372384a{width:117.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-83723854{width:288.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8372385e{width:117.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-8372385f{width:288.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-83723868{width:117.3pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-83723872{width:288.3pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-83723873{width:117.3pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-83723874{width:288.3pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class="cl-837e5698"><caption>Table 1:  Results of Post-hoc testing with the Dunn’s Test </caption>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-83723874"><p class="cl-8371da62"><span class="cl-8371b92e">Locations with a significant difference (P&lt;0.05)</span></p></td><td class="cl-83723873"><p class="cl-8371da62"><span class="cl-8371b92e">adjusted P </span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-83723854"><p class="cl-8371da6c"><span class="cl-8371b942">Static 2 - Static 4</span></p></td><td class="cl-8372384a"><p class="cl-8371da76"><span class="cl-8371b94c">0.0000002372373</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-8372385f"><p class="cl-8371da6c"><span class="cl-8371b942">Static 3 - Static 4</span></p></td><td class="cl-8372385e"><p class="cl-8371da76"><span class="cl-8371b94c">0.0004837731033</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-83723872"><p class="cl-8371da6c"><span class="cl-8371b942">Static 4 - Static 5</span></p></td><td class="cl-83723868"><p class="cl-8371da76"><span class="cl-8371b94c">0.0013231129871</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </div>
@@ -490,8 +488,8 @@ AverageActivity = \frac{Batpasses}{Nightlength}
 <div class="cell-output-display">
 <div id="tbl-dunns2" class="anchored">
 
-<div class="tabwid"><style>.cl-5dd0acc4{}.cl-5dc3fe7a{font-family:'Arial';font-size:12pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-5dc3fe8e{font-family:'Arial';font-size:12pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-5dc3fe8f{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-5dc419e6{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-5dc419f0{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-5dc419f1{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-5dc474b8{width:177.4pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5dc474c2{width:288.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5dc474cc{width:177.4pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5dc474cd{width:288.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5dc474d6{width:177.4pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5dc474d7{width:288.3pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5dc474d8{width:177.4pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5dc474e0{width:288.3pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class="cl-5dd0acc4"><caption>Table 2:  Results of Post-hoc testing with the Dunn’s Test </caption>
-<thead><tr style="overflow-wrap:break-word;"><td class="cl-5dc474e0"><p class="cl-5dc419e6"><span class="cl-5dc3fe7a">Locations with a significant difference (P&lt;0.05)</span></p></td><td class="cl-5dc474d8"><p class="cl-5dc419e6"><span class="cl-5dc3fe7a">adjusted P </span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-5dc474c2"><p class="cl-5dc419f0"><span class="cl-5dc3fe8e">Static 1 - Static 2</span></p></td><td class="cl-5dc474b8"><p class="cl-5dc419f1"><span class="cl-5dc3fe8f">0.0000939731690135662070</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5dc474cd"><p class="cl-5dc419f0"><span class="cl-5dc3fe8e">Static 1 - Static 3</span></p></td><td class="cl-5dc474cc"><p class="cl-5dc419f1"><span class="cl-5dc3fe8f">0.0460478959637407314620</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5dc474c2"><p class="cl-5dc419f0"><span class="cl-5dc3fe8e">Static 1 - Static 4</span></p></td><td class="cl-5dc474b8"><p class="cl-5dc419f1"><span class="cl-5dc3fe8f">0.0000000000000007857217</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5dc474c2"><p class="cl-5dc419f0"><span class="cl-5dc3fe8e">Static 2 - Static 4</span></p></td><td class="cl-5dc474b8"><p class="cl-5dc419f1"><span class="cl-5dc3fe8f">0.0000001079868368327319</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5dc474cd"><p class="cl-5dc419f0"><span class="cl-5dc3fe8e">Static 3 - Static 4</span></p></td><td class="cl-5dc474cc"><p class="cl-5dc419f1"><span class="cl-5dc3fe8f">0.0000000296352155723235</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5dc474d7"><p class="cl-5dc419f0"><span class="cl-5dc3fe8e">Static 4 - Static 5</span></p></td><td class="cl-5dc474d6"><p class="cl-5dc419f1"><span class="cl-5dc3fe8f">0.0000000014826746844802</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-8641e89a{}.cl-8636c172{font-family:'Arial';font-size:12pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-8636c17c{font-family:'Arial';font-size:12pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-8636c186{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-8636dc02{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8636dc0c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-8636dc16{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-86372f86{width:177.4pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-86372f90{width:288.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-86372f9a{width:177.4pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-86372f9b{width:288.3pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-86372fa4{width:177.4pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-86372fa5{width:288.3pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-86372fa6{width:177.4pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-86372fae{width:288.3pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class="cl-8641e89a"><caption>Table 2:  Results of Post-hoc testing with the Dunn’s Test </caption>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-86372fae"><p class="cl-8636dc02"><span class="cl-8636c172">Locations with a significant difference (P&lt;0.05)</span></p></td><td class="cl-86372fa6"><p class="cl-8636dc02"><span class="cl-8636c172">adjusted P </span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-86372f90"><p class="cl-8636dc0c"><span class="cl-8636c17c">Static 1 - Static 2</span></p></td><td class="cl-86372f86"><p class="cl-8636dc16"><span class="cl-8636c186">0.0000939731690135662070</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-86372f9b"><p class="cl-8636dc0c"><span class="cl-8636c17c">Static 1 - Static 3</span></p></td><td class="cl-86372f9a"><p class="cl-8636dc16"><span class="cl-8636c186">0.0460478959637407314620</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-86372f90"><p class="cl-8636dc0c"><span class="cl-8636c17c">Static 1 - Static 4</span></p></td><td class="cl-86372f86"><p class="cl-8636dc16"><span class="cl-8636c186">0.0000000000000007857217</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-86372f90"><p class="cl-8636dc0c"><span class="cl-8636c17c">Static 2 - Static 4</span></p></td><td class="cl-86372f86"><p class="cl-8636dc16"><span class="cl-8636c186">0.0000001079868368327319</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-86372f9b"><p class="cl-8636dc0c"><span class="cl-8636c17c">Static 3 - Static 4</span></p></td><td class="cl-86372f9a"><p class="cl-8636dc16"><span class="cl-8636c186">0.0000000296352155723235</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-86372fa5"><p class="cl-8636dc0c"><span class="cl-8636c17c">Static 4 - Static 5</span></p></td><td class="cl-86372fa4"><p class="cl-8636dc16"><span class="cl-8636c186">0.0000000014826746844802</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </div>
@@ -547,8 +545,8 @@ AverageActivity = \frac{Batpasses}{Nightlength}
 <div class="cell-output-display">
 <div id="tbl-table04" class="anchored">
 
-<div class="tabwid"><style>.cl-5e220c4a{}.cl-5e0ee660{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-5e0ee66a{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-5e0f044c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-5e0f0456{margin:0;text-align:right;margin-left:auto;writing-mode: vertical-rl;-ms-writing-mode:tb-rl;-webkit-writing-mode:vertical-rl;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-5e0f0460{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-5e0f7cc4{width:28.8pt;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7cce{width:57.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7ccf{width:28.8pt;background-color:rgba(247, 250, 245, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7cd8{width:28.8pt;background-color:rgba(253, 254, 253, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7cd9{width:28.8pt;background-color:rgba(251, 253, 251, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7ce2{width:28.8pt;background-color:rgba(212, 230, 206, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7ce3{width:28.8pt;background-color:rgba(250, 252, 249, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7ce4{width:28.8pt;background-color:rgba(254, 254, 254, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7cec{width:28.8pt;background-color:rgba(254, 255, 254, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7ced{width:28.8pt;background-color:rgba(252, 253, 251, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7cee{width:28.8pt;background-color:rgba(243, 248, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7cf6{width:28.8pt;background-color:rgba(245, 250, 244, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7cf7{width:28.8pt;background-color:rgba(240, 246, 238, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7cf8{width:28.8pt;background-color:rgba(253, 254, 252, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7d00{width:28.8pt;background-color:rgba(250, 252, 250, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7d01{width:28.8pt;background-color:rgba(255, 255, 254, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7d02{width:28.8pt;background-color:rgba(238, 245, 235, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7d0a{width:28.8pt;background-color:rgba(34, 139, 34, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7d0b{width:28.8pt;background-color:rgba(247, 251, 246, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7d0c{width:57.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7d14{width:28.8pt;background-color:rgba(254, 254, 254, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7d15{width:28.8pt;background-color:rgba(251, 253, 250, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7d16{width:28.8pt;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7d17{width:28.8pt;background-color:rgba(250, 252, 249, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7d1e{width:28.8pt;background-color:rgba(242, 247, 240, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7d28{width:28.8pt;height:165.6pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e0f7d29{width:57.6pt;height:165.6pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class="cl-5e220c4a"><caption>Table 3:  Matrix of Location by Species </caption>
-<thead><tr><td class="cl-5e0f7d29"><p class="cl-5e0f044c"><span class="cl-5e0ee660">Description</span></p></td><td class="cl-5e0f7d28"><p class="cl-5e0f0456"><span class="cl-5e0ee660">Barbastella barbastellus</span></p></td><td class="cl-5e0f7d28"><p class="cl-5e0f0456"><span class="cl-5e0ee660">Eptesicus serotinus</span></p></td><td class="cl-5e0f7d28"><p class="cl-5e0f0456"><span class="cl-5e0ee660">Myotis nattereri</span></p></td><td class="cl-5e0f7d28"><p class="cl-5e0f0456"><span class="cl-5e0ee660">Myotis spp.</span></p></td><td class="cl-5e0f7d28"><p class="cl-5e0f0456"><span class="cl-5e0ee660">Nyctalus leisleri</span></p></td><td class="cl-5e0f7d28"><p class="cl-5e0f0456"><span class="cl-5e0ee660">Nyctalus noctula</span></p></td><td class="cl-5e0f7d28"><p class="cl-5e0f0456"><span class="cl-5e0ee660">Nyctalus spp.</span></p></td><td class="cl-5e0f7d28"><p class="cl-5e0f0456"><span class="cl-5e0ee660">Pipistrellus nathusii</span></p></td><td class="cl-5e0f7d28"><p class="cl-5e0f0456"><span class="cl-5e0ee660">Pipistrellus pipistrellus</span></p></td><td class="cl-5e0f7d28"><p class="cl-5e0f0456"><span class="cl-5e0ee660">Pipistrellus pygmaeus</span></p></td><td class="cl-5e0f7d28"><p class="cl-5e0f0456"><span class="cl-5e0ee660">Pipistrellus spp.</span></p></td><td class="cl-5e0f7d28"><p class="cl-5e0f0456"><span class="cl-5e0ee660">Plecotus spp.</span></p></td><td class="cl-5e0f7d28"><p class="cl-5e0f0456"><span class="cl-5e0ee660">Rhinolophus ferrumequinum</span></p></td><td class="cl-5e0f7d28"><p class="cl-5e0f0456"><span class="cl-5e0ee660">Rhinolophus hipposideros</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-5e0f7cce"><p class="cl-5e0f044c"><span class="cl-5e0ee66a">Static 1</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">4</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">0</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">0</span></p></td><td class="cl-5e0f7cd9"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">67</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">0</span></p></td><td class="cl-5e0f7cd8"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">35</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">0</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">2</span></p></td><td class="cl-5e0f7ccf"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">147</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">3</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">4</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">0</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">0</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">0</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5e0f7cce"><p class="cl-5e0f044c"><span class="cl-5e0ee66a">Static 2</span></p></td><td class="cl-5e0f7cd8"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">28</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">4</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">1</span></p></td><td class="cl-5e0f7cf6"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">168</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">0</span></p></td><td class="cl-5e0f7cee"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">201</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">0</span></p></td><td class="cl-5e0f7cec"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">10</span></p></td><td class="cl-5e0f7ce2"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">758</span></p></td><td class="cl-5e0f7ce4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">22</span></p></td><td class="cl-5e0f7cd8"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">36</span></p></td><td class="cl-5e0f7ce3"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">95</span></p></td><td class="cl-5e0f7ced"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">60</span></p></td><td class="cl-5e0f7cd8"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">28</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5e0f7cce"><p class="cl-5e0f044c"><span class="cl-5e0ee66a">Static 3</span></p></td><td class="cl-5e0f7cec"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">10</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">0</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">1</span></p></td><td class="cl-5e0f7cf8"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">41</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">3</span></p></td><td class="cl-5e0f7cd8"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">35</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">0</span></p></td><td class="cl-5e0f7ce4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">18</span></p></td><td class="cl-5e0f7cf7"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">263</span></p></td><td class="cl-5e0f7cec"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">15</span></p></td><td class="cl-5e0f7ce4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">19</span></p></td><td class="cl-5e0f7ce4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">20</span></p></td><td class="cl-5e0f7d00"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">81</span></p></td><td class="cl-5e0f7cd8"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">36</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5e0f7cce"><p class="cl-5e0f044c"><span class="cl-5e0ee66a">Static 4</span></p></td><td class="cl-5e0f7d02"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">304</span></p></td><td class="cl-5e0f7d01"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">8</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">0</span></p></td><td class="cl-5e0f7ce3"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">85</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">0</span></p></td><td class="cl-5e0f7cd8"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">28</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">0</span></p></td><td class="cl-5e0f7cc4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">2</span></p></td><td class="cl-5e0f7d0a"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">3,569</span></p></td><td class="cl-5e0f7cf8"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">39</span></p></td><td class="cl-5e0f7d0b"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">136</span></p></td><td class="cl-5e0f7ce4"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">20</span></p></td><td class="cl-5e0f7cec"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">14</span></p></td><td class="cl-5e0f7d01"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">8</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5e0f7d0c"><p class="cl-5e0f044c"><span class="cl-5e0ee66a">Static 5</span></p></td><td class="cl-5e0f7d15"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">73</span></p></td><td class="cl-5e0f7d16"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">0</span></p></td><td class="cl-5e0f7d16"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">0</span></p></td><td class="cl-5e0f7d15"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">74</span></p></td><td class="cl-5e0f7d16"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">0</span></p></td><td class="cl-5e0f7d14"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">16</span></p></td><td class="cl-5e0f7d16"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">2</span></p></td><td class="cl-5e0f7d16"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">0</span></p></td><td class="cl-5e0f7d1e"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">235</span></p></td><td class="cl-5e0f7d16"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">7</span></p></td><td class="cl-5e0f7d17"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">88</span></p></td><td class="cl-5e0f7d16"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">1</span></p></td><td class="cl-5e0f7d16"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">5</span></p></td><td class="cl-5e0f7d16"><p class="cl-5e0f0460"><span class="cl-5e0ee66a">1</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-868ea9e6{}.cl-867c9a9e{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-867c9aa8{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-867cb664{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-867cb66e{margin:0;text-align:right;margin-left:auto;writing-mode: vertical-rl;-ms-writing-mode:tb-rl;-webkit-writing-mode:vertical-rl;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-867cb66f{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-867d2aa4{width:28.8pt;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2aae{width:57.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2ab8{width:28.8pt;background-color:rgba(247, 250, 245, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2ab9{width:28.8pt;background-color:rgba(253, 254, 253, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2ac2{width:28.8pt;background-color:rgba(251, 253, 251, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2ac3{width:28.8pt;background-color:rgba(212, 230, 206, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2ac4{width:28.8pt;background-color:rgba(250, 252, 249, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2acc{width:28.8pt;background-color:rgba(254, 254, 254, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2acd{width:28.8pt;background-color:rgba(254, 255, 254, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2ad6{width:28.8pt;background-color:rgba(252, 253, 251, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2ad7{width:28.8pt;background-color:rgba(243, 248, 242, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2ad8{width:28.8pt;background-color:rgba(245, 250, 244, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2ae0{width:28.8pt;background-color:rgba(240, 246, 238, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2ae1{width:28.8pt;background-color:rgba(253, 254, 252, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2aea{width:28.8pt;background-color:rgba(250, 252, 250, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2aeb{width:28.8pt;background-color:rgba(255, 255, 254, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2aec{width:28.8pt;background-color:rgba(238, 245, 235, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2af4{width:28.8pt;background-color:rgba(34, 139, 34, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2afe{width:28.8pt;background-color:rgba(247, 251, 246, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2aff{width:57.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2b08{width:28.8pt;background-color:rgba(254, 254, 254, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2b09{width:28.8pt;background-color:rgba(251, 253, 250, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2b0a{width:28.8pt;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2b0b{width:28.8pt;background-color:rgba(250, 252, 249, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2b12{width:28.8pt;background-color:rgba(242, 247, 240, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2b13{width:28.8pt;height:165.6pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-867d2b1c{width:57.6pt;height:165.6pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class="cl-868ea9e6"><caption>Table 3:  Matrix of Location by Species </caption>
+<thead><tr><td class="cl-867d2b1c"><p class="cl-867cb664"><span class="cl-867c9a9e">Description</span></p></td><td class="cl-867d2b13"><p class="cl-867cb66e"><span class="cl-867c9a9e">Barbastella barbastellus</span></p></td><td class="cl-867d2b13"><p class="cl-867cb66e"><span class="cl-867c9a9e">Eptesicus serotinus</span></p></td><td class="cl-867d2b13"><p class="cl-867cb66e"><span class="cl-867c9a9e">Myotis nattereri</span></p></td><td class="cl-867d2b13"><p class="cl-867cb66e"><span class="cl-867c9a9e">Myotis spp.</span></p></td><td class="cl-867d2b13"><p class="cl-867cb66e"><span class="cl-867c9a9e">Nyctalus leisleri</span></p></td><td class="cl-867d2b13"><p class="cl-867cb66e"><span class="cl-867c9a9e">Nyctalus noctula</span></p></td><td class="cl-867d2b13"><p class="cl-867cb66e"><span class="cl-867c9a9e">Nyctalus spp.</span></p></td><td class="cl-867d2b13"><p class="cl-867cb66e"><span class="cl-867c9a9e">Pipistrellus nathusii</span></p></td><td class="cl-867d2b13"><p class="cl-867cb66e"><span class="cl-867c9a9e">Pipistrellus pipistrellus</span></p></td><td class="cl-867d2b13"><p class="cl-867cb66e"><span class="cl-867c9a9e">Pipistrellus pygmaeus</span></p></td><td class="cl-867d2b13"><p class="cl-867cb66e"><span class="cl-867c9a9e">Pipistrellus spp.</span></p></td><td class="cl-867d2b13"><p class="cl-867cb66e"><span class="cl-867c9a9e">Plecotus spp.</span></p></td><td class="cl-867d2b13"><p class="cl-867cb66e"><span class="cl-867c9a9e">Rhinolophus ferrumequinum</span></p></td><td class="cl-867d2b13"><p class="cl-867cb66e"><span class="cl-867c9a9e">Rhinolophus hipposideros</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-867d2aae"><p class="cl-867cb664"><span class="cl-867c9aa8">Static 1</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">4</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">0</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">0</span></p></td><td class="cl-867d2ac2"><p class="cl-867cb66f"><span class="cl-867c9aa8">67</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">0</span></p></td><td class="cl-867d2ab9"><p class="cl-867cb66f"><span class="cl-867c9aa8">35</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">0</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">2</span></p></td><td class="cl-867d2ab8"><p class="cl-867cb66f"><span class="cl-867c9aa8">147</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">3</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">4</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">0</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">0</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">0</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-867d2aae"><p class="cl-867cb664"><span class="cl-867c9aa8">Static 2</span></p></td><td class="cl-867d2ab9"><p class="cl-867cb66f"><span class="cl-867c9aa8">28</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">4</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">1</span></p></td><td class="cl-867d2ad8"><p class="cl-867cb66f"><span class="cl-867c9aa8">168</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">0</span></p></td><td class="cl-867d2ad7"><p class="cl-867cb66f"><span class="cl-867c9aa8">201</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">0</span></p></td><td class="cl-867d2acd"><p class="cl-867cb66f"><span class="cl-867c9aa8">10</span></p></td><td class="cl-867d2ac3"><p class="cl-867cb66f"><span class="cl-867c9aa8">758</span></p></td><td class="cl-867d2acc"><p class="cl-867cb66f"><span class="cl-867c9aa8">22</span></p></td><td class="cl-867d2ab9"><p class="cl-867cb66f"><span class="cl-867c9aa8">36</span></p></td><td class="cl-867d2ac4"><p class="cl-867cb66f"><span class="cl-867c9aa8">95</span></p></td><td class="cl-867d2ad6"><p class="cl-867cb66f"><span class="cl-867c9aa8">60</span></p></td><td class="cl-867d2ab9"><p class="cl-867cb66f"><span class="cl-867c9aa8">28</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-867d2aae"><p class="cl-867cb664"><span class="cl-867c9aa8">Static 3</span></p></td><td class="cl-867d2acd"><p class="cl-867cb66f"><span class="cl-867c9aa8">10</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">0</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">1</span></p></td><td class="cl-867d2ae1"><p class="cl-867cb66f"><span class="cl-867c9aa8">41</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">3</span></p></td><td class="cl-867d2ab9"><p class="cl-867cb66f"><span class="cl-867c9aa8">35</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">0</span></p></td><td class="cl-867d2acc"><p class="cl-867cb66f"><span class="cl-867c9aa8">18</span></p></td><td class="cl-867d2ae0"><p class="cl-867cb66f"><span class="cl-867c9aa8">263</span></p></td><td class="cl-867d2acd"><p class="cl-867cb66f"><span class="cl-867c9aa8">15</span></p></td><td class="cl-867d2acc"><p class="cl-867cb66f"><span class="cl-867c9aa8">19</span></p></td><td class="cl-867d2acc"><p class="cl-867cb66f"><span class="cl-867c9aa8">20</span></p></td><td class="cl-867d2aea"><p class="cl-867cb66f"><span class="cl-867c9aa8">81</span></p></td><td class="cl-867d2ab9"><p class="cl-867cb66f"><span class="cl-867c9aa8">36</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-867d2aae"><p class="cl-867cb664"><span class="cl-867c9aa8">Static 4</span></p></td><td class="cl-867d2aec"><p class="cl-867cb66f"><span class="cl-867c9aa8">304</span></p></td><td class="cl-867d2aeb"><p class="cl-867cb66f"><span class="cl-867c9aa8">8</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">0</span></p></td><td class="cl-867d2ac4"><p class="cl-867cb66f"><span class="cl-867c9aa8">85</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">0</span></p></td><td class="cl-867d2ab9"><p class="cl-867cb66f"><span class="cl-867c9aa8">28</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">0</span></p></td><td class="cl-867d2aa4"><p class="cl-867cb66f"><span class="cl-867c9aa8">2</span></p></td><td class="cl-867d2af4"><p class="cl-867cb66f"><span class="cl-867c9aa8">3,569</span></p></td><td class="cl-867d2ae1"><p class="cl-867cb66f"><span class="cl-867c9aa8">39</span></p></td><td class="cl-867d2afe"><p class="cl-867cb66f"><span class="cl-867c9aa8">136</span></p></td><td class="cl-867d2acc"><p class="cl-867cb66f"><span class="cl-867c9aa8">20</span></p></td><td class="cl-867d2acd"><p class="cl-867cb66f"><span class="cl-867c9aa8">14</span></p></td><td class="cl-867d2aeb"><p class="cl-867cb66f"><span class="cl-867c9aa8">8</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-867d2aff"><p class="cl-867cb664"><span class="cl-867c9aa8">Static 5</span></p></td><td class="cl-867d2b09"><p class="cl-867cb66f"><span class="cl-867c9aa8">73</span></p></td><td class="cl-867d2b0a"><p class="cl-867cb66f"><span class="cl-867c9aa8">0</span></p></td><td class="cl-867d2b0a"><p class="cl-867cb66f"><span class="cl-867c9aa8">0</span></p></td><td class="cl-867d2b09"><p class="cl-867cb66f"><span class="cl-867c9aa8">74</span></p></td><td class="cl-867d2b0a"><p class="cl-867cb66f"><span class="cl-867c9aa8">0</span></p></td><td class="cl-867d2b08"><p class="cl-867cb66f"><span class="cl-867c9aa8">16</span></p></td><td class="cl-867d2b0a"><p class="cl-867cb66f"><span class="cl-867c9aa8">2</span></p></td><td class="cl-867d2b0a"><p class="cl-867cb66f"><span class="cl-867c9aa8">0</span></p></td><td class="cl-867d2b12"><p class="cl-867cb66f"><span class="cl-867c9aa8">235</span></p></td><td class="cl-867d2b0a"><p class="cl-867cb66f"><span class="cl-867c9aa8">7</span></p></td><td class="cl-867d2b0b"><p class="cl-867cb66f"><span class="cl-867c9aa8">88</span></p></td><td class="cl-867d2b0a"><p class="cl-867cb66f"><span class="cl-867c9aa8">1</span></p></td><td class="cl-867d2b0a"><p class="cl-867cb66f"><span class="cl-867c9aa8">5</span></p></td><td class="cl-867d2b0a"><p class="cl-867cb66f"><span class="cl-867c9aa8">1</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </div>
@@ -605,8 +603,8 @@ AverageActivity = \frac{Batpasses}{Nightlength}
 <div class="cell-output-display">
 <div id="tbl-table05" class="anchored">
 
-<div class="tabwid"><style>.cl-5e6e474a{}.cl-5e60e8ca{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-5e60e8de{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-5e6108c8{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-5e6108c9{margin:0;text-align:right;margin-left:auto;writing-mode: vertical-rl;-ms-writing-mode:tb-rl;-webkit-writing-mode:vertical-rl;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-5e6108d2{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-5e617d62{width:28.8pt;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e617d6c{width:57.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e617d6d{width:28.8pt;background-color:rgba(254, 255, 254, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e617d76{width:28.8pt;background-color:rgba(255, 255, 254, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e617d80{width:28.8pt;background-color:rgba(253, 254, 253, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e617d8a{width:28.8pt;background-color:rgba(254, 254, 254, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e617d8b{width:28.8pt;background-color:rgba(252, 253, 251, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e617d8c{width:57.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e617d94{width:28.8pt;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e617d95{width:28.8pt;background-color:rgba(255, 255, 254, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e617d9e{width:28.8pt;background-color:rgba(254, 255, 254, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e617d9f{width:28.8pt;height:165.6pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5e617da0{width:57.6pt;height:165.6pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class="cl-5e6e474a"><caption>Table 4:  Transformed Matrix </caption>
-<thead><tr><td class="cl-5e617da0"><p class="cl-5e6108c8"><span class="cl-5e60e8ca">Description</span></p></td><td class="cl-5e617d9f"><p class="cl-5e6108c9"><span class="cl-5e60e8ca">Barbastella barbastellus</span></p></td><td class="cl-5e617d9f"><p class="cl-5e6108c9"><span class="cl-5e60e8ca">Eptesicus serotinus</span></p></td><td class="cl-5e617d9f"><p class="cl-5e6108c9"><span class="cl-5e60e8ca">Myotis nattereri</span></p></td><td class="cl-5e617d9f"><p class="cl-5e6108c9"><span class="cl-5e60e8ca">Myotis spp.</span></p></td><td class="cl-5e617d9f"><p class="cl-5e6108c9"><span class="cl-5e60e8ca">Nyctalus leisleri</span></p></td><td class="cl-5e617d9f"><p class="cl-5e6108c9"><span class="cl-5e60e8ca">Nyctalus noctula</span></p></td><td class="cl-5e617d9f"><p class="cl-5e6108c9"><span class="cl-5e60e8ca">Nyctalus spp.</span></p></td><td class="cl-5e617d9f"><p class="cl-5e6108c9"><span class="cl-5e60e8ca">Pipistrellus nathusii</span></p></td><td class="cl-5e617d9f"><p class="cl-5e6108c9"><span class="cl-5e60e8ca">Pipistrellus pipistrellus</span></p></td><td class="cl-5e617d9f"><p class="cl-5e6108c9"><span class="cl-5e60e8ca">Pipistrellus pygmaeus</span></p></td><td class="cl-5e617d9f"><p class="cl-5e6108c9"><span class="cl-5e60e8ca">Pipistrellus spp.</span></p></td><td class="cl-5e617d9f"><p class="cl-5e6108c9"><span class="cl-5e60e8ca">Plecotus spp.</span></p></td><td class="cl-5e617d9f"><p class="cl-5e6108c9"><span class="cl-5e60e8ca">Rhinolophus ferrumequinum</span></p></td><td class="cl-5e617d9f"><p class="cl-5e6108c9"><span class="cl-5e60e8ca">Rhinolophus hipposideros</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-5e617d6c"><p class="cl-5e6108c8"><span class="cl-5e60e8de">Static 1</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">2.00</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">0.00</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">0</span></p></td><td class="cl-5e617d76"><p class="cl-5e6108d2"><span class="cl-5e60e8de">8.19</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">0.00</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">5.92</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">0.00</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">1.41</span></p></td><td class="cl-5e617d6d"><p class="cl-5e6108d2"><span class="cl-5e60e8de">12.12</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">1.73</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">2.00</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">0.00</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">0.00</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">0.00</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5e617d6c"><p class="cl-5e6108c8"><span class="cl-5e60e8de">Static 2</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">5.29</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">2.00</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">1</span></p></td><td class="cl-5e617d6d"><p class="cl-5e6108d2"><span class="cl-5e60e8de">12.96</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">0.00</span></p></td><td class="cl-5e617d6d"><p class="cl-5e6108d2"><span class="cl-5e60e8de">14.18</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">0.00</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">3.16</span></p></td><td class="cl-5e617d80"><p class="cl-5e6108d2"><span class="cl-5e60e8de">27.53</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">4.69</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">6.00</span></p></td><td class="cl-5e617d6d"><p class="cl-5e6108d2"><span class="cl-5e60e8de">9.75</span></p></td><td class="cl-5e617d76"><p class="cl-5e6108d2"><span class="cl-5e60e8de">7.75</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">5.29</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5e617d6c"><p class="cl-5e6108c8"><span class="cl-5e60e8de">Static 3</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">3.16</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">0.00</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">1</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">6.40</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">1.73</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">5.92</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">0.00</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">4.24</span></p></td><td class="cl-5e617d8a"><p class="cl-5e6108d2"><span class="cl-5e60e8de">16.22</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">3.87</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">4.36</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">4.47</span></p></td><td class="cl-5e617d6d"><p class="cl-5e6108d2"><span class="cl-5e60e8de">9.00</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">6.00</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5e617d6c"><p class="cl-5e6108c8"><span class="cl-5e60e8de">Static 4</span></p></td><td class="cl-5e617d8a"><p class="cl-5e6108d2"><span class="cl-5e60e8de">17.44</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">2.83</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">0</span></p></td><td class="cl-5e617d6d"><p class="cl-5e6108d2"><span class="cl-5e60e8de">9.22</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">0.00</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">5.29</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">0.00</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">1.41</span></p></td><td class="cl-5e617d8b"><p class="cl-5e6108d2"><span class="cl-5e60e8de">59.74</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">6.24</span></p></td><td class="cl-5e617d6d"><p class="cl-5e6108d2"><span class="cl-5e60e8de">11.66</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">4.47</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">3.74</span></p></td><td class="cl-5e617d62"><p class="cl-5e6108d2"><span class="cl-5e60e8de">2.83</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5e617d8c"><p class="cl-5e6108c8"><span class="cl-5e60e8de">Static 5</span></p></td><td class="cl-5e617d95"><p class="cl-5e6108d2"><span class="cl-5e60e8de">8.54</span></p></td><td class="cl-5e617d94"><p class="cl-5e6108d2"><span class="cl-5e60e8de">0.00</span></p></td><td class="cl-5e617d94"><p class="cl-5e6108d2"><span class="cl-5e60e8de">0</span></p></td><td class="cl-5e617d95"><p class="cl-5e6108d2"><span class="cl-5e60e8de">8.60</span></p></td><td class="cl-5e617d94"><p class="cl-5e6108d2"><span class="cl-5e60e8de">0.00</span></p></td><td class="cl-5e617d94"><p class="cl-5e6108d2"><span class="cl-5e60e8de">4.00</span></p></td><td class="cl-5e617d94"><p class="cl-5e6108d2"><span class="cl-5e60e8de">1.41</span></p></td><td class="cl-5e617d94"><p class="cl-5e6108d2"><span class="cl-5e60e8de">0.00</span></p></td><td class="cl-5e617d9e"><p class="cl-5e6108d2"><span class="cl-5e60e8de">15.33</span></p></td><td class="cl-5e617d94"><p class="cl-5e6108d2"><span class="cl-5e60e8de">2.65</span></p></td><td class="cl-5e617d9e"><p class="cl-5e6108d2"><span class="cl-5e60e8de">9.38</span></p></td><td class="cl-5e617d94"><p class="cl-5e6108d2"><span class="cl-5e60e8de">1.00</span></p></td><td class="cl-5e617d94"><p class="cl-5e6108d2"><span class="cl-5e60e8de">2.24</span></p></td><td class="cl-5e617d94"><p class="cl-5e6108d2"><span class="cl-5e60e8de">1.00</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-86e25e74{}.cl-86d3fff0{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-86d3fffa{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-86d41a8a{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-86d41a9e{margin:0;text-align:right;margin-left:auto;writing-mode: vertical-rl;-ms-writing-mode:tb-rl;-webkit-writing-mode:vertical-rl;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-86d41a9f{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-86d48c7c{width:28.8pt;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-86d48c86{width:57.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-86d48c87{width:28.8pt;background-color:rgba(254, 255, 254, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-86d48c90{width:28.8pt;background-color:rgba(255, 255, 254, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-86d48c91{width:28.8pt;background-color:rgba(253, 254, 253, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-86d48c92{width:28.8pt;background-color:rgba(254, 254, 254, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-86d48c9a{width:28.8pt;background-color:rgba(252, 253, 251, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-86d48c9b{width:57.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-86d48c9c{width:28.8pt;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-86d48ca4{width:28.8pt;background-color:rgba(255, 255, 254, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-86d48ca5{width:28.8pt;background-color:rgba(254, 255, 254, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-86d48ca6{width:28.8pt;height:165.6pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-86d48cae{width:57.6pt;height:165.6pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class="cl-86e25e74"><caption>Table 4:  Transformed Matrix </caption>
+<thead><tr><td class="cl-86d48cae"><p class="cl-86d41a8a"><span class="cl-86d3fff0">Description</span></p></td><td class="cl-86d48ca6"><p class="cl-86d41a9e"><span class="cl-86d3fff0">Barbastella barbastellus</span></p></td><td class="cl-86d48ca6"><p class="cl-86d41a9e"><span class="cl-86d3fff0">Eptesicus serotinus</span></p></td><td class="cl-86d48ca6"><p class="cl-86d41a9e"><span class="cl-86d3fff0">Myotis nattereri</span></p></td><td class="cl-86d48ca6"><p class="cl-86d41a9e"><span class="cl-86d3fff0">Myotis spp.</span></p></td><td class="cl-86d48ca6"><p class="cl-86d41a9e"><span class="cl-86d3fff0">Nyctalus leisleri</span></p></td><td class="cl-86d48ca6"><p class="cl-86d41a9e"><span class="cl-86d3fff0">Nyctalus noctula</span></p></td><td class="cl-86d48ca6"><p class="cl-86d41a9e"><span class="cl-86d3fff0">Nyctalus spp.</span></p></td><td class="cl-86d48ca6"><p class="cl-86d41a9e"><span class="cl-86d3fff0">Pipistrellus nathusii</span></p></td><td class="cl-86d48ca6"><p class="cl-86d41a9e"><span class="cl-86d3fff0">Pipistrellus pipistrellus</span></p></td><td class="cl-86d48ca6"><p class="cl-86d41a9e"><span class="cl-86d3fff0">Pipistrellus pygmaeus</span></p></td><td class="cl-86d48ca6"><p class="cl-86d41a9e"><span class="cl-86d3fff0">Pipistrellus spp.</span></p></td><td class="cl-86d48ca6"><p class="cl-86d41a9e"><span class="cl-86d3fff0">Plecotus spp.</span></p></td><td class="cl-86d48ca6"><p class="cl-86d41a9e"><span class="cl-86d3fff0">Rhinolophus ferrumequinum</span></p></td><td class="cl-86d48ca6"><p class="cl-86d41a9e"><span class="cl-86d3fff0">Rhinolophus hipposideros</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-86d48c86"><p class="cl-86d41a8a"><span class="cl-86d3fffa">Static 1</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">2.00</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">0.00</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">0</span></p></td><td class="cl-86d48c90"><p class="cl-86d41a9f"><span class="cl-86d3fffa">8.19</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">0.00</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">5.92</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">0.00</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">1.41</span></p></td><td class="cl-86d48c87"><p class="cl-86d41a9f"><span class="cl-86d3fffa">12.12</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">1.73</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">2.00</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">0.00</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">0.00</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">0.00</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-86d48c86"><p class="cl-86d41a8a"><span class="cl-86d3fffa">Static 2</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">5.29</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">2.00</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">1</span></p></td><td class="cl-86d48c87"><p class="cl-86d41a9f"><span class="cl-86d3fffa">12.96</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">0.00</span></p></td><td class="cl-86d48c87"><p class="cl-86d41a9f"><span class="cl-86d3fffa">14.18</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">0.00</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">3.16</span></p></td><td class="cl-86d48c91"><p class="cl-86d41a9f"><span class="cl-86d3fffa">27.53</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">4.69</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">6.00</span></p></td><td class="cl-86d48c87"><p class="cl-86d41a9f"><span class="cl-86d3fffa">9.75</span></p></td><td class="cl-86d48c90"><p class="cl-86d41a9f"><span class="cl-86d3fffa">7.75</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">5.29</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-86d48c86"><p class="cl-86d41a8a"><span class="cl-86d3fffa">Static 3</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">3.16</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">0.00</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">1</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">6.40</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">1.73</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">5.92</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">0.00</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">4.24</span></p></td><td class="cl-86d48c92"><p class="cl-86d41a9f"><span class="cl-86d3fffa">16.22</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">3.87</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">4.36</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">4.47</span></p></td><td class="cl-86d48c87"><p class="cl-86d41a9f"><span class="cl-86d3fffa">9.00</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">6.00</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-86d48c86"><p class="cl-86d41a8a"><span class="cl-86d3fffa">Static 4</span></p></td><td class="cl-86d48c92"><p class="cl-86d41a9f"><span class="cl-86d3fffa">17.44</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">2.83</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">0</span></p></td><td class="cl-86d48c87"><p class="cl-86d41a9f"><span class="cl-86d3fffa">9.22</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">0.00</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">5.29</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">0.00</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">1.41</span></p></td><td class="cl-86d48c9a"><p class="cl-86d41a9f"><span class="cl-86d3fffa">59.74</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">6.24</span></p></td><td class="cl-86d48c87"><p class="cl-86d41a9f"><span class="cl-86d3fffa">11.66</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">4.47</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">3.74</span></p></td><td class="cl-86d48c7c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">2.83</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-86d48c9b"><p class="cl-86d41a8a"><span class="cl-86d3fffa">Static 5</span></p></td><td class="cl-86d48ca4"><p class="cl-86d41a9f"><span class="cl-86d3fffa">8.54</span></p></td><td class="cl-86d48c9c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">0.00</span></p></td><td class="cl-86d48c9c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">0</span></p></td><td class="cl-86d48ca4"><p class="cl-86d41a9f"><span class="cl-86d3fffa">8.60</span></p></td><td class="cl-86d48c9c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">0.00</span></p></td><td class="cl-86d48c9c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">4.00</span></p></td><td class="cl-86d48c9c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">1.41</span></p></td><td class="cl-86d48c9c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">0.00</span></p></td><td class="cl-86d48ca5"><p class="cl-86d41a9f"><span class="cl-86d3fffa">15.33</span></p></td><td class="cl-86d48c9c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">2.65</span></p></td><td class="cl-86d48ca5"><p class="cl-86d41a9f"><span class="cl-86d3fffa">9.38</span></p></td><td class="cl-86d48c9c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">1.00</span></p></td><td class="cl-86d48c9c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">2.24</span></p></td><td class="cl-86d48c9c"><p class="cl-86d41a9f"><span class="cl-86d3fffa">1.00</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </div>
@@ -663,8 +661,8 @@ AverageActivity = \frac{Batpasses}{Nightlength}
 <div class="cell-output-display">
 <div id="tbl-table06" class="anchored">
 
-<div class="tabwid"><style>.cl-5f78bfbc{}.cl-5f6a379e{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-5f6a37bc{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-5f6a6f16{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-5f6af3d2{width:54pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5f6af3e6{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5f6af3f0{width:54pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5f6af3fa{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5f6af3fb{width:54pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class="cl-5f78bfbc"><caption>Table 5:  Bray-Curtis Dissimilarity Matrix </caption>
-<thead><tr style="overflow-wrap:break-word;"><td class="cl-5f6af3fb"><p class="cl-5f6a6f16"><span class="cl-5f6a379e"> </span></p></td><td class="cl-5f6af3fb"><p class="cl-5f6a6f16"><span class="cl-5f6a379e">Static 1</span></p></td><td class="cl-5f6af3fb"><p class="cl-5f6a6f16"><span class="cl-5f6a379e">Static 2</span></p></td><td class="cl-5f6af3fb"><p class="cl-5f6a6f16"><span class="cl-5f6a379e">Static 3</span></p></td><td class="cl-5f6af3fb"><p class="cl-5f6a6f16"><span class="cl-5f6a379e">Static 4</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-5f6af3d2"><p class="cl-5f6a6f16"><span class="cl-5f6a379e">Static 2</span></p></td><td class="cl-5f6af3e6"><p class="cl-5f6a6f16"><span class="cl-5f6a37bc">0.49805</span></p></td><td class="cl-5f6af3e6"><p class="cl-5f6a6f16"><span class="cl-5f6a37bc"> </span></p></td><td class="cl-5f6af3e6"><p class="cl-5f6a6f16"><span class="cl-5f6a37bc"> </span></p></td><td class="cl-5f6af3e6"><p class="cl-5f6a6f16"><span class="cl-5f6a37bc"> </span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5f6af3d2"><p class="cl-5f6a6f16"><span class="cl-5f6a379e">Static 3</span></p></td><td class="cl-5f6af3e6"><p class="cl-5f6a6f16"><span class="cl-5f6a37bc">0.36661</span></p></td><td class="cl-5f6af3e6"><p class="cl-5f6a6f16"><span class="cl-5f6a37bc">0.25769</span></p></td><td class="cl-5f6af3e6"><p class="cl-5f6a6f16"><span class="cl-5f6a37bc"> </span></p></td><td class="cl-5f6af3e6"><p class="cl-5f6a6f16"><span class="cl-5f6a37bc"> </span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5f6af3d2"><p class="cl-5f6a6f16"><span class="cl-5f6a379e">Static 4</span></p></td><td class="cl-5f6af3e6"><p class="cl-5f6a6f16"><span class="cl-5f6a37bc">0.58613</span></p></td><td class="cl-5f6af3e6"><p class="cl-5f6a6f16"><span class="cl-5f6a37bc">0.35422</span></p></td><td class="cl-5f6af3e6"><p class="cl-5f6a6f16"><span class="cl-5f6a37bc">0.45871</span></p></td><td class="cl-5f6af3e6"><p class="cl-5f6a6f16"><span class="cl-5f6a37bc"> </span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5f6af3f0"><p class="cl-5f6a6f16"><span class="cl-5f6a379e">Static 5</span></p></td><td class="cl-5f6af3fa"><p class="cl-5f6a6f16"><span class="cl-5f6a37bc">0.31352</span></p></td><td class="cl-5f6af3fa"><p class="cl-5f6a6f16"><span class="cl-5f6a37bc">0.40026</span></p></td><td class="cl-5f6af3fa"><p class="cl-5f6a6f16"><span class="cl-5f6a37bc">0.33401</span></p></td><td class="cl-5f6af3fa"><p class="cl-5f6a6f16"><span class="cl-5f6a37bc">0.41084</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-87defb98{}.cl-87d22ed6{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-87d22ee0{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-87d2488a{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-87d28b06{width:54pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-87d28b10{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-87d28b1a{width:54pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-87d28b1b{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-87d28b24{width:54pt;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class="cl-87defb98"><caption>Table 5:  Bray-Curtis Dissimilarity Matrix </caption>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-87d28b24"><p class="cl-87d2488a"><span class="cl-87d22ed6"> </span></p></td><td class="cl-87d28b24"><p class="cl-87d2488a"><span class="cl-87d22ed6">Static 1</span></p></td><td class="cl-87d28b24"><p class="cl-87d2488a"><span class="cl-87d22ed6">Static 2</span></p></td><td class="cl-87d28b24"><p class="cl-87d2488a"><span class="cl-87d22ed6">Static 3</span></p></td><td class="cl-87d28b24"><p class="cl-87d2488a"><span class="cl-87d22ed6">Static 4</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-87d28b06"><p class="cl-87d2488a"><span class="cl-87d22ed6">Static 2</span></p></td><td class="cl-87d28b10"><p class="cl-87d2488a"><span class="cl-87d22ee0">0.49805</span></p></td><td class="cl-87d28b10"><p class="cl-87d2488a"><span class="cl-87d22ee0"> </span></p></td><td class="cl-87d28b10"><p class="cl-87d2488a"><span class="cl-87d22ee0"> </span></p></td><td class="cl-87d28b10"><p class="cl-87d2488a"><span class="cl-87d22ee0"> </span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-87d28b06"><p class="cl-87d2488a"><span class="cl-87d22ed6">Static 3</span></p></td><td class="cl-87d28b10"><p class="cl-87d2488a"><span class="cl-87d22ee0">0.36661</span></p></td><td class="cl-87d28b10"><p class="cl-87d2488a"><span class="cl-87d22ee0">0.25769</span></p></td><td class="cl-87d28b10"><p class="cl-87d2488a"><span class="cl-87d22ee0"> </span></p></td><td class="cl-87d28b10"><p class="cl-87d2488a"><span class="cl-87d22ee0"> </span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-87d28b06"><p class="cl-87d2488a"><span class="cl-87d22ed6">Static 4</span></p></td><td class="cl-87d28b10"><p class="cl-87d2488a"><span class="cl-87d22ee0">0.58613</span></p></td><td class="cl-87d28b10"><p class="cl-87d2488a"><span class="cl-87d22ee0">0.35422</span></p></td><td class="cl-87d28b10"><p class="cl-87d2488a"><span class="cl-87d22ee0">0.45871</span></p></td><td class="cl-87d28b10"><p class="cl-87d2488a"><span class="cl-87d22ee0"> </span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-87d28b1a"><p class="cl-87d2488a"><span class="cl-87d22ed6">Static 5</span></p></td><td class="cl-87d28b1b"><p class="cl-87d2488a"><span class="cl-87d22ee0">0.31352</span></p></td><td class="cl-87d28b1b"><p class="cl-87d2488a"><span class="cl-87d22ee0">0.40026</span></p></td><td class="cl-87d28b1b"><p class="cl-87d2488a"><span class="cl-87d22ee0">0.33401</span></p></td><td class="cl-87d28b1b"><p class="cl-87d2488a"><span class="cl-87d22ee0">0.41084</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </div>
@@ -739,12 +737,12 @@ AverageActivity = \frac{Batpasses}{Nightlength}
 <div class="cell-output-display">
 <div id="tbl-kmcluster" class="anchored">
 
-<div id="dnkgvhssxa" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="igrigcfvwt" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#dnkgvhssxa .gt_table {
+#igrigcfvwt .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -769,7 +767,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-left-color: #D3D3D3;
 }
 
-#dnkgvhssxa .gt_heading {
+#igrigcfvwt .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -781,7 +779,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-right-color: #D3D3D3;
 }
 
-#dnkgvhssxa .gt_title {
+#igrigcfvwt .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -793,7 +791,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-bottom-width: 0;
 }
 
-#dnkgvhssxa .gt_subtitle {
+#igrigcfvwt .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -805,13 +803,13 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-top-width: 0;
 }
 
-#dnkgvhssxa .gt_bottom_border {
+#igrigcfvwt .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#dnkgvhssxa .gt_col_headings {
+#igrigcfvwt .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -826,7 +824,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-right-color: #D3D3D3;
 }
 
-#dnkgvhssxa .gt_col_heading {
+#igrigcfvwt .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -846,7 +844,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   overflow-x: hidden;
 }
 
-#dnkgvhssxa .gt_column_spanner_outer {
+#igrigcfvwt .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -858,15 +856,15 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   padding-right: 4px;
 }
 
-#dnkgvhssxa .gt_column_spanner_outer:first-child {
+#igrigcfvwt .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#dnkgvhssxa .gt_column_spanner_outer:last-child {
+#igrigcfvwt .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#dnkgvhssxa .gt_column_spanner {
+#igrigcfvwt .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -878,7 +876,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   width: 100%;
 }
 
-#dnkgvhssxa .gt_group_heading {
+#igrigcfvwt .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -903,7 +901,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   vertical-align: middle;
 }
 
-#dnkgvhssxa .gt_empty_group_heading {
+#igrigcfvwt .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -918,15 +916,15 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   vertical-align: middle;
 }
 
-#dnkgvhssxa .gt_from_md > :first-child {
+#igrigcfvwt .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#dnkgvhssxa .gt_from_md > :last-child {
+#igrigcfvwt .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#dnkgvhssxa .gt_row {
+#igrigcfvwt .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -945,7 +943,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   overflow-x: hidden;
 }
 
-#dnkgvhssxa .gt_stub {
+#igrigcfvwt .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -958,7 +956,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   padding-right: 5px;
 }
 
-#dnkgvhssxa .gt_stub_row_group {
+#igrigcfvwt .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -972,11 +970,11 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   vertical-align: top;
 }
 
-#dnkgvhssxa .gt_row_group_first td {
+#igrigcfvwt .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#dnkgvhssxa .gt_summary_row {
+#igrigcfvwt .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -986,16 +984,16 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   padding-right: 5px;
 }
 
-#dnkgvhssxa .gt_first_summary_row {
+#igrigcfvwt .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#dnkgvhssxa .gt_first_summary_row.thick {
+#igrigcfvwt .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#dnkgvhssxa .gt_last_summary_row {
+#igrigcfvwt .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1005,7 +1003,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-bottom-color: #D3D3D3;
 }
 
-#dnkgvhssxa .gt_grand_summary_row {
+#igrigcfvwt .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1015,7 +1013,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   padding-right: 5px;
 }
 
-#dnkgvhssxa .gt_first_grand_summary_row {
+#igrigcfvwt .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1025,11 +1023,11 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-top-color: #D3D3D3;
 }
 
-#dnkgvhssxa .gt_striped {
+#igrigcfvwt .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#dnkgvhssxa .gt_table_body {
+#igrigcfvwt .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1038,7 +1036,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-bottom-color: #D3D3D3;
 }
 
-#dnkgvhssxa .gt_footnotes {
+#igrigcfvwt .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1052,7 +1050,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-right-color: #D3D3D3;
 }
 
-#dnkgvhssxa .gt_footnote {
+#igrigcfvwt .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1061,7 +1059,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   padding-right: 5px;
 }
 
-#dnkgvhssxa .gt_sourcenotes {
+#igrigcfvwt .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1075,7 +1073,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-right-color: #D3D3D3;
 }
 
-#dnkgvhssxa .gt_sourcenote {
+#igrigcfvwt .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1083,36 +1081,36 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   padding-right: 5px;
 }
 
-#dnkgvhssxa .gt_left {
+#igrigcfvwt .gt_left {
   text-align: left;
 }
 
-#dnkgvhssxa .gt_center {
+#igrigcfvwt .gt_center {
   text-align: center;
 }
 
-#dnkgvhssxa .gt_right {
+#igrigcfvwt .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#dnkgvhssxa .gt_font_normal {
+#igrigcfvwt .gt_font_normal {
   font-weight: normal;
 }
 
-#dnkgvhssxa .gt_font_bold {
+#igrigcfvwt .gt_font_bold {
   font-weight: bold;
 }
 
-#dnkgvhssxa .gt_font_italic {
+#igrigcfvwt .gt_font_italic {
   font-style: italic;
 }
 
-#dnkgvhssxa .gt_super {
+#igrigcfvwt .gt_super {
   font-size: 65%;
 }
 
-#dnkgvhssxa .gt_two_val_uncert {
+#igrigcfvwt .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -1121,31 +1119,31 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   margin-left: 0.1em;
 }
 
-#dnkgvhssxa .gt_footnote_marks {
+#igrigcfvwt .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#dnkgvhssxa .gt_asterisk {
+#igrigcfvwt .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#dnkgvhssxa .gt_slash_mark {
+#igrigcfvwt .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#dnkgvhssxa .gt_fraction_numerator {
+#igrigcfvwt .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#dnkgvhssxa .gt_fraction_denominator {
+#igrigcfvwt .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -1200,12 +1198,12 @@ AverageActivity = \frac{Batpasses}{Nightlength}
 <div class="cell-output-display">
 <div id="tbl-kmtidy" class="anchored">
 
-<div id="yuetrzagiu" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="djmklsfapz" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#yuetrzagiu .gt_table {
+#djmklsfapz .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1230,7 +1228,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-left-color: #D3D3D3;
 }
 
-#yuetrzagiu .gt_heading {
+#djmklsfapz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1242,7 +1240,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-right-color: #D3D3D3;
 }
 
-#yuetrzagiu .gt_title {
+#djmklsfapz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1254,7 +1252,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-bottom-width: 0;
 }
 
-#yuetrzagiu .gt_subtitle {
+#djmklsfapz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1266,13 +1264,13 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-top-width: 0;
 }
 
-#yuetrzagiu .gt_bottom_border {
+#djmklsfapz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yuetrzagiu .gt_col_headings {
+#djmklsfapz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1287,7 +1285,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-right-color: #D3D3D3;
 }
 
-#yuetrzagiu .gt_col_heading {
+#djmklsfapz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1307,7 +1305,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   overflow-x: hidden;
 }
 
-#yuetrzagiu .gt_column_spanner_outer {
+#djmklsfapz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1319,15 +1317,15 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   padding-right: 4px;
 }
 
-#yuetrzagiu .gt_column_spanner_outer:first-child {
+#djmklsfapz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yuetrzagiu .gt_column_spanner_outer:last-child {
+#djmklsfapz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yuetrzagiu .gt_column_spanner {
+#djmklsfapz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1339,7 +1337,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   width: 100%;
 }
 
-#yuetrzagiu .gt_group_heading {
+#djmklsfapz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1364,7 +1362,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   vertical-align: middle;
 }
 
-#yuetrzagiu .gt_empty_group_heading {
+#djmklsfapz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1379,15 +1377,15 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   vertical-align: middle;
 }
 
-#yuetrzagiu .gt_from_md > :first-child {
+#djmklsfapz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yuetrzagiu .gt_from_md > :last-child {
+#djmklsfapz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yuetrzagiu .gt_row {
+#djmklsfapz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1406,7 +1404,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   overflow-x: hidden;
 }
 
-#yuetrzagiu .gt_stub {
+#djmklsfapz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1419,7 +1417,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   padding-right: 5px;
 }
 
-#yuetrzagiu .gt_stub_row_group {
+#djmklsfapz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1433,11 +1431,11 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   vertical-align: top;
 }
 
-#yuetrzagiu .gt_row_group_first td {
+#djmklsfapz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yuetrzagiu .gt_summary_row {
+#djmklsfapz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1447,16 +1445,16 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   padding-right: 5px;
 }
 
-#yuetrzagiu .gt_first_summary_row {
+#djmklsfapz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yuetrzagiu .gt_first_summary_row.thick {
+#djmklsfapz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yuetrzagiu .gt_last_summary_row {
+#djmklsfapz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1466,7 +1464,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-bottom-color: #D3D3D3;
 }
 
-#yuetrzagiu .gt_grand_summary_row {
+#djmklsfapz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1476,7 +1474,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   padding-right: 5px;
 }
 
-#yuetrzagiu .gt_first_grand_summary_row {
+#djmklsfapz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1486,11 +1484,11 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-top-color: #D3D3D3;
 }
 
-#yuetrzagiu .gt_striped {
+#djmklsfapz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yuetrzagiu .gt_table_body {
+#djmklsfapz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1499,7 +1497,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-bottom-color: #D3D3D3;
 }
 
-#yuetrzagiu .gt_footnotes {
+#djmklsfapz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1513,7 +1511,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-right-color: #D3D3D3;
 }
 
-#yuetrzagiu .gt_footnote {
+#djmklsfapz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1522,7 +1520,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   padding-right: 5px;
 }
 
-#yuetrzagiu .gt_sourcenotes {
+#djmklsfapz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1536,7 +1534,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-right-color: #D3D3D3;
 }
 
-#yuetrzagiu .gt_sourcenote {
+#djmklsfapz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1544,36 +1542,36 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   padding-right: 5px;
 }
 
-#yuetrzagiu .gt_left {
+#djmklsfapz .gt_left {
   text-align: left;
 }
 
-#yuetrzagiu .gt_center {
+#djmklsfapz .gt_center {
   text-align: center;
 }
 
-#yuetrzagiu .gt_right {
+#djmklsfapz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yuetrzagiu .gt_font_normal {
+#djmklsfapz .gt_font_normal {
   font-weight: normal;
 }
 
-#yuetrzagiu .gt_font_bold {
+#djmklsfapz .gt_font_bold {
   font-weight: bold;
 }
 
-#yuetrzagiu .gt_font_italic {
+#djmklsfapz .gt_font_italic {
   font-style: italic;
 }
 
-#yuetrzagiu .gt_super {
+#djmklsfapz .gt_super {
   font-size: 65%;
 }
 
-#yuetrzagiu .gt_two_val_uncert {
+#djmklsfapz .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -1582,31 +1580,31 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   margin-left: 0.1em;
 }
 
-#yuetrzagiu .gt_footnote_marks {
+#djmklsfapz .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#yuetrzagiu .gt_asterisk {
+#djmklsfapz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yuetrzagiu .gt_slash_mark {
+#djmklsfapz .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#yuetrzagiu .gt_fraction_numerator {
+#djmklsfapz .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#yuetrzagiu .gt_fraction_denominator {
+#djmklsfapz .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -1669,12 +1667,12 @@ AverageActivity = \frac{Batpasses}{Nightlength}
 <div class="cell-output-display">
 <div id="tbl-kmglance" class="anchored">
 
-<div id="ikxsgknqaf" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="bcbygcinxg" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#ikxsgknqaf .gt_table {
+#bcbygcinxg .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1699,7 +1697,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-left-color: #D3D3D3;
 }
 
-#ikxsgknqaf .gt_heading {
+#bcbygcinxg .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1711,7 +1709,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-right-color: #D3D3D3;
 }
 
-#ikxsgknqaf .gt_title {
+#bcbygcinxg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1723,7 +1721,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-bottom-width: 0;
 }
 
-#ikxsgknqaf .gt_subtitle {
+#bcbygcinxg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1735,13 +1733,13 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-top-width: 0;
 }
 
-#ikxsgknqaf .gt_bottom_border {
+#bcbygcinxg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ikxsgknqaf .gt_col_headings {
+#bcbygcinxg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1756,7 +1754,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-right-color: #D3D3D3;
 }
 
-#ikxsgknqaf .gt_col_heading {
+#bcbygcinxg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1776,7 +1774,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   overflow-x: hidden;
 }
 
-#ikxsgknqaf .gt_column_spanner_outer {
+#bcbygcinxg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1788,15 +1786,15 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   padding-right: 4px;
 }
 
-#ikxsgknqaf .gt_column_spanner_outer:first-child {
+#bcbygcinxg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ikxsgknqaf .gt_column_spanner_outer:last-child {
+#bcbygcinxg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ikxsgknqaf .gt_column_spanner {
+#bcbygcinxg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1808,7 +1806,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   width: 100%;
 }
 
-#ikxsgknqaf .gt_group_heading {
+#bcbygcinxg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1833,7 +1831,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   vertical-align: middle;
 }
 
-#ikxsgknqaf .gt_empty_group_heading {
+#bcbygcinxg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1848,15 +1846,15 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   vertical-align: middle;
 }
 
-#ikxsgknqaf .gt_from_md > :first-child {
+#bcbygcinxg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ikxsgknqaf .gt_from_md > :last-child {
+#bcbygcinxg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ikxsgknqaf .gt_row {
+#bcbygcinxg .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1875,7 +1873,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   overflow-x: hidden;
 }
 
-#ikxsgknqaf .gt_stub {
+#bcbygcinxg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1888,7 +1886,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   padding-right: 5px;
 }
 
-#ikxsgknqaf .gt_stub_row_group {
+#bcbygcinxg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1902,11 +1900,11 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   vertical-align: top;
 }
 
-#ikxsgknqaf .gt_row_group_first td {
+#bcbygcinxg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ikxsgknqaf .gt_summary_row {
+#bcbygcinxg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1916,16 +1914,16 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   padding-right: 5px;
 }
 
-#ikxsgknqaf .gt_first_summary_row {
+#bcbygcinxg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ikxsgknqaf .gt_first_summary_row.thick {
+#bcbygcinxg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ikxsgknqaf .gt_last_summary_row {
+#bcbygcinxg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1935,7 +1933,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-bottom-color: #D3D3D3;
 }
 
-#ikxsgknqaf .gt_grand_summary_row {
+#bcbygcinxg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1945,7 +1943,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   padding-right: 5px;
 }
 
-#ikxsgknqaf .gt_first_grand_summary_row {
+#bcbygcinxg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1955,11 +1953,11 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-top-color: #D3D3D3;
 }
 
-#ikxsgknqaf .gt_striped {
+#bcbygcinxg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ikxsgknqaf .gt_table_body {
+#bcbygcinxg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1968,7 +1966,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-bottom-color: #D3D3D3;
 }
 
-#ikxsgknqaf .gt_footnotes {
+#bcbygcinxg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1982,7 +1980,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-right-color: #D3D3D3;
 }
 
-#ikxsgknqaf .gt_footnote {
+#bcbygcinxg .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1991,7 +1989,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   padding-right: 5px;
 }
 
-#ikxsgknqaf .gt_sourcenotes {
+#bcbygcinxg .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2005,7 +2003,7 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   border-right-color: #D3D3D3;
 }
 
-#ikxsgknqaf .gt_sourcenote {
+#bcbygcinxg .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2013,36 +2011,36 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   padding-right: 5px;
 }
 
-#ikxsgknqaf .gt_left {
+#bcbygcinxg .gt_left {
   text-align: left;
 }
 
-#ikxsgknqaf .gt_center {
+#bcbygcinxg .gt_center {
   text-align: center;
 }
 
-#ikxsgknqaf .gt_right {
+#bcbygcinxg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ikxsgknqaf .gt_font_normal {
+#bcbygcinxg .gt_font_normal {
   font-weight: normal;
 }
 
-#ikxsgknqaf .gt_font_bold {
+#bcbygcinxg .gt_font_bold {
   font-weight: bold;
 }
 
-#ikxsgknqaf .gt_font_italic {
+#bcbygcinxg .gt_font_italic {
   font-style: italic;
 }
 
-#ikxsgknqaf .gt_super {
+#bcbygcinxg .gt_super {
   font-size: 65%;
 }
 
-#ikxsgknqaf .gt_two_val_uncert {
+#bcbygcinxg .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -2051,31 +2049,31 @@ AverageActivity = \frac{Batpasses}{Nightlength}
   margin-left: 0.1em;
 }
 
-#ikxsgknqaf .gt_footnote_marks {
+#bcbygcinxg .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#ikxsgknqaf .gt_asterisk {
+#bcbygcinxg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ikxsgknqaf .gt_slash_mark {
+#bcbygcinxg .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#ikxsgknqaf .gt_fraction_numerator {
+#bcbygcinxg .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#ikxsgknqaf .gt_fraction_denominator {
+#bcbygcinxg .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
