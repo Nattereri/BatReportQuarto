@@ -224,10 +224,10 @@ div.csl-indent {
 
 </header>
 
-<p>These web pages compliment the <em>data science</em> chapters of the forthcoming BCT Bat Survey Guidelines 4<sup>th</sup> Edition, and hopefully encourage ecologists to make the most of their bat survey data. They also demonstrate literate programming with Quarto®<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> which can vastly improve workflow (<em>welcome to the world beyond Excel</em>).</p>
-<p><strong><em>Note: pages are under active construction</em></strong> (so some things won’t look right!)</p>
+<p>These web pages compliment the <em>data science</em> chapters of the forthcoming BCT Bat Survey Guidelines 4<sup>th</sup> Edition, and hopefully encourage ecologists to make the most of their bat survey data. They also demonstrate literate programming with Quarto®<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and R Markdown<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> which can vastly improve workflow (<em>welcome to the world beyond Excel</em>).</p>
 <p><img src="Images/homesunrise2.png" class="img-fluid"></p>
-<p>To help ecologists get started, the code making all the graphs and analysis is freely available to copy and use; just click on <em>Show the code</em>, copy to the clipboard <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, paste into the R environment and run (to get going in R see <a href="#sec-installr">Section&nbsp;1</a>).</p>
+<p>Literate programming enables efficient reporting of bat data<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> from a simple table, such as a count of bats, to the output and interpretation of machine learning ; plus everything in-between. The code used in these pages is R<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, literate programming gives access to other coding languages such as Python<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>, and Julia<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Coding languages can be mixed in the same literate programming document; with a chuck of R code doing the data manipulation and another chunk of Python code performing the machine learning. Coding languages applied to data science are developing rapidly in terms of their ability, speed of execution, and user friendliness<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>; literate programming provides the framework for ecologists to keep their data science skills moving forward.</p>
+<p>To help ecologists get started, all the code making the graphs and analysis is freely available to copy and use; just click on <em>Show the code</em>, copy to the clipboard <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>, paste into the R environment and run (to get going in R see <a href="#sec-installr">Section&nbsp;1</a>).</p>
 <p>A <em>Show the code</em> is given below, the code produces <a href="#fig-example">Figure&nbsp;1</a>. The code copied to the clipboard is designed to run as a standalone <em>chunk</em>; with all the R libraries, data and code.</p>
 <div class="cell">
 <details open="">
@@ -290,7 +290,7 @@ div.csl-indent {
 
 </div>
 <div class="cell">
-<details>
+<details open="">
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -367,7 +367,13 @@ Zhu, Hao. 2021. <em>kableExtra: Construct Complex Table with Kable and Pipe Synt
 
 <ol>
 <li id="fn1" role="doc-endnote"><p>Quarto® is an open-source scientific and technical publishing system: see <a href="https://quarto.org/" class="uri">https://quarto.org/</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2" role="doc-endnote"><p>Clip board icon is in the top right hand corner of the code window.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>R Markdown see <a href="https://rmarkdown.rstudio.com/" class="uri">https://rmarkdown.rstudio.com/</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>as exported from sound analysis software<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>Windows <a href="https://cran.r-project.org/bin/windows/base/" class="uri">https://cran.r-project.org/bin/windows/base/</a> Mac Intel &amp; ARM <a href="https://cran.r-project.org/bin/macosx/" class="uri">https://cran.r-project.org/bin/macosx/</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5" role="doc-endnote"><p><a href="https://www.python.org/" class="uri">https://www.python.org/</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6" role="doc-endnote"><p><a href="https://julialang.org/" class="uri">https://julialang.org/</a><a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7" role="doc-endnote"><p>Julia has a language syntax similar to Python, runs fast, has a statistical library like R and linear programming skills similar to MATLAB.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8" role="doc-endnote"><p>Clip board icon is in the top right hand corner of the code window.<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
