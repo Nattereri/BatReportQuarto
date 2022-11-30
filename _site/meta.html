@@ -274,7 +274,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div id="tbl-night" class="anchored">
 
-<div id="epsuwfvagd" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="epsuwfvagd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
@@ -314,6 +314,11 @@ div.csl-indent {
   border-right-style: none;
   border-right-width: 1px;
   border-right-color: #D3D3D3;
+}
+
+#epsuwfvagd .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 #epsuwfvagd .gt_title {
@@ -436,6 +441,7 @@ div.csl-indent {
   border-right-width: 1px;
   border-right-color: #D3D3D3;
   vertical-align: middle;
+  text-align: left;
 }
 
 #epsuwfvagd .gt_empty_group_heading {
@@ -647,15 +653,6 @@ div.csl-indent {
   font-size: 65%;
 }
 
-#epsuwfvagd .gt_two_val_uncert {
-  display: inline-block;
-  line-height: 1em;
-  text-align: right;
-  font-size: 60%;
-  vertical-align: -0.25em;
-  margin-left: 0.1em;
-}
-
 #epsuwfvagd .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
@@ -668,55 +665,57 @@ div.csl-indent {
   vertical-align: 0;
 }
 
-#epsuwfvagd .gt_slash_mark {
-  font-size: 0.7em;
-  line-height: 0.7em;
-  vertical-align: 0.15em;
+#epsuwfvagd .gt_indent_1 {
+  text-indent: 5px;
 }
 
-#epsuwfvagd .gt_fraction_numerator {
-  font-size: 0.6em;
-  line-height: 0.6em;
-  vertical-align: 0.45em;
+#epsuwfvagd .gt_indent_2 {
+  text-indent: 10px;
 }
 
-#epsuwfvagd .gt_fraction_denominator {
-  font-size: 0.6em;
-  line-height: 0.6em;
-  vertical-align: -0.05em;
+#epsuwfvagd .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#epsuwfvagd .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#epsuwfvagd .gt_indent_5 {
+  text-indent: 25px;
 }
 </style>
 <table class="gt_table"><caption>Table 1:  The Night from the DateTime Column </caption>
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Description</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #191970; color: #FFFFFF; font-weight: bold;">Night</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">DateTime</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Species</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Description">Description</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #191970; color: #FFFFFF; font-weight: bold;" scope="col" id="Night">Night</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="DateTime">DateTime</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Species">Species</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-08-24</td>
-<td class="gt_row gt_left">2016-08-25 01:58:59</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
-    <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-08-04</td>
-<td class="gt_row gt_left">2016-08-04 23:11:37</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
-    <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-06-12</td>
-<td class="gt_row gt_left">2016-06-13 01:50:48</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
-    <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-07-30</td>
-<td class="gt_row gt_left">2016-07-31 01:08:12</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
-    <tr><td class="gt_row gt_left">Static 2</td>
-<td class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-10-10</td>
-<td class="gt_row gt_left">2016-10-10 19:39:35</td>
-<td class="gt_row gt_left">Plecotus spp.</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="Night" class="gt_row gt_right" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-08-24</td>
+<td headers="DateTime" class="gt_row gt_right">2016-08-25 01:58:59</td>
+<td headers="Species" class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="Night" class="gt_row gt_right" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-08-04</td>
+<td headers="DateTime" class="gt_row gt_right">2016-08-04 23:11:37</td>
+<td headers="Species" class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="Night" class="gt_row gt_right" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-06-12</td>
+<td headers="DateTime" class="gt_row gt_right">2016-06-13 01:50:48</td>
+<td headers="Species" class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="Night" class="gt_row gt_right" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-07-30</td>
+<td headers="DateTime" class="gt_row gt_right">2016-07-31 01:08:12</td>
+<td headers="Species" class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 2</td>
+<td headers="Night" class="gt_row gt_right" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-10-10</td>
+<td headers="DateTime" class="gt_row gt_right">2016-10-10 19:39:35</td>
+<td headers="Species" class="gt_row gt_left">Plecotus spp.</td></tr>
   </tbody>
   
   
@@ -761,7 +760,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div id="tbl-other" class="anchored">
 
-<div id="giftspehwa" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="giftspehwa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
@@ -801,6 +800,11 @@ div.csl-indent {
   border-right-style: none;
   border-right-width: 1px;
   border-right-color: #D3D3D3;
+}
+
+#giftspehwa .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 #giftspehwa .gt_title {
@@ -923,6 +927,7 @@ div.csl-indent {
   border-right-width: 1px;
   border-right-color: #D3D3D3;
   vertical-align: middle;
+  text-align: left;
 }
 
 #giftspehwa .gt_empty_group_heading {
@@ -1134,15 +1139,6 @@ div.csl-indent {
   font-size: 65%;
 }
 
-#giftspehwa .gt_two_val_uncert {
-  display: inline-block;
-  line-height: 1em;
-  text-align: right;
-  font-size: 60%;
-  vertical-align: -0.25em;
-  margin-left: 0.1em;
-}
-
 #giftspehwa .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
@@ -1155,73 +1151,75 @@ div.csl-indent {
   vertical-align: 0;
 }
 
-#giftspehwa .gt_slash_mark {
-  font-size: 0.7em;
-  line-height: 0.7em;
-  vertical-align: 0.15em;
+#giftspehwa .gt_indent_1 {
+  text-indent: 5px;
 }
 
-#giftspehwa .gt_fraction_numerator {
-  font-size: 0.6em;
-  line-height: 0.6em;
-  vertical-align: 0.45em;
+#giftspehwa .gt_indent_2 {
+  text-indent: 10px;
 }
 
-#giftspehwa .gt_fraction_denominator {
-  font-size: 0.6em;
-  line-height: 0.6em;
-  vertical-align: -0.05em;
+#giftspehwa .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#giftspehwa .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#giftspehwa .gt_indent_5 {
+  text-indent: 25px;
 }
 </style>
 <table class="gt_table"><caption>Table 2:  Other Date and Time Information from the DateTime Column </caption>
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Description</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">DateTime</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Species</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #E0FFFF; color: #000000; font-weight: bold;">Month</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #E0FFFF; color: #000000; font-weight: bold;">MonthFull</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #E0FFFF; color: #000000; font-weight: bold;">Year</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #E0FFFF; color: #000000; font-weight: bold;">JustTime</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Description">Description</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="DateTime">DateTime</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Species">Species</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #E0FFFF; color: #000000; font-weight: bold;" scope="col" id="Month">Month</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #E0FFFF; color: #000000; font-weight: bold;" scope="col" id="MonthFull">MonthFull</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #E0FFFF; color: #000000; font-weight: bold;" scope="col" id="Year">Year</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #E0FFFF; color: #000000; font-weight: bold;" scope="col" id="JustTime">JustTime</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_left">Static 2</td>
-<td class="gt_row gt_left">2016-08-15 01:44:55</td>
-<td class="gt_row gt_left">Pipistrellus pygmaeus</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Aug</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">August</td>
-<td class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">13:44:55</td></tr>
-    <tr><td class="gt_row gt_left">Static 3</td>
-<td class="gt_row gt_left">2016-08-13 22:10:52</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Aug</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">August</td>
-<td class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">10:10:52</td></tr>
-    <tr><td class="gt_row gt_left">Static 2</td>
-<td class="gt_row gt_left">2016-06-26 00:19:49</td>
-<td class="gt_row gt_left">Rhinolophus ferrumequinum</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Jun</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">June</td>
-<td class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">12:19:49</td></tr>
-    <tr><td class="gt_row gt_left">Static 2</td>
-<td class="gt_row gt_left">2016-06-05 04:11:35</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Jun</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">June</td>
-<td class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">16:11:35</td></tr>
-    <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left">2016-07-31 21:16:24</td>
-<td class="gt_row gt_left">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Jul</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">July</td>
-<td class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
-<td class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">09:16:24</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 2</td>
+<td headers="DateTime" class="gt_row gt_right">2016-08-15 01:44:55</td>
+<td headers="Species" class="gt_row gt_left">Pipistrellus pygmaeus</td>
+<td headers="Month" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Aug</td>
+<td headers="MonthFull" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">August</td>
+<td headers="Year" class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
+<td headers="JustTime" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">13:44:55</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 3</td>
+<td headers="DateTime" class="gt_row gt_right">2016-08-13 22:10:52</td>
+<td headers="Species" class="gt_row gt_left">Pipistrellus pipistrellus</td>
+<td headers="Month" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Aug</td>
+<td headers="MonthFull" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">August</td>
+<td headers="Year" class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
+<td headers="JustTime" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">10:10:52</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 2</td>
+<td headers="DateTime" class="gt_row gt_right">2016-06-26 00:19:49</td>
+<td headers="Species" class="gt_row gt_left">Rhinolophus ferrumequinum</td>
+<td headers="Month" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Jun</td>
+<td headers="MonthFull" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">June</td>
+<td headers="Year" class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
+<td headers="JustTime" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">12:19:49</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 2</td>
+<td headers="DateTime" class="gt_row gt_right">2016-06-05 04:11:35</td>
+<td headers="Species" class="gt_row gt_left">Pipistrellus pipistrellus</td>
+<td headers="Month" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Jun</td>
+<td headers="MonthFull" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">June</td>
+<td headers="Year" class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
+<td headers="JustTime" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">16:11:35</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_right">2016-07-31 21:16:24</td>
+<td headers="Species" class="gt_row gt_left">Pipistrellus pipistrellus</td>
+<td headers="Month" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Jul</td>
+<td headers="MonthFull" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">July</td>
+<td headers="Year" class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
+<td headers="JustTime" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">09:16:24</td></tr>
   </tbody>
   
   
@@ -1287,7 +1285,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div id="tbl-suntimes" class="anchored">
 
-<div id="bovfmtvsha" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="bovfmtvsha" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
@@ -1327,6 +1325,11 @@ div.csl-indent {
   border-right-style: none;
   border-right-width: 1px;
   border-right-color: #D3D3D3;
+}
+
+#bovfmtvsha .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 #bovfmtvsha .gt_title {
@@ -1449,6 +1452,7 @@ div.csl-indent {
   border-right-width: 1px;
   border-right-color: #D3D3D3;
   vertical-align: middle;
+  text-align: left;
 }
 
 #bovfmtvsha .gt_empty_group_heading {
@@ -1660,15 +1664,6 @@ div.csl-indent {
   font-size: 65%;
 }
 
-#bovfmtvsha .gt_two_val_uncert {
-  display: inline-block;
-  line-height: 1em;
-  text-align: right;
-  font-size: 60%;
-  vertical-align: -0.25em;
-  margin-left: 0.1em;
-}
-
 #bovfmtvsha .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
@@ -1681,67 +1676,69 @@ div.csl-indent {
   vertical-align: 0;
 }
 
-#bovfmtvsha .gt_slash_mark {
-  font-size: 0.7em;
-  line-height: 0.7em;
-  vertical-align: 0.15em;
+#bovfmtvsha .gt_indent_1 {
+  text-indent: 5px;
 }
 
-#bovfmtvsha .gt_fraction_numerator {
-  font-size: 0.6em;
-  line-height: 0.6em;
-  vertical-align: 0.45em;
+#bovfmtvsha .gt_indent_2 {
+  text-indent: 10px;
 }
 
-#bovfmtvsha .gt_fraction_denominator {
-  font-size: 0.6em;
-  line-height: 0.6em;
-  vertical-align: -0.05em;
+#bovfmtvsha .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#bovfmtvsha .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#bovfmtvsha .gt_indent_5 {
+  text-indent: 25px;
 }
 </style>
 <table class="gt_table"><caption>Table 3:  Sun Time Information from the Night and DateTime Columns </caption>
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">Species</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">DateTime</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #FFC0CB; color: #000000; font-weight: bold;">sunset</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #FFC0CB; color: #000000; font-weight: bold;">post_set_min</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #FFC0CB; color: #000000; font-weight: bold;">post_set_hr</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #FFC0CB; color: #000000; font-weight: bold;">post_set_hr_int</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Species">Species</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" scope="col" id="DateTime">DateTime</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #FFC0CB; color: #000000; font-weight: bold;" scope="col" id="sunset">sunset</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #FFC0CB; color: #000000; font-weight: bold;" scope="col" id="post_set_min">post_set_min</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #FFC0CB; color: #000000; font-weight: bold;" scope="col" id="post_set_hr">post_set_hr</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #FFC0CB; color: #000000; font-weight: bold;" scope="col" id="post_set_hr_int">post_set_hr_int</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_left">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_left">2016-07-30 03:04:26</td>
-<td class="gt_row gt_left" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2016-07-29 21:04:06</td>
-<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">360.33333</td>
-<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">6.0055556</td>
-<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">6</td></tr>
-    <tr><td class="gt_row gt_left">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_left">2016-08-04 22:47:09</td>
-<td class="gt_row gt_left" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2016-08-04 20:54:49</td>
-<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">112.33333</td>
-<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">1.8722222</td>
-<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2</td></tr>
-    <tr><td class="gt_row gt_left">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_left">2016-06-07 22:45:34</td>
-<td class="gt_row gt_left" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2016-06-07 21:23:08</td>
-<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">82.43333</td>
-<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">1.3738889</td>
-<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">1</td></tr>
-    <tr><td class="gt_row gt_left">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_left">2016-07-30 05:15:40</td>
-<td class="gt_row gt_left" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2016-07-29 21:04:06</td>
-<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">491.56667</td>
-<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">8.1927778</td>
-<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">8</td></tr>
-    <tr><td class="gt_row gt_left">Myotis spp.</td>
-<td class="gt_row gt_left">2016-06-07 22:00:01</td>
-<td class="gt_row gt_left" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2016-06-07 21:23:08</td>
-<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">36.88333</td>
-<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">0.6147222</td>
-<td class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">1</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left">Pipistrellus pipistrellus</td>
+<td headers="DateTime" class="gt_row gt_right">2016-07-30 03:04:26</td>
+<td headers="sunset" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2016-07-29 21:04:06</td>
+<td headers="post_set_min" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">360.33333</td>
+<td headers="post_set_hr" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">6.0055556</td>
+<td headers="post_set_hr_int" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">6</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left">Pipistrellus pipistrellus</td>
+<td headers="DateTime" class="gt_row gt_right">2016-08-04 22:47:09</td>
+<td headers="sunset" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2016-08-04 20:54:49</td>
+<td headers="post_set_min" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">112.33333</td>
+<td headers="post_set_hr" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">1.8722222</td>
+<td headers="post_set_hr_int" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left">Pipistrellus pipistrellus</td>
+<td headers="DateTime" class="gt_row gt_right">2016-06-07 22:45:34</td>
+<td headers="sunset" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2016-06-07 21:23:08</td>
+<td headers="post_set_min" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">82.43333</td>
+<td headers="post_set_hr" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">1.3738889</td>
+<td headers="post_set_hr_int" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">1</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left">Pipistrellus pipistrellus</td>
+<td headers="DateTime" class="gt_row gt_right">2016-07-30 05:15:40</td>
+<td headers="sunset" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2016-07-29 21:04:06</td>
+<td headers="post_set_min" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">491.56667</td>
+<td headers="post_set_hr" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">8.1927778</td>
+<td headers="post_set_hr_int" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">8</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left">Myotis spp.</td>
+<td headers="DateTime" class="gt_row gt_right">2016-06-07 22:00:01</td>
+<td headers="sunset" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2016-06-07 21:23:08</td>
+<td headers="post_set_min" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">36.88333</td>
+<td headers="post_set_hr" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">0.6147222</td>
+<td headers="post_set_hr_int" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">1</td></tr>
   </tbody>
   
   
@@ -1829,7 +1826,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div id="tbl-common" class="anchored">
 
-<div id="lhlsguvxpa" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="lhlsguvxpa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
@@ -1869,6 +1866,11 @@ div.csl-indent {
   border-right-style: none;
   border-right-width: 1px;
   border-right-color: #D3D3D3;
+}
+
+#lhlsguvxpa .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 #lhlsguvxpa .gt_title {
@@ -1991,6 +1993,7 @@ div.csl-indent {
   border-right-width: 1px;
   border-right-color: #D3D3D3;
   vertical-align: middle;
+  text-align: left;
 }
 
 #lhlsguvxpa .gt_empty_group_heading {
@@ -2202,15 +2205,6 @@ div.csl-indent {
   font-size: 65%;
 }
 
-#lhlsguvxpa .gt_two_val_uncert {
-  display: inline-block;
-  line-height: 1em;
-  text-align: right;
-  font-size: 60%;
-  vertical-align: -0.25em;
-  margin-left: 0.1em;
-}
-
 #lhlsguvxpa .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
@@ -2223,75 +2217,77 @@ div.csl-indent {
   vertical-align: 0;
 }
 
-#lhlsguvxpa .gt_slash_mark {
-  font-size: 0.7em;
-  line-height: 0.7em;
-  vertical-align: 0.15em;
+#lhlsguvxpa .gt_indent_1 {
+  text-indent: 5px;
 }
 
-#lhlsguvxpa .gt_fraction_numerator {
-  font-size: 0.6em;
-  line-height: 0.6em;
-  vertical-align: 0.45em;
+#lhlsguvxpa .gt_indent_2 {
+  text-indent: 10px;
 }
 
-#lhlsguvxpa .gt_fraction_denominator {
-  font-size: 0.6em;
-  line-height: 0.6em;
-  vertical-align: -0.05em;
+#lhlsguvxpa .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#lhlsguvxpa .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#lhlsguvxpa .gt_indent_5 {
+  text-indent: 25px;
 }
 </style>
 <table class="gt_table"><caption>Table 4:  From the Scientific Name Create a Common Name Vector </caption>
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;">Description</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;">DateTime</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;">Species</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;">Common</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Description">Description</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="DateTime">DateTime</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Species">Species</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Common">Common</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left">2016-06-13 02:14:51</td>
-<td class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
-    <tr><td class="gt_row gt_left">Static 1</td>
-<td class="gt_row gt_left">2016-06-06 00:20:18</td>
-<td class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
-    <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left">2016-07-30 22:25:21</td>
-<td class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
-    <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left">2016-07-29 00:07:42</td>
-<td class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
-    <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left">2016-07-27 03:54:21</td>
-<td class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
-    <tr><td class="gt_row gt_left">Static 2</td>
-<td class="gt_row gt_left">2016-09-19 21:01:39</td>
-<td class="gt_row gt_left" style="font-style: italic;">Pipistrellus spp.</td>
-<td class="gt_row gt_left" style="font-weight: bold;">Pipistrelle</td></tr>
-    <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left">2016-07-31 22:39:33</td>
-<td class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
-    <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left">2016-07-29 01:26:49</td>
-<td class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
-    <tr><td class="gt_row gt_left">Static 1</td>
-<td class="gt_row gt_left">2016-06-21 01:06:47</td>
-<td class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
-    <tr><td class="gt_row gt_left">Static 4</td>
-<td class="gt_row gt_left">2016-10-16 19:13:08</td>
-<td class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_right">2016-06-13 02:14:51</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Common" class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 1</td>
+<td headers="DateTime" class="gt_row gt_right">2016-06-06 00:20:18</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Common" class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_right">2016-07-30 22:25:21</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Common" class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_right">2016-07-29 00:07:42</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Common" class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_right">2016-07-27 03:54:21</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Common" class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 2</td>
+<td headers="DateTime" class="gt_row gt_right">2016-09-19 21:01:39</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus spp.</td>
+<td headers="Common" class="gt_row gt_left" style="font-weight: bold;">Pipistrelle</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_right">2016-07-31 22:39:33</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Common" class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_right">2016-07-29 01:26:49</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Common" class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 1</td>
+<td headers="DateTime" class="gt_row gt_right">2016-06-21 01:06:47</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Common" class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_right">2016-10-16 19:13:08</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Common" class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
   </tbody>
   
   
@@ -2412,7 +2408,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div id="tbl-NGR" class="anchored">
 
-<div id="ccdmqeiwyx" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="ccdmqeiwyx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
@@ -2452,6 +2448,11 @@ div.csl-indent {
   border-right-style: none;
   border-right-width: 1px;
   border-right-color: #D3D3D3;
+}
+
+#ccdmqeiwyx .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 
 #ccdmqeiwyx .gt_title {
@@ -2574,6 +2575,7 @@ div.csl-indent {
   border-right-width: 1px;
   border-right-color: #D3D3D3;
   vertical-align: middle;
+  text-align: left;
 }
 
 #ccdmqeiwyx .gt_empty_group_heading {
@@ -2785,15 +2787,6 @@ div.csl-indent {
   font-size: 65%;
 }
 
-#ccdmqeiwyx .gt_two_val_uncert {
-  display: inline-block;
-  line-height: 1em;
-  text-align: right;
-  font-size: 60%;
-  vertical-align: -0.25em;
-  margin-left: 0.1em;
-}
-
 #ccdmqeiwyx .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
@@ -2806,75 +2799,77 @@ div.csl-indent {
   vertical-align: 0;
 }
 
-#ccdmqeiwyx .gt_slash_mark {
-  font-size: 0.7em;
-  line-height: 0.7em;
-  vertical-align: 0.15em;
+#ccdmqeiwyx .gt_indent_1 {
+  text-indent: 5px;
 }
 
-#ccdmqeiwyx .gt_fraction_numerator {
-  font-size: 0.6em;
-  line-height: 0.6em;
-  vertical-align: 0.45em;
+#ccdmqeiwyx .gt_indent_2 {
+  text-indent: 10px;
 }
 
-#ccdmqeiwyx .gt_fraction_denominator {
-  font-size: 0.6em;
-  line-height: 0.6em;
-  vertical-align: -0.05em;
+#ccdmqeiwyx .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#ccdmqeiwyx .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#ccdmqeiwyx .gt_indent_5 {
+  text-indent: 25px;
 }
 </style>
 <table class="gt_table"><caption>Table 5:  From the Longitude and Latitude Create a Vector of the British National Grid Coordinates </caption>
   
   <thead class="gt_col_headings">
     <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;">Species</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;">Longitude</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;">Latitude</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">GridRef</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Species">Species</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Longitude">Longitude</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Latitude">Latitude</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;" scope="col" id="GridRef">GridRef</th>
     </tr>
   </thead>
   <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right">-3.591048</td>
-<td class="gt_row gt_right">50.33094</td>
-<td class="gt_row gt_left" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286854.431403263,49101.2549532561</td></tr>
-    <tr><td class="gt_row gt_left" style="font-style: italic;">Myotis spp.</td>
-<td class="gt_row gt_right">-3.591808</td>
-<td class="gt_row gt_right">50.33126</td>
-<td class="gt_row gt_left" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286801.102694949,49137.9914956368</td></tr>
-    <tr><td class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right">-3.591798</td>
-<td class="gt_row gt_right">50.33132</td>
-<td class="gt_row gt_left" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286801.957123455,49144.6474465514</td></tr>
-    <tr><td class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right">-3.591878</td>
-<td class="gt_row gt_right">50.33141</td>
-<td class="gt_row gt_left" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286796.477591845,49154.7760258182</td></tr>
-    <tr><td class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right">-3.595008</td>
-<td class="gt_row gt_right">50.33221</td>
-<td class="gt_row gt_left" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286575.621663931,49248.4957881758</td></tr>
-    <tr><td class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right">-3.591768</td>
-<td class="gt_row gt_right">50.33133</td>
-<td class="gt_row gt_left" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286804.11602111,49145.7136310115</td></tr>
-    <tr><td class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right">-3.591758</td>
-<td class="gt_row gt_right">50.33132</td>
-<td class="gt_row gt_left" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286804.803937794,49144.5865421783</td></tr>
-    <tr><td class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right">-3.592228</td>
-<td class="gt_row gt_right">50.33091</td>
-<td class="gt_row gt_left" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286770.378328093,49099.7158903753</td></tr>
-    <tr><td class="gt_row gt_left" style="font-style: italic;">Plecotus spp.</td>
-<td class="gt_row gt_right">-3.592583</td>
-<td class="gt_row gt_right">50.33323</td>
-<td class="gt_row gt_left" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286750.61980236,49357.5417145688</td></tr>
-    <tr><td class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right">-3.593018</td>
-<td class="gt_row gt_right">50.33101</td>
-<td class="gt_row gt_left" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286714.381797414,49111.5932755259</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.591048</td>
+<td headers="Latitude" class="gt_row gt_right">50.33094</td>
+<td headers="GridRef" class="gt_row gt_right" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286854.431403263,49101.2549532561</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Myotis spp.</td>
+<td headers="Longitude" class="gt_row gt_right">-3.591808</td>
+<td headers="Latitude" class="gt_row gt_right">50.33126</td>
+<td headers="GridRef" class="gt_row gt_right" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286801.102694949,49137.9914956368</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.591798</td>
+<td headers="Latitude" class="gt_row gt_right">50.33132</td>
+<td headers="GridRef" class="gt_row gt_right" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286801.957123455,49144.6474465514</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.591878</td>
+<td headers="Latitude" class="gt_row gt_right">50.33141</td>
+<td headers="GridRef" class="gt_row gt_right" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286796.477591845,49154.7760258182</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.595008</td>
+<td headers="Latitude" class="gt_row gt_right">50.33221</td>
+<td headers="GridRef" class="gt_row gt_right" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286575.621663931,49248.4957881758</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.591768</td>
+<td headers="Latitude" class="gt_row gt_right">50.33133</td>
+<td headers="GridRef" class="gt_row gt_right" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286804.11602111,49145.7136310115</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.591758</td>
+<td headers="Latitude" class="gt_row gt_right">50.33132</td>
+<td headers="GridRef" class="gt_row gt_right" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286804.803937794,49144.5865421783</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.592228</td>
+<td headers="Latitude" class="gt_row gt_right">50.33091</td>
+<td headers="GridRef" class="gt_row gt_right" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286770.378328093,49099.7158903753</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Plecotus spp.</td>
+<td headers="Longitude" class="gt_row gt_right">-3.592583</td>
+<td headers="Latitude" class="gt_row gt_right">50.33323</td>
+<td headers="GridRef" class="gt_row gt_right" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286750.61980236,49357.5417145688</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.593018</td>
+<td headers="Latitude" class="gt_row gt_right">50.33101</td>
+<td headers="GridRef" class="gt_row gt_right" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286714.381797414,49111.5932755259</td></tr>
   </tbody>
   
   

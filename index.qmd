@@ -4,7 +4,7 @@ format:
   html:
      code-fold: true
      code-summary: "Show the code"
-bibliography: packages.bib
+bibliography: [packages.bib, references.bib]
 number-sections: true
 ---
 
@@ -13,9 +13,11 @@ These web pages compliment the *data science* chapters of the forthcoming BCT Ba
 [^1]: Quarto® is an open-source scientific and technical publishing system: see <https://quarto.org/>
 [^10]: R Markdown see <https://rmarkdown.rstudio.com/>
 
-![](Images/homesunrise2.png)
 
-Literate programming enables efficient reporting of bat data[^8] from a simple table, such as a count of bats,  to the output and interpretation of machine  learning ; plus everything in-between.  The code used in these pages is  R[^9], literate programming gives access to other coding languages such as Python[^6], and Julia[^7].  Coding languages can be mixed in the same literate programming document; with a chuck of R code doing the data manipulation  and another chunk of Python code performing the machine learning.  Coding languages applied to data science are developing rapidly in terms of their ability, speed of execution, and user friendliness[^5]; literate programming provides the framework for ecologists to keep their data science skills moving forward.
+
+![Literate Programming](Images/workflowRed.png){#fig-workflowred}
+
+Literate programming [@knuth84] enables efficient reporting of bat data[^8] from a simple table, such as a count of bats, to the output and interpretation of machine learning; plus everything in-between, see @fig-workflowred. The code used in these pages is R[^9], literate programming also facilitates other coding languages such as Python[^6], and Julia[^7].  Coding languages can be mixed in the same literate programming document; with a chuck of R code doing the data manipulation  and another chunk of Python code performing the machine learning.  Coding languages applied to data science are developing rapidly in terms of their ability, speed of execution, and user friendliness[^5]; literate programming provides the framework for ecologists to keep their data science skills moving forward.
 
 [^5]:  Julia has a language syntax similar to Python, runs fast, has a statistical library like R and linear programming skills similar to MATLAB.
 [^6]: <https://www.python.org/>

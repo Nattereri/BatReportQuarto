@@ -225,10 +225,15 @@ div.csl-indent {
 </header>
 
 <p>These web pages compliment the <em>data science</em> chapters of the forthcoming BCT Bat Survey Guidelines 4<sup>th</sup> Edition, and hopefully encourage ecologists to make the most of their bat survey data. They also demonstrate literate programming with Quarto®<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and R Markdown<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> which can vastly improve workflow (<em>welcome to the world beyond Excel</em>).</p>
-<p><img src="Images/homesunrise2.png" class="img-fluid"></p>
-<p>Literate programming enables efficient reporting of bat data<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> from a simple table, such as a count of bats, to the output and interpretation of machine learning ; plus everything in-between. The code used in these pages is R<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, literate programming gives access to other coding languages such as Python<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>, and Julia<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Coding languages can be mixed in the same literate programming document; with a chuck of R code doing the data manipulation and another chunk of Python code performing the machine learning. Coding languages applied to data science are developing rapidly in terms of their ability, speed of execution, and user friendliness<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>; literate programming provides the framework for ecologists to keep their data science skills moving forward.</p>
+<div id="fig-workflowred" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Images/workflowRed.png" class="img-fluid figure-img"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1: Literate Programming</figcaption><p></p>
+</figure>
+</div>
+<p>Literate programming <span class="citation" data-cites="knuth84">(<a href="#ref-knuth84" role="doc-biblioref">Knuth 1984</a>)</span> enables efficient reporting of bat data<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> from a simple table, such as a count of bats, to the output and interpretation of machine learning; plus everything in-between, see <a href="#fig-workflowred">Figure&nbsp;1</a>. The code used in these pages is R<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, literate programming also facilitates other coding languages such as Python<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>, and Julia<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Coding languages can be mixed in the same literate programming document; with a chuck of R code doing the data manipulation and another chunk of Python code performing the machine learning. Coding languages applied to data science are developing rapidly in terms of their ability, speed of execution, and user friendliness<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>; literate programming provides the framework for ecologists to keep their data science skills moving forward.</p>
 <p>To help ecologists get started, all the code making the graphs and analysis is freely available to copy and use; just click on <em>Show the code</em>, copy to the clipboard <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>, paste into the R environment and run (to get going in R see <a href="#sec-installr">Section&nbsp;1</a>).</p>
-<p>A <em>Show the code</em> is given below, the code produces <a href="#fig-example">Figure&nbsp;1</a>. The code copied to the clipboard is designed to run as a standalone <em>chunk</em>; with all the R libraries, data and code.</p>
+<p>A <em>Show the code</em> is given below, the code produces <a href="#fig-example">Figure&nbsp;2</a>. The code copied to the clipboard is designed to run as a standalone <em>chunk</em>; with all the R libraries, data and code.</p>
 <div class="cell">
 <details open="">
 <summary>Show the code</summary>
@@ -271,7 +276,7 @@ div.csl-indent {
 <div id="fig-example" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="index_files/figure-html/fig-example-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 1: Example Graph: Monthly Bat Activity from the statics data set in the iBats Package</figcaption><p></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2: Example Graph: Monthly Bat Activity from the statics data set in the iBats Package</figcaption><p></p>
 </figure>
 </div>
 </div>
@@ -323,6 +328,9 @@ Broman, Karl W. 2022. <em>Broman: Karl Broman’s r Code</em>. <a href="https://
 </div>
 <div id="ref-R-flextable" class="csl-entry" role="doc-biblioentry">
 Gohel, David. 2022. <em>Flextable: Functions for Tabular Reporting</em>. <a href="https://CRAN.R-project.org/package=flextable">https://CRAN.R-project.org/package=flextable</a>.
+</div>
+<div id="ref-knuth84" class="csl-entry" role="doc-biblioentry">
+Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
 </div>
 <div id="ref-R-mosaic" class="csl-entry" role="doc-biblioentry">
 Pruim, Randall, Daniel T. Kaplan, and Nicholas J. Horton. 2021. <em>Mosaic: Project MOSAIC Statistics and Mathematics Teaching Utilities</em>. <a href="https://CRAN.R-project.org/package=mosaic">https://CRAN.R-project.org/package=mosaic</a>.
