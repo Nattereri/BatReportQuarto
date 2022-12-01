@@ -394,3 +394,98 @@ The division by *__1000__* is to convert milliseconds(ms) to seconds
 
 ![Calculating Bat Activity Time](Images/BTM2.png){#fig-btm}
 
+@tbl-BatActivityTime shows the calculated `BatActivityTime` from a .csv file(`BatExplorer`) exported from Elekon AG BatExplorer software.  The `BatExplorer` csv file is in the *iBats* package and describes a transect recorded with a Batlogger M bat detector near the the River Tavy, West Devon.
+
+```{r}
+#| code-fold: show
+#| warning: false
+#| message: false
+#| eval: false
+
+### Libraries Used 
+library(tidyverse) # Data Science packages - see https://www.tidyverse.org/
+
+# Install devtools if not installed 
+# devtools is used to install the iBats package from GitHub
+if(!require(devtools)){
+  install.packages("devtools")
+}
+
+# If iBats is not installed load from Github
+if(!require(iBats)){
+  devtools::install_github("Nattereri/iBats")
+}
+library(iBats)
+
+# BatExplorer csv file is from the iBats package
+BatExplorer %>% 
+  mutate(calls = `Calls [#]`,
+         duration = `Mean Call Lenght [ms]`,
+         span = `Mean Call Distance [ms]`,
+         # Calculate BatActivityTime in seconds
+         BatActivityTime = calls * (duration + span) / 1000) 
+
+```
+
+
+```{r}
+#| label: tbl-BatActivityTime
+#| tbl-cap: "BatActivityTime from a .csv exported from BatExplorer"
+
+library(gt)
+
+BatExplorer %>% 
+  mutate(calls = `Calls [#]`,
+         duration = `Mean Call Lenght [ms]`,
+         span = `Mean Call Distance [ms]`,
+         # Calculate BatActivityTime in seconds
+         BatActivityTime = calls * (duration + span) / 1000) %>% 
+  #Select just the columns used in the calculation and a few rows of data
+  select(Species = `Species Text`, 
+         calls, 
+         duration, 
+         span, 
+         `BatActivityTime (seconds)` = BatActivityTime) %>% 
+  head(n=10L) %>% 
+  # Table made with library(gt)
+  gt() %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")
+      ),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  ) %>% 
+  # Make bat scientific name italic
+  tab_style(
+    style = list(
+      cell_text(style = "italic")
+      ),
+    locations = cells_body(
+      columns = c(Species)
+  )) %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "wheat"),
+      cell_text(color = "black"),
+      cell_text(weight = "bold")
+      ),
+    locations = cells_body(
+      columns = c(`BatActivityTime (seconds)`)
+    )
+  ) %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "wheat"),
+      cell_text(color = "black"),
+      cell_text(weight = "bold")
+      ),
+    locations = cells_column_labels(
+      columns = c(`BatActivityTime (seconds)`)
+    )
+  )
+
+```
+
