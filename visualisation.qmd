@@ -319,12 +319,10 @@ ggplot(Andrews) +
 
 ## Graphing a Count of Bats
 
-One of the problems with presenting a count of bat passes observed in the UK is the relative abundance of the Common Pipistrelle (_Pipistrellus pipistrellus_). @fig-dotgraph tries to resolve this issue by using a log scale, not a friendly scale to the lay reader but some mitigation is achieved by placing the actual count of bat passes on the graph. @fig-dotgraph shows the count of bat species in the 
+One of the problems with presenting a count of bat passes observed in the UK is the relative abundance of the Common Pipistrelle (_Pipistrellus pipistrellus_). @fig-dotgraph tries to resolve this issue by using a log scale, not a friendly scale to the lay reader but some mitigation is achieved by placing the actual count of bat passes on the graph. @fig-dotgraph shows the count of bat species in the `statics` data.
 
 
 ### Dot Graph
-
-@fig-dotgraph tries to resolve this issue by using a log scale, not a friendly scale for the lay reader although mitigated by placing the actual count of bat passes on the graph. @fig-dotgraph shows the count of bat species in the `statics` data.
 
 ```{r}
 #| label: fig-dotgraph

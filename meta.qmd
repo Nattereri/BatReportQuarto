@@ -73,7 +73,7 @@ statics_with_night %>%
   )
 ```
 
-### Other Date and Time Information added
+### Other Date and Time Information
 
 The function `iBats::date_time_info()` adds other date and time information: month, year and time see @tbl-other (note: not all columns are shown). @tbl-other shows a random selection of 5 rows from the `statics` set.
 
