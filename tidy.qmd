@@ -11,10 +11,6 @@ number-sections: true
 ```{r}
 #| include: false
 
-library(knitr)
-library(tidyverse)
-library(iBats)
-
 set.seed(214)
 
 ```
@@ -64,182 +60,268 @@ The rationale for these variables is as follows:
 Results of bat sound analysis can be untidy:
 
 -   two or more species in one cell (see @tbl-untidy1);
--   count of bats (@tbl-untidy2); and,
--   two of more columns with species of same date and time.
--   Longitude and Latitude columns with missing values
+-   count of bats (@tbl-untidy2); 
+-   two of more columns with species of same date and time (@tbl-untidy3);
+-   code names for species rather than the binomial nomenclature (@tbl-tidied1); and,
+-   Longitude and Latitude columns with missing values (@tbl-missinglonlat)
 
-While the bat survey results shown in @tbl-tidy is an example of a *tidy* data set; the data sets in @tbl-untidy1 and @tbl-untidy2 are *untidy* and would need to be made tidy to undertake analysis.
+While the bat survey results shown in @tbl-tidy is an example of a *tidy* data set; the data shown in @tbl-untidy1, @tbl-untidy2, @tbl-untidy3, @tbl-tidied1 and, @tbl-missinglonlat are *untidy* and would need to be made tidy to undertake analysis.
 
-Data preparation is not just a first step but must be repeated many times over during analysis; as new problems come to light, or new data is collected. Apart from making bat data into a *tidy format*, there are many other tasks involved in cleaning data: parsing dates and numbers, identifying missing values, correcting character encodings, matching similar but not identical values (such as those created by typos).
+Data preparation is not just a first step but must be repeated many times over during analysis; as new problems come to light, or new data is collected. Making bat data into a *tidy format*, involves in cleaning data: parsing dates and numbers, identifying missing values, correcting character encodings, matching similar but not identical values (such as those created by typos); it is an essential step, takes time to do and makes subsequent steps in the analysis much easier.
 
 ```{r}
+#| warning: false
+#| message: false
 #| label: tbl-tidy
 #| tbl-cap: "Tidy Bat data"
 
-tidydata <- statics %>% # statics is a tidy data set from the iBats package
-  #select(DateTime, Species, Latitude, Longitude, Description) %>% 
-  rename(`Date and Time` = DateTime,  `Bat Species` = Species) %>% 
-  sample_n(10) %>% 
-  arrange(`Date and Time`)
+library(tidyverse)
+library(iBats)
+library(gt)
 
-# Table made with knitr::kable
-knitr::kable(tidydata)
+statics %>% # statics is a tidy data set from the iBats package
+  select(Description, DateTime, Species, Latitude, Longitude) %>%
+  sample_n(10) %>%
+  arrange(DateTime) %>%
+  # Table made with gt()
+  gt() %>%
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")
+    ),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  ) %>%
+  # Make bat scientific name italic
+  tab_style(
+    style = list(
+      cell_text(style = "italic")
+    ),
+    locations = cells_body(
+      columns = c(Species)
+    )
+  )
+
 ```
 
 ### Too Many Species in a Cell
 
 ```{r}
+#| warning: false
+#| message: false
 #| label: tbl-untidy1
 #| tbl-cap: "Untidy Bat Data Too Many Species in a Cell"
 
-Species <- c("PIPPYG", 
-             "PIPPYG, NYCLEI", 
-             "PIPPYG", 
-             "PIPPIP, PIPPYG, NYCLEI", 
-             "PIPPIP")
+library(gt)
+library(iBats)
 
-DateTime <- c("2019-10-03 20:55:30", 
-              "2019-10-03 20:58:30",
-              "2019-10-03 21:15:30",
-              "2019-10-03 21:25:30",
-              "2019-10-03 21:35:30")
-
-untidy1 <- tibble(DateTime, Species)
-
-# Table made with knitr::kable
-knitr::kable(untidy1)
+# Table made with gt()
+untidy1 %>%
+  gt() %>%
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")
+    ),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  )
 
 ```
 
-Too many species in a cell, as in @tbl-untidy1, can be made tidy by expanding the data so each species observed is in it's own row; as shown below in @tbl-tidied1
+Too many species in a cell, as in @tbl-untidy1, can be made tidy by expanding the data so each species observed is in it's own row, using the function `tidyr::separate_rows(Species)`; as shown below in @tbl-tidied1. Note that this data has _untidy_ bat names; these are corrected in @sec-scinames. The `untidy1` data is example untidy data available from the *iBats* package.
 
 ```{r}
+#| warning: false
+#| message: false
 #| code-fold: show
 #| label: tbl-tidied1
 #| tbl-cap: "Tidied Bat Data from Too Many Species in a Cell"
 
-tidied1 <- untidy1 %>% 
-  tidyr::separate_rows(Species)
+### Libraries Used
+library(tidyverse) # Data Science packages - see https://www.tidyverse.org/
+library(gt) # Makes table
 
-# Table made with knitr::kable
-knitr::kable(tidied1)
+# Install devtools if not installed
+# devtools is used to install the iBats package from GitHub
+if (!require(devtools)) {
+  install.packages("devtools")
+}
+
+# If iBats is not installed load from Github
+if (!require(iBats)) {
+  devtools::install_github("Nattereri/iBats")
+}
+library(iBats)
+
+untidy1 %>%
+  tidyr::separate_rows(Species) %>%
+  # Table made with gt()
+  gt() %>%
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")
+    ),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  )
 
 ```
 
 ### A Column of Bat Counts
 
 ```{r}
+#| warning: false
+#| message: false
 #| label: tbl-untidy2
-#| tbl-cap: "Untidy Bat Data a Column of Counting the Bats"
+#| tbl-cap: "Untidy Bat Data a Column Giving the Number of Bat Passes"
+
+library(gt)
+library(iBats)
+
+# Table made with gt()
+untidy2 %>%
+  gt() %>%
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")
+    ),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  )
 
 
-DateTime <- c("2019-10-05 20:35:15", 
-              "2019-10-05 20:38:30",
-              "2019-10-05 20:49:40",
-              "2019-10-05 21:05:15",
-              "2019-10-05 21:15:30",
-              "2019-10-05 21:25:45")
-
-Species <- c("Pipistrellus pipistrellus", 
-             "Pipistrellus pygmaeus", 
-             "Nyctalus noctula",
-             "Pipistrellus pipistrellus", 
-             "Pipistrellus pygmaeus", 
-             "Pipistrellus pipistrellus")
-
-Number <- c(1, 1, 2, 1, 3, 1)
-
-untidy2 <- tibble(DateTime, Species, Number)
-
-# Table made with knitr::kable
-knitr::kable(untidy2)
 ```
 
-A count of species, as in @tbl-untidy2, can be made tidy by un-counting the data so each species observed is in it's own row; as shown below in @tbl-tidied2
+A count of species, as in @tbl-untidy2, can be made tidy by un-counting the data so each species observed is in it's own row, using the function `tidyr::uncount(Number)`; as shown below in @tbl-tidied2. The `untidy2` data is example untidy data available from the *iBats* package.
 
 ```{r}
 #| code-fold: show
 #| label: tbl-tidied2
 #| tbl-cap: "Tidied Bat Data with the Column Bats Un-counted"
 
-tidied2 <- untidy2 %>% 
-  tidyr::uncount(Number)
+### Libraries Used
+library(tidyverse) # Data Science packages - see https://www.tidyverse.org/
+library(gt) # Makes table
 
-# Table made with knitr::kable
-knitr::kable(tidied2)
+# Install devtools if not installed
+# devtools is used to install the iBats package from GitHub
+if (!require(devtools)) {
+  install.packages("devtools")
+}
+
+# If iBats is not installed load from Github
+if (!require(iBats)) {
+  devtools::install_github("Nattereri/iBats")
+}
+library(iBats)
+
+untidy2 %>%
+  tidyr::uncount(Number) %>%
+  # Table made with gt()
+  gt() %>%
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")
+    ),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  )
 
 ```
 
 ### Two or More Columns of Bat Species
 
 ```{r}
+#| warning: false
+#| message: false
 #| label: tbl-untidy3
 #| tbl-cap: "Two or More Columns of Bat Species"
 
-Species <- c("Common pipistrelle", 
-             "Soprano pipistrelle", 
-             "Common pipistrelle", 
-             "Soprano pipistrelle", 
-             "Common pipistrelle")
+library(gt)
+library(iBats)
 
-Species2nd <- c("", 
-                "Noctule", 
-                "", 
-                "Common pipistrelle", 
-                "Common pipistrelle")
-
-Species3rd <- c("", 
-                "", 
-                "", 
-                "Noctule", 
-                "")
-
-DateTime <- c("2019-10-04 20:35:15", 
-              "2019-10-04 20:38:30",
-              "2019-10-04 21:05:15",
-              "2019-10-04 21:15:30",
-              "2019-10-04 21:25:45")
-
-untidy3 <- tibble(DateTime, Species, Species2nd, Species3rd)
-
-# Table made with knitr::kable
-knitr::kable(untidy3)
-
+# Table made with gt()
+untidy3 %>%
+  gt() %>%
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")
+    ),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  )
 ```
 
-Several columns of species, as in @tbl-untidy3, can be made tidy by un-counting the data so each species observed is in it's own row; as shown below in @tbl-tidied3.
+Several columns of species, as in @tbl-untidy3, can be made tidy by making separate data.frames and binding them together so each species observed is in it's own row; as shown below in @tbl-tidied3. The `untidy3` data is example untidy data available from the *iBats* package.
 
 ```{r}
 #| code-fold: show
+#| warning: false
+#| message: false
 #| label: tbl-tidied3
 #| tbl-cap: "Tidied Bat Data with Two or More Columns put into One"
 
+### Libraries Used
+library(tidyverse) # Data Science packages - see https://www.tidyverse.org/
+
+# Install devtools if not installed
+# devtools is used to install the iBats package from GitHub
+if (!require(devtools)) {
+  install.packages("devtools")
+}
+
+# If iBats is not installed load from Github
+if (!require(iBats)) {
+  devtools::install_github("Nattereri/iBats")
+}
+library(iBats)
+
 # Select Species column and remove (Species2nd & Species3rd)
-data1 <- untidy3 %>% 
-    select(-Species2nd, -Species3rd)
+data1 <- untidy3 %>%
+  select(-Species2nd, -Species3rd)
 
 # Select Species2nd column and remove (Species & Species3rd)
-data2 <- untidy3 %>% 
-  select(-Species, -Species3rd) %>% 
+data2 <- untidy3 %>%
+  select(-Species, -Species3rd) %>%
   filter(Species2nd != "") %>% # Remove blank rows
   rename(Species = Species2nd) # Rename column
 
 # Select Species3rd column and remove (Species & Species2nd)
-data3 <- untidy3 %>% 
-  select(-Species, -Species2nd) %>% 
+data3 <- untidy3 %>%
+  select(-Species, -Species2nd) %>%
   filter(Species3rd != "") %>% # Remove blank rows
   rename(Species = Species3rd) # Rename column
 
-#Add the datasets together into one 
-tidied3 <- dplyr::bind_rows(data1, data2, data3)
-
-
-# Table made with knitr::kable
-knitr::kable(tidied3)
+# Add the datasets together into one
+dplyr::bind_rows(data1, data2, data3) %>%
+  # Table made with gt()
+  gt() %>%
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")
+    ),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  ) 
 
 ```
 
-### Convert Bat Names to Scientific
+
+### Convert Bat Names to Scientific {#sec-scinames}
 
 @tbl-tidied1 is still *untidy* because the bat species are represented as codes and not in a binomial nomenclature(scientific name). The `iBats::make_scientific()` function can take a named vector of codes and the scientific name; such as the `BatScientific` vector below. The case of the bat name codes are ignored; they are all converted to lower case.
 
@@ -263,6 +345,28 @@ The `BatScientific` vector is then used to covert the survey vector of bat names
 
 ```{r}
 #| code-fold: show
+#| warning: false
+#| message: false
+
+
+### Libraries Used 
+library(tidyverse) # Data Science packages - see https://www.tidyverse.org/
+
+# Install devtools if not installed 
+# devtools is used to install the iBats package from GitHub
+if(!require(devtools)){
+  install.packages("devtools")
+}
+
+# If iBats is not installed load from Github
+if(!require(iBats)){
+  devtools::install_github("Nattereri/iBats")
+}
+library(iBats)
+
+# Remove too many species in a cell
+tidied1 <- untidy1 %>%
+  tidyr::separate_rows(Species)
 
 tidied1$Species <- iBats::make_scientific(BatScientific, tidied1$Species)
 
@@ -270,9 +374,155 @@ tidied1$Species <- iBats::make_scientific(BatScientific, tidied1$Species)
 
 ```{r}
 #| label: tbl-tidied4
-#| tbl-cap: "Tidied Bat Data with Scientific Names"
+#| tbl-cap: "Tidied Data with Scientific Names"
 
-# Table made with knitr::kable
-knitr::kable(tidied1)
+library(gt)
+# Table made with gt()
+tidied1 %>% 
+  gt() %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")
+      ),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  ) %>% 
+  # Make bat scientific name italic
+  tab_style(
+    style = list(
+      cell_text(style = "italic")
+      ),
+    locations = cells_body(
+      columns = c(Species)
+  )) 
 
 ```
+
+### Missing Latitude and Longitude Values
+
+The `BatExplorer` data in the *iBats* package (see @tbl-missinglonlat), was recorded on an evening transect bat detector survey. The data has missing longitude and latitude values, shown as `NA` and is not uncommon when the Global Positioning System (GPS) is trying to calculate its position beneath trees or in a steep valley.
+
+```{r}
+#| label: tbl-missinglonlat
+#| tbl-cap: "Missing Longitude and Latitude Values (NA)"
+
+### Libraries Used 
+library(tidyverse) # Data Science packages - see https://www.tidyverse.org/
+library(iBats)
+library(gt)
+
+# BatExplorer csv file is from the iBats package
+BatExplorer %>% 
+  head(n=15L)  %>% 
+  select(DateTime = Timestamp, 
+         Species = `Species Text`, 
+         Latitude = `Latitude [WGS84]`,
+         Longitude = `Longitude [WGS84]`) %>% 
+  # Table made with gt()
+  gt() %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")
+      ),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  ) %>% 
+  # Make bat scientific name italic
+  tab_style(
+    style = list(
+      cell_text(style = "italic")
+      ),
+    locations = cells_body(
+      columns = c(Species)
+  )) 
+
+
+
+```
+
+The longitude and latitude gives a position of the bat observation and is also used to determine sunset and sunrise; and if the values are not completed then these observations would be excluded from the analysis. A simple estimate of the missing longitude and latitude can be made by arranging the data in date/time order and using the function:  
+
+`tidyr::fill(c(Latitude, Longitude), .direction = "downup")` 
+
+This fills the missing values from the nearest complete values; first down and then up.  The filled data is shown in @tbl-filledlonlat.
+
+
+```{r}
+#| code-fold: show
+#| warning: false
+#| message: false
+#| eval: false
+
+
+### Libraries Used
+library(tidyverse) # Data Science packages - see https://www.tidyverse.org/
+
+# Install devtools if not installed
+# devtools is used to install the iBats package from GitHub
+if (!require(devtools)) {
+  install.packages("devtools")
+}
+
+# If iBats is not installed load from Github
+if (!require(iBats)) {
+  devtools::install_github("Nattereri/iBats")
+}
+library(iBats)
+
+# BatExplorer csv file is from the iBats package
+BatExplorer %>%
+  head(n = 15L) %>%
+  select(
+    DateTime = Timestamp,
+    Species = `Species Text`,
+    Latitude = `Latitude [WGS84]`,
+    Longitude = `Longitude [WGS84]`
+  ) %>%
+  arrange(DateTime) %>% 
+  tidyr::fill(c(Latitude, Longitude), .direction = "downup")
+
+```
+
+```{r}
+#| label: tbl-filledlonlat
+#| tbl-cap: "Filled Longitude and Latitude Values"
+
+# BatExplorer csv file is from the iBats package
+BatExplorer %>% 
+  head(n=15L)  %>% 
+  select(DateTime = Timestamp, 
+         Species = `Species Text`, 
+         Latitude = `Latitude [WGS84]`,
+         Longitude = `Longitude [WGS84]`) %>% 
+  fill(Latitude, .direction = "downup") %>%
+    fill(Longitude, .direction = "downup") %>% 
+  gt() %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")
+      ),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  ) %>% 
+  # Make bat scientific name italic
+  tab_style(
+    style = list(
+      cell_text(style = "italic")
+      ),
+    locations = cells_body(
+      columns = c(Species)
+  )) 
+
+
+
+```
+
+
+```
+
