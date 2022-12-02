@@ -177,14 +177,14 @@ ggplot(TavyOak, aes(y = 1, x = DateTime, fill = Species, size = bat_time)) +
     xintercept = graph_sunset,
     colour = "brown1",
     linetype = "dashed",
-    size = 1,
+    linewidth = 1,
     alpha = 0.8
   ) +
   geom_vline(
     xintercept = graph_sunrise,
     colour = "mediumblue",
     linetype = "dashed",
-    size = 1,
+    linewidth = 1,
     alpha = 0.8
   ) +
   annotate("text",
@@ -602,7 +602,7 @@ ggplot(graph_data, aes(x = Species, y = post_set_min, fill = Species)) +
     size = 3, colour = "floralwhite"
   ) +
   geom_jitter(size = 3, alpha = 0.8, shape = 21) +
-  geom_hline(yintercept = 0, linetype = "dotted", colour = "floralwhite", size = 2) +
+  geom_hline(yintercept = 0, linetype = "dotted", colour = "floralwhite", linewidth = 2) +
   facet_grid(Description ~ ., scales = "free_y") +
   scale_fill_manual(values = graph_bat_colours) +
   labs(
@@ -664,7 +664,7 @@ graph_bat_colours <- iBats::bat_colours(graph_data$Species, colour_vector = bat_
 
 ggplot(graph_data, aes(x = Species, y = pre_rise_min, fill = Species)) +
   geom_jitter(size = 3, alpha = 0.8, shape = 21) +
-  geom_hline(yintercept = 0, linetype = "dotted", colour = "floralwhite", size = 2) +
+  geom_hline(yintercept = 0, linetype = "dotted", colour = "floralwhite", linewidth = 2) +
   facet_grid(Description ~ ., scales = "free_y") +
   scale_fill_manual(values = graph_bat_colours) +
   labs(
