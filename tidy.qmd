@@ -67,7 +67,7 @@ Results of bat sound analysis can be untidy:
 
 While the bat survey results shown in @tbl-tidy is an example of a *tidy* data set; the data shown in @tbl-untidy1, @tbl-untidy2, @tbl-untidy3, @tbl-tidied1 and, @tbl-missinglonlat are *untidy* and would need to be made tidy to undertake analysis.
 
-Data preparation is not just a first step but must be repeated many times over during analysis; as new problems come to light, or new data is collected. Making bat data into a *tidy format*, involves in cleaning data: parsing dates and numbers, identifying missing values, correcting character encodings, matching similar but not identical values (such as those created by typos); it is an essential step, takes time to do and makes subsequent steps in the analysis much easier.
+Data preparation is not just a first step but must be repeated many times over during analysis; as new problems come to light, or new data is collected. Making bat data into a *tidy format*, involves cleaning data: parsing dates and numbers, identifying missing values, correcting character encoding, matching similar but not identical values (such as those created by typos); it is an essential step, takes time to do and makes subsequent steps in the analysis much easier.
 
 ```{r}
 #| warning: false

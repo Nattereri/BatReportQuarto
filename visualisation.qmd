@@ -756,7 +756,7 @@ g2 <- ggplot(graph_data, aes(x = reorder(Species, n), y = n, fill = Species)) +
     panel.grid.major = element_blank(), # remove grid lines
     panel.grid.minor = element_blank(),
     panel.border = element_blank(),
-    panel.grid.major.x = element_line(colour = "grey20", size = 0.1, linetype = "dashed")
+    panel.grid.major.x = element_line(colour = "grey20", linewidth = 0.1, linetype = "dashed")
   )
 
 g1
