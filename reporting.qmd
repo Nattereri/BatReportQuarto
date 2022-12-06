@@ -82,6 +82,8 @@ library(broman)
 library(flextable)
 library(officer)
 library(officedown)
+library(treemapify)
+library(ggthemes) 
 
 knitr::opts_chunk$set(echo = FALSE, warnings = FALSE, message = FALSE)
 knitr::opts_chunk$set(fig.cap = TRUE)
@@ -154,7 +156,7 @@ TidyBatData %>%
 \newpage
 # FIGURES  
 
-Figure \@ref(fig:graph01): shows the count of all the species observations as a dot chart.
+Figure \@ref(fig:graph01) shows the count of all the species observations as a dot chart and Figure \@ref(fig:graph02) shows a treemap of monthly bat pass activity.
 
 `r ''````{r graph01, fig.cap="Count of All Species Observations", fig.height=7, fig.width=6}
 
@@ -191,6 +193,26 @@ p <- ggplot(g_data, aes(y = reorder(Species, n), x = n, fill = Species)) +
 p
 ```
 
+\newpage
+`r ''````{r graph02, fig.cap="Monthly Bat Activity", fig.height=7, fig.width=6}
+
+# Add data and time information to the iBats statics bat survey data set using the iBats::date_time_info
+statics_plus <- iBats::date_time_info(statics)
+
+graph_data <- statics_plus %>%
+  group_by(Species, Month) %>%
+  tally()
+
+ggplot(graph_data, aes(area = n, fill = Month, label = Species, subgroup = Month)) +
+  scale_fill_tableau(palette = "Tableau 10") + #
+  geom_treemap(colour = "white", size = 2, alpha = 0.9) +
+  geom_treemap_subgroup_border(colour = "black", size = 5, alpha = 0.9) +
+  geom_treemap_subgroup_text(place = "centre", grow = T, alpha = 0.9, colour = "grey20", min.size = 0) +
+  geom_treemap_text(colour = "grey90", place = "topleft", fontface = "italic", reflow = T, min.size = 0, alpha = 0.9) +
+  theme_bw() +
+  theme(legend.position = "none") # No legend
+```
+
 ````
 
 The three page Word report shown in @fig-wordreport is a rudimentary example; it could be expanded to include any of the tables and graphs shown on these web pages.  The .Rmd file is rendered into a Microsoft Word document; this is a convenient file format easily allowing further editing by others in the survey team. The simple report in @fig-wordreport has a tables of contents and cross referencing it can also be rendered directly into the _house/company_ style by specifying a `reference_docx` file[^5].
@@ -200,10 +222,9 @@ The three page Word report shown in @fig-wordreport is a rudimentary example; it
 ::: {#fig-wordreport layout-ncol=1}
 
 ![](images/page1.png)
-
-
 ![](images/page2.png)
 ![](images/page3.png)
+![](images/page4.png)
 
-Bat Survey Word Report 
+Bat Survey Word Report
 :::

@@ -607,7 +607,7 @@ ggplot(graph_data, aes(x = Species, y = post_set_min, fill = Species)) +
     y = yLab,
     caption = Caption
   ) +
-  scale_y_continuous(breaks = c(-15, 0, 15, 30, 45, 60, 75, 90), limits = c(-15, 90)) +
+  scale_y_continuous(breaks = c(-30, -15, 0, 15, 30, 45, 60, 75, 90, 105), limits = c(-30, 105)) +
   coord_flip() +
   theme_bw() +
   theme(
@@ -639,6 +639,33 @@ ggplot(graph_data, aes(x = Species, y = post_set_min, fill = Species)) +
 #| warning: false
 #| fig.height: 8
 
+# List of bat common names and the scientific names
+BatCommon <- c(
+  "Barbastella barbastellus" = "Barbastelle",
+  "Myotis alcathoe" = "Alcathoe",
+  "Myotis bechsteinii" = "Bechstein's",
+  "Myotis brandtii" = "Brandt's",
+  "Myotis daubentonii" = "Daubenton's",
+  "Myotis mystacinus" = "Whiskered",
+  "Myotis spp." = "Myotis",
+  "Rhinolophus ferrumequinum" = "Greater horseshoe",
+  "Rhinolophus hipposideros" = "Lesser horseshoe",
+  "Nyctalus leisleri" = "Leisler's",
+  "Plecotus auritus" = "Brown long-eared",
+  "Plecotus austriacus" = "Grey long-eared",
+  "Pipistrellus nathusii" = "Nathusius pipistrelle",
+  "Myotis nattereri" = "Natterer's",
+  "Nyctalus noctula" = "Noctule",
+  "Nyctalus spp." = "Noctule or Leisler's",
+  "Eptesicus serotinus" = "Serotine",
+  "Pipistrellus pipistrellus" = "Common pipistrelle",
+  "Pipistrellus pygmaeus" = "Soprano pipistrelle",
+  "Pipistrellus spp." = "Pipistrelle",
+  "Plecotus spp." = "Long-eared")
+
+# From Scientific name create a Common Name Vector 
+statics$Common <-  unname(BatCommon[statics$Species])
+
 # Add data and time information to the statics data using theiBats::date_time_info
 statics_plus <- iBats::date_time_info(statics)
 
@@ -647,6 +674,9 @@ statics_plus <- iBats::sun_night_metrics(statics_plus)
 
 # Add roost emergence times adapted from (Andrews and Pearson, 2022)
 statics_plus <- dplyr::left_join(statics_plus, Andrews, by = "Species")
+
+# From Scientific name create a Common Name Vector 
+statics_plus$Common <-  unname(BatCommon[statics_plus$Species])
 
 # Graph text
 yLab <- "Time before and after sunrise (mins)"
@@ -660,7 +690,7 @@ graph_data <- statics_plus %>%
 # colour values used by scale_fill_manual()
 graph_bat_colours <- iBats::bat_colours(graph_data$Species, colour_vector = bat_colours_sci)
 
-ggplot(graph_data, aes(x = Species, y = pre_rise_min, fill = Species)) +
+ggplot(graph_data, aes(x = Common, y = pre_rise_min, fill = Species)) +
   geom_jitter(size = 3, alpha = 0.8, shape = 21) +
   geom_hline(yintercept = 0, linetype = "dotted", colour = "floralwhite", linewidth = 2) +
   facet_grid(Description ~ ., scales = "free_y") +
