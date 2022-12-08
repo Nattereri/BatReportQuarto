@@ -366,12 +366,12 @@ plot_ly(bat_pass_counts,
 
 ## Tables
 
-Below is an interactive table created with the `Lydford` data available from the `iBats` package.
+### `datatable`
 
--   `DateTime`
--   `Species`
+The package `datatable` is used to create the interactive table below with the `Lydford` data from the `iBats` package.
+
 -   `post_set_min`- time in minutes the bat was observed after sun set
--   `bat_time`
+-   `bat_time` - time in seconds the bat was observed
 
 ```{r}
 
@@ -384,3 +384,53 @@ Lydford %>%
 
 
 ```
+
+
+### `reactable`
+
+The package `reactable` is used to create the interactive table below with the `statics` data from the `iBats` package.
+
+-   `post_set_min`- time in minutes the bat was observed after sun set
+
+```{r}
+# https://glin.github.io/reactable/
+
+library(tidyverse)
+library(reactable)
+library(iBats)
+library(hms)
+
+# Add data and time information to the statics data using the iBats::date_time_info
+statics_plus <- iBats::date_time_info(statics)
+
+# Add sun and night time metrics to the statics data using the iBats::sun_night_metrics() function.
+statics_plus <- iBats::sun_night_metrics(statics_plus) %>%
+  select(Night, Location = Description, Month = MonthFull, Species, post_set_min) %>%
+  mutate(post_set_min = as.integer(post_set_min))
+
+
+reactable(statics_plus,
+  defaultPageSize = 12,
+  filterable = TRUE,
+  searchable = TRUE,
+  bordered = TRUE,
+  highlight = TRUE,
+  defaultColDef = colDef(
+    header = function(value) gsub(".", " ", value, fixed = TRUE),
+    cell = function(value) format(value, nsmall = 1),
+    align = "center",
+    format = colFormat(digits = 1),
+    minWidth = 60,
+    headerStyle = list(color = "#000000", background = "#CCCCCC")
+  ),
+  columns = list(
+    Location = colDef(sticky = "left", minWidth = 60, sortable = TRUE),
+    Night = colDef(minWidth = 60, sortable = TRUE, format = colFormat(date = TRUE, locales = "en-GB")),
+    Species = colDef(minWidth = 100, sortable = TRUE),
+    Month = colDef(minWidth = 60, sortable = TRUE),
+    post_set_min = colDef(sortable = TRUE)
+  )
+)
+
+```
+
