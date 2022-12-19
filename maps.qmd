@@ -82,9 +82,7 @@ ggplot() +
   scale_size_area(max_size = 12) +
   labs(size = "Bat Activity (secs)",
       fill = "Species") +
-  theme(strip.background = element_rect(fill="black"),
-    strip.text = element_text(size=14, colour="white", face = "italic"),
-    legend.position = "right",
+  theme(legend.position = "right",
     axis.title.y = element_blank(),
     axis.title.x = element_blank(),
     axis.text.x = element_blank(),
@@ -96,6 +94,92 @@ ggplot() +
 
 ```
 
+### GPX File
+
+Bat detectors e.g. the Batlogger M[^3] contain a built in Global Positioning System (GPS) capable of recording the location over time to a GPX file; _note_ for the Battlogger M the _tracker_ needs to be enabled. The GPX, or GPS Exchange Format, is a text file designed as a _common_ GPS data format for software applications. It can be used to describe waypoints, tracks, and routes. The file format is open and free to use.
+
+
+The transect route, and other information such as the start and finish times, is a key part of reporting. An example of transect output created from a GPX file recorded for a National Bat Monitoring Programme (NBMP)[^4] field survey is given in @fig-gpx. 
 
 
 
+```{r}
+#| warning: false
+#| message: false
+#| label: fig-gpx
+#| fig-cap: "National Bat Monitoring Programme Field Survey Transect"
+#| fig.width: 8
+
+library(tidyverse)
+library(sf)
+library(hms)
+library(ggspatial)
+library(iBats)
+library(glue)
+
+
+filename <- "data//24910001_20180707.gpx"
+
+# Read tracks layer for map plot 
+transect_tracks <- sf::st_read(filename, "tracks", promote_to_multi = TRUE, quiet = TRUE)
+
+# Read points layer to calculate transect timings
+transect_points <- sf::st_read(filename, "track_points", promote_to_multi = TRUE, quiet = TRUE)
+  
+  
+#extract coords 
+point_geometry <- transect_points %>% 
+  pull(geometry)
+
+point_geometry <- sf::st_coordinates(point_geometry)
+
+point_geometry <- tibble(point_geometry[,1], point_geometry[,2])
+
+colnames(point_geometry) <- c("Longitude", "Latitude")
+
+point_geometry <- as.matrix(point_geometry)
+
+# Select date/time vector from `transect_points` dataframe
+Transect_times <- transect_points %>% 
+  pull(time) 
+
+# Start time
+Trans_start <- hms::as_hms(stringr::str_sub(as.character(min(Transect_times)), start = 12, end = 19))
+
+# Finish time
+Trans_finish <- hms::as_hms(stringr::str_sub(as.character(max(Transect_times)), start = 12, end = 19))
+
+# Length of time on transect
+Trans_period <- as.integer(difftime(Trans_finish, Trans_start, units = c("mins")))
+
+# Make Transect times suitable text for printing 
+Trans_start <- stringr::str_c(as.character(Trans_start), " hrs")
+Trans_finish <- stringr::str_c(as.character(Trans_finish), " hrs")
+Trans_period <- stringr::str_c(as.character(Trans_period), " minutes")
+  
+
+ggplot() +
+  annotation_map_tile(type = "osm",  zoomin = -2, alpha = 0.3) +
+  geom_sf(data = transect_tracks, size = 6, colour = "purple", alpha = 0.6) +
+  annotation_scale(location = "tr") +
+  annotation_north_arrow(location = "br", which_north = "true") +
+  labs(title = "NBMP - Field Survey Transect") +
+  theme(strip.background = element_rect(fill="black"),
+    legend.position = "right",
+    axis.title.y = element_blank(),
+    axis.title.x = element_blank(),
+    axis.text.x = element_text(size=10, colour="grey20", angle = 270),
+    axis.text.y = element_text(size=10, colour="grey20"),
+    axis.ticks = element_blank(),
+    title = element_text(colour = "black", size = 14),
+    legend.text = element_text(face = "italic"))
+
+
+
+```
+
+The NBMP field survey transect shown in @fig-gpx `r glue(" took {Trans_period}; began at {Trans_start} and finished at {Trans_finish}.") `
+
+
+[^3]: <https://www.batlogger.com/en/products/batlogger_m/>
+[^4]: <http://www.bats.org.uk/pages/nbmp.html>
