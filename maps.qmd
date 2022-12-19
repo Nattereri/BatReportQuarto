@@ -22,7 +22,7 @@ library(iBats)
 
 ## Open Street Map
 
-OpenStreetMap[^1] is a map of the world, created by the online community and free to use under an open license. @fig-osm shows a map[^2] of the Lydford transect.
+OpenStreetMap[^1] is a map of the world, created by the online community and free to use under an open license. @fig-osm shows a map[^2] of bat observations during the Lydford transect.
 
 [^1]: <https://www.openstreetmap.org/>
 [^2]: Base map is the copyright OpenStreetMap contributors
@@ -32,7 +32,7 @@ OpenStreetMap[^1] is a map of the world, created by the online community and fre
 #| message: false
 #| label: fig-osm
 #| fig-cap: "Open Street Map of Bat Activity on the Lydford Transect"
-###| fig.height: 7
+###| fig.height: 8
 
 library(tidyverse)
 library(sf)
@@ -76,7 +76,7 @@ spatial_data <- st_as_sf(spatial_data, coords = c("longitude", "latitude"),
 ggplot() +
   annotation_map_tile(type = "osm",  zoomin = -2, alpha = 0.5) +
   geom_sf(data = spatial_data, aes(fill = Species, size = bat_time), shape = 21, alpha = 0.5) +
-   annotation_scale(location = "tl") +
+  annotation_scale(location = "tl") +
   annotation_north_arrow(location = "bl", which_north = "true") +
   scale_fill_manual(values = graph_bat_colours) +
   scale_size_area(max_size = 12) +
@@ -95,3 +95,7 @@ ggplot() +
 
 
 ```
+
+
+
+

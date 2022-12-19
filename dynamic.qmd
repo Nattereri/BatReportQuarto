@@ -144,7 +144,7 @@ The data shown in @fig-lydfordtransect, `Lydford` is available from the `iBats` 
 
 ### Making `ggplot` Interactive
 
-Plotly[^1] allows easy translation of `ggplot2` graphics into an interactive web-based version. Hovering the mouse over a graph point will reveal the bat species, the time bat was recorded and the length in seconds of the activity.  The graph can be copied to the clipboard plus zoomed and panned; the home symbol will reset the axes. 
+Plotly[^1] allows easy translation of `ggplot2` graphics into an interactive web-based version. Hovering the mouse over a graph point will reveal the bat species, the time bat was recorded and the length in seconds of the activity.  The graph can be copied to the clipboard plus zoomed and panned; the home symbol will reset the axes. The corresponding bubble chart for the `TavyOak` data produced entirely in Plotly is shown in @fig-plotlybubble.  
 
 [^1]: See the htmlwidgets for R page <https://www.htmlwidgets.org/showcase_plotly.html> plus the plotly r reference <https://plotly.com/ggplot2/>.
 
@@ -207,6 +207,7 @@ ggplotly(p)
   
 
 ```
+
 
 
 ### Bar Chart
@@ -304,7 +305,7 @@ colors <- unname(bat_colours_sci[list_species])
 
 ### Pie Chart
 
-@fig-plotlypie shows a pie chart of bat activity, it was drawn with the plotly library^[For more information see <https://plotly.com/r/pie-charts/>]. Hovering the mouse over a bar will reveal the bat species and the number of bat passes; toggling the species name in the legend will remove (or add) the species slice from the chart, and; at any view the graph can be copied to the clipboard. 
+@fig-plotlypie shows a pie chart of bat passes, it was drawn with the plotly library^[For more information see <https://plotly.com/r/pie-charts/>]. Hovering the mouse over a bar will reveal the bat species and the number of bat passes; toggling the species name in the legend will remove (or add) the species slice from the chart, and; at any view the graph can be copied to the clipboard. 
 
 ```{r}
 #| label: fig-plotlypie
@@ -360,6 +361,92 @@ plot_ly(bat_pass_counts,
     xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
     yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE)
   )
+
+```
+
+### Bubble Chart 
+
+The coloured bubbles on @fig-plotlybubble show bats around a west Devon Oak tree, on the bottom scale is the hour after sunset the bat was observed  The length of time the bat was present, in seconds, is expressed by the size of the bubble; a small bubble indicates the bat is likely to be travelling and a larger bubble could mean that the bat was feeding (foraging). Hovering the mouse over the coloured circle will give the bat name and number of seconds the bat was present. A similar graphic was produced in @fig-intertimebat using `ggplot` which was converted to a plotly chart using `ggplotly`. 
+
+```{r}
+#| label: fig-plotlybubble
+#| fig-cap: "Interactive Bubble Chart of Species Activity for the TavyOak Data"
+#| fig.height: 8
+#| warnings: false
+
+library(tidyverse)
+library(iBats)
+library(plotly)
+
+
+# bat species colours
+bat_colours_sci <- c(
+  "Barbastella barbastellus" = "#1f78b4",
+  "Myotis alcathoe" = "#a52a2a",
+  "Myotis bechsteinii" = "#7fff00",
+  "Myotis brandtii" = "#b2df8a",
+  "Myotis mystacinus" = "#6a3d9a",
+  "Myotis nattereri" = "#ff7f00",
+  "Myotis daubentonii" = "#a6cee3",
+  "Myotis spp." = "#bcee68",
+  "Plecotus auritus" = "#8b0000",
+  "Plecotus spp." = "#8b0000",
+  "Plecotus austriacus" = "#000000",
+  "Pipistrellus pipistrellus" = "#ffff99",
+  "Pipistrellus nathusii" = "#8a2be2",
+  "Pipistrellus pygmaeus" = "#b15928",
+  "Pipistrellus spp." = "#fdbf6f",
+  "Rhinolophus ferrumequinum" = "#e31a1c",
+  "Rhinolophus hipposideros" = "#33a02c",
+  "Nyctalus noctula" = "#cab2d6",
+  "Nyctalus leisleri" = "#fb9a99",
+  "Nyctalus spp." = "#eee8cd",
+  "Eptesicus serotinus" = "#008b8b"
+)
+xtitle <- "Hours After Sunset"
+ytitle <- "Circles spread across the axis so they can all be seen"
+
+f1 <- list(
+  family = "Arial, sans-serif",
+  size = 18,
+  color = "lightgrey"
+)
+
+ay <- list(title = ytitle, 
+           showline = FALSE, 
+           showticklabels = FALSE, 
+           showgrid = TRUE,
+           titlefont = f1)
+
+ax <- list(title = xtitle,
+           titlefont = f1,
+           tickfont = f1)
+
+  
+  
+Bubble <- TavyOak %>% 
+    mutate(BatPass = jitter(rep(1, nrow(.))),
+           `Time post sunset (hours)` = round(post_set_hr, digits = 2),
+           `Recorded Activity (secs)`= round(bat_time, digits = 2),
+           `Species` = Species) %>% 
+    plot_ly(x = ~`Time post sunset (hours)`, y=~BatPass, alpha = 0.9,
+            hoverinfo = 'text',
+        text = ~paste(" Bat Species:", Common , "<br>",
+                      "Length of bat activity (secs):", bat_time)) %>% 
+    add_markers(color = ~`Species`, 
+                colors = bat_colours_sci, 
+                size = ~`Recorded Activity (secs)`, 
+                sizes = c(50, 5000)) %>%
+    layout(yaxis = ay, 
+           xaxis = ax, 
+           margin = list(l = 75, b =50), 
+           paper_bgcolor='#000000', 
+           plot_bgcolor='#191970') %>%
+    hide_legend()
+
+
+suppressWarnings(plotly_build(Bubble))
+
 
 ```
 
