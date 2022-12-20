@@ -39,36 +39,11 @@ library(sf)
 library(ggspatial)
 library(iBats)
 
-bat_colours_sci <- c(
-  "Barbastella barbastellus" = "#1f78b4",
-  "Myotis alcathoe" = "#a52a2a",
-  "Myotis bechsteinii" = "#7fff00",
-  "Myotis brandtii" = "#b2df8a",
-  "Myotis mystacinus" = "#6a3d9a",
-  "Myotis nattereri" = "#ff7f00",
-  "Myotis daubentonii" = "#a6cee3",
-  "Myotis spp." = "#bcee68",
-  "Plecotus auritus" = "#8b0000",
-  "Plecotus spp." = "#8b0000",
-  "Plecotus austriacus" = "#000000",
-  "Pipistrellus pipistrellus" = "#ffff99",
-  "Pipistrellus nathusii" = "#8a2be2",
-  "Pipistrellus pygmaeus" = "#b15928",
-  "Pipistrellus spp." = "#fdbf6f",
-  "Rhinolophus ferrumequinum" = "#e31a1c",
-  "Rhinolophus hipposideros" = "#33a02c",
-  "Nyctalus noctula" = "#cab2d6",
-  "Nyctalus leisleri" = "#fb9a99",
-  "Nyctalus spp." = "#eee8cd",
-  "Eptesicus serotinus" = "#008b8b"
-)
-
-
 spatial_data <- Lydford%>% 
   select(Species, bat_time, longitude = Longitude, latitude = Latitude)
 
-# colour values used by scale_fill_manual()
-graph_bat_colours <- iBats::bat_colours(spatial_data$Species, colour_vector = bat_colours_sci)
+# default colour values used by scale_fill_manual() - scientific names - UK bats only
+graph_bat_colours <- iBats::bat_colours_default(spatial_data$Species)
 
 spatial_data <- st_as_sf(spatial_data, coords = c("longitude", "latitude"), 
                  crs = 4326)
@@ -78,6 +53,8 @@ ggplot() +
   geom_sf(data = spatial_data, aes(fill = Species, size = bat_time), shape = 21, alpha = 0.5) +
   annotation_scale(location = "tl") +
   annotation_north_arrow(location = "bl", which_north = "true") +
+  fixed_plot_aspect(ratio = 1) +
+  coord_sf() +
   scale_fill_manual(values = graph_bat_colours) +
   scale_size_area(max_size = 12) +
   labs(size = "Bat Activity (secs)",
@@ -159,10 +136,12 @@ Trans_period <- stringr::str_c(as.character(Trans_period), " minutes")
   
 
 ggplot() +
-  annotation_map_tile(type = "osm",  zoomin = -2, alpha = 0.3) +
+  annotation_map_tile(type = "osm",  zoomin = -2, alpha = 0.5) +
   geom_sf(data = transect_tracks, size = 6, colour = "purple", alpha = 0.6) +
   annotation_scale(location = "tr") +
   annotation_north_arrow(location = "br", which_north = "true") +
+  fixed_plot_aspect(ratio = 1.5) +
+  coord_sf() +
   labs(title = "NBMP - Field Survey Transect") +
   theme(strip.background = element_rect(fill="black"),
     legend.position = "right",
@@ -179,6 +158,79 @@ ggplot() +
 ```
 
 The NBMP field survey transect shown in @fig-gpx `r glue(" took {Trans_period}; began at {Trans_start} and finished at {Trans_finish}.") `
+
+### Relative Bat Activity
+
+@fig-marytavy shows the relative species activity on a transect in Mary Tavy, Devon during June 2019.  To enhance the understanding of relative activity the species are faceted onto individual maps.
+
+
+```{r}
+#| warning: false
+#| message: false
+#| label: fig-marytavy
+#| fig-cap: "Bat Activity on the Mary Tavy Transect"
+###| fig.height: 8
+
+library(tidyverse)
+library(sf)
+library(ggspatial)
+library(iBats)
+
+###############################################################################
+# MaryTavy is data directly exported from BatExplorer and requires tidying!####
+###############################################################################
+
+#### Combine the two Species columns into one ##################################
+# Select Species column and remove (Species2nd & Species3rd)
+data1 <- MaryTavy %>%
+  select(-`Species 2nd Text`) %>% 
+  rename(Species = `Species Text`)
+
+# Select Species2nd column and remove (Species & Species3rd)
+data2 <- MaryTavy %>%
+  select(-`Species Text`) %>%
+  filter(`Species 2nd Text` != "-") %>% # Remove blank rows
+  rename(Species = `Species 2nd Text`) # Rename column
+
+# Add the datasets together into one
+MaryTavyTidying <- dplyr::bind_rows(data1, data2)
+################################################################################
+
+
+#### Calculate bat activity time and prepare to make spatial data #############
+spatial_data <- MaryTavyTidying %>% 
+  mutate(calls = `Calls [#]`,
+         duration = `Mean Call Lenght [ms]`,
+         span = `Mean Call Distance [ms]`,
+         # Calculate BatActivityTime in seconds
+         bat_time = calls * (duration + span) / 1000) %>% 
+  select(Species, bat_time, latitude = `Latitude [WGS84]`, longitude = `Longitude [WGS84]`)
+
+# default colour values used by scale_fill_manual() - scientific names - UK bats only
+graph_bat_colours <- iBats::bat_colours_default(spatial_data$Species)
+
+spatial_data <- st_as_sf(spatial_data, coords = c("longitude", "latitude"), 
+                 crs = 4326)
+
+ggplot() +
+  annotation_map_tile(type = "osm",  zoomin = -2, alpha = 0.5) +
+  geom_sf(data = spatial_data, aes(fill = Species, size = bat_time), shape = 21, alpha = 0.5) +
+  fixed_plot_aspect(ratio = 1) +
+  coord_sf() +
+  facet_wrap(~Species, ncol = 3) +
+  scale_fill_manual(values = graph_bat_colours) +
+  scale_size_area(max_size = 8) +
+  theme(legend.position = "none",
+    strip.text.x = element_text(size=7, face="italic", colour = "white"),
+    strip.background = element_rect(fill = "black"),
+    axis.title.y = element_blank(),
+    axis.title.x = element_blank(),
+    axis.text.x = element_blank(),
+    axis.text.y = element_blank(),
+    axis.ticks = element_blank())
+
+
+```
 
 
 [^3]: <https://www.batlogger.com/en/products/batlogger_m/>
