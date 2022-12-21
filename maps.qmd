@@ -32,7 +32,6 @@ OpenStreetMap[^1] is a map of the world, created by the online community and fre
 #| message: false
 #| label: fig-osm
 #| fig-cap: "Open Street Map of Bat Activity on the Lydford Transect"
-###| fig.height: 8
 
 library(tidyverse)
 library(sf)
@@ -40,7 +39,7 @@ library(ggspatial)
 library(iBats)
 
 spatial_data <- Lydford%>% 
-  select(Species, bat_time, longitude = Longitude, latitude = Latitude)
+  select(Species, longitude = Longitude, latitude = Latitude)
 
 # default colour values used by scale_fill_manual() - scientific names - UK bats only
 graph_bat_colours <- iBats::bat_colours_default(spatial_data$Species)
@@ -50,15 +49,13 @@ spatial_data <- st_as_sf(spatial_data, coords = c("longitude", "latitude"),
 
 ggplot() +
   annotation_map_tile(type = "osm",  zoomin = -2, alpha = 0.5) +
-  geom_sf(data = spatial_data, aes(fill = Species, size = bat_time), shape = 21, alpha = 0.5) +
+  geom_sf(data = spatial_data, aes(fill = Species), shape = 21, alpha = 0.5, size = 4) +
   annotation_scale(location = "tl") +
   annotation_north_arrow(location = "bl", which_north = "true") +
   fixed_plot_aspect(ratio = 1) +
   coord_sf() +
   scale_fill_manual(values = graph_bat_colours) +
   scale_size_area(max_size = 12) +
-  labs(size = "Bat Activity (secs)",
-      fill = "Species") +
   theme(legend.position = "right",
     axis.title.y = element_blank(),
     axis.title.x = element_blank(),
@@ -137,7 +134,7 @@ Trans_period <- stringr::str_c(as.character(Trans_period), " minutes")
 
 ggplot() +
   annotation_map_tile(type = "osm",  zoomin = -2, alpha = 0.5) +
-  geom_sf(data = transect_tracks, size = 6, colour = "purple", alpha = 0.6) +
+  geom_sf(data = transect_tracks, linewidth = 2, colour = "purple", alpha = 0.6) +
   annotation_scale(location = "tr") +
   annotation_north_arrow(location = "br", which_north = "true") +
   fixed_plot_aspect(ratio = 1.5) +
@@ -161,15 +158,13 @@ The NBMP field survey transect shown in @fig-gpx `r glue(" took {Trans_period}; 
 
 ### Relative Bat Activity
 
-@fig-marytavy shows the relative species activity on a transect in Mary Tavy, Devon during June 2019.  To enhance the understanding of relative activity the species are faceted onto individual maps.
-
+@fig-marytavyfull and @fig-marytavy show the relative species activity on a transect in Mary Tavy, Devon during June 2019.  The map is the `MaryTavy` data as exported from the BatExplorer sound analysis software; it is made tidy before producing @fig-marytavyfull. In @fig-marytavy the species are faceted onto individual maps; perhaps enhancing the understanding of the bat relative activity.
 
 ```{r}
 #| warning: false
 #| message: false
-#| label: fig-marytavy
-#| fig-cap: "Bat Activity on the Mary Tavy Transect"
-###| fig.height: 8
+#| label: fig-marytavyfull
+#| fig-cap: "Bat Activity on the Mary Tavy Transect as Time Present"
 
 library(tidyverse)
 library(sf)
@@ -212,17 +207,16 @@ graph_bat_colours <- iBats::bat_colours_default(spatial_data$Species)
 spatial_data <- st_as_sf(spatial_data, coords = c("longitude", "latitude"), 
                  crs = 4326)
 
-ggplot() +
-  annotation_map_tile(type = "osm",  zoomin = -2, alpha = 0.5) +
+plotmap <- ggplot() +
+  annotation_map_tile(type = "osm",  zoomin = -2, alpha = 0.7) +
   geom_sf(data = spatial_data, aes(fill = Species, size = bat_time), shape = 21, alpha = 0.5) +
   fixed_plot_aspect(ratio = 1) +
   coord_sf() +
-  facet_wrap(~Species, ncol = 3) +
   scale_fill_manual(values = graph_bat_colours) +
-  scale_size_area(max_size = 8) +
-  theme(legend.position = "none",
-    strip.text.x = element_text(size=7, face="italic", colour = "white"),
-    strip.background = element_rect(fill = "black"),
+  scale_size_area(max_size = 12) +
+  labs(size = "Bat Activity (secs)",
+      fill = "Species") +
+  theme(legend.position = "right",
     axis.title.y = element_blank(),
     axis.title.x = element_blank(),
     axis.text.x = element_blank(),
@@ -230,7 +224,80 @@ ggplot() +
     axis.ticks = element_blank())
 
 
+plotmap +
+  annotation_scale(location = "tr") +
+  annotation_north_arrow(location = "bl", which_north = "true") 
+
 ```
+
+
+```{r}
+#| warning: false
+#| message: false
+#| label: fig-marytavy
+#| fig-cap: "Faceted Bat Activity on the Mary Tavy Transect as Time Present"
+#| fig.height: 8
+
+plotmap +
+  scale_size_area(max_size = 8) +
+  facet_wrap(~Species, ncol = 3) +
+  theme(legend.position = "none",
+        strip.text.x = element_text(size=7, face="italic", colour = "white"),
+        strip.background = element_rect(fill = "black"))
+  
+
+
+
+```
+
+
+## Outline Maps 
+
+Outline maps are useful base maps; as they are not cluttered by distracting information.  Outline maps are available from the Office for National Statistics[^5]. Digital boundary products and reference maps are supplied under the Open Government Licence and should include copyright statements when the maps are reproduced or material is used[^6].
+
+[^5]: <https://geoportal.statistics.gov.uk/>
+[^6]: Licence information can be found here: <https://www.ons.gov.uk/methodology/geography/licences>
+
+@fig-marytavyloc shows the location of the MaryTavy transect on an outline map of Great Britain; the source of the map is the  Office for National Statistics licensed under the Open Government Licence v.3.0, it contains OS data© Crown copyright and database 2017.
+
+```{r}
+#| warning: false
+#| message: false
+#| label: fig-marytavyloc
+#| fig-cap: "Location of the Mary Tavy Transect June 2019"
+
+library(sf)
+library(tidyverse)
+library(iBats)
+
+
+# Make location point for Mary Tavy Transect
+MaryTavyLoc <- MaryTavy %>% 
+  summarise(lat = median(`Latitude [WGS84]`),
+            lon = median(`Longitude [WGS84]`)) %>% 
+  st_as_sf(coords = c("lon", "lat")) %>% 
+  st_set_crs(4326) %>% 
+  # Convert coord reference system to British National Grid
+  st_transform(crs = 27700)
+
+
+# Load outline map
+GB <- sf::st_read("maps/GeneralGB/CTYUA_Dec_2017_GCB_GB.shp", quiet = TRUE) 
+
+# Plot map and Location
+ggplot() +
+  geom_sf(data = GB,
+          linewidth = 0.25,
+          colour = "#fab824",
+          fill = "#FFEFD5") +
+  geom_sf(data = MaryTavyLoc,
+          shape = 23,
+          size = 3,
+          colour = "#00558e",
+          fill = "#8B0000") +
+  theme_void() 
+```
+
 
 
 [^3]: <https://www.batlogger.com/en/products/batlogger_m/>
