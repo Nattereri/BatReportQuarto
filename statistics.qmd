@@ -23,7 +23,157 @@ library(broom)
 Statistical tests are undertaken to improve ecological understanding, separating the single from the noise. It enhances the ecological description when writing reports, making the report more evidenced based and therefore more robust and reproducible by others. When the data is not clear, or there is too much data to see, good statistics brings comprehension. Then there is a tendency to perceive connections or meaningful patterns between unrelated or random things, termed apophenia; here statistical testing can demonstrate it is random or unrelated.
 
 
-## Individual Species Activity
+## Summary Statistics
+
+
+The Common Pipistrelle passes have been aggregated for every 30 minutes; @tbl-sum30 shows summary statistics for these bat passes during September and October. The statistics for September and October look similar and this is confirmed by the density plot shown in @fig-density.
+
+
+```{r}
+#| include: false
+
+# https://www.r-tutor.com/elementary-statistics/non-parametric-methods/mann-whitney-wilcoxon-test
+
+
+library(tidyverse) # Data Science packages - see https://www.tidyverse.org/
+library(ggsci)
+library(flextable)
+library(officer)
+library(gt)
+
+# Install devtools if not installed 
+# devtools is used to install the iBats package from GitHub
+if(!require(devtools)){
+  install.packages("devtools")
+}
+
+# If iBats is not installed load from Github
+if(!require(iBats)){
+  devtools::install_github("Nattereri/iBats")
+}
+library(iBats)
+
+# Add data and time information to the iBats statics bat survey data set using the iBats::date_time_info
+statics_plus <- iBats::date_time_info(statics)
+
+agg_data <- statics_plus %>%
+  filter(Species == "Pipistrellus pipistrellus") %>%
+  #filter(Description == "Static 2" | Description == "Static 3") %>% 
+  filter(Month == "Sep" | Month == "Oct") %>% 
+  mutate(DateTime15 = lubridate::round_date(DateTime, "15 minutes"),
+         DateTime30 = lubridate::round_date(DateTime, "30 minutes"))
+
+###
+```
+
+
+```{r}
+#| label: tbl-sum30
+#| tbl-cap: "Summary Statistics for Common Pipistrelle Passes"
+
+
+Table <- agg_data  %>%
+  group_by(MonthFull, DateTime30) %>% 
+  tally() %>% 
+  rename(Month = MonthFull) %>% 
+  summarise(Min = min(n, na.rm = T),
+            Q1 = quantile(n, c(0.25), na.rm = T),
+            Mean = mean(n, na.rm = T),
+            Median = median(n, na.rm = T),
+            Q3 = quantile(n, c(0.75), na.rm = T),
+            Max = max(n, na.rm = T),
+            sd = sd(n, na.rm = T),
+            Nr = n())
+Table %>% 
+flextable() %>%
+  fontsize(size = 9.5, part = "all") %>% 
+  width(j = 1, width = 1) %>%
+  width(j = 2:9, width = 0.6) %>%
+  #italic(j = 1, italic = TRUE, part = "body") %>%
+  bg(bg = "black", part = "header") %>%
+  color(color = "white", part = "header") %>% 
+  colformat_int(j = 9, big.mark = " ") %>% 
+  colformat_double(j = c(4, 8), digits = 2)
+
+```
+
+
+
+```{r}
+#| label: fig-density
+#| fig-cap: "Comon Pipistrelle Passes September and October"
+
+agg_data2 <- agg_data %>% 
+  group_by(MonthFull, DateTime30) %>%
+  tally() %>% 
+  rename(Month = MonthFull) %>% 
+  ungroup() %>% 
+  pivot_wider(names_from = "Month", values_from = "n")
+
+
+Sep <- agg_data2 %>% 
+  select(September) %>% 
+  filter(!is.na(September)) %>% 
+  mutate(Passes = as.numeric(September),
+         Month = "September")
+
+Oct <- agg_data2 %>% 
+  select(October) %>% 
+  filter(!is.na(October)) %>% 
+  mutate(Passes = as.numeric(October),
+         Month = "October")
+
+Count30 <- bind_rows(Sep, Oct)
+
+ggplot(Count30, aes(Passes, fill = Month )) +
+  geom_density(alpha = 0.5) +
+  scale_fill_nejm() +
+  labs(x = "Passes (Number / 15 minutes)") +
+  theme_bw() +
+  theme(legend.position = "bottom")
+
+```
+
+## Comparing Two Groups
+
+Using the Mann-Whitney-Wilcoxon Test, we can decide whether the population distributions, summarised in @tbl-sum30 and  @fig-density are identical.  An advantage of the Mann-Whitney-Wilcoxon Test is that it can be undertaken without assuming the data follows the normal distribution; the density plot in @fig-density shows the data is unlikely to be normal. The two data samples for September and October need to be independent; the number of passes recorded separately in September and October are distinct populations where the passes do not affect each other.
+
+It is assumed The survey effort (length of time the bat detectors where deployed and the locations are the same for both months)
+
+Without assuming the data to have normal distribution, decide at .01 significance level (p < 0.01) if the observations of Common pipistrelle bats (every 15 minutes) for September and October have identical data distribution.
+
+```{r}
+#| label: tbl-mw
+#| tbl-cap: "Summary Statistics for Common Pipistrell Passes"
+
+
+library(broom)
+
+mw <- wilcox.test(Passes ~ Month, data=Count30) 
+
+#Tidy the out put into a table
+tidy(mw) %>% 
+  gt() %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")
+      ),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  ) 
+
+```
+
+The null hypothesis Ho: is that the common pipstrelle observation data for September and October are identical populations. The alternate hypothesis H1: is that the common pipstrelle observation data of September and October are not identical populations.
+
+
+To test the hypothesis, we apply the wilcox.test function to compare the independent samples. As the p-value turns out to be `r wilcox.test(Passes ~ Month, data=Count30)$p.value`, and is not less than the .01 significance level, we do not reject the null hypothesis. At .01 significance level (p < 0.01), we conclude that the common pipstrelle observation data for September and October are identical populations.
+
+
+
+## Comparing More Than Two Groups
 
 ### An Obvious Difference 
 
