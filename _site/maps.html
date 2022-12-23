@@ -203,6 +203,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#relative-bat-activity" id="toc-relative-bat-activity" class="nav-link" data-scroll-target="#relative-bat-activity"><span class="toc-section-number">1.2</span>  Relative Bat Activity</a></li>
   </ul></li>
   <li><a href="#outline-maps" id="toc-outline-maps" class="nav-link" data-scroll-target="#outline-maps"><span class="toc-section-number">2</span>  Outline Maps</a></li>
+  <li><a href="#three-dimensional-maps" id="toc-three-dimensional-maps" class="nav-link" data-scroll-target="#three-dimensional-maps"><span class="toc-section-number">3</span>  Three Dimensional Maps</a>
+  <ul class="collapse">
+  <li><a href="#ggplot" id="toc-ggplot" class="nav-link" data-scroll-target="#ggplot"><span class="toc-section-number">3.1</span>  <code>ggplot</code></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -506,8 +510,151 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
+</section>
+<section id="three-dimensional-maps" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="three-dimensional-maps"><span class="header-section-number">3</span> Three Dimensional Maps</h2>
+<p>Together with latitude and longitude it’s often useful to plot a third dimension such as elevation (other variables could be rainfall, temperature). If elevation data is not immediately to hand, the <code>elevatr</code> R package<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> provides access to elevation data from various sources. The code below has a bounding box with co-ordinates of the minimum and maximum latitude and longitude around West Devon, this passed to a tibble (data.frame).</p>
+<div class="cell">
+<details open="">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(elevatr)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>elev_data <span class="ot">&lt;-</span> <span class="fu">get_elev_raster</span>(</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Bounding box</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">locations =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">4.35</span>, <span class="sc">-</span><span class="fl">3.95</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="fl">50.49</span>, <span class="fl">50.665</span>)),</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">z =</span> <span class="dv">10</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">prj =</span> <span class="st">"EPSG:4326"</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">clip =</span> <span class="st">"locations"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>The Base R function <code>plot()</code>can plot raster objects as shown in <a href="#fig-baseR">Figure&nbsp;6 (a)</a>. The <code>tanaka</code> R package applies a shaded contour lines method which can improve the portrayal of topography on a map. The <code>tanaka</code> function requires the elevation data into a <em>SpatRaster</em> class of object; this can be done using the <code>rast()</code> function from <code>terra</code> package. The Tanaka contour map is shown in <a href="#fig-tanaka">Figure&nbsp;6 (b)</a>.</p>
+<p><strong>Base R</strong> <a href="#fig-baseR">Figure&nbsp;6 (a)</a></p>
+<div class="cell">
+<details open="">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(elev_data, <span class="at">axes =</span> <span class="cn">FALSE</span>, <span class="at">horizontal =</span> <span class="cn">TRUE</span>, <span class="at">legend=</span><span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><strong><code>tanaka</code> Package</strong> <a href="#fig-tanaka">Figure&nbsp;6 (b)</a></p>
+<div class="cell">
+<details open="">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#  With the terra package make a raster file</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(terra)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>elev_raster <span class="ot">&lt;-</span> <span class="fu">rast</span>(elev_data)</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tanaka)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">tanaka</span>(elev_raster,  <span class="at">legend.pos =</span> <span class="st">"n"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div id="fig-elevation" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-baseR" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Images/baseR.png" class="img-fluid figure-img" data-ref-parent="fig-elevation"></p>
+<p></p><figcaption class="figure-caption">(a) Base R</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-tanaka" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Images/tanaka.png" class="img-fluid figure-img" data-ref-parent="fig-elevation"></p>
+<p></p><figcaption class="figure-caption">(b) tanaka</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;6: West Devon Topography</figcaption><p></p>
+</figure>
+</div>
+<section id="ggplot" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="ggplot"><span class="header-section-number">3.1</span> <code>ggplot</code></h3>
+<p>Tanaka contours can be plotted using <code>ggplot2</code>, through the <code>metR</code> package and the function <code>geom_contour_tanaka()</code>. This gives more flexiabilty in output and easily allows the plotting of additional information. <a href="#fig-metR">Figure&nbsp;7</a> shows the topographical location of the West Devon example data in the <code>iBats</code> package.</p>
+<div class="cell">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(elevatr)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(iBats)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(metR)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggrepel)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(raster)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>elev_data <span class="ot">&lt;-</span> <span class="fu">get_elev_raster</span>(</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">locations =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">4.35</span>, <span class="sc">-</span><span class="fl">3.95</span>), <span class="at">y =</span> <span class="fu">c</span>(<span class="fl">50.49</span>, <span class="fl">50.665</span>)),</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">z =</span> <span class="dv">10</span>,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">prj =</span> <span class="st">"EPSG:4326"</span>,</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">clip =</span> <span class="st">"locations"</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert raster to data frame</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>gg_data <span class="ot">&lt;-</span> raster<span class="sc">::</span><span class="fu">as.data.frame</span>(elev_data, <span class="at">xy =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">elev =</span> <span class="fu">names</span>(elev_data), <span class="at">lat =</span> y, <span class="at">lon =</span> x)</span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Obtain central location of each example dataset</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>Loc_TavyOak <span class="ot">&lt;-</span> TavyOak <span class="sc">%&gt;%</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">lat =</span> <span class="fu">median</span>(Latitude, <span class="at">na.rm =</span> T),</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">lon =</span> <span class="fu">median</span>(Longitude, <span class="at">na.rm =</span> T)</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">DataSet =</span> <span class="st">"TavyOak"</span>)</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>Loc_MaryTavy <span class="ot">&lt;-</span> MaryTavy <span class="sc">%&gt;%</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">lat =</span> <span class="fu">median</span>(<span class="st">`</span><span class="at">Latitude [WGS84]</span><span class="st">`</span>, <span class="at">na.rm =</span> T),</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">lon =</span> <span class="fu">median</span>(<span class="st">`</span><span class="at">Longitude [WGS84]</span><span class="st">`</span>, <span class="at">na.rm =</span> T)</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">DataSet =</span> <span class="st">"MaryTavy"</span>)</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a>Loc_Lydford <span class="ot">&lt;-</span> Lydford <span class="sc">%&gt;%</span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">lat =</span> <span class="fu">median</span>(Latitude, <span class="at">na.rm =</span> T),</span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">lon =</span> <span class="fu">median</span>(Longitude, <span class="at">na.rm =</span> T)</span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">DataSet =</span> <span class="st">"Lydford"</span>)</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>Location_datasets <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(Loc_TavyOak, Loc_MaryTavy, Loc_Lydford)</span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(gg_data, <span class="fu">aes</span>(<span class="at">x =</span> lon, <span class="at">y =</span> lat)) <span class="sc">+</span></span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_contour_fill</span>(<span class="fu">aes</span>(<span class="at">z =</span> elev, <span class="at">fill =</span> <span class="fu">after_stat</span>(level))) <span class="sc">+</span></span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_contour_tanaka</span>(<span class="fu">aes</span>(<span class="at">z =</span> elev)) <span class="sc">+</span></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_discretised</span>(<span class="at">low =</span> <span class="st">"#FBDEE1"</span>, <span class="at">high =</span> <span class="st">"#1D0809"</span>) <span class="sc">+</span></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(</span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> Location_datasets,</span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>    <span class="fu">aes</span>(<span class="at">x =</span> lon, <span class="at">y =</span> lat),</span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">shape =</span> <span class="dv">25</span>,</span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"darkred"</span>,</span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">"gold"</span>,</span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">6</span></span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_label_repel</span>(</span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> Location_datasets, <span class="fu">aes</span>(<span class="at">x =</span> lon, <span class="at">y =</span> lat, <span class="at">label =</span> DataSet), <span class="at">segment.size =</span> <span class="fl">0.2</span>,</span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">segment.color =</span> <span class="st">"grey50"</span>,</span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">direction =</span> <span class="st">"both"</span>,</span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">hjust =</span> <span class="dv">0</span>,</span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">4</span>,</span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span> <span class="fl">0.9</span></span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">fill =</span> <span class="st">"Elevation</span><span class="sc">\n</span><span class="st">(meters)"</span>) <span class="sc">+</span></span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_longitude</span>() <span class="sc">+</span></span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_latitude</span>() <span class="sc">+</span></span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_void</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-metR" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="maps_files/figure-html/fig-metR-1.png" class="img-fluid figure-img" width="672"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;7: Topographical Location of iBats Example Data in West Devon</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 
 
@@ -520,6 +667,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li id="fn4"><p><a href="http://www.bats.org.uk/pages/nbmp.html" class="uri">http://www.bats.org.uk/pages/nbmp.html</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p><a href="https://geoportal.statistics.gov.uk/" class="uri">https://geoportal.statistics.gov.uk/</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn6"><p>Licence information can be found here: <a href="https://www.ons.gov.uk/methodology/geography/licences" class="uri">https://www.ons.gov.uk/methodology/geography/licences</a><a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p><a href="https://cran.r-project.org/web/packages/elevatr/vignettes/introduction_to_elevatr.html" class="uri">https://cran.r-project.org/web/packages/elevatr/vignettes/introduction_to_elevatr.html</a><a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -302,7 +302,168 @@ ggplot() +
   theme_void() 
 ```
 
+## Three Dimensional Maps 
 
+
+Together with latitude and longitude it’s often useful to plot a third dimension such as elevation (other variables could be rainfall, temperature).  If elevation data is not immediately to hand, the `elevatr` R package[^7] provides access to elevation data from various sources. The code below has a bounding box with co-ordinates of the minimum and maximum latitude and longitude around West Devon, this passed to a tibble (data.frame).
+
+[^7]: <https://cran.r-project.org/web/packages/elevatr/vignettes/introduction_to_elevatr.html>
+
+```{r}
+#| warning: false
+#| message: false
+#| code-fold: show
+
+library(elevatr)
+
+elev_data <- get_elev_raster(
+  # Bounding box
+  locations = data.frame(x = c(-4.35, -3.95), y = c(50.49, 50.665)),
+  z = 10,
+  prj = "EPSG:4326",
+  clip = "locations")
+
+
+
+```
+
+```{r}
+#| include: false
+#| eval: false
+# library(terra)
+# elev_raster <- rast(elev_data)
+# 
+# png("Images/baseR.png", width = 4, height = 3, units = "in", res = 300) 
+# plot(elev_raster, axes = FALSE, horizontal = TRUE, legend=FALSE)
+```
+
+```{r}
+#| include: false
+#| eval: false
+# library(tanaka)
+# png("Images/tanaka.png", width = 4, height = 3, units = "in", res = 300) 
+# tanaka(elev_raster, legend.pos = "n")
+
+
+```
+
+
+The Base R function `plot()`can plot raster objects as shown in @fig-baseR. The `tanaka` R package applies a shaded contour lines method which can improve the portrayal of topography on a map. The `tanaka` function requires the elevation data into a _SpatRaster_ class of object; this can be done using the `rast()` function from `terra` package. The Tanaka contour map is shown in @fig-tanaka.
+
+__Base R__ @fig-baseR
+
+```{r}
+#| eval: false
+#| code-fold: show
+
+plot(elev_data, axes = FALSE, horizontal = TRUE, legend=FALSE)
+
+```
+
+__`tanaka` Package__ @fig-tanaka
+
+```{r}
+#| eval: false
+#| code-fold: show
+
+#  With the terra package make a raster file
+library(terra)
+elev_raster <- rast(elev_data)
+
+library(tanaka)
+tanaka(elev_raster,  legend.pos = "n")
+
+```
+
+
+::: {#fig-elevation layout-ncol=2}
+
+![Base R](Images/baseR.png){#fig-baseR}
+
+![tanaka](Images/tanaka.png){#fig-tanaka}
+
+West Devon Topography
+:::
+
+### `ggplot`
+
+Tanaka contours can be plotted using `ggplot2`, through the `metR` package and the function `geom_contour_tanaka()`. This gives more flexiabilty in output and easily allows the plotting of additional information. @fig-metR shows the topographical location of the West Devon example data in the `iBats` package. 
+
+
+```{r}
+#| label: fig-metR
+#| fig-cap: "Topographical Location of iBats Example Data in West Devon"
+#| warning: false
+
+
+library(tidyverse)
+library(elevatr)
+library(iBats)
+library(metR)
+library(ggrepel)
+library(raster)
+
+elev_data <- get_elev_raster(
+  locations = data.frame(x = c(-4.35, -3.95), y = c(50.49, 50.665)),
+  z = 10,
+  prj = "EPSG:4326",
+  clip = "locations"
+)
+
+# Convert raster to data frame
+gg_data <- raster::as.data.frame(elev_data, xy = TRUE) %>%
+  rename(elev = names(elev_data), lat = y, lon = x)
+
+# Obtain central location of each example dataset
+Loc_TavyOak <- TavyOak %>%
+  summarise(
+    lat = median(Latitude, na.rm = T),
+    lon = median(Longitude, na.rm = T)
+  ) %>%
+  mutate(DataSet = "TavyOak")
+
+Loc_MaryTavy <- MaryTavy %>%
+  summarise(
+    lat = median(`Latitude [WGS84]`, na.rm = T),
+    lon = median(`Longitude [WGS84]`, na.rm = T)
+  ) %>%
+  mutate(DataSet = "MaryTavy")
+
+Loc_Lydford <- Lydford %>%
+  summarise(
+    lat = median(Latitude, na.rm = T),
+    lon = median(Longitude, na.rm = T)
+  ) %>%
+  mutate(DataSet = "Lydford")
+
+Location_datasets <- bind_rows(Loc_TavyOak, Loc_MaryTavy, Loc_Lydford)
+
+ggplot(gg_data, aes(x = lon, y = lat)) +
+  geom_contour_fill(aes(z = elev, fill = after_stat(level))) +
+  geom_contour_tanaka(aes(z = elev)) +
+  scale_fill_discretised(low = "#FBDEE1", high = "#1D0809") +
+  geom_point(
+    data = Location_datasets,
+    aes(x = lon, y = lat),
+    shape = 25,
+    fill = "darkred",
+    colour = "gold",
+    size = 6
+  ) +
+  geom_label_repel(
+    data = Location_datasets, aes(x = lon, y = lat, label = DataSet), segment.size = 0.2,
+    segment.color = "grey50",
+    direction = "both",
+    hjust = 0,
+    size = 4,
+    alpha = 0.9
+  ) +
+  labs(fill = "Elevation\n(meters)") +
+  scale_x_longitude() +
+  scale_y_latitude() +
+  theme_void()
+
+```
 
 [^3]: <https://www.batlogger.com/en/products/batlogger_m/>
 [^4]: <http://www.bats.org.uk/pages/nbmp.html>
