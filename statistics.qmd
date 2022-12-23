@@ -148,7 +148,9 @@ Using the Mann-Whitney-Wilcoxon Test, we can decide whether the population distr
 
 It is assumed The survey effort (length of time the bat detectors where deployed and the locations are the same for both months)
 
-Without assuming the data to have normal distribution, decide at .01 significance level (p < 0.01) if the observations of Common pipistrelle bats (every 30 minutes) for September and October have identical data distribution.
+Without assuming the data to have normal distribution, decide at .01 significance level (p < 0.01)[^3] if the observations of Common pipistrelle bats (every 30 minutes) for September and October have _identical_ data distribution.
+
+[^3]: The significance level is always chosen before the test is undertaken.
 
 * The null hypothesis H~0~: is that the common pipistrelle observation data for September and October are identical populations.   
 * The alternate hypothesis H~1~: is that the common pipistrelle observation data of September and October are not identical populations.

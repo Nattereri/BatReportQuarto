@@ -375,8 +375,7 @@ tanaka(elev_raster,  legend.pos = "n")
 
 ```
 
-
-::: {#fig-elevation layout-ncol=2}
+::: {#fig-elevation layout="[[50,50]]"}
 
 ![Base R](Images/baseR.png){#fig-baseR}
 
