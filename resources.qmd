@@ -68,29 +68,68 @@ There are many approaches for doing `r glue("{ds_txt}")` this section shows the 
 
 A prime resource for learning `r glue("{ds_txt}")` with R are the the online books[^1], a comprehensive guide to these books and other R-resources is the _Big Book of R_^[<https://www.bigbookofr.com/>]  by Oscar Baruffa.  This page references the online books, packages, websites and other resources with a focus on `r glue("{ds_txt}")`:
 
-* @sec-Rpackages details the R packages from the general to the specific that help workflow and enhance the data analysis.
-
 
 [^1]: Nearly all the online reference books on R are created within the R environment; most commonly with RMarkdown or Quarto.
 
-## R Packages {#sec-Rpackages}
-
-### General 
-
-The _tidyverse_^[<https://www.tidyverse.org/>] is a collection of packages with all the essential tools for data science [@R-tidyverse].
 
 
-The visualisation and analysis has been undertaken in R [@R-base] using `r R.version.string`; R is an open-source statistical programming language.
+## General 
 
-This document has been produced dynamically using `knitr` [@R-knitr] and QUARTO, integrating the data, analysis and reporting. The analysis has undertaken a tidyverse approach [@R-tidyverse].
+_R for Data Science_^[<http://r4ds.had.co.nz/index.html>] (R4DS) is an excellent overview of data science with R; it introduces the _tidyverse_^[<https://www.tidyverse.org/>] a collection of packages providing essential data science tools [@R-tidyverse]; many of these individual packages are referenced below. The tidyverse packages have been widely adopted by R Data Scientists;  all packages share an underlying design philosophy, grammar, and data structures. 
+
+There are many free learning resources online; a couple of well structured courses are:
+
+* [R for the Rest of US](https://rfortherestofus.com/courses/getting-started/)
+* [RStudio](https://education.rstudio.com/)
+
+
+## Tidy Data 
+
+Getting data into R from *csv* and *Excel* files can be done with [`readr`](https://readr.tidyverse.org/) [@R-readr] and [`readxl`](https://readxl.tidyverse.org/) [@R-readxl] packages respectively. See also [Data import](https://r4ds.had.co.nz/data-import.html) in R4DS. 
+
+Data wrangling is made easy with functions from the [`dplyr`](https://dplyr.tidyverse.org/) [@R-dplyr] and [`tidyr`](https://tidyr.tidyverse.org/) packages. See also [Tidy Data](https://r4ds.had.co.nz/tidy-data.html) and [Data transformation](https://r4ds.had.co.nz/transform.html) in R4DS. 
+
+The manipulation of text was through the [`stringr`](https://stringr.tidyverse.org/) [@R-stringr] package. See also [Strings](https://r4ds.had.co.nz/strings.html) in R4DS.
+
+## Meta Data
+
+The computation with dates and times can be accomplished with [`lubridate`](https://lubridate.tidyverse.org/) [@R-lubridate] package. See also [Dates and times](https://r4ds.had.co.nz/dates-and-times.html) in R4DS.
+
+
+Suntimes can be obtained with the `suncalc` [@R-suncalc] package.
+
+## Aggregation
+
+Tables have been produced with `gt` [@R-gt] and the `flextable` [@R-flextable] packages. 
+
+The `broman` [@R-broman] package provided some useful R functions.
+
+
+## Visualisation
 
 The graphics have been produced using the R package `ggplot2` [@R-ggplot2]. The `scales` [@R-scales] package improves the clarity of scales on `ggplot` graphics.
 
-The wrangling of data was undertaken with `dplyr` [@R-dplyr] and `tidyr` packages. The data in *csv* and *Excel* files has been imported with `readr` [@R-readr] and `readxl` [@R-readxl] packages respectivily. The computation with dates and times has been accomplished with `lubridate` [@R-lubridate] package. Suntimes have been obtained with the `suncalc` [@R-suncalc] package.
 
-The manipulation of text was through the `stringr` [@R-stringr] package. Summary statistics have been produced with the `mosaic` [@R-mosaic] package.
+## Maps
 
-Tables have been produced with `knitr` [@R-knitr] with `kableExtra` [@R-kableExtra], `gt` [@R-knitr] and the `flextable` [@R-flextable] packages. The `broman` [@R-broman] package provided some useful R functions.
+Geocomputation with R^[<https://geocompr.robinlovelace.net/>] by Robin Lovelace, Jakub Nowosad and Jannes Muenchow -  It teaches a range of spatial skills, including: reading, writing and manipulating geographic data; making static and interactive maps; applying geocomputation to solve real-world problems; and modelling geographic phenomena.   
+
+## Statistics
+
+Summary statistics have been produced with the `mosaic` [@R-mosaic] package.
+
+## Reporting
+
+
+## Interactive
+
+
+This document has been produced dynamically using `knitr` [@R-knitr] and QUARTO, integrating the data, analysis and reporting. The analysis has undertaken a tidyverse approach [@R-tidyverse].
+
+
+
+ 
+
 
 
 

@@ -157,10 +157,15 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#sec-Rpackages" id="toc-sec-Rpackages" class="nav-link active" data-scroll-target="#sec-Rpackages"><span class="toc-section-number">1</span>  R Packages</a>
-  <ul class="collapse">
-  <li><a href="#general" id="toc-general" class="nav-link" data-scroll-target="#general"><span class="toc-section-number">1.1</span>  General</a></li>
-  </ul></li>
+  <li><a href="#general" id="toc-general" class="nav-link active" data-scroll-target="#general"><span class="toc-section-number">1</span>  General</a></li>
+  <li><a href="#tidy-data" id="toc-tidy-data" class="nav-link" data-scroll-target="#tidy-data"><span class="toc-section-number">2</span>  Tidy Data</a></li>
+  <li><a href="#meta-data" id="toc-meta-data" class="nav-link" data-scroll-target="#meta-data"><span class="toc-section-number">3</span>  Meta Data</a></li>
+  <li><a href="#aggregation" id="toc-aggregation" class="nav-link" data-scroll-target="#aggregation"><span class="toc-section-number">4</span>  Aggregation</a></li>
+  <li><a href="#visualisation" id="toc-visualisation" class="nav-link" data-scroll-target="#visualisation"><span class="toc-section-number">5</span>  Visualisation</a></li>
+  <li><a href="#maps" id="toc-maps" class="nav-link" data-scroll-target="#maps"><span class="toc-section-number">6</span>  Maps</a></li>
+  <li><a href="#statistics" id="toc-statistics" class="nav-link" data-scroll-target="#statistics"><span class="toc-section-number">7</span>  Statistics</a></li>
+  <li><a href="#reporting" id="toc-reporting" class="nav-link" data-scroll-target="#reporting"><span class="toc-section-number">8</span>  Reporting</a></li>
+  <li><a href="#interactive" id="toc-interactive" class="nav-link" data-scroll-target="#interactive"><span class="toc-section-number">9</span>  Interactive</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -188,23 +193,51 @@ div.csl-indent {
 <div class="cell">
 
 </div>
-<p>There are many approaches for doing Bat Data Science this section shows the resources that were used to make these pages, providing the background to the example code and revealing how it can be extended or adapted to generate enhanced reports on bat surveys. All of this can be undertaken with the open-source R statistical programming language <span class="citation" data-cites="Rcore22">(<a href="#ref-Rcore22" role="doc-biblioref">R Core Team 2022a</a>)</span> through RStudio <span class="citation" data-cites="RStudio22">(<a href="#ref-RStudio22" role="doc-biblioref">Posit team 2022</a>)</span>.</p>
+<p>There are many approaches for doing Bat Data Science this section shows the resources that were used to make these pages, providing the background to the example code and revealing how it can be extended or adapted to generate enhanced reports on bat surveys. All of this can be undertaken with the open-source R statistical programming language <span class="citation" data-cites="Rcore22">(<a href="#ref-Rcore22" role="doc-biblioref">R Core Team 2022</a>)</span> through RStudio <span class="citation" data-cites="RStudio22">(<a href="#ref-RStudio22" role="doc-biblioref">Posit team 2022</a>)</span>.</p>
 <p>A prime resource for learning Bat Data Science with R are the the online books<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, a comprehensive guide to these books and other R-resources is the <em>Big Book of R</em><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> by Oscar Baruffa. This page references the online books, packages, websites and other resources with a focus on Bat Data Science:</p>
+<section id="general" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="general"><span class="header-section-number">1</span> General</h2>
+<p><em>R for Data Science</em><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> (R4DS) is an excellent overview of data science with R; it introduces the <em>tidyverse</em><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> a collection of packages providing essential data science tools <span class="citation" data-cites="R-tidyverse">(<a href="#ref-R-tidyverse" role="doc-biblioref">Wickham 2022b</a>)</span>; many of these individual packages are referenced below. The tidyverse packages have been widely adopted by R Data Scientists; all packages share an underlying design philosophy, grammar, and data structures.</p>
+<p>There are many free learning resources online; a couple of well structured courses are:</p>
 <ul>
-<li><a href="#sec-Rpackages">Section&nbsp;1</a> details the R packages from the general to the specific that help workflow and enhance the data analysis.</li>
+<li><a href="https://rfortherestofus.com/courses/getting-started/">R for the Rest of US</a></li>
+<li><a href="https://education.rstudio.com/">RStudio</a></li>
 </ul>
-<section id="sec-Rpackages" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="sec-Rpackages"><span class="header-section-number">1</span> R Packages</h2>
-<section id="general" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="general"><span class="header-section-number">1.1</span> General</h3>
-<p>The <em>tidyverse</em><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> is a collection of packages with all the essential tools for data science <span class="citation" data-cites="R-tidyverse">(<a href="#ref-R-tidyverse" role="doc-biblioref">Wickham 2022b</a>)</span>.</p>
-<p>The visualisation and analysis has been undertaken in R <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref">R Core Team 2022b</a>)</span> using R version 4.2.2 (2022-10-31 ucrt); R is an open-source statistical programming language.</p>
-<p>This document has been produced dynamically using <code>knitr</code> <span class="citation" data-cites="R-knitr">(<a href="#ref-R-knitr" role="doc-biblioref">Xie 2022</a>)</span> and QUARTO, integrating the data, analysis and reporting. The analysis has undertaken a tidyverse approach <span class="citation" data-cites="R-tidyverse">(<a href="#ref-R-tidyverse" role="doc-biblioref">Wickham 2022b</a>)</span>.</p>
-<p>The graphics have been produced using the R package <code>ggplot2</code> <span class="citation" data-cites="R-ggplot2">(<a href="#ref-R-ggplot2" role="doc-biblioref">Wickham, Chang, et al. 2022</a>)</span>. The <code>scales</code> <span class="citation" data-cites="R-scales">(<a href="#ref-R-scales" role="doc-biblioref">Wickham and Seidel 2022</a>)</span> package improves the clarity of scales on <code>ggplot</code> graphics.</p>
-<p>The wrangling of data was undertaken with <code>dplyr</code> <span class="citation" data-cites="R-dplyr">(<a href="#ref-R-dplyr" role="doc-biblioref">Wickham, François, et al. 2022</a>)</span> and <code>tidyr</code> packages. The data in <em>csv</em> and <em>Excel</em> files has been imported with <code>readr</code> <span class="citation" data-cites="R-readr">(<a href="#ref-R-readr" role="doc-biblioref">Wickham, Hester, and Bryan 2022</a>)</span> and <code>readxl</code> <span class="citation" data-cites="R-readxl">(<a href="#ref-R-readxl" role="doc-biblioref">Wickham and Bryan 2022</a>)</span> packages respectivily. The computation with dates and times has been accomplished with <code>lubridate</code> <span class="citation" data-cites="R-lubridate">(<a href="#ref-R-lubridate" role="doc-biblioref">Spinu, Grolemund, and Wickham 2022</a>)</span> package. Suntimes have been obtained with the <code>suncalc</code> <span class="citation" data-cites="R-suncalc">(<a href="#ref-R-suncalc" role="doc-biblioref">Thieurmel and Elmarhraoui 2022</a>)</span> package.</p>
-<p>The manipulation of text was through the <code>stringr</code> <span class="citation" data-cites="R-stringr">(<a href="#ref-R-stringr" role="doc-biblioref">Wickham 2022a</a>)</span> package. Summary statistics have been produced with the <code>mosaic</code> <span class="citation" data-cites="R-mosaic">(<a href="#ref-R-mosaic" role="doc-biblioref">Pruim, Kaplan, and Horton 2022</a>)</span> package.</p>
-<p>Tables have been produced with <code>knitr</code> <span class="citation" data-cites="R-knitr">(<a href="#ref-R-knitr" role="doc-biblioref">Xie 2022</a>)</span> with <code>kableExtra</code> <span class="citation" data-cites="R-kableExtra">(<a href="#ref-R-kableExtra" role="doc-biblioref">Zhu 2021</a>)</span>, <code>gt</code> <span class="citation" data-cites="R-knitr">(<a href="#ref-R-knitr" role="doc-biblioref">Xie 2022</a>)</span> and the <code>flextable</code> <span class="citation" data-cites="R-flextable">(<a href="#ref-R-flextable" role="doc-biblioref">Gohel and Skintzos 2022</a>)</span> packages. The <code>broman</code> <span class="citation" data-cites="R-broman">(<a href="#ref-R-broman" role="doc-biblioref">Broman 2022</a>)</span> package provided some useful R functions.</p>
 </section>
+<section id="tidy-data" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="tidy-data"><span class="header-section-number">2</span> Tidy Data</h2>
+<p>Getting data into R from <em>csv</em> and <em>Excel</em> files can be done with <a href="https://readr.tidyverse.org/"><code>readr</code></a> <span class="citation" data-cites="R-readr">(<a href="#ref-R-readr" role="doc-biblioref">Wickham, Hester, and Bryan 2022</a>)</span> and <a href="https://readxl.tidyverse.org/"><code>readxl</code></a> <span class="citation" data-cites="R-readxl">(<a href="#ref-R-readxl" role="doc-biblioref">Wickham and Bryan 2022</a>)</span> packages respectively. See also <a href="https://r4ds.had.co.nz/data-import.html">Data import</a> in R4DS.</p>
+<p>Data wrangling is made easy with functions from the <a href="https://dplyr.tidyverse.org/"><code>dplyr</code></a> <span class="citation" data-cites="R-dplyr">(<a href="#ref-R-dplyr" role="doc-biblioref">Wickham, François, et al. 2022</a>)</span> and <a href="https://tidyr.tidyverse.org/"><code>tidyr</code></a> packages. See also <a href="https://r4ds.had.co.nz/tidy-data.html">Tidy Data</a> and <a href="https://r4ds.had.co.nz/transform.html">Data transformation</a> in R4DS.</p>
+<p>The manipulation of text was through the <a href="https://stringr.tidyverse.org/"><code>stringr</code></a> <span class="citation" data-cites="R-stringr">(<a href="#ref-R-stringr" role="doc-biblioref">Wickham 2022a</a>)</span> package. See also <a href="https://r4ds.had.co.nz/strings.html">Strings</a> in R4DS.</p>
+</section>
+<section id="meta-data" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="meta-data"><span class="header-section-number">3</span> Meta Data</h2>
+<p>The computation with dates and times can be accomplished with <a href="https://lubridate.tidyverse.org/"><code>lubridate</code></a> <span class="citation" data-cites="R-lubridate">(<a href="#ref-R-lubridate" role="doc-biblioref">Spinu, Grolemund, and Wickham 2022</a>)</span> package. See also <a href="https://r4ds.had.co.nz/dates-and-times.html">Dates and times</a> in R4DS.</p>
+<p>Suntimes can be obtained with the <code>suncalc</code> <span class="citation" data-cites="R-suncalc">(<a href="#ref-R-suncalc" role="doc-biblioref">Thieurmel and Elmarhraoui 2022</a>)</span> package.</p>
+</section>
+<section id="aggregation" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="aggregation"><span class="header-section-number">4</span> Aggregation</h2>
+<p>Tables have been produced with <code>gt</code> <span class="citation" data-cites="R-gt">(<a href="#ref-R-gt" role="doc-biblioref">Iannone et al. 2022</a>)</span> and the <code>flextable</code> <span class="citation" data-cites="R-flextable">(<a href="#ref-R-flextable" role="doc-biblioref">Gohel and Skintzos 2022</a>)</span> packages.</p>
+<p>The <code>broman</code> <span class="citation" data-cites="R-broman">(<a href="#ref-R-broman" role="doc-biblioref">Broman 2022</a>)</span> package provided some useful R functions.</p>
+</section>
+<section id="visualisation" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="visualisation"><span class="header-section-number">5</span> Visualisation</h2>
+<p>The graphics have been produced using the R package <code>ggplot2</code> <span class="citation" data-cites="R-ggplot2">(<a href="#ref-R-ggplot2" role="doc-biblioref">Wickham, Chang, et al. 2022</a>)</span>. The <code>scales</code> <span class="citation" data-cites="R-scales">(<a href="#ref-R-scales" role="doc-biblioref">Wickham and Seidel 2022</a>)</span> package improves the clarity of scales on <code>ggplot</code> graphics.</p>
+</section>
+<section id="maps" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="maps"><span class="header-section-number">6</span> Maps</h2>
+<p>Geocomputation with R<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> by Robin Lovelace, Jakub Nowosad and Jannes Muenchow - It teaches a range of spatial skills, including: reading, writing and manipulating geographic data; making static and interactive maps; applying geocomputation to solve real-world problems; and modelling geographic phenomena.</p>
+</section>
+<section id="statistics" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="statistics"><span class="header-section-number">7</span> Statistics</h2>
+<p>Summary statistics have been produced with the <code>mosaic</code> <span class="citation" data-cites="R-mosaic">(<a href="#ref-R-mosaic" role="doc-biblioref">Pruim, Kaplan, and Horton 2022</a>)</span> package.</p>
+</section>
+<section id="reporting" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="reporting"><span class="header-section-number">8</span> Reporting</h2>
+</section>
+<section id="interactive" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="interactive"><span class="header-section-number">9</span> Interactive</h2>
+<p>This document has been produced dynamically using <code>knitr</code> <span class="citation" data-cites="R-knitr">(<a href="#ref-R-knitr" role="doc-biblioref">Xie 2022</a>)</span> and QUARTO, integrating the data, analysis and reporting. The analysis has undertaken a tidyverse approach <span class="citation" data-cites="R-tidyverse">(<a href="#ref-R-tidyverse" role="doc-biblioref">Wickham 2022b</a>)</span>.</p>
 </section>
 <section id="references" class="level2 unnumbered">
 
@@ -221,17 +254,17 @@ Broman, Karl W. 2022. <em>Broman: Karl Broman’s r Code</em>. <a href="https://
 <div id="ref-R-flextable" class="csl-entry" role="doc-biblioentry">
 Gohel, David, and Panagiotis Skintzos. 2022. <em>Flextable: Functions for Tabular Reporting</em>. <a href="https://CRAN.R-project.org/package=flextable">https://CRAN.R-project.org/package=flextable</a>.
 </div>
+<div id="ref-R-gt" class="csl-entry" role="doc-biblioentry">
+Iannone, Richard, Joe Cheng, Barret Schloerke, Ellis Hughes, and JooYoung Seo. 2022. <em>Gt: Easily Create Presentation-Ready Display Tables</em>. <a href="https://CRAN.R-project.org/package=gt">https://CRAN.R-project.org/package=gt</a>.
+</div>
 <div id="ref-RStudio22" class="csl-entry" role="doc-biblioentry">
 Posit team. 2022. <em>RStudio: Integrated Development Environment for r</em>. Boston, MA: Posit Software, PBC. <a href="http://www.posit.co/">http://www.posit.co/</a>.
 </div>
 <div id="ref-R-mosaic" class="csl-entry" role="doc-biblioentry">
 Pruim, Randall, Daniel T. Kaplan, and Nicholas J. Horton. 2022. <em>Mosaic: Project MOSAIC Statistics and Mathematics Teaching Utilities</em>. <a href="https://CRAN.R-project.org/package=mosaic">https://CRAN.R-project.org/package=mosaic</a>.
 </div>
-<div id="ref-R-base" class="csl-entry" role="doc-biblioentry">
-R Core Team. 2022b. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
-</div>
 <div id="ref-Rcore22" class="csl-entry" role="doc-biblioentry">
-———. 2022a. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
 </div>
 <div id="ref-R-lubridate" class="csl-entry" role="doc-biblioentry">
 Spinu, Vitalie, Garrett Grolemund, and Hadley Wickham. 2022. <em>Lubridate: Make Dealing with Dates a Little Easier</em>. <a href="https://CRAN.R-project.org/package=lubridate">https://CRAN.R-project.org/package=lubridate</a>.
@@ -263,15 +296,14 @@ Wickham, Hadley, and Dana Seidel. 2022. <em>Scales: Scale Functions for Visualiz
 <div id="ref-R-knitr" class="csl-entry" role="doc-biblioentry">
 Xie, Yihui. 2022. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
 </div>
-<div id="ref-R-kableExtra" class="csl-entry" role="doc-biblioentry">
-Zhu, Hao. 2021. <em>kableExtra: Construct Complex Table with Kable and Pipe Syntax</em>. <a href="https://CRAN.R-project.org/package=kableExtra">https://CRAN.R-project.org/package=kableExtra</a>.
-</div>
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
 <li id="fn1"><p>Nearly all the online reference books on R are created within the R environment; most commonly with RMarkdown or Quarto.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p><a href="https://www.bigbookofr.com/" class="uri">https://www.bigbookofr.com/</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p><a href="https://www.tidyverse.org/" class="uri">https://www.tidyverse.org/</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><a href="http://r4ds.had.co.nz/index.html" class="uri">http://r4ds.had.co.nz/index.html</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p><a href="https://www.tidyverse.org/" class="uri">https://www.tidyverse.org/</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p><a href="https://geocompr.robinlovelace.net/" class="uri">https://geocompr.robinlovelace.net/</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
