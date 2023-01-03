@@ -1,0 +1,98 @@
+---
+title: "Resources"
+bibliography: [packages.bib, references.bib]
+number-sections: true
+---
+
+
+
+```{r}
+#| echo: false  
+#| eval: false
+
+
+
+#Automatically write R package citation entries to a `.bib` file:
+
+#knitr::write_bib(c(.packages(), 'knitr', 'shiny'), 'packages.bib')
+
+bib_loc <- "..//BatReportQuarto3//packages.bib"
+bib_loc <- "packages.bib"
+knitr::write_bib(c('base',
+                   'tidyverse',
+                   'suncalc',
+                   'ggplot2',
+                   'dplyr',
+                   'lubridate',
+                   'stringr',
+                   'broman',
+                   'knitr',
+                   'gt',
+                   'readr',
+                   'scales',
+                   'readxl',
+                   'mosaic',
+                   'kableExtra',
+                   'flextable',
+                   'sf',
+                   'ggspatial'), bib_loc)
+
+#Then add `bibliography: packages.bib` to the YAML frontmatter. Now you can cite packages. For example: the R language [@R-base] is awesome. We used the **knitr** package [@R-knitr; @knitr2015] in our analysis. We also build a Shiny app [@R-shiny].
+
+
+# @Manual{,
+#   title = {tidyr: Tidy Messy Data},
+#   author = {Hadley Wickham and Maximilian Girlich},
+#   year = {2022},
+#   note = {https://tidyr.tidyverse.org, https://github.com/tidyverse/tidyr},
+# }
+
+```
+
+
+
+
+```{r}
+#| include: false  
+
+library(glue)
+
+ds_txt <- "Bat Data Science"
+rep_txt <- "reports on bat surveys"
+
+```
+
+
+
+There are many approaches for doing `r glue("{ds_txt}")` this section shows the resources that were used to make these pages, providing  the background to the example code and revealing how it can be extended or adapted to generate enhanced `r glue("{rep_txt}")`. All of this can be undertaken with the open-source R statistical programming language [@Rcore22] through RStudio [@RStudio22]. 
+
+A prime resource for learning `r glue("{ds_txt}")` with R are the the online books[^1], a comprehensive guide to these books and other R-resources is the _Big Book of R_^[<https://www.bigbookofr.com/>]  by Oscar Baruffa.  This page references the online books, packages, websites and other resources with a focus on `r glue("{ds_txt}")`:
+
+* @sec-Rpackages details the R packages from the general to the specific that help workflow and enhance the data analysis.
+
+
+[^1]: Nearly all the online reference books on R are created within the R environment; most commonly with RMarkdown or Quarto.
+
+## R Packages {#sec-Rpackages}
+
+### General 
+
+The _tidyverse_^[<https://www.tidyverse.org/>] is a collection of packages with all the essential tools for data science [@R-tidyverse].
+
+
+The visualisation and analysis has been undertaken in R [@R-base] using `r R.version.string`; R is an open-source statistical programming language.
+
+This document has been produced dynamically using `knitr` [@R-knitr] and QUARTO, integrating the data, analysis and reporting. The analysis has undertaken a tidyverse approach [@R-tidyverse].
+
+The graphics have been produced using the R package `ggplot2` [@R-ggplot2]. The `scales` [@R-scales] package improves the clarity of scales on `ggplot` graphics.
+
+The wrangling of data was undertaken with `dplyr` [@R-dplyr] and `tidyr` packages. The data in *csv* and *Excel* files has been imported with `readr` [@R-readr] and `readxl` [@R-readxl] packages respectivily. The computation with dates and times has been accomplished with `lubridate` [@R-lubridate] package. Suntimes have been obtained with the `suncalc` [@R-suncalc] package.
+
+The manipulation of text was through the `stringr` [@R-stringr] package. Summary statistics have been produced with the `mosaic` [@R-mosaic] package.
+
+Tables have been produced with `knitr` [@R-knitr] with `kableExtra` [@R-kableExtra], `gt` [@R-knitr] and the `flextable` [@R-flextable] packages. The `broman` [@R-broman] package provided some useful R functions.
+
+
+
+## References  {.unnumbered}
+

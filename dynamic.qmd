@@ -115,6 +115,59 @@ bat_colours_sci <- c("Barbastella barbastellus" = "#1f78b4",
 #| fig-cap: "Bat Observations From Lydford School's Bat Walk"
 
 # Pallet of colours for bat species on Leaflet map
+# Leaflet  bat colours
+LeafColours<- c("#ffff99",
+                  "#b15928",
+                  "#1f78b4",
+                  "#A52A2A",
+                  "#7FFF00",
+                  "#b2df8a",
+                  "#6a3d9a",
+                  "#ff7f00",
+                  "#a6cee3",
+                  "#BCEE68",
+                  "#8B0000",
+                  "#8B0000",
+                  "#000000",
+                  "#8A2BE2",
+                  "#fdbf6f",
+                  "#e31a1c",
+                  "#33a02c",
+                  "#cab2d6",
+                  "#fb9a99",
+                  "#EEE8CD",
+                  "#008B8B",
+                  "#000000")
+
+# Species list for colours
+Species <- c("Pipistrellus pipistrellus",
+             "Pipistrellus pygmaeus",
+             "Barbastella barbastellus",
+             "Myotis alcathoe",
+             "Myotis bechsteinii",
+             "Myotis brandtii",
+             "Myotis mystacinus",
+             "Myotis nattereri",
+             "Myotis daubentonii",
+             "Myotis spp.",
+             "Plecotus auritus",
+             "Plecotus spp.",
+             "Plecotus austriacus",
+             "Pipistrellus nathusii",
+             "Pipistrellus spp.",
+             "Rhinolophus ferrumequinum",
+             "Rhinolophus hipposideros",
+             "Nyctalus noctula",
+             "Nyctalus leisleri",
+             "Nyctalus spp.",
+             "Eptesicus serotinus",
+             "Pipistrelle Social")
+
+ColourVector <- tibble(Species, LeafColours)
+
+ColourVector <- ColourVector %>% 
+  arrange(Species)
+
 pal <- colorFactor(ColourVector$LeafColours, domain = ColourVector$Species)
 
 Lydford %>%
@@ -163,8 +216,7 @@ graph_limit1 <- TavyOak$sunset[1] - lubridate::hours(1)
 graph_limit2 <- TavyOak$sunrise[1] + lubridate::hours(1)
 
 # colour values used by scale_fill_manual()
-graph_bat_colours <- bat_colours(TavyOak$Species, colour_vector = bat_colours_sci)
-
+graph_bat_colours <- iBats::bat_colours_default(TavyOak$Species)
 
 p <- TavyOak %>% 
   rename(`Date & Time` = DateTime,

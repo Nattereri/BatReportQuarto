@@ -17,14 +17,13 @@ These web pages compliment the *data science* chapters of the forthcoming BCT Ba
 
 ![Literate Programming](Images/workflowRed.png){#fig-workflowred}
 
-Literate programming [@knuth84] enables efficient reporting of bat data[^8] from a simple table, such as a count of bats, to the output and interpretation of machine learning; plus everything in-between, see @fig-workflowred. The code used in these pages is R[^9], literate programming also facilitates other coding languages such as Python[^6], and Julia[^7].  Coding languages can be mixed in the same literate programming document; with a chuck of R code doing the data manipulation  and another chunk of Python code performing the machine learning.  Coding languages applied to data science are developing rapidly in terms of their ability, speed of execution, and user friendliness[^5]; literate programming provides the framework for ecologists to keep their data science skills moving forward.
+Literate programming [@knuth84] enables efficient reporting of bat data[^8] from a simple table, such as a count of bats, to the output and interpretation of machine learning; plus everything in-between, see @fig-workflowred; all this can be  accomplished through the RStudio software [@RStudio22]. The code used in these pages is R[^9] [@Rcore22], literate programming also facilitates other coding languages such as Python[^6], and Julia[^7].  Coding languages can be mixed in the same literate programming document; with a chuck of R code doing the data manipulation  and another chunk of Python code performing the machine learning.  Coding languages applied to data science are developing rapidly in terms of their ability, speed of execution, and user friendliness[^5]; literate programming provides the framework for ecologists to keep their data science skills moving forward.
 
 [^5]:  Julia has a language syntax similar to Python, runs fast, has a statistical library like R and linear programming skills similar to MATLAB.
 [^6]: <https://www.python.org/>
 [^7]: <https://julialang.org/>
 [^8]:  as exported from sound analysis software
 [^9]:  Windows <https://cran.r-project.org/bin/windows/base/> Mac Intel & ARM <https://cran.r-project.org/bin/macosx/>
-
 
 To help ecologists get started, all the code making the graphs and analysis is freely available to copy and use; just click on  _Show the code_, copy to the clipboard [^2], paste into the R environment and run (to get going in R see @sec-installr). 
 
@@ -85,43 +84,6 @@ ggplot(graph_data, aes(area = n, fill = Month, label = Species, subgroup = Month
 
 The `iBats` package contains example data and functions that help with the *Data Science* of bat survey results. To install this package use the code below in the console (see Figure ); *one line at a time*. The package is installed from GitHub.
 
-```{r}
-#| echo=FALSE,  
-#| eval=FALSE
-
-
-#Automatically write R package citation entries to a `.bib` file:
-
-#knitr::write_bib(c(.packages(), 'knitr', 'shiny'), 'packages.bib')
-
-knitr::write_bib(c('base',
-                   'tidyverse',
-                   'suncalc',
-                   'ggplot2',
-                   'dplyr',
-                   'lubridate',
-                   'stringr',
-                   'broman',
-                   'knitr',
-                   'gt',
-                   'readr',
-                   'scales',
-                   'readxl',
-                   'mosaic',
-                   'kableExtra',
-                   'flextable'), 'packages.bib')
-
-#Then add `bibliography: packages.bib` to the YAML frontmatter. Now you can cite packages. For example: the R language [@R-base] is awesome. We used the **knitr** package [@R-knitr; @knitr2015] in our analysis. We also build a Shiny app [@R-shiny].
-
-
-# @Manual{,
-#   title = {tidyr: Tidy Messy Data},
-#   author = {Hadley Wickham and Maximilian Girlich},
-#   year = {2022},
-#   note = {https://tidyr.tidyverse.org, https://github.com/tidyverse/tidyr},
-# }
-
-```
 
 ```{r}
 #| code-fold: show
@@ -136,18 +98,8 @@ devtools::install_github("Nattereri/iBats")
 
 ## Acknowledgements
 
-These web pages were built on the shoulders of others:
+These web pages were built on the shoulders of others...
 
-The visualisation and analysis has been undertaken in R [@R-base] using `r R.version.string`; R is an open-source statistical programming language.
 
-This document has been produced dynamically using `knitr` [@R-knitr] and QUARTO, integrating the data, analysis and reporting. The analysis has undertaken a tidyverse approach [@tidyverse2019].
 
-The graphics have been produced using the R package `ggplot2` [@R-ggplot2]. The `scales` [@R-scales] package improves the clarity of scales on `ggplot` graphics.
-
-The wrangling of data was undertaken with `dplyr` [@R-dplyr] and `tidyr` packages. The data in *csv* and *Excel* files has been imported with `readr` [@R-readr] and `readxl` [@R-readxl] packages respectivily. The computation with dates and times has been accomplished with `lubridate` [@R-lubridate] package. Suntimes have been obtained with the `suncalc` [@R-suncalc] package.
-
-The manipulation of text was through the `stringr` [@R-stringr] package. Summary statistics have been produced with the `mosaic` [@R-mosaic] package.
-
-Tables have been produced with `knitr` [@R-knitr] with `kableExtra` [@R-kableExtra], `gt` [@R-knitr] and the `flextable` [@R-flextable] packages. The `broman` [@R-broman] package provided some useful R functions.
-
-## References
+## References {.unnumbered}

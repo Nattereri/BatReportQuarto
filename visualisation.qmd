@@ -60,7 +60,6 @@ To help with accessibility it is recommended that a consistent colour is used fo
 #| label: tbl-batcolours
 #| tbl-cap: "Bat Name and Colour"
 
-
 bat_colours_sci <- c("Barbastella barbastellus" = "#1f78b4", 
                      "Myotis alcathoe" = "#a52a2a",
                      "Myotis bechsteinii" = "#7fff00",
@@ -157,8 +156,6 @@ bat_colours_sci <- c(
   "Eptesicus serotinus" = "#008b8b"
 )
 
-
-
 # graph anotation
 graph_sunrise <- TavyOak$sunrise[1]
 graph_sunset <- TavyOak$sunset[1]
@@ -169,7 +166,6 @@ graph_limit2 <- TavyOak$sunrise[1] + lubridate::hours(1)
 
 # colour values used by scale_fill_manual()
 graph_bat_colours <- bat_colours(TavyOak$Species, colour_vector = bat_colours_sci)
-
 
 ggplot(TavyOak, aes(y = 1, x = DateTime, fill = Species, size = bat_time)) +
   geom_jitter(shape = 21, alpha = 0.7) +
@@ -228,9 +224,6 @@ ggplot(TavyOak, aes(y = 1, x = DateTime, fill = Species, size = bat_time)) +
     axis.title.y = element_text(size = 10)
   )
 
-
-  
-  
 ```
 
 ## Emergence Time of Bats  
@@ -260,38 +253,8 @@ if(!require(iBats)){
 }
 library(iBats)
 
-###
-
-# A vector used to give the species a specific colour in the graphic; the colours
-# can be changed and other species added.
-bat_colours_sci <- c(
-  "Barbastella barbastellus" = "#1f78b4",
-  "Myotis alcathoe" = "#a52a2a",
-  "Myotis bechsteinii" = "#7fff00",
-  "Myotis brandtii" = "#b2df8a",
-  "Myotis mystacinus" = "#6a3d9a",
-  "Myotis nattereri" = "#ff7f00",
-  "Myotis daubentonii" = "#a6cee3",
-  "Myotis spp." = "#bcee68",
-  "Plecotus auritus" = "#8b0000",
-  "Plecotus spp." = "#8b0000",
-  "Plecotus austriacus" = "#000000",
-  "Pipistrellus pipistrellus" = "#ffff99",
-  "Pipistrellus nathusii" = "#8a2be2",
-  "Pipistrellus pygmaeus" = "#b15928",
-  "Pipistrellus spp." = "#fdbf6f",
-  "Rhinolophus ferrumequinum" = "#e31a1c",
-  "Rhinolophus hipposideros" = "#33a02c",
-  "Nyctalus noctula" = "#cab2d6",
-  "Nyctalus leisleri" = "#fb9a99",
-  "Nyctalus spp." = "#eee8cd",
-  "Eptesicus serotinus" = "#008b8b"
-)
-
-###
-
 # colour values used by scale_fill_manual()
-graph_bat_colours <- iBats::bat_colours(Andrews$Species, colour_vector = bat_colours_sci)
+graph_bat_colours <- iBats::bat_colours_default(Andrews$Species)
 
 ggplot(Andrews) +
   geom_segment(aes(x = reorder(Species, -meanExit), xend = Species, y = firstExit95, yend = lastExit95), color = "grey", size = 2) +
@@ -311,9 +274,6 @@ ggplot(Andrews) +
     axis.title.y = element_blank(),
     panel.grid = element_blank()
   )
-
-
-
 
 ```
 
@@ -349,37 +309,6 @@ if(!require(iBats)){
 }
 library(iBats)
 
-###
-
-# A vector used to give the species a specific colour in the graphic; the colours
-# can be changed and other species added.
-bat_colours_sci <- c(
-  "Barbastella barbastellus" = "#1f78b4",
-  "Myotis alcathoe" = "#a52a2a",
-  "Myotis bechsteinii" = "#7fff00",
-  "Myotis brandtii" = "#b2df8a",
-  "Myotis mystacinus" = "#6a3d9a",
-  "Myotis nattereri" = "#ff7f00",
-  "Myotis daubentonii" = "#a6cee3",
-  "Myotis spp." = "#bcee68",
-  "Plecotus auritus" = "#8b0000",
-  "Plecotus spp." = "#8b0000",
-  "Plecotus austriacus" = "#000000",
-  "Pipistrellus pipistrellus" = "#ffff99",
-  "Pipistrellus nathusii" = "#8a2be2",
-  "Pipistrellus pygmaeus" = "#b15928",
-  "Pipistrellus spp." = "#fdbf6f",
-  "Rhinolophus ferrumequinum" = "#e31a1c",
-  "Rhinolophus hipposideros" = "#33a02c",
-  "Nyctalus noctula" = "#cab2d6",
-  "Nyctalus leisleri" = "#fb9a99",
-  "Nyctalus spp." = "#eee8cd",
-  "Eptesicus serotinus" = "#008b8b"
-)
-
-###
-
-
 graph_data <- statics %>% #statics is a bat survey data set from the iBats package
   group_by(Species) %>%
   count() %>%
@@ -389,9 +318,9 @@ graph_data <- statics %>% #statics is a bat survey data set from the iBats packa
     label = glue("{Species}: {total}")
   )
 
-
 # colour values used by scale_fill_manual()
-graph_bat_colours <- iBats::bat_colours(graph_data$Species, colour_vector = bat_colours_sci)
+graph_bat_colours <- iBats::bat_colours_default(graph_data$Species)
+
 
 ggplot(graph_data, aes(y = reorder(Species, n), x = n, fill = Species)) +
   geom_point(colour = "black", size = 5) +
@@ -441,7 +370,6 @@ library(tidyverse) # Data Science packages - see https://www.tidyverse.org/
 library(treemapify) # extension to ggplot for plotting treemaps - 
 # see https://cran.r-project.org/web/packages/treemapify/vignettes/introduction-to-treemapify.html
 
-
 # Install devtools if not installed 
 # devtools is used to install the iBats package from GitHub
 if(!require(devtools)){
@@ -454,43 +382,12 @@ if(!require(iBats)){
 }
 library(iBats)
 
-###
-
-# A vector used to give the species a specific colour in the graphic; the colours
-# can be changed and other species added.
-bat_colours_sci <- c(
-  "Barbastella barbastellus" = "#1f78b4",
-  "Myotis alcathoe" = "#a52a2a",
-  "Myotis bechsteinii" = "#7fff00",
-  "Myotis brandtii" = "#b2df8a",
-  "Myotis mystacinus" = "#6a3d9a",
-  "Myotis nattereri" = "#ff7f00",
-  "Myotis daubentonii" = "#a6cee3",
-  "Myotis spp." = "#bcee68",
-  "Plecotus auritus" = "#8b0000",
-  "Plecotus spp." = "#8b0000",
-  "Plecotus austriacus" = "#000000",
-  "Pipistrellus pipistrellus" = "#ffff99",
-  "Pipistrellus nathusii" = "#8a2be2",
-  "Pipistrellus pygmaeus" = "#b15928",
-  "Pipistrellus spp." = "#fdbf6f",
-  "Rhinolophus ferrumequinum" = "#e31a1c",
-  "Rhinolophus hipposideros" = "#33a02c",
-  "Nyctalus noctula" = "#cab2d6",
-  "Nyctalus leisleri" = "#fb9a99",
-  "Nyctalus spp." = "#eee8cd",
-  "Eptesicus serotinus" = "#008b8b"
-)
-
-###
-
-
 graph_data <- statics %>% #statics is a bat survey data set from the iBats package
   group_by(Species, Description) %>%
   tally()
 
 # colour values used by scale_fill_manual()
-graph_bat_colours <- iBats::bat_colours(graph_data$Species, colour_vector = bat_colours_sci)
+graph_bat_colours <- iBats::bat_colours_default(graph_data$Species)
 
 ggplot(graph_data, aes(area = n, fill = Species, label = Species, subgroup = Description)) +
   scale_fill_manual(values = graph_bat_colours) +
@@ -535,9 +432,6 @@ if(!require(iBats)){
   devtools::install_github("Nattereri/iBats")
 }
 library(iBats)
-
-###
-
 
 # Add data and time information to the iBats statics bat survey data set using the iBats::date_time_info
 statics_plus <- iBats::date_time_info(statics)
@@ -593,7 +487,7 @@ graph_data <- statics_plus %>%
   filter(post_set_min <= 90)
 
 # colour values used by scale_fill_manual()
-graph_bat_colours <- iBats::bat_colours(graph_data$Species, colour_vector = bat_colours_sci)
+graph_bat_colours <- iBats::bat_colours_default(graph_data$Species)
 
 ggplot(graph_data, aes(x = Species, y = post_set_min, fill = Species)) +
   geom_linerange(aes(x = Species, ymin = firstExit95, ymax = lastExit95),
@@ -742,7 +636,8 @@ graph_data <- statics %>%
   count()
 
 # colour values used by scale_fill_manual()
-graph_bat_colours <- iBats::bat_colours(graph_data$Species, colour_vector = bat_colours_sci)
+graph_bat_colours <- iBats::bat_colours_default(graph_data$Species)
+
 
 g1 <- ggplot(graph_data, aes(x = "", y = n, fill = Species)) +
   geom_bar(width = 1, stat = "identity") +

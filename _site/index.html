@@ -198,6 +198,10 @@ div.csl-indent {
  <span class="menu-text">Interactive Reports</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./resources.html">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./about.html">
  <span class="menu-text">About</span></a>
   </li>  
@@ -221,7 +225,7 @@ div.csl-indent {
   <li><a href="#install-the-ibats-package-from-github" id="toc-install-the-ibats-package-from-github" class="nav-link" data-scroll-target="#install-the-ibats-package-from-github"><span class="toc-section-number">1.1</span>  Install the <em>iBats</em> Package from GitHub</a></li>
   </ul></li>
   <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements"><span class="toc-section-number">2</span>  Acknowledgements</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="toc-section-number">3</span>  References</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
     </div>
@@ -252,7 +256,7 @@ div.csl-indent {
 <p></p><figcaption class="figure-caption">Figure&nbsp;1: Literate Programming</figcaption><p></p>
 </figure>
 </div>
-<p>Literate programming <span class="citation" data-cites="knuth84">(<a href="#ref-knuth84" role="doc-biblioref">Knuth 1984</a>)</span> enables efficient reporting of bat data<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> from a simple table, such as a count of bats, to the output and interpretation of machine learning; plus everything in-between, see <a href="#fig-workflowred">Figure&nbsp;1</a>. The code used in these pages is R<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>, literate programming also facilitates other coding languages such as Python<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>, and Julia<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Coding languages can be mixed in the same literate programming document; with a chuck of R code doing the data manipulation and another chunk of Python code performing the machine learning. Coding languages applied to data science are developing rapidly in terms of their ability, speed of execution, and user friendliness<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>; literate programming provides the framework for ecologists to keep their data science skills moving forward.</p>
+<p>Literate programming <span class="citation" data-cites="knuth84">(<a href="#ref-knuth84" role="doc-biblioref">Knuth 1984</a>)</span> enables efficient reporting of bat data<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> from a simple table, such as a count of bats, to the output and interpretation of machine learning; plus everything in-between, see <a href="#fig-workflowred">Figure&nbsp;1</a>; all this can be accomplished through the RStudio software <span class="citation" data-cites="RStudio22">(<a href="#ref-RStudio22" role="doc-biblioref">Posit team 2022</a>)</span>. The code used in these pages is R<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> <span class="citation" data-cites="Rcore22">(<a href="#ref-Rcore22" role="doc-biblioref">R Core Team 2022</a>)</span>, literate programming also facilitates other coding languages such as Python<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>, and Julia<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>. Coding languages can be mixed in the same literate programming document; with a chuck of R code doing the data manipulation and another chunk of Python code performing the machine learning. Coding languages applied to data science are developing rapidly in terms of their ability, speed of execution, and user friendliness<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>; literate programming provides the framework for ecologists to keep their data science skills moving forward.</p>
 <p>To help ecologists get started, all the code making the graphs and analysis is freely available to copy and use; just click on <em>Show the code</em>, copy to the clipboard <a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>, paste into the R environment and run (to get going in R see <a href="#sec-installr">Section&nbsp;1</a>).</p>
 <p>A <em>Show the code</em> is given below, the code produces <a href="#fig-example">Figure&nbsp;2</a>. The code copied to the clipboard is designed to run as a standalone <em>chunk</em>; with all the R libraries, data and code.</p>
 <div class="cell">
@@ -313,9 +317,6 @@ div.csl-indent {
 <h3 data-number="1.1" class="anchored" data-anchor-id="install-the-ibats-package-from-github"><span class="header-section-number">1.1</span> Install the <em>iBats</em> Package from GitHub</h3>
 <p>The <code>iBats</code> package contains example data and functions that help with the <em>Data Science</em> of bat survey results. To install this package use the code below in the console (see Figure ); <em>one line at a time</em>. The package is installed from GitHub.</p>
 <div class="cell">
-
-</div>
-<div class="cell">
 <details open="">
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
@@ -327,15 +328,9 @@ div.csl-indent {
 </section>
 <section id="acknowledgements" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="acknowledgements"><span class="header-section-number">2</span> Acknowledgements</h2>
-<p>These web pages were built on the shoulders of others:</p>
-<p>The visualisation and analysis has been undertaken in R <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref">R Core Team 2022</a>)</span> using R version 4.2.2 (2022-10-31 ucrt); R is an open-source statistical programming language.</p>
-<p>This document has been produced dynamically using <code>knitr</code> <span class="citation" data-cites="R-knitr">(<a href="#ref-R-knitr" role="doc-biblioref">Xie 2022</a>)</span> and QUARTO, integrating the data, analysis and reporting. The analysis has undertaken a tidyverse approach <span class="citation" data-cites="tidyverse2019">(<a href="#ref-tidyverse2019" role="doc-biblioref">Wickham et al. 2019</a>)</span>.</p>
-<p>The graphics have been produced using the R package <code>ggplot2</code> <span class="citation" data-cites="R-ggplot2">(<a href="#ref-R-ggplot2" role="doc-biblioref">Wickham, Chang, et al. 2022</a>)</span>. The <code>scales</code> <span class="citation" data-cites="R-scales">(<a href="#ref-R-scales" role="doc-biblioref">Wickham and Seidel 2022</a>)</span> package improves the clarity of scales on <code>ggplot</code> graphics.</p>
-<p>The wrangling of data was undertaken with <code>dplyr</code> <span class="citation" data-cites="R-dplyr">(<a href="#ref-R-dplyr" role="doc-biblioref">Wickham, François, et al. 2022</a>)</span> and <code>tidyr</code> packages. The data in <em>csv</em> and <em>Excel</em> files has been imported with <code>readr</code> <span class="citation" data-cites="R-readr">(<a href="#ref-R-readr" role="doc-biblioref">Wickham, Hester, and Bryan 2022</a>)</span> and <code>readxl</code> <span class="citation" data-cites="R-readxl">(<a href="#ref-R-readxl" role="doc-biblioref">Wickham and Bryan 2022</a>)</span> packages respectivily. The computation with dates and times has been accomplished with <code>lubridate</code> <span class="citation" data-cites="R-lubridate">(<a href="#ref-R-lubridate" role="doc-biblioref">Spinu, Grolemund, and Wickham 2021</a>)</span> package. Suntimes have been obtained with the <code>suncalc</code> <span class="citation" data-cites="R-suncalc">(<a href="#ref-R-suncalc" role="doc-biblioref">Thieurmel and Elmarhraoui 2019</a>)</span> package.</p>
-<p>The manipulation of text was through the <code>stringr</code> <span class="citation" data-cites="R-stringr">(<a href="#ref-R-stringr" role="doc-biblioref">Wickham 2022</a>)</span> package. Summary statistics have been produced with the <code>mosaic</code> <span class="citation" data-cites="R-mosaic">(<a href="#ref-R-mosaic" role="doc-biblioref">Pruim, Kaplan, and Horton 2021</a>)</span> package.</p>
-<p>Tables have been produced with <code>knitr</code> <span class="citation" data-cites="R-knitr">(<a href="#ref-R-knitr" role="doc-biblioref">Xie 2022</a>)</span> with <code>kableExtra</code> <span class="citation" data-cites="R-kableExtra">(<a href="#ref-R-kableExtra" role="doc-biblioref">Zhu 2021</a>)</span>, <code>gt</code> <span class="citation" data-cites="R-knitr">(<a href="#ref-R-knitr" role="doc-biblioref">Xie 2022</a>)</span> and the <code>flextable</code> <span class="citation" data-cites="R-flextable">(<a href="#ref-R-flextable" role="doc-biblioref">Gohel 2022</a>)</span> packages. The <code>broman</code> <span class="citation" data-cites="R-broman">(<a href="#ref-R-broman" role="doc-biblioref">Broman 2022</a>)</span> package provided some useful R functions.</p>
+<p>These web pages were built on the shoulders of others…</p>
 </section>
-<section id="references" class="level2" data-number="3">
+<section id="references" class="level2 unnumbered">
 
 
 
@@ -343,54 +338,15 @@ div.csl-indent {
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">3 References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-R-broman" class="csl-entry" role="doc-biblioentry">
-Broman, Karl W. 2022. <em>Broman: Karl Broman’s r Code</em>. <a href="https://github.com/kbroman/broman">https://github.com/kbroman/broman</a>.
-</div>
-<div id="ref-R-flextable" class="csl-entry" role="doc-biblioentry">
-Gohel, David. 2022. <em>Flextable: Functions for Tabular Reporting</em>. <a href="https://CRAN.R-project.org/package=flextable">https://CRAN.R-project.org/package=flextable</a>.
-</div>
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-knuth84" class="csl-entry" role="doc-biblioentry">
 Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
 </div>
-<div id="ref-R-mosaic" class="csl-entry" role="doc-biblioentry">
-Pruim, Randall, Daniel T. Kaplan, and Nicholas J. Horton. 2021. <em>Mosaic: Project MOSAIC Statistics and Mathematics Teaching Utilities</em>. <a href="https://CRAN.R-project.org/package=mosaic">https://CRAN.R-project.org/package=mosaic</a>.
+<div id="ref-RStudio22" class="csl-entry" role="doc-biblioentry">
+Posit team. 2022. <em>RStudio: Integrated Development Environment for r</em>. Boston, MA: Posit Software, PBC. <a href="http://www.posit.co/">http://www.posit.co/</a>.
 </div>
-<div id="ref-R-base" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Rcore22" class="csl-entry" role="doc-biblioentry">
 R Core Team. 2022. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
-</div>
-<div id="ref-R-lubridate" class="csl-entry" role="doc-biblioentry">
-Spinu, Vitalie, Garrett Grolemund, and Hadley Wickham. 2021. <em>Lubridate: Make Dealing with Dates a Little Easier</em>. <a href="https://CRAN.R-project.org/package=lubridate">https://CRAN.R-project.org/package=lubridate</a>.
-</div>
-<div id="ref-R-suncalc" class="csl-entry" role="doc-biblioentry">
-Thieurmel, Benoit, and Achraf Elmarhraoui. 2019. <em>Suncalc: Compute Sun Position, Sunlight Phases, Moon Position and Lunar Phase</em>. <a href="https://github.com/datastorm-open/suncalc">https://github.com/datastorm-open/suncalc</a>.
-</div>
-<div id="ref-R-stringr" class="csl-entry" role="doc-biblioentry">
-Wickham, Hadley. 2022. <em>Stringr: Simple, Consistent Wrappers for Common String Operations</em>.
-</div>
-<div id="ref-tidyverse2019" class="csl-entry" role="doc-biblioentry">
-Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. <span>“Welcome to the <span class="nocase">tidyverse</span>.”</span> <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.
-</div>
-<div id="ref-R-readxl" class="csl-entry" role="doc-biblioentry">
-Wickham, Hadley, and Jennifer Bryan. 2022. <em>Readxl: Read Excel Files</em>. <a href="https://CRAN.R-project.org/package=readxl">https://CRAN.R-project.org/package=readxl</a>.
-</div>
-<div id="ref-R-ggplot2" class="csl-entry" role="doc-biblioentry">
-Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, and Dewey Dunnington. 2022. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2">https://CRAN.R-project.org/package=ggplot2</a>.
-</div>
-<div id="ref-R-dplyr" class="csl-entry" role="doc-biblioentry">
-Wickham, Hadley, Romain François, Lionel Henry, and Kirill Müller. 2022. <em>Dplyr: A Grammar of Data Manipulation</em>. <a href="https://CRAN.R-project.org/package=dplyr">https://CRAN.R-project.org/package=dplyr</a>.
-</div>
-<div id="ref-R-readr" class="csl-entry" role="doc-biblioentry">
-Wickham, Hadley, Jim Hester, and Jennifer Bryan. 2022. <em>Readr: Read Rectangular Text Data</em>. <a href="https://CRAN.R-project.org/package=readr">https://CRAN.R-project.org/package=readr</a>.
-</div>
-<div id="ref-R-scales" class="csl-entry" role="doc-biblioentry">
-Wickham, Hadley, and Dana Seidel. 2022. <em>Scales: Scale Functions for Visualization</em>. <a href="https://CRAN.R-project.org/package=scales">https://CRAN.R-project.org/package=scales</a>.
-</div>
-<div id="ref-R-knitr" class="csl-entry" role="doc-biblioentry">
-Xie, Yihui. 2022. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
-</div>
-<div id="ref-R-kableExtra" class="csl-entry" role="doc-biblioentry">
-Zhu, Hao. 2021. <em>kableExtra: Construct Complex Table with Kable and Pipe Syntax</em>. <a href="https://CRAN.R-project.org/package=kableExtra">https://CRAN.R-project.org/package=kableExtra</a>.
 </div>
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 

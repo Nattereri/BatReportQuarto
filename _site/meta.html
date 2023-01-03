@@ -199,6 +199,10 @@ div.csl-indent {
  <span class="menu-text">Interactive Reports</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./resources.html">
+ <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./about.html">
  <span class="menu-text">About</span></a>
   </li>  
@@ -1254,7 +1258,7 @@ div.csl-indent {
 <section id="sun-times" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="sun-times"><span class="header-section-number">2</span> Sun Times</h2>
 <p>A useful approach for bat data analysis is to reference all bat activity (i.e.&nbsp;<code>DateTime</code>) to the time of sunset and sunrise for the <code>Night</code> and location(i.e.&nbsp;<code>Latitude</code> and <code>Longitude</code>). From this starting point, the minutes after sunset (and minutes before sunrise) that each bat activity occurred can be calculated; these can then be converted to decimal hours and integer hours so bat activity can be visualised in ways that help interpret the bat activity.</p>
-<p>Referencing the <code>DateTime</code> of bat activity to sunset and sunrise is achieved with the use of the <code>suncalc</code> package <span class="citation" data-cites="R-suncalc">(<a href="#ref-R-suncalc" role="doc-biblioref">Thieurmel and Elmarhraoui 2019</a>)</span>. The <code>iBats</code> package makes use of <code>suncalc</code> in its <code>sun_night_metrics</code> fuction; this takes a dataframe that must include the columns: <code>Night</code>, <code>DateTime</code>, <code>Latitude</code> and, <code>Longitude</code> - and calculates the following columns:</p>
+<p>Referencing the <code>DateTime</code> of bat activity to sunset and sunrise is achieved with the use of the <code>suncalc</code> package <span class="citation" data-cites="R-suncalc">(<a href="#ref-R-suncalc" role="doc-biblioref">Thieurmel and Elmarhraoui 2022</a>)</span>. The <code>iBats</code> package makes use of <code>suncalc</code> in its <code>sun_night_metrics</code> fuction; this takes a dataframe that must include the columns: <code>Night</code>, <code>DateTime</code>, <code>Latitude</code> and, <code>Longitude</code> - and calculates the following columns:</p>
 <ul>
 <li><code>sunset</code> - sun set time for the <code>Night</code> date and <code>Latitude</code> and, <code>Longitude</code></li>
 <li><code>sunrise</code> - sun rise time for the <code>Night</code> date and <code>Latitude</code> and, <code>Longitude</code></li>
@@ -3500,7 +3504,7 @@ The division by <em><strong>1000</strong></em> is to convert milliseconds(ms) to
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-R-suncalc" class="csl-entry" role="doc-biblioentry">
-Thieurmel, Benoit, and Achraf Elmarhraoui. 2019. <em>Suncalc: Compute Sun Position, Sunlight Phases, Moon Position and Lunar Phase</em>. <a href="https://github.com/datastorm-open/suncalc">https://github.com/datastorm-open/suncalc</a>.
+Thieurmel, Benoit, and Achraf Elmarhraoui. 2022. <em>Suncalc: Compute Sun Position, Sunlight Phases, Moon Position and Lunar Phase</em>. <a href="https://github.com/datastorm-open/suncalc">https://github.com/datastorm-open/suncalc</a>.
 </div>
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
