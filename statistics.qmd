@@ -584,6 +584,7 @@ r_names <- Tab_L_S %>%
 
 rownames(Matrix) <- r_names
 
+# Number of columns in table
 ncols <- ncol(MatrixTable)
 
 #Make coloured palette
@@ -786,5 +787,319 @@ The output of `kmeans` is a list of information; the most important:
 #| include: false
 
 # https://www.tidymodels.org/learn/statistics/k-means/
+```
+
+
+### Non-metric Multidimensional Scaling (NMDS)
+
+Non-metric Multidimensional Scaling is an ordination technique that reduces dimensionality in multivariate data sets such as the count of bats in @tbl-NMDScount.  Dimensionality reduction simply refers to the process of reducing the number of attributes in a dataset while keeping as much of the variation in the original dataset as possible. The goal of NMDS is to collapse information from multiple dimensions (e.g, from multiple communities, sites, etc.) into just a few, so that they can be visualized, (e.g. as a 2D or 3D plot), and interpreted.
+
+Unlike other ordination techniques that rely on (primarily Euclidean) distances, such as Principal Component Analysis (PCA), NMDS uses rank orders, and thus is an extremely flexible technique that can accommodate a variety of different kinds of data; NMDS does require at least one observation per factor (e.g. site or month). In R, the `metaMDS()` function of the `vegan` package can execute a NMDS. As input, it expects a community matrix with the factors as rows and the species as columns; @tbl-NMDScount has two factors, static location and month, that are treated separately. 
+
+Before undertaking ordination it is best to transform the data; this helps reduce the influence of large counts from dominant species (i.e. Common pipistrelles). @tbl-NMDS4throot is @tbl-NMDScount transformed with  $\sqrt[4]{count}$.
+
+A measure of how successful the NMDS reduction is stress[^6]. The lower the stress value, the better the ordination. A rule of thumb for stress values:
+
+* stress < 0.05 provides an excellent representation in reduced dimensions
+* stress < 0.1 is great, 
+* stress < 0.2 is good, 
+* stress > 2.0 < 0.3 interpret with caution
+* stress > 0.3 provides a poor representation.
+
+
+[^6]: NMDS reduces the rank-based differences between the distances between objects in the original matrix and distances between the ordinated objects. The difference is expressed as stress. 
+
+@fig-NMDSplots-1 shows the two dimensional plot after the NMDS is applied through `metaMDS()` function to the transformed data shown in @tbl-NMDS4throot; the NMDS produced a _good_ stress of 0.14. @fig-NMDSplots-2 is the Shepard plot  showing the scatter around the regression between the interpoint distances in the final configuration (i.e., the distances between each pair of communities) against their original dissimilarities; the desirable outcome from the Shepard plot is a diagonal line with limited scatter in this respect @fig-NMDSplots-2 looks reasonable.
+
+@fig-NMDSlabelplots shows the 2D @fig-NMDSplots-1 labelled for static location (@fig-NMDSlabelplots-1) and month (@fig-NMDSlabelplots-2); the static location in @fig-NMDSlabelplots-1 are in separate groups more than the more random groupings shown for months in @fig-NMDSlabelplots-2.
+
+```{r}
+#| label: tbl-NMDScount
+#| tbl-cap: "Count of Species by the Meta Data; Location and month"
+
+library(tidyverse)
+library(glue)
+library(ggthemes) # for colour pallet "Tableau 10"
+library(flextable)
+library(iBats)
+library(vegan)
+
+# Add data and time information to the statics data using the iBats::date_time_info
+statics_plus <- iBats::date_time_info(statics)
+
+# Count of bat species by location and month
+description_month_count <- statics_plus %>% # Location - Species
+  group_by(Species, Description, Month) %>% 
+  count() %>% 
+  pivot_wider(names_from = Species, values_from = n) %>% 
+  replace(is.na(.), 0)
+
+# Number of columns in table
+ncols <- ncol(description_month_count)
+
+description_month_count %>% 
+  flextable() %>% 
+    bold(part = "header") %>% 
+    bg(bg = "black", part = "header") %>% 
+    color(color = "white", part = "header") %>% 
+    rotate(j = 3:ncols, rotation = "tbrl", align = "center", part = "header") %>% 
+    height_all(height = 2.3, part = "header") %>% 
+    hrule(rule = "exact", part = "header") %>%
+    width(j = 3:ncols, width = 0.4) %>% 
+    width(j = 1:2, width = 0.8)
+
+
+```
+
+
+```{r}
+#| label: tbl-NMDS4throot
+#| tbl-cap: "Count of Species with Data Transformed by 4th Root"
+
+
+species_count <- description_month_count[, 3:ncol(description_month_count)]
+meta_data <- description_month_count[, 1:2]
+
+Transformed_Data <- (species_count)^(1/4)
+
+# Number of columns in table
+ncols <- ncol(Transformed_Data)
+
+Transformed_Data %>% 
+  flextable() %>% 
+    bold(part = "header") %>% 
+    bg(bg = "black", part = "header") %>% 
+    color(color = "white", part = "header") %>% 
+    rotate(j = 1:ncols, rotation = "tbrl", align = "center", part = "header") %>% 
+    height_all(height = 2.3, part = "header") %>% 
+    hrule(rule = "exact", part = "header") %>%
+    width(j = 1:ncols, width = 0.4) %>% 
+    colformat_double(digits = 3)
+
+```
+
+
+```{r}
+#| include=FALSE
+
+
+# Nonmetric Multidimensional Scaling (NMDS), 
+# and tries to find a stable solution 
+# using several random starts
+nMDS_results <- metaMDS(Transformed_Data, distance = "bray")
+
+# extract NMDS scores (x and y coordinates) for plotting
+nMDS_coords = as.tibble(scores(nMDS_results)$sites)
+
+# bind the factors (static location and month back)
+graph_data <- bind_cols(meta_data, nMDS_coords)
+
+```
+
+```{r}
+#| eval: false
+#| code-fold: show
+
+
+# Nonmetric Multidimensional Scaling (NMDS), 
+# and tries to find a stable solution 
+# using several random starts
+nMDS_results <- metaMDS(Transformed_Data, distance = "bray")
+
+# extract NMDS scores (x and y coordinates) for plotting
+nMDS_coords = as.tibble(scores(nMDS_results)$sites)
+
+# bind the factors (static location and month back)
+graph_data <- bind_cols(meta_data, nMDS_coords)
+
+```
+
+```{r}
+#| label: fig-NMDSplots
+#| fig-cap: "Non-metric Multidimensional Scaling Solution and Stress Plot" 
+#| fig-subcap: 
+#|   - "Unlabeled Solution of NMDS (2D)"
+#|   - "Stress Plot "
+#| layout-ncol: 2
+
+
+graph_style <- theme_bw() + 
+  theme(legend.position = "none", # No legend
+  axis.text.x = element_text(size=12, angle = 270, face="bold"), # text bold and vertical
+  axis.text.y = element_text(size=12, face="bold.italic"), # bat names italic
+  strip.text = element_text(size=12, face="bold"), # Bold facet names
+  axis.title.x = element_blank(), # currently not used
+  axis.title.y = element_blank(), # no y title (just bat names)
+  panel.grid.major = element_blank(), #remove grid lines
+  panel.grid.minor = element_blank(),
+  plot.caption = element_text())
+
+g1 <- ggplot(graph_data, aes(x = NMDS1, y = NMDS2)) + 
+    geom_point(size = 9, colour = "dodgerblue", alpha = 0.8) +
+    scale_x_continuous(expand = c(0.05, 0.05)) +
+    scale_y_continuous(expand = c(0.05, 0.05)) +
+    labs(caption = glue("Stress {round(nMDS_results$stress, digits = 2)}")) +
+    graph_style
+
+g1
+stressplot(nMDS_results)
+
+
+```
+
+
+```{r}
+#| label: fig-NMDSlabelplots
+#| fig-cap: "Non-metric Multidimensional Scaling Solution and Stress Plot" 
+#| fig-subcap: 
+#|   - "Unlabeled Solution of NMDS (2D)"
+#|   - "Stress Plot "
+#| layout-ncol: 2
+
+
+
+graph_style <- theme_bw() + 
+  theme(legend.position = "none", 
+  axis.text.x = element_text(size=12, face="bold"),
+  axis.text.y = element_text(size=12, face="bold"), 
+  strip.text = element_text(size=12, face="bold"), 
+  axis.title.x = element_blank(), 
+  axis.title.y = element_blank(), 
+  panel.grid.major = element_blank(), 
+  panel.grid.minor = element_blank(),
+  plot.title = element_text(size=16, face="bold"))
+
+p1 <- ggplot(graph_data, aes(x = NMDS1, y = NMDS2, label=Description)) + 
+    geom_point(size = 9, aes(colour = Description), alpha = 0.8) +
+  geom_text(size = 5) +
+  scale_color_brewer(palette = "Set2") +
+  scale_x_continuous(expand = c(0.05, 0.05)) +
+  scale_y_continuous(expand = c(0.05, 0.05)) +
+  labs(title = "Static Location") +
+  graph_style
+
+p2 <- ggplot(graph_data, aes(x = NMDS1, y = NMDS2, label=Month)) + 
+    geom_point(size = 9, aes(colour = Month), alpha = 0.8) +
+  labs(title = "Month") +
+  geom_text(size = 5) +
+ scale_fill_tableau(palette = "Tableau 10") + 
+  scale_x_continuous(expand = c(0.05, 0.05)) +
+  scale_y_continuous(expand = c(0.05, 0.05)) +
+  graph_style
+
+
+p1
+p2
+```
+
+
+
+#### ANOSIM
+
+The function `anosim` from the package `vegan` can test whether there is a statistical difference between groups (e.g. static locations or months)
+
+* null hypothesis - no differnce 
+* alternative - difference 
+
+The higher the `R` value (it has a range 0 to 1), __the more dissimilar your groups[^7] are in terms of bat assemblage__. @fig-anosimPlots-1 shows the ANOSIM result for the Static Locations, there is a statistical difference of the bat species assemblage for the static location.  @fig-anosimPlots-2 shows the ANOSIM result for the Month, there is no statistical difference of the bat species assemblage for the Months.
+
+[^7]: The test to determine which individual group is different (e.g. Static 1, Static 2 ...), is not available in R; it can be undertaken in the Primer-E software <https://www.primer-e.com/>.
+
+
+```{r}
+#| label: fig-anosimPlots
+#| fig-cap: "ANOSIM: Test is there a Statistical Difference Between Groups" 
+#| fig-subcap: 
+#|   - "ANOSIM Static Location"
+#|   - "ANOSIM Month"
+#| layout-ncol: 2
+#| warning: false
+
+graph_style <- theme_bw() + 
+  theme(legend.position = "none", 
+  axis.text.x = element_text(size=12, face="bold"),
+  axis.text.y = element_text(size=12, face="bold"), 
+  strip.text = element_text(size=12, face="bold"), 
+  axis.title.x = element_blank(), 
+  axis.title.y = element_blank(), 
+  panel.grid.major = element_blank(), 
+  panel.grid.minor = element_blank(),
+  plot.caption = element_text(size = 12),
+  plot.title = element_text(size=16, face="bold"))
+
+Factor <- "Static Location"
+
+ano = anosim(Transformed_Data, 
+             meta_data$Description, 
+             distance = "bray", 
+             permutations = 9999)
+
+#Tjis is how PrimerE views ANOSIM Results
+Rperms<- tibble(ano$perm)
+
+Rstat <- ano$statistic
+sigValue <- ano$signif
+
+if(sigValue < 0.05) {
+  
+  SigText <- glue("ANOSIM significamce value ({sigValue}) for {Factor} is statistically significant at P<0.05")
+  
+} else {
+  
+  SigText <- glue("ANOSIM significamce value ({sigValue}) for {Factor} is not statistically significant at P<0.05")
+  
+}
+
+colnames(Rperms) <- c("Rano")
+
+p1_description <- ggplot(Rperms, aes(Rano)) +
+  geom_histogram(fill = "dodgerblue") +
+  geom_vline(xintercept = Rstat, colour = "gold3", linewidth = 2, linetype = "dashed") +
+  annotate("text", x = Rstat, y = 300, label = glue("R statistic \n {round(Rstat, digits = 3)}")) +
+  labs(title = Factor,
+       y = "Frequency",
+       x = "R",
+       caption = SigText) +
+  graph_style
+
+
+Factor <- "Month"
+
+ano = anosim(Transformed_Data, 
+             meta_data$Month, 
+             distance = "bray", 
+             permutations = 9999)
+
+#Tjis is how PrimerE views ANOSIM Results
+Rperms<- tibble(ano$perm)
+
+Rstat <- ano$statistic
+sigValue <- ano$signif
+
+if(sigValue < 0.05) {
+  
+  SigText <- glue("ANOSIM significamce value ({sigValue}) for {Factor} is statistically significant at P<0.05")
+  
+} else {
+  
+  SigText <- glue("ANOSIM significamce value ({sigValue}) for {Factor} is not statistically significant at P<0.05")
+  
+}
+
+colnames(Rperms) <- c("Rano")
+
+p2_month <- ggplot(Rperms, aes(Rano)) +
+  geom_histogram(fill = "dodgerblue") +
+  geom_vline(xintercept = Rstat, colour = "gold3", linewidth = 2, linetype = "dashed") +
+  annotate("text", x = Rstat, y = 300, label = glue("R statistic \n {round(Rstat, digits = 3)}")) +
+  labs(title = Factor,
+       y = "Frequency",
+       x = "R",
+       caption = SigText) +
+  graph_style
+
+p1_description
+p2_month
+
 ```
 
