@@ -8,16 +8,16 @@ bibliography: [packages.bib, references.bib]
 number-sections: true
 ---
 
-These web pages compliment the *data science* chapters of the forthcoming BCT Bat Survey Guidelines 4^th^ Edition, and hopefully encourage ecologists to make the most of their bat survey data. They also demonstrate literate programming with Quarto®[^1] and R Markdown[^10] which can vastly improve workflow (*welcome to the world beyond Excel*).
+These web pages compliment the *data science* chapters of the forthcoming BCT Bat Survey Guidelines 4^th^ Edition, and hopefully encourage ecologists to make the most of their bat survey data. They also demonstrate literate programming with Quarto®[^1] and R Markdown[^13] which can vastly improve workflow (*welcome to the world beyond Excel*).
 
 [^1]: Quarto® is an open-source scientific and technical publishing system: see <https://quarto.org/>
-[^10]: R Markdown see <https://rmarkdown.rstudio.com/>
+[^13]: R Markdown see <https://rmarkdown.rstudio.com/>
 
 
 
 ![Literate Programming](Images/workflowRed.png){#fig-workflowred}
 
-Literate programming [@knuth84] enables efficient reporting of bat data[^8] from a simple table, such as a count of bats, to the output and interpretation of machine learning; plus everything in-between, see @fig-workflowred; all this can be  accomplished through the RStudio software [@RStudio22]. The code used in these pages is R[^9] [@Rcore22], literate programming also facilitates other coding languages such as Python[^6], and Julia[^7].  Coding languages can be mixed in the same literate programming document; with a chuck of R code doing the data manipulation  and another chunk of Python code performing the machine learning.  Coding languages applied to data science are developing rapidly in terms of their ability, speed of execution, and user friendliness[^5]; literate programming provides the framework for ecologists to keep their data science skills moving forward.
+Literate programming [@knuth84], outlined in @fig-workflowred, enables efficient reporting of bat data[^8] from a simple table, such as a count of bats, to the output and interpretation of machine learning; plus everything in-between; all accomplished through R[^9] [@Rcore22] and RStudio [@RStudio22]. 
 
 [^5]:  Julia has a language syntax similar to Python, runs fast, has a statistical library like R and linear programming skills similar to MATLAB.
 [^6]: <https://www.python.org/>
@@ -25,11 +25,13 @@ Literate programming [@knuth84] enables efficient reporting of bat data[^8] from
 [^8]:  as exported from sound analysis software
 [^9]:  Windows <https://cran.r-project.org/bin/windows/base/> Mac Intel & ARM <https://cran.r-project.org/bin/macosx/>
 
-To help ecologists get started, all the code making the graphs and analysis is freely available to copy and use; just click on  _Show the code_, copy to the clipboard [^2], paste into the R environment and run (to get going in R see @sec-installr). 
+To help get ecologists started, all the code making the graphs and analysis in these web pages is free to copy and use;  just click on  _Show the code_, copy to the clipboard [^2], paste into the R environment and run. If new to R and RStudio see @sec-installr. 
 
 [^2]: Clip board icon is in the top right hand corner of the code window.
 
-A _Show the code_ is given below, the code produces @fig-example.  The code copied to the clipboard is designed to run as a standalone _chunk_; with all the R libraries, data and code.
+A _Show the code_ is given below, the code produces @fig-example.  The code copied to the clipboard is designed to run as a standalone _chunk_ (or _R script_)[^11]; the code loads the required R libraries and data.
+
+[^11]: Many R script's are required in applying literate programming to bat data science; these are best organised through Quarto or R Markdown documents where the R scripts form code chunks.
 
 ```{r}
 #| code-fold: show
@@ -74,6 +76,7 @@ ggplot(graph_data, aes(area = n, fill = Month, label = Species, subgroup = Month
   theme(legend.position = "none") # No legend
 ```
 
+Literate programming facilitates the use of other coding languages such as Python[^6], and Julia[^7], these languages can be mixed in the same literate programming document; with a chuck of R code doing the data manipulation  and another chunk of Python code performing the machine learning.  Coding languages applied to data science are developing rapidly in terms of their ability, speed of execution, and user friendliness[^5]; literate programming provides the framework for ecologists to keep their data science skills moving forward.
 
 ## Install R, RStudio and Packages {#sec-installr}
 
@@ -82,7 +85,7 @@ ggplot(graph_data, aes(area = n, fill = Month, label = Species, subgroup = Month
 
 ### Install the *iBats* Package from GitHub
 
-The `iBats` package contains example data and functions that help with the *Data Science* of bat survey results. To install this package use the code below in the console (see Figure ); *one line at a time*. The package is installed from GitHub.
+The `iBats` package contains example data and functions that help with the *Data Science* of bat survey results. To install this package use the code below in the RStudio _Console_; one line at a time. The package is installed from GitHub.
 
 
 ```{r}
@@ -96,10 +99,12 @@ devtools::install_github("Nattereri/iBats")
 
 ```
 
-## Acknowledgements
-
-These web pages were built on the shoulders of others...
+## Acknowledgement {.unnumbered}
 
 
+Free and Open Source Software (FOSS) constitutes 70-90% of any modern software solution[^11]. R and RStudio are 
+open source software that have made data science more open, intuitive, accessible, and collaborative. As a Public Good[^10] the value of FOSS is yet to be fully recognised. FOSS is provided by a large community, without whom these web pages would not be written; some of this community are acknowledged as individuals in the references section of the [Resources](https://bat-survey-reporting.netlify.app/resources.html) page.
 
-## References {.unnumbered}
+[^10]: A commodity or service that is provided without profit to all members of a society, either by the government or by a private individual or organization.
+
+[^11]: <https://www.linuxfoundation.org/blog/blog/a-summary-of-census-ii-open-source-software-application-libraries-the-world-depends-on>

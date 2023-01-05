@@ -811,7 +811,7 @@ A measure of how successful the NMDS reduction is stress[^6]. The lower the stre
 
 @fig-NMDSplots-1 shows the two dimensional plot after the NMDS is applied through `metaMDS()` function to the transformed data shown in @tbl-NMDS4throot; the NMDS produced a _good_ stress of 0.14. @fig-NMDSplots-2 is the Shepard plot  showing the scatter around the regression between the interpoint distances in the final configuration (i.e., the distances between each pair of communities) against their original dissimilarities; the desirable outcome from the Shepard plot is a diagonal line with limited scatter in this respect @fig-NMDSplots-2 looks reasonable.
 
-@fig-NMDSlabelplots shows the 2D @fig-NMDSplots-1 labelled for static location (@fig-NMDSlabelplots-1) and month (@fig-NMDSlabelplots-2); the static location in @fig-NMDSlabelplots-1 are in separate groups more than the more random groupings shown for months in @fig-NMDSlabelplots-2.
+@fig-NMDSlabelplots shows the 2D @fig-NMDSplots-1: with @fig-NMDSlabelplots-1 labelled for static location and @fig-NMDSlabelplots-2 labelled for month (@fig-NMDSlabelplots-2).
 
 ```{r}
 #| label: tbl-NMDScount
@@ -952,8 +952,8 @@ stressplot(nMDS_results)
 #| label: fig-NMDSlabelplots
 #| fig-cap: "Non-metric Multidimensional Scaling Solution and Stress Plot" 
 #| fig-subcap: 
-#|   - "Unlabeled Solution of NMDS (2D)"
-#|   - "Stress Plot "
+#|   - "Labelled by Static Location"
+#|   - "Labelled by Month"
 #| layout-ncol: 2
 
 
@@ -995,6 +995,8 @@ p2
 
 
 #### ANOSIM
+
+The ANOSIM test is similar to an ANOVA hypothesis test; it uses a dissimilarity matrix as input instead of raw data. It is also non-parametric, meaning it doesn’t assume much about the data, a useful attribute for the often-skewed ecological data. As a non-parametric test, ANOSIM uses ranked dissimilarities instead of actual distances, and for this reason complements an NMDS plot. The main point of the ANOSIM test is to determine if the differences between two or more groups are significant. 
 
 The function `anosim` from the package `vegan` can test whether there is a statistical difference between groups (e.g. static locations or months)
 

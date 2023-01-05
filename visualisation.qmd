@@ -53,7 +53,7 @@ A good visualisation tells a story, removing the noise from the data and illumin
 
 To help with accessibility it is recommended that a consistent colour is used for each species throughout the report and the colours used are _readable_ to people with a visual impairment. Unfortunately, accessibility for the visually impaired is challenging when more than 8 or 10 colours are used; if this is the case consider separating the visualisation into different components, creating more than one graph or just highlighting the key species.
 
-@tbl-batcolours lists the set of colours used for the visualisations on this page.
+@tbl-batcolours lists the set of colours used in the `iBats::bat_colours_default` function and are used for most of the visualisations on this page. The `iBats::bat_colours()` function allows any colour to be associated with any bat name (including common names).
 
 
 ```{r}
@@ -165,7 +165,7 @@ graph_limit1 <- TavyOak$sunset[1] - lubridate::hours(1)
 graph_limit2 <- TavyOak$sunrise[1] + lubridate::hours(1)
 
 # colour values used by scale_fill_manual()
-graph_bat_colours <- bat_colours(TavyOak$Species, colour_vector = bat_colours_sci)
+graph_bat_colours <- iBats::bat_colours(TavyOak$Species, colour_vector = bat_colours_sci)
 
 ggplot(TavyOak, aes(y = 1, x = DateTime, fill = Species, size = bat_time)) +
   geom_jitter(shape = 21, alpha = 0.7) +
