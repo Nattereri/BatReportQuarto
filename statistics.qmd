@@ -314,6 +314,7 @@ dunn_result <- dunn.test(test_data$ave_act_per_hr, factor(test_data$Description)
 
 ```{r}
 #| eval: false
+library(dunn.test)
 
 dunn_result <- dunn.test(test_data$ave_act_per_hr, factor(test_data$Description), method = "bonferroni")
 

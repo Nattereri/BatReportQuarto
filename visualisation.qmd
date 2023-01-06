@@ -53,7 +53,7 @@ A good visualisation tells a story, removing the noise from the data and illumin
 
 To help with accessibility it is recommended that a consistent colour is used for each species throughout the report and the colours used are _readable_ to people with a visual impairment. Unfortunately, accessibility for the visually impaired is challenging when more than 8 or 10 colours are used; if this is the case consider separating the visualisation into different components, creating more than one graph or just highlighting the key species.
 
-@tbl-batcolours lists the set of colours used in the `iBats::bat_colours_default` function and are used for most of the visualisations on this page. The `iBats::bat_colours()` function allows any colour to be associated with any bat name (including common names).
+@tbl-batcolours lists the set of colours used in the `iBats::bat_colours_default` function and are used for most of the visualisations on this page. The `iBats::bat_colours()` function allows any colour to be associated with any bat name (including common names); @sec-usercolours gives an example this.
 
 
 ```{r}
@@ -525,7 +525,7 @@ ggplot(graph_data, aes(x = Species, y = post_set_min, fill = Species)) +
 
 ```
 
-### Dawn Bats and Roost Potential 
+### Dawn Bats and Roost Potential {#sec-usercolours}
 
 ```{r}
 #| label: fig-reentry1

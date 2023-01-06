@@ -114,6 +114,9 @@ bat_colours_sci <- c("Barbastella barbastellus" = "#1f78b4",
 #| label: fig-lydfordtransect
 #| fig-cap: "Bat Observations From Lydford School's Bat Walk"
 
+library(tidyverse)
+library(leaflet)
+
 # Pallet of colours for bat species on Leaflet map
 # Leaflet  bat colours
 LeafColours<- c("#ffff99",
@@ -206,6 +209,10 @@ Plotly[^1] allows easy translation of `ggplot2` graphics into an interactive web
 #| fig-cap: "Time Bats Were Active Through The Night"
 #| warning: false
 #| fig.height: 7
+
+library(tidyverse)
+library(iBats)
+library(plotly)
 
 # graph anotation
 graph_sunrise <- TavyOak$sunrise[1]
