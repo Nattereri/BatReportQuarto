@@ -253,12 +253,12 @@ div.csl-indent {
 
 </header>
 
-<p>Many columns would be added to a tidy data set so it becomes more useful for analysis; some of these are described below.</p>
+<p>Meta data is information added, as a column, to the <em>tidy</em> data. Even with a minimum tidy data set (i.e.&nbsp;species, datetime and geolocation) many columns of useful meta data can be added to enhance the analysis and reporting; described below is simple meta data that is easily added to tidy data.</p>
 <section id="date-and-time-information" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="date-and-time-information"><span class="header-section-number">1</span> Date and Time Information</h2>
 <section id="the-night" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="the-night"><span class="header-section-number">1.1</span> The <em>Night</em></h3>
-<p>Bats are active through the night; the date of the night is the date at sunset and lasts until sunrise the morning of the following day. The <em>Night</em> is a variable column that is added to the <em>tidy</em> data; it is useful convention that helps avoid the confusion of having contiguous bat activity over two dates.</p>
+<p>Bats are active through the night; the date of the <em>Night</em> is the date at sunset and lasts until sunrise the morning of the following day. The <em>Night</em> is a variable column that is added to the <em>tidy</em> data; it is useful convention that helps avoid the confusion of having contiguous bat activity over two dates.</p>
 <p>The <em>Night</em> can be obtained from the <em>iBats</em> package using the <code>date_time_info</code> function. It requires a data.frame or tibble with a <code>DateTime</code> column, the <em>iana</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> time zone can be specified; the default is <code>Europe/London</code>.</p>
 <p>The code below takes the <code>statics</code> set from the <em>iBats</em> package and adds the <em>Night</em> column, <a href="#tbl-night">Table&nbsp;1</a> shows a selection of 5 rows from the <code>statics</code> data.</p>
 <div class="cell">

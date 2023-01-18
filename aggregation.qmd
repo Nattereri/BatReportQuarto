@@ -25,7 +25,7 @@ month_levels_full <- c("January", "February", "March", "April", "May", "June", "
 
 ```
 
-Data aggregation is one of the pillars of data analysis, the process where *tidy* data is gathered and expressed in a summary form. Bat survey data tends to be aggregated in two ways:
+Data aggregation is one of the pillars of data analysis, the process where *tidy* data (plus meta data) is gathered or grouped and then expressed in summary form. Bat survey data tends to be aggregated in two ways:
 
 1.  over a given time period, or
 2.  spatially for locations or a factor related to a location (e.g. woodland)

@@ -46,7 +46,7 @@ bat_colours_sci <- c("Barbastella barbastellus" = "#1f78b4",
 
 ```
 
-A good visualisation tells a story, removing the noise from the data and illuminating the useful information. Visualise to present data to a lay audience, it also helps interpretation during analysis within the survey team.
+A good visualisation tells a story, removing the noise from the data and illuminating the useful information. We visualise to present information to a lay audience; it also helps interpretation and discussion within the survey team.  Geospatial visualisation is shown on the [Maps](<https://bat-survey-reporting.netlify.app/maps.html>) page. 
 
 
 ## Bat Colours  

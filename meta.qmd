@@ -20,13 +20,13 @@ set.seed(214)
 
 ```
 
-Many columns would be added to a tidy data set so it becomes more useful for analysis; some of these are described below.
+Meta data is information added, as a column, to the _tidy_ data.  Even with a minimum tidy data set (i.e. species, datetime and geolocation) many columns of useful meta data can be added to enhance the analysis and reporting; described below is simple meta data that is easily added to tidy data.
 
 ## Date and Time Information
 
 ### The *Night*
 
-Bats are active through the night; the date of the night is the date at sunset and lasts until sunrise the morning of the following day. The *Night* is a variable column that is added to the *tidy* data; it is useful convention that helps avoid the confusion of having contiguous bat activity over two dates.
+Bats are active through the night; the date of the *Night* is the date at sunset and lasts until sunrise the morning of the following day. The *Night* is a variable column that is added to the *tidy* data; it is useful convention that helps avoid the confusion of having contiguous bat activity over two dates.
 
 The *Night* can be obtained from the *iBats* package using the `date_time_info` function. It requires a data.frame or tibble with a `DateTime` column, the *iana*[^1] time zone can be specified; the default is `Europe/London`.
 

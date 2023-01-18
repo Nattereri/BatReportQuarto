@@ -203,6 +203,12 @@ Online books:
 
 A special mention should go to John MacFarlane who created [Pandoc](http://pandoc.org) a package to convert Markdown/RMarkdown documents (and many other types of documents) to a large variety of output formats.
 
+Online videos:
+
+[R Markdown Advanced Tips to Become a Better Data Scientist... | With Tom Mock](https://www.youtube.com/watch?v=WkF7nqEYF1E)
+
+[Welcome to Quarto Workshop! | Led by Tom Mock, RStudio](https://www.youtube.com/watch?v=yvi5uXQMvu4)
+
 ## Interactive
 
 [`leaflet`](https://rstudio.github.io/leaflet/) [@R-leaflet] one of the most popular open-source JavaScript libraries for interactive maps. 
