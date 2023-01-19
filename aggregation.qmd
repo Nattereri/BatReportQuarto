@@ -72,6 +72,11 @@ The simplest form of aggregation is a count of bats[^1]; as shown in @tbl-simple
 #| label: tbl-simplecount
 #| tbl-cap: "A Count by Species"
 
+# Libraries (Packages) used
+library(tidyverse)
+library(iBats)
+library(gt)
+
 statics %>%
   group_by(Species) %>% 
   count() %>% 
@@ -102,7 +107,6 @@ statics %>%
     )
   )
   
-
 ```
 
 More informative tables can be made by adding meta data such as the Month and Year of the observations. This is easy done on a *tidy data* conforming to the *minimal data requirement* with the `date_time_info` function in the `iBats` package. @tbl-countannex2 shows the monthly count (bat passes) of *Annex II* species[^2]; .
@@ -113,8 +117,17 @@ More informative tables can be made by adding meta data such as the Month and Ye
 #| label: tbl-countannex2
 #| tbl-cap: "A Count of Annex II Bats Grouped by Month"
 
+# Libraries (Packages) used
+library(tidyverse)
+library(iBats)
+library(flextable)
+library(officer)
+
 # Add data and time information to the statics data using the iBats::date_time_info
 statics_plus <- iBats::date_time_info(statics)
+
+# Vector of month names used in the factor function
+month_levels_full <- c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
 
 # re-order months column with rev so months run top to bottom of the table
 statics_plus <- statics_plus %>%
@@ -147,8 +160,6 @@ statics_plus %>%
   bg(bg = "black", part = "header") %>%
   color(color = "white", part = "header")
   
-
-  
 ```
 
 Tables of numbers can be frustrating to read. To help readability the table can be annotated highlighting the count on a colour scale linked to the magnitude of the result. This is shown in @tbl-countannex2c for the count of bats shown in @tbl-countannex2.
@@ -157,8 +168,17 @@ Tables of numbers can be frustrating to read. To help readability the table can 
 #| label: tbl-countannex2c
 #| tbl-cap: "A Count (Highlighted) of Annex II Bats Grouped by Month"
 
+# Libraries (Packages) used
+library(tidyverse)
+library(flextable)
+library(officer)
+library(iBats)
+
 # Add data and time information to the statics data using the iBats::date_time_info
 statics_plus <- iBats::date_time_info(statics)
+
+# Vector of month names used in the factor function
+month_levels_full <- c("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
 
 # re-order months column with rev so months run top to bottom of the table
 statics_plus <- statics_plus %>%
@@ -204,8 +224,6 @@ table_data %>%
   bg(bg = "black", part = "header") %>%
   color(color = "white", part = "header")
   
-
-  
 ```
 
 
@@ -219,11 +237,11 @@ Summary statistics for the Common pipistrelle (_Pipistrellus pipistrellus_) obse
 #| tbl-cap: "Common Pipstrelle Observations (Passes) at the Static Locations"
 #| warning: false
 
-
+# Libraries (Packages) used
 library(mosaic)
 library(gt)
 library(gtExtras)
-
+library(iBats)
 
 # Add data and time information to the statics data using the iBats::date_time_info
 statics_plus <- iBats::date_time_info(statics)
@@ -263,10 +281,11 @@ cond_stats %>%
 #| tbl-cap: "Nightly Species Observations (Passes) by Month"
 #| warning: false
 
-
+# Libraries (Packages) used
 library(mosaic)
 library(gt)
 library(gtExtras)
+library(iBats)
 
 # Annex II Bats (in the static)
 AnnexII <- c("Barbastella barbastellus", "Rhinolophus ferrumequinum", "Rhinolophus hipposideros")
@@ -296,8 +315,6 @@ grouped_data <- statics_plus %>%
               Maximum = round(max(n, na.rm = T), 2),
               SD = round(sd(n, na.rm = T), 2),
               Nr = n())
-
-
 
 # riven_cond_stats is made into a the table (using the code below)
 grouped_data %>% 
@@ -332,10 +349,11 @@ grouped_data %>%
 #| tbl-cap: "Nightly Species Observations by Month (Alternative Grouping)"
 #| warning: false
 
-
+# Libraries (Packages) used
 library(mosaic)
 library(gt)
 library(gtExtras)
+library(iBats)
 
 # Annex II Bats (in the static)
 AnnexII <- c("Barbastella barbastellus", "Rhinolophus ferrumequinum", "Rhinolophus hipposideros")
