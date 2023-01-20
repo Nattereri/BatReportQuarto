@@ -238,6 +238,7 @@ Summary statistics for the Common pipistrelle (_Pipistrellus pipistrellus_) obse
 #| warning: false
 
 # Libraries (Packages) used
+library(tidyverse)
 library(mosaic)
 library(gt)
 library(gtExtras)
@@ -282,6 +283,7 @@ cond_stats %>%
 #| warning: false
 
 # Libraries (Packages) used
+library(tidyverse)
 library(mosaic)
 library(gt)
 library(gtExtras)
@@ -350,6 +352,7 @@ grouped_data %>%
 #| warning: false
 
 # Libraries (Packages) used
+library(tidyverse)
 library(mosaic)
 library(gt)
 library(gtExtras)
