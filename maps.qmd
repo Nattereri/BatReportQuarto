@@ -257,12 +257,16 @@ plotmap +
 
 ## Outline Maps 
 
-Outline maps are useful base maps; as they are not cluttered by distracting information.  Outline maps are available from the Office for National Statistics[^5]. Digital boundary products and reference maps are supplied under the Open Government Licence and should include copyright statements when the maps are reproduced[^6].
+Outline maps are useful base maps; as they are not cluttered by distracting information. 
+
+### Office for National Statistics
+
+Outline maps are available from the Office for National Statistics[^5]. Digital boundary products and reference maps are supplied under the Open Government Licence and should include copyright statements when the maps are reproduced[^6].
 
 [^5]: <https://geoportal.statistics.gov.uk/>
 [^6]: Licence information can be found here: <https://www.ons.gov.uk/methodology/geography/licences>
 
-@fig-marytavyloc shows the location of the MaryTavy transect on an outline map of Great Britain; the source of the map is the  Office for National Statistics licensed under the Open Government Licence v.3.0, it contains OS data© Crown copyright and database 2017.
+@fig-marytavyloc shows the location of the MaryTavy transect on an outline map of Great Britain; the source of the map is the Office for National Statistics licensed under the Open Government Licence v.3.0, it contains OS data© Crown copyright and database 2017. @fig-marytavylocDevon shows the location of the MaryTavy transect on an outline map of Devon.
 
 ```{r}
 #| warning: false
@@ -301,6 +305,82 @@ ggplot() +
           fill = "#8B0000") +
   theme_void() 
 ```
+
+
+
+```{r}
+#| warning: false
+#| message: false
+#| label: fig-marytavylocDevon
+#| fig-cap: "Location within Devon of the Mary Tavy Transect June 2019"
+
+library(sf)
+library(tidyverse)
+library(iBats)
+
+# Make location point for Mary Tavy Transect
+MaryTavyLoc <- MaryTavy %>% 
+  summarise(lat = median(`Latitude [WGS84]`),
+            lon = median(`Longitude [WGS84]`)) %>% 
+  st_as_sf(coords = c("lon", "lat")) %>% 
+  st_set_crs(4326) %>% 
+  # Convert coord reference system to British National Grid
+  st_transform(crs = 27700)
+
+# Load outline map and filter for Devon 
+GB <- sf::st_read("maps/GeneralGB/CTYUA_Dec_2017_GCB_GB.shp", quiet = TRUE) %>% 
+  filter(ctyua17nm == "Devon")
+
+# Plot map and Location
+ggplot() +
+  geom_sf(data = GB,
+          linewidth = 0.25,
+          colour = "#228b22",
+          fill = "#98FB98") +
+  geom_sf(data = MaryTavyLoc,
+          shape = 23,
+          size = 5,
+          colour = "#8B0000",
+          fill = "#fab824") +
+  labs(title = "County of Devon") +
+  theme_void() +
+  theme(title = element_text(colour = "#228b22", size = 14, face = "bold"))
+
+```
+
+### The `rnaturalearth` package
+
+The `rnaturalearth` package offers outline maps on a world and country scale. @fig-marytavyWorld shows the world map using the Gall Peters projection[^8].  
+
+[^8]: For world map projections in R see <https://www.happykhan.com/posts/map-projections-in-r/>
+
+```{r}
+#| warning: false
+#| message: false
+#| label: fig-marytavyWorld
+#| fig-cap: "Location of the Mary Tavy on a World Map (Gall Peters Projection)"
+
+library(ggplot2)
+library(sf)
+library(rnaturalearth)
+
+worldmap <- ne_countries(scale = 'medium', type = 'map_units',
+                         returnclass = 'sf')
+
+ggplot() + 
+  geom_sf(data = worldmap, fill = "grey95") + 
+  geom_sf(data = MaryTavyLoc,
+          shape = 23,
+          size = 2,
+          colour = "#8B0000",
+          fill = "#fab824") +
+  # Gall Peters projection
+  coord_sf(crs= "+proj=cea +lon_0=0 +x_0=0 +y_0=0 +lat_ts=45 +ellps=WGS84 +datum=WGS84 +units=m +no_defs") +
+  theme_void()
+
+```
+
+
 
 ## Three Dimensional Maps 
 
