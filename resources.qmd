@@ -55,7 +55,8 @@ knitr::write_bib(c('base',
                    'plotly',
                    'leaflet',
                    'DT',
-                   'reactable'), bib_loc)
+                   'reactable',
+                   'rnaturalearth'), bib_loc)
 
 #Then add `bibliography: packages.bib` to the YAML frontmatter. Now you can cite packages. For example: the R language [@R-base] is awesome. We used the **knitr** package [@R-knitr; @knitr2015] in our analysis. We also build a Shiny app [@R-shiny].
 
@@ -162,6 +163,8 @@ The excellent online book [Geocomputation with R](https://geocompr.robinlovelace
 [`metR`](https://github.com/eliocamp/metR) [@R-metR] a package with several functions and utilities that make R better for handling meteorological data; used here for conour plots.
 
 [`raster`](https://rspatial.org/raster/) [@R-raster] a package for reading, writing, manipulating, analyzing and modeling of spatial data.
+
+[`rnaturalearth`](https://github.com/ropensci/rnaturalearth) [@R-rnaturalearth] A package with _Natural Earth_ data including world and country maps.
 
 ## Statistics
 
