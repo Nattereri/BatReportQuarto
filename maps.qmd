@@ -331,12 +331,12 @@ MaryTavyLoc <- MaryTavy %>%
 GB <- sf::st_read("maps/GeneralGB/CTYUA_Dec_2017_GCB_GB.shp", quiet = TRUE) %>% 
   filter(ctyua17nm == "Devon")
 
-# Plot map and Location
-ggplot() +
+# Save map and Location in 
+Devon <- ggplot() +
   geom_sf(data = GB,
           linewidth = 0.25,
           colour = "#228b22",
-          fill = "#98FB98") +
+          fill = "#E4FAE4") +
   geom_sf(data = MaryTavyLoc,
           shape = 23,
           size = 5,
@@ -346,7 +346,116 @@ ggplot() +
   theme_void() +
   theme(title = element_text(colour = "#228b22", size = 14, face = "bold"))
 
+# Plot map and Location
+Devon
+
 ```
+
+### Open Street Map data 
+
+The R package `osmdata` downloads feature data from OpenStreetMap (OSM) [^1]. A list of the available features can be found in the [OSM wiki](https://wiki.openstreetmap.org/wiki/Map_features). @fig-devonrivers shows the _river_ feature abstracted from`osmdata` and displayed on the outline map of Devon from @fig-marytavylocDevon.  @fig-watercourses shows the water features (river, ditch, drain, and stream) for West Devon together with the location of the example data in the `iBats` package.  
+
+```{r}
+#| warning: false
+#| message: false
+#| label: fig-devonrivers
+#| fig-cap: "Rivers of Devon"
+
+library(tidyverse)
+library(osmdata)
+library(sf)
+
+#Obtain the River feature from `osmdata` for the Devon area
+river <- opq(bbox = c(-4.3, 50.2, -3.2, 51.3)) %>%
+  add_osm_feature(key = "waterway", value = "river") %>%
+  osmdata_sf()
+
+Devon +
+  geom_sf(data = river$osm_lines,
+          inherit.aes = FALSE,
+          color = "blue",
+          size = .2,
+          alpha = .5) +
+  labs(title = "Rivers of Devon") +
+  theme(title = element_text(colour = "blue", size = 14, face = "bold"))
+  
+  
+
+```
+
+
+```{r}
+#| warning: false
+#| message: false
+#| label: fig-watercourses
+#| fig-cap: "Location of iBats Example Data and Watercorses of West Devon"
+
+library(tidyverse)
+library(osmdata)
+library(sf)
+library(iBats)
+library(ggrepel)
+
+Loc_TavyOak <- TavyOak %>%
+  summarise(
+    lat = median(Latitude, na.rm = T),
+    lon = median(Longitude, na.rm = T)
+  ) %>%
+  mutate(DataSet = "TavyOak")
+
+Loc_MaryTavy <- MaryTavy %>%
+  summarise(
+    lat = median(`Latitude [WGS84]`, na.rm = T),
+    lon = median(`Longitude [WGS84]`, na.rm = T)
+  ) %>%
+  mutate(DataSet = "MaryTavy")
+
+Loc_Lydford <- Lydford %>%
+  summarise(
+    lat = median(Latitude, na.rm = T),
+    lon = median(Longitude, na.rm = T)
+  ) %>%
+  mutate(DataSet = "Lydford")
+
+Location_datasets <- bind_rows(Loc_TavyOak, Loc_MaryTavy, Loc_Lydford)
+
+
+co_ords <- c(-4.35, 50.49, -3.95, 50.665)
+watercourses <- opq(bbox = co_ords) %>%
+ add_osm_feature(key = "waterway", value = c("river", "ditch", "drain",  "stream")) %>%
+  osmdata_sf()
+
+
+ggplot() +
+  geom_sf(data = watercourses$osm_lines,
+          inherit.aes = FALSE,
+          color = "blue",
+          size = .2,
+          alpha = .5) +
+  coord_sf(xlim = c(-4.35, -3.95), 
+           ylim = c(50.49, 50.665),
+           expand = FALSE) +
+  geom_point(
+    data = Location_datasets,
+    aes(x = lon, y = lat),
+    shape = 25,
+    fill = "darkred",
+    colour = "gold",
+    size = 6
+  ) +
+  geom_label_repel(
+    data = Location_datasets, aes(x = lon, y = lat, label = DataSet), segment.size = 0.2,
+    segment.color = "grey50",
+    direction = "both",
+    hjust = 0,
+    size = 4,
+    alpha = 0.9
+  ) +
+  theme_void() 
+  
+
+```
+
 
 ### The `rnaturalearth` package
 
@@ -358,7 +467,7 @@ The `rnaturalearth` package offers outline maps on a world and country scale. @f
 #| warning: false
 #| message: false
 #| label: fig-marytavyWorld
-#| fig-cap: "Location of the Mary Tavy on a World Map (Gall Peters Projection)"
+#| fig-cap: "Location of Mary Tavy on a World Map (Gall Peters Projection)"
 
 library(ggplot2)
 library(sf)
@@ -372,8 +481,8 @@ ggplot() +
   geom_sf(data = MaryTavyLoc,
           shape = 23,
           size = 2,
-          colour = "#8B0000",
-          fill = "#fab824") +
+          colour = "#fab824",
+          fill = "#8B0000") +
   # Gall Peters projection
   coord_sf(crs= "+proj=cea +lon_0=0 +x_0=0 +y_0=0 +lat_ts=45 +ellps=WGS84 +datum=WGS84 +units=m +no_defs") +
   theme_void()

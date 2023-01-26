@@ -20,6 +20,7 @@ bib_loc <- "..//BatReportQuarto3//packages.bib"
 bib_loc <- "packages.bib"
 knitr::write_bib(c('base',
                    'tidyverse',
+                   'tibble',
                    'suncalc',
                    'ggplot2',
                    'ggrepel',
@@ -56,7 +57,8 @@ knitr::write_bib(c('base',
                    'leaflet',
                    'DT',
                    'reactable',
-                   'rnaturalearth'), bib_loc)
+                   'rnaturalearth',
+                   'osmdata'), bib_loc)
 
 #Then add `bibliography: packages.bib` to the YAML frontmatter. Now you can cite packages. For example: the R language [@R-base] is awesome. We used the **knitr** package [@R-knitr; @knitr2015] in our analysis. We also build a Shiny app [@R-shiny].
 
@@ -108,6 +110,8 @@ Other online books:
 
 Getting data into R from *csv* and *Excel* files can be done with [`readr`](https://readr.tidyverse.org/) [@R-readr] and [`readxl`](https://readxl.tidyverse.org/) [@R-readxl] packages respectively. See also [Data import](https://r4ds.had.co.nz/data-import.html) in R4DS. 
 
+Once loaded in the R environment it is stored as a [`tibble`](https://r4ds.had.co.nz/tibbles.html) [@R-tibble]. A Tibble is tabulated data, in R terms a simplified data frame, that make working in the tidyverse a little easier.
+
 Data wrangling is made easy with functions from the [`dplyr`](https://dplyr.tidyverse.org/) [@R-dplyr] and [`tidyr`](https://tidyr.tidyverse.org/) packages. See also [Tidy Data](https://r4ds.had.co.nz/tidy-data.html) and [Data transformation](https://r4ds.had.co.nz/transform.html) in R4DS. 
 
 The manipulation of text was through the [`stringr`](https://stringr.tidyverse.org/) [@R-stringr] package. See also [Strings](https://r4ds.had.co.nz/strings.html) in R4DS.
@@ -154,6 +158,8 @@ The excellent online book [Geocomputation with R](https://geocompr.robinlovelace
 
 [`ggspatial`](https://paleolimbot.github.io/ggspatial/) [@R-ggspatial] allows spatial data to be plotted with the power of the ggplot2. It also gives access to [Open Street Map](https://www.openstreetmap.org/) tiles.
 
+[`osmdata`](https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html) [@R-osmdata] is an R package for downloading and using data from OpenStreetMap (OSM). Unlike the `ggspatial` package, which facilitates the download of raster tiles, `osmdata` provides access to the vector data underlying OSM.
+
 [`elevatr`](https://github.com/jhollist/elevatr/) [@R-elevatr] a package for accessing elevation data from various sources.
 
 [`terra`](https://rspatial.org/index.html) [@R-terra] a package of methods for spatial data analysis with vector (points, lines, polygons) and raster (grid) data.
@@ -164,7 +170,7 @@ The excellent online book [Geocomputation with R](https://geocompr.robinlovelace
 
 [`raster`](https://rspatial.org/raster/) [@R-raster] a package for reading, writing, manipulating, analyzing and modeling of spatial data.
 
-[`rnaturalearth`](https://github.com/ropensci/rnaturalearth) [@R-rnaturalearth] A package with _Natural Earth_ data including world and country maps.
+[`rnaturalearth`](https://docs.ropensci.org/rnaturalearth/articles/rnaturalearth.html) [@R-rnaturalearth] A package with _Natural Earth_ data including world and country maps.
 
 ## Statistics
 
