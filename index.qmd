@@ -4,7 +4,6 @@ format:
   html:
      code-fold: true
      code-summary: "Show the code"
-bibliography: [packages.bib, references.bib]
 number-sections: true
 ---
 
@@ -17,7 +16,7 @@ These web pages compliment the *data science* chapters of the forthcoming BCT Ba
 
 ![Literate Programming](Images/workflowRed.png){#fig-workflowred}
 
-Literate programming [@knuth84], outlined in @fig-workflowred, enables efficient reporting of bat data[^8] from a simple table, such as a count of bats, to the output and interpretation of machine learning; plus everything in-between; all accomplished through R[^9] [@Rcore22] and RStudio [@RStudio22]. 
+Literate programming [@knuth_literate_1984], outlined in @fig-workflowred, enables efficient reporting of bat data[^8] from a simple table, such as a count of bats, to the output and interpretation of machine learning; plus everything in-between; all accomplished through R[^9] [@R-base] and RStudio [@RStudio22]. 
 
 [^5]:  Julia has a language syntax similar to Python, runs fast, has a statistical library like R and linear programming skills similar to MATLAB.
 [^6]: <https://www.python.org/>

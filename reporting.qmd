@@ -1,6 +1,5 @@
 ---
 title: "One Click Reporting"
-bibliography: references.bib
 format: 
   html:
      code-fold: true
@@ -21,7 +20,9 @@ library(glue)
 
 ```
 
-A full bat survey report produced, ***with one mouse click***, from sound analysis data (i.e. after identifying the bat detector calls to species or genus with sound analysis) see @fig-workflow. _One click_ reporting is achieved through literate programming [@knuth84]; a procedure of mixing code and descriptive writing, in order to undertake and explain data analysis simultaneously in the same document. This is an efficient practice of workflow! A one click Word report see @sec-wordrmd. A one click PowerPoint see @sec-powerpointrmd.
+
+
+A full bat survey report produced, ***with one mouse click***, from sound analysis data (i.e. after identifying the bat detector calls to species or genus with sound analysis) see @fig-workflow. _One click_ reporting is achieved through literate programming [@knuth_literate_1984]; a procedure of mixing code and descriptive writing, in order to undertake and explain data analysis simultaneously in the same document. This is an efficient practice of workflow! A one click Word report see @sec-wordrmd. A one click PowerPoint see @sec-powerpointrmd.
 
 
 ![Workflow In Practice](Images/workflow.png){#fig-workflow}

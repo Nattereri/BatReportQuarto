@@ -5,7 +5,6 @@ format:
      code-fold: true
      code-summary: "Show the code"
 number-sections: true
-bibliography: "https://api.citedrive.com/bib/04a2efce-6ae6-418a-ab5b-dbef99b46587/references.bib?x=eyJpZCI6ICIwNGEyZWZjZS02YWU2LTQxOGEtYWI1Yi1kYmVmOTliNDY1ODciLCAidXNlciI6ICIyNTAwIiwgInNpZ25hdHVyZSI6ICJjOTUwMzBmZjAwMzI0NjRhM2FjYjI5MjQ3ZWM4YjM2ODdkZGYxNDdiZTdhMjljZTVjMGYxMjM3OTMxYzJiNmZhIn0=/bibliography.bib"
 ---
 
 ```{r}
@@ -23,7 +22,7 @@ library(broom)
 
 Statistical tests are undertaken to improve ecological understanding, separating the single from the noise. It enhances the ecological description when writing reports, making the report more evidenced based and therefore more robust and reproducible by others. When the data is not clear, or there is too much data to see, good statistics brings comprehension. Then there is a tendency to perceive connections or meaningful patterns between unrelated or random things, termed apophenia; here statistical testing can demonstrate it is random or unrelated.
 
-There are many reference books for ecologists on statistics such as the gentile introductions _Statistics for Terrified Biologists_ [@emden_statistics_2008], _Practical Statistics for Field Biology_ [@fowler_practical_1998]  and _Choosing and Using Statistics: A Biologist's Guide_ [@dytham_choosing_2011]. A more comprehensive guide to ecological statistics is available from _Numerical Ecology_ [@legendre_numerical_2012] and _Analysiing Ecological Data_ [@zuur_analysiing_2007]. The _Numerical Ecology with {R}_ [@borcard_numerical_2011] has a focus on ecological statistics using the R environment.
+There are many reference books for ecologists on statistics such as the gentle introductions _Statistics for Terrified Biologists_ [@emden_statistics_2008], _Practical Statistics for Field Biology_ [@fowler_practical_1998]  and _Choosing and Using Statistics: A Biologist's Guide_ [@dytham_choosing_2011]. A more comprehensive guide to ecological statistics is available from _Numerical Ecology_ [@legendre_numerical_2012] and _Analysiing Ecological Data_ [@zuur_analysiing_2007]. The _Numerical Ecology with {R}_ [@borcard_numerical_2011] has a focus on ecological statistics using the R environment.
 
 
 ## Summary Statistics
@@ -795,9 +794,13 @@ The output of `kmeans` is a list of information; the most important:
 
 ### Non-metric Multidimensional Scaling (NMDS)
 
+
+
+
+
 Non-metric Multidimensional Scaling is an ordination technique that reduces dimensionality in multivariate data sets such as the count of bats in @tbl-NMDScount.  Dimensionality reduction simply refers to the process of reducing the number of attributes in a dataset while keeping as much of the variation in the original dataset as possible. The goal of NMDS is to collapse information from multiple dimensions (e.g, from multiple communities, sites, etc.) into just a few, so that they can be visualized, (e.g. as a 2D or 3D plot), and interpreted.
 
-Unlike other ordination techniques that rely on (primarily Euclidean) distances, such as Principal Component Analysis (PCA), NMDS uses rank orders, and thus is an extremely flexible technique that can accommodate a variety of different kinds of data; NMDS does require at least one observation per factor (e.g. site or month). In R, the `metaMDS()` function of the `vegan` package can execute a NMDS. As input, it expects a community matrix with the factors as rows and the species as columns; @tbl-NMDScount has two factors, static location and month, that are treated separately. 
+Unlike other ordination techniques that rely on (primarily Euclidean) distances, such as Principal Component Analysis (PCA), NMDS uses rank orders, and thus is an extremely flexible technique that can accommodate a variety of different kinds of data [@clarke_non-parametric_1993], [@Krobertclarke1999Nonmetric:7dd2]; NMDS does require at least one observation per factor (e.g. site or month). In R, the `metaMDS()` function of the `vegan` package can execute a NMDS. As input, it expects a community matrix with the factors as rows and the species as columns; @tbl-NMDScount has two factors, static location and month, that are treated separately. 
 
 Before undertaking ordination it is best to transform the data; this helps reduce the influence of large counts from dominant species (i.e. Common pipistrelles). @tbl-NMDS4throot is @tbl-NMDScount transformed with  $\sqrt[4]{count}$.
 

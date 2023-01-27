@@ -1,6 +1,6 @@
 ---
 title: "Resources"
-bibliography: [packages.bib, references.bib]
+#bibliography: [packages.bib, references.bib]
 number-sections: true
 ---
 
@@ -87,7 +87,7 @@ rep_txt <- "reports on bat surveys"
 
 
 
-There are many approaches for doing `r glue("{ds_txt}")`, this section shows the resources that were used to make these pages, providing  the background to the example code and revealing how it can be extended or adapted to generate enhanced `r glue("{rep_txt}")`. All of this can be undertaken with the open-source R statistical programming language [@Rcore22] through RStudio [@RStudio22]. 
+There are many approaches for doing `r glue("{ds_txt}")`, this section shows the resources that were used to make these pages, providing  the background to the example code and revealing how it can be extended or adapted to generate enhanced `r glue("{rep_txt}")`. All of this can be undertaken with the open-source R statistical programming language [@R-base] through RStudio [@RStudio22]. 
 
 A prime resource for learning `r glue("{ds_txt}")` with R are the the online books[^1], a comprehensive guide to these books and other R-resources is the [Big Book of R](https://www.bigbookofr.com)  by Oscar Baruffa.  This page references the online books, packages, websites and other resources with a focus on `r glue("{ds_txt}")`:
 

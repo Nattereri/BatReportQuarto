@@ -4,7 +4,6 @@ format:
   html:
      code-fold: true
      code-summary: "Show the code"
-bibliography: references.bib
 number-sections: true
 ---
 

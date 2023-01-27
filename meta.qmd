@@ -1,6 +1,5 @@
 ---
 title: "Meta Data"
-bibliography: packages.bib
 format: 
   html:
      code-fold: true
@@ -20,7 +19,7 @@ set.seed(214)
 
 ```
 
-Meta data is information added, as a column, to the _tidy_ data.  Even with a minimum tidy data set (i.e. species, datetime and geolocation) many columns of useful meta data can be added to enhance the analysis and reporting; described below is simple meta data that is easily added to tidy data.
+Meta data is information added, as a column, to the _tidy_ data.  Even with a minimum tidy data set (i.e. species, datetime and geolocation) many columns of useful meta data can be added to enhance the analysis and reporting; described below is simple meta data easily added to tidy data.
 
 ## Date and Time Information
 
@@ -371,7 +370,7 @@ statics_plus %>%
 
 ## Bat Activity Time  
 
-Bat identification software that use full spectrum recording, generate other characteristics from a bat call, or sequence of calls; these characteristics can be used to calculate indices of activity. Elekon's BatExplorer[^3] and Wildlife Acoustics' Kaleidoscope[^4] produce the number of `calls` or `pulses` in an recording together with the:
+The limitation of _bat passes_ has been recognised [@sowler_bat_2013], bat identification software that use full spectrum recording, generate other characteristics from a bat call, or sequence of calls; these characteristics can be used to calculate other indices of activity. Elekon's BatExplorer[^3] and Wildlife Acoustics' Kaleidoscope[^4] produce the number of `calls` or `pulses` in an recording together with the:
 
 [^3]: <http://www.batlogger.com/en/real-time-systems/batexplorer-2-software.html>
 [^4]: <https://www.wildlifeacoustics.com/products/kaleidoscope-software-ultrasonic>
