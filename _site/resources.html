@@ -198,10 +198,11 @@ div.csl-indent {
 <section id="general" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="general"><span class="header-section-number">1</span> General</h2>
 <p><a href="http://r4ds.had.co.nz/index.html">R for Data Science</a> (R4DS) is an excellent overview of data science with R; it introduces the <a href="https://www.tidyverse.org/"><code>tidyverse</code></a> a collection of packages providing essential data science tools <span class="citation" data-cites="tidyverse2019 R-tidyverse">(<a href="#ref-tidyverse2019" role="doc-biblioref">Wickham et al. 2019</a>; <a href="#ref-R-tidyverse" role="doc-biblioref">Wickham 2022b</a>)</span>; many of these individual packages are referenced below. The tidyverse packages have been widely adopted by R Data Scientists; all packages share an underlying design philosophy, grammar, and data structures.</p>
-<p>There are many free learning resources online; a couple of well structured courses are:</p>
+<p>There are many free learning resources online; well structured courses are:</p>
 <ul>
-<li><a href="https://rfortherestofus.com/courses/getting-started/">R for the Rest of US</a></li>
 <li><a href="https://education.rstudio.com/">RStudio</a></li>
+<li><a href="https://ourcodingclub.github.io/">Coding Club</a> for ecologists and environmental scientists.</li>
+<li><a href="https://rfortherestofus.com/courses/getting-started/">R for the Rest of US</a></li>
 </ul>
 <p>Other online books:</p>
 <p><a href="https://mdsr-book.github.io/mdsr2e/">Modern Data Science with R</a> by Benjamin S. Baumer, Daniel T. Kaplan, and Nicholas J. Horton; a comprehensive guide to data science with R.</p>
@@ -209,7 +210,7 @@ div.csl-indent {
 <section id="tidy-data" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="tidy-data"><span class="header-section-number">2</span> Tidy Data</h2>
 <p>Getting data into R from <em>csv</em> and <em>Excel</em> files can be done with <a href="https://readr.tidyverse.org/"><code>readr</code></a> <span class="citation" data-cites="R-readr">(<a href="#ref-R-readr" role="doc-biblioref">Wickham, Hester, and Bryan 2022</a>)</span> and <a href="https://readxl.tidyverse.org/"><code>readxl</code></a> <span class="citation" data-cites="R-readxl">(<a href="#ref-R-readxl" role="doc-biblioref">Wickham and Bryan 2022</a>)</span> packages respectively. See also <a href="https://r4ds.had.co.nz/data-import.html">Data import</a> in R4DS.</p>
-<p>Once loaded in the R environment it is stored as a <a href="https://r4ds.had.co.nz/tibbles.html"><code>tibble</code></a> <span class="citation" data-cites="R-tibble">(<a href="#ref-R-tibble" role="doc-biblioref">Müller and Wickham 2022</a>)</span>. A Tibble is tabulated data, in R terms a simplified data frame, that make working in the tidyverse a little easier.</p>
+<p>Once loaded in the R environment it is stored as a <a href="https://r4ds.had.co.nz/tibbles.html"><code>tibble</code></a> <span class="citation" data-cites="R-tibble">(<a href="#ref-R-tibble" role="doc-biblioref">Müller and Wickham 2022</a>)</span>. A Tibble is tabulated data, in R terms a simplified data frame, making working in the tidyverse a little easier.</p>
 <p>Data wrangling is made easy with functions from the <a href="https://dplyr.tidyverse.org/"><code>dplyr</code></a> <span class="citation" data-cites="R-dplyr">(<a href="#ref-R-dplyr" role="doc-biblioref">Wickham, François, et al. 2022</a>)</span> and <a href="https://tidyr.tidyverse.org/"><code>tidyr</code></a> packages. See also <a href="https://r4ds.had.co.nz/tidy-data.html">Tidy Data</a> and <a href="https://r4ds.had.co.nz/transform.html">Data transformation</a> in R4DS.</p>
 <p>The manipulation of text was through the <a href="https://stringr.tidyverse.org/"><code>stringr</code></a> <span class="citation" data-cites="R-stringr">(<a href="#ref-R-stringr" role="doc-biblioref">Wickham 2022a</a>)</span> package. See also <a href="https://r4ds.had.co.nz/strings.html">Strings</a> in R4DS.</p>
 </section>
@@ -273,7 +274,7 @@ div.csl-indent {
 </section>
 <section id="reporting" class="level2" data-number="8">
 <h2 data-number="8" class="anchored" data-anchor-id="reporting"><span class="header-section-number">8</span> Reporting</h2>
-<p>Reports can be produced through literate programming <span class="citation" data-cites="knuth84">(<a href="#ref-knuth84" role="doc-biblioref"><strong>knuth84?</strong></a>)</span> with <a href="https://rmarkdown.rstudio.com/">R Markdown</a> <span class="citation" data-cites="R-rmarkdown rmarkdown2018 rmarkdown2020">(<a href="#ref-R-rmarkdown" role="doc-biblioref">Allaire et al. 2023</a>; <a href="#ref-rmarkdown2018" role="doc-biblioref">Xie, Allaire, and Grolemund 2018</a>; <a href="#ref-rmarkdown2020" role="doc-biblioref">Xie, Dervieux, and Riederer 2020</a>)</span> and <a href="https://quarto.org/">Quarto®</a>; to use Quarto with R, the <code>rmarkdown</code> R package should be installed; the <code>rmarkdown</code> package will also install the <a href="https://yihui.org/knitr/"><code>knitr</code></a> package <span class="citation" data-cites="knitr2014 knitr2015 R-knitr">(<a href="#ref-knitr2014" role="doc-biblioref">Xie 2014</a>, <a href="#ref-knitr2015" role="doc-biblioref">2015</a>, <a href="#ref-R-knitr" role="doc-biblioref">2022</a>)</span> to ensure documents render containing R code.</p>
+<p>Reports can be produced through literate programming <span class="citation" data-cites="knuth_literate_1984">(<a href="#ref-knuth_literate_1984" role="doc-biblioref">Knuth 1984</a>)</span> with <a href="https://rmarkdown.rstudio.com/">R Markdown</a> <span class="citation" data-cites="R-rmarkdown rmarkdown2018 rmarkdown2020">(<a href="#ref-R-rmarkdown" role="doc-biblioref">Allaire et al. 2023</a>; <a href="#ref-rmarkdown2018" role="doc-biblioref">Xie, Allaire, and Grolemund 2018</a>; <a href="#ref-rmarkdown2020" role="doc-biblioref">Xie, Dervieux, and Riederer 2020</a>)</span> and <a href="https://quarto.org/">Quarto®</a>; to use Quarto with R, the <code>rmarkdown</code> R package should be installed; the <code>rmarkdown</code> package will also install the <a href="https://yihui.org/knitr/"><code>knitr</code></a> package <span class="citation" data-cites="knitr2014 knitr2015 R-knitr">(<a href="#ref-knitr2014" role="doc-biblioref">Xie 2014</a>, <a href="#ref-knitr2015" role="doc-biblioref">2015</a>, <a href="#ref-R-knitr" role="doc-biblioref">2022</a>)</span> to ensure documents render containing R code.</p>
 <p>Rending reports into Microsoft Word or PowerPoint can be greatly enhanced by:</p>
 <p><a href="https://davidgohel.github.io/officedown/"><code>officedown</code></a> <span class="citation" data-cites="R-officedown">(<a href="#ref-R-officedown" role="doc-biblioref">Gohel and Ross 2023</a>)</span> a package facilitating the formatting of Microsoft Word documents produced by R Markdown.</p>
 <p><a href="https://davidgohel.github.io/officer/"><code>officer</code></a> <span class="citation" data-cites="R-officer">(<a href="#ref-R-officer" role="doc-biblioref">Gohel 2023</a>)</span> a package that lets R users manipulate Word <code>.docx</code> and PowerPoint <code>*.pptx</code> documents.</p>
@@ -350,6 +351,9 @@ Hollister, Jeffrey. 2022. <em>Elevatr: Access Elevation Data from Various APIs</
 </div>
 <div id="ref-R-gt" class="csl-entry" role="doc-biblioentry">
 Iannone, Richard, Joe Cheng, Barret Schloerke, Ellis Hughes, and JooYoung Seo. 2022. <em>Gt: Easily Create Presentation-Ready Display Tables</em>. <a href="https://CRAN.R-project.org/package=gt">https://CRAN.R-project.org/package=gt</a>.
+</div>
+<div id="ref-knuth_literate_1984" class="csl-entry" role="doc-biblioentry">
+Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
 </div>
 <div id="ref-R-reactable" class="csl-entry" role="doc-biblioentry">
 Lin, Greg. 2023. <em>Reactable: Interactive Data Tables for r</em>. <a href="https://CRAN.R-project.org/package=reactable">https://CRAN.R-project.org/package=reactable</a>.

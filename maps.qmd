@@ -388,7 +388,7 @@ Devon +
 #| warning: false
 #| message: false
 #| label: fig-watercourses
-#| fig-cap: "Location of iBats Example Data and Watercorses of West Devon"
+#| fig-cap: "Location of iBats Example Data and Watercourses of West Devon"
 
 library(tidyverse)
 library(osmdata)
