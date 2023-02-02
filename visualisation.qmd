@@ -48,12 +48,14 @@ bat_colours_sci <- c("Barbastella barbastellus" = "#1f78b4",
 
 A good visualisation tells a story, removing the noise from the data and illuminating the useful information. We visualise to present information to a lay audience; it also helps interpretation and discussion within the survey team.  Geospatial visualisation is shown on the [Maps](<https://bat-survey-reporting.netlify.app/maps.html>) page. 
 
+Diagrams, charts, figures are so ubiquitous we no-longer notice them, when a diagram is good it can have great influence, as shown in _100 Diagrams That Changed the World_ [@Scottchristianson2014100:ee53]. Visualisation is the best way of communicating quantitative data and there are many modern examples on how to this; from the ground breaking work of Edward Tufte [@Edwardrtufte1983Visual:1a3f] [@Edwardrtufte2020Seeing:4ec6] through to Alan Smith, at the FT, with _How Charts Work_ [@Alansmith2022Charts:c9ad]. Other examples of data visualisation are: _Information is Beautiful_ [@Davidmccandless2012Information:84d3]; _Data Points - Visualization that means something_ [@yau_data_2013]; and, _Visualize This - The Flowing Data Guide to Design, Visualization, and Statistics_ [@yau_visualize_2011]. 
+
 
 ## Bat Colours  
 
 To help with accessibility it is recommended that a consistent colour is used for each species throughout the report and the colours used are _readable_ to people with a visual impairment. Unfortunately, accessibility for the visually impaired is challenging when more than 8 or 10 colours are used; if this is the case consider separating the visualisation into different components, creating more than one graph or just highlighting the key species.
 
-@tbl-batcolours lists the set of colours used in the `iBats::bat_colours_default` function and are used for most of the visualisations on this page. The `iBats::bat_colours()` function allows any colour to be associated with any bat name (including common names); @sec-usercolours gives an example this.
+@tbl-batcolours lists the set of colours used in the `iBats::bat_colours_default` function and are used for most of the visualisations on this page. The `iBats::bat_colours()` function allows any colour to be associated with any bat name (including common names); @sec-usercolours gives an example chart with common bat names.
 
 
 ```{r}
