@@ -12,7 +12,7 @@ title: "About"
 :::
 
 
-**Reporting Bat Survey Data** compliments the *data science* chapters of the forthcoming BCT Bat Survey Guidelines 4^th^ Edition. Unlike the guidelines it has the R code making the analysis; which can be copied and used.
+**Reporting Bat Survey Data** complements the *data science* chapters of the forthcoming BCT Bat Survey Guidelines 4^th^ Edition. Unlike the guidelines it has the R code making the analysis; which can be copied and used.
 
 These web pages are written by __Steve Markham__, Director and Data Scientist at *Marquis & Lord Ltd.* Over my 40-year career I have developed and used software applications in water management and more recently, the last 15 years; applied *data science* to a wide range of projects using the R software environment. I have held a Natural England Roost Visitors Licence since 1997, and Survey and Research Licence Level 2; undertaking numerous commercial bat projects and voluntary bat work, including being a Trustee of the Bat Conservation Trust from 2012 to 2021. As a Fellow of the Royal Statistical Society I advocate the importance of statistics and data. As a member of the editorial board of all editions of the Bat Survey Guidelines[^1], I encourage ecologists to make the most of their bat survey data; these web pages hopefully make it easier to do this, and more rewarding - its good for bats!
 

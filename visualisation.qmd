@@ -48,7 +48,7 @@ bat_colours_sci <- c("Barbastella barbastellus" = "#1f78b4",
 
 A good visualisation tells a story, removing the noise from the data and illuminating the useful information. We visualise to present information to a lay audience; it also helps interpretation and discussion within the survey team.  Geospatial visualisation is shown on the [Maps](<https://bat-survey-reporting.netlify.app/maps.html>) page. 
 
-Diagrams, charts, figures are so ubiquitous we no-longer notice them, when a diagram is good it can have great influence, as shown in _100 Diagrams That Changed the World_ [@Scottchristianson2014100:ee53]. Visualisation is the best way of communicating quantitative data and there are many modern examples on how to this; from the ground breaking work of Edward Tufte [@Edwardrtufte1983Visual:1a3f] [@Edwardrtufte2020Seeing:4ec6] through to Alan Smith, at the FT, with _How Charts Work_ [@Alansmith2022Charts:c9ad]. Other examples of data visualisation are: _Information is Beautiful_ [@Davidmccandless2012Information:84d3]; _Data Points - Visualization that means something_ [@yau_data_2013]; and, _Visualize This - The Flowing Data Guide to Design, Visualization, and Statistics_ [@yau_visualize_2011]. 
+Diagrams, charts, figures are ubiquitous do we still notice them? When a diagram is good it can have great influence, as shown in _100 Diagrams That Changed the World_ [@Scottchristianson2014100:ee53]. Visualisation is the best way of communicating quantitative data and there are many modern examples on how to this; from the ground breaking work of Edward Tufte [@Edwardrtufte1983Visual:1a3f] [@Edwardrtufte2020Seeing:4ec6] through to Alan Smith, at the FT, with _How Charts Work_ [@Alansmith2022Charts:c9ad]. Other examples of data visualisation are: _Information is Beautiful_ [@Davidmccandless2012Information:84d3]; _Data Points - Visualization that means something_ [@yau_data_2013]; and, _Visualize This - The Flowing Data Guide to Design, Visualization, and Statistics_ [@yau_visualize_2011]. 
 
 
 ## Bat Colours  
@@ -230,10 +230,7 @@ ggplot(TavyOak, aes(y = 1, x = DateTime, fill = Species, size = bat_time)) +
 
 ## Emergence Time of Bats  
 
-@fig-andrews illustrates emergence times for UK bats based on the work of Andrews & Pearson (2022) [^1].  
-
-[^1]: the reference is available from: <https://drive.google.com/file/d/1DeGHxyr9-p5XH6R6CRimsmquVD188WY8/view>  
-
+@fig-andrews illustrates emergence times for UK bats based on the work of [@HenryandrewsReview:59d3].  
 
 ```{r}
 #| label: fig-andrews
