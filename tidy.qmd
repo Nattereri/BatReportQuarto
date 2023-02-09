@@ -14,7 +14,7 @@ set.seed(214)
 
 ```
 
-*Tidy Data* is a consistent way to organise your data [@wickham_tidy_2014]. Getting your data into this format requires some initial work, but that effort pays off in the long term. Once you have tidy data you will spend *less* time wrangling data from one representation to another, allowing you to spend more time on the analytic questions at hand. Unfortunately, there is a rule of thumb; 80% of time doing data science is spent wrangling data; particularly the effort required in sorting and rearranging the data into the *tidy* and therefore usable format; illustrated below are ways to make this task less demanding. 
+*Tidy Data* is a consistent way to organise your data [@wickham_tidy_2014] [@JSSv105i07]. Getting your data into this format requires some initial work, but that effort pays off in the long term. Once you have tidy data you will spend *less* time wrangling data from one representation to another, allowing you to spend more time on the analytic questions at hand. Unfortunately, there is a rule of thumb; 80% of time doing data science is spent wrangling data; particularly the effort required in sorting and rearranging the data into the *tidy* and therefore usable format; illustrated below are ways to make this task less demanding. 
 
 There are three interrelated rules which make a data set tidy see @fig-threerules:
 

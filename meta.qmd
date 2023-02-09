@@ -129,6 +129,22 @@ Referencing the `DateTime` of bat activity to sunset and sunrise is achieved wit
 #| label: tbl-suntimes
 #| tbl-cap: "Sun Time Information from the Night and DateTime Columns"
 
+### Libraries Used
+library(tidyverse) # Data Science packages - see https://www.tidyverse.org/
+
+# Install devtools if not installed 
+# devtools is used to install the iBats package from GitHub
+if(!require(devtools)){
+  install.packages("devtools")
+}
+
+# If iBats not installed load from Github
+if(!require(iBats)){
+  devtools::install_github("Nattereri/iBats")
+}
+library(iBats)
+library(gt)
+
 # Add data and time information to the statics data using the iBats::date_time_info
 statics_plus <- iBats::date_time_info(statics)
 

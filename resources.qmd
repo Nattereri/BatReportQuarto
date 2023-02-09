@@ -1,6 +1,5 @@
 ---
 title: "Resources"
-#bibliography: [packages.bib, references.bib]
 number-sections: true
 ---
 
@@ -26,6 +25,7 @@ knitr::write_bib(c('base',
                    'ggrepel',
                    'ggthemes',
                    'dplyr',
+                   'tidyr',
                    'lubridate',
                    'stringr',
                    'broman',
@@ -58,7 +58,9 @@ knitr::write_bib(c('base',
                    'DT',
                    'reactable',
                    'rnaturalearth',
-                   'osmdata'), bib_loc)
+                   'osmdata',
+                   'kableExtra',
+                   'tinytex'), bib_loc)
 
 #Then add `bibliography: packages.bib` to the YAML frontmatter. Now you can cite packages. For example: the R language [@R-base] is awesome. We used the **knitr** package [@R-knitr; @knitr2015] in our analysis. We also build a Shiny app [@R-shiny].
 
@@ -87,7 +89,7 @@ rep_txt <- "reports on bat surveys"
 
 
 
-There are many approaches for doing `r glue("{ds_txt}")`, this section shows the resources that were used to make these pages, providing  the background to the example code and revealing how it can be extended or adapted to generate enhanced `r glue("{rep_txt}")`. All of this can be undertaken with the open-source R statistical programming language [@R-base] through RStudio [@RStudio22]. 
+There are many approaches to _`r glue("{ds_txt}")`_, this section references the resources utilized to make these web pages. The references provide the background to the example code and with the web pages reveal how it can be extended or adapted to generate your own `r glue("{rep_txt}")`. All this can be undertaken with the R statistical programming language [@R-base] through RStudio [@RStudio22]; the materials applied, software and data, are open source. 
 
 A prime resource for learning `r glue("{ds_txt}")` with R are the the online books[^1], a comprehensive guide to these books and other R-resources is the [Big Book of R](https://www.bigbookofr.com)  by Oscar Baruffa.  This page references the online books, packages, websites and other resources with a focus on `r glue("{ds_txt}")`:
 
@@ -114,9 +116,11 @@ Getting data into R from *csv* and *Excel* files can be done with [`readr`](http
 
 Once loaded in the R environment it is stored as a [`tibble`](https://r4ds.had.co.nz/tibbles.html) [@R-tibble]. A Tibble is tabulated data, in R terms a simplified data frame, making working in the tidyverse a little easier.
 
-Data wrangling is made easy with functions from the [`dplyr`](https://dplyr.tidyverse.org/) [@R-dplyr] and [`tidyr`](https://tidyr.tidyverse.org/) packages. See also [Tidy Data](https://r4ds.had.co.nz/tidy-data.html) and [Data transformation](https://r4ds.had.co.nz/transform.html) in R4DS. 
+Data wrangling is made easy with functions from the [`dplyr`](https://dplyr.tidyverse.org/) [@R-dplyr] and [`tidyr`](https://tidyr.tidyverse.org/) [@R-tidyr] packages. See also [Tidy Data](https://r4ds.had.co.nz/tidy-data.html) and [Data transformation](https://r4ds.had.co.nz/transform.html) in R4DS. 
 
 The manipulation of text was through the [`stringr`](https://stringr.tidyverse.org/) [@R-stringr] package. See also [Strings](https://r4ds.had.co.nz/strings.html) in R4DS.
+
+The philosophy of _tidy data_ is described by [@wickham_tidy_2014] [@JSSv105i07].
 
 ## Meta Data
 

@@ -193,7 +193,7 @@ div.csl-indent {
 <div class="cell">
 
 </div>
-<p>There are many approaches for doing Bat Data Science, this section shows the resources that were used to make these pages, providing the background to the example code and revealing how it can be extended or adapted to generate enhanced reports on bat surveys. All of this can be undertaken with the open-source R statistical programming language <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref">R Core Team 2022</a>)</span> through RStudio <span class="citation" data-cites="RStudio22">(<a href="#ref-RStudio22" role="doc-biblioref">Posit team 2022</a>)</span>.</p>
+<p>There are many approaches to <em>Bat Data Science</em>, this section references the resources utilized to make these web pages. The references provide the background to the example code and with the web pages reveal how it can be extended or adapted to generate your own reports on bat surveys. All this can be undertaken with the R statistical programming language <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref">R Core Team 2022</a>)</span> through RStudio <span class="citation" data-cites="RStudio22">(<a href="#ref-RStudio22" role="doc-biblioref">Posit team 2022</a>)</span>; the materials applied, software and data, are open source.</p>
 <p>A prime resource for learning Bat Data Science with R are the the online books<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, a comprehensive guide to these books and other R-resources is the <a href="https://www.bigbookofr.com">Big Book of R</a> by Oscar Baruffa. This page references the online books, packages, websites and other resources with a focus on Bat Data Science:</p>
 <section id="general" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="general"><span class="header-section-number">1</span> General</h2>
@@ -211,8 +211,9 @@ div.csl-indent {
 <h2 data-number="2" class="anchored" data-anchor-id="tidy-data"><span class="header-section-number">2</span> Tidy Data</h2>
 <p>Getting data into R from <em>csv</em> and <em>Excel</em> files can be done with <a href="https://readr.tidyverse.org/"><code>readr</code></a> <span class="citation" data-cites="R-readr">(<a href="#ref-R-readr" role="doc-biblioref">Wickham, Hester, and Bryan 2022</a>)</span> and <a href="https://readxl.tidyverse.org/"><code>readxl</code></a> <span class="citation" data-cites="R-readxl">(<a href="#ref-R-readxl" role="doc-biblioref">Wickham and Bryan 2022</a>)</span> packages respectively. See also <a href="https://r4ds.had.co.nz/data-import.html">Data import</a> in R4DS.</p>
 <p>Once loaded in the R environment it is stored as a <a href="https://r4ds.had.co.nz/tibbles.html"><code>tibble</code></a> <span class="citation" data-cites="R-tibble">(<a href="#ref-R-tibble" role="doc-biblioref">Müller and Wickham 2022</a>)</span>. A Tibble is tabulated data, in R terms a simplified data frame, making working in the tidyverse a little easier.</p>
-<p>Data wrangling is made easy with functions from the <a href="https://dplyr.tidyverse.org/"><code>dplyr</code></a> <span class="citation" data-cites="R-dplyr">(<a href="#ref-R-dplyr" role="doc-biblioref">Wickham, François, et al. 2022</a>)</span> and <a href="https://tidyr.tidyverse.org/"><code>tidyr</code></a> packages. See also <a href="https://r4ds.had.co.nz/tidy-data.html">Tidy Data</a> and <a href="https://r4ds.had.co.nz/transform.html">Data transformation</a> in R4DS.</p>
+<p>Data wrangling is made easy with functions from the <a href="https://dplyr.tidyverse.org/"><code>dplyr</code></a> <span class="citation" data-cites="R-dplyr">(<a href="#ref-R-dplyr" role="doc-biblioref">Wickham, François, et al. 2022</a>)</span> and <a href="https://tidyr.tidyverse.org/"><code>tidyr</code></a> <span class="citation" data-cites="R-tidyr">(<a href="#ref-R-tidyr" role="doc-biblioref">Wickham and Girlich 2022</a>)</span> packages. See also <a href="https://r4ds.had.co.nz/tidy-data.html">Tidy Data</a> and <a href="https://r4ds.had.co.nz/transform.html">Data transformation</a> in R4DS.</p>
 <p>The manipulation of text was through the <a href="https://stringr.tidyverse.org/"><code>stringr</code></a> <span class="citation" data-cites="R-stringr">(<a href="#ref-R-stringr" role="doc-biblioref">Wickham 2022a</a>)</span> package. See also <a href="https://r4ds.had.co.nz/strings.html">Strings</a> in R4DS.</p>
+<p>The philosophy of <em>tidy data</em> is described by <span class="citation" data-cites="wickham_tidy_2014">(<a href="#ref-wickham_tidy_2014" role="doc-biblioref">Wickham 2014</a>)</span> <span class="citation" data-cites="JSSv105i07">(<a href="#ref-JSSv105i07" role="doc-biblioref">Tierney and Cook 2023</a>)</span>.</p>
 </section>
 <section id="meta-data" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="meta-data"><span class="header-section-number">3</span> Meta Data</h2>
@@ -407,8 +408,14 @@ Spinu, Vitalie, Garrett Grolemund, and Hadley Wickham. 2023. <em>Lubridate: Make
 <div id="ref-R-suncalc" class="csl-entry" role="doc-biblioentry">
 Thieurmel, Benoit, and Achraf Elmarhraoui. 2022. <em>Suncalc: Compute Sun Position, Sunlight Phases, Moon Position and Lunar Phase</em>. <a href="https://github.com/datastorm-open/suncalc">https://github.com/datastorm-open/suncalc</a>.
 </div>
+<div id="ref-JSSv105i07" class="csl-entry" role="doc-biblioentry">
+Tierney, Nicholas, and Dianne Cook. 2023. <span>“Expanding Tidy Data Principles to Facilitate Missing Data Exploration, Visualization and Assessment of Imputations.”</span> <em>Journal of Statistical Software</em> 105 (1): 1–31. <a href="https://doi.org/10.18637/jss.v105.i07">https://doi.org/10.18637/jss.v105.i07</a>.
+</div>
+<div id="ref-wickham_tidy_2014" class="csl-entry" role="doc-biblioentry">
+Wickham, Hadley. 2014. <span>“Tidy Data.”</span> <em>The Journal of Statistical Software</em> 59. <a href="http://www.jstatsoft.org/v59/i10/">http://www.jstatsoft.org/v59/i10/</a>.
+</div>
 <div id="ref-R-stringr" class="csl-entry" role="doc-biblioentry">
-Wickham, Hadley. 2022a. <em>Stringr: Simple, Consistent Wrappers for Common String Operations</em>. <a href="https://CRAN.R-project.org/package=stringr">https://CRAN.R-project.org/package=stringr</a>.
+———. 2022a. <em>Stringr: Simple, Consistent Wrappers for Common String Operations</em>. <a href="https://CRAN.R-project.org/package=stringr">https://CRAN.R-project.org/package=stringr</a>.
 </div>
 <div id="ref-R-tidyverse" class="csl-entry" role="doc-biblioentry">
 ———. 2022b. <em>Tidyverse: Easily Install and Load the Tidyverse</em>. <a href="https://CRAN.R-project.org/package=tidyverse">https://CRAN.R-project.org/package=tidyverse</a>.
@@ -424,6 +431,9 @@ Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takaha
 </div>
 <div id="ref-R-dplyr" class="csl-entry" role="doc-biblioentry">
 Wickham, Hadley, Romain François, Lionel Henry, and Kirill Müller. 2022. <em>Dplyr: A Grammar of Data Manipulation</em>. <a href="https://CRAN.R-project.org/package=dplyr">https://CRAN.R-project.org/package=dplyr</a>.
+</div>
+<div id="ref-R-tidyr" class="csl-entry" role="doc-biblioentry">
+Wickham, Hadley, and Maximilian Girlich. 2022. <em>Tidyr: Tidy Messy Data</em>. <a href="https://CRAN.R-project.org/package=tidyr">https://CRAN.R-project.org/package=tidyr</a>.
 </div>
 <div id="ref-R-readr" class="csl-entry" role="doc-biblioentry">
 Wickham, Hadley, Jim Hester, and Jennifer Bryan. 2022. <em>Readr: Read Rectangular Text Data</em>. <a href="https://CRAN.R-project.org/package=readr">https://CRAN.R-project.org/package=readr</a>.
