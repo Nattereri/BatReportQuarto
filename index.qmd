@@ -9,28 +9,21 @@ number-sections: true
 
 These web pages complement the *data science* chapters of the forthcoming BCT Bat Survey Guidelines 4^th^ Edition, and hopefully encourage ecologists to make the most of their bat survey data. They also demonstrate literate programming with Quarto®[^1] and R Markdown[^13] which can vastly improve workflow (*welcome to the world beyond Excel*).
 
-[^1]: Quarto® is an open-source scientific and technical publishing system: see <https://quarto.org/>
-[^13]: R Markdown see <https://rmarkdown.rstudio.com/>
+The term _Data Science_ is used, as this covers data collection, management, processing, analysis, visualization, interpretation and reporting. Interesting to note; statisticians would state this is what they have always done [@Daviddonoho201750:9bd5].
 
-
+The data science is applied through literate programming [@knuth_literate_1984] outlined in @fig-workflowred. This enables efficient reporting of bat data[^8] from a simple table, such as a count of bats, to the output and interpretation of machine learning in a fully formatted report; plus everything in-between, all can be accomplished through open source R[^9] [@R-base] and RStudio [@RStudio22]. 
 
 ![Literate Programming](Images/workflowRed.png){#fig-workflowred}
 
-Literate programming [@knuth_literate_1984], outlined in @fig-workflowred, enables efficient reporting of bat data[^8] from a simple table, such as a count of bats, to the output and interpretation of machine learning; plus everything in-between; all accomplished through R[^9] [@R-base] and RStudio [@RStudio22]. 
+Much is said about the digital skills gap [^20]; if only in a small way, these data science pages aim to improve our digital skills by giving a practical approach of accessing modern data science methods[^21]. For a balanced understanding of the link between digital skills and data science see the [Royal Statistical Society article](https://realworlddatascience.net/news-and-views/editors-blog/posts/2023/02/14/digital-skills.html)
 
-[^5]:  Julia has a language syntax similar to Python, runs fast, has a statistical library like R and linear programming skills similar to MATLAB.
-[^6]: <https://www.python.org/>
-[^7]: <https://julialang.org/>
-[^8]:  as exported from sound analysis software
-[^9]:  Windows <https://cran.r-project.org/bin/windows/base/> Mac Intel & ARM <https://cran.r-project.org/bin/macosx/>
+You may ask what's wrong the spreadsheet for data science? On a practical level spreadsheets are hard to maintain, find errors in or see there was an error in the first place, they are poor at handling dates and difficult to share with others.  For the blunders of spreadsheet use listen to [Spreadsheet disasters](https://www.bbc.co.uk/sounds/play/w3ct3k5z) on BBC sounds from the World Service program _More or less_; the broadcast refers to Matt Parker's book _Humble Pi A comedy of Maths Errors_ [@Mattparker2019Humble:61dc]. On a positive note spreadsheets are handy and easy to use for a few lines of data.
 
 To help get ecologists started, all the code making the graphs and analysis in these web pages is free to copy and use;  just click on  _Show the code_, copy to the clipboard [^2], paste into the R environment and run. If new to R and RStudio see @sec-installr. 
 
-[^2]: Clip board icon is in the top right hand corner of the code window.
-
 A _Show the code_ is given below, the code produces @fig-example.  The code copied to the clipboard is designed to run as a standalone _chunk_ (or _R script_)[^11]; the code loads the required R libraries and data.
 
-[^11]: Many R script's are required in applying literate programming to bat data science; these are best organised through Quarto or R Markdown documents where the R scripts form code chunks.
+
 
 ```{r}
 #| code-fold: show
@@ -76,6 +69,23 @@ ggplot(graph_data, aes(area = n, fill = Month, label = Species, subgroup = Month
 ```
 
 Literate programming facilitates the use of other coding languages such as Python[^6], and Julia[^7], these languages can be mixed in the same literate programming document; with a chuck of R code doing the data manipulation  and another chunk of Python code performing the machine learning.  Coding languages applied to data science are developing rapidly in terms of their ability, speed of execution, and user friendliness[^5]; literate programming provides the framework for ecologists to keep their data science skills moving forward.
+
+
+
+[^1]: Quarto® is an open-source scientific and technical publishing system: see <https://quarto.org/>
+[^13]: R Markdown see <https://rmarkdown.rstudio.com/>
+[^2]: Clip board icon is in the top right hand corner of the code window.
+
+[^5]:  Julia has a language syntax similar to Python, runs fast, has a statistical library like R and linear programming skills similar to MATLAB.
+[^6]: <https://www.python.org/>
+[^7]: <https://julialang.org/>
+[^8]:  as exported from sound analysis software
+[^9]:  Windows <https://cran.r-project.org/bin/windows/base/> Mac Intel & ARM <https://cran.r-project.org/bin/macosx/>
+
+[^11]: Many R script's are required in applying literate programming to bat data science; these are best organised through Quarto or R Markdown documents where the R scripts form code chunks.
+
+[^20]: The UK government has quantified the the UK Data Skills Gap see <https://www.gov.uk/government/publications/quantifying-the-uk-data-skills-gap/quantifying-the-uk-data-skills-gap-full-report>
+[^21]: The Chartered Institute of Ecology and Environmental Management (CIEEM) a leading institute for professional ecologists has a competency framework members are required to fulfill; this does not mention statistics or data science
 
 ## Install R, RStudio and Packages {#sec-installr}
 
