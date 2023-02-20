@@ -3,8 +3,6 @@ title: "Resources"
 number-sections: true
 ---
 
-
-
 ```{r}
 #| echo: false  
 #| eval: false
@@ -74,9 +72,6 @@ knitr::write_bib(c('base',
 
 ```
 
-
-
-
 ```{r}
 #| include: false  
 
@@ -87,40 +82,43 @@ rep_txt <- "reports on bat surveys"
 
 ```
 
+There are many approaches to *`r glue("{ds_txt}")`*, this section references the resources utilized to make these web pages. The references provide the background to the example code and with the web pages reveal how it can be extended or adapted to generate your own `r glue("{rep_txt}")`. All this can be undertaken with the R statistical programming language [@R-base] through RStudio [@RStudio22]; the materials applied, software and data, are open source.
 
-
-There are many approaches to _`r glue("{ds_txt}")`_, this section references the resources utilized to make these web pages. The references provide the background to the example code and with the web pages reveal how it can be extended or adapted to generate your own `r glue("{rep_txt}")`. All this can be undertaken with the R statistical programming language [@R-base] through RStudio [@RStudio22]; the materials applied, software and data, are open source. 
-
-A prime resource for learning `r glue("{ds_txt}")` with R are the the online books[^1], a comprehensive guide to these books and other R-resources is the [Big Book of R](https://www.bigbookofr.com)  by Oscar Baruffa.  This page references the online books, packages, websites and other resources with a focus on `r glue("{ds_txt}")`:
+A prime resource for learning `r glue("{ds_txt}")` with R are the the online books[^1], a comprehensive guide to these books and other R-resources is the [Big Book of R](https://www.bigbookofr.com) by Oscar Baruffa. This page references the online books, packages, websites and other resources with a focus on `r glue("{ds_txt}")`:
 
 [^1]: Nearly all the online reference books on R are created within the R environment; most commonly with RMarkdown or Quarto.
 
-## General 
+## General
 
-[R for Data Science](http://r4ds.had.co.nz/index.html) (R4DS) is an excellent overview of data science with R; it introduces the [`tidyverse`](https://www.tidyverse.org/) a collection of packages providing essential data science tools [@tidyverse2019; @R-tidyverse]; many of these individual packages are referenced below. The tidyverse packages have been widely adopted by R Data Scientists;  all packages share an underlying design philosophy, grammar, and data structures. 
+[R for Data Science](http://r4ds.had.co.nz/index.html) (R4DS) is an excellent overview of data science with R; it introduces the [`tidyverse`](https://www.tidyverse.org/) a collection of packages providing essential data science tools [@tidyverse2019; @R-tidyverse]; many of these individual packages are referenced below. The tidyverse packages have been widely adopted by R Data Scientists; all packages share an underlying design philosophy, grammar, and data structures.
 
 There are many free learning resources online; well structured courses are:
 
-* [RStudio](https://education.rstudio.com/)
-* [Coding Club](https://ourcodingclub.github.io/) for ecologists and environmental scientists.
-* [R for the Rest of US](https://rfortherestofus.com/courses/getting-started/)
+-   [RStudio](https://education.rstudio.com/)
+-   [Coding Club](https://ourcodingclub.github.io/) for ecologists and environmental scientists.
+-   [R for the Rest of US](https://rfortherestofus.com/courses/getting-started/)
 
-
-Other online books:
+Other references:
 
 [Modern Data Science with R](https://mdsr-book.github.io/mdsr2e/) by Benjamin S. Baumer, Daniel T. Kaplan, and Nicholas J. Horton; a comprehensive guide to data science with R.
 
-## Tidy Data 
+For an understanding of the *Data Science* versus *Statistics* (many argue they are the same) see David Donoho paper *50 Years of Data Science* [@Daviddonoho201750:9bd5].
 
-Getting data into R from *csv* and *Excel* files can be done with [`readr`](https://readr.tidyverse.org/) [@R-readr] and [`readxl`](https://readxl.tidyverse.org/) [@R-readxl] packages respectively. See also [Data import](https://r4ds.had.co.nz/data-import.html) in R4DS. 
+Understanding the link between digital skills and data science see the [Royal Statistical Society article](https://realworlddatascience.net/news-and-views/editors-blog/posts/2023/02/14/digital-skills.html).
+
+Why spreadsheets aren't great for data science listen to Tim Harford's [More or less](https://www.bbc.co.uk/sounds/play/w3ct3k5z) on BBC sounds.  For a litany of mathematical mistakes, many involving spreadsheets, see Matt Parker's book _Humble Pi A comedy of Maths Errors_ [@Mattparker2019Humble:61dc].
+
+## Tidy Data
+
+Getting data into R from *csv* and *Excel* files can be done with [`readr`](https://readr.tidyverse.org/) [@R-readr] and [`readxl`](https://readxl.tidyverse.org/) [@R-readxl] packages respectively. See also [Data import](https://r4ds.had.co.nz/data-import.html) in R4DS.
 
 Once loaded in the R environment it is stored as a [`tibble`](https://r4ds.had.co.nz/tibbles.html) [@R-tibble]. A Tibble is tabulated data, in R terms a simplified data frame, making working in the tidyverse a little easier.
 
-Data wrangling is made easy with functions from the [`dplyr`](https://dplyr.tidyverse.org/) [@R-dplyr] and [`tidyr`](https://tidyr.tidyverse.org/) [@R-tidyr] packages. See also [Tidy Data](https://r4ds.had.co.nz/tidy-data.html) and [Data transformation](https://r4ds.had.co.nz/transform.html) in R4DS. 
+Data wrangling is made easy with functions from the [`dplyr`](https://dplyr.tidyverse.org/) [@R-dplyr] and [`tidyr`](https://tidyr.tidyverse.org/) [@R-tidyr] packages. See also [Tidy Data](https://r4ds.had.co.nz/tidy-data.html) and [Data transformation](https://r4ds.had.co.nz/transform.html) in R4DS.
 
 The manipulation of text was through the [`stringr`](https://stringr.tidyverse.org/) [@R-stringr] package. See also [Strings](https://r4ds.had.co.nz/strings.html) in R4DS.
 
-The philosophy of _tidy data_ is described by [@wickham_tidy_2014] [@JSSv105i07].
+The philosophy of *tidy data* is described by [@wickham_tidy_2014] [@JSSv105i07].
 
 ## Meta Data
 
@@ -140,27 +138,31 @@ The [`glue`](https://glue.tidyverse.org/) [@R-glue] package that allows variable
 
 ## Visualisation
 
-The graphics have been produced using the R package [`ggplot2`](https://ggplot2.tidyverse.org/) [@R-ggplot2]. 
+The graphics have been produced using the R package [`ggplot2`](https://ggplot2.tidyverse.org/) [@R-ggplot2].
 
-There are many packages that extend ggplot's capability:  
+There are many packages that extend ggplot's capability:
 
-* [`scales`](https://scales.r-lib.org/) [@R-scales] package improves the clarity of scales on `ggplot` graphics.  
-* [`ggrepel`](https://ggrepel.slowkow.com/articles/examples.html) [@R-ggrepel] for tidy graph labels that don't overlap.  
-* [`treemapify`](https://cran.r-project.org/web/packages/treemapify/vignettes/introduction-to-treemapify.html) package for plotting treemaps.  
-* [`ggthemes`](https://github.com/jrnold/ggthemes) [@R-ggthemes] package does many graph themes but used mainly for the colour pallet "Tableau 10"  
+-   [`scales`](https://scales.r-lib.org/) [@R-scales] package improves the clarity of scales on `ggplot` graphics.\
+-   [`ggrepel`](https://ggrepel.slowkow.com/articles/examples.html) [@R-ggrepel] for tidy graph labels that don't overlap.\
+-   [`treemapify`](https://cran.r-project.org/web/packages/treemapify/vignettes/introduction-to-treemapify.html) package for plotting treemaps.\
+-   [`ggthemes`](https://github.com/jrnold/ggthemes) [@R-ggthemes] package does many graph themes but used mainly for the colour pallet "Tableau 10"
 
 Online books:
 
-* [ggplot2](https://ggplot2-book.org/index.html) by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen; helps understand how ggplot works, giving the power to tailor any plot specifically.  
-* [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/) by Claus O. Wilke; aims to provide a guide to making visualizations that reflect the data, tell a story, and look professional.
+-   [ggplot2](https://ggplot2-book.org/index.html) by Hadley Wickham, Danielle Navarro, and Thomas Lin Pedersen; helps understand how ggplot works, giving the power to tailor any plot specifically.\
+-   [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/) by Claus O. Wilke; aims to provide a guide to making visualizations that reflect the data, tell a story, and look professional.
 
 See also [Graphics for communication](https://r4ds.had.co.nz/graphics-for-communication.html) in R4DS.
 
+Colour can play a large part in visualisation and colours are easily misused; for an understanding of the issues see the paper *Misuse of Colour in Science Communication* [@Fabiocrameri2020Misuse:917a].
+
 ## Maps
 
-The excellent online book [Geocomputation with R](https://geocompr.robinlovelace.net/) by Robin Lovelace, Jakub Nowosad and Jannes Muenchow. It teaches a range of spatial skills, including: reading, writing and manipulating geographic data; making static and interactive maps; applying geocomputation to solve real-world problems; and modelling geographic phenomena.   
+The excellent online book [Geocomputation with R](https://geocompr.robinlovelace.net/) by Robin Lovelace, Jakub Nowosad and Jannes Muenchow. It teaches a range of spatial skills, including: reading, writing and manipulating geographic data; making static and interactive maps; applying geocomputation to solve real-world problems; and modelling geographic phenomena.
 
-[`sf`](https://r-spatial.github.io/sf/) [@sf2018; @R-sf] provides support for simple features, a standardized way to encode spatial vector data^[see <https://en.wikipedia.org/wiki/Simple_Features>].
+[`sf`](https://r-spatial.github.io/sf/) [@sf2018; @R-sf] provides support for simple features, a standardized way to encode spatial vector data[^2].
+
+[^2]: see <https://en.wikipedia.org/wiki/Simple_Features>
 
 [`ggspatial`](https://paleolimbot.github.io/ggspatial/) [@R-ggspatial] allows spatial data to be plotted with the power of the ggplot2. It also gives access to [Open Street Map](https://www.openstreetmap.org/) tiles.
 
@@ -170,17 +172,17 @@ The excellent online book [Geocomputation with R](https://geocompr.robinlovelace
 
 [`terra`](https://rspatial.org/index.html) [@R-terra] a package of methods for spatial data analysis with vector (points, lines, polygons) and raster (grid) data.
 
-[`tanaka`](https://github.com/riatelab/tanaka/) [@R-tanaka] a package the performs the _Tanaka_ method enhancing the representation of topography on a map using shaded contour lines.
+[`tanaka`](https://github.com/riatelab/tanaka/) [@R-tanaka] a package the performs the *Tanaka* method enhancing the representation of topography on a map using shaded contour lines.
 
 [`metR`](https://github.com/eliocamp/metR) [@R-metR] a package with several functions and utilities that make R better for handling meteorological data; used here for conour plots.
 
 [`raster`](https://rspatial.org/raster/) [@R-raster] a package for reading, writing, manipulating, analyzing and modeling of spatial data.
 
-[`rnaturalearth`](https://docs.ropensci.org/rnaturalearth/articles/rnaturalearth.html) [@R-rnaturalearth] A package with _Natural Earth_ data including world and country maps.
+[`rnaturalearth`](https://docs.ropensci.org/rnaturalearth/articles/rnaturalearth.html) [@R-rnaturalearth] A package with *Natural Earth* data including world and country maps.
 
 ## Statistics
 
-[`R`](https://www.r-project.org/), specifically _base R_ [@R-base] is a comprehensive software environment for statistical computing and graphics.
+[`R`](https://www.r-project.org/), specifically *base R* [@R-base] is a comprehensive software environment for statistical computing and graphics.
 
 Summary statistics have been produced with the [`mosaic`](https://www.mosaic-web.org/mosaic/) [@R-mosaic] package.
 
@@ -194,9 +196,19 @@ Online books:
 
 [Introduction to Modern Statistics](https://openintro-ims.netlify.app/) by Mine Çetinkaya-Rundel and Johanna Hardin; an contemporary guide to statistical thinking and methods.
 
-[Statistical Inference via Data Science](https://moderndive.com/index.html) by Chester Ismay and Albert Y. Kim; _Statistical Inference via Data Science: A ModernDive into R and the Tidyverse_.
+[Statistical Inference via Data Science](https://moderndive.com/index.html) by Chester Ismay and Albert Y. Kim; *Statistical Inference via Data Science: A ModernDive into R and the Tidyverse*.
 
 [Modern Statistics with R](https://modernstatisticswithr.com/index.html) by Måns Thulin; covers wrangling and exploring data to inference and predictive modelling.
+
+Other references:
+
+The [Office for Statistics Regulation](https://osr.statisticsauthority.gov.uk/) the independent regulatory arm of the [UK Statistics Authority](https://uksa.statisticsauthority.gov.uk/) produces two key reference documents that have relevance for data scientists that publish in the public domain[^20]
+
+* [The Code of Practice for Statistics](https://code.statisticsauthority.gov.uk/) sets the standards that producers of official statistics should commit to.
+
+* [Statistical Literacy – it’s all in the communication](https://osr.statisticsauthority.gov.uk/publication/statistical-literacy-its-all-in-the-communication/) this is first UK official documentation on how statistics should be communicated?
+
+[^20]: In support of a planning application for example.  
 
 ## Reporting
 
@@ -210,7 +222,7 @@ Rending reports into Microsoft Word or PowerPoint can be greatly enhanced by:
 
 Online books:
 
-[officeverse](https://ardata-fr.github.io/officeverse/) by David Gohel; reporting from R with the packages `officer`, `officedown`}, `flextable`.  
+[officeverse](https://ardata-fr.github.io/officeverse/) by David Gohel; reporting from R with the packages `officer`, `officedown`}, `flextable`.
 
 [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/) by Yihui Xie, Christophe Dervieux, Emily Riederer; a book designed to provide a range of examples on how to extend the functionality of R Markdown documents.
 
@@ -220,22 +232,20 @@ A special mention should go to John MacFarlane who created [Pandoc](http://pando
 
 Online videos:
 
-[R Markdown Advanced Tips to Become a Better Data Scientist... | With Tom Mock](https://www.youtube.com/watch?v=WkF7nqEYF1E)
+[R Markdown Advanced Tips to Become a Better Data Scientist... \| With Tom Mock](https://www.youtube.com/watch?v=WkF7nqEYF1E)
 
-[Welcome to Quarto Workshop! | Led by Tom Mock, RStudio](https://www.youtube.com/watch?v=yvi5uXQMvu4)
+[Welcome to Quarto Workshop! \| Led by Tom Mock, RStudio](https://www.youtube.com/watch?v=yvi5uXQMvu4)
 
 ## Interactive
 
-[`leaflet`](https://rstudio.github.io/leaflet/) [@R-leaflet] one of the most popular open-source JavaScript libraries for interactive maps. 
+[`leaflet`](https://rstudio.github.io/leaflet/) [@R-leaflet] one of the most popular open-source JavaScript libraries for interactive maps.
 
 [`plotly`](https://plotly.com/r/) [@R-plotly] R graphing library that makes interactive, publication-quality graphs.
 
-[`DT`](http://rstudio.github.io/DT/) [@R-DT] _DataTables_ displaying R matrices or data frames as interactive HTML tables that support filtering, pagination, and sorting.
+[`DT`](http://rstudio.github.io/DT/) [@R-DT] *DataTables* displaying R matrices or data frames as interactive HTML tables that support filtering, pagination, and sorting.
 
 [`reactable`](https://glin.github.io/reactable/) [@R-reactable] nteractive data tables for R.
 
-
 See also [htmlwidgets for R](https://www.htmlwidgets.org/index.html)
 
-## References  {.unnumbered}
-
+## References {.unnumbered}

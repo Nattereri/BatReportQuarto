@@ -88,7 +88,7 @@ Literate programming facilitates the use of other coding languages such as Pytho
 [^21]: The data skills gap is relevant to professional bodies, such as the Chartered Institute of Ecology and Environmental Management (CIEEM) a leading institute for professional ecologists, with a competency framework members are required to fulfill; this does not mention statistics or data science.
 [^22]: Excel will try converting a data entry into a date even if it is not.
 [^23]: For example literate programming eliminates the countless copy and paste of a traditional reporting workflow.
-[^24]: Released on the World Service _More or Less on 11 Feb 2023 and available for over a year.
+[^24]: Released on the World Service _More or Less_ on 11 Feb 2023 and available for over a year.
 
 ## Install R, RStudio and Packages {#sec-installr}
 

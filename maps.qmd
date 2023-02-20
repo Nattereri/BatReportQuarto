@@ -225,7 +225,9 @@ plotmap <- ggplot() +
     axis.title.x = element_blank(),
     axis.text.x = element_blank(),
     axis.text.y = element_blank(),
-    axis.ticks = element_blank())
+    axis.ticks = element_blank()) +
+  #Make the point size larger on the legend to show the colour
+  guides(fill = guide_legend(override.aes = list(size=4)))
 
 
 plotmap +

@@ -53,7 +53,7 @@ Diagrams, charts, figures are ubiquitous; do we still notice them? When a diagra
 
 ## Bat Colours  
 
-Colour can enhance visualisation, the choice and combination of colours is important to the communication [@Fabiocrameri2020Misuse:917a]. A consistent colour applied to individual bat species and a group of colours accessible to people with a visual impairment, helps make the visualisations _readable_. Unfortunately, accessibility is challenging when more than 8 or 10 colours are used; if this is the case consider separating the visualisation into different components, creating more than one graph or just highlighting the key species with one colour, with the remaining species shaded as grey.
+Colour can enhance visualisation, the choice and combination of colours is important to the communication [@Fabiocrameri2020Misuse:917a]. A consistent colour applied to individual bat species and a group of colours accessible to people with a visual impairment, helps make the visualisations _readable_. Unfortunately, accessibility is challenging with more than 8 or 10 colours; if this is the case consider separating the visualisation into different components, creating more than one graph or just highlighting the key species with one colour, with the remaining species shaded as grey.
 
 @tbl-batcolours lists the set of colours used in the `iBats::bat_colours_default` function and are used for most of the visualisations on this page. The `iBats::bat_colours()` function allows any colour to be associated with any bat name (including common names); @sec-usercolours gives an example chart with common bat names.
 
@@ -224,7 +224,9 @@ ggplot(TavyOak, aes(y = 1, x = DateTime, fill = Species, size = bat_time)) +
     legend.text = element_text(face = "italic"),
     axis.title.x = element_blank(),
     axis.title.y = element_text(size = 10)
-  )
+  ) +
+  #Make the point size larger on the legend to show the colour
+  guides(fill = guide_legend(override.aes = list(size=4)))
 
 ```
 
