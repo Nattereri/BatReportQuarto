@@ -9,9 +9,9 @@ number-sections: true
 
 These web pages complement the *data science* chapters of the forthcoming BCT Bat Survey Guidelines 4^th^ Edition, and hopefully encourage ecologists to make the most of their bat survey data. They also demonstrate literate programming with Quarto®[^1] and R Markdown[^13] which can vastly improve workflow[^23] (*welcome to the world beyond Excel*).
 
-The term _Data Science_ is used, as this covers data collection, management, processing, analysis, visualisation, interpretation and reporting. Note: statisticians would state this process is what they have always done [@Daviddonoho201750:9bd5].
+The term _data science_ is used, as this covers data collection, management, processing, analysis, visualisation, interpretation, reporting and reproducibility . Statisticians would state this is what they have always done in statistics! There is no doubt the phenomenon of _data science_ is growing, with most major universities now offering a degree course in the subject and together with the increasing power of computer algorithms; _data science_ is more than just a rebranding of statistics [@Daviddonoho201750:9bd5].
 
-The data science is applied through literate programming [@knuth_literate_1984] outlined in @fig-workflowred. This enables efficient reporting of bat data[^8] from a simple table, such as a count of bats, to the output and interpretation of machine learning in a fully formatted report; plus everything in-between, all accomplished through open source R[^9] [@R-base] and RStudio [@RStudio22]. 
+The _data science_ is applied through literate programming [@knuth_literate_1984] outlined in @fig-workflowred. This enables efficient reporting of bat data[^8] from a simple table, such as a count of bats, to the output and interpretation of machine learning in a fully formatted report; plus everything in-between, all accomplished through open source R[^9] [@R-base] and RStudio [@RStudio22]. The beauty of literate programming is reproducibility; an essential tenet of all scientific study, in the commercial and legal world it makes for defensible reporting.
 
 ![Literate Programming](Images/workflowRed.png){#fig-workflowred}
 
@@ -85,10 +85,10 @@ Literate programming facilitates the use of other coding languages such as Pytho
 [^11]: Many R script's are required in applying literate programming to bat data science; these are best organised through Quarto or R Markdown documents where the R scripts form code chunks.
 
 [^20]: The UK government has quantified the the UK Data Skills Gap see <https://www.gov.uk/government/publications/quantifying-the-uk-data-skills-gap/quantifying-the-uk-data-skills-gap-full-report>.
-[^21]: The data skills gap is relevant to professional bodies, such as the Chartered Institute of Ecology and Environmental Management (CIEEM) a leading institute for professional ecologists, with a competency framework members are required to fulfill; this does not mention statistics or data science.
-[^22]: Excel will try converting a data entry into a date even if it is not.
+[^21]: The data skills gap is relevant to professional bodies, such as the Chartered Institute of Ecology and Environmental Management (CIEEM) a leading institute for professional ecologists; their competency framework, which members are required to fulfill, makes no mention of statistics or data science.
+[^22]: Excel will convert a data entry into a date even if it is not, e.g. an entry of "1/1" or "1-1" would return "01-Jan"!
 [^23]: For example literate programming eliminates the countless copy and paste of a traditional reporting workflow.
-[^24]: Released on the World Service _More or Less_ on 11 Feb 2023 and available for over a year.
+[^24]: _More or Less_ (Spreadsheet disasters) was released by the World Service on 11 Feb 2023 and is available for over a year.
 
 ## Install R, RStudio and Packages {#sec-installr}
 

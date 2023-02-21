@@ -95,7 +95,7 @@ A prime resource for learning `r glue("{ds_txt}")` with R are the the online boo
 There are many free learning resources online; well structured courses are:
 
 -   [RStudio](https://education.rstudio.com/)
--   [Coding Club](https://ourcodingclub.github.io/) for ecologists and environmental scientists.
+-   [Coding Club](https://ourcodingclub.github.io/) especially for ecologists and environmental scientists.
 -   [R for the Rest of US](https://rfortherestofus.com/courses/getting-started/)
 
 Other references:
@@ -202,7 +202,7 @@ Online books:
 
 Other references:
 
-The [Office for Statistics Regulation](https://osr.statisticsauthority.gov.uk/) the independent regulatory arm of the [UK Statistics Authority](https://uksa.statisticsauthority.gov.uk/) produces two key reference documents that have relevance for data scientists that publish in the public domain[^20]
+The [Office for Statistics Regulation](https://osr.statisticsauthority.gov.uk/) the independent regulatory arm of the [UK Statistics Authority](https://uksa.statisticsauthority.gov.uk/) has produced two key reference documents that have relevance for data scientists who publish in the public domain[^20]
 
 * [The Code of Practice for Statistics](https://code.statisticsauthority.gov.uk/) sets the standards that producers of official statistics should commit to.
 
