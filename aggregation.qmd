@@ -58,7 +58,11 @@ statics %>% # statics is a tidy data set from the iBats package
     locations = cells_body(
       columns = c(Species)
     )
-  )
+  ) %>% 
+  tab_options(data_row.padding = px(2)) %>% 
+  cols_align(
+    align = "left",
+    columns = DateTime)
 ```
 
 
@@ -105,7 +109,8 @@ statics %>%
     locations = cells_body(
       columns = c(`Bat Species`)
     )
-  )
+  ) %>% 
+  tab_options(data_row.padding = px(2)) 
   
 ```
 
@@ -269,7 +274,8 @@ cond_stats %>%
       columns = c(everything())
     )
   ) %>% 
-  gt_color_rows(median, palette = "ggsci::yellow_material")
+  gt_color_rows(median, palette = "ggsci::yellow_material") %>% 
+  tab_options(data_row.padding = px(2)) 
 
 ```
 
@@ -341,7 +347,8 @@ grouped_data %>%
     locations = cells_body(
       columns = MonthFull
     )) %>% 
-  gt_color_rows(Maximum, palette = "ggsci::purple_material")
+  gt_color_rows(Maximum, palette = "ggsci::purple_material") %>% 
+  tab_options(data_row.padding = px(2)) 
 
 ```
 
@@ -403,7 +410,8 @@ grouped_data %>%
       columns = c(everything())
     )
   ) %>% 
-  gt_color_rows(Mean, palette = "ggsci::green_material")
+  gt_color_rows(Mean, palette = "ggsci::green_material") %>% 
+  tab_options(data_row.padding = px(2)) 
 
 ```
 

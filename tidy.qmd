@@ -101,6 +101,12 @@ statics %>% # statics is a tidy data set from the iBats package
     locations = cells_body(
       columns = c(Species)
     )
+  ) %>% 
+  # reduce cell space
+  tab_options(data_row.padding = px(2)) %>% 
+  cols_align(
+    align = "left",
+    columns = DateTime
   )
 
 ```
@@ -127,6 +133,12 @@ untidy1 %>%
     locations = cells_column_labels(
       columns = c(everything())
     )
+  ) %>% 
+  # reduce cell space
+  tab_options(data_row.padding = px(2)) %>% 
+  cols_align(
+    align = "left",
+    columns = DateTime
   )
 
 ```
@@ -168,6 +180,12 @@ untidy1 %>%
     locations = cells_column_labels(
       columns = c(everything())
     )
+  ) %>% 
+  # reduce cell space
+  tab_options(data_row.padding = px(2)) %>% 
+  cols_align(
+    align = "left",
+    columns = DateTime
   )
 
 ```
@@ -194,6 +212,12 @@ untidy2 %>%
     locations = cells_column_labels(
       columns = c(everything())
     )
+  ) %>% 
+  # reduce cell space
+  tab_options(data_row.padding = px(2)) %>% 
+  cols_align(
+    align = "left",
+    columns = DateTime
   )
 
 
@@ -234,6 +258,12 @@ untidy2 %>%
     locations = cells_column_labels(
       columns = c(everything())
     )
+  ) %>% 
+  # reduce cell space
+  tab_options(data_row.padding = px(2)) %>% 
+  cols_align(
+    align = "left",
+    columns = DateTime
   )
 
 ```
@@ -260,6 +290,12 @@ untidy3 %>%
     locations = cells_column_labels(
       columns = c(everything())
     )
+  ) %>% 
+  # reduce cell space
+  tab_options(data_row.padding = px(2)) %>% 
+  cols_align(
+    align = "left",
+    columns = DateTime
   )
 ```
 
@@ -315,7 +351,13 @@ dplyr::bind_rows(data1, data2, data3) %>%
     locations = cells_column_labels(
       columns = c(everything())
     )
-  ) 
+  ) %>% 
+  # reduce cell space
+  tab_options(data_row.padding = px(2)) %>% 
+  cols_align(
+    align = "left",
+    columns = DateTime
+  )
 
 ```
 
@@ -395,7 +437,13 @@ tidied1 %>%
       ),
     locations = cells_body(
       columns = c(Species)
-  )) 
+  )) %>% 
+  # reduce cell space
+  tab_options(data_row.padding = px(2)) %>% 
+  cols_align(
+    align = "left",
+    columns = DateTime
+  )
 
 ```
 
@@ -437,9 +485,13 @@ BatExplorer %>%
       ),
     locations = cells_body(
       columns = c(Species)
-  )) 
-
-
+  )) %>% 
+  # reduce cell space
+  tab_options(data_row.padding = px(2)) %>% 
+  cols_align(
+    align = "left",
+    columns = DateTime
+  )
 
 ```
 
@@ -516,7 +568,13 @@ BatExplorer %>%
       ),
     locations = cells_body(
       columns = c(Species)
-  )) 
+  )) %>% 
+  # reduce cell space
+  tab_options(data_row.padding = px(2)) %>% 
+  cols_align(
+    align = "left",
+    columns = DateTime
+  )
 
 
 

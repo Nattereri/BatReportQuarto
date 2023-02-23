@@ -258,17 +258,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(Species)</span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">2</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">align =</span> <span class="st">"left"</span>,</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> DateTime)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div id="tbl-aggtidy" class="anchored">
 
-<div id="eeghnwnmxj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="rqakganjnu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#eeghnwnmxj) .gt_table {
+:where(#rqakganjnu) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -293,7 +297,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-left-color: #D3D3D3;
 }
 
-:where(#eeghnwnmxj) .gt_heading {
+:where(#rqakganjnu) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -305,12 +309,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#eeghnwnmxj) .gt_caption {
+:where(#rqakganjnu) .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#eeghnwnmxj) .gt_title {
+:where(#rqakganjnu) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -322,7 +326,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-:where(#eeghnwnmxj) .gt_subtitle {
+:where(#rqakganjnu) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -334,13 +338,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-:where(#eeghnwnmxj) .gt_bottom_border {
+:where(#rqakganjnu) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#eeghnwnmxj) .gt_col_headings {
+:where(#rqakganjnu) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -355,7 +359,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#eeghnwnmxj) .gt_col_heading {
+:where(#rqakganjnu) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -375,7 +379,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-:where(#eeghnwnmxj) .gt_column_spanner_outer {
+:where(#rqakganjnu) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -387,15 +391,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 4px;
 }
 
-:where(#eeghnwnmxj) .gt_column_spanner_outer:first-child {
+:where(#rqakganjnu) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#eeghnwnmxj) .gt_column_spanner_outer:last-child {
+:where(#rqakganjnu) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#eeghnwnmxj) .gt_column_spanner {
+:where(#rqakganjnu) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -407,7 +411,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   width: 100%;
 }
 
-:where(#eeghnwnmxj) .gt_group_heading {
+:where(#rqakganjnu) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -433,7 +437,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   text-align: left;
 }
 
-:where(#eeghnwnmxj) .gt_empty_group_heading {
+:where(#rqakganjnu) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -448,17 +452,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-:where(#eeghnwnmxj) .gt_from_md > :first-child {
+:where(#rqakganjnu) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#eeghnwnmxj) .gt_from_md > :last-child {
+:where(#rqakganjnu) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#eeghnwnmxj) .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
+:where(#rqakganjnu) .gt_row {
+  padding-top: 2px;
+  padding-bottom: 2px;
   padding-left: 5px;
   padding-right: 5px;
   margin: 10px;
@@ -475,7 +479,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-:where(#eeghnwnmxj) .gt_stub {
+:where(#rqakganjnu) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -488,7 +492,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#eeghnwnmxj) .gt_stub_row_group {
+:where(#rqakganjnu) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -502,11 +506,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: top;
 }
 
-:where(#eeghnwnmxj) .gt_row_group_first td {
+:where(#rqakganjnu) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#eeghnwnmxj) .gt_summary_row {
+:where(#rqakganjnu) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -516,16 +520,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#eeghnwnmxj) .gt_first_summary_row {
+:where(#rqakganjnu) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#eeghnwnmxj) .gt_first_summary_row.thick {
+:where(#rqakganjnu) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#eeghnwnmxj) .gt_last_summary_row {
+:where(#rqakganjnu) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -535,7 +539,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-:where(#eeghnwnmxj) .gt_grand_summary_row {
+:where(#rqakganjnu) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -545,7 +549,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#eeghnwnmxj) .gt_first_grand_summary_row {
+:where(#rqakganjnu) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -555,11 +559,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-:where(#eeghnwnmxj) .gt_striped {
+:where(#rqakganjnu) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#eeghnwnmxj) .gt_table_body {
+:where(#rqakganjnu) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -568,7 +572,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-:where(#eeghnwnmxj) .gt_footnotes {
+:where(#rqakganjnu) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -582,7 +586,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#eeghnwnmxj) .gt_footnote {
+:where(#rqakganjnu) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -591,7 +595,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#eeghnwnmxj) .gt_sourcenotes {
+:where(#rqakganjnu) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -605,7 +609,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#eeghnwnmxj) .gt_sourcenote {
+:where(#rqakganjnu) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -613,64 +617,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#eeghnwnmxj) .gt_left {
+:where(#rqakganjnu) .gt_left {
   text-align: left;
 }
 
-:where(#eeghnwnmxj) .gt_center {
+:where(#rqakganjnu) .gt_center {
   text-align: center;
 }
 
-:where(#eeghnwnmxj) .gt_right {
+:where(#rqakganjnu) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#eeghnwnmxj) .gt_font_normal {
+:where(#rqakganjnu) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#eeghnwnmxj) .gt_font_bold {
+:where(#rqakganjnu) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#eeghnwnmxj) .gt_font_italic {
+:where(#rqakganjnu) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#eeghnwnmxj) .gt_super {
+:where(#rqakganjnu) .gt_super {
   font-size: 65%;
 }
 
-:where(#eeghnwnmxj) .gt_footnote_marks {
+:where(#rqakganjnu) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#eeghnwnmxj) .gt_asterisk {
+:where(#rqakganjnu) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#eeghnwnmxj) .gt_indent_1 {
+:where(#rqakganjnu) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#eeghnwnmxj) .gt_indent_2 {
+:where(#rqakganjnu) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#eeghnwnmxj) .gt_indent_3 {
+:where(#rqakganjnu) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#eeghnwnmxj) .gt_indent_4 {
+:where(#rqakganjnu) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#eeghnwnmxj) .gt_indent_5 {
+:where(#rqakganjnu) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -679,7 +683,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <thead class="gt_col_headings">
     <tr>
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Description">Description</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="DateTime">DateTime</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="DateTime">DateTime</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Species">Species</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Longitude">Longitude</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Latitude">Latitude</th>
@@ -687,30 +691,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </thead>
   <tbody class="gt_table_body">
     <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
-<td headers="DateTime" class="gt_row gt_right">2016-06-09 03:14:29</td>
-<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Barbastella barbastellus</td>
+<td headers="DateTime" class="gt_row gt_left">2016-06-13 02:33:37</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.591858</td>
+<td headers="Latitude" class="gt_row gt_right">50.33123</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_left">2016-08-26 03:58:31</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.591738</td>
+<td headers="Latitude" class="gt_row gt_right">50.33133</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 2</td>
+<td headers="DateTime" class="gt_row gt_left">2016-08-26 04:15:55</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.592583</td>
+<td headers="Latitude" class="gt_row gt_right">50.33323</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_left">2016-10-14 21:58:11</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
 <td headers="Longitude" class="gt_row gt_right">-3.591798</td>
-<td headers="Latitude" class="gt_row gt_right">50.33102</td></tr>
+<td headers="Latitude" class="gt_row gt_right">50.33132</td></tr>
     <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
-<td headers="DateTime" class="gt_row gt_right">2016-07-30 22:39:42</td>
+<td headers="DateTime" class="gt_row gt_left">2016-10-15 05:05:39</td>
 <td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus spp.</td>
-<td headers="Longitude" class="gt_row gt_right">-3.591848</td>
-<td headers="Latitude" class="gt_row gt_right">50.33130</td></tr>
-    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
-<td headers="DateTime" class="gt_row gt_right">2016-08-03 04:53:01</td>
-<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
-<td headers="Longitude" class="gt_row gt_right">-3.591748</td>
-<td headers="Latitude" class="gt_row gt_right">50.33136</td></tr>
-    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
-<td headers="DateTime" class="gt_row gt_right">2016-08-05 05:15:42</td>
-<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
-<td headers="Longitude" class="gt_row gt_right">-3.591748</td>
-<td headers="Latitude" class="gt_row gt_right">50.33136</td></tr>
-    <tr><td headers="Description" class="gt_row gt_left">Static 3</td>
-<td headers="DateTime" class="gt_row gt_right">2016-09-18 21:34:48</td>
-<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
-<td headers="Longitude" class="gt_row gt_right">-3.593018</td>
-<td headers="Latitude" class="gt_row gt_right">50.33101</td></tr>
+<td headers="Longitude" class="gt_row gt_right">-3.591798</td>
+<td headers="Latitude" class="gt_row gt_right">50.33132</td></tr>
   </tbody>
   
   
@@ -758,17 +762,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(</span>
 <span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(<span class="st">`</span><span class="at">Bat Species</span><span class="st">`</span>)</span>
 <span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">2</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div id="tbl-simplecount" class="anchored">
 
-<div id="ltxptkiszr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="ebbelwihae" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#ltxptkiszr) .gt_table {
+:where(#ebbelwihae) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -793,7 +798,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-left-color: #D3D3D3;
 }
 
-:where(#ltxptkiszr) .gt_heading {
+:where(#ebbelwihae) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -805,12 +810,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#ltxptkiszr) .gt_caption {
+:where(#ebbelwihae) .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#ltxptkiszr) .gt_title {
+:where(#ebbelwihae) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -822,7 +827,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-:where(#ltxptkiszr) .gt_subtitle {
+:where(#ebbelwihae) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -834,13 +839,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-:where(#ltxptkiszr) .gt_bottom_border {
+:where(#ebbelwihae) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#ltxptkiszr) .gt_col_headings {
+:where(#ebbelwihae) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -855,7 +860,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#ltxptkiszr) .gt_col_heading {
+:where(#ebbelwihae) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -875,7 +880,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-:where(#ltxptkiszr) .gt_column_spanner_outer {
+:where(#ebbelwihae) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -887,15 +892,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 4px;
 }
 
-:where(#ltxptkiszr) .gt_column_spanner_outer:first-child {
+:where(#ebbelwihae) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#ltxptkiszr) .gt_column_spanner_outer:last-child {
+:where(#ebbelwihae) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#ltxptkiszr) .gt_column_spanner {
+:where(#ebbelwihae) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -907,7 +912,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   width: 100%;
 }
 
-:where(#ltxptkiszr) .gt_group_heading {
+:where(#ebbelwihae) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -933,7 +938,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   text-align: left;
 }
 
-:where(#ltxptkiszr) .gt_empty_group_heading {
+:where(#ebbelwihae) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -948,17 +953,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-:where(#ltxptkiszr) .gt_from_md > :first-child {
+:where(#ebbelwihae) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#ltxptkiszr) .gt_from_md > :last-child {
+:where(#ebbelwihae) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#ltxptkiszr) .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
+:where(#ebbelwihae) .gt_row {
+  padding-top: 2px;
+  padding-bottom: 2px;
   padding-left: 5px;
   padding-right: 5px;
   margin: 10px;
@@ -975,7 +980,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-:where(#ltxptkiszr) .gt_stub {
+:where(#ebbelwihae) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -988,7 +993,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#ltxptkiszr) .gt_stub_row_group {
+:where(#ebbelwihae) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1002,11 +1007,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: top;
 }
 
-:where(#ltxptkiszr) .gt_row_group_first td {
+:where(#ebbelwihae) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#ltxptkiszr) .gt_summary_row {
+:where(#ebbelwihae) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1016,16 +1021,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#ltxptkiszr) .gt_first_summary_row {
+:where(#ebbelwihae) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#ltxptkiszr) .gt_first_summary_row.thick {
+:where(#ebbelwihae) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#ltxptkiszr) .gt_last_summary_row {
+:where(#ebbelwihae) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1035,7 +1040,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-:where(#ltxptkiszr) .gt_grand_summary_row {
+:where(#ebbelwihae) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1045,7 +1050,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#ltxptkiszr) .gt_first_grand_summary_row {
+:where(#ebbelwihae) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1055,11 +1060,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-:where(#ltxptkiszr) .gt_striped {
+:where(#ebbelwihae) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#ltxptkiszr) .gt_table_body {
+:where(#ebbelwihae) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1068,7 +1073,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-:where(#ltxptkiszr) .gt_footnotes {
+:where(#ebbelwihae) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1082,7 +1087,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#ltxptkiszr) .gt_footnote {
+:where(#ebbelwihae) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1091,7 +1096,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#ltxptkiszr) .gt_sourcenotes {
+:where(#ebbelwihae) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1105,7 +1110,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#ltxptkiszr) .gt_sourcenote {
+:where(#ebbelwihae) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1113,64 +1118,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#ltxptkiszr) .gt_left {
+:where(#ebbelwihae) .gt_left {
   text-align: left;
 }
 
-:where(#ltxptkiszr) .gt_center {
+:where(#ebbelwihae) .gt_center {
   text-align: center;
 }
 
-:where(#ltxptkiszr) .gt_right {
+:where(#ebbelwihae) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#ltxptkiszr) .gt_font_normal {
+:where(#ebbelwihae) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#ltxptkiszr) .gt_font_bold {
+:where(#ebbelwihae) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#ltxptkiszr) .gt_font_italic {
+:where(#ebbelwihae) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#ltxptkiszr) .gt_super {
+:where(#ebbelwihae) .gt_super {
   font-size: 65%;
 }
 
-:where(#ltxptkiszr) .gt_footnote_marks {
+:where(#ebbelwihae) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#ltxptkiszr) .gt_asterisk {
+:where(#ebbelwihae) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#ltxptkiszr) .gt_indent_1 {
+:where(#ebbelwihae) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#ltxptkiszr) .gt_indent_2 {
+:where(#ebbelwihae) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#ltxptkiszr) .gt_indent_3 {
+:where(#ebbelwihae) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#ltxptkiszr) .gt_indent_4 {
+:where(#ebbelwihae) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#ltxptkiszr) .gt_indent_5 {
+:where(#ebbelwihae) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1269,7 +1274,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output-display">
 <div id="tbl-countannex2" class="anchored">
 
-<div class="tabwid"><style>.cl-0a8444f4{}.cl-0a6bcbae{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-0a6bcbc2{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-0a6bcbcc{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-0a771018{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-0a77102c{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-0a773f20{width:2in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0a773f2a{width:2.5in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0a773f34{width:1in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0a773f35{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0a773f3e{width:2.5in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0a773f3f{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0a773f48{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0a773f49{width:2.5in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0a773f52{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-0a8444f4"><caption>Table&nbsp;3:  A Count of Annex II Bats Grouped by Month </caption><thead><tr style="overflow-wrap:break-word;"><th class="cl-0a773f20"><p class="cl-0a771018"><span class="cl-0a6bcbae">Month</span></p></th><th class="cl-0a773f2a"><p class="cl-0a771018"><span class="cl-0a6bcbae">Bat Species</span></p></th><th class="cl-0a773f34"><p class="cl-0a77102c"><span class="cl-0a6bcbae">Count</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-0a773f35"><p class="cl-0a771018"><span class="cl-0a6bcbc2">May</span></p></td><td class="cl-0a773f3e"><p class="cl-0a771018"><span class="cl-0a6bcbcc">Barbastella barbastellus</span></p></td><td class="cl-0a773f3f"><p class="cl-0a77102c"><span class="cl-0a6bcbc2">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0a773f49"><p class="cl-0a771018"><span class="cl-0a6bcbcc">Rhinolophus ferrumequinum</span></p></td><td class="cl-0a773f52"><p class="cl-0a77102c"><span class="cl-0a6bcbc2">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0a773f49"><p class="cl-0a771018"><span class="cl-0a6bcbcc">Rhinolophus hipposideros</span></p></td><td class="cl-0a773f52"><p class="cl-0a77102c"><span class="cl-0a6bcbc2">10</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-0a773f48"><p class="cl-0a771018"><span class="cl-0a6bcbc2">June</span></p></td><td class="cl-0a773f49"><p class="cl-0a771018"><span class="cl-0a6bcbcc">Barbastella barbastellus</span></p></td><td class="cl-0a773f52"><p class="cl-0a77102c"><span class="cl-0a6bcbc2">198</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0a773f49"><p class="cl-0a771018"><span class="cl-0a6bcbcc">Rhinolophus ferrumequinum</span></p></td><td class="cl-0a773f52"><p class="cl-0a77102c"><span class="cl-0a6bcbc2">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0a773f49"><p class="cl-0a771018"><span class="cl-0a6bcbcc">Rhinolophus hipposideros</span></p></td><td class="cl-0a773f52"><p class="cl-0a77102c"><span class="cl-0a6bcbc2">11</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-0a773f48"><p class="cl-0a771018"><span class="cl-0a6bcbc2">July</span></p></td><td class="cl-0a773f49"><p class="cl-0a771018"><span class="cl-0a6bcbcc">Barbastella barbastellus</span></p></td><td class="cl-0a773f52"><p class="cl-0a77102c"><span class="cl-0a6bcbc2">49</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0a773f49"><p class="cl-0a771018"><span class="cl-0a6bcbcc">Rhinolophus ferrumequinum</span></p></td><td class="cl-0a773f52"><p class="cl-0a77102c"><span class="cl-0a6bcbc2">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0a773f49"><p class="cl-0a771018"><span class="cl-0a6bcbcc">Rhinolophus hipposideros</span></p></td><td class="cl-0a773f52"><p class="cl-0a77102c"><span class="cl-0a6bcbc2">4</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-0a773f48"><p class="cl-0a771018"><span class="cl-0a6bcbc2">August</span></p></td><td class="cl-0a773f49"><p class="cl-0a771018"><span class="cl-0a6bcbcc">Barbastella barbastellus</span></p></td><td class="cl-0a773f52"><p class="cl-0a77102c"><span class="cl-0a6bcbc2">109</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0a773f49"><p class="cl-0a771018"><span class="cl-0a6bcbcc">Rhinolophus ferrumequinum</span></p></td><td class="cl-0a773f52"><p class="cl-0a77102c"><span class="cl-0a6bcbc2">31</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0a773f49"><p class="cl-0a771018"><span class="cl-0a6bcbcc">Rhinolophus hipposideros</span></p></td><td class="cl-0a773f52"><p class="cl-0a77102c"><span class="cl-0a6bcbc2">23</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-0a773f48"><p class="cl-0a771018"><span class="cl-0a6bcbc2">September</span></p></td><td class="cl-0a773f49"><p class="cl-0a771018"><span class="cl-0a6bcbcc">Barbastella barbastellus</span></p></td><td class="cl-0a773f52"><p class="cl-0a77102c"><span class="cl-0a6bcbc2">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0a773f49"><p class="cl-0a771018"><span class="cl-0a6bcbcc">Rhinolophus ferrumequinum</span></p></td><td class="cl-0a773f52"><p class="cl-0a77102c"><span class="cl-0a6bcbc2">64</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0a773f49"><p class="cl-0a771018"><span class="cl-0a6bcbcc">Rhinolophus hipposideros</span></p></td><td class="cl-0a773f52"><p class="cl-0a77102c"><span class="cl-0a6bcbc2">17</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-0a773f48"><p class="cl-0a771018"><span class="cl-0a6bcbc2">October</span></p></td><td class="cl-0a773f49"><p class="cl-0a771018"><span class="cl-0a6bcbcc">Barbastella barbastellus</span></p></td><td class="cl-0a773f52"><p class="cl-0a77102c"><span class="cl-0a6bcbc2">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0a773f49"><p class="cl-0a771018"><span class="cl-0a6bcbcc">Rhinolophus ferrumequinum</span></p></td><td class="cl-0a773f52"><p class="cl-0a77102c"><span class="cl-0a6bcbc2">2</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0a773f49"><p class="cl-0a771018"><span class="cl-0a6bcbcc">Rhinolophus hipposideros</span></p></td><td class="cl-0a773f52"><p class="cl-0a77102c"><span class="cl-0a6bcbc2">8</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-4aa799c0{}.cl-4a936d2e{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-4a936d38{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4a936d42{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4a9b04a8{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4a9b04bc{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4a9b3662{width:2in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a9b366c{width:2.5in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a9b3676{width:1in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a9b3677{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a9b3680{width:2.5in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a9b3681{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a9b368a{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a9b368b{width:2.5in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a9b3694{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-4aa799c0"><caption>Table&nbsp;3:  A Count of Annex II Bats Grouped by Month </caption><thead><tr style="overflow-wrap:break-word;"><th class="cl-4a9b3662"><p class="cl-4a9b04a8"><span class="cl-4a936d2e">Month</span></p></th><th class="cl-4a9b366c"><p class="cl-4a9b04a8"><span class="cl-4a936d2e">Bat Species</span></p></th><th class="cl-4a9b3676"><p class="cl-4a9b04bc"><span class="cl-4a936d2e">Count</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-4a9b3677"><p class="cl-4a9b04a8"><span class="cl-4a936d38">May</span></p></td><td class="cl-4a9b3680"><p class="cl-4a9b04a8"><span class="cl-4a936d42">Barbastella barbastellus</span></p></td><td class="cl-4a9b3681"><p class="cl-4a9b04bc"><span class="cl-4a936d38">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4a9b368b"><p class="cl-4a9b04a8"><span class="cl-4a936d42">Rhinolophus ferrumequinum</span></p></td><td class="cl-4a9b3694"><p class="cl-4a9b04bc"><span class="cl-4a936d38">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4a9b368b"><p class="cl-4a9b04a8"><span class="cl-4a936d42">Rhinolophus hipposideros</span></p></td><td class="cl-4a9b3694"><p class="cl-4a9b04bc"><span class="cl-4a936d38">10</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-4a9b368a"><p class="cl-4a9b04a8"><span class="cl-4a936d38">June</span></p></td><td class="cl-4a9b368b"><p class="cl-4a9b04a8"><span class="cl-4a936d42">Barbastella barbastellus</span></p></td><td class="cl-4a9b3694"><p class="cl-4a9b04bc"><span class="cl-4a936d38">198</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4a9b368b"><p class="cl-4a9b04a8"><span class="cl-4a936d42">Rhinolophus ferrumequinum</span></p></td><td class="cl-4a9b3694"><p class="cl-4a9b04bc"><span class="cl-4a936d38">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4a9b368b"><p class="cl-4a9b04a8"><span class="cl-4a936d42">Rhinolophus hipposideros</span></p></td><td class="cl-4a9b3694"><p class="cl-4a9b04bc"><span class="cl-4a936d38">11</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-4a9b368a"><p class="cl-4a9b04a8"><span class="cl-4a936d38">July</span></p></td><td class="cl-4a9b368b"><p class="cl-4a9b04a8"><span class="cl-4a936d42">Barbastella barbastellus</span></p></td><td class="cl-4a9b3694"><p class="cl-4a9b04bc"><span class="cl-4a936d38">49</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4a9b368b"><p class="cl-4a9b04a8"><span class="cl-4a936d42">Rhinolophus ferrumequinum</span></p></td><td class="cl-4a9b3694"><p class="cl-4a9b04bc"><span class="cl-4a936d38">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4a9b368b"><p class="cl-4a9b04a8"><span class="cl-4a936d42">Rhinolophus hipposideros</span></p></td><td class="cl-4a9b3694"><p class="cl-4a9b04bc"><span class="cl-4a936d38">4</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-4a9b368a"><p class="cl-4a9b04a8"><span class="cl-4a936d38">August</span></p></td><td class="cl-4a9b368b"><p class="cl-4a9b04a8"><span class="cl-4a936d42">Barbastella barbastellus</span></p></td><td class="cl-4a9b3694"><p class="cl-4a9b04bc"><span class="cl-4a936d38">109</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4a9b368b"><p class="cl-4a9b04a8"><span class="cl-4a936d42">Rhinolophus ferrumequinum</span></p></td><td class="cl-4a9b3694"><p class="cl-4a9b04bc"><span class="cl-4a936d38">31</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4a9b368b"><p class="cl-4a9b04a8"><span class="cl-4a936d42">Rhinolophus hipposideros</span></p></td><td class="cl-4a9b3694"><p class="cl-4a9b04bc"><span class="cl-4a936d38">23</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-4a9b368a"><p class="cl-4a9b04a8"><span class="cl-4a936d38">September</span></p></td><td class="cl-4a9b368b"><p class="cl-4a9b04a8"><span class="cl-4a936d42">Barbastella barbastellus</span></p></td><td class="cl-4a9b3694"><p class="cl-4a9b04bc"><span class="cl-4a936d38">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4a9b368b"><p class="cl-4a9b04a8"><span class="cl-4a936d42">Rhinolophus ferrumequinum</span></p></td><td class="cl-4a9b3694"><p class="cl-4a9b04bc"><span class="cl-4a936d38">64</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4a9b368b"><p class="cl-4a9b04a8"><span class="cl-4a936d42">Rhinolophus hipposideros</span></p></td><td class="cl-4a9b3694"><p class="cl-4a9b04bc"><span class="cl-4a936d38">17</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-4a9b368a"><p class="cl-4a9b04a8"><span class="cl-4a936d38">October</span></p></td><td class="cl-4a9b368b"><p class="cl-4a9b04a8"><span class="cl-4a936d42">Barbastella barbastellus</span></p></td><td class="cl-4a9b3694"><p class="cl-4a9b04bc"><span class="cl-4a936d38">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4a9b368b"><p class="cl-4a9b04a8"><span class="cl-4a936d42">Rhinolophus ferrumequinum</span></p></td><td class="cl-4a9b3694"><p class="cl-4a9b04bc"><span class="cl-4a936d38">2</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4a9b368b"><p class="cl-4a9b04a8"><span class="cl-4a936d42">Rhinolophus hipposideros</span></p></td><td class="cl-4a9b3694"><p class="cl-4a9b04bc"><span class="cl-4a936d38">8</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </div>
@@ -1336,7 +1341,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell-output-display">
 <div id="tbl-countannex2c" class="anchored">
 
-<div class="tabwid"><style>.cl-0ade6e02{}.cl-0acdc462{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-0acdc46c{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-0acdc476{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-0ad39dba{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-0ad39dce{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-0ad3c06a{width:2in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0ad3c074{width:2.5in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0ad3c07e{width:1in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0ad3c07f{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0ad3c080{width:2.5in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0ad3c088{width:1in;background-color:rgba(255, 250, 248, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0ad3c089{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0ad3c092{width:2.5in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0ad3c093{width:1in;background-color:rgba(255, 249, 246, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0ad3c094{width:1in;background-color:rgba(255, 248, 244, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0ad3c09c{width:1in;background-color:rgba(238, 64, 0, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0ad3c0a6{width:1in;background-color:rgba(255, 214, 197, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0ad3c0a7{width:1in;background-color:rgba(255, 247, 243, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0ad3c0a8{width:1in;background-color:rgba(255, 212, 194, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0ad3c0b0{width:1in;background-color:rgba(255, 250, 248, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0ad3c0b1{width:1in;background-color:rgba(255, 253, 252, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0ad3c0b2{width:1in;background-color:rgba(255, 157, 120, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0ad3c0ba{width:1in;background-color:rgba(255, 229, 217, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0ad3c0bb{width:1in;background-color:rgba(255, 236, 228, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0ad3c0c4{width:1in;background-color:rgba(255, 199, 175, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0ad3c0c5{width:1in;background-color:rgba(255, 241, 235, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0ad3c0c6{width:1in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-0ad3c0ce{width:1in;background-color:rgba(255, 250, 247, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-0ade6e02"><caption>Table&nbsp;4:  A Count (Highlighted) of Annex II Bats Grouped by Month </caption><thead><tr style="overflow-wrap:break-word;"><th class="cl-0ad3c06a"><p class="cl-0ad39dba"><span class="cl-0acdc462">Month</span></p></th><th class="cl-0ad3c074"><p class="cl-0ad39dba"><span class="cl-0acdc462">Bat Species</span></p></th><th class="cl-0ad3c07e"><p class="cl-0ad39dce"><span class="cl-0acdc462">Count</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-0ad3c07f"><p class="cl-0ad39dba"><span class="cl-0acdc46c">May</span></p></td><td class="cl-0ad3c080"><p class="cl-0ad39dba"><span class="cl-0acdc476">Barbastella barbastellus</span></p></td><td class="cl-0ad3c088"><p class="cl-0ad39dce"><span class="cl-0acdc46c">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0ad3c092"><p class="cl-0ad39dba"><span class="cl-0acdc476">Rhinolophus ferrumequinum</span></p></td><td class="cl-0ad3c093"><p class="cl-0ad39dce"><span class="cl-0acdc46c">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0ad3c092"><p class="cl-0ad39dba"><span class="cl-0acdc476">Rhinolophus hipposideros</span></p></td><td class="cl-0ad3c094"><p class="cl-0ad39dce"><span class="cl-0acdc46c">10</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-0ad3c089"><p class="cl-0ad39dba"><span class="cl-0acdc46c">June</span></p></td><td class="cl-0ad3c092"><p class="cl-0ad39dba"><span class="cl-0acdc476">Barbastella barbastellus</span></p></td><td class="cl-0ad3c09c"><p class="cl-0ad39dce"><span class="cl-0acdc46c">198</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0ad3c092"><p class="cl-0ad39dba"><span class="cl-0acdc476">Rhinolophus ferrumequinum</span></p></td><td class="cl-0ad3c0a6"><p class="cl-0ad39dce"><span class="cl-0acdc46c">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0ad3c092"><p class="cl-0ad39dba"><span class="cl-0acdc476">Rhinolophus hipposideros</span></p></td><td class="cl-0ad3c0a7"><p class="cl-0ad39dce"><span class="cl-0acdc46c">11</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-0ad3c089"><p class="cl-0ad39dba"><span class="cl-0acdc46c">July</span></p></td><td class="cl-0ad3c092"><p class="cl-0ad39dba"><span class="cl-0acdc476">Barbastella barbastellus</span></p></td><td class="cl-0ad3c0a8"><p class="cl-0ad39dce"><span class="cl-0acdc46c">49</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0ad3c092"><p class="cl-0ad39dba"><span class="cl-0acdc476">Rhinolophus ferrumequinum</span></p></td><td class="cl-0ad3c0b0"><p class="cl-0ad39dce"><span class="cl-0acdc46c">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0ad3c092"><p class="cl-0ad39dba"><span class="cl-0acdc476">Rhinolophus hipposideros</span></p></td><td class="cl-0ad3c0b1"><p class="cl-0ad39dce"><span class="cl-0acdc46c">4</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-0ad3c089"><p class="cl-0ad39dba"><span class="cl-0acdc46c">August</span></p></td><td class="cl-0ad3c092"><p class="cl-0ad39dba"><span class="cl-0acdc476">Barbastella barbastellus</span></p></td><td class="cl-0ad3c0b2"><p class="cl-0ad39dce"><span class="cl-0acdc46c">109</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0ad3c092"><p class="cl-0ad39dba"><span class="cl-0acdc476">Rhinolophus ferrumequinum</span></p></td><td class="cl-0ad3c0ba"><p class="cl-0ad39dce"><span class="cl-0acdc46c">31</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0ad3c092"><p class="cl-0ad39dba"><span class="cl-0acdc476">Rhinolophus hipposideros</span></p></td><td class="cl-0ad3c0bb"><p class="cl-0ad39dce"><span class="cl-0acdc46c">23</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-0ad3c089"><p class="cl-0ad39dba"><span class="cl-0acdc46c">September</span></p></td><td class="cl-0ad3c092"><p class="cl-0ad39dba"><span class="cl-0acdc476">Barbastella barbastellus</span></p></td><td class="cl-0ad3c093"><p class="cl-0ad39dce"><span class="cl-0acdc46c">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0ad3c092"><p class="cl-0ad39dba"><span class="cl-0acdc476">Rhinolophus ferrumequinum</span></p></td><td class="cl-0ad3c0c4"><p class="cl-0ad39dce"><span class="cl-0acdc46c">64</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0ad3c092"><p class="cl-0ad39dba"><span class="cl-0acdc476">Rhinolophus hipposideros</span></p></td><td class="cl-0ad3c0c5"><p class="cl-0ad39dce"><span class="cl-0acdc46c">17</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-0ad3c089"><p class="cl-0ad39dba"><span class="cl-0acdc46c">October</span></p></td><td class="cl-0ad3c092"><p class="cl-0ad39dba"><span class="cl-0acdc476">Barbastella barbastellus</span></p></td><td class="cl-0ad3c0a6"><p class="cl-0ad39dce"><span class="cl-0acdc46c">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0ad3c092"><p class="cl-0ad39dba"><span class="cl-0acdc476">Rhinolophus ferrumequinum</span></p></td><td class="cl-0ad3c0c6"><p class="cl-0ad39dce"><span class="cl-0acdc46c">2</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-0ad3c092"><p class="cl-0ad39dba"><span class="cl-0acdc476">Rhinolophus hipposideros</span></p></td><td class="cl-0ad3c0ce"><p class="cl-0ad39dce"><span class="cl-0acdc46c">8</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-4b03f45e{}.cl-4af1c824{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-4af1c838{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4af1c839{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4af83128{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4af8313c{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4af85914{width:2in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4af8591e{width:2.5in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4af85928{width:1in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4af85932{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4af85933{width:2.5in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4af8593c{width:1in;background-color:rgba(255, 250, 248, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4af8593d{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4af85946{width:2.5in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4af85947{width:1in;background-color:rgba(255, 249, 246, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4af85948{width:1in;background-color:rgba(255, 248, 244, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4af85950{width:1in;background-color:rgba(238, 64, 0, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4af85951{width:1in;background-color:rgba(255, 214, 197, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4af85952{width:1in;background-color:rgba(255, 247, 243, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4af8595a{width:1in;background-color:rgba(255, 212, 194, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4af8595b{width:1in;background-color:rgba(255, 250, 248, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4af8595c{width:1in;background-color:rgba(255, 253, 252, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4af85964{width:1in;background-color:rgba(255, 157, 120, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4af85965{width:1in;background-color:rgba(255, 229, 217, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4af8596e{width:1in;background-color:rgba(255, 236, 228, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4af8596f{width:1in;background-color:rgba(255, 199, 175, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4af85970{width:1in;background-color:rgba(255, 241, 235, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4af85978{width:1in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4af85982{width:1in;background-color:rgba(255, 250, 247, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-4b03f45e"><caption>Table&nbsp;4:  A Count (Highlighted) of Annex II Bats Grouped by Month </caption><thead><tr style="overflow-wrap:break-word;"><th class="cl-4af85914"><p class="cl-4af83128"><span class="cl-4af1c824">Month</span></p></th><th class="cl-4af8591e"><p class="cl-4af83128"><span class="cl-4af1c824">Bat Species</span></p></th><th class="cl-4af85928"><p class="cl-4af8313c"><span class="cl-4af1c824">Count</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-4af85932"><p class="cl-4af83128"><span class="cl-4af1c838">May</span></p></td><td class="cl-4af85933"><p class="cl-4af83128"><span class="cl-4af1c839">Barbastella barbastellus</span></p></td><td class="cl-4af8593c"><p class="cl-4af8313c"><span class="cl-4af1c838">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4af85946"><p class="cl-4af83128"><span class="cl-4af1c839">Rhinolophus ferrumequinum</span></p></td><td class="cl-4af85947"><p class="cl-4af8313c"><span class="cl-4af1c838">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4af85946"><p class="cl-4af83128"><span class="cl-4af1c839">Rhinolophus hipposideros</span></p></td><td class="cl-4af85948"><p class="cl-4af8313c"><span class="cl-4af1c838">10</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-4af8593d"><p class="cl-4af83128"><span class="cl-4af1c838">June</span></p></td><td class="cl-4af85946"><p class="cl-4af83128"><span class="cl-4af1c839">Barbastella barbastellus</span></p></td><td class="cl-4af85950"><p class="cl-4af8313c"><span class="cl-4af1c838">198</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4af85946"><p class="cl-4af83128"><span class="cl-4af1c839">Rhinolophus ferrumequinum</span></p></td><td class="cl-4af85951"><p class="cl-4af8313c"><span class="cl-4af1c838">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4af85946"><p class="cl-4af83128"><span class="cl-4af1c839">Rhinolophus hipposideros</span></p></td><td class="cl-4af85952"><p class="cl-4af8313c"><span class="cl-4af1c838">11</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-4af8593d"><p class="cl-4af83128"><span class="cl-4af1c838">July</span></p></td><td class="cl-4af85946"><p class="cl-4af83128"><span class="cl-4af1c839">Barbastella barbastellus</span></p></td><td class="cl-4af8595a"><p class="cl-4af8313c"><span class="cl-4af1c838">49</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4af85946"><p class="cl-4af83128"><span class="cl-4af1c839">Rhinolophus ferrumequinum</span></p></td><td class="cl-4af8595b"><p class="cl-4af8313c"><span class="cl-4af1c838">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4af85946"><p class="cl-4af83128"><span class="cl-4af1c839">Rhinolophus hipposideros</span></p></td><td class="cl-4af8595c"><p class="cl-4af8313c"><span class="cl-4af1c838">4</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-4af8593d"><p class="cl-4af83128"><span class="cl-4af1c838">August</span></p></td><td class="cl-4af85946"><p class="cl-4af83128"><span class="cl-4af1c839">Barbastella barbastellus</span></p></td><td class="cl-4af85964"><p class="cl-4af8313c"><span class="cl-4af1c838">109</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4af85946"><p class="cl-4af83128"><span class="cl-4af1c839">Rhinolophus ferrumequinum</span></p></td><td class="cl-4af85965"><p class="cl-4af8313c"><span class="cl-4af1c838">31</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4af85946"><p class="cl-4af83128"><span class="cl-4af1c839">Rhinolophus hipposideros</span></p></td><td class="cl-4af8596e"><p class="cl-4af8313c"><span class="cl-4af1c838">23</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-4af8593d"><p class="cl-4af83128"><span class="cl-4af1c838">September</span></p></td><td class="cl-4af85946"><p class="cl-4af83128"><span class="cl-4af1c839">Barbastella barbastellus</span></p></td><td class="cl-4af85947"><p class="cl-4af8313c"><span class="cl-4af1c838">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4af85946"><p class="cl-4af83128"><span class="cl-4af1c839">Rhinolophus ferrumequinum</span></p></td><td class="cl-4af8596f"><p class="cl-4af8313c"><span class="cl-4af1c838">64</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4af85946"><p class="cl-4af83128"><span class="cl-4af1c839">Rhinolophus hipposideros</span></p></td><td class="cl-4af85970"><p class="cl-4af8313c"><span class="cl-4af1c838">17</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-4af8593d"><p class="cl-4af83128"><span class="cl-4af1c838">October</span></p></td><td class="cl-4af85946"><p class="cl-4af83128"><span class="cl-4af1c839">Barbastella barbastellus</span></p></td><td class="cl-4af85951"><p class="cl-4af8313c"><span class="cl-4af1c838">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4af85946"><p class="cl-4af83128"><span class="cl-4af1c839">Rhinolophus ferrumequinum</span></p></td><td class="cl-4af85978"><p class="cl-4af8313c"><span class="cl-4af1c838">2</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4af85946"><p class="cl-4af83128"><span class="cl-4af1c839">Rhinolophus hipposideros</span></p></td><td class="cl-4af85982"><p class="cl-4af8313c"><span class="cl-4af1c838">8</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </div>
@@ -1379,17 +1384,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(<span class="fu">everything</span>())</span>
 <span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt_color_rows</span>(median, <span class="at">palette =</span> <span class="st">"ggsci::yellow_material"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt_color_rows</span>(median, <span class="at">palette =</span> <span class="st">"ggsci::yellow_material"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">2</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div id="tbl-sumstatcount" class="anchored">
 
-<div id="sdngmdezaa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="gvrnshzzkr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#sdngmdezaa) .gt_table {
+:where(#gvrnshzzkr) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1414,7 +1420,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-left-color: #D3D3D3;
 }
 
-:where(#sdngmdezaa) .gt_heading {
+:where(#gvrnshzzkr) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1426,12 +1432,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#sdngmdezaa) .gt_caption {
+:where(#gvrnshzzkr) .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#sdngmdezaa) .gt_title {
+:where(#gvrnshzzkr) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1443,7 +1449,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-:where(#sdngmdezaa) .gt_subtitle {
+:where(#gvrnshzzkr) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1455,13 +1461,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-:where(#sdngmdezaa) .gt_bottom_border {
+:where(#gvrnshzzkr) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#sdngmdezaa) .gt_col_headings {
+:where(#gvrnshzzkr) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1476,7 +1482,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#sdngmdezaa) .gt_col_heading {
+:where(#gvrnshzzkr) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1496,7 +1502,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-:where(#sdngmdezaa) .gt_column_spanner_outer {
+:where(#gvrnshzzkr) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1508,15 +1514,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 4px;
 }
 
-:where(#sdngmdezaa) .gt_column_spanner_outer:first-child {
+:where(#gvrnshzzkr) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#sdngmdezaa) .gt_column_spanner_outer:last-child {
+:where(#gvrnshzzkr) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#sdngmdezaa) .gt_column_spanner {
+:where(#gvrnshzzkr) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1528,7 +1534,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   width: 100%;
 }
 
-:where(#sdngmdezaa) .gt_group_heading {
+:where(#gvrnshzzkr) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1554,7 +1560,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   text-align: left;
 }
 
-:where(#sdngmdezaa) .gt_empty_group_heading {
+:where(#gvrnshzzkr) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1569,17 +1575,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-:where(#sdngmdezaa) .gt_from_md > :first-child {
+:where(#gvrnshzzkr) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#sdngmdezaa) .gt_from_md > :last-child {
+:where(#gvrnshzzkr) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#sdngmdezaa) .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
+:where(#gvrnshzzkr) .gt_row {
+  padding-top: 2px;
+  padding-bottom: 2px;
   padding-left: 5px;
   padding-right: 5px;
   margin: 10px;
@@ -1596,7 +1602,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-:where(#sdngmdezaa) .gt_stub {
+:where(#gvrnshzzkr) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1609,7 +1615,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#sdngmdezaa) .gt_stub_row_group {
+:where(#gvrnshzzkr) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1623,11 +1629,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: top;
 }
 
-:where(#sdngmdezaa) .gt_row_group_first td {
+:where(#gvrnshzzkr) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#sdngmdezaa) .gt_summary_row {
+:where(#gvrnshzzkr) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1637,16 +1643,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#sdngmdezaa) .gt_first_summary_row {
+:where(#gvrnshzzkr) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#sdngmdezaa) .gt_first_summary_row.thick {
+:where(#gvrnshzzkr) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#sdngmdezaa) .gt_last_summary_row {
+:where(#gvrnshzzkr) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1656,7 +1662,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-:where(#sdngmdezaa) .gt_grand_summary_row {
+:where(#gvrnshzzkr) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1666,7 +1672,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#sdngmdezaa) .gt_first_grand_summary_row {
+:where(#gvrnshzzkr) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1676,11 +1682,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-:where(#sdngmdezaa) .gt_striped {
+:where(#gvrnshzzkr) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#sdngmdezaa) .gt_table_body {
+:where(#gvrnshzzkr) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1689,7 +1695,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-:where(#sdngmdezaa) .gt_footnotes {
+:where(#gvrnshzzkr) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1703,7 +1709,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#sdngmdezaa) .gt_footnote {
+:where(#gvrnshzzkr) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -1712,7 +1718,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#sdngmdezaa) .gt_sourcenotes {
+:where(#gvrnshzzkr) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1726,7 +1732,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#sdngmdezaa) .gt_sourcenote {
+:where(#gvrnshzzkr) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1734,64 +1740,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#sdngmdezaa) .gt_left {
+:where(#gvrnshzzkr) .gt_left {
   text-align: left;
 }
 
-:where(#sdngmdezaa) .gt_center {
+:where(#gvrnshzzkr) .gt_center {
   text-align: center;
 }
 
-:where(#sdngmdezaa) .gt_right {
+:where(#gvrnshzzkr) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#sdngmdezaa) .gt_font_normal {
+:where(#gvrnshzzkr) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#sdngmdezaa) .gt_font_bold {
+:where(#gvrnshzzkr) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#sdngmdezaa) .gt_font_italic {
+:where(#gvrnshzzkr) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#sdngmdezaa) .gt_super {
+:where(#gvrnshzzkr) .gt_super {
   font-size: 65%;
 }
 
-:where(#sdngmdezaa) .gt_footnote_marks {
+:where(#gvrnshzzkr) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#sdngmdezaa) .gt_asterisk {
+:where(#gvrnshzzkr) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#sdngmdezaa) .gt_indent_1 {
+:where(#gvrnshzzkr) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#sdngmdezaa) .gt_indent_2 {
+:where(#gvrnshzzkr) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#sdngmdezaa) .gt_indent_3 {
+:where(#gvrnshzzkr) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#sdngmdezaa) .gt_indent_4 {
+:where(#gvrnshzzkr) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#sdngmdezaa) .gt_indent_5 {
+:where(#gvrnshzzkr) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -1933,17 +1939,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb6-57"><a href="#cb6-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(</span>
 <span id="cb6-58"><a href="#cb6-58" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> MonthFull</span>
 <span id="cb6-59"><a href="#cb6-59" aria-hidden="true" tabindex="-1"></a>    )) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt_color_rows</span>(Maximum, <span class="at">palette =</span> <span class="st">"ggsci::purple_material"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-60"><a href="#cb6-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt_color_rows</span>(Maximum, <span class="at">palette =</span> <span class="st">"ggsci::purple_material"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">2</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div id="tbl-monspec" class="anchored">
 
-<div id="vikapfxitx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="rvonvvtwws" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#vikapfxitx) .gt_table {
+:where(#rvonvvtwws) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -1968,7 +1975,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-left-color: #D3D3D3;
 }
 
-:where(#vikapfxitx) .gt_heading {
+:where(#rvonvvtwws) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1980,12 +1987,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#vikapfxitx) .gt_caption {
+:where(#rvonvvtwws) .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#vikapfxitx) .gt_title {
+:where(#rvonvvtwws) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1997,7 +2004,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-:where(#vikapfxitx) .gt_subtitle {
+:where(#rvonvvtwws) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2009,13 +2016,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-:where(#vikapfxitx) .gt_bottom_border {
+:where(#rvonvvtwws) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#vikapfxitx) .gt_col_headings {
+:where(#rvonvvtwws) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2030,7 +2037,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#vikapfxitx) .gt_col_heading {
+:where(#rvonvvtwws) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2050,7 +2057,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-:where(#vikapfxitx) .gt_column_spanner_outer {
+:where(#rvonvvtwws) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2062,15 +2069,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 4px;
 }
 
-:where(#vikapfxitx) .gt_column_spanner_outer:first-child {
+:where(#rvonvvtwws) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#vikapfxitx) .gt_column_spanner_outer:last-child {
+:where(#rvonvvtwws) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#vikapfxitx) .gt_column_spanner {
+:where(#rvonvvtwws) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2082,7 +2089,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   width: 100%;
 }
 
-:where(#vikapfxitx) .gt_group_heading {
+:where(#rvonvvtwws) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2108,7 +2115,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   text-align: left;
 }
 
-:where(#vikapfxitx) .gt_empty_group_heading {
+:where(#rvonvvtwws) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2123,17 +2130,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-:where(#vikapfxitx) .gt_from_md > :first-child {
+:where(#rvonvvtwws) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#vikapfxitx) .gt_from_md > :last-child {
+:where(#rvonvvtwws) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#vikapfxitx) .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
+:where(#rvonvvtwws) .gt_row {
+  padding-top: 2px;
+  padding-bottom: 2px;
   padding-left: 5px;
   padding-right: 5px;
   margin: 10px;
@@ -2150,7 +2157,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-:where(#vikapfxitx) .gt_stub {
+:where(#rvonvvtwws) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2163,7 +2170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#vikapfxitx) .gt_stub_row_group {
+:where(#rvonvvtwws) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2177,11 +2184,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: top;
 }
 
-:where(#vikapfxitx) .gt_row_group_first td {
+:where(#rvonvvtwws) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#vikapfxitx) .gt_summary_row {
+:where(#rvonvvtwws) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2191,16 +2198,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#vikapfxitx) .gt_first_summary_row {
+:where(#rvonvvtwws) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#vikapfxitx) .gt_first_summary_row.thick {
+:where(#rvonvvtwws) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#vikapfxitx) .gt_last_summary_row {
+:where(#rvonvvtwws) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2210,7 +2217,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-:where(#vikapfxitx) .gt_grand_summary_row {
+:where(#rvonvvtwws) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2220,7 +2227,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#vikapfxitx) .gt_first_grand_summary_row {
+:where(#rvonvvtwws) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2230,11 +2237,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-:where(#vikapfxitx) .gt_striped {
+:where(#rvonvvtwws) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#vikapfxitx) .gt_table_body {
+:where(#rvonvvtwws) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2243,7 +2250,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-:where(#vikapfxitx) .gt_footnotes {
+:where(#rvonvvtwws) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2257,7 +2264,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#vikapfxitx) .gt_footnote {
+:where(#rvonvvtwws) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -2266,7 +2273,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#vikapfxitx) .gt_sourcenotes {
+:where(#rvonvvtwws) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2280,7 +2287,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#vikapfxitx) .gt_sourcenote {
+:where(#rvonvvtwws) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2288,64 +2295,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#vikapfxitx) .gt_left {
+:where(#rvonvvtwws) .gt_left {
   text-align: left;
 }
 
-:where(#vikapfxitx) .gt_center {
+:where(#rvonvvtwws) .gt_center {
   text-align: center;
 }
 
-:where(#vikapfxitx) .gt_right {
+:where(#rvonvvtwws) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#vikapfxitx) .gt_font_normal {
+:where(#rvonvvtwws) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#vikapfxitx) .gt_font_bold {
+:where(#rvonvvtwws) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#vikapfxitx) .gt_font_italic {
+:where(#rvonvvtwws) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#vikapfxitx) .gt_super {
+:where(#rvonvvtwws) .gt_super {
   font-size: 65%;
 }
 
-:where(#vikapfxitx) .gt_footnote_marks {
+:where(#rvonvvtwws) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#vikapfxitx) .gt_asterisk {
+:where(#rvonvvtwws) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#vikapfxitx) .gt_indent_1 {
+:where(#rvonvvtwws) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#vikapfxitx) .gt_indent_2 {
+:where(#rvonvvtwws) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#vikapfxitx) .gt_indent_3 {
+:where(#rvonvvtwws) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#vikapfxitx) .gt_indent_4 {
+:where(#rvonvvtwws) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#vikapfxitx) .gt_indent_5 {
+:where(#rvonvvtwws) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
@@ -2599,17 +2606,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(<span class="fu">everything</span>())</span>
 <span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>    )</span>
 <span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt_color_rows</span>(Mean, <span class="at">palette =</span> <span class="st">"ggsci::green_material"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt_color_rows</span>(Mean, <span class="at">palette =</span> <span class="st">"ggsci::green_material"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">2</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div id="tbl-monspecb" class="anchored">
 
-<div id="enxotpkoxq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="qsekrgukkn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-:where(#enxotpkoxq) .gt_table {
+:where(#qsekrgukkn) .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -2634,7 +2642,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-left-color: #D3D3D3;
 }
 
-:where(#enxotpkoxq) .gt_heading {
+:where(#qsekrgukkn) .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2646,12 +2654,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#enxotpkoxq) .gt_caption {
+:where(#qsekrgukkn) .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-:where(#enxotpkoxq) .gt_title {
+:where(#qsekrgukkn) .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2663,7 +2671,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-width: 0;
 }
 
-:where(#enxotpkoxq) .gt_subtitle {
+:where(#qsekrgukkn) .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2675,13 +2683,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-width: 0;
 }
 
-:where(#enxotpkoxq) .gt_bottom_border {
+:where(#qsekrgukkn) .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-:where(#enxotpkoxq) .gt_col_headings {
+:where(#qsekrgukkn) .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2696,7 +2704,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#enxotpkoxq) .gt_col_heading {
+:where(#qsekrgukkn) .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2716,7 +2724,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-:where(#enxotpkoxq) .gt_column_spanner_outer {
+:where(#qsekrgukkn) .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2728,15 +2736,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 4px;
 }
 
-:where(#enxotpkoxq) .gt_column_spanner_outer:first-child {
+:where(#qsekrgukkn) .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-:where(#enxotpkoxq) .gt_column_spanner_outer:last-child {
+:where(#qsekrgukkn) .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-:where(#enxotpkoxq) .gt_column_spanner {
+:where(#qsekrgukkn) .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2748,7 +2756,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   width: 100%;
 }
 
-:where(#enxotpkoxq) .gt_group_heading {
+:where(#qsekrgukkn) .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2774,7 +2782,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   text-align: left;
 }
 
-:where(#enxotpkoxq) .gt_empty_group_heading {
+:where(#qsekrgukkn) .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2789,17 +2797,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: middle;
 }
 
-:where(#enxotpkoxq) .gt_from_md > :first-child {
+:where(#qsekrgukkn) .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-:where(#enxotpkoxq) .gt_from_md > :last-child {
+:where(#qsekrgukkn) .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-:where(#enxotpkoxq) .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
+:where(#qsekrgukkn) .gt_row {
+  padding-top: 2px;
+  padding-bottom: 2px;
   padding-left: 5px;
   padding-right: 5px;
   margin: 10px;
@@ -2816,7 +2824,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   overflow-x: hidden;
 }
 
-:where(#enxotpkoxq) .gt_stub {
+:where(#qsekrgukkn) .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2829,7 +2837,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#enxotpkoxq) .gt_stub_row_group {
+:where(#qsekrgukkn) .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2843,11 +2851,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   vertical-align: top;
 }
 
-:where(#enxotpkoxq) .gt_row_group_first td {
+:where(#qsekrgukkn) .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-:where(#enxotpkoxq) .gt_summary_row {
+:where(#qsekrgukkn) .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2857,16 +2865,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#enxotpkoxq) .gt_first_summary_row {
+:where(#qsekrgukkn) .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-:where(#enxotpkoxq) .gt_first_summary_row.thick {
+:where(#qsekrgukkn) .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-:where(#enxotpkoxq) .gt_last_summary_row {
+:where(#qsekrgukkn) .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2876,7 +2884,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-:where(#enxotpkoxq) .gt_grand_summary_row {
+:where(#qsekrgukkn) .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2886,7 +2894,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#enxotpkoxq) .gt_first_grand_summary_row {
+:where(#qsekrgukkn) .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2896,11 +2904,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-top-color: #D3D3D3;
 }
 
-:where(#enxotpkoxq) .gt_striped {
+:where(#qsekrgukkn) .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-:where(#enxotpkoxq) .gt_table_body {
+:where(#qsekrgukkn) .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2909,7 +2917,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-bottom-color: #D3D3D3;
 }
 
-:where(#enxotpkoxq) .gt_footnotes {
+:where(#qsekrgukkn) .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2923,7 +2931,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#enxotpkoxq) .gt_footnote {
+:where(#qsekrgukkn) .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -2932,7 +2940,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#enxotpkoxq) .gt_sourcenotes {
+:where(#qsekrgukkn) .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2946,7 +2954,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   border-right-color: #D3D3D3;
 }
 
-:where(#enxotpkoxq) .gt_sourcenote {
+:where(#qsekrgukkn) .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2954,64 +2962,64 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   padding-right: 5px;
 }
 
-:where(#enxotpkoxq) .gt_left {
+:where(#qsekrgukkn) .gt_left {
   text-align: left;
 }
 
-:where(#enxotpkoxq) .gt_center {
+:where(#qsekrgukkn) .gt_center {
   text-align: center;
 }
 
-:where(#enxotpkoxq) .gt_right {
+:where(#qsekrgukkn) .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-:where(#enxotpkoxq) .gt_font_normal {
+:where(#qsekrgukkn) .gt_font_normal {
   font-weight: normal;
 }
 
-:where(#enxotpkoxq) .gt_font_bold {
+:where(#qsekrgukkn) .gt_font_bold {
   font-weight: bold;
 }
 
-:where(#enxotpkoxq) .gt_font_italic {
+:where(#qsekrgukkn) .gt_font_italic {
   font-style: italic;
 }
 
-:where(#enxotpkoxq) .gt_super {
+:where(#qsekrgukkn) .gt_super {
   font-size: 65%;
 }
 
-:where(#enxotpkoxq) .gt_footnote_marks {
+:where(#qsekrgukkn) .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-:where(#enxotpkoxq) .gt_asterisk {
+:where(#qsekrgukkn) .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-:where(#enxotpkoxq) .gt_indent_1 {
+:where(#qsekrgukkn) .gt_indent_1 {
   text-indent: 5px;
 }
 
-:where(#enxotpkoxq) .gt_indent_2 {
+:where(#qsekrgukkn) .gt_indent_2 {
   text-indent: 10px;
 }
 
-:where(#enxotpkoxq) .gt_indent_3 {
+:where(#qsekrgukkn) .gt_indent_3 {
   text-indent: 15px;
 }
 
-:where(#enxotpkoxq) .gt_indent_4 {
+:where(#qsekrgukkn) .gt_indent_4 {
   text-indent: 20px;
 }
 
-:where(#enxotpkoxq) .gt_indent_5 {
+:where(#qsekrgukkn) .gt_indent_5 {
   text-indent: 25px;
 }
 </style>

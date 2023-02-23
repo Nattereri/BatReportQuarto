@@ -7,11 +7,11 @@ format:
 number-sections: true
 ---
 
-These web pages complement the *data science* chapters of the forthcoming BCT Bat Survey Guidelines 4^th^ Edition, and hopefully encourage ecologists to make the most of their bat survey data. They also demonstrate literate programming with Quarto®[^1] and R Markdown[^13] which can vastly improve workflow[^23] (*welcome to the world beyond Excel*).
+These web pages complement the *data science* chapters of the forthcoming 4^th^ Edition of BCT's Bat Survey Guidelines, and hopefully encourage ecologists to make the most of their bat survey data. They also demonstrate literate programming with Quarto®[^1] and R Markdown[^13] which can vastly improve workflow[^23] (*welcome to the world beyond Excel*).
 
-The term _data science_ is used, as this covers data collection, management, processing, analysis, visualisation, interpretation, reporting and reproducibility . Statisticians would state this is what they have always done in statistics! There is no doubt the phenomenon of _data science_ is growing, with most major universities now offering a degree course in the subject and together with the increasing power of computer algorithms; _data science_ is more than just a rebranding of statistics [@Daviddonoho201750:9bd5].
+The term _data science_ is used, as this covers data collection, management, processing, analysis, visualisation, interpretation, reporting and reproducibility. Statisticians would state this is what they have always done in statistics! There is no doubt the phenomenon of _data science_ is growing, most major universities now offer a degree course in the subject and together with the increasing power of computer algorithms; _data science_ is more than just a rebranding of statistics [@Daviddonoho201750:9bd5].
 
-The _data science_ is applied through literate programming [@knuth_literate_1984] outlined in @fig-workflowred. This enables efficient reporting of bat data[^8] from a simple table, such as a count of bats, to the output and interpretation of machine learning in a fully formatted report; plus everything in-between, all accomplished through open source R[^9] [@R-base] and RStudio [@RStudio22]. The beauty of literate programming is reproducibility; an essential tenet of all scientific study, in the commercial and legal world it makes for defensible reporting.
+The _data science_ is applied through literate programming outlined in @fig-workflowred [@knuth_literate_1984]. This enables efficient reporting of bat data[^8] from a simple table, such as a count of bats, to the output and interpretation of machine learning in a fully formatted report; plus everything in-between, all accomplished through open source R[^9] [@R-base] and RStudio [@RStudio22]. The beauty of literate programming is reproducibility; an essential tenet of all scientific study, in the commercial and legal world it makes for defensible reporting.
 
 ![Literate Programming](Images/workflowRed.png){#fig-workflowred}
 
@@ -68,7 +68,7 @@ ggplot(graph_data, aes(area = n, fill = Month, label = Species, subgroup = Month
   theme(legend.position = "none") # No legend
 ```
 
-Literate programming facilitates the use of other coding languages such as Python[^6], and Julia[^7], these languages can be mixed in the same literate programming document; with a chuck of R code doing the data manipulation  and another chunk of Python code performing the machine learning.  Coding languages applied to data science are developing rapidly in terms of their ability, speed of execution, and user friendliness[^5]; literate programming provides the framework for ecologists to keep their data science skills moving forward.
+Literate programming facilitates the use of coding languages other than R such as Python[^6], and Julia[^7]. Computer languages can be mixed in the same literate programming document; for example with a chuck of R code doing the data manipulation and another chunk of Python code performing the machine learning.  Coding languages applied to data science are developing rapidly in terms of their ability, speed of execution, and user friendliness[^5]; literate programming provides the framework for ecologists to keep their data science skills moving forward.
 
 
 

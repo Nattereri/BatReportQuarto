@@ -69,6 +69,11 @@ statics_with_night %>%
     locations = cells_column_labels(
       columns = Night
     )
+  ) %>% # reduce cell space
+  tab_options(data_row.padding = px(2)) %>% 
+  cols_align(
+    align = "left",
+    columns = c(Night, DateTime)
   )
 ```
 
@@ -104,7 +109,13 @@ statics_with_night %>%
     locations = cells_column_labels(
       columns = c(Month, MonthFull, Year, JustTime)
     )
-  )
+  ) %>% 
+  tab_options(data_row.padding = px(2)) %>% 
+  cols_align(
+    align = "left",
+    columns = DateTime)
+
+  
 ```
 
 ## Sun Times
@@ -123,7 +134,9 @@ Referencing the `DateTime` of bat activity to sunset and sunrise is achieved wit
 -   `pre_rise_hr_int` - time in hours (integer) the bat was observed before sun rise\
 -   `night_length_hr` - night length in hours (decimal) difference between `sunset` and `sunrise`
 
-@tbl-suntimes shows a selection of 5 rows from the `statics` data that includes the columns `Species` and `DateTime` and then calculates the columns listed above, the following columns are shown: `sunset`, `post_set_min`, `post_set_hr` and, `post_set_hr_int`.
+@tbl-suntimes shows a selection of 5 rows from the `statics` data with the `DateTime` column and the `Night` column already added[^10], the function `iBats::sun_night_metrics()` calculates the columns listed above, the following columns are shown: `sunset`, `post_set_min`, and, `post_set_hr_int`.
+
+[^10]: with `iBats::date_time_info()`
 
 ```{r}
 #| label: tbl-suntimes
@@ -135,7 +148,7 @@ library(tidyverse) # Data Science packages - see https://www.tidyverse.org/
 # Install devtools if not installed 
 # devtools is used to install the iBats package from GitHub
 if(!require(devtools)){
-  install.packages("devtools")
+  install.packages("devtools", quiet = TRUE)
 }
 
 # If iBats not installed load from Github
@@ -153,7 +166,7 @@ statics_plus <- iBats::sun_night_metrics(statics_plus)
 
 statics_plus %>% 
   sample_n(5) %>% 
-  select(Species, DateTime, sunset, post_set_min, post_set_hr, post_set_hr_int) %>% 
+  select(Night, DateTime, sunset, post_set_min, post_set_hr_int) %>% 
   # Table made with library(gt)
   gt() %>% 
   tab_style(
@@ -163,7 +176,7 @@ statics_plus %>%
       cell_text(weight = "normal")
       ),
     locations = cells_body(
-      columns = c(sunset, post_set_min, post_set_hr, post_set_hr_int)
+      columns = c(sunset, post_set_min, post_set_hr_int)
     )
   ) %>% 
   tab_style(
@@ -173,9 +186,13 @@ statics_plus %>%
       cell_text(weight = "bold")
       ),
     locations = cells_column_labels(
-      columns = c(sunset, post_set_min, post_set_hr, post_set_hr_int)
+      columns = c(sunset, post_set_min, post_set_hr_int)
     )
-  )
+  ) %>% 
+  tab_options(data_row.padding = px(2)) %>% 
+  cols_align(
+    align = "left",
+    columns = c(Night, DateTime, sunset))
 
 
 
@@ -259,7 +276,11 @@ statics %>%
     locations = cells_body(
       columns = Common
     )
-  )
+  ) %>% 
+  tab_options(data_row.padding = px(2)) %>% 
+  cols_align(
+    align = "left",
+    columns = DateTime)
   
 
 ```
@@ -378,7 +399,8 @@ statics_plus %>%
     locations = cells_column_labels(
       columns = c(GridRef)
     )
-  )
+  ) %>% 
+  tab_options(data_row.padding = px(2))
   
 
 ```
@@ -500,7 +522,8 @@ BatExplorer %>%
     locations = cells_column_labels(
       columns = c(`BatActivityTime (seconds)`)
     )
-  )
+  ) %>% 
+  tab_options(data_row.padding = px(2))
 
 ```
 

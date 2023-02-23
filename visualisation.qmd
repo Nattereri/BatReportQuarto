@@ -92,7 +92,8 @@ bat_colour_table %>%
   # Table made with library(flextable)
     flextable(col_keys = colnames(.)) %>% 
     bold(part = "header") %>% 
-    autofit(add_w = 0.1, add_h = 0.1) %>% 
+    autofit() %>% 
+    #autofit(add_w = 0.1, add_h = 0.1) %>% 
     #bg(bg = "black", part = "header") %>% 
     bg(j = 2, i = 1, bg = bat_colour_table$`Colour (Hex)`[1], part = "body") %>% 
     bg(j = 2, i = 2, bg = bat_colour_table$`Colour (Hex)`[2], part = "body") %>% 
