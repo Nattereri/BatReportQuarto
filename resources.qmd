@@ -108,6 +108,8 @@ Understanding the link between digital skills and data science see the [Royal St
 
 Why spreadsheets aren't great for data science listen to Tim Harford's [More or less](https://www.bbc.co.uk/sounds/play/w3ct3k5z) on BBC sounds.  For a litany of mathematical mistakes, many involving spreadsheets, see Matt Parker's book _Humble Pi A comedy of Maths Errors_ [@Mattparker2019Humble:61dc].
 
+A [comparison between R and Excel](https://www.jumpingrivers.com/blog/why-r-part-1/) for data wrangling, conveying the advantages of R, has been undertaken by [jumping rivers](https://www.jumpingrivers.com/). Interestingly their blog also has a post on [learning Excel as an R user](https://www.jumpingrivers.com/blog/learning-excel-after-r/); a good read for Excel users. 
+
 ## Tidy Data
 
 Getting data into R from *csv* and *Excel* files can be done with [`readr`](https://readr.tidyverse.org/) [@R-readr] and [`readxl`](https://readxl.tidyverse.org/) [@R-readxl] packages respectively. See also [Data import](https://r4ds.had.co.nz/data-import.html) in R4DS.
