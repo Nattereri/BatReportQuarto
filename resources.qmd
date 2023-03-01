@@ -158,6 +158,8 @@ See also [Graphics for communication](https://r4ds.had.co.nz/graphics-for-commun
 
 Colour can play a large part in visualisation and colours are easily misused; for an understanding of the issues see the paper *Misuse of Colour in Science Communication* [@Fabiocrameri2020Misuse:917a].
 
+The UK civil servants working in government analysis have produced constructive guidance on [data visualisation through charts](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/).
+
 ## Maps
 
 The excellent online book [Geocomputation with R](https://geocompr.robinlovelace.net/) by Robin Lovelace, Jakub Nowosad and Jannes Muenchow. It teaches a range of spatial skills, including: reading, writing and manipulating geographic data; making static and interactive maps; applying geocomputation to solve real-world problems; and modelling geographic phenomena.
