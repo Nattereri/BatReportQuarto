@@ -220,7 +220,10 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-do-this" id="toc-why-do-this" class="nav-link active" data-scroll-target="#why-do-this"><span class="toc-section-number">1</span>  Why Do This?</a></li>
+  <li><a href="#why-do-this" id="toc-why-do-this" class="nav-link active" data-scroll-target="#why-do-this"><span class="toc-section-number">1</span>  Why Do This?</a>
+  <ul class="collapse">
+  <li><a href="#evidence-led-reporting" id="toc-evidence-led-reporting" class="nav-link" data-scroll-target="#evidence-led-reporting"><span class="toc-section-number">1.1</span>  Evidence Led Reporting</a></li>
+  </ul></li>
   <li><a href="#bat-report-from-tidy-data" id="toc-bat-report-from-tidy-data" class="nav-link" data-scroll-target="#bat-report-from-tidy-data"><span class="toc-section-number">2</span>  Bat Report from Tidy Data</a>
   <ul class="collapse">
   <li><a href="#sec-wordrmd" id="toc-sec-wordrmd" class="nav-link" data-scroll-target="#sec-wordrmd"><span class="toc-section-number">2.1</span>  Microsoft Word</a></li>
@@ -286,6 +289,10 @@ div.csl-indent {
 <li>Coding skills in ecology are generally underdeveloped (although university education of ecology is increasingly taking a coding approach to data science); <em>it should be noted little or no coding skills are required to render the report.</em></li>
 </ol></li>
 </ol>
+<section id="evidence-led-reporting" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="evidence-led-reporting"><span class="header-section-number">1.1</span> Evidence Led Reporting</h3>
+<p>Literate programming assists data science and reproducibility, promoting evidence led reporting and decision making. Reports are often produced for regulatory bodies, central government or local authorities, these organisations have mandatory strategies for the use of science, evidence and evaluation in there advice and actions, and the legality of their decisions<span class="citation" data-cites="AUTOKEY">(<a href="#ref-AUTOKEY" role="doc-biblioref">England 2020</a>)</span>.</p>
+</section>
 </section>
 <section id="bat-report-from-tidy-data" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="bat-report-from-tidy-data"><span class="header-section-number">2</span> Bat Report from Tidy Data</h2>
@@ -296,7 +303,7 @@ div.csl-indent {
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Simple Bat Report"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> </span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  officedown::rdocx_document: default</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "27 February, 2023"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "02 March, 2023"</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "An Ecologist"</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
@@ -455,7 +462,7 @@ div.csl-indent {
 <h3 data-number="2.2" class="anchored" data-anchor-id="sec-powerpointrmd"><span class="header-section-number">2.2</span> PowerPoint</h3>
 <p>The R Markdown text (the .Rmd file) that produces a PowerPoint presentation on the data files in the <code>iBats</code> package is shown below; it can be copied to the clip board and rendered (knitted) into the PowerPoint presentation illustrated in <a href="#fig-powerpoint">Figure&nbsp;3</a>.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "27 February 2023"</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "02 March 2023"</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Steve Markham"</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "The iBats::_Data Files_"</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">output:</span><span class="co"> </span></span>
@@ -842,6 +849,9 @@ div.csl-indent {
 
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="ref-AUTOKEY" class="csl-entry" role="doc-biblioentry">
+England, Natural. 2020. <em>Natural England’s Science, Evidence and Evaluation Strategy (2020-2025)</em>. Vol. NE764. Natural England. <a href="http://publications.naturalengland.org.uk/publication/5027096999231488">http://publications.naturalengland.org.uk/publication/5027096999231488</a>.
+</div>
 <div id="ref-knuth_literate_1984" class="csl-entry" role="doc-biblioentry">
 Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
 </div>

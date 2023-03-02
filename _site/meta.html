@@ -253,13 +253,13 @@ div.csl-indent {
 
 </header>
 
-<p>Meta data is information added, as a column, to the <em>tidy</em> data. Even with a minimum tidy data set (i.e.&nbsp;species, datetime and geolocation) many columns of useful meta data can be added to enhance the analysis and reporting; described below is simple meta data easily added to tidy data.</p>
+<p><em>Meta Data</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> is added as a column or columns to the <em>tidy</em> data. Even with a minimum tidy data set (i.e.&nbsp;species, datetime and geolocation) many columns of useful meta data can be added to enhance the analysis and reporting; described below is simple meta data easily added to tidy data.</p>
 <section id="date-and-time-information" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="date-and-time-information"><span class="header-section-number">1</span> Date and Time Information</h2>
 <section id="the-night" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="the-night"><span class="header-section-number">1.1</span> The <em>Night</em></h3>
 <p>Bats are active through the night; the date of the <em>Night</em> is the date at sunset and lasts until sunrise the morning of the following day. The <em>Night</em> is a variable column that is added to the <em>tidy</em> data; it is useful convention that helps avoid the confusion of having contiguous bat activity over two dates.</p>
-<p>The <em>Night</em> can be obtained from the <em>iBats</em> package using the <code>date_time_info</code> function. It requires a data.frame or tibble with a <code>DateTime</code> column, the <em>iana</em><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> time zone can be specified; the default is <code>Europe/London</code>.</p>
+<p>The <em>Night</em> can be obtained from the <em>iBats</em> package using the <code>date_time_info</code> function. It requires a data.frame or tibble with a <code>DateTime</code> column, the <em>iana</em><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> time zone can be specified; the default is <code>Europe/London</code>.</p>
 <p>The code below takes the <code>statics</code> set from the <em>iBats</em> package and adds the <em>Night</em> column, <a href="#tbl-night">Table&nbsp;1</a> shows a selection of 5 rows from the <code>statics</code> data.</p>
 <div class="cell">
 <details open="">
@@ -1280,7 +1280,7 @@ div.csl-indent {
 </li>
 <li><code>night_length_hr</code> - night length in hours (decimal) difference between <code>sunset</code> and <code>sunrise</code></li>
 </ul>
-<p><a href="#tbl-suntimes">Table&nbsp;3</a> shows a selection of 5 rows from the <code>statics</code> data with the <code>DateTime</code> column and the <code>Night</code> column already added<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>, the function <code>iBats::sun_night_metrics()</code> calculates the columns listed above, the following columns are shown: <code>sunset</code>, <code>post_set_min</code>, and, <code>post_set_hr_int</code>.</p>
+<p><a href="#tbl-suntimes">Table&nbsp;3</a> shows a selection of 5 rows from the <code>statics</code> data with the <code>DateTime</code> column and the <code>Night</code> column already added<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, the function <code>iBats::sun_night_metrics()</code> calculates the columns listed above, the following columns are shown: <code>sunset</code>, <code>post_set_min</code>, and, <code>post_set_hr_int</code>.</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
@@ -2359,7 +2359,7 @@ div.csl-indent {
 </section>
 <section id="national-grid-coordinates" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="national-grid-coordinates"><span class="header-section-number">4</span> National Grid Coordinates</h2>
-<p>Adding a A Country’s grid reference coordinates as meta data is useful; it allows a friendly export to other GIS and engineering drawing software (e.g.&nbsp;QGIS, ArcView® and AutoCAD®). A Country’s grid reference coordinates can be transformed from the <code>Longitude</code> and <code>Latitude</code>; in the tidy <code>statics</code> data longitude and latitude are based on the World Geodetic System 1984<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> (WGS84), the green column in <a href="#tbl-NGR">Table&nbsp;5</a> shows the British National Grid coordinates obtained from the longitude and latitude.</p>
+<p>Adding a A Country’s grid reference coordinates as meta data is useful; it allows a friendly export to other GIS and engineering drawing software (e.g.&nbsp;QGIS, ArcView® and AutoCAD®). A Country’s grid reference coordinates can be transformed from the <code>Longitude</code> and <code>Latitude</code>; in the tidy <code>statics</code> data longitude and latitude are based on the World Geodetic System 1984<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> (WGS84), the green column in <a href="#tbl-NGR">Table&nbsp;5</a> shows the British National Grid coordinates obtained from the longitude and latitude.</p>
 <div class="cell">
 <details open="">
 <summary>Show the code</summary>
@@ -2942,7 +2942,7 @@ div.csl-indent {
 </section>
 <section id="bat-activity-time" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="bat-activity-time"><span class="header-section-number">5</span> Bat Activity Time</h2>
-<p>The limitation of <em>bat passes</em> has been recognised <span class="citation" data-cites="sowler_bat_2013">(<a href="#ref-sowler_bat_2013" role="doc-biblioref">Sowler and Middleton 2013</a>)</span>, bat identification software that use full spectrum recording, generate other characteristics from a bat call, or sequence of calls; these characteristics can be used to calculate other indices of activity. Elekon’s BatExplorer<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> and Wildlife Acoustics’ Kaleidoscope<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> produce the number of <code>calls</code> or <code>pulses</code> in an recording together with the:</p>
+<p>The limitation of <em>bat passes</em> has been recognised <span class="citation" data-cites="sowler_bat_2013">(<a href="#ref-sowler_bat_2013" role="doc-biblioref">Sowler and Middleton 2013</a>)</span>, bat identification software that use full spectrum recording, generate other characteristics from a bat call, or sequence of calls; these characteristics can be used to calculate other indices of activity. Elekon’s BatExplorer<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> and Wildlife Acoustics’ Kaleidoscope<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> produce the number of <code>calls</code> or <code>pulses</code> in an recording together with the:</p>
 <ul>
 <li>average <code>duration</code> of the call or sequence of calls<br>
 </li>
@@ -3549,11 +3549,12 @@ Thieurmel, Benoit, and Achraf Elmarhraoui. 2022. <em>Suncalc: Compute Sun Positi
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>a full list of time zones can be found here <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" class="uri">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>with <code>iBats::date_time_info()</code><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p><a href="https://en.wikipedia.org/wiki/World_Geodetic_System" class="uri">https://en.wikipedia.org/wiki/World_Geodetic_System</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p><a href="http://www.batlogger.com/en/real-time-systems/batexplorer-2-software.html" class="uri">http://www.batlogger.com/en/real-time-systems/batexplorer-2-software.html</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p><a href="https://www.wildlifeacoustics.com/products/kaleidoscope-software-ultrasonic" class="uri">https://www.wildlifeacoustics.com/products/kaleidoscope-software-ultrasonic</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Meta data can also be a one line description (e.g.&nbsp;a site telephone number); here we follow the principles of <em>tidy</em> data where all the information is contained in a single row of the data file.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>a full list of time zones can be found here <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" class="uri">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>with <code>iBats::date_time_info()</code><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p><a href="https://en.wikipedia.org/wiki/World_Geodetic_System" class="uri">https://en.wikipedia.org/wiki/World_Geodetic_System</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p><a href="http://www.batlogger.com/en/real-time-systems/batexplorer-2-software.html" class="uri">http://www.batlogger.com/en/real-time-systems/batexplorer-2-software.html</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p><a href="https://www.wildlifeacoustics.com/products/kaleidoscope-software-ultrasonic" class="uri">https://www.wildlifeacoustics.com/products/kaleidoscope-software-ultrasonic</a><a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -19,7 +19,9 @@ set.seed(214)
 
 ```
 
-Meta data is information added, as a column, to the _tidy_ data.  Even with a minimum tidy data set (i.e. species, datetime and geolocation) many columns of useful meta data can be added to enhance the analysis and reporting; described below is simple meta data easily added to tidy data.
+_Meta Data_[^11] is added as a column or columns to the _tidy_ data.  Even with a minimum tidy data set (i.e. species, datetime and geolocation) many columns of useful meta data can be added to enhance the analysis and reporting; described below is simple meta data easily added to tidy data.
+
+[^11]: Meta data can also be a one line description (e.g. a site telephone number); here we follow the principles of _tidy_ data where all the information is contained in a single row of the data file.
 
 ## Date and Time Information
 

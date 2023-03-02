@@ -58,6 +58,10 @@ What's the disadvantage?
     ii) Coding skills in ecology are generally underdeveloped (although university education of ecology is increasingly taking a coding approach to data science); _it should be noted little or no coding skills are required to render the report._
 
 
+### Evidence Led Reporting
+
+Literate programming assists data science and reproducibility, promoting evidence led reporting and decision making.  Reports are often produced for regulatory bodies, central government or local authorities, these organisations have mandatory strategies for the use of science, evidence and evaluation in there advice and actions, and the legality of their decisions[@AUTOKEY].
+
 ## Bat Report from Tidy Data
 
 ###  Microsoft Word {#sec-wordrmd}

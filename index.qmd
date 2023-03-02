@@ -90,6 +90,10 @@ Literate programming facilitates the use of coding languages other than R such a
 [^23]: For example literate programming eliminates the countless copy and paste of a traditional reporting workflow.
 [^24]: _More or Less_ (Spreadsheet disasters) was released by the World Service on 11 Feb 2023 and is available for over a year.
 
+## Evidence Led Reporting
+
+Literate programming assists data science and reproducibility, promoting evidence led reporting and decision making.  Reports are often produced for regulatory bodies, central government or local authorities, these organisations have mandatory strategies for the use of science, evidence and evaluation in there advice and actions, and the legality of their decisions[@AUTOKEY].
+
 ## Install R, RStudio and Packages {#sec-installr}
 
 1.  Download and install the latest version of R <https://cran.r-project.org/bin/windows/base/>. Download the version for your operating system; R can be downloaded for Windows, Mac & Linux.\
