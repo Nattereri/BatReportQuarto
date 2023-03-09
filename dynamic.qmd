@@ -271,7 +271,7 @@ ggplotly(p)
 
 ### Bar Chart
 
-@fig-plotlybar shows a bar chart of monthly activity, it was drawn with the plotly library^[For more information see <https://plotly.com/r/bar-charts/>]. Hovering the mouse over a bar will reveal the bat species and the number of bat passes; toggling the species name in the legend will remove (or add) the species bar from the chart, and; at any view the graph can be copied to the clipboard. 
+@fig-plotlybar shows a bar chart of monthly activity, it was drawn with the plotly library^[For more information see <https://plotly.com/r/bar-charts/>]. Hovering the mouse over a bar will reveal the bat species and the number of bat passes; toggling the species name in the legend will remove (or add) the species bar from the chart. At any view the graph can be downloaded as a `.png` file. 
 
 
 ```{r}
@@ -307,7 +307,7 @@ statics_plus %>%
 ```
 
 
-@fig-plotlybar2 shows a bar chart of species activity relative to the static location, it was drawn with the plotly library^[For more information see <https://plotly.com/r/bar-charts/>]. Hovering the mouse over a bar will reveal the bat species and the number of bat passes; toggling the species name in the legend will remove (or add) the species bar from the chart, and; at any view the graph can be copied to the clipboard. 
+@fig-plotlybar2 shows a bar chart of species activity relative to the static location, it was drawn with the plotly library^[For more information see <https://plotly.com/r/bar-charts/>]. Hovering the mouse over a bar will reveal the bat species and the number of bat passes; toggling the species name in the legend will remove (or add) the species bar from the chart. At any view the graph can be downloaded as a `.png` file. 
 
 
 ```{r}
@@ -364,7 +364,7 @@ colors <- unname(bat_colours_sci[list_species])
 
 ### Pie Chart
 
-@fig-plotlypie shows a pie chart of bat passes, it was drawn with the plotly library^[For more information see <https://plotly.com/r/pie-charts/>]. Hovering the mouse over a bar will reveal the bat species and the number of bat passes; toggling the species name in the legend will remove (or add) the species slice from the chart, and; at any view the graph can be copied to the clipboard. 
+@fig-plotlypie shows a pie chart of bat passes, it was drawn with the plotly library^[For more information see <https://plotly.com/r/pie-charts/>]. Hovering the mouse over a bar will reveal the bat species and the number of bat passes; toggling the species name in the legend will remove (or add) the species slice from the chart. At any view the graph can be downloaded as a `.png` file.
 
 ```{r}
 #| label: fig-plotlypie
