@@ -44,11 +44,11 @@ The rationale for these variables is as follows:
 
 [^2]: a full list of time zones can be found here <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones>
 
-`Species`: bat species names should follow the "binomial nomenclature" from the International Code of Zoological Nomenclature (ICZN)[^3] - e.g. *Barbastella barbastellus*, *Eptesicus serotinus*, etc... A column of local common names can always be added to the *tidy* data, i.e. in a separate column see Appendix 8. Sound analysis may not be able to distinguish calls to species level; in practice some calls may only be identified to genus or less; Table \@ref(tab:table04) gives a practical and consistent guide to naming[^4].
+`Species`: bat species names should follow the "binomial nomenclature" from the International Code of Zoological Nomenclature (ICZN)[^3] - e.g. *Barbastella barbastellus*, *Eptesicus serotinus*, etc... A column of local common names can always be added to the *tidy* data, i.e. in a separate column see [Meta Data](https://bat-survey-reporting.netlify.app/meta.html#common-bat-names). Sound analysis may not be able to distinguish calls to species level; in practice some calls may only be identified to genus or less. A compiled online database [_Bats of the World_](https://batnames.org/) provides taxonomic and geographic information on all Chiroptera [^4]. As of 10^th^ Mar 2023, __1462__ species are recognized.
 
 [^3]: <https://www.iczn.org/the-code/the-international-code-of-zoological-nomenclature/the-code-online/>
 
-[^4]: Adapted from the Ecobat guide.
+[^4]: Simmons, N.B. and A.L. Cirranello. 2023. Bat Species of the World: A taxonomic and geographic database. Version 1.3. Accessed on 03/14/2023. 
 
 `Longitude` and `Latitude`: World Geodetic System 1984[^5] (WGS84); as used by Google earth. A digital, numeric, format should be used. Any other spatial reference system can be used (e.g. British National Grid Easting/Northing), as this can be stored as an extra column in the *tidy data*, the prerequisite is that the reference system can be converted to WGS84; which is the case for most national or state co-ordinate systems. Using a global co-ordinate system such as WSG84 give access to the many open-source application programming interfaces (API) available that assist with data analysis (e.g. assessing sunset and sunrise times or the adjustment to daylight saving).
 
