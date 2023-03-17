@@ -279,7 +279,7 @@ div.csl-indent {
 <p><code>Description</code> a column to help identify the observation for example a location, surveyor or survey number.</p>
 <p><code>DateTime</code>: the date and time of the bat observation to BS ISO 8601:2004 i.e.&nbsp;<code>yyyymmdd hh:mm:ss</code>. The use of BS ISO 8601:2004 prevents confusion over the date format <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> . Reference bat activity to the local time and specifying an <em>iana</em><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> time zone allows for daylight saving times to considered; the <em>iana</em> code for the UK is <code>Europe/London</code>.</p>
 <p><code>Species</code>: bat species names should follow the “binomial nomenclature” from the International Code of Zoological Nomenclature (ICZN)<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> - e.g.&nbsp;<em>Barbastella barbastellus</em>, <em>Eptesicus serotinus</em>, etc… A column of local common names can always be added to the <em>tidy</em> data, i.e.&nbsp;in a separate column see <a href="https://bat-survey-reporting.netlify.app/meta.html#common-bat-names">Meta Data</a>. Sound analysis may not be able to distinguish calls to species level; in practice some calls may only be identified to genus or less. A compiled online database <a href="https://batnames.org/"><em>Bats of the World</em></a> provides taxonomic and geographic information on all Chiroptera <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. As of 10<sup>th</sup> Mar 2023, <strong>1462</strong> species are recognized.</p>
-<p><code>Longitude</code> and <code>Latitude</code>: World Geodetic System 1984<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> (WGS84); as used by Google earth. A digital, numeric, format should be used. Any other spatial reference system can be used (e.g.&nbsp;British National Grid Easting/Northing), as this can be stored as an extra column in the <em>tidy data</em>, the prerequisite is that the reference system can be converted to WGS84; which is the case for most national or state co-ordinate systems. Using a global co-ordinate system such as WSG84 give access to the many open-source application programming interfaces (API) available that assist with data analysis (e.g.&nbsp;assessing sunset and sunrise times or the adjustment to daylight saving).</p>
+<p><code>Longitude</code> and <code>Latitude</code>: World Geodetic System 1984<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> (WGS84); as used by Google earth. A digital, numeric, format should be used. Any other spatial reference system can be used, as these can be stored as an extra column in the <em>tidy data</em>; an example of British National Grid co-ordinates (Easting/Northing) is provided in <a href="https://bat-survey-reporting.netlify.app/meta.html#national-grid-coordinates">Meta Data</a>. The prerequisite is that the reference system can be converted to WGS84; which is the case for most national or state co-ordinate systems. Using a global co-ordinate system such as WSG84 gives access to the many open-source application programming interfaces (API) available that assist with data analysis (e.g.&nbsp;assessing sunset and sunrise times or the adjustment to daylight saving).</p>
 </section>
 <section id="making-bat-data-tidy" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="making-bat-data-tidy"><span class="header-section-number">2</span> Making Bat Data <em>Tidy</em></h2>
@@ -4783,9 +4783,22 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>The longitude and latitude gives a position of the bat observation and is also used to determine sunset and sunrise; and if the values are not completed then these observations would be excluded from the analysis. A simple estimate of the missing longitude and latitude can be made by arranging the data in date/time order and using the function:</p>
+<p>The longitude and latitude gives a position of the bat observation and is also used to determine sunset and sunrise; and if the values are not completed then these observations would be excluded from the analysis. A simple estimate of the missing latitude and longitude can be made by arranging the data in date/time order and using the function:</p>
 <p><code>tidyr::fill(c(Latitude, Longitude), .direction = "downup")</code></p>
 <p>This fills the missing values from the nearest complete values; first down and then up. The filled data is shown in <a href="#tbl-filledlonlat">Table&nbsp;10</a>.</p>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Latitude and longitude is required for every row for the sun times can be calculated.</p>
+</div>
+</div>
 <div class="cell">
 <details open="">
 <summary>Show the code</summary>
@@ -5347,7 +5360,6 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p>```</p>
 
 
 

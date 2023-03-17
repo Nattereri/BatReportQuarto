@@ -50,7 +50,7 @@ The rationale for these variables is as follows:
 
 [^4]: Simmons, N.B. and A.L. Cirranello. 2023. Bat Species of the World: A taxonomic and geographic database. Version 1.3. Accessed on 03/14/2023. 
 
-`Longitude` and `Latitude`: World Geodetic System 1984[^5] (WGS84); as used by Google earth. A digital, numeric, format should be used. Any other spatial reference system can be used (e.g. British National Grid Easting/Northing), as this can be stored as an extra column in the *tidy data*, the prerequisite is that the reference system can be converted to WGS84; which is the case for most national or state co-ordinate systems. Using a global co-ordinate system such as WSG84 give access to the many open-source application programming interfaces (API) available that assist with data analysis (e.g. assessing sunset and sunrise times or the adjustment to daylight saving).
+`Longitude` and `Latitude`: World Geodetic System 1984[^5] (WGS84); as used by Google earth. A digital, numeric, format should be used. Any other spatial reference system can be used, as these can be stored as an extra column in the *tidy data*; an example of British National Grid co-ordinates (Easting/Northing) is provided in [Meta Data](https://bat-survey-reporting.netlify.app/meta.html#national-grid-coordinates). The prerequisite is that the reference system can be converted to WGS84; which is the case for most national or state co-ordinate systems. Using a global co-ordinate system such as WSG84 gives access to the many open-source application programming interfaces (API) available that assist with data analysis (e.g. assessing sunset and sunrise times or the adjustment to daylight saving).
 
 [^5]: <https://en.wikipedia.org/wiki/World_Geodetic_System>
 
@@ -495,11 +495,17 @@ BatExplorer %>%
 
 ```
 
-The longitude and latitude gives a position of the bat observation and is also used to determine sunset and sunrise; and if the values are not completed then these observations would be excluded from the analysis. A simple estimate of the missing longitude and latitude can be made by arranging the data in date/time order and using the function:  
+The longitude and latitude gives a position of the bat observation and is also used to determine sunset and sunrise; and if the values are not completed then these observations would be excluded from the analysis. A simple estimate of the missing latitude and longitude can be made by arranging the data in date/time order and using the function:  
 
 `tidyr::fill(c(Latitude, Longitude), .direction = "downup")` 
 
 This fills the missing values from the nearest complete values; first down and then up.  The filled data is shown in @tbl-filledlonlat.
+
+:::{.callout-warning}
+## Warning
+
+Latitude and longitude is required for every row for the sun times can be calculated.
+:::
 
 
 ```{r}
@@ -581,5 +587,5 @@ BatExplorer %>%
 ```
 
 
-```
+
 
