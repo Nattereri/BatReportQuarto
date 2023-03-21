@@ -24,7 +24,6 @@ To help ecologists on their data science journey, all the code making the graphs
 A _Show the code_ is given below, the code produces @fig-example.  The code copied to the clipboard is designed to run as a standalone _chunk_ (or _R script_)[^11]; the code loads the required R libraries and data.
 
 
-
 ```{r}
 #| code-fold: show
 #| label: fig-example
@@ -67,6 +66,14 @@ ggplot(graph_data, aes(area = n, fill = Month, label = Species, subgroup = Month
   theme_bw() +
   theme(legend.position = "none") # No legend
 ```
+
+
+:::{.callout-tip}
+## Coding Tip
+
+Rather than write code from scratch adapt working code to your own purposes.
+:::
+
 
 Literate programming facilitates the use of coding languages other than R such as Python[^6], and Julia[^7]. Computer languages can be mixed in the same literate programming document; for example with a chuck of R code doing the data manipulation and another chunk of Python code performing the machine learning.  Coding languages applied to data science are developing rapidly in terms of their ability, speed of execution, and user friendliness[^5]; literate programming provides the framework for ecologists to keep their data science skills moving forward.
 

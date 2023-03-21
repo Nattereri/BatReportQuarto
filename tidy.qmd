@@ -44,7 +44,7 @@ The rationale for these variables is as follows:
 
 [^2]: a full list of time zones can be found here <https://en.wikipedia.org/wiki/List_of_tz_database_time_zones>
 
-`Species`: bat species names should follow the "binomial nomenclature" from the International Code of Zoological Nomenclature (ICZN)[^3] - e.g. *Barbastella barbastellus*, *Eptesicus serotinus*, etc... A column of local common names can always be added to the *tidy* data, i.e. in a separate column see [Meta Data](https://bat-survey-reporting.netlify.app/meta.html#common-bat-names). Sound analysis may not be able to distinguish calls to species level; in practice some calls may only be identified to genus or less. A compiled online database [_Bats of the World_](https://batnames.org/) provides taxonomic and geographic information on all Chiroptera [^4]. As of 10^th^ Mar 2023, __1462__ species are recognized.
+`Species`: bat species names should follow the "binomial nomenclature" from the International Code of Zoological Nomenclature (ICZN)[^3] - e.g. *Barbastella barbastellus*, *Eptesicus serotinus*, etc... A column of local common names can always be added to the *tidy* data, i.e. in a separate column see [Meta Data](https://bat-survey-reporting.netlify.app/meta.html#common-bat-names). A compiled online database [_Bats of the World_](https://batnames.org/) provides taxonomic and geographic information on all Chiroptera [^4]. As of 10^th^ Mar 2023, __1462__ species are recognized. Sound analysis may not be able to distinguish calls to species level; in practice some calls may only be identified to genus or as acoustically similar, @tbl-UKbatNames suggests a naming convention.
 
 [^3]: <https://www.iczn.org/the-code/the-international-code-of-zoological-nomenclature/the-code-online/>
 
@@ -587,5 +587,42 @@ BatExplorer %>%
 ```
 
 
+## Sound Analysis and Naming Bats
+
+Sound analysis may not be able to distinguish calls to species level; in practice some calls may only be identified to genus or as acoustically similar; @tbl-UKbatNames suggests a naming convention for UK bat species[^6]
+
+[^6]: Adapted from [EcoBat's](http://www.ecobat.org.uk/) naming convention.
+
+```{r}
+#| label: tbl-UKbatNames
+#| tbl-cap: "Sound Analysis and Naming Bats"
+
+# UK_bat_names is from the iBats package
+UK_bat_names %>% 
+  select(-Common) %>% 
+  mutate_if(is.character, ~replace_na(.,"")) %>% 
+  rename(Species = Binomial, `Acoustic Group 1` = AcousticallySimilar1, `Acoustic Group 2` = AcousticallySimilar2) %>% 
+  gt() %>% 
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")
+      ),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  ) %>% 
+  # Make bat scientific name italic
+  tab_style(
+    style = list(
+      cell_text(style = "italic")
+      ),
+    locations = cells_body(
+      columns = c(everything())
+  )) %>% 
+  # reduce cell space
+  tab_options(data_row.padding = px(2)) 
 
 
+
+```

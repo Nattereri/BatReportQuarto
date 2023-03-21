@@ -229,6 +229,7 @@ div.csl-indent {
   <li><a href="#sec-scinames" id="toc-sec-scinames" class="nav-link" data-scroll-target="#sec-scinames"><span class="toc-section-number">2.4</span>  Convert Bat Names to Scientific</a></li>
   <li><a href="#missing-latitude-and-longitude-values" id="toc-missing-latitude-and-longitude-values" class="nav-link" data-scroll-target="#missing-latitude-and-longitude-values"><span class="toc-section-number">2.5</span>  Missing Latitude and Longitude Values</a></li>
   </ul></li>
+  <li><a href="#sound-analysis-and-naming-bats" id="toc-sound-analysis-and-naming-bats" class="nav-link" data-scroll-target="#sound-analysis-and-naming-bats"><span class="toc-section-number">3</span>  Sound Analysis and Naming Bats</a></li>
   </ul>
 </nav>
     </div>
@@ -278,7 +279,7 @@ div.csl-indent {
 <p>The rationale for these variables is as follows:</p>
 <p><code>Description</code> a column to help identify the observation for example a location, surveyor or survey number.</p>
 <p><code>DateTime</code>: the date and time of the bat observation to BS ISO 8601:2004 i.e.&nbsp;<code>yyyymmdd hh:mm:ss</code>. The use of BS ISO 8601:2004 prevents confusion over the date format <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> . Reference bat activity to the local time and specifying an <em>iana</em><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> time zone allows for daylight saving times to considered; the <em>iana</em> code for the UK is <code>Europe/London</code>.</p>
-<p><code>Species</code>: bat species names should follow the “binomial nomenclature” from the International Code of Zoological Nomenclature (ICZN)<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> - e.g.&nbsp;<em>Barbastella barbastellus</em>, <em>Eptesicus serotinus</em>, etc… A column of local common names can always be added to the <em>tidy</em> data, i.e.&nbsp;in a separate column see <a href="https://bat-survey-reporting.netlify.app/meta.html#common-bat-names">Meta Data</a>. Sound analysis may not be able to distinguish calls to species level; in practice some calls may only be identified to genus or less. A compiled online database <a href="https://batnames.org/"><em>Bats of the World</em></a> provides taxonomic and geographic information on all Chiroptera <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. As of 10<sup>th</sup> Mar 2023, <strong>1462</strong> species are recognized.</p>
+<p><code>Species</code>: bat species names should follow the “binomial nomenclature” from the International Code of Zoological Nomenclature (ICZN)<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> - e.g.&nbsp;<em>Barbastella barbastellus</em>, <em>Eptesicus serotinus</em>, etc… A column of local common names can always be added to the <em>tidy</em> data, i.e.&nbsp;in a separate column see <a href="https://bat-survey-reporting.netlify.app/meta.html#common-bat-names">Meta Data</a>. A compiled online database <a href="https://batnames.org/"><em>Bats of the World</em></a> provides taxonomic and geographic information on all Chiroptera <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. As of 10<sup>th</sup> Mar 2023, <strong>1462</strong> species are recognized. Sound analysis may not be able to distinguish calls to species level; in practice some calls may only be identified to genus or as acoustically similar, <a href="#tbl-UKbatNames">Table&nbsp;11</a> suggests a naming convention.</p>
 <p><code>Longitude</code> and <code>Latitude</code>: World Geodetic System 1984<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> (WGS84); as used by Google earth. A digital, numeric, format should be used. Any other spatial reference system can be used, as these can be stored as an extra column in the <em>tidy data</em>; an example of British National Grid co-ordinates (Easting/Northing) is provided in <a href="https://bat-survey-reporting.netlify.app/meta.html#national-grid-coordinates">Meta Data</a>. The prerequisite is that the reference system can be converted to WGS84; which is the case for most national or state co-ordinate systems. Using a global co-ordinate system such as WSG84 gives access to the many open-source application programming interfaces (API) available that assist with data analysis (e.g.&nbsp;assessing sunset and sunrise times or the adjustment to daylight saving).</p>
 </section>
 <section id="making-bat-data-tidy" class="level2" data-number="2">
@@ -5360,10 +5361,544 @@ Warning
 </div>
 </div>
 </div>
-
-
-
 </section>
+</section>
+<section id="sound-analysis-and-naming-bats" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="sound-analysis-and-naming-bats"><span class="header-section-number">3</span> Sound Analysis and Naming Bats</h2>
+<p>Sound analysis may not be able to distinguish calls to species level; in practice some calls may only be identified to genus or as acoustically similar; <a href="#tbl-UKbatNames">Table&nbsp;11</a> suggests a naming convention for UK bat species<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<div class="cell">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># UK_bat_names is from the iBats package</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>UK_bat_names <span class="sc">%&gt;%</span> </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Common) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_if</span>(is.character, <span class="sc">~</span><span class="fu">replace_na</span>(.,<span class="st">""</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Species =</span> Binomial, <span class="st">`</span><span class="at">Acoustic Group 1</span><span class="st">`</span> <span class="ot">=</span> AcousticallySimilar1, <span class="st">`</span><span class="at">Acoustic Group 2</span><span class="st">`</span> <span class="ot">=</span> AcousticallySimilar2) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">"black"</span>),</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">weight =</span> <span class="st">"bold"</span>)</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(<span class="fu">everything</span>())</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Make bat scientific name italic</span></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">style =</span> <span class="st">"italic"</span>)</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(<span class="fu">everything</span>())</span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># reduce cell space</span></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">2</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="tbl-UKbatNames" class="anchored">
+
+<div id="tpmipmhuwl" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+:where(#tpmipmhuwl) .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+:where(#tpmipmhuwl) .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#tpmipmhuwl) .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+:where(#tpmipmhuwl) .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+:where(#tpmipmhuwl) .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+:where(#tpmipmhuwl) .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#tpmipmhuwl) .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#tpmipmhuwl) .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+:where(#tpmipmhuwl) .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+:where(#tpmipmhuwl) .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+:where(#tpmipmhuwl) .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+:where(#tpmipmhuwl) .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+:where(#tpmipmhuwl) .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+:where(#tpmipmhuwl) .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+:where(#tpmipmhuwl) .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+:where(#tpmipmhuwl) .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+:where(#tpmipmhuwl) .gt_row {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+:where(#tpmipmhuwl) .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#tpmipmhuwl) .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+:where(#tpmipmhuwl) .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+:where(#tpmipmhuwl) .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#tpmipmhuwl) .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+:where(#tpmipmhuwl) .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+:where(#tpmipmhuwl) .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#tpmipmhuwl) .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#tpmipmhuwl) .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+:where(#tpmipmhuwl) .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+:where(#tpmipmhuwl) .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+:where(#tpmipmhuwl) .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#tpmipmhuwl) .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#tpmipmhuwl) .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+:where(#tpmipmhuwl) .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+:where(#tpmipmhuwl) .gt_left {
+  text-align: left;
+}
+
+:where(#tpmipmhuwl) .gt_center {
+  text-align: center;
+}
+
+:where(#tpmipmhuwl) .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+:where(#tpmipmhuwl) .gt_font_normal {
+  font-weight: normal;
+}
+
+:where(#tpmipmhuwl) .gt_font_bold {
+  font-weight: bold;
+}
+
+:where(#tpmipmhuwl) .gt_font_italic {
+  font-style: italic;
+}
+
+:where(#tpmipmhuwl) .gt_super {
+  font-size: 65%;
+}
+
+:where(#tpmipmhuwl) .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+:where(#tpmipmhuwl) .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+:where(#tpmipmhuwl) .gt_indent_1 {
+  text-indent: 5px;
+}
+
+:where(#tpmipmhuwl) .gt_indent_2 {
+  text-indent: 10px;
+}
+
+:where(#tpmipmhuwl) .gt_indent_3 {
+  text-indent: 15px;
+}
+
+:where(#tpmipmhuwl) .gt_indent_4 {
+  text-indent: 20px;
+}
+
+:where(#tpmipmhuwl) .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table"><caption>Table&nbsp;11:  Sound Analysis and Naming Bats </caption>
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Species">Species</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Genus">Genus</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Acoustic Group 1">Acoustic Group 1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Acoustic Group 2">Acoustic Group 2</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Barbastella barbastellus</td>
+<td headers="Genus" class="gt_row gt_left" style="font-style: italic;">Barbastella</td>
+<td headers="Acoustic Group 1" class="gt_row gt_left" style="font-style: italic;"></td>
+<td headers="Acoustic Group 2" class="gt_row gt_left" style="font-style: italic;"></td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Eptesicus serotinus</td>
+<td headers="Genus" class="gt_row gt_left" style="font-style: italic;">Eptesicus</td>
+<td headers="Acoustic Group 1" class="gt_row gt_left" style="font-style: italic;"></td>
+<td headers="Acoustic Group 2" class="gt_row gt_left" style="font-style: italic;">Nyctaloid</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Nyctalus leisleri</td>
+<td headers="Genus" class="gt_row gt_left" style="font-style: italic;">Nyctalus</td>
+<td headers="Acoustic Group 1" class="gt_row gt_left" style="font-style: italic;">Nyctalus spp.</td>
+<td headers="Acoustic Group 2" class="gt_row gt_left" style="font-style: italic;">Nyctaloid</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Nyctalus noctula</td>
+<td headers="Genus" class="gt_row gt_left" style="font-style: italic;">Nyctalus</td>
+<td headers="Acoustic Group 1" class="gt_row gt_left" style="font-style: italic;">Nyctalus spp.</td>
+<td headers="Acoustic Group 2" class="gt_row gt_left" style="font-style: italic;">Nyctaloid</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Myotis alcathoe</td>
+<td headers="Genus" class="gt_row gt_left" style="font-style: italic;">Myotis</td>
+<td headers="Acoustic Group 1" class="gt_row gt_left" style="font-style: italic;">Myotis spp.</td>
+<td headers="Acoustic Group 2" class="gt_row gt_left" style="font-style: italic;"></td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Myotis bechsteinii</td>
+<td headers="Genus" class="gt_row gt_left" style="font-style: italic;">Myotis</td>
+<td headers="Acoustic Group 1" class="gt_row gt_left" style="font-style: italic;">Myotis spp.</td>
+<td headers="Acoustic Group 2" class="gt_row gt_left" style="font-style: italic;"></td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Myotis brandtii</td>
+<td headers="Genus" class="gt_row gt_left" style="font-style: italic;">Myotis</td>
+<td headers="Acoustic Group 1" class="gt_row gt_left" style="font-style: italic;">Myotis spp.</td>
+<td headers="Acoustic Group 2" class="gt_row gt_left" style="font-style: italic;"></td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Myotis daubentonii</td>
+<td headers="Genus" class="gt_row gt_left" style="font-style: italic;">Myotis</td>
+<td headers="Acoustic Group 1" class="gt_row gt_left" style="font-style: italic;">Myotis spp.</td>
+<td headers="Acoustic Group 2" class="gt_row gt_left" style="font-style: italic;"></td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Myotis mystacinus</td>
+<td headers="Genus" class="gt_row gt_left" style="font-style: italic;">Myotis</td>
+<td headers="Acoustic Group 1" class="gt_row gt_left" style="font-style: italic;">Myotis spp.</td>
+<td headers="Acoustic Group 2" class="gt_row gt_left" style="font-style: italic;"></td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Myotis nattereri</td>
+<td headers="Genus" class="gt_row gt_left" style="font-style: italic;">Myotis</td>
+<td headers="Acoustic Group 1" class="gt_row gt_left" style="font-style: italic;">Myotis spp.</td>
+<td headers="Acoustic Group 2" class="gt_row gt_left" style="font-style: italic;"></td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus nathusii</td>
+<td headers="Genus" class="gt_row gt_left" style="font-style: italic;">Pipistrellus</td>
+<td headers="Acoustic Group 1" class="gt_row gt_left" style="font-style: italic;">Pipistrellus spp.</td>
+<td headers="Acoustic Group 2" class="gt_row gt_left" style="font-style: italic;"></td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Genus" class="gt_row gt_left" style="font-style: italic;">Pipistrellus</td>
+<td headers="Acoustic Group 1" class="gt_row gt_left" style="font-style: italic;">Pipistrellus spp.</td>
+<td headers="Acoustic Group 2" class="gt_row gt_left" style="font-style: italic;"></td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pygmaeus</td>
+<td headers="Genus" class="gt_row gt_left" style="font-style: italic;">Pipistrellus</td>
+<td headers="Acoustic Group 1" class="gt_row gt_left" style="font-style: italic;">Pipistrellus spp.</td>
+<td headers="Acoustic Group 2" class="gt_row gt_left" style="font-style: italic;"></td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Plecotus auritus</td>
+<td headers="Genus" class="gt_row gt_left" style="font-style: italic;">Plecotus</td>
+<td headers="Acoustic Group 1" class="gt_row gt_left" style="font-style: italic;">Plecotus spp.</td>
+<td headers="Acoustic Group 2" class="gt_row gt_left" style="font-style: italic;"></td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Plecotus austriacus</td>
+<td headers="Genus" class="gt_row gt_left" style="font-style: italic;">Plecotus</td>
+<td headers="Acoustic Group 1" class="gt_row gt_left" style="font-style: italic;">Plecotus spp.</td>
+<td headers="Acoustic Group 2" class="gt_row gt_left" style="font-style: italic;"></td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Rhinolophus ferrumequinum</td>
+<td headers="Genus" class="gt_row gt_left" style="font-style: italic;">Rhinolophus</td>
+<td headers="Acoustic Group 1" class="gt_row gt_left" style="font-style: italic;"></td>
+<td headers="Acoustic Group 2" class="gt_row gt_left" style="font-style: italic;"></td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Rhinolophus hipposideros</td>
+<td headers="Genus" class="gt_row gt_left" style="font-style: italic;">Rhinolophus</td>
+<td headers="Acoustic Group 1" class="gt_row gt_left" style="font-style: italic;"></td>
+<td headers="Acoustic Group 2" class="gt_row gt_left" style="font-style: italic;"></td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+
 </section>
 
 
@@ -5382,6 +5917,7 @@ Wickham, Hadley. 2014. <span>“Tidy Data.”</span> <em>The Journal of Statisti
 <li id="fn3"><p><a href="https://www.iczn.org/the-code/the-international-code-of-zoological-nomenclature/the-code-online/" class="uri">https://www.iczn.org/the-code/the-international-code-of-zoological-nomenclature/the-code-online/</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>Simmons, N.B. and A.L. Cirranello. 2023. Bat Species of the World: A taxonomic and geographic database. Version 1.3. Accessed on 03/14/2023.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p><a href="https://en.wikipedia.org/wiki/World_Geodetic_System" class="uri">https://en.wikipedia.org/wiki/World_Geodetic_System</a><a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Adapted from <a href="http://www.ecobat.org.uk/">EcoBat’s</a> naming convention.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
