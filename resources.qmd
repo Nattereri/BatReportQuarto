@@ -58,7 +58,8 @@ knitr::write_bib(c('base',
                    'rnaturalearth',
                    'osmdata',
                    'kableExtra',
-                   'tinytex'), bib_loc)
+                   'tinytex',
+                   'validate'), bib_loc)
 
 #Then add `bibliography: packages.bib` to the YAML frontmatter. Now you can cite packages. For example: the R language [@R-base] is awesome. We used the **knitr** package [@R-knitr; @knitr2015] in our analysis. We also build a Shiny app [@R-shiny].
 
@@ -121,6 +122,8 @@ Data wrangling is made easy with functions from the [`dplyr`](https://dplyr.tidy
 The manipulation of text was through the [`stringr`](https://stringr.tidyverse.org/) [@R-stringr] package. See also [Strings](https://r4ds.had.co.nz/strings.html) in R4DS.
 
 The philosophy of *tidy data* is described by [@wickham_tidy_2014] [@JSSv105i07].
+
+Data validation is made effective through the [`validate`](https://cran.r-project.org/web/packages/validate/vignettes/cookbook.html) [@R-validate] package.
 
 ## Meta Data
 

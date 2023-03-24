@@ -626,3 +626,94 @@ UK_bat_names %>%
 
 
 ```
+
+
+## Data Validation
+
+```{r}
+#| include: false
+
+library(tidyverse)
+library(iBats)
+library(validate)
+library(flextable)
+
+```
+
+
+
+Making tidy data takes time and unintentional mistakes are easily made, its good practice to validate  the data before it is used for reporting.  The R package `validation` allows rules to be defined to check the data meets expectations, providing confidence for the data when used in analysis. The code below sets out the rules checking the  `iBats::statics` data:
+
+
+```{r}
+
+rules <- validator(
+  # Check column types are corrects class
+  Description.col.type = is.character(Description),
+  DateTime.col.type = is.POSIXct(DateTime),
+  Species.col.type = is.character(Species),
+  Lat.col.type = is.numeric(Latitude),
+  Lon.col.type = is.numeric(Longitude),
+ 
+  # Ensure that all DateTime values are the length for yyyy-mm-dd hh:mm:ss n = 19
+  DateTime.len = field_length(DateTime, n = 19),
+  
+  # Ensure that there are no duplications of species pass and date/time
+  unique.bat.pass =is_unique(Species, DateTime),
+  
+  # location_vars := var_group(Latitude, Longitude),
+  # lat.missing = !is.na(location_vars),
+  
+  # Ensure that Latitude and Longitude doesn't have any missing values
+  lat.missing = !is.na(Latitude),
+  lon.missing = !is.na(Longitude),
+  
+  # Ensure latitude and longitude are valid locations
+  lat.within.range = in_range(Latitude, min=-90, max=90),
+  lon.within.range = in_range(Longitude, min=-180, max=180)
+)
+
+
+
+```
+
+The rules can then be applied to a data set with the `confront` function; below the`confront` function applies these rules to the `statics` data; an output summary is shown in @tbl-confront. Rules can be constructed and applied to any data set used to make bat reports; the rules can then be re-applied when the data is modified; for example when new data is appended. 
+
+```{r}
+#| label: tbl-confront
+#| tbl-cap: "Validation Summary"
+
+x <- confront(statics, rules) 
+
+summary(x) %>% 
+  flextable() %>% 
+  autofit() %>% 
+  fontsize(part = "body", size = 10) %>%
+    bold(part = "header") %>% 
+    bg(bg = "black", part = "header") %>% 
+    color(color = "white", part = "header") %>% 
+    align(j = 1, align = "center", part = "header") 
+```
+
+
+In @tbl-confront the `is_unique(Species, DateTime)` rule shows 6 fails in the `statics` data; to view these _fails_ the `violating` function is used. @tbl-violating lists the _fails_ in the `statics` data allowing the discrepancies in the data to be judged; although here the date/time and species is a duplication the _Description's_ are different (and therefore not a duplication). A better rule too use would be `validator(is_unique(Description, Species, DateTime))`.  
+
+
+```{r}
+#| label: tbl-violating
+#| tbl-cap: "Failed rows in the statics data"
+
+rule <- validator(is_unique(Species, DateTime))
+out <- confront(statics, rule)
+
+violating(statics, out) %>% 
+  flextable() %>% 
+  autofit() %>% 
+    bold(part = "header") %>% 
+    bg(bg = "black", part = "header") %>% 
+    color(color = "white", part = "header") %>% 
+    align(j = 1, align = "center", part = "header") 
+
+
+
+```
