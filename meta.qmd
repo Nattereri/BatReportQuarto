@@ -433,6 +433,11 @@ The division by *__1000__* is to convert milliseconds(ms) to seconds
 
 ![Calculating Bat Activity Time](Images/BTM2.png){#fig-btm}
 
+:::{.callout-note}
+Calculating the time bats are present, enhances the bat activity narrative; an extended bat presence may indicate feeding, while a short duration could mean commuting. Too often this information remains unexploited.
+:::
+
+
 @tbl-BatActivityTime shows the calculated `BatActivityTime` from a .csv file(`BatExplorer`) exported from Elekon AG BatExplorer software.  The `BatExplorer` csv file is in the *iBats* package and describes a transect recorded with a Batlogger M bat detector near the the River Tavy, West Devon.
 
 ```{r}

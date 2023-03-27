@@ -504,7 +504,7 @@ This fills the missing values from the nearest complete values; first down and t
 :::{.callout-warning}
 ## Warning
 
-Latitude and longitude is required for every row for the sun times can be calculated.
+Latitude and longitude is required in every row for the sun times can be calculated.
 :::
 
 
@@ -647,6 +647,30 @@ Making tidy data takes time and unintentional mistakes are easily made, its good
 
 ```{r}
 
+SpeciesList <- c(
+  "Barbastella barbastellus",
+  "Myotis alcathoe",
+  "Myotis bechsteinii",
+  "Myotis brandtii",
+  "Myotis mystacinus",
+  "Myotis nattereri",
+  "Myotis daubentonii",
+  "Myotis spp.",
+  "Plecotus auritus",
+  "Plecotus spp.",
+  "Plecotus austriacus",
+  "Pipistrellus pipistrellus",
+  "Pipistrellus nathusii",
+  "Pipistrellus pygmaeus",
+  "Pipistrellus spp.",
+  "Rhinolophus ferrumequinum",
+  "Rhinolophus hipposideros",
+  "Nyctalus noctula",
+  "Nyctalus leisleri",
+  "Nyctalus spp.",
+  "Eptesicus serotinus"
+)
+
 rules <- validator(
   # Check column types are corrects class
   Description.col.type = is.character(Description),
@@ -670,7 +694,10 @@ rules <- validator(
   
   # Ensure latitude and longitude are valid locations
   lat.within.range = in_range(Latitude, min=-90, max=90),
-  lon.within.range = in_range(Longitude, min=-180, max=180)
+  lon.within.range = in_range(Longitude, min=-180, max=180),
+  
+  #Check species is valid name
+  species.names = Species %in% SpeciesList
 )
 
 
@@ -717,3 +744,5 @@ violating(statics, out) %>%
 
 
 ```
+
+

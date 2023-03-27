@@ -66,10 +66,10 @@ Literate programming assists data science and reproducibility, promoting evidenc
 
 ###  Microsoft Word {#sec-wordrmd}
 
-The complete R Markdown text (the .Rmd file) that produces a simple bat report from the `statics` tidy data[^4] is shown below; it can be copied to the clip board and rendered (knitted) into the Word report illustrated in @fig-wordreport.
+The complete R Markdown text (the .Rmd file) that produces a simple bat report from the `statics` tidy data[^6] is shown below; it can be copied to the clip board and rendered (knitted) into the Word report illustrated in @fig-wordreport.
 
 
-[^4]: From the iBats package.
+[^6]: From the iBats package.
 
 ````markdown
 ---
