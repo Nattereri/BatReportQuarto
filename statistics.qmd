@@ -502,6 +502,174 @@ resultsTable %>%
 * Common pipistrelle activity at static 1 is significantly different to static locations 2, 3 and 4.  The significant difference (at P<0.05) between static 1 and static 3 is not easily determined from @fig-kwpip.  
 * Common pipistrelle activity at static 2, static 3, and static 5 are not significantly different (at P<0.05).
 
+## Bootstrap Confidence Intervals
+
+@tbl-barbstat5 gives summary statistics for Barbastelle (_Barbastelle barbastellus_) pass observations per night at Static 5. 
+
+```{r}
+#| label: tbl-barbstat5
+#| tbl-cap: "Barbastelle Observations (Passes) at Static 5"
+#| warning: false
+
+# Libraries (Packages) used
+library(tidyverse)
+library(mosaic)
+library(gt)
+library(gtExtras)
+library(iBats)
+library(infer)
+
+# Add data and time information to the statics data using the iBats::date_time_info
+statics_plus <- iBats::date_time_info(statics)
+
+# Group by Description and Night and Count the Observations
+barb_static5 <- statics_plus %>% 
+  filter(Species == "Barbastella barbastellus", Description == "Static 5") %>% 
+  group_by(Description, Night) %>% 
+  tally() 
+
+# The summary statistics are saved into a variable riven_cond_stats 
+cond_stats <- favstats(n~Description, data = barb_static5)
+
+# riven_cond_stats is made into a the table (using the code below)
+cond_stats %>% 
+  # Create the table with the gt package
+  gt() %>% 
+  # Style the header to black fill and white text
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  ) %>% 
+  #gt_color_rows(median, palette = "ggsci::yellow_material") %>% 
+  tab_options(data_row.padding = px(2)) 
+
+```
+
+For Static 5 there is a mean of __`r  round(cond_stats$mean, digits = 2)`__ passes per night for the 23 nights the bat detector was deployed. It is valuable to know the confidence of this mean number of passes observed.  The population of passes, the number of Barbastelle's passes for every night in history, is not available; in practice there is only the sample of data and not the entire population. The bootstrap[^8] is a statistical method that allows us to approximate the sampling distribution (and therefore confidence intervals) even without access to the population.
+
+[^8]: Bootstrapping is any test or metric that uses _random sampling with replacement_; for further information see <https://en.wikipedia.org/wiki/Bootstrapping_(statistics)>. 
+
+In bootstrapping the sample itself becomes the _population_. Samples from the _population_ are drawn many times over and every time from all the _population_. This process is called re-sampling with replacement and creates a bootstrap distribution. The `infer` package has functions for re-sampling with replacement and estimating confidence limits. 
+
+```{r}
+
+# bootstrap the number of Barb pass 1000 time and calculate the mean 
+bootstrap_distribution <- barb_static5 %>% 
+  specify(response = n) %>% 
+  generate(reps = 1000, type = "bootstrap") %>% 
+  calculate(stat = "mean")
+
+#calculation the 95% confidence intervals
+percentile_ci <- bootstrap_distribution %>% 
+  get_confidence_interval(level = 0.95, type = "percentile")
+
+```
+
+The 95% confidence interval is computed by piping `bootstrap_distribution` into the `get_confidence_interval()` function from the `infer` package, with the confidence level set to 0.95 and the confidence interval type to be "percentile". The results are saved in `percentile_ci`.
+
+The 95% confidence interval is the middle 95% of values of the bootstrap distribution, the 2.5^th^ and 97.5^th^ percentiles, which are `percentile_ci$lower_ci` = __`r round(percentile_ci$lower_ci, digits = 2)`__ and `percentile_ci$lower_ci` = __`r round(percentile_ci$upper_ci, digits = 2)`__, respectively. This is known as the percentile method for constructing confidence intervals.
+
+The confidence interval (__`r round(percentile_ci$lower_ci, digits = 2)`__, __`r round(percentile_ci$upper_ci, digits = 2)`__) can be visualized, see @fig-bootBarb5,  by piping the `bootstrap_distribution` data frame into the `visualize()` function and adding a `shade_confidence_interval()` layer. The endpoints argument are set to the `percentile_ci`.
+
+```{r}
+#| label: fig-bootBarb5
+#| fig-cap: "Boostrap Distribution of the Mean Barbastelle Observations (Passes) at Static 5"
+
+
+visualize(bootstrap_distribution) + 
+  shade_confidence_interval(endpoints = percentile_ci)
+
+```
+
+The bootstrapping of confidence intervals can be used for all the factors in a description (e.g. static locations), the month of activity or the species observed. The code below creates @tbl-specobs; confidence intervals for nightly species observations (passes) where there is more than 10 bat observations (passes) for the species in total.
+
+
+```{r}
+#| label: tbl-specobs
+#| tbl-cap: "Nightly Species Observations (Passes) Mean and 95% Confidence Intervals"
+
+#List species with more than 10 passes observed
+SpeciesList <- statics_plus %>%
+  group_by(Species) %>% 
+  count() %>% 
+  filter(n > 10)
+
+SpeciesList <- levels(factor(SpeciesList$Species))
+
+Table_ci <- NULL #blank data.frame for table
+
+for(BatName in SpeciesList) {
+
+  
+  night_obs <- statics_plus %>% 
+    #filter(Species == "Pipistrellus pipistrellus", Description == static) %>% 
+    #group_by(Description, Night) %>% 
+    filter(Species == BatName) %>% 
+    group_by(Species, Night) %>% 
+    tally() 
+  
+  # Calculate the mean
+  species_mean <- mean(night_obs$n)
+  
+  # bootstrap the number of Barb pass 1000 time and calculate the mean 
+  bootstrap_distribution <- night_obs %>% 
+    specify(response = n) %>% 
+    generate(reps = 1000, type = "bootstrap") %>% 
+    calculate(stat = "mean")
+  
+  #calculation the 95% confidence intervals
+  species_ci <- bootstrap_distribution %>% 
+    get_confidence_interval(level = 0.95, type = "percentile")
+  
+  species_ci$mean <- species_mean
+  
+  species_ci$species <- BatName
+  
+  Table_ci <- rbind(Table_ci, species_ci)
+  
+}
+
+Table_ci %>% 
+  # round numbers to 1 decimal place
+  mutate(mean = round(mean, digits = 1),
+         lower_ci = round(lower_ci, digits = 1),
+         upper_ci = round(upper_ci, digits = 1)) %>% 
+  #Arrange descending for readability
+  arrange(desc(mean)) %>% 
+  # configure column headings
+  select(Species = species, Mean = mean, `Lower 95% ci` = lower_ci, `Upper 95% ci` = upper_ci) %>% 
+  gt() %>% 
+  # Style the header to black fill and white text
+  tab_style(
+    style = list(
+      cell_fill(color = "black"),
+      cell_text(color = "white", weight = "bold")),
+    locations = cells_column_labels(
+      columns = c(everything())
+    )
+  ) %>% 
+    # Make bat scientific name italic
+  tab_style(
+    style = list(
+      cell_text(style = "italic")
+      ),
+    locations = cells_body(
+      columns = c(Species)
+    )
+  ) %>% 
+  tab_footnote(
+    footnote = "Species with more than 10 bat observations (passes) in total",
+    locations = cells_column_labels(
+      columns = Species
+    )) %>% 
+  tab_options(data_row.padding = px(2)) 
+
+```
+
 
 ## Bat Assemblage
 
