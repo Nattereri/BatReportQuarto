@@ -579,7 +579,6 @@ The confidence interval (__`r round(percentile_ci$lower_ci, digits = 2)`__, __`r
 #| label: fig-bootBarb5
 #| fig-cap: "Boostrap Distribution of the Mean Barbastelle Observations (Passes) at Static 5"
 
-
 visualize(bootstrap_distribution) + 
   shade_confidence_interval(endpoints = percentile_ci)
 
