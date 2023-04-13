@@ -584,7 +584,7 @@ visualize(bootstrap_distribution) +
 
 ```
 
-The bootstrapping of confidence intervals can be used for all the factors in a description (e.g. static locations), the month of activity or the species observed. The code below creates @tbl-specobs; confidence intervals for nightly species observations (passes) where there is more than 10 bat observations (passes) for the species in total.
+The bootstrapping of confidence intervals can be used for all the factors in a description (e.g. static locations), the month of activity or the species observed. The code below creates @tbl-specobs; confidence intervals for nightly species observations (passes) where there is more than 10 bat observations (passes) for the species in total. @fig-boot illustrates the mean nightly species observations with _error bars_ indicating the confidence intervals.
 
 
 ```{r}
@@ -668,6 +668,39 @@ Table_ci %>%
   tab_options(data_row.padding = px(2)) 
 
 ```
+
+```{r}
+#| label: fig-boot
+#| fig-cap: "Nightly Species Observations (Passes)  and 95% Confidence Intervals (error bars)" 
+
+graph_bat_colours <- iBats::bat_colours_default(Table_ci$species)
+
+Table_ci %>% 
+  ggplot(aes(x=reorder(species, mean), y=mean, fill=species)) + 
+    geom_bar(position=position_dodge(), stat="identity") +
+    geom_errorbar(aes(ymin=lower_ci, ymax=upper_ci),
+                  width=.2,                    # Width of the error bars
+                  position=position_dodge(.9)) +
+  scale_fill_manual(values = graph_bat_colours) +
+  coord_flip() +
+  labs(
+    y = "Mean Nightly Species Observations") +
+  theme_bw() +
+  theme(
+    legend.position = "none", # No legend
+    axis.text.x = element_text(size = 10, angle = 0, face = "bold"),
+    axis.text.y = element_text(size = 10, face = "bold.italic"), # bat names italic
+    axis.title.y = element_blank(), # no y title (just bat names)
+    axis.title.x = element_text(size = 10), # no x title
+    panel.grid.major = element_blank(), # remove grid lines
+    panel.grid.minor = element_blank(),
+    panel.border = element_blank(),
+    panel.grid.major.x = element_line(colour = "grey20", linewidth = 0.1, linetype = "dashed")
+  )
+
+
+```
+
 
 
 ## Bat Assemblage
