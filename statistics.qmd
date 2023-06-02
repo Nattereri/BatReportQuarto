@@ -145,7 +145,7 @@ ggplot(Count30, aes(Passes, fill = Month )) +
 
 ## Comparing Two Groups
 
-Using the Mann-Whitney-Wilcoxon Test, we can decide whether the population distributions, summarised in @tbl-sum30 and  @fig-density are identical.  An advantage of the Mann-Whitney-Wilcoxon Test is that it can be undertaken without assuming the data follows the normal distribution; the density plot in @fig-density shows the data is unlikely to be normal. The two data samples for September and October need to be independent; the number of passes recorded separately in September and October are distinct populations where the passes do not affect each other.
+Using the Wilcoxon signed rank test (see [Glossary @sec-mw]), we can decide whether the population distributions, summarised in @tbl-sum30 and  @fig-density are identical.  An advantage of the Wilcoxon signed rank test is that it can be undertaken without assuming the data follows the normal distribution; the density plot in @fig-density shows the data is unlikely to be normal. The two data samples for September and October need to be independent; the number of passes recorded separately in September and October are distinct populations where the passes do not affect each other.
 
 It is assumed The survey effort (length of time the bat detectors where deployed and the locations are the same for both months)
 

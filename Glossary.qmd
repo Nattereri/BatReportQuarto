@@ -1,0 +1,286 @@
+---
+title: "Glossary"
+execute:
+  echo: false
+---
+
+## Pearson correlation {#sec-pearson}
+
+Pearson correlation is a statistical measure that assesses the strength and direction of a linear relationship between two variables. It is a number between -1 and 1, with a value of 0 indicating no correlation, a positive value indicating a positive correlation, and a negative value indicating a negative correlation.
+
+The Pearson correlation coefficient is calculated by dividing the covariance of the two variables by the product of their standard deviations. The covariance is a measure of how much the two variables vary together, and the standard deviation is a measure of how much each variable varies from its mean.
+
+The Pearson correlation coefficient can be used to make predictions about one variable from the other. For example, if the correlation between height and weight is 0.7, then we can predict that someone who is 6 feet tall will weigh about 180 pounds.
+
+The Pearson correlation coefficient is a useful tool for understanding the relationship between two variables. However, it is important to note that it is only a measure of linear correlation. There may be other relationships between two variables that are not linear, and the Pearson correlation coefficient will not be able to detect them.
+
+Here are some of the advantages of using Pearson correlation:
+
+* It is a simple and easy-to-calculate measure of correlation.  
+
+* It is widely used and accepted by most statisticians.  
+
+* It can be used to make predictions about one variable from the other.  
+
+Here are some of the disadvantages of using Pearson correlation:
+
+* It is only a measure of linear correlation.  
+
+* It can be sensitive to outliers.  
+
+* It can be difficult to interpret if the two variables are not normally distributed.  
+
+Overall, Pearson correlation is a useful tool for understanding the relationship between two variables. However, it is important to be aware of its limitations.
+
+
+## p value {#sec-pvalue}
+
+A p-value is a number between 0 and 1 that tells you the probability of getting the results you did, or results that are even more extreme, if the null hypothesis is true (@sec-hypothesis explains hypothesis tests). The null hypothesis is the hypothesis that there is no difference between two groups or that there is no relationship between two variables. A p-value of 0.05 or less is generally considered statistically significant, which means that there is less than a 5% chance that the results could have occurred by chance.
+
+For example, it would be interesting to know whether there is a difference in the average height of men and women. You collect data on the heights of 100 men and 100 women and find that the average height of men is 6 feet tall and the average height of women is 5 feet 10 inches tall. The p-value for this test is 0.001, which is less than 0.05. This means that there is less than a 1% chance that the results could have occurred by chance. Therefore, you can conclude that there is a statistically significant difference in the average height of men and women.
+
+It is important to note that a p-value does not tell you the size of the difference between two groups or the strength of the relationship between two variables. A p-value can be small even if the difference between two groups is small or the relationship between two variables is weak. Therefore, it is important to consider the p-value in conjunction with other factors, such as the size of the difference or the strength of the relationship, when interpreting the results of a statistical test.
+
+Key points that help the interpretation of p-values:
+
+* P-values are sensitive to the size of the sample. A larger sample size will generally lead to a smaller p-value.
+* P-values are not affected by the size of the effect. A small p-value can be obtained even if the effect is very small.
+* P-values are not a measure of the importance of a finding. A finding can be statistically significant but not very important.
+
+Overall, p-values are a useful tool for statistical analysis, but they should be interpreted carefully.
+
+## p value Spearman correlation {#sec-pvaluespearman}
+
+The p-value in Spearman correlation is a measure of the probability that the observed correlation between two variables is due to chance. It is calculated by comparing the observed correlation to the distribution of correlations that would be expected if the two variables were not correlated.
+
+A p-value of less than 0.05 is generally considered to be statistically significant, meaning that there is less than a 5% chance that the observed correlation is due to chance. A p-value of greater than 0.05 is not statistically significant, meaning that the observed correlation could be due to chance.
+
+For example, there is a correlation between the height and weight of a group of people. You calculate the Spearman correlation coefficient and find that it is r = 0.7. The p-value for this correlation is 0.001. This means that there is less than a 1% chance that the observed correlation is due to chance. Therefore, you can conclude that there is a statistically significant correlation between height and weight in this group of people.
+
+It is important to note that a statistically significant correlation does not necessarily mean that there is a causal relationship between the two variables. For example, the correlation between height and weight could be due to the fact that both variables are influenced by genetics.
+
+@sec-pvalue describes the general use of the p-value in statistics.
+
+
+## Spearman Correlation Confidence Limits {#sec-spearmanCI}
+
+A confidence interval for Spearman correlation (@sec-spearman) is a range of values that is likely to contain the true correlation between two variables. The confidence interval is calculated based on the sample correlation coefficient, the sample size, and the level of confidence desired. For example, a 95% confidence interval means that there is a 95% chance that the true correlation lies within the interval.
+
+The confidence interval for Spearman correlation can be interpreted as follows:
+
+* The lower limit of the confidence interval (_Lower CI_) is the lower bound of the range of values that is likely to contain the true correlation.  
+* The upper limit of the confidence interval (_Upper CI_) is the upper bound of the range of values that is likely to contain the true correlation.  
+* The confidence interval provides a range of values that is likely to contain the true correlation, but it does not guarantee that the true correlation lies within the interval.  
+
+It is important to note that the confidence interval for Spearman correlation will vary depending on the sample size, the level of confidence desired, and the distribution of the data. For example, a larger sample size will result in a narrower confidence interval. A higher level of confidence will result in a wider confidence interval. And a non-normal distribution of the data may result in a wider confidence interval.
+
+Overall, the confidence interval for Spearman correlation is a useful tool for estimating the true correlation between two variables. The confidence interval can be used to make inferences about the relationship between the variables and to assess the statistical significance of the correlation.
+
+## LOESS curve {#sec-loess}
+
+The LOESS curve is a type of smooth curve that is used in `ggplot2` graphs to fit a line to a set of data points. It is a non-parametric method, which means that it does not make any assumptions about the underlying distribution of the data. This makes it a versatile tool for fitting curves to a wide variety of data.
+
+The LOESS curve is calculated using a process called locally weighted regression. This means that the curve is fit to the data points in a local neighborhood around each point. The size of the neighborhood is determined by a parameter called the bandwidth. The bandwidth controls how smooth the curve is. A larger bandwidth will result in a smoother curve, while a smaller bandwidth will result in a more wiggly curve.
+
+The LOESS curve can be used to visualize the relationship between two variables. It can also be used to make predictions about the value of one variable based on the value of another variable.
+
+The LOESS curve is a powerful tool for visualizing and exploring data and can be applied to a wide variety of data.
+
+Some of the benefits of using the LOESS curve in graphs:
+
+- It is a non-parametric method, which means that it does not make any assumptions about the underlying distribution of the data.
+- It is a smooth curve that can be used to visualize the relationship between two variables.
+- It can be used to make predictions about the value of one variable based on the value of another variable.
+- It is easy to use and can be applied to a wide variety of data.
+
+Some of the limitations of using the LOESS curve in graph:
+
+- It can be computationally expensive to fit a LOESS curve to a large dataset.
+- The LOESS curve can be sensitive to the choice of the bandwidth parameter.
+- The LOESS curve can be difficult to interpret in some cases.
+
+## Spearman Correlation {#sec-spearmancorr}
+
+ 
+The Spearman correlation is a nonparametric measure of rank correlation. It is used to measure the strength and direction of the monotonic relationship between two variables. A monotonic relationship is one in which the variables tend to increase or decrease together, but not necessarily in a linear fashion.
+
+The Spearman correlation is calculated by first ranking the data for each variable. The ranks are then used to calculate the correlation coefficient. The correlation coefficient can range from -1 to +1. A correlation coefficient of +1 indicates a perfect positive correlation, a correlation coefficient of -1 indicates a perfect negative correlation, and a correlation coefficient of 0 indicates no correlation.
+
+The Spearman correlation is a robust measure of correlation, meaning that it is not affected by outliers or non-normality in the data. It is also a relatively simple measure to calculate, making it a popular choice for researchers.
+
+Some examples of when the Spearman correlation could be used:
+
+- To measure the relationship between height and weight
+- To measure the relationship between test scores and grades
+- To measure the relationship between age and income
+- To measure the relationship between satisfaction and loyalty
+
+The Spearman correlation is a versatile tool that can be used to measure the relationship between a wide variety of variables. For measuring the strength and direction of the monotonic relationship between two variables, the Spearman correlation is considered a good option.
+
+## Box Plot {#sec-boxplot}
+
+A box plot is a standardized way of displaying the distribution of data based on a five-number summary. The five-number summary is the minimum, first quartile (Q1), median, third quartile (Q3), and maximum.
+
+For a description of the quartile see @sec-quartiles.
+
+A box plot is drawn as a rectangle with the minimum and maximum values at the ends, the first and third quartiles at the middle, and the median at the center. The interquartile range (IQR) is the distance between the first and third quartiles.
+
+Outliers are data points that fall outside the interquartile range. Outliers are usually represented by small circles or asterisks.
+
+Box plots can be used to compare the distributions of data from different groups. For example, you could use a box plot to compare the heights of men and women.
+
+Box plots can also be used to identify outliers. If there are any outliers in a data set, they will be represented by small circles or asterisks.
+
+Box plots are a versatile tool that can be used to visualize the distribution of data. They are considered easy to understand and can be used to compare the distributions of data from different groups.
+
+## Quartiles {#sec-quartiles}
+
+Quartiles are a way of dividing a set of data into four equal parts. They are often used to describe the distribution of data and to identify outliers.
+
+The first quartile (Q1) is the middle number between the smallest number (minimum) and the median of the data set. It is also known as the lower or 25th empirical quartile, as 25% of the data is below this point.
+
+The second quartile (Q2) is the median of a data set; thus 50% of the data lies below this point.
+
+The third quartile (Q3) is the middle number between the median and the largest number (maximum) of the data set. It is also known as the upper or 75th empirical quartile, as 75% of the data is below this point.
+
+The interquartile range (IQR) is the difference between the third and first quartiles. It is a measure of the spread of the middle 50% of the data.
+
+Quartiles can be used to identify outliers. An outlier is a data point that is significantly different from the rest of the data. Outliers can be identified by comparing them to the quartiles. For example, a data point that is more than 1.5 times the interquartile range above the third quartile or more than 1.5 times the interquartile range below the first quartile is considered to be an outlier.
+
+Quartiles can also be used to compare different data sets. For example, if you have two data sets of test scores, you can compare the quartiles to see how the two data sets are distributed. If the first quartile of the first data set is higher than the first quartile of the second data set, then you know that the lower 25% of the scores in the first data set are higher than the lower 25% of the scores in the second data set.
+
+Quartiles are a useful tool for describing the distribution of data and identifying outliers. They can be used to compare different data sets and to identify trends in data.
+
+## Wilcoxon rank sum test {#sec-mw}
+
+The Wilcoxon rank sum test is a nonparametric test for two populations when samples are independent. It is used to test the null hypothesis that the two populations have the same median, against the alternative hypothesis that they do not. The test is named after Frank Wilcoxon, who published it in 1945.
+
+The Wilcoxon rank sum test works by first ranking all of the data from both samples, regardless of which sample they come from. The ranks are then summed for each sample. The test statistic is the smaller of the two sums.
+
+The p-value for the Wilcoxon rank sum test can be calculated using a variety of methods, including tables, software, or by hand. The p-value is the probability of getting a test statistic as extreme as or more extreme than the one observed, under the assumption that the null hypothesis is true.
+
+The Wilcoxon rank sum test is a powerful and versatile test that can be used to compare two populations on a variety of variables. It is a good choice when the data is not normally distributed or when the sample sizes are small.
+
+## Kruskal Wallis {#sec-kruskal}
+
+The Kruskal-Wallis test is a non-parametric test that can be used to compare the medians of three or more groups. The Dunn's test is a post-hoc test that can be used to determine which pairs of groups are significantly different after a Kruskal-Wallis test is significant. The Bonferroni correction is a method of adjusting the p-value for multiple comparisons.
+
+To perform a Kruskal-Wallis test with post hoc testing with the Dunn's test and Bonferroni correction, requires data on the dependent variable for each group. The dependent variable should be continuous. The collected data is then ranked from lowest to highest, ignoring group membership. The mean rank for each group will then be calculated. The Kruskal-Wallis test statistic is calculated by dividing the sum of the squared differences between the mean ranks and the overall mean rank by the degrees of freedom.
+
+If the Kruskal-Wallis test statistic is significant, you can then perform a Dunn's test to determine which pairs of groups are significantly different. The Dunn's test is a pairwise comparison test, which means that it compares each pair of groups to each other. The Dunn's test statistic is calculated by dividing the difference in the mean ranks for the two groups by the standard error of the difference in the mean ranks.
+
+The Bonferroni correction is a method of adjusting the p-value for multiple comparisons. It is used to control the _familywise error rate_, which is the probability of making at least one false positive error when conducting multiple comparisons.
+
+The Bonferroni correction is calculated by dividing the original p-value by the number of comparisons being made. For example, if you are conducting 10 comparisons, the Bonferroni corrected p-value would be 0.05/10 = 0.005.
+
+The Bonferroni correction is a conservative method of controlling the _familywise error rate_. 
+
+## Hypothesis Tests {#sec-hypothesis}
+
+A hypothesis test is a statistical procedure that is used to determine whether there is a significant difference between two groups or whether there is a significant relationship between two variables. There are two types of hypothesis tests:
+
+* One-tailed tests: These tests are used to determine whether there is a difference between two groups or a relationship between two variables in one direction only. For example, you could use a one-tailed test to determine whether the average height of men is significantly greater than the average height of women.  
+
+* Two-tailed tests: These tests are used to determine whether there is a difference between two groups or a relationship between two variables in either direction. For example, you could use a two-tailed test to determine whether the average height of men is significantly different from the average height of women.   
+
+The steps involved in a hypothesis test are as follows:
+
+1. __State the null hypothesis and the alternative hypothesis.__ The null hypothesis is the hypothesis that there is no difference between two groups or that there is no relationship between two variables. The alternative hypothesis is the hypothesis that there is a difference between two groups or that there is a relationship between two variables.  
+
+2. __Select a significance level.__ The significance level is the probability of making a type I error, which is the error of rejecting the null hypothesis when it is true. The most common significance level is 0.05, which means that there is a 5% chance of making a type I error.  
+
+3. __Calculate the test statistic.__ The test statistic is a number that is used to determine whether the results of the study are statistically significant.  
+
+4. __Determine the p-value.__ The p-value is the probability of getting the results you did, or results that are even more extreme, if the null hypothesis is true.  
+
+5. __Make a decision.__ If the p-value is less than the significance level, then you reject the null hypothesis and conclude that there is a significant difference between the two groups or a significant relationship between the two variables. If the p-value is greater than the significance level, then you fail to reject the null hypothesis and conclude that there is not enough evidence to support the alternative hypothesis.  
+
+Key points that help understand hypothesis tests:
+
+* Hypothesis tests are based on probability, so there is always a chance that you will make a type I or type II error.  
+* The size of the sample can affect the results of a hypothesis test. A larger sample size will generally lead to a more accurate test.  
+* Hypothesis tests can be used to make inferences about populations, but it is important to remember that the results of a hypothesis test are only based on the sample data.  
+
+Overall, hypothesis tests are a useful tool for statistical analysis, but they should be interpreted with caution.
+
+## Kernel Density  {#sec-kernel}
+
+Kernel density estimation (KDE) is a non-parametric way to estimate the probability density function of a random variable. It is a smooth, continuous function that is constructed by "smoothing" the data points. The smoothing is done by using a kernel function, which is a bell-shaped function that is centered at each data point. The height of the kernel function at a given point is proportional to the amount of data that is near that point.
+
+The kernel density estimate is a powerful tool for visualizing data and for making inferences about the population from which the data was drawn. It can be used to compare different groups of data, to identify outliers, and to estimate the mean, median, and other properties of the population.
+
+Here are some examples of how kernel density estimation can be used:
+
+* To visualize the distribution of data.  
+* To compare different groups of data.  
+* To identify outliers.  
+* To estimate the mean, median, and other properties of the population.  
+
+Kernel density estimation is a versatile and powerful tool that can be used to analyze a wide variety of data. It is a valuable tool for data scientists, statisticians, and anyone who needs to make sense of data.
+
+Here are some of the advantages of using kernel density estimation:
+
+* It is a non-parametric method, which means that it does not make any assumptions about the distribution of the data.  
+* It is a smooth, continuous function, which makes it easy to visualize and interpret.  
+* It is a versatile tool that can be used for a variety of tasks, such as comparing different groups of data, identifying outliers, and estimating the mean, median, and other properties of the population.  
+
+Here are some of the disadvantages of using kernel density estimation:
+
+* It can be computationally expensive, especially for large datasets.  
+* The results can be sensitive to the choice of kernel function and bandwidth.  
+* It can be difficult to interpret the results if the data is not normally distributed.  
+* Overall, kernel density estimation is a powerful and versatile tool that can be used to analyze a wide variety of data. 
+* It is a valuable tool for data scientists, statisticians, and anyone who needs to make sense of data.  
+
+## QQ-plot {#sec-QQ}
+
+In statistics, a QQ plot (quantile-quantile plot) is a probability plot, a graphical method for comparing two probability distributions by plotting their quantiles against each other. A point (x, y) on the plot corresponds to one of the quantiles of the second distribution (y-coordinate) plotted against the same quantile of the first distribution (x-coordinate). This defines a parametric curve where the parameter is the index of the quantile interval.
+
+A QQ plot is a plot of the quantiles of two distributions against each other, or a plot based on estimates of the quantiles. The pattern of points in the plot is used to compare the two distributions. The main step in constructing a QQ plot is calculating or estimating the quantiles to be plotted. If one or both of the axes in a QQ plot is based on a theoretical distribution with a continuous cumulative distribution function (CDF), all quantiles are uniquely defined and can be obtained by inverting the CDF.
+
+QQ plots are often used to assess the normality of data. If the data is normally distributed, the points in the QQ plot will fall roughly along a straight line. If the data is not normally distributed, the points in the QQ plot will deviate from a straight line. The direction and amount of deviation can be used to assess the nature of the non-normality.
+
+## Histogram {#sec-histogram}
+
+A histogram is a graphical representation of the distribution of data. It is a type of bar chart that shows the frequency or number of observations within different numerical ranges, called bins. The bins are usually specified as consecutive, non-overlapping intervals of a variable. The histogram provides a visual representation of the distribution of the data, showing the number of observations that fall within each bin. This can be useful for identifying patterns and trends in the data, and for making comparisons between different datasets.
+
+To construct a histogram, the first step is to "bin" (or "bucket") the range of values—that is, divide the entire range of values into a series of intervals—and then count how many values fall into each interval. The bins are usually specified as consecutive, non-overlapping intervals of a variable. The bins (intervals) must be adjacent and are often (but not required to be) of equal size.
+
+Once the bins have been created, the next step is to count the number of observations that fall into each bin. This can be done manually or using a statistical software package. The number of observations in each bin is then plotted as a bar on the histogram. The height of each bar represents the frequency of the data in that bin.
+
+Histograms can be used to visualize a variety of different types of data. They are often used to visualize the distribution of continuous data, such as height, weight, or income. Histograms can also be used to visualize the distribution of discrete data, such as the number of children in a family or the number of cars owned by a household.
+
+Histograms are a valuable tool for data analysis. They can be used to identify patterns and trends in the data, to compare different datasets, and to make inferences about the population from which the data was drawn. Histograms are a simple and easy-to-understand way to visualize data, and they can be used by people with a variety of levels of statistical expertise.
+
+## Bray-Curtis distance measurement
+
+Bray-Curtis distance measurement as used in multivariate analysis.
+
+
+
+Bray-Curtis distance is a metric used to measure the dissimilarity between two samples. It is based on the relative abundance of species in each sample. The Bray-Curtis distance is calculated as follows:
+
+
+$$\frac{\sum|A_i - B_i|}{\sum(A_i + B_i)} $$
+
+$A_i$ is the abundance of species i in sample A
+$B_i$ is the abundance of species i in sample B
+∑ is the sum of all values
+The Bray-Curtis distance ranges from 0 to 1, with 0 indicating that the two samples are identical and 1 indicating that the two samples are completely different.
+
+Bray-Curtis distance is a popular choice for multivariate analysis because it is relatively easy to calculate and it is sensitive to changes in the relative abundance of species. It is often used in ecology to compare the composition of different communities.
+
+Here are some of the advantages of using Bray-Curtis distance:
+
+* It is relatively easy to calculate.  
+* It is sensitive to changes in the relative abundance of species.  
+* It is a metric, which means that it satisfies the triangle inequality.  
+
+Here are some of the disadvantages of using Bray-Curtis distance:
+
+* It is not a true distance, because it does not satisfy the triangle inequality.   
+* It can be sensitive to the order of the species in the data set.   
+* It can be sensitive to the presence of rare species.  
+
+Overall, Bray-Curtis distance is a useful metric for measuring the dissimilarity between two samples. It is relatively easy to calculate and it is sensitive to changes in the relative abundance of species. However, it is important to be aware of its limitations before using it.
+
