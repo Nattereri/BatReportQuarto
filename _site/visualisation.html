@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,9 +17,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -46,48 +47,19 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -101,8 +73,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -156,61 +127,63 @@ div.csl-indent {
     <span class="navbar-title">Reporting Bat Survey Data</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tidy.html">
+    <a class="nav-link" href="./tidy.html" rel="" target="">
  <span class="menu-text">Tidy Data</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./meta.html">
+    <a class="nav-link" href="./meta.html" rel="" target="">
  <span class="menu-text">Meta Data</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./aggregation.html">
+    <a class="nav-link" href="./aggregation.html" rel="" target="">
  <span class="menu-text">Aggregation</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./visualisation.html" aria-current="page">
+    <a class="nav-link active" href="./visualisation.html" rel="" target="" aria-current="page">
  <span class="menu-text">Visualisation</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./maps.html">
+    <a class="nav-link" href="./maps.html" rel="" target="">
  <span class="menu-text">Maps</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./statistics.html">
+    <a class="nav-link" href="./statistics.html" rel="" target="">
  <span class="menu-text">Statistics</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./reporting.html">
+    <a class="nav-link" href="./reporting.html" rel="" target="">
  <span class="menu-text">One Click Reporting</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./dynamic.html">
+    <a class="nav-link" href="./dynamic.html" rel="" target="">
  <span class="menu-text">Interactive Reports</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Glossary.html">
+    <a class="nav-link" href="./Glossary.html" rel="" target="">
  <span class="menu-text">Glossary</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resources.html">
+    <a class="nav-link" href="./resources.html" rel="" target="">
  <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">
+    <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -224,21 +197,21 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#bat-colours" id="toc-bat-colours" class="nav-link active" data-scroll-target="#bat-colours"><span class="toc-section-number">1</span>  Bat Colours</a></li>
-  <li><a href="#time-bats-were-active" id="toc-time-bats-were-active" class="nav-link" data-scroll-target="#time-bats-were-active"><span class="toc-section-number">2</span>  Time Bats Were Active</a></li>
-  <li><a href="#emergence-time-of-bats" id="toc-emergence-time-of-bats" class="nav-link" data-scroll-target="#emergence-time-of-bats"><span class="toc-section-number">3</span>  Emergence Time of Bats</a></li>
-  <li><a href="#graphing-a-count-of-bats" id="toc-graphing-a-count-of-bats" class="nav-link" data-scroll-target="#graphing-a-count-of-bats"><span class="toc-section-number">4</span>  Graphing a Count of Bats</a>
+  <li><a href="#bat-colours" id="toc-bat-colours" class="nav-link active" data-scroll-target="#bat-colours"><span class="header-section-number">1</span> Bat Colours</a></li>
+  <li><a href="#time-bats-were-active" id="toc-time-bats-were-active" class="nav-link" data-scroll-target="#time-bats-were-active"><span class="header-section-number">2</span> Time Bats Were Active</a></li>
+  <li><a href="#emergence-time-of-bats" id="toc-emergence-time-of-bats" class="nav-link" data-scroll-target="#emergence-time-of-bats"><span class="header-section-number">3</span> Emergence Time of Bats</a></li>
+  <li><a href="#graphing-a-count-of-bats" id="toc-graphing-a-count-of-bats" class="nav-link" data-scroll-target="#graphing-a-count-of-bats"><span class="header-section-number">4</span> Graphing a Count of Bats</a>
   <ul class="collapse">
-  <li><a href="#dot-graph" id="toc-dot-graph" class="nav-link" data-scroll-target="#dot-graph"><span class="toc-section-number">4.1</span>  Dot Graph</a></li>
-  <li><a href="#tree-map-description" id="toc-tree-map-description" class="nav-link" data-scroll-target="#tree-map-description"><span class="toc-section-number">4.2</span>  Tree Map Description</a></li>
-  <li><a href="#tree-map-month" id="toc-tree-map-month" class="nav-link" data-scroll-target="#tree-map-month"><span class="toc-section-number">4.3</span>  Tree Map Month</a></li>
+  <li><a href="#dot-graph" id="toc-dot-graph" class="nav-link" data-scroll-target="#dot-graph"><span class="header-section-number">4.1</span> Dot Graph</a></li>
+  <li><a href="#tree-map-description" id="toc-tree-map-description" class="nav-link" data-scroll-target="#tree-map-description"><span class="header-section-number">4.2</span> Tree Map Description</a></li>
+  <li><a href="#tree-map-month" id="toc-tree-map-month" class="nav-link" data-scroll-target="#tree-map-month"><span class="header-section-number">4.3</span> Tree Map Month</a></li>
   </ul></li>
-  <li><a href="#identifying-roosts" id="toc-identifying-roosts" class="nav-link" data-scroll-target="#identifying-roosts"><span class="toc-section-number">5</span>  Identifying Roosts</a>
+  <li><a href="#identifying-roosts" id="toc-identifying-roosts" class="nav-link" data-scroll-target="#identifying-roosts"><span class="header-section-number">5</span> Identifying Roosts</a>
   <ul class="collapse">
-  <li><a href="#evening-bats-and-roost-potential" id="toc-evening-bats-and-roost-potential" class="nav-link" data-scroll-target="#evening-bats-and-roost-potential"><span class="toc-section-number">5.1</span>  Evening Bats and Roost Potential</a></li>
-  <li><a href="#sec-usercolours" id="toc-sec-usercolours" class="nav-link" data-scroll-target="#sec-usercolours"><span class="toc-section-number">5.2</span>  Dawn Bats and Roost Potential</a></li>
+  <li><a href="#evening-bats-and-roost-potential" id="toc-evening-bats-and-roost-potential" class="nav-link" data-scroll-target="#evening-bats-and-roost-potential"><span class="header-section-number">5.1</span> Evening Bats and Roost Potential</a></li>
+  <li><a href="#sec-usercolours" id="toc-sec-usercolours" class="nav-link" data-scroll-target="#sec-usercolours"><span class="header-section-number">5.2</span> Dawn Bats and Roost Potential</a></li>
   </ul></li>
-  <li><a href="#standard-graphs" id="toc-standard-graphs" class="nav-link" data-scroll-target="#standard-graphs"><span class="toc-section-number">6</span>  Standard Graphs</a></li>
+  <li><a href="#standard-graphs" id="toc-standard-graphs" class="nav-link" data-scroll-target="#standard-graphs"><span class="header-section-number">6</span> Standard Graphs</a></li>
   </ul>
 </nav>
     </div>
@@ -334,7 +307,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div id="tbl-batcolours" class="anchored">
 
-<div class="tabwid"><style>.cl-1d9ec9ec{}.cl-1d8c72ec{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-1d8c7314{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-1d8c7315{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-1d8c731e{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-1d93df28{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-1d93df3c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-1d93df3d{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-1d940aa2{width:2.204in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940aac{width:1.202in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940aad{width:2.204in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940aae{width:1.202in;background-color:rgba(31, 120, 180, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940ab6{width:2.204in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940ab7{width:1.202in;background-color:rgba(165, 42, 42, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940ab8{width:1.202in;background-color:rgba(127, 255, 0, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940ac0{width:1.202in;background-color:rgba(178, 223, 138, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940ac1{width:1.202in;background-color:rgba(106, 61, 154, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940ac2{width:1.202in;background-color:rgba(255, 127, 0, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940aca{width:1.202in;background-color:rgba(166, 206, 227, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940acb{width:1.202in;background-color:rgba(188, 238, 104, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940acc{width:1.202in;background-color:rgba(139, 0, 0, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940acd{width:2.204in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940ace{width:1.202in;background-color:rgba(139, 0, 0, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940ad4{width:1.202in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940ad5{width:1.202in;background-color:rgba(255, 255, 153, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940ad6{width:1.202in;background-color:rgba(138, 43, 226, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940ade{width:1.202in;background-color:rgba(177, 89, 40, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940adf{width:1.202in;background-color:rgba(253, 191, 111, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940ae0{width:2.204in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940ae8{width:1.202in;background-color:rgba(227, 26, 28, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940ae9{width:1.202in;background-color:rgba(51, 160, 44, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940af2{width:1.202in;background-color:rgba(202, 178, 214, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940af3{width:1.202in;background-color:rgba(251, 154, 153, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940af4{width:1.202in;background-color:rgba(238, 232, 205, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940afc{width:2.204in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-1d940afd{width:1.202in;background-color:rgba(0, 139, 139, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-1d9ec9ec"><caption>Table&nbsp;1:  Bat Name and Colour </caption><thead><tr style="overflow-wrap:break-word;"><th class="cl-1d940aa2"><p class="cl-1d93df28"><span class="cl-1d8c72ec">Scientific Name</span></p></th><th class="cl-1d940aac"><p class="cl-1d93df28"><span class="cl-1d8c72ec">Colour (Hex)</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-1d940aad"><p class="cl-1d93df3c"><span class="cl-1d8c7314">Barbastella barbastellus</span></p></td><td class="cl-1d940aae"><p class="cl-1d93df3d"><span class="cl-1d8c7315">#1f78b4</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1d940ab6"><p class="cl-1d93df3c"><span class="cl-1d8c7314">Myotis alcathoe</span></p></td><td class="cl-1d940ab7"><p class="cl-1d93df3d"><span class="cl-1d8c7315">#a52a2a</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1d940ab6"><p class="cl-1d93df3c"><span class="cl-1d8c7314">Myotis bechsteinii</span></p></td><td class="cl-1d940ab8"><p class="cl-1d93df3d"><span class="cl-1d8c7315">#7fff00</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1d940ab6"><p class="cl-1d93df3c"><span class="cl-1d8c7314">Myotis brandtii</span></p></td><td class="cl-1d940ac0"><p class="cl-1d93df3d"><span class="cl-1d8c7315">#b2df8a</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1d940ab6"><p class="cl-1d93df3c"><span class="cl-1d8c7314">Myotis mystacinus</span></p></td><td class="cl-1d940ac1"><p class="cl-1d93df3d"><span class="cl-1d8c7315">#6a3d9a</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1d940ab6"><p class="cl-1d93df3c"><span class="cl-1d8c7314">Myotis nattereri</span></p></td><td class="cl-1d940ac2"><p class="cl-1d93df3d"><span class="cl-1d8c7315">#ff7f00</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1d940ab6"><p class="cl-1d93df3c"><span class="cl-1d8c7314">Myotis daubentonii</span></p></td><td class="cl-1d940aca"><p class="cl-1d93df3d"><span class="cl-1d8c7315">#a6cee3</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1d940ab6"><p class="cl-1d93df3c"><span class="cl-1d8c7314">Myotis spp.</span></p></td><td class="cl-1d940acb"><p class="cl-1d93df3d"><span class="cl-1d8c7315">#bcee68</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1d940aad"><p class="cl-1d93df3c"><span class="cl-1d8c7314">Plecotus auritus</span></p></td><td class="cl-1d940acc"><p class="cl-1d93df3d"><span class="cl-1d8c7315">#8b0000</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1d940acd"><p class="cl-1d93df3c"><span class="cl-1d8c7314">Plecotus spp.</span></p></td><td class="cl-1d940ace"><p class="cl-1d93df3d"><span class="cl-1d8c7315">#8b0000</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1d940aad"><p class="cl-1d93df3c"><span class="cl-1d8c7314">Plecotus austriacus</span></p></td><td class="cl-1d940ad4"><p class="cl-1d93df3d"><span class="cl-1d8c731e">#000000</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1d940acd"><p class="cl-1d93df3c"><span class="cl-1d8c7314">Pipistrellus pipistrellus</span></p></td><td class="cl-1d940ad5"><p class="cl-1d93df3d"><span class="cl-1d8c7315">#ffff99</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1d940acd"><p class="cl-1d93df3c"><span class="cl-1d8c7314">Pipistrellus nathusii</span></p></td><td class="cl-1d940ad6"><p class="cl-1d93df3d"><span class="cl-1d8c7315">#8a2be2</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1d940ab6"><p class="cl-1d93df3c"><span class="cl-1d8c7314">Pipistrellus pygmaeus</span></p></td><td class="cl-1d940ade"><p class="cl-1d93df3d"><span class="cl-1d8c7315">#b15928</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1d940acd"><p class="cl-1d93df3c"><span class="cl-1d8c7314">Pipistrellus spp.</span></p></td><td class="cl-1d940adf"><p class="cl-1d93df3d"><span class="cl-1d8c7315">#fdbf6f</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1d940ae0"><p class="cl-1d93df3c"><span class="cl-1d8c7314">Rhinolophus ferrumequinum</span></p></td><td class="cl-1d940ae8"><p class="cl-1d93df3d"><span class="cl-1d8c7315">#e31a1c</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1d940acd"><p class="cl-1d93df3c"><span class="cl-1d8c7314">Rhinolophus hipposideros</span></p></td><td class="cl-1d940ae9"><p class="cl-1d93df3d"><span class="cl-1d8c7315">#33a02c</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1d940ab6"><p class="cl-1d93df3c"><span class="cl-1d8c7314">Nyctalus noctula</span></p></td><td class="cl-1d940af2"><p class="cl-1d93df3d"><span class="cl-1d8c7315">#cab2d6</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1d940ab6"><p class="cl-1d93df3c"><span class="cl-1d8c7314">Nyctalus leisleri</span></p></td><td class="cl-1d940af3"><p class="cl-1d93df3d"><span class="cl-1d8c7315">#fb9a99</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1d940ab6"><p class="cl-1d93df3c"><span class="cl-1d8c7314">Nyctalus spp.</span></p></td><td class="cl-1d940af4"><p class="cl-1d93df3d"><span class="cl-1d8c7315">#eee8cd</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-1d940afc"><p class="cl-1d93df3c"><span class="cl-1d8c7314">Eptesicus serotinus</span></p></td><td class="cl-1d940afd"><p class="cl-1d93df3d"><span class="cl-1d8c7315">#008b8b</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-0697d6e8{}.cl-0686b9d0{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-0686ba0c{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-0686ba16{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-0686ba20{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-068ef924{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-068ef938{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-068ef939{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-068f1d96{width:2.204in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1da0{width:1.202in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1daa{width:2.204in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1dab{width:1.202in;background-color:rgba(31, 120, 180, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1dac{width:2.204in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1db4{width:1.202in;background-color:rgba(165, 42, 42, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1db5{width:1.202in;background-color:rgba(127, 255, 0, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1db6{width:1.202in;background-color:rgba(178, 223, 138, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1dbe{width:1.202in;background-color:rgba(106, 61, 154, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1dbf{width:1.202in;background-color:rgba(255, 127, 0, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1dc0{width:1.202in;background-color:rgba(166, 206, 227, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1dc8{width:1.202in;background-color:rgba(188, 238, 104, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1dc9{width:1.202in;background-color:rgba(139, 0, 0, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1dd2{width:2.204in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1dd3{width:1.202in;background-color:rgba(139, 0, 0, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1dd4{width:1.202in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1dd5{width:1.202in;background-color:rgba(255, 255, 153, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1ddc{width:1.202in;background-color:rgba(138, 43, 226, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1ddd{width:1.202in;background-color:rgba(177, 89, 40, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1dde{width:1.202in;background-color:rgba(253, 191, 111, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1de6{width:2.204in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1de7{width:1.202in;background-color:rgba(227, 26, 28, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1de8{width:1.202in;background-color:rgba(51, 160, 44, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1de9{width:1.202in;background-color:rgba(202, 178, 214, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1dea{width:1.202in;background-color:rgba(251, 154, 153, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1df0{width:1.202in;background-color:rgba(238, 232, 205, 1.00);vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1df1{width:2.204in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-068f1df2{width:1.202in;background-color:rgba(0, 139, 139, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-0697d6e8"><caption>Table&nbsp;1:  <p>Bat Name and Colour</p> </caption><thead><tr style="overflow-wrap:break-word;"><th class="cl-068f1d96"><p class="cl-068ef924"><span class="cl-0686b9d0">Scientific Name</span></p></th><th class="cl-068f1da0"><p class="cl-068ef924"><span class="cl-0686b9d0">Colour (Hex)</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-068f1daa"><p class="cl-068ef938"><span class="cl-0686ba0c">Barbastella barbastellus</span></p></td><td class="cl-068f1dab"><p class="cl-068ef939"><span class="cl-0686ba16">#1f78b4</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-068f1dac"><p class="cl-068ef938"><span class="cl-0686ba0c">Myotis alcathoe</span></p></td><td class="cl-068f1db4"><p class="cl-068ef939"><span class="cl-0686ba16">#a52a2a</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-068f1dac"><p class="cl-068ef938"><span class="cl-0686ba0c">Myotis bechsteinii</span></p></td><td class="cl-068f1db5"><p class="cl-068ef939"><span class="cl-0686ba16">#7fff00</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-068f1dac"><p class="cl-068ef938"><span class="cl-0686ba0c">Myotis brandtii</span></p></td><td class="cl-068f1db6"><p class="cl-068ef939"><span class="cl-0686ba16">#b2df8a</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-068f1dac"><p class="cl-068ef938"><span class="cl-0686ba0c">Myotis mystacinus</span></p></td><td class="cl-068f1dbe"><p class="cl-068ef939"><span class="cl-0686ba16">#6a3d9a</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-068f1dac"><p class="cl-068ef938"><span class="cl-0686ba0c">Myotis nattereri</span></p></td><td class="cl-068f1dbf"><p class="cl-068ef939"><span class="cl-0686ba16">#ff7f00</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-068f1dac"><p class="cl-068ef938"><span class="cl-0686ba0c">Myotis daubentonii</span></p></td><td class="cl-068f1dc0"><p class="cl-068ef939"><span class="cl-0686ba16">#a6cee3</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-068f1dac"><p class="cl-068ef938"><span class="cl-0686ba0c">Myotis spp.</span></p></td><td class="cl-068f1dc8"><p class="cl-068ef939"><span class="cl-0686ba16">#bcee68</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-068f1daa"><p class="cl-068ef938"><span class="cl-0686ba0c">Plecotus auritus</span></p></td><td class="cl-068f1dc9"><p class="cl-068ef939"><span class="cl-0686ba16">#8b0000</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-068f1dd2"><p class="cl-068ef938"><span class="cl-0686ba0c">Plecotus spp.</span></p></td><td class="cl-068f1dd3"><p class="cl-068ef939"><span class="cl-0686ba16">#8b0000</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-068f1daa"><p class="cl-068ef938"><span class="cl-0686ba0c">Plecotus austriacus</span></p></td><td class="cl-068f1dd4"><p class="cl-068ef939"><span class="cl-0686ba20">#000000</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-068f1dd2"><p class="cl-068ef938"><span class="cl-0686ba0c">Pipistrellus pipistrellus</span></p></td><td class="cl-068f1dd5"><p class="cl-068ef939"><span class="cl-0686ba16">#ffff99</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-068f1dd2"><p class="cl-068ef938"><span class="cl-0686ba0c">Pipistrellus nathusii</span></p></td><td class="cl-068f1ddc"><p class="cl-068ef939"><span class="cl-0686ba16">#8a2be2</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-068f1dac"><p class="cl-068ef938"><span class="cl-0686ba0c">Pipistrellus pygmaeus</span></p></td><td class="cl-068f1ddd"><p class="cl-068ef939"><span class="cl-0686ba16">#b15928</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-068f1dd2"><p class="cl-068ef938"><span class="cl-0686ba0c">Pipistrellus spp.</span></p></td><td class="cl-068f1dde"><p class="cl-068ef939"><span class="cl-0686ba16">#fdbf6f</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-068f1de6"><p class="cl-068ef938"><span class="cl-0686ba0c">Rhinolophus ferrumequinum</span></p></td><td class="cl-068f1de7"><p class="cl-068ef939"><span class="cl-0686ba16">#e31a1c</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-068f1dd2"><p class="cl-068ef938"><span class="cl-0686ba0c">Rhinolophus hipposideros</span></p></td><td class="cl-068f1de8"><p class="cl-068ef939"><span class="cl-0686ba16">#33a02c</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-068f1dac"><p class="cl-068ef938"><span class="cl-0686ba0c">Nyctalus noctula</span></p></td><td class="cl-068f1de9"><p class="cl-068ef939"><span class="cl-0686ba16">#cab2d6</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-068f1dac"><p class="cl-068ef938"><span class="cl-0686ba0c">Nyctalus leisleri</span></p></td><td class="cl-068f1dea"><p class="cl-068ef939"><span class="cl-0686ba16">#fb9a99</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-068f1dac"><p class="cl-068ef938"><span class="cl-0686ba0c">Nyctalus spp.</span></p></td><td class="cl-068f1df0"><p class="cl-068ef939"><span class="cl-0686ba16">#eee8cd</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-068f1df1"><p class="cl-068ef938"><span class="cl-0686ba0c">Eptesicus serotinus</span></p></td><td class="cl-068f1df2"><p class="cl-068ef939"><span class="cl-0686ba16">#008b8b</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </div>
@@ -444,7 +417,7 @@ div.csl-indent {
 <div id="fig-timebat" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="visualisation_files/figure-html/fig-timebat-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: Time Bats Were Active Through The Night</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Time Bats Were Active Through The Night</figcaption>
 </figure>
 </div>
 </div>
@@ -497,7 +470,7 @@ div.csl-indent {
 <div id="fig-andrews" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="visualisation_files/figure-html/fig-andrews-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;2: Roost Emergence Times After Sunset</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Roost Emergence Times After Sunset</figcaption>
 </figure>
 </div>
 </div>
@@ -576,7 +549,7 @@ div.csl-indent {
 <div id="fig-dotgraph" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="visualisation_files/figure-html/fig-dotgraph-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;3: Count of All Species Observations</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;3: Count of All Species Observations</figcaption>
 </figure>
 </div>
 </div>
@@ -630,7 +603,7 @@ div.csl-indent {
 <div id="fig-treemap1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="visualisation_files/figure-html/fig-treemap1-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;4: Species and Location with the Area as the Number of Passes</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;4: Species and Location with the Area as the Number of Passes</figcaption>
 </figure>
 </div>
 </div>
@@ -686,7 +659,7 @@ div.csl-indent {
 <div id="fig-treemap2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="visualisation_files/figure-html/fig-treemap2-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;5: Species and Month with the Area as the Number of Passes</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;5: Species and Month with the Area as the Number of Passes</figcaption>
 </figure>
 </div>
 </div>
@@ -757,7 +730,7 @@ div.csl-indent {
 <div id="fig-emergence1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="visualisation_files/figure-html/fig-emergence1-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;6: Bats Observed Around Dusk and Roost Potential</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;6: Bats Observed Around Dusk and Roost Potential</figcaption>
 </figure>
 </div>
 </div>
@@ -853,7 +826,7 @@ div.csl-indent {
 <div id="fig-reentry1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="visualisation_files/figure-html/fig-reentry1-1.png" class="img-fluid figure-img" width="672"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;7: Bats Observed Around Dawn and Roost Potential</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;7: Bats Observed Around Dawn and Roost Potential</figcaption>
 </figure>
 </div>
 </div>
@@ -927,7 +900,7 @@ div.csl-indent {
 <div id="fig-plots-1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="visualisation_files/figure-html/fig-plots-1.png" class="img-fluid figure-img" data-ref-parent="fig-plots" width="672"></p>
-<p></p><figcaption class="figure-caption">(a) Pie Chart</figcaption><p></p>
+<figcaption class="figure-caption">(a) Pie Chart</figcaption>
 </figure>
 </div>
 </div>
@@ -935,7 +908,7 @@ div.csl-indent {
 <div id="fig-plots-2" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="visualisation_files/figure-html/fig-plots-2.png" class="img-fluid figure-img" data-ref-parent="fig-plots" width="672"></p>
-<p></p><figcaption class="figure-caption">(b) Bar Chart</figcaption><p></p>
+<figcaption class="figure-caption">(b) Bar Chart</figcaption>
 </figure>
 </div>
 </div>
@@ -949,32 +922,32 @@ div.csl-indent {
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-HenryandrewsReview:59d3" class="csl-entry" role="doc-biblioentry">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-HenryandrewsReview:59d3" class="csl-entry" role="listitem">
 Andrews, Henry, and Louis Pearson. 2022. <span>“Review of Empirical Data in Respect of Emergence and Return Times Reported for the UK’s Native Bat Species Version 6.”</span> <a href="https://drive.google.com/file/d/1DeGHxyr9-p5XH6R6CRimsmquVD188WY8/view">https://drive.google.com/file/d/1DeGHxyr9-p5XH6R6CRimsmquVD188WY8/view</a>.
 </div>
-<div id="ref-Scottchristianson2014100:ee53" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Scottchristianson2014100:ee53" class="csl-entry" role="listitem">
 Christianson, Scott. 2014. <em>100 Diagrams That Changed the World</em>. Batsford.
 </div>
-<div id="ref-Fabiocrameri2020Misuse:917a" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Fabiocrameri2020Misuse:917a" class="csl-entry" role="listitem">
 Crameri, Fabio, Grace E Shephard, and Philip J Heron. 2020. <span>“The Misuse of Colour in Science Communication.”</span> <em>Nature Communications</em> 11 (5444). <a href="https://doi.org/10.1038/s41467-020-19160-7">https://doi.org/10.1038/s41467-020-19160-7</a>.
 </div>
-<div id="ref-Davidmccandless2012Information:84d3" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Davidmccandless2012Information:84d3" class="csl-entry" role="listitem">
 McCandless, David. 2012. <em>Information Is Beautiful</em>. William Collins.
 </div>
-<div id="ref-Alansmith2022Charts:c9ad" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Alansmith2022Charts:c9ad" class="csl-entry" role="listitem">
 Smith, Alan. 2022. <em>How Charts Work: Understand and Explain Data with Confidence</em>. FT Publishing.
 </div>
-<div id="ref-Edwardrtufte1983Visual:1a3f" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Edwardrtufte1983Visual:1a3f" class="csl-entry" role="listitem">
 Tufte, Edward R. 1983. <em>The Visual Display of Quantitative Information</em>. Graphics Press.
 </div>
-<div id="ref-Edwardrtufte2020Seeing:4ec6" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Edwardrtufte2020Seeing:4ec6" class="csl-entry" role="listitem">
 ———. 2020. <em>Seeing with Fresh Eyes: Meaning, Space, Data, Truth</em>. Graphics Press.
 </div>
-<div id="ref-yau_visualize_2011" class="csl-entry" role="doc-biblioentry">
+<div id="ref-yau_visualize_2011" class="csl-entry" role="listitem">
 Yau, Nathan. 2011. <em>Visualize <span>This</span>: <span>The</span> <span>Flowing</span> <span>Data</span> <span>Guide</span> to <span>Design</span>, <span>Visualization</span>, and <span>Statistics</span></em>. John Wiley &amp; Sons.
 </div>
-<div id="ref-yau_data_2013" class="csl-entry" role="doc-biblioentry">
+<div id="ref-yau_data_2013" class="csl-entry" role="listitem">
 ———. 2013. <em>Data <span>Points</span>: <span>Visualization</span> That Means Something</em>. Wiley.
 </div>
 </div></section></div></main> <!-- /main -->
@@ -1005,9 +978,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -1072,6 +1059,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {

@@ -145,7 +145,7 @@ ggplot(Count30, aes(Passes, fill = Month )) +
 
 ## Comparing Two Groups
 
-Using the Wilcoxon signed rank test (see [Glossary @sec-mw]), we can decide whether the population distributions, summarised in @tbl-sum30 and  @fig-density are identical.  An advantage of the Wilcoxon signed rank test is that it can be undertaken without assuming the data follows the normal distribution; the density plot in @fig-density shows the data is unlikely to be normal. The two data samples for September and October need to be independent; the number of passes recorded separately in September and October are distinct populations where the passes do not affect each other.
+Using the [Wilcoxon signed rank test](https://bat-survey-reporting.netlify.app/glossary#sec-mw) we can decide whether the population distributions, summarised in @tbl-sum30 and  @fig-density are identical.  An advantage of the Wilcoxon signed rank test is that it can be undertaken without assuming the data follows the normal distribution; the density plot in @fig-density shows the data is unlikely to be normal. The two data samples for September and October need to be independent; the number of passes recorded separately in September and October are distinct populations where the passes do not affect each other.
 
 It is assumed The survey effort (length of time the bat detectors where deployed and the locations are the same for both months)
 
@@ -252,7 +252,7 @@ ggplot(graph_data, aes(y = ave_act_per_hr, x = Description)) +
 
 ```
 
-The comparison of locations is undertaken with the Mann-Whitney-Wilcoxon or Kruskal-Wallis test. The Kruskal–Wallis test is a rank-based test that is similar to the Mann-Whitney-Wilcoxon test but can be applied to one-way data with more than two groups. If there are just two locations the Mann-Whitney-Wilcoxon test is applied. The Kruskal–Wallis test may be used when there are only two samples, but the Mann-Whitney-Wilcoxon is more powerful for two samples and is preferred.  Both tests assume that the observations are independent.  The probability threshold for statistical significance, which should always be chosen before the test is undertaken, is: P < 0.05.
+The comparison of locations is undertaken with the [Wilcoxon signed rank test](https://bat-survey-reporting.netlify.app/glossary#sec-mw) or [Kruskal-Wallis test](https://bat-survey-reporting.netlify.app/glossary#sec-kruskal). The Kruskal–Wallis test is a rank-based test that is similar to the Wilcoxon signed rank test but can be applied to one-way data with more than two groups. If there are just two locations the Wilcoxon signed rank test should be applied. The Kruskal–Wallis test may be used when there are only two samples, but the Wilcoxon signed rank test is more powerful for two samples and is preferred.  Both tests assume that the observations are independent.  The probability threshold for statistical significance, which should always be chosen before the test is undertaken, is: P < 0.05.
 
 * __The Null Hypothesis:__ bat pass rates per hour are from distributions with the same median.
 

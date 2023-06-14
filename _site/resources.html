@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.475">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,14 +17,15 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -38,8 +39,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -93,61 +93,63 @@ div.csl-indent {
     <span class="navbar-title">Reporting Bat Survey Data</span>
     </a>
   </div>
+            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tidy.html">
+    <a class="nav-link" href="./tidy.html" rel="" target="">
  <span class="menu-text">Tidy Data</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./meta.html">
+    <a class="nav-link" href="./meta.html" rel="" target="">
  <span class="menu-text">Meta Data</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./aggregation.html">
+    <a class="nav-link" href="./aggregation.html" rel="" target="">
  <span class="menu-text">Aggregation</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./visualisation.html">
+    <a class="nav-link" href="./visualisation.html" rel="" target="">
  <span class="menu-text">Visualisation</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./maps.html">
+    <a class="nav-link" href="./maps.html" rel="" target="">
  <span class="menu-text">Maps</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./statistics.html">
+    <a class="nav-link" href="./statistics.html" rel="" target="">
  <span class="menu-text">Statistics</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./reporting.html">
+    <a class="nav-link" href="./reporting.html" rel="" target="">
  <span class="menu-text">One Click Reporting</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./dynamic.html">
+    <a class="nav-link" href="./dynamic.html" rel="" target="">
  <span class="menu-text">Interactive Reports</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Glossary.html">
+    <a class="nav-link" href="./Glossary.html" rel="" target="">
  <span class="menu-text">Glossary</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./resources.html" aria-current="page">
+    <a class="nav-link active" href="./resources.html" rel="" target="" aria-current="page">
  <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html">
+    <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools ms-auto">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -161,15 +163,15 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#general" id="toc-general" class="nav-link active" data-scroll-target="#general"><span class="toc-section-number">1</span>  General</a></li>
-  <li><a href="#tidy-data" id="toc-tidy-data" class="nav-link" data-scroll-target="#tidy-data"><span class="toc-section-number">2</span>  Tidy Data</a></li>
-  <li><a href="#meta-data" id="toc-meta-data" class="nav-link" data-scroll-target="#meta-data"><span class="toc-section-number">3</span>  Meta Data</a></li>
-  <li><a href="#aggregation" id="toc-aggregation" class="nav-link" data-scroll-target="#aggregation"><span class="toc-section-number">4</span>  Aggregation</a></li>
-  <li><a href="#visualisation" id="toc-visualisation" class="nav-link" data-scroll-target="#visualisation"><span class="toc-section-number">5</span>  Visualisation</a></li>
-  <li><a href="#maps" id="toc-maps" class="nav-link" data-scroll-target="#maps"><span class="toc-section-number">6</span>  Maps</a></li>
-  <li><a href="#statistics" id="toc-statistics" class="nav-link" data-scroll-target="#statistics"><span class="toc-section-number">7</span>  Statistics</a></li>
-  <li><a href="#reporting" id="toc-reporting" class="nav-link" data-scroll-target="#reporting"><span class="toc-section-number">8</span>  Reporting</a></li>
-  <li><a href="#interactive" id="toc-interactive" class="nav-link" data-scroll-target="#interactive"><span class="toc-section-number">9</span>  Interactive</a></li>
+  <li><a href="#general" id="toc-general" class="nav-link active" data-scroll-target="#general"><span class="header-section-number">1</span> General</a></li>
+  <li><a href="#tidy-data" id="toc-tidy-data" class="nav-link" data-scroll-target="#tidy-data"><span class="header-section-number">2</span> Tidy Data</a></li>
+  <li><a href="#meta-data" id="toc-meta-data" class="nav-link" data-scroll-target="#meta-data"><span class="header-section-number">3</span> Meta Data</a></li>
+  <li><a href="#aggregation" id="toc-aggregation" class="nav-link" data-scroll-target="#aggregation"><span class="header-section-number">4</span> Aggregation</a></li>
+  <li><a href="#visualisation" id="toc-visualisation" class="nav-link" data-scroll-target="#visualisation"><span class="header-section-number">5</span> Visualisation</a></li>
+  <li><a href="#maps" id="toc-maps" class="nav-link" data-scroll-target="#maps"><span class="header-section-number">6</span> Maps</a></li>
+  <li><a href="#statistics" id="toc-statistics" class="nav-link" data-scroll-target="#statistics"><span class="header-section-number">7</span> Statistics</a></li>
+  <li><a href="#reporting" id="toc-reporting" class="nav-link" data-scroll-target="#reporting"><span class="header-section-number">8</span> Reporting</a></li>
+  <li><a href="#interactive" id="toc-interactive" class="nav-link" data-scroll-target="#interactive"><span class="header-section-number">9</span> Interactive</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
 </nav>
@@ -194,9 +196,6 @@ div.csl-indent {
 
 </header>
 
-<div class="cell">
-
-</div>
 <p>There are many approaches to <em>Bat Data Science</em>, this section references the resources utilized to make these web pages. The references provide the background to the example code and with the web pages reveal how it can be extended or adapted to generate your own reports on bat surveys. All this can be undertaken with the R statistical programming language <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref">R Core Team 2023</a>)</span> through RStudio <span class="citation" data-cites="RStudio22">(<a href="#ref-RStudio22" role="doc-biblioref">Posit team 2022</a>)</span>; the materials applied, software and data, are open source.</p>
 <p>A prime resource for learning Bat Data Science with R are the the online books<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, a comprehensive guide to these books and other R-resources is the <a href="https://www.bigbookofr.com">Big Book of R</a> by Oscar Baruffa. This page references the online books, packages, websites and other resources with a focus on Bat Data Science:</p>
 <section id="general" class="level2" data-number="1">
@@ -322,174 +321,174 @@ div.csl-indent {
 </section>
 
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-R-rmarkdown" class="csl-entry" role="doc-biblioentry">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-R-rmarkdown" class="csl-entry" role="listitem">
 Allaire, JJ, Yihui Xie, Jonathan McPherson, Javier Luraschi, Kevin Ushey, Aron Atkins, Hadley Wickham, Joe Cheng, Winston Chang, and Richard Iannone. 2023. <em>Rmarkdown: Dynamic Documents for r</em>. <a href="https://CRAN.R-project.org/package=rmarkdown">https://CRAN.R-project.org/package=rmarkdown</a>.
 </div>
-<div id="ref-R-ggthemes" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-ggthemes" class="csl-entry" role="listitem">
 Arnold, Jeffrey B. 2021. <em>Ggthemes: Extra Themes, Scales and Geoms for Ggplot2</em>. <a href="https://github.com/jrnold/ggthemes">https://github.com/jrnold/ggthemes</a>.
 </div>
-<div id="ref-R-infer" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-infer" class="csl-entry" role="listitem">
 Bray, Andrew, Chester Ismay, Evgeni Chasnovski, Simon Couch, Ben Baumer, and Mine Cetinkaya-Rundel. 2022. <em>Infer: Tidy Statistical Inference</em>. <a href="https://CRAN.R-project.org/package=infer">https://CRAN.R-project.org/package=infer</a>.
 </div>
-<div id="ref-R-broman" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-broman" class="csl-entry" role="listitem">
 Broman, Karl W. 2022. <em>Broman: Karl Broman’s r Code</em>. <a href="https://github.com/kbroman/broman">https://github.com/kbroman/broman</a>.
 </div>
-<div id="ref-R-metR" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-metR" class="csl-entry" role="listitem">
 Campitelli, Elio. 2022. <em>metR: Tools for Easier Analysis of Meteorological Fields</em>. <a href="https://github.com/eliocamp/metR">https://github.com/eliocamp/metR</a>.
 </div>
-<div id="ref-R-leaflet" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-leaflet" class="csl-entry" role="listitem">
 Cheng, Joe, Bhaskar Karambelkar, and Yihui Xie. 2023. <em>Leaflet: Create Interactive Web Maps with the JavaScript Leaflet Library</em>. <a href="https://rstudio.github.io/leaflet/">https://rstudio.github.io/leaflet/</a>.
 </div>
-<div id="ref-Fabiocrameri2020Misuse:917a" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Fabiocrameri2020Misuse:917a" class="csl-entry" role="listitem">
 Crameri, Fabio, Grace E Shephard, and Philip J Heron. 2020. <span>“The Misuse of Colour in Science Communication.”</span> <em>Nature Communications</em> 11 (5444). <a href="https://doi.org/10.1038/s41467-020-19160-7">https://doi.org/10.1038/s41467-020-19160-7</a>.
 </div>
-<div id="ref-R-dunn.test" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-dunn.test" class="csl-entry" role="listitem">
 Dinno, Alexis. 2017. <em>Dunn.test: Dunn’s Test of Multiple Comparisons Using Rank Sums</em>. <a href="https://CRAN.R-project.org/package=dunn.test">https://CRAN.R-project.org/package=dunn.test</a>.
 </div>
-<div id="ref-Daviddonoho201750:9bd5" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Daviddonoho201750:9bd5" class="csl-entry" role="listitem">
 Donoho, David. 2017. <span>“50 Years of Data Science.”</span> <em>Journal of Computational and Graphical Statistics</em> 26 (4): 745–66. <a href="https://doi.org/10.1080/10618600.2017.1384734">https://doi.org/10.1080/10618600.2017.1384734</a>.
 </div>
-<div id="ref-R-ggspatial" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-ggspatial" class="csl-entry" role="listitem">
 Dunnington, Dewey. 2022. <em>Ggspatial: Spatial Data Framework for Ggplot2</em>. <a href="https://CRAN.R-project.org/package=ggspatial">https://CRAN.R-project.org/package=ggspatial</a>.
 </div>
-<div id="ref-R-tanaka" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-tanaka" class="csl-entry" role="listitem">
 Giraud, Timothée. 2022. <em>Tanaka: Design Shaded Contour Lines (or Tanaka) Maps</em>. <a href="https://github.com/riatelab/tanaka/">https://github.com/riatelab/tanaka/</a>.
 </div>
-<div id="ref-R-officer" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-officer" class="csl-entry" role="listitem">
 Gohel, David. 2023. <em>Officer: Manipulation of Microsoft Word and PowerPoint Documents</em>. <a href="https://CRAN.R-project.org/package=officer">https://CRAN.R-project.org/package=officer</a>.
 </div>
-<div id="ref-R-officedown" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-officedown" class="csl-entry" role="listitem">
 Gohel, David, and Noam Ross. 2023. <em>Officedown: Enhanced r Markdown Format for Word and PowerPoint</em>. <a href="https://CRAN.R-project.org/package=officedown">https://CRAN.R-project.org/package=officedown</a>.
 </div>
-<div id="ref-R-flextable" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-flextable" class="csl-entry" role="listitem">
 Gohel, David, and Panagiotis Skintzos. 2023. <em>Flextable: Functions for Tabular Reporting</em>. <a href="https://CRAN.R-project.org/package=flextable">https://CRAN.R-project.org/package=flextable</a>.
 </div>
-<div id="ref-R-glue" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-glue" class="csl-entry" role="listitem">
 Hester, Jim, and Jennifer Bryan. 2022. <em>Glue: Interpreted String Literals</em>. <a href="https://CRAN.R-project.org/package=glue">https://CRAN.R-project.org/package=glue</a>.
 </div>
-<div id="ref-R-raster" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-raster" class="csl-entry" role="listitem">
 Hijmans, Robert J. 2023a. <em>Raster: Geographic Data Analysis and Modeling</em>. <a href="https://rspatial.org/raster">https://rspatial.org/raster</a>.
 </div>
-<div id="ref-R-terra" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-terra" class="csl-entry" role="listitem">
 ———. 2023b. <em>Terra: Spatial Data Analysis</em>. <a href="https://rspatial.org/terra/">https://rspatial.org/terra/</a>.
 </div>
-<div id="ref-R-elevatr" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-elevatr" class="csl-entry" role="listitem">
 Hollister, Jeffrey. 2022. <em>Elevatr: Access Elevation Data from Various APIs</em>. <a href="https://github.com/jhollist/elevatr/">https://github.com/jhollist/elevatr/</a>.
 </div>
-<div id="ref-R-gt" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-gt" class="csl-entry" role="listitem">
 Iannone, Richard, Joe Cheng, Barret Schloerke, Ellis Hughes, and JooYoung Seo. 2022. <em>Gt: Easily Create Presentation-Ready Display Tables</em>. <a href="https://CRAN.R-project.org/package=gt">https://CRAN.R-project.org/package=gt</a>.
 </div>
-<div id="ref-knuth_literate_1984" class="csl-entry" role="doc-biblioentry">
+<div id="ref-knuth_literate_1984" class="csl-entry" role="listitem">
 Knuth, Donald E. 1984. <span>“Literate Programming.”</span> <em>Comput. J.</em> 27 (2): 97–111. <a href="https://doi.org/10.1093/comjnl/27.2.97">https://doi.org/10.1093/comjnl/27.2.97</a>.
 </div>
-<div id="ref-R-reactable" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-reactable" class="csl-entry" role="listitem">
 Lin, Greg. 2023. <em>Reactable: Interactive Data Tables for r</em>. <a href="https://CRAN.R-project.org/package=reactable">https://CRAN.R-project.org/package=reactable</a>.
 </div>
-<div id="ref-R-rnaturalearth" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-rnaturalearth" class="csl-entry" role="listitem">
 Massicotte, Philippe, and Andy South. 2023. <em>Rnaturalearth: World Map Data from Natural Earth</em>. <a href="https://docs.ropensci.org/rnaturalearth/
 https://github.com/ropensci/rnaturalearth">https://docs.ropensci.org/rnaturalearth/ https://github.com/ropensci/rnaturalearth</a>.
 </div>
-<div id="ref-R-gtExtras" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-gtExtras" class="csl-entry" role="listitem">
 Mock, Thomas. 2022. <em>gtExtras: Extending Gt for Beautiful HTML Tables</em>. <a href="https://CRAN.R-project.org/package=gtExtras">https://CRAN.R-project.org/package=gtExtras</a>.
 </div>
-<div id="ref-R-hms" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-hms" class="csl-entry" role="listitem">
 Müller, Kirill. 2022. <em>Hms: Pretty Time of Day</em>. <a href="https://CRAN.R-project.org/package=hms">https://CRAN.R-project.org/package=hms</a>.
 </div>
-<div id="ref-R-tibble" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-tibble" class="csl-entry" role="listitem">
 Müller, Kirill, and Hadley Wickham. 2023. <em>Tibble: Simple Data Frames</em>. <a href="https://CRAN.R-project.org/package=tibble">https://CRAN.R-project.org/package=tibble</a>.
 </div>
-<div id="ref-R-vegan" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-vegan" class="csl-entry" role="listitem">
 Oksanen, Jari, Gavin L. Simpson, F. Guillaume Blanchet, Roeland Kindt, Pierre Legendre, Peter R. Minchin, R. B. O’Hara, et al. 2022. <em>Vegan: Community Ecology Package</em>. <a href="https://github.com/vegandevs/vegan">https://github.com/vegandevs/vegan</a>.
 </div>
-<div id="ref-R-osmdata" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-osmdata" class="csl-entry" role="listitem">
 Padgham, Mark, Bob Rudis, Robin Lovelace, Maëlle Salmon, and Joan Maspons. 2023. <em>Osmdata: Import OpenStreetMap Data as Simple Features or Spatial Objects</em>. <a href="https://CRAN.R-project.org/package=osmdata">https://CRAN.R-project.org/package=osmdata</a>.
 </div>
-<div id="ref-Mattparker2019Humble:61dc" class="csl-entry" role="doc-biblioentry">
+<div id="ref-Mattparker2019Humble:61dc" class="csl-entry" role="listitem">
 Parker, Matt. 2019. <em>Humble Pi a Comedy of Maths Errors</em>. Penguin.
 </div>
-<div id="ref-sf2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-sf2018" class="csl-entry" role="listitem">
 Pebesma, Edzer. 2018. <span>“<span class="nocase">Simple Features for R: Standardized Support for Spatial Vector Data</span>.”</span> <em><span>The R Journal</span></em> 10 (1): 439–46. <a href="https://doi.org/10.32614/RJ-2018-009">https://doi.org/10.32614/RJ-2018-009</a>.
 </div>
-<div id="ref-R-sf" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-sf" class="csl-entry" role="listitem">
 ———. 2023. <em>Sf: Simple Features for r</em>. <a href="https://CRAN.R-project.org/package=sf">https://CRAN.R-project.org/package=sf</a>.
 </div>
-<div id="ref-RStudio22" class="csl-entry" role="doc-biblioentry">
+<div id="ref-RStudio22" class="csl-entry" role="listitem">
 Posit team. 2022. <em>RStudio: Integrated Development Environment for r</em>. Boston, MA: Posit Software, PBC. <a href="http://www.posit.co/">http://www.posit.co/</a>.
 </div>
-<div id="ref-R-mosaic" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-mosaic" class="csl-entry" role="listitem">
 Pruim, Randall, Daniel T. Kaplan, and Nicholas J. Horton. 2022. <em>Mosaic: Project MOSAIC Statistics and Mathematics Teaching Utilities</em>. <a href="https://CRAN.R-project.org/package=mosaic">https://CRAN.R-project.org/package=mosaic</a>.
 </div>
-<div id="ref-R-base" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-base" class="csl-entry" role="listitem">
 R Core Team. 2023. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
 </div>
-<div id="ref-R-broom" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-broom" class="csl-entry" role="listitem">
 Robinson, David, Alex Hayes, and Simon Couch. 2023. <em>Broom: Convert Statistical Objects into Tidy Tibbles</em>. <a href="https://CRAN.R-project.org/package=broom">https://CRAN.R-project.org/package=broom</a>.
 </div>
-<div id="ref-R-plotly" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-plotly" class="csl-entry" role="listitem">
 Sievert, Carson, Chris Parmer, Toby Hocking, Scott Chamberlain, Karthik Ram, Marianne Corvellec, and Pedro Despouy. 2022. <em>Plotly: Create Interactive Web Graphics via Plotly.js</em>. <a href="https://CRAN.R-project.org/package=plotly">https://CRAN.R-project.org/package=plotly</a>.
 </div>
-<div id="ref-R-ggrepel" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-ggrepel" class="csl-entry" role="listitem">
 Slowikowski, Kamil. 2023. <em>Ggrepel: Automatically Position Non-Overlapping Text Labels with Ggplot2</em>. <a href="https://github.com/slowkow/ggrepel">https://github.com/slowkow/ggrepel</a>.
 </div>
-<div id="ref-R-lubridate" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-lubridate" class="csl-entry" role="listitem">
 Spinu, Vitalie, Garrett Grolemund, and Hadley Wickham. 2023. <em>Lubridate: Make Dealing with Dates a Little Easier</em>. <a href="https://CRAN.R-project.org/package=lubridate">https://CRAN.R-project.org/package=lubridate</a>.
 </div>
-<div id="ref-R-suncalc" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-suncalc" class="csl-entry" role="listitem">
 Thieurmel, Benoit, and Achraf Elmarhraoui. 2022. <em>Suncalc: Compute Sun Position, Sunlight Phases, Moon Position and Lunar Phase</em>. <a href="https://github.com/datastorm-open/suncalc">https://github.com/datastorm-open/suncalc</a>.
 </div>
-<div id="ref-JSSv105i07" class="csl-entry" role="doc-biblioentry">
+<div id="ref-JSSv105i07" class="csl-entry" role="listitem">
 Tierney, Nicholas, and Dianne Cook. 2023. <span>“Expanding Tidy Data Principles to Facilitate Missing Data Exploration, Visualization and Assessment of Imputations.”</span> <em>Journal of Statistical Software</em> 105 (1): 1–31. <a href="https://doi.org/10.18637/jss.v105.i07">https://doi.org/10.18637/jss.v105.i07</a>.
 </div>
-<div id="ref-R-validate" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-validate" class="csl-entry" role="listitem">
 van der Loo, Mark, and Edwin de Jonge. 2022. <em>Validate: Data Validation Infrastructure</em>. <a href="https://github.com/data-cleaning/validate">https://github.com/data-cleaning/validate</a>.
 </div>
-<div id="ref-wickham_tidy_2014" class="csl-entry" role="doc-biblioentry">
+<div id="ref-wickham_tidy_2014" class="csl-entry" role="listitem">
 Wickham, Hadley. 2014. <span>“Tidy Data.”</span> <em>The Journal of Statistical Software</em> 59. <a href="http://www.jstatsoft.org/v59/i10/">http://www.jstatsoft.org/v59/i10/</a>.
 </div>
-<div id="ref-R-stringr" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-stringr" class="csl-entry" role="listitem">
 ———. 2022. <em>Stringr: Simple, Consistent Wrappers for Common String Operations</em>. <a href="https://CRAN.R-project.org/package=stringr">https://CRAN.R-project.org/package=stringr</a>.
 </div>
-<div id="ref-R-tidyverse" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-tidyverse" class="csl-entry" role="listitem">
 ———. 2023. <em>Tidyverse: Easily Install and Load the Tidyverse</em>. <a href="https://CRAN.R-project.org/package=tidyverse">https://CRAN.R-project.org/package=tidyverse</a>.
 </div>
-<div id="ref-tidyverse2019" class="csl-entry" role="doc-biblioentry">
+<div id="ref-tidyverse2019" class="csl-entry" role="listitem">
 Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. <span>“Welcome to the <span class="nocase">tidyverse</span>.”</span> <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.
 </div>
-<div id="ref-R-readxl" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-readxl" class="csl-entry" role="listitem">
 Wickham, Hadley, and Jennifer Bryan. 2023. <em>Readxl: Read Excel Files</em>. <a href="https://CRAN.R-project.org/package=readxl">https://CRAN.R-project.org/package=readxl</a>.
 </div>
-<div id="ref-R-ggplot2" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-ggplot2" class="csl-entry" role="listitem">
 Wickham, Hadley, Winston Chang, Lionel Henry, Thomas Lin Pedersen, Kohske Takahashi, Claus Wilke, Kara Woo, Hiroaki Yutani, and Dewey Dunnington. 2023. <em>Ggplot2: Create Elegant Data Visualisations Using the Grammar of Graphics</em>. <a href="https://CRAN.R-project.org/package=ggplot2">https://CRAN.R-project.org/package=ggplot2</a>.
 </div>
-<div id="ref-R-dplyr" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-dplyr" class="csl-entry" role="listitem">
 Wickham, Hadley, Romain François, Lionel Henry, Kirill Müller, and Davis Vaughan. 2023. <em>Dplyr: A Grammar of Data Manipulation</em>. <a href="https://CRAN.R-project.org/package=dplyr">https://CRAN.R-project.org/package=dplyr</a>.
 </div>
-<div id="ref-R-readr" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-readr" class="csl-entry" role="listitem">
 Wickham, Hadley, Jim Hester, and Jennifer Bryan. 2023. <em>Readr: Read Rectangular Text Data</em>. <a href="https://CRAN.R-project.org/package=readr">https://CRAN.R-project.org/package=readr</a>.
 </div>
-<div id="ref-R-scales" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-scales" class="csl-entry" role="listitem">
 Wickham, Hadley, and Dana Seidel. 2022. <em>Scales: Scale Functions for Visualization</em>. <a href="https://CRAN.R-project.org/package=scales">https://CRAN.R-project.org/package=scales</a>.
 </div>
-<div id="ref-R-tidyr" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-tidyr" class="csl-entry" role="listitem">
 Wickham, Hadley, Davis Vaughan, and Maximilian Girlich. 2023. <em>Tidyr: Tidy Messy Data</em>. <a href="https://CRAN.R-project.org/package=tidyr">https://CRAN.R-project.org/package=tidyr</a>.
 </div>
-<div id="ref-knitr2014" class="csl-entry" role="doc-biblioentry">
+<div id="ref-knitr2014" class="csl-entry" role="listitem">
 Xie, Yihui. 2014. <span>“Knitr: A Comprehensive Tool for Reproducible Research in <span>R</span>.”</span> In <em>Implementing Reproducible Computational Research</em>, edited by Victoria Stodden, Friedrich Leisch, and Roger D. Peng. Chapman; Hall/CRC.
 </div>
-<div id="ref-knitr2015" class="csl-entry" role="doc-biblioentry">
+<div id="ref-knitr2015" class="csl-entry" role="listitem">
 ———. 2015. <em>Dynamic Documents with <span>R</span> and Knitr</em>. 2nd ed. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
 </div>
-<div id="ref-R-knitr" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-knitr" class="csl-entry" role="listitem">
 ———. 2023. <em>Knitr: A General-Purpose Package for Dynamic Report Generation in r</em>. <a href="https://yihui.org/knitr/">https://yihui.org/knitr/</a>.
 </div>
-<div id="ref-rmarkdown2018" class="csl-entry" role="doc-biblioentry">
+<div id="ref-rmarkdown2018" class="csl-entry" role="listitem">
 Xie, Yihui, J. J. Allaire, and Garrett Grolemund. 2018. <em>R Markdown: The Definitive Guide</em>. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://bookdown.org/yihui/rmarkdown">https://bookdown.org/yihui/rmarkdown</a>.
 </div>
-<div id="ref-R-DT" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-DT" class="csl-entry" role="listitem">
 Xie, Yihui, Joe Cheng, and Xianying Tan. 2023. <em>DT: A Wrapper of the JavaScript Library DataTables</em>. <a href="https://github.com/rstudio/DT">https://github.com/rstudio/DT</a>.
 </div>
-<div id="ref-rmarkdown2020" class="csl-entry" role="doc-biblioentry">
+<div id="ref-rmarkdown2020" class="csl-entry" role="listitem">
 Xie, Yihui, Christophe Dervieux, and Emily Riederer. 2020. <em>R Markdown Cookbook</em>. Boca Raton, Florida: Chapman; Hall/CRC. <a href="https://bookdown.org/yihui/rmarkdown-cookbook">https://bookdown.org/yihui/rmarkdown-cookbook</a>.
 </div>
 </div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
@@ -527,9 +526,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -594,6 +607,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
