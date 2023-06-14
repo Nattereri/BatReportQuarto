@@ -160,7 +160,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#sec-kernel" id="toc-sec-kernel" class="nav-link" data-scroll-target="#sec-kernel">Kernel Density</a></li>
   <li><a href="#sec-QQ" id="toc-sec-QQ" class="nav-link" data-scroll-target="#sec-QQ">QQ-plot</a></li>
   <li><a href="#sec-histogram" id="toc-sec-histogram" class="nav-link" data-scroll-target="#sec-histogram">Histogram</a></li>
-  <li><a href="#bray-curtis-distance-measurement" id="toc-bray-curtis-distance-measurement" class="nav-link" data-scroll-target="#bray-curtis-distance-measurement">Bray-Curtis distance measurement</a></li>
+  <li><a href="#sec-bray" id="toc-sec-bray" class="nav-link" data-scroll-target="#sec-bray">Bray-Curtis distance measurement</a></li>
+  <li><a href="#sec-euclid" id="toc-sec-euclid" class="nav-link" data-scroll-target="#sec-euclid">Euclidean distance</a></li>
+  <li><a href="#sec-cluster" id="toc-sec-cluster" class="nav-link" data-scroll-target="#sec-cluster">Cluster analysis</a></li>
+  <li><a href="#sec-knearest" id="toc-sec-knearest" class="nav-link" data-scroll-target="#sec-knearest">k-nearest neighbors</a></li>
+  <li><a href="#sec-pca" id="toc-sec-pca" class="nav-link" data-scroll-target="#sec-pca">Principal component analysis</a></li>
+  <li><a href="#type-i-and-type-ii-errors." id="toc-type-i-and-type-ii-errors." class="nav-link" data-scroll-target="#type-i-and-type-ii-errors.">Type I and Type II errors.</a></li>
   </ul>
 </nav>
     </div>
@@ -384,8 +389,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Histograms can be used to visualize a variety of different types of data. They are often used to visualize the distribution of continuous data, such as height, weight, or income. Histograms can also be used to visualize the distribution of discrete data, such as the number of children in a family or the number of cars owned by a household.</p>
 <p>Histograms are a valuable tool for data analysis. They can be used to identify patterns and trends in the data, to compare different datasets, and to make inferences about the population from which the data was drawn. Histograms are a simple and easy-to-understand way to visualize data, and they can be used by people with a variety of levels of statistical expertise.</p>
 </section>
-<section id="bray-curtis-distance-measurement" class="level2">
-<h2 class="anchored" data-anchor-id="bray-curtis-distance-measurement">Bray-Curtis distance measurement</h2>
+<section id="sec-bray" class="level2">
+<h2 class="anchored" data-anchor-id="sec-bray">Bray-Curtis distance measurement</h2>
 <p>Bray-Curtis distance measurement as used in multivariate analysis.</p>
 <p>Bray-Curtis distance is a metric used to measure the dissimilarity between two samples. It is based on the relative abundance of species in each sample. The Bray-Curtis distance is calculated as follows:</p>
 <p><span class="math display">\[\frac{\sum|A_i - B_i|}{\sum(A_i + B_i)} \]</span></p>
@@ -408,6 +413,60 @@ ul.task-list li input[type="checkbox"] {
 <li>It can be sensitive to the presence of rare species.</li>
 </ul>
 <p>Overall, Bray-Curtis distance is a useful metric for measuring the dissimilarity between two samples. It is relatively easy to calculate and it is sensitive to changes in the relative abundance of species. However, it is important to be aware of its limitations before using it.</p>
+</section>
+<section id="sec-euclid" class="level2">
+<h2 class="anchored" data-anchor-id="sec-euclid">Euclidean distance</h2>
+<p>Euclidean distance is a measure of the distance between two points in a Euclidean space. In multivariate analysis, it is used to measure the distance between two data points, which are represented by vectors. The Euclidean distance between two data points is calculated as follows:</p>
+<p>Code snippet d = sqrt( (x1 - x2)^2 + (y1 - y2)^2 + … + (zn - zn)^2 ) Use code with caution. Learn more where:</p>
+<p>d is the Euclidean distance between the two data points x1, y1, z1 are the values of the first data point x2, y2, z2 are the values of the second data point n is the number of dimensions</p>
+<p>The Euclidean distance is a straight-line distance between two points. It is the most commonly used distance measure in multivariate analysis. It has a number of advantages, including:</p>
+<ul>
+<li>It is easy to calculate.</li>
+<li>It is intuitively appealing.</li>
+<li>It is relatively robust to outliers.</li>
+</ul>
+<p>However, the Euclidean distance can be sensitive to the scale of the variables. For example, a difference of 1 unit on a variable that is measured in centimeters is much less significant than a difference of 1 unit on a variable that is measured in meters. To address this issue, it is often helpful to standardize the variables before calculating the Euclidean distance.</p>
+<p>The Euclidean distance can be used in a variety of multivariate analysis techniques, including:</p>
+<ul>
+<li>Cluster analysis (<a href="#sec-cluster">Section&nbsp;17</a>).</li>
+<li>Principal component analysis.</li>
+<li>Linear discriminant analysis.</li>
+<li>k-nearest neighbors.</li>
+</ul>
+<p>Cluster analysis is a technique for grouping data points together based on their similarity. Principal component analysis is a technique for reducing the dimensionality of data while preserving as much of the variation as possible. Linear discriminant analysis is a technique for classifying data points into two or more groups. k-nearest neighbors is a non-parametric machine learning algorithm that can be used for classification and regression tasks.</p>
+<p>The Euclidean distance is a powerful tool that can be used to analyze multivariate data. It is important to understand its strengths and weaknesses in order to use it effectively.</p>
+</section>
+<section id="sec-cluster" class="level2">
+<h2 class="anchored" data-anchor-id="sec-cluster">Cluster analysis</h2>
+<p>Cluster analysis is a multivariate analysis technique that groups data points together based on their similarity. It is an <strong>unsupervised learning</strong> technique, meaning that it does not require any prior knowledge of the data.</p>
+<p>There are many different cluster analysis algorithms, but they all work by finding groups of data points that are close to each other and far from other data points. The most common cluster analysis algorithms are:</p>
+<ul>
+<li><strong>K-means clustering:</strong> This algorithm groups data points into k clusters, where k is a predetermined number. The algorithm starts by randomly assigning each data point to a cluster. Then, it repeatedly updates the cluster centroids (the average of all data points in a cluster) and the cluster assignments until the centroids no longer change.</li>
+<li><strong>Hierarchical clustering:</strong> This algorithm starts by treating each data point as its own cluster. Then, it repeatedly merges the two most similar clusters until there is only one cluster left. There are two main types of hierarchical clustering: <strong>agglomerative</strong> and <strong>divisive</strong>. Agglomerative clustering starts with all data points in their own cluster and merges them together, while divisive clustering starts with all data points in one cluster and divides them into smaller and smaller clusters.</li>
+</ul>
+<p>Cluster analysis can be used for a variety of tasks, including:</p>
+<ul>
+<li><strong>Data exploration:</strong> Cluster analysis can be used to explore data and identify hidden patterns. For example, a marketing team might use cluster analysis to identify different customer segments.</li>
+<li><strong>Data reduction:</strong> Cluster analysis can be used to reduce the dimensionality of data while preserving as much of the variation as possible. This can be useful for visualization and for making data easier to understand.</li>
+<li><strong>Classification:</strong> Cluster analysis can be used to classify data points into known groups. For example, a medical researcher might use cluster analysis to classify patients into different disease groups.</li>
+</ul>
+<p>Cluster analysis is a powerful tool that can be used to analyze multivariate data. It is important to understand the different cluster analysis algorithms and their strengths and weaknesses in order to use them effectively.</p>
+<p>Here are some additional considerations when using cluster analysis:</p>
+<ul>
+<li><strong>The number of clusters:</strong> The number of clusters is a critical parameter in cluster analysis. If there are too few clusters, the data will not be well-separated. If there are too many clusters, the clusters will be too small and the results will not be reliable. There is no easy way to determine the optimal number of clusters, and it may be necessary to experiment with different values.</li>
+<li><strong>The similarity measure:</strong> The similarity measure is another important parameter in cluster analysis. The most common similarity measure is the Euclidean distance, but other measures, such as the Manhattan distance and the Mahalanobis distance, can also be used. The choice of similarity measure will affect the results of the cluster analysis.</li>
+<li><strong>The cluster algorithm:</strong> The cluster algorithm is also an important parameter in cluster analysis. Different algorithms will produce different results, so it is important to experiment with different algorithms to find the one that produces the most meaningful results.</li>
+</ul>
+<p>Cluster analysis is a powerful tool that can be used to analyze multivariate data. It is important to understand the different cluster analysis algorithms, their strengths and weaknesses, and the factors that can affect the results of cluster analysis in order to use it effectively.</p>
+</section>
+<section id="sec-knearest" class="level2">
+<h2 class="anchored" data-anchor-id="sec-knearest">k-nearest neighbors</h2>
+</section>
+<section id="sec-pca" class="level2">
+<h2 class="anchored" data-anchor-id="sec-pca">Principal component analysis</h2>
+</section>
+<section id="type-i-and-type-ii-errors." class="level2">
+<h2 class="anchored" data-anchor-id="type-i-and-type-ii-errors.">Type I and Type II errors.</h2>
 
 
 </section>
