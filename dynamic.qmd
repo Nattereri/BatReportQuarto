@@ -7,6 +7,8 @@ format:
 number-sections: true
 ---
 
+Interactive charts and tables offer many advantages over static representations of data.  Interactive charts and tables enable exploration of data in a more engaging way, charts can be zoomed (in and out), tables filtered and data points compared. This makes it easier to find patterns and trends, and to identify outliers. There use should lead to more accurate conclusions and insights.
+
 ## Maps
 
 ### Lydford School Transect
