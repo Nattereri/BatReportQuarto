@@ -27,7 +27,7 @@ There are many reference books for ecologists on statistics such as the gentle i
 
 ## Summary Statistics
 
-The Common Pipistrelle passes have been aggregated for every 30 minutes; @tbl-sum30 shows summary statistics for these bat passes during September and October. The statistics for September and October look similar and this is confirmed by the density plot shown in @fig-density.
+The Common Pipistrelle passes have been aggregated for every 30 minutes; @tbl-sum30 shows summary statistics for these bat passes during September and October. The statistics for September and October look similar and this is confirmed by the [kernel density](https://bat-survey-reporting.netlify.app/glossary#sec-kernel) plot shown in @fig-density.
 
 
 ```{r}
@@ -99,10 +99,10 @@ flextable() %>%
 Where:  
 
 * __Min__:- Minimum value.  
-* __Q1__:-  Lower quartile, or first quartile (Q1), the value under which 25% of data points are found when they are arranged in increasing order.  
+* __Q1__:-  Lower quartile, or first [quartile (Q1)](https://bat-survey-reporting.netlify.app/glossary#sec-quartiles), the value under which 25% of data points are found when they are arranged in increasing order.  
 * __Mean__:- Arithmetic mean of a dataset is the sum of all values divided by the total number of values.   
 * __Median__:- The middle number; found by ordering all data points and picking out the one in the middle (or if there are two middle numbers, taking the mean of those two numbers).    
-* __Q3__:- Upper quartile, or third quartile (Q3), is the value under which 75% of data points are found when arranged in increasing order. 
+* __Q3__:- Upper quartile, or third [quartile (Q3)](https://bat-survey-reporting.netlify.app/glossary#sec-quartiles), is the value under which 75% of data points are found when arranged in increasing order. 
 * __Max__:- Maximum value.  
 * __sd__:- Standard deviation, a summary measure of the differences of each observation from the mean.   
 * __Nr__:- Number of values.  
@@ -185,7 +185,7 @@ tidy(mw) %>%
 
 
 
-Results from the the `wilcox.test` are shown in @tbl-mw; as the p-value turns out to be `r wilcox.test(Passes ~ Month, data=Count30)$p.value`, and is not less than the .01 significance level[^1], we do not reject the null hypothesis. At .01 significance level (p < 0.01), we conclude that the common pipistrelle observation data for September and October are identical populations.
+Results from the the `wilcox.test` are shown in @tbl-mw; as the [p-value](https://bat-survey-reporting.netlify.app/glossary#sec-pvalue) turns out to be `r wilcox.test(Passes ~ Month, data=Count30)$p.value`, and is not less than the .01 significance level[^1], we do not reject the null hypothesis. At .01 significance level (p < 0.01), we conclude that the common pipistrelle observation data for September and October are identical populations.
 
 [^1]: A p-value is a measure of the probability that the observed results of a statistical test occurred by chance, given that the null hypothesis is true. In other words, a p-value helps you determine whether the results of your experiment are statistically significant. If the p-value is low (generally less than 0.05; here 0.01 is chosen), you can reject the null hypothesis and conclude that the observed differences between the groups you are studying are statistically significant.
 
@@ -195,7 +195,7 @@ Results from the the `wilcox.test` are shown in @tbl-mw; as the p-value turns ou
 
 The `statics` data in the `iBats` package has some interesting Barbastelle (_Barbastella barbastellus_) bat activity, it would be interesting and aid  our understanding if we compare the activity between static locations and see if they are significantly different. 
 
-Before undertaking any statistical test always visualise the data the statistical test is applied to. Barbastelle has been recorded at several locations see @fig-kwbarb.
+Before undertaking any statistical test always visualise the data the statistical test is applied to; here the [box plot](https://bat-survey-reporting.netlify.app/glossary#sec-boxplot) is used. @fig-kwbarb shows the Barbastelle recorded at several locations.
 
 The average bat pass rate per hour can been calculated for each night and each static location using the formula shown in @eq-aa: 
 
@@ -304,7 +304,7 @@ With reference to @fig-kwbarb there are several static locations where the activ
 
 The Kruskal-Wallis test  undertaken for the Barbastelle at the following static locations: `r knitr::combine_words(StaticsWithPlus5)` produced a P value (`r formatC(stat_pvalue, format = "e", digits = 2)`) less than the chosen threshold for statistical significance of 0.05; therefore the null hypothesis is rejected, activity between some static locations is likely to be different.   
 
-What the Kruskal-Wallis test does not indicate, is which static locations are different; to determine this we need to undertake _post hoc_ testing, this can be undertaken with the Dunn’s Test.  
+What the Kruskal-Wallis test does not indicate, is which static locations are different; to determine this we need to undertake _post hoc_ testing, this can be undertaken with the [Dunn’s Test](https://bat-survey-reporting.netlify.app/glossary#sec-kruskal).  
 
 ```{r}
 #| include: false
@@ -549,9 +549,7 @@ cond_stats %>%
 
 ```
 
-For Static 5 there is a mean of __`r  round(cond_stats$mean, digits = 2)`__ passes per night for the 23 nights the bat detector was deployed. It is valuable to know the confidence of this mean number of passes observed.  The population of passes, the number of Barbastelle's passes for every night in history, is not available; in practice there is only the sample of data and not the entire population. The bootstrap[^8] is a statistical method that allows us to approximate the sampling distribution (and therefore confidence intervals) even without access to the population.
-
-[^8]: Bootstrapping is any test or metric that uses _random sampling with replacement_; for further information see <https://en.wikipedia.org/wiki/Bootstrapping_(statistics)>. 
+For Static 5 there is a mean of __`r  round(cond_stats$mean, digits = 2)`__ passes per night for the 23 nights the bat detector was deployed. It is valuable to know the confidence of this mean number of passes observed.  The population of passes, the number of Barbastelle's passes for every night in history, is not available; in practice there is only the sample of data and not the entire population. The [bootstrap](https://bat-survey-reporting.netlify.app/glossary#sec-boot) is a statistical method that allows us to approximate the sampling distribution (and therefore confidence intervals) even without access to the population.
 
 In bootstrapping the sample itself becomes the _population_. Samples from the _population_ are drawn many times over and every time from all the _population_. This process is called re-sampling with replacement and creates a bootstrap distribution. The `infer` package has functions for re-sampling with replacement and estimating confidence limits. 
 
@@ -752,7 +750,7 @@ Tab_L_S %>%
 ```
 
 
-In multivariate analysis the pre-treament of data (sometimes in more than one way) is usually desirable. For assemblage data, _transformations_ will reduce the dominant contribution of abundant species (i.e. all those pips). Transformations include (None, Square root, Fourth root, Log(X+1), Presence/absence). @tbl-table05 shows @tbl-table04 transformed with the species $\sqrt[2]{count}$.
+In multivariate analysis the [pre-treament](https://bat-survey-reporting.netlify.app/glossary#sec-pretreatment) of data (sometimes in more than one way) is usually desirable. For assemblage data, _transformations_ will reduce the dominant contribution of abundant species (i.e. all those pips). Transformations include (None, Square root, Fourth root, Log(X+1), Presence/absence). @tbl-table05 shows @tbl-table04 transformed with the species $\sqrt[2]{count}$.
 
 ```{r}
 #| warning: false
@@ -812,9 +810,9 @@ To assess the differences of activity (in the bat assemblage) between locations 
 
 There are many _distance_ measurements to investigate species similarity/dissimilarity^[note it is the dissimilarity that is used, 1- similarity]:   
 
-* _Euclidean distance_ natural distance between two points  
-* _Manhattan distance_ walking around a New York block  
-* _Bray-Curtis_ a dissimilarity very useful for ecologists  
+* [Euclidean distance](https://bat-survey-reporting.netlify.app/glossary#sec-euclid) natural distance between two points  
+* [Manhattan distance](https://bat-survey-reporting.netlify.app/glossary#sec-manhattan) walking around a New York block  
+* [Bray-Curtis](https://bat-survey-reporting.netlify.app/glossary#sec-bray) a dissimilarity very useful for ecologists  
 
 For species similarities it may be worth considering the removal of the rarer species (_i.e. the less observed_) and repeating the analysis. 
 
@@ -865,7 +863,7 @@ ft %>%
 
 
 
-The Bray-Curtis dissimilarity matrix can be used in many multivariate methods; here the matix is used in _Hierarchical Clustering_. Hierarchical clustering is useful because it can create a tree-based representation of the observations called a dendrogram; that is easy to interpret visually.  The dendrogram from the Bray-Curtis dissimilarity matrix in @tbl-table06 is shown in @fig-graph21. 
+The Bray-Curtis dissimilarity matrix can be used in many multivariate methods; here the matix is used in [Hierarchical Clustering](https://bat-survey-reporting.netlify.app/glossary#sec-cluster). Hierarchical clustering is useful because it can create a tree-based representation of the observations called a dendrogram; that is easy to interpret visually.  The [dendrogram](https://bat-survey-reporting.netlify.app/glossary#sec-dendrogram) from the Bray-Curtis dissimilarity matrix in @tbl-table06 is shown in @fig-graph21. 
 
 ```{r}
 #| label: fig-graph21
@@ -905,7 +903,7 @@ This is just an introduction to _Hierarchical Clustering_, there are many variat
 
 ### K-Means Clustering
 
-K-means clustering is a simple approach for partitioning a data set into **_K_** distinct non-overlapping clusters. To perform **_K_** means clustering we must specify the desired number of clusters first.  The code below applies k-means clustering to the Bray-Curtis dissimilarity matrix in @tbl-table06 with **_K=2_**.
+[K-means clustering](https://bat-survey-reporting.netlify.app/glossary#sec-kmeans) is a simple approach for partitioning a data set into **_K_** distinct non-overlapping clusters. To perform **_K_** means clustering we must specify the desired number of clusters first.  The code below applies k-means clustering to the Bray-Curtis dissimilarity matrix in @tbl-table06 with **_K=2_**.
 
 ```{r}
 #| code-fold: show
@@ -995,10 +993,7 @@ The output of `kmeans` is a list of information; the most important:
 ### Non-metric Multidimensional Scaling (NMDS)
 
 
-
-
-
-Non-metric Multidimensional Scaling is an ordination technique that reduces dimensionality in multivariate data sets such as the count of bats in @tbl-NMDScount.  Dimensionality reduction simply refers to the process of reducing the number of attributes in a dataset while keeping as much of the variation in the original dataset as possible. The goal of NMDS is to collapse information from multiple dimensions (e.g, from multiple communities, sites, etc.) into just a few, so that they can be visualized, (e.g. as a 2D or 3D plot), and interpreted.
+[Non-metric Multidimensional Scaling](https://bat-survey-reporting.netlify.app/glossary#sec-NMDS) is an ordination technique that reduces dimensionality in multivariate data sets such as the count of bats in @tbl-NMDScount.  Dimensionality reduction simply refers to the process of reducing the number of attributes in a dataset while keeping as much of the variation in the original dataset as possible. The goal of NMDS is to collapse information from multiple dimensions (e.g, from multiple communities, sites, etc.) into just a few, so that they can be visualized, (e.g. as a 2D or 3D plot), and interpreted.
 
 Unlike other ordination techniques that rely on (primarily Euclidean) distances, such as Principal Component Analysis (PCA), NMDS uses rank orders, and thus is an extremely flexible technique that can accommodate a variety of different kinds of data [@clarke_non-parametric_1993], [@Krobertclarke1999Nonmetric:7dd2]; NMDS does require at least one observation per factor (e.g. site or month). In R, the `metaMDS()` function of the `vegan` package can execute a NMDS. As input, it expects a community matrix with the factors as rows and the species as columns; @tbl-NMDScount has two factors, static location and month, that are treated separately. 
 
@@ -1015,7 +1010,7 @@ A measure of how successful the NMDS reduction is stress[^6]. The lower the stre
 
 [^6]: NMDS reduces the rank-based differences between the distances between objects in the original matrix and distances between the ordinated objects. The difference is expressed as stress. 
 
-@fig-NMDSplots-1 shows the two dimensional plot after the NMDS is applied through `metaMDS()` function to the transformed data shown in @tbl-NMDS4throot; the NMDS produced a _good_ stress of 0.14. @fig-NMDSplots-2 is the Shepard plot  showing the scatter around the regression between the interpoint distances in the final configuration (i.e., the distances between each pair of communities) against their original dissimilarities; the desirable outcome from the Shepard plot is a diagonal line with limited scatter in this respect @fig-NMDSplots-2 looks reasonable.
+@fig-NMDSplots-1 shows the two dimensional plot after the NMDS is applied through `metaMDS()` function to the transformed data shown in @tbl-NMDS4throot; the NMDS produced a _good_ stress of 0.14. @fig-NMDSplots-2 is the [Shepard plot](https://bat-survey-reporting.netlify.app/glossary#sec-Shepard) showing the scatter around the regression between the interpoint distances in the final configuration (i.e., the distances between each pair of communities) against their original dissimilarities; the desirable outcome from the Shepard plot is a diagonal line with limited scatter in this respect @fig-NMDSplots-2 looks reasonable.
 
 @fig-NMDSlabelplots shows the 2D @fig-NMDSplots-1: with @fig-NMDSlabelplots-1 labelled for static location and @fig-NMDSlabelplots-2 labelled for month (@fig-NMDSlabelplots-2).
 
@@ -1202,7 +1197,7 @@ p2
 
 #### ANOSIM
 
-The ANOSIM test is similar to an ANOVA hypothesis test; it uses a dissimilarity matrix as input instead of raw data. It is also non-parametric, meaning it doesn’t assume much about the data, a useful attribute for the often-skewed ecological data. As a non-parametric test, ANOSIM uses ranked dissimilarities instead of actual distances, and for this reason complements an NMDS plot. The main point of the ANOSIM test is to determine if the differences between two or more groups are significant. 
+The [ANOSIM test](https://bat-survey-reporting.netlify.app/glossary#sec-ANOSIM) is similar to an ANOVA hypothesis test; it uses a dissimilarity matrix as input instead of raw data. It is also non-parametric, meaning it doesn’t assume much about the data, a useful attribute for the often-skewed ecological data. As a non-parametric test, ANOSIM uses ranked dissimilarities instead of actual distances, and for this reason complements an NMDS plot. The main point of the ANOSIM test is to determine if the differences between two or more groups are significant. 
 
 The function `anosim` from the package `vegan` can test whether there is a statistical difference between groups (e.g. static locations or months)
 
