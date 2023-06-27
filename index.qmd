@@ -1,11 +1,16 @@
 ---
-title: "Getting Started"
 format: 
   html:
      code-fold: true
      code-summary: "Show the code"
-number-sections: true
 ---
+
+![© Steve Markham ](Images/P1000645.jpg){fig-align="left" width="500"}
+
+_Web site last updated `r format(Sys.time(), '%d %B, %Y')`_ 
+
+# Getting Started {.unnumbered}
+
 
 These web pages complement the *data science* chapters of the forthcoming 4^th^ Edition of BCT's Bat Survey Guidelines, and hopefully encourage ecologists to make the most of their bat survey data. They also demonstrate literate programming with Quarto®[^1] and R Markdown[^13] which can vastly improve workflow[^23] (*welcome to the world beyond Excel*).
 
@@ -19,7 +24,7 @@ Much is said about the digital skills gap [^20]; in a small way, these data scie
 
 You may ask what's wrong with the spreadsheet for data science? On a practical level spreadsheets are hard to maintain, find errors in or see there was an error in the first place, they are poor at handling dates[^22] and difficult to share with others.  For spreadsheet blunders listen to Tim Harford's [More or less](https://www.bbc.co.uk/sounds/play/w3ct3k5z) on BBC sounds[^24]; for a litany of mathematical mistakes, many involving spreadsheets, see Matt Parker's book _Humble Pi A comedy of Maths Errors_ [@Mattparker2019Humble:61dc]. On a positive note spreadsheets are handy and easy to use for a few lines of data.
 
-To help ecologists on their data science journey, all the code making the graphs and analysis in these web pages is free to copy and use;  just click on  _Show the code_, copy to the clipboard [^2], paste into the R environment and run. If new to R and RStudio see @sec-installr. 
+To help ecologists on their data science journey, all the code making the graphs and analysis in these web pages is free to copy and use;  just click on  _Show the code_, copy to the clipboard [^2], paste into the R environment and run. If new to R and RStudio see [Section](https://bat-survey-reporting.netlify.app/#sec-installr). 
 
 A _Show the code_ is given below, the code produces @fig-example.  The code copied to the clipboard is designed to run as a standalone _chunk_ (or _R script_)[^11]; the code loads the required R libraries and data.
 
