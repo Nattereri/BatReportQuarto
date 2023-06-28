@@ -5,11 +5,11 @@ format:
      code-summary: "Show the code"
 ---
 
-![© Steve Markham ](Images/P1000645.jpg){fig-align="left" width="500"}
+![Bats face many challenges, making the most of data helps. © Steve Markham ](Images/P1000645.jpg){fig-align="left" width="750"}
 
 _Web site last updated `r format(Sys.time(), '%d %B, %Y')`_ 
 
-# Getting Started {.unnumbered}
+# Introduction {.unnumbered}
 
 
 These web pages complement the *data science* chapters of the forthcoming 4^th^ Edition of BCT's Bat Survey Guidelines, and hopefully encourage ecologists to make the most of their bat survey data. They also demonstrate literate programming with Quarto®[^1] and R Markdown[^13] which can vastly improve workflow[^23] (*welcome to the world beyond Excel*).
@@ -23,6 +23,8 @@ The _data science_ is applied through literate programming outlined in @fig-work
 Much is said about the digital skills gap [^20]; in a small way, these data science pages aim to improve digital skills by demonstrating modern data science methods[^21]. For a balanced understanding of the link between digital skills and data science see the [Royal Statistical Society article](https://realworlddatascience.net/news-and-views/editors-blog/posts/2023/02/14/digital-skills.html)
 
 You may ask what's wrong with the spreadsheet for data science? On a practical level spreadsheets are hard to maintain, find errors in or see there was an error in the first place, they are poor at handling dates[^22] and difficult to share with others.  For spreadsheet blunders listen to Tim Harford's [More or less](https://www.bbc.co.uk/sounds/play/w3ct3k5z) on BBC sounds[^24]; for a litany of mathematical mistakes, many involving spreadsheets, see Matt Parker's book _Humble Pi A comedy of Maths Errors_ [@Mattparker2019Humble:61dc]. On a positive note spreadsheets are handy and easy to use for a few lines of data.
+
+## Getting Started
 
 To help ecologists on their data science journey, all the code making the graphs and analysis in these web pages is free to copy and use;  just click on  _Show the code_, copy to the clipboard [^2], paste into the R environment and run. If new to R and RStudio see [Section](https://bat-survey-reporting.netlify.app/#sec-installr). 
 

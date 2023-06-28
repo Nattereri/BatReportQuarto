@@ -197,8 +197,9 @@ div.csl-indent {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting Started</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
   <ul class="collapse">
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
   <li><a href="#evidence-led-reporting" id="toc-evidence-led-reporting" class="nav-link" data-scroll-target="#evidence-led-reporting">Evidence Led Reporting</a></li>
   <li><a href="#sec-installr" id="toc-sec-installr" class="nav-link" data-scroll-target="#sec-installr">Install R, RStudio and Packages</a>
   <ul class="collapse">
@@ -216,13 +217,13 @@ div.csl-indent {
 
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><img src="Images/P1000645.jpg" class="img-fluid figure-img" width="500"></p>
-<figcaption class="figure-caption">© Steve Markham</figcaption>
+<p><img src="Images/P1000645.jpg" class="img-fluid figure-img" width="750"></p>
+<figcaption class="figure-caption">Bats face many challenges, making the most of data helps. © Steve Markham</figcaption>
 </figure>
 </div>
-<p><em>Web site last updated 27 June, 2023</em></p>
-<section id="getting-started" class="level1 unnumbered">
-<h1 class="unnumbered">Getting Started</h1>
+<p><em>Web site last updated 28 June, 2023</em></p>
+<section id="introduction" class="level1 unnumbered">
+<h1 class="unnumbered">Introduction</h1>
 <p>These web pages complement the <em>data science</em> chapters of the forthcoming 4<sup>th</sup> Edition of BCT’s Bat Survey Guidelines, and hopefully encourage ecologists to make the most of their bat survey data. They also demonstrate literate programming with Quarto®<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and R Markdown<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> which can vastly improve workflow<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> (<em>welcome to the world beyond Excel</em>).</p>
 <p>The term <em>data science</em> is used, as this covers data collection, management, processing, analysis, visualisation, interpretation, reporting and reproducibility. Statisticians would state this is what they have always done in statistics! There is no doubt the phenomenon of <em>data science</em> is growing, most major universities now offer a degree course in the subject and together with the increasing power of computer algorithms; <em>data science</em> is more than just a rebranding of statistics <span class="citation" data-cites="Daviddonoho201750:9bd5">(<a href="#ref-Daviddonoho201750:9bd5" role="doc-biblioref">Donoho 2017</a>)</span>.</p>
 <p>The <em>data science</em> is applied through literate programming outlined in <a href="#fig-workflowred">Figure&nbsp;1</a>. This enables efficient reporting of bat data<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> from a simple table, such as a count of bats, to the output and interpretation of machine learning in a fully formatted report; plus everything in-between, all accomplished through open source R<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref">R Core Team 2023</a>)</span> and RStudio <span class="citation" data-cites="RStudio22">(<a href="#ref-RStudio22" role="doc-biblioref">Posit team 2022</a>)</span>. The beauty of literate programming is reproducibility; an essential tenet of all scientific study, in the commercial and legal world it makes for defensible reporting. The <a href="https://bat-survey-reporting.netlify.app/reporting.html">One Click Reporting</a> page has literate programming examples for a <a href="https://bat-survey-reporting.netlify.app/reporting.html#sec-wordrmd">Word</a> report and <a href="https://bat-survey-reporting.netlify.app/reporting.html#sec-powerpointrmd">PowerPoint</a> presentation.</p>
@@ -234,6 +235,8 @@ div.csl-indent {
 </div>
 <p>Much is said about the digital skills gap <a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>; in a small way, these data science pages aim to improve digital skills by demonstrating modern data science methods<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>. For a balanced understanding of the link between digital skills and data science see the <a href="https://realworlddatascience.net/news-and-views/editors-blog/posts/2023/02/14/digital-skills.html">Royal Statistical Society article</a></p>
 <p>You may ask what’s wrong with the spreadsheet for data science? On a practical level spreadsheets are hard to maintain, find errors in or see there was an error in the first place, they are poor at handling dates<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a> and difficult to share with others. For spreadsheet blunders listen to Tim Harford’s <a href="https://www.bbc.co.uk/sounds/play/w3ct3k5z">More or less</a> on BBC sounds<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>; for a litany of mathematical mistakes, many involving spreadsheets, see Matt Parker’s book <em>Humble Pi A comedy of Maths Errors</em> <span class="citation" data-cites="Mattparker2019Humble:61dc">(<a href="#ref-Mattparker2019Humble:61dc" role="doc-biblioref">Parker 2019</a>)</span>. On a positive note spreadsheets are handy and easy to use for a few lines of data.</p>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
 <p>To help ecologists on their data science journey, all the code making the graphs and analysis in these web pages is free to copy and use; just click on <em>Show the code</em>, copy to the clipboard <a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>, paste into the R environment and run. If new to R and RStudio see <a href="https://bat-survey-reporting.netlify.app/#sec-installr">Section</a>.</p>
 <p>A <em>Show the code</em> is given below, the code produces <a href="#fig-example">Figure&nbsp;2</a>. The code copied to the clipboard is designed to run as a standalone <em>chunk</em> (or <em>R script</em>)<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>; the code loads the required R libraries and data.</p>
 <div class="cell">
@@ -297,6 +300,7 @@ Coding Tip
 </div>
 </div>
 <p>Literate programming facilitates the use of coding languages other than R such as Python<a href="#fn12" class="footnote-ref" id="fnref12" role="doc-noteref"><sup>12</sup></a>, and Julia<a href="#fn13" class="footnote-ref" id="fnref13" role="doc-noteref"><sup>13</sup></a>. Computer languages can be mixed in the same literate programming document; for example with a chuck of R code doing the data manipulation and another chunk of Python code performing the machine learning. Coding languages applied to data science are developing rapidly in terms of their ability, speed of execution, and user friendliness<a href="#fn14" class="footnote-ref" id="fnref14" role="doc-noteref"><sup>14</sup></a>; literate programming provides the framework for ecologists to keep their data science skills moving forward.</p>
+</section>
 <section id="evidence-led-reporting" class="level2">
 <h2 class="anchored" data-anchor-id="evidence-led-reporting">Evidence Led Reporting</h2>
 <p>Literate programming assists data science and reproducibility, promoting evidence led reporting and decision making. Reports are often produced for regulatory bodies, central government or local authorities, these organisations have mandatory strategies for the use of science, evidence and evaluation in there advice and actions, and the legality of their decisions<span class="citation" data-cites="AUTOKEY">(<a href="#ref-AUTOKEY" role="doc-biblioref">England 2020</a>)</span>.</p>
