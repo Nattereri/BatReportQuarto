@@ -1,5 +1,5 @@
 ---
-title: "One Click Reporting"
+title: "Reporting"
 format: 
   html:
      code-fold: true

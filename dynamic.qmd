@@ -1,5 +1,5 @@
 ---
-title: "Interactive Reports"
+title: "Interactive"
 format: 
   html:
      code-fold: true

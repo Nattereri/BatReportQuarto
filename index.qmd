@@ -5,7 +5,7 @@ format:
      code-summary: "Show the code"
 ---
 
-![Bats face many challenges, making the most of data helps. © Steve Markham ](Images/P1000645.jpg){fig-align="left" width="750"}
+![Bats face many challenges, making the most of data helps. © Steve Markham ](Images/P1000645.jpg){fig-align="center" width="750"}
 
 _Web site last updated `r format(Sys.time(), '%d %B, %Y')`_ 
 

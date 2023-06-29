@@ -7,6 +7,9 @@ format:
 number-sections: true
 ---
 
+![Statistics feels like a solitary pursuit, hopefully this page helps ecologists share and learn data science skills. © Steve Markham ](Images/P1000112.jpg){fig-align="center" width="750"}
+
+
 ```{r}
 #| include=FALSE
 
