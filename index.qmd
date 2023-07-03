@@ -7,7 +7,7 @@ format:
 
 ![Bats face many challenges, making the most of data helps. © Steve Markham ](Images/P1000645.jpg){fig-align="center" width="750"}
 
-_Web site last updated `r format(Sys.time(), '%d %B, %Y')`_ 
+_Web site last updated `r format(Sys.time(), '%d %B %Y')`_ 
 
 # Introduction {.unnumbered}
 
@@ -16,7 +16,7 @@ These web pages complement the *data science* chapters of the forthcoming 4^th^ 
 
 The term _data science_ is used, as this covers data collection, management, processing, analysis, visualisation, interpretation, reporting and reproducibility. Statisticians would state this is what they have always done in statistics! There is no doubt the phenomenon of _data science_ is growing, most major universities now offer a degree course in the subject and together with the increasing power of computer algorithms; _data science_ is more than just a rebranding of statistics [@Daviddonoho201750:9bd5].
 
-The _data science_ is applied through literate programming outlined in @fig-workflowred [@knuth_literate_1984]. This enables efficient reporting of bat data[^8] from a simple table, such as a count of bats, to the output and interpretation of machine learning in a fully formatted report; plus everything in-between, all accomplished through open source R[^9] [@R-base] and RStudio [@RStudio22]. The beauty of literate programming is reproducibility; an essential tenet of all scientific study, in the commercial and legal world it makes for defensible reporting. The [One Click Reporting](https://bat-survey-reporting.netlify.app/reporting.html) page has literate programming examples for a [Word](https://bat-survey-reporting.netlify.app/reporting.html#sec-wordrmd) report and [PowerPoint](https://bat-survey-reporting.netlify.app/reporting.html#sec-powerpointrmd) presentation. 
+The _data science_ is applied through literate programming outlined in @fig-workflowred [@knuth_literate_1984]. This enables efficient reporting of bat data[^8] from a simple table, such as a count of bats, to the output and interpretation of machine learning in a fully formatted report; plus everything in-between, all accomplished through open source R[^9] [@R-base] and RStudio [@RStudio22]. The beauty of literate programming is reproducibility; an essential tenet of all scientific study, in the commercial and legal world it makes for defensible reporting. The [Reporting](https://bat-survey-reporting.netlify.app/reporting.html) page has literate programming examples for a [Word](https://bat-survey-reporting.netlify.app/reporting.html#sec-wordrmd) report and [PowerPoint](https://bat-survey-reporting.netlify.app/reporting.html#sec-powerpointrmd) presentation. 
 
 ![Literate Programming](Images/workflowRed.png){#fig-workflowred}
 
@@ -129,7 +129,7 @@ devtools::install_github("Nattereri/iBats")
 
 ```
 
-## Acknowledgement {.unnumbered}
+## Acknowledgements {.unnumbered}
 
 
 Free and Open Source Software (FOSS) constitutes 70-90% of any modern software solution[^31]. R and RStudio are 
