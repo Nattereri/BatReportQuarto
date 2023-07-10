@@ -81,7 +81,7 @@ statics_with_night %>%
 
 ### Other Date and Time Information
 
-The function `iBats::date_time_info()` adds other date and time information: month, year and time see @tbl-other (note: not all columns are shown). @tbl-other shows a random selection of 5 rows from the `statics` set.
+The function `iBats::date_time_info()` adds the date and time information: month, year and time see @tbl-other. (Note: the JustTime column is plus 12 hours this aids plotting continuously on one axis as shown in this [graph](https://bat-survey-reporting.netlify.app/visualisation.html#fig-timebat)).  Only a random selection of 5 rows from the `statics` set is shown in @tbl-other.
 
 ```{r}
 #| label: tbl-other
