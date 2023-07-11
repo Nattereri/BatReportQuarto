@@ -211,8 +211,8 @@ By convention scientific names are written as _italic_; to highlight the common 
 
 library(iBats)
 
-# List of bat common names and the scientific names
-BatCommon <- c(
+# Look up list of Uk bat common names and the scientific names
+BatCommonUK <- c(
   "Barbastella barbastellus" = "Barbastelle",
   "Myotis alcathoe" = "Alcathoe",
   "Myotis bechsteinii" = "Bechstein's",
@@ -236,7 +236,7 @@ BatCommon <- c(
   "Plecotus spp." = "Long-eared")
 
 # From Scientific name create a Common Name Vector 
-statics$Common <-  unname(BatCommon[statics$Species])
+statics$Common <-  unname(BatCommonUK[statics$Species])
 
 ```
 
@@ -286,6 +286,10 @@ statics %>%
   
 
 ```
+
+
+
+{{< include ../Common/bats/batlookuplist.qmd >}}
 
 
 ## National Grid Coordinates 
