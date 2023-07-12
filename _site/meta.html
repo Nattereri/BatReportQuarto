@@ -207,9 +207,12 @@ div.csl-indent {
   <li><a href="#sun-times" id="toc-sun-times" class="nav-link" data-scroll-target="#sun-times"><span class="header-section-number">2</span> Sun Times</a></li>
   <li><a href="#common-bat-names" id="toc-common-bat-names" class="nav-link" data-scroll-target="#common-bat-names"><span class="header-section-number">3</span> Common Bat Names</a>
   <ul class="collapse">
-  <li><a href="#extending-the-common-name-look-up-list" id="toc-extending-the-common-name-look-up-list" class="nav-link" data-scroll-target="#extending-the-common-name-look-up-list"><span class="header-section-number">3.1</span> Extending the Common Name Look up List</a></li>
+  <li><a href="#bat-name-lookup-list-for-other-regions" id="toc-bat-name-lookup-list-for-other-regions" class="nav-link" data-scroll-target="#bat-name-lookup-list-for-other-regions"><span class="header-section-number">3.1</span> Bat Name Lookup List for other Regions</a></li>
   </ul></li>
-  <li><a href="#national-grid-coordinates" id="toc-national-grid-coordinates" class="nav-link" data-scroll-target="#national-grid-coordinates"><span class="header-section-number">4</span> National Grid Coordinates</a></li>
+  <li><a href="#national-grid-coordinates" id="toc-national-grid-coordinates" class="nav-link" data-scroll-target="#national-grid-coordinates"><span class="header-section-number">4</span> National Grid Coordinates</a>
+  <ul class="collapse">
+  <li><a href="#espg-codes" id="toc-espg-codes" class="nav-link" data-scroll-target="#espg-codes"><span class="header-section-number">4.1</span> ESPG codes</a></li>
+  </ul></li>
   <li><a href="#bat-activity-time" id="toc-bat-activity-time" class="nav-link" data-scroll-target="#bat-activity-time"><span class="header-section-number">5</span> Bat Activity Time</a></li>
   </ul>
 </nav>
@@ -2387,9 +2390,9 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<section id="extending-the-common-name-look-up-list" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="extending-the-common-name-look-up-list"><span class="header-section-number">3.1</span> Extending the Common Name Look up List</h3>
-<p>The look up list of bat common names is easily extended to other regions; rather than write the list yourself ask a Large Language Model (LLM) to do this for you (e.g.&nbsp;Bard<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> or ChatGPT<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>)</p>
+<section id="bat-name-lookup-list-for-other-regions" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="bat-name-lookup-list-for-other-regions"><span class="header-section-number">3.1</span> Bat Name Lookup List for other Regions</h3>
+<p>A look up list of bat common names is easily created for other regions; rather than write the list yourself ask a Large Language Model (LLM) to do this for you (e.g.&nbsp;Bard<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> or ChatGPT<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>)</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -3078,6 +3081,25 @@ Tip
 </div>
 </div>
 </div>
+<section id="espg-codes" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="espg-codes"><span class="header-section-number">4.1</span> ESPG codes</h3>
+<p>EPSG stands for European Petroleum Survey Group, the organization that originally developed a standardized set of codes for referencing spatial data in cartography. The EPSG codes, also known as EPSG numbers or EPSG identifiers, are widely used in mapping and Geographic Information Systems (GIS).</p>
+<p>The EPSG code is a numerical identifier that represents a specific coordinate system or datum used for spatial reference. the EPSG code 4326 corresponds to the WGS84 coordinate system, which is a widely used datum for representing latitude and longitude coordinates on the Earth’s surface. EPSG codes identify coordinate reference systems (CRSs) used by many different software applications, including R packages, mapping software, and web mapping applications.</p>
+<p>The EPSG codes are maintained and published by the <a href="https://epsg.org/home.html">International Association of Oil and Gas Producers</a> (IOGP). A comprehensive list of EPSG codes, along with their definitions and descriptions can be found <a href="https://spatialreference.org/ref/epsg/">here</a>.</p>
+<p>Some convenient EPSG codes are:</p>
+<ul>
+<li>British National Grid / OSGB36: EPSG:27700</li>
+<li>Great Britain: EPSG:4326</li>
+<li>Jersey: EPSG:27700</li>
+<li>Guernsey: EPSG:27701</li>
+<li>Isle of Man: EPSG:27702</li>
+<li>Ireland: EPSG:29901</li>
+<li>France: EPSG:2154</li>
+<li>Spain: EPSG:3857</li>
+<li>Australia: EPSG:4283</li>
+<li>New Zealand: EPSG:2169</li>
+</ul>
+</section>
 </section>
 <section id="bat-activity-time" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="bat-activity-time"><span class="header-section-number">5</span> Bat Activity Time</h2>

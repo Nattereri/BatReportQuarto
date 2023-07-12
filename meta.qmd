@@ -411,6 +411,8 @@ statics_plus %>%
 
 ```
 
+{{< include ../Common/bats/EPSG.qmd >}}
+
 
 ## Bat Activity Time  
 
