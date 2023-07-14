@@ -111,6 +111,14 @@ statics %>% # statics is a tidy data set from the iBats package
 
 ```
 
+:::{.callout-tip}
+# Tip Always Use Description
+
+Although a description column is not absolutely necessary for a minimal data set. Description column(s) portraying the _location, survey number or surveyor_ gives both the data and the analysis context.
+
+:::
+
+
 ### Too Many Species in a Cell
 
 ```{r}
