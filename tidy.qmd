@@ -26,7 +26,7 @@ There are three interrelated rules which make a data set tidy see @fig-threerule
 
 ## Minimal Data Requirement
 
-To undertake meaningful data analysis, it is recommended that data collected from bat activity surveys is wrangled into *tidy data* that has the following five variables (columns) as a minimum:
+To undertake meaningful data analysis, it is recommended that data collected from bat activity surveys is wrangled into *tidy data* that has the following five variables (columns) as a minimum (as shown in @tbl-tidy):
 
 -   Description
 -   DateTime
@@ -37,6 +37,13 @@ To undertake meaningful data analysis, it is recommended that data collected fro
 The rationale for these variables is as follows:
 
 `Description` a column to help identify the observation for example a location, surveyor or survey number.
+
+:::{.callout-tip}
+# Always Use a Description
+
+Although a description column is not absolutely necessary for a minimal data set. Description column(s) portraying the _location, survey number or surveyor_ gives both the data and the analysis context.
+
+:::
 
 `DateTime`: the date and time of the bat observation to BS ISO 8601:2004 i.e. `yyyymmdd hh:mm:ss`. The use of BS ISO 8601:2004 prevents confusion over the date format [^1] . Reference bat activity to the local time and specifying an *iana*[^2] time zone allows for daylight saving times to considered; the *iana* code for the UK is `Europe/London`.
 
@@ -54,19 +61,6 @@ The rationale for these variables is as follows:
 
 [^5]: <https://en.wikipedia.org/wiki/World_Geodetic_System>
 
-## Making Bat Data *Tidy*
-
-Results of bat sound analysis can be untidy:
-
--   two or more species in one cell (see @tbl-untidy1);
--   count of bats (@tbl-untidy2); 
--   two of more columns with species of same date and time (@tbl-untidy3);
--   code names for species rather than the binomial nomenclature (@tbl-tidied1); and,
--   Longitude and Latitude columns with missing values (@tbl-missinglonlat)
-
-While the bat survey results shown in @tbl-tidy is an example of a *tidy* data set; the data shown in @tbl-untidy1, @tbl-untidy2, @tbl-untidy3, @tbl-tidied1 and, @tbl-missinglonlat are *untidy* and would need to be made tidy to undertake analysis.
-
-Data preparation is not just a first step but must be repeated many times over during analysis; as new problems come to light, or new data is collected. Making bat data into a *tidy format*, involves cleaning data: parsing dates and numbers, identifying missing values, correcting character encoding, matching similar but not identical values (such as those created by typos); it is an essential step, takes time to do and makes subsequent steps in the analysis much easier.
 
 ```{r}
 #| warning: false
@@ -111,13 +105,20 @@ statics %>% # statics is a tidy data set from the iBats package
 
 ```
 
-:::{.callout-tip}
-# Tip Always Use Description
 
-Although a description column is not absolutely necessary for a minimal data set. Description column(s) portraying the _location, survey number or surveyor_ gives both the data and the analysis context.
+## Making Bat Data *Tidy*
 
-:::
+Results of bat sound analysis can be untidy:
 
+-   two or more species in one cell (see @tbl-untidy1);
+-   count of bats (@tbl-untidy2); 
+-   two of more columns with species of same date and time (@tbl-untidy3);
+-   code names for species rather than the binomial nomenclature (@tbl-tidied1); and,
+-   Longitude and Latitude columns with missing values (@tbl-missinglonlat)
+
+While the bat survey results shown in @tbl-tidy is an example of a *tidy* data set; the data shown in @tbl-untidy1, @tbl-untidy2, @tbl-untidy3, @tbl-tidied1 and, @tbl-missinglonlat are *untidy* and would need to be made tidy to undertake analysis.
+
+Data preparation is not just a first step but must be repeated many times over during analysis; as new problems come to light, or new data is collected. Making bat data into a *tidy format*, involves cleaning data: parsing dates and numbers, identifying missing values, correcting character encoding, matching similar but not identical values (such as those created by typos); it is an essential step, takes time to do and makes subsequent steps in the analysis much easier.
 
 ### Too Many Species in a Cell
 
@@ -594,6 +595,8 @@ BatExplorer %>%
 
 ```
 
+
+{{< include ../Common/bats/soundanalysisoutput.qmd >}}
 
 ## Sound Analysis and Naming Bats
 
