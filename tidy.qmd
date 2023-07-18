@@ -10,6 +10,11 @@ number-sections: true
 ```{r}
 #| include: false
 
+library(tidyverse)
+library(iBats)
+library(gt)
+library(glue)
+
 set.seed(214)
 
 ```
