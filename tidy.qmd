@@ -26,7 +26,7 @@ There are three interrelated rules which make a data set tidy see @fig-threerule
 
 ## Minimal Data Requirement
 
-To undertake meaningful data analysis, it is recommended that data collected from bat activity surveys is wrangled into *tidy data* that has the following five variables (columns) as a minimum (as shown in @tbl-tidy):
+To undertake meaningful data analysis, it is recommended that data collected from bat activity surveys is wrangled into *tidy data* that has the following five variables (columns) as a minimum and illustrated in @tbl-tidy:
 
 -   Description
 -   DateTime
