@@ -178,15 +178,18 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#unsupervised-learning" id="toc-unsupervised-learning" class="nav-link" data-scroll-target="#unsupervised-learning"><span class="header-section-number">6</span> Unsupervised Learning</a>
   <ul class="collapse">
   <li><a href="#sec-pretreatment" id="toc-sec-pretreatment" class="nav-link" data-scroll-target="#sec-pretreatment"><span class="header-section-number">6.1</span> Pretreament of Data</a></li>
-  <li><a href="#sec-bray" id="toc-sec-bray" class="nav-link" data-scroll-target="#sec-bray"><span class="header-section-number">6.2</span> Bray-Curtis distance measurement</a></li>
-  <li><a href="#sec-euclid" id="toc-sec-euclid" class="nav-link" data-scroll-target="#sec-euclid"><span class="header-section-number">6.3</span> Euclidean distance</a></li>
-  <li><a href="#sec-manhattan" id="toc-sec-manhattan" class="nav-link" data-scroll-target="#sec-manhattan"><span class="header-section-number">6.4</span> Manhattan distance</a></li>
-  <li><a href="#sec-cluster" id="toc-sec-cluster" class="nav-link" data-scroll-target="#sec-cluster"><span class="header-section-number">6.5</span> Cluster analysis</a></li>
-  <li><a href="#sec-dendrogram" id="toc-sec-dendrogram" class="nav-link" data-scroll-target="#sec-dendrogram"><span class="header-section-number">6.6</span> Dendrogram</a></li>
-  <li><a href="#sec-kmeans" id="toc-sec-kmeans" class="nav-link" data-scroll-target="#sec-kmeans"><span class="header-section-number">6.7</span> K-Means Clustering</a></li>
-  <li><a href="#sec-pca" id="toc-sec-pca" class="nav-link" data-scroll-target="#sec-pca"><span class="header-section-number">6.8</span> Principal component analysis</a></li>
-  <li><a href="#sec-NMDS" id="toc-sec-NMDS" class="nav-link" data-scroll-target="#sec-NMDS"><span class="header-section-number">6.9</span> Non-metric Multidimensional Scaling</a></li>
-  <li><a href="#sec-ANOSIM" id="toc-sec-ANOSIM" class="nav-link" data-scroll-target="#sec-ANOSIM"><span class="header-section-number">6.10</span> ANOSIM</a></li>
+  <li><a href="#sec-normalise" id="toc-sec-normalise" class="nav-link" data-scroll-target="#sec-normalise"><span class="header-section-number">6.2</span> Normalisation</a></li>
+  <li><a href="#sec-standardise" id="toc-sec-standardise" class="nav-link" data-scroll-target="#sec-standardise"><span class="header-section-number">6.3</span> Standardisation</a></li>
+  <li><a href="#sec-diffsn" id="toc-sec-diffsn" class="nav-link" data-scroll-target="#sec-diffsn"><span class="header-section-number">6.4</span> Difference between Standardisation and Normalisation</a></li>
+  <li><a href="#sec-bray" id="toc-sec-bray" class="nav-link" data-scroll-target="#sec-bray"><span class="header-section-number">6.5</span> Bray-Curtis distance measurement</a></li>
+  <li><a href="#sec-euclid" id="toc-sec-euclid" class="nav-link" data-scroll-target="#sec-euclid"><span class="header-section-number">6.6</span> Euclidean distance</a></li>
+  <li><a href="#sec-manhattan" id="toc-sec-manhattan" class="nav-link" data-scroll-target="#sec-manhattan"><span class="header-section-number">6.7</span> Manhattan distance</a></li>
+  <li><a href="#sec-cluster" id="toc-sec-cluster" class="nav-link" data-scroll-target="#sec-cluster"><span class="header-section-number">6.8</span> Cluster analysis</a></li>
+  <li><a href="#sec-dendrogram" id="toc-sec-dendrogram" class="nav-link" data-scroll-target="#sec-dendrogram"><span class="header-section-number">6.9</span> Dendrogram</a></li>
+  <li><a href="#sec-kmeans" id="toc-sec-kmeans" class="nav-link" data-scroll-target="#sec-kmeans"><span class="header-section-number">6.10</span> K-Means Clustering</a></li>
+  <li><a href="#sec-pca" id="toc-sec-pca" class="nav-link" data-scroll-target="#sec-pca"><span class="header-section-number">6.11</span> Principal component analysis</a></li>
+  <li><a href="#sec-NMDS" id="toc-sec-NMDS" class="nav-link" data-scroll-target="#sec-NMDS"><span class="header-section-number">6.12</span> Non-metric Multidimensional Scaling</a></li>
+  <li><a href="#sec-ANOSIM" id="toc-sec-ANOSIM" class="nav-link" data-scroll-target="#sec-ANOSIM"><span class="header-section-number">6.13</span> ANOSIM</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -216,7 +219,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="sec-boxplot" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="sec-boxplot"><span class="header-section-number">1.1</span> Box Plot</h3>
 <p>A box plot is a standardized way of displaying the distribution of data based on a five-number summary. The five-number summary is the minimum, first quartile (Q1), median, third quartile (Q3), and maximum.</p>
-<p>For a description of the quartile see <a href="#sec-quartiles">Section&nbsp;2.1</a>.</p>
+<p>For a description of the quartile see <a href="#sec-quartiles">Glossary&nbsp;2.1</a>.</p>
 <p>A box plot is drawn as a rectangle with the minimum and maximum values at the ends, the first and third quartiles at the middle, and the median at the center. The interquartile range (IQR) is the distance between the first and third quartiles.</p>
 <p>Outliers are data points that fall outside the interquartile range. Outliers are usually represented by small circles or asterisks.</p>
 <p>Box plots can be used to compare the distributions of data from different groups. For example, you could use a box plot to compare the heights of men and women.</p>
@@ -362,11 +365,11 @@ ul.task-list li input[type="checkbox"] {
 <p>A p-value of less than 0.05 is generally considered to be statistically significant, meaning that there is less than a 5% chance that the observed correlation is due to chance. A p-value of greater than 0.05 is not statistically significant, meaning that the observed correlation could be due to chance.</p>
 <p>For example, there is a correlation between the height and weight of a group of people. You calculate the Spearman correlation coefficient and find that it is r = 0.7. The p-value for this correlation is 0.001. This means that there is less than a 1% chance that the observed correlation is due to chance. Therefore, you can conclude that there is a statistically significant correlation between height and weight in this group of people.</p>
 <p>It is important to note that a statistically significant correlation does not necessarily mean that there is a causal relationship between the two variables. For example, the correlation between height and weight could be due to the fact that both variables are influenced by genetics.</p>
-<p><a href="#sec-pvalue">Section&nbsp;4.4</a> describes the general use of the p-value in statistics.</p>
+<p><a href="#sec-pvalue">Glossary&nbsp;4.4</a> describes the general use of the p-value in statistics.</p>
 </section>
 <section id="sec-spearmanCI" class="level4" data-number="3.2.2">
 <h4 data-number="3.2.2" class="anchored" data-anchor-id="sec-spearmanCI"><span class="header-section-number">3.2.2</span> Spearman Correlation Confidence Limits</h4>
-<p>A confidence interval for Spearman correlation (<a href="#sec-spearmanCI">Section&nbsp;3.2.2</a>) is a range of values that is likely to contain the true correlation between two variables. The confidence interval is calculated based on the sample correlation coefficient, the sample size, and the level of confidence desired. For example, a 95% confidence interval means that there is a 95% chance that the true correlation lies within the interval.</p>
+<p>A confidence interval for Spearman correlation (<a href="#sec-spearmanCI">Glossary&nbsp;3.2.2</a>) is a range of values that is likely to contain the true correlation between two variables. The confidence interval is calculated based on the sample correlation coefficient, the sample size, and the level of confidence desired. For example, a 95% confidence interval means that there is a 95% chance that the true correlation lies within the interval.</p>
 <p>The confidence interval for Spearman correlation can be interpreted as follows:</p>
 <ul>
 <li>The lower limit of the confidence interval (<em>Lower CI</em>) is the lower bound of the range of values that is likely to contain the true correlation.<br>
@@ -425,7 +428,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="sec-pvalue" class="level3" data-number="4.4">
 <h3 data-number="4.4" class="anchored" data-anchor-id="sec-pvalue"><span class="header-section-number">4.4</span> p value</h3>
-<p>A p-value is a number between 0 and 1 that tells you the probability of getting the results you did, or results that are even more extreme, if the null hypothesis is true (<a href="#sec-hypothesis">Section&nbsp;4.3</a> explains hypothesis tests). The null hypothesis is the hypothesis that there is no difference between two groups or that there is no relationship between two variables. A p-value of 0.05 or less is generally considered statistically significant, which means that there is less than a 5% chance that the results could have occurred by chance.</p>
+<p>A p-value is a number between 0 and 1 that tells you the probability of getting the results you did, or results that are even more extreme, if the null hypothesis is true (<a href="#sec-hypothesis">Glossary&nbsp;4.3</a> explains hypothesis tests). The null hypothesis is the hypothesis that there is no difference between two groups or that there is no relationship between two variables. A p-value of 0.05 or less is generally considered statistically significant, which means that there is less than a 5% chance that the results could have occurred by chance.</p>
 <p>For example, it would be interesting to know whether there is a difference in the average height of men and women. You collect data on the heights of 100 men and 100 women and find that the average height of men is 6 feet tall and the average height of women is 5 feet 10 inches tall. The p-value for this test is 0.001, which is less than 0.05. This means that there is less than a 1% chance that the results could have occurred by chance. Therefore, you can conclude that there is a statistically significant difference in the average height of men and women.</p>
 <p>It is important to note that a p-value does not tell you the size of the difference between two groups or the strength of the relationship between two variables. A p-value can be small even if the difference between two groups is small or the relationship between two variables is weak. Therefore, it is important to consider the p-value in conjunction with other factors, such as the size of the difference or the strength of the relationship, when interpreting the results of a statistical test.</p>
 <p>Key points that help the interpretation of p-values:</p>
@@ -473,7 +476,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><strong>Missing value imputation:</strong> This involves filling in missing values in the data. There are many different imputation techniques, such as mean imputation, median imputation, and hot deck imputation.</li>
 <li><strong>Outlier detection and removal:</strong> This involves identifying and removing outliers from the data. Outliers are data points that are significantly different from the rest of the data. They can skew the results of multivariate analysis, so it is important to remove them.</li>
-<li><strong>Data normalization:</strong> This involves scaling the data so that all of the variables have a similar range of values. This can help to improve the performance of multivariate analysis algorithms.</li>
+<li><strong>Data Normalisation:</strong> This involves scaling the data so that all of the variables have a similar range of values. This can help to improve the performance of multivariate analysis algorithms.</li>
 <li><strong>Feature selection:</strong> This involves selecting a subset of the variables for analysis. This can be helpful if the data set is large or if there are a lot of correlated variables.</li>
 </ul>
 <p>The specific pre-treatment techniques that are used will depend on the specific data set and the type of multivariate analysis that is being performed. However, in general, pre-treatment is an important step in the multivariate analysis process. It can help to improve the quality of the data and make it more suitable for analysis.</p>
@@ -509,8 +512,114 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>It is important to note that there is no single “best” pre-treatment technique. The best technique to use will depend on the specific data set and the type of multivariate analysis that is being performed. However, the transformations described above are all good starting points.</p>
 </section>
-<section id="sec-bray" class="level3" data-number="6.2">
-<h3 data-number="6.2" class="anchored" data-anchor-id="sec-bray"><span class="header-section-number">6.2</span> Bray-Curtis distance measurement</h3>
+<section id="sec-normalise" class="level3" data-number="6.2">
+<h3 data-number="6.2" class="anchored" data-anchor-id="sec-normalise"><span class="header-section-number">6.2</span> Normalisation</h3>
+<p>Normalisation is the process of transforming data into a common scale or range, eliminating differences in units or distributions.</p>
+<p>There are two main types of normalisation:</p>
+<ul>
+<li><strong>Min-max normalisation:</strong> This is the most common type of normalisation. It involves transforming the data so that the values fall within a specific range, such as 0 to 1 or -1 to 1.</li>
+</ul>
+<p><span class="math display">\[\frac{x - min(x)}{max(x) - min(x)}\]</span></p>
+<ul>
+<li><strong>Z-score normalisation:</strong> This type of normalisation involves subtracting the mean from each value and then dividing by the standard deviation. This results in a distribution with a mean of 0 and a standard deviation of 1.</li>
+</ul>
+<p><span class="math display">\[z = \frac{x - \mu}{\sigma}\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(z\)</span> is the z-score</li>
+<li><span class="math inline">\(x\)</span> is the original value</li>
+<li><span class="math inline">\(\mu\)</span> is the mean of the distribution</li>
+<li><span class="math inline">\(\sigma\)</span> is the standard deviation of the distribution</li>
+</ul>
+<p>Normalisation can be a useful preprocessing step for data analysis. It can make it easier to compare different datasets. It can also help to identify outliers in the data and make the data more consistent and reliable</p>
+<p>See also <a href="#sec-diffsn">Glossary&nbsp;6.4</a> for the difference between Standardisation and Normalisation.</p>
+</section>
+<section id="sec-standardise" class="level3" data-number="6.3">
+<h3 data-number="6.3" class="anchored" data-anchor-id="sec-standardise"><span class="header-section-number">6.3</span> Standardisation</h3>
+<p>In statistics, standardisation is the process of transforming data so that it has a mean of 0 and a standard deviation of 1. This is done by subtracting the mean from each value and then dividing by the standard deviation.</p>
+<p>Standardisation is often used to compare different variables that have different scales.</p>
+<p>The formula for standardising data is:</p>
+<p><span class="math display">\[z = \frac{x - \mu}{\sigma}\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(z\)</span> is the z-score</li>
+<li><span class="math inline">\(x\)</span> is the original value</li>
+<li><span class="math inline">\(\mu\)</span> is the mean of the distribution</li>
+<li><span class="math inline">\(\sigma\)</span> is the standard deviation of the distribution</li>
+</ul>
+<p>See also <a href="#sec-diffsn">Glossary&nbsp;6.4</a> for the difference between Standardisation and Normalisation.</p>
+</section>
+<section id="sec-diffsn" class="level3" data-number="6.4">
+<h3 data-number="6.4" class="anchored" data-anchor-id="sec-diffsn"><span class="header-section-number">6.4</span> Difference between Standardisation and Normalisation</h3>
+<p>Standardisation and Normalisation are two data preprocessing techniques that are used to transform data so that it is easier to analyze. However, there are some key differences between the two techniques.</p>
+<p><strong>Standardisation</strong></p>
+<ul>
+<li>Standardisation transforms data so that it has a mean of 0 and a standard deviation of 1. This is done by subtracting the mean from each value and then dividing by the standard deviation.</li>
+<li>Standardisation is often used to compare different variables that have different scales. For example, you could standardize height and weight so that you could compare them directly.</li>
+<li>Standardisation can also be used to make data more normally distributed, which can make it easier to analyze.</li>
+</ul>
+<p><strong>Normalisation</strong></p>
+<ul>
+<li>Normalisation transforms data so that it falls within a specific range, such as [0, 1] or [-1, 1]. This is done by subtracting the minimum value from each value and then dividing by the difference between the maximum and minimum values.</li>
+<li>Normalisation is often used to make data more comparable across different datasets. For example, you could normalize images so that they all have the same dimensions.</li>
+<li>Normalisation can also be used to improve the performance of machine learning algorithms.</li>
+</ul>
+<p>The table below summarizes the key differences between Standardisation and Normalisation:</p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Standardisation</th>
+<th>Normalisation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mean</td>
+<td>0</td>
+<td>Varies</td>
+</tr>
+<tr class="even">
+<td>Standard deviation</td>
+<td>1</td>
+<td>Varies</td>
+</tr>
+<tr class="odd">
+<td>Range</td>
+<td>Varies</td>
+<td>Specific range</td>
+</tr>
+<tr class="even">
+<td>Purpose</td>
+<td>Compare different variables, make data more normally distributed</td>
+<td>Make data comparable, improve machine learning performance</td>
+</tr>
+</tbody>
+</table>
+<p>In general, Standardisation is a more powerful technique than Normalisation. However, Normalisation is often easier to implement and can be more effective in some cases.</p>
+<p>Examples of when to use Standardisation and Normalisation:</p>
+<ul>
+<li><strong>Standardisation:</strong>
+<ul>
+<li>When you need to compare different variables that have different scales.</li>
+<li>When you want to make data more normally distributed.</li>
+<li>When you are using a machine learning algorithm that is sensitive to the scale of the data.</li>
+</ul></li>
+<li><strong>Normalisation:</strong>
+<ul>
+<li>When you need to make data comparable across different datasets.</li>
+<li>When you are using a machine learning algorithm that is sensitive to the range of the data.</li>
+<li>When you want to improve the performance of a machine learning algorithm.</li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-bray" class="level3" data-number="6.5">
+<h3 data-number="6.5" class="anchored" data-anchor-id="sec-bray"><span class="header-section-number">6.5</span> Bray-Curtis distance measurement</h3>
 <p>Bray-Curtis distance measurement as used in multivariate analysis.</p>
 <p>Bray-Curtis distance is a metric used to measure the dissimilarity between two samples. It is based on the relative abundance of species in each sample. The Bray-Curtis distance is calculated as follows:</p>
 <p><span class="math display">\[\frac{\sum|A_i - B_i|}{\sum(A_i + B_i)}\]</span><br>
@@ -538,8 +647,8 @@ where:<br>
 </ul>
 <p>Overall, Bray-Curtis distance is a useful metric for measuring the dissimilarity between two samples. It is relatively easy to calculate and it is sensitive to changes in the relative abundance of species. However, it is important to be aware of its limitations before using it.</p>
 </section>
-<section id="sec-euclid" class="level3" data-number="6.3">
-<h3 data-number="6.3" class="anchored" data-anchor-id="sec-euclid"><span class="header-section-number">6.3</span> Euclidean distance</h3>
+<section id="sec-euclid" class="level3" data-number="6.6">
+<h3 data-number="6.6" class="anchored" data-anchor-id="sec-euclid"><span class="header-section-number">6.6</span> Euclidean distance</h3>
 <p>Euclidean distance is a measure of the distance between two points in a Euclidean space. In multivariate analysis, it is used to measure the distance between two data points, which are represented by vectors. The Euclidean distance between two data points is calculated as follows:</p>
 <p><span class="math display">\[d = \sqrt{\left( x_1 - x_2 \right)^2 + \left( y_1 - y_2 \right)^2}\]</span><br>
 where:</p>
@@ -555,7 +664,7 @@ where:</p>
 <p>However, the Euclidean distance can be sensitive to the scale of the variables. For example, a difference of 1 unit on a variable that is measured in centimeters is much less significant than a difference of 1 unit on a variable that is measured in meters. To address this issue, it is often helpful to standardize the variables before calculating the Euclidean distance.</p>
 <p>The Euclidean distance can be used in a variety of multivariate analysis techniques, including:</p>
 <ul>
-<li>Cluster analysis (<a href="#sec-cluster">Section&nbsp;6.5</a>).</li>
+<li>Cluster analysis (<a href="#sec-cluster">Glossary&nbsp;6.8</a>).</li>
 <li>Principal component analysis.</li>
 <li>Linear discriminant analysis.</li>
 <li>k-nearest neighbors.</li>
@@ -563,8 +672,8 @@ where:</p>
 <p>Cluster analysis is a technique for grouping data points together based on their similarity. Principal component analysis is a technique for reducing the dimensionality of data while preserving as much of the variation as possible. Linear discriminant analysis is a technique for classifying data points into two or more groups. k-nearest neighbors is a non-parametric machine learning algorithm that can be used for classification and regression tasks.</p>
 <p>The Euclidean distance is a powerful tool that can be used to analyze multivariate data. It is important to understand its strengths and weaknesses in order to use it effectively.</p>
 </section>
-<section id="sec-manhattan" class="level3" data-number="6.4">
-<h3 data-number="6.4" class="anchored" data-anchor-id="sec-manhattan"><span class="header-section-number">6.4</span> Manhattan distance</h3>
+<section id="sec-manhattan" class="level3" data-number="6.7">
+<h3 data-number="6.7" class="anchored" data-anchor-id="sec-manhattan"><span class="header-section-number">6.7</span> Manhattan distance</h3>
 <p>Manhattan distance, also known as L1 distance, is a distance metric that measures the distance between two points in a multidimensional space by taking the sum of the absolute differences between their coordinates. It is a more robust to outliers than Euclidean distance and is suitable for both continuous and discrete variables.</p>
 <p><span class="math display">\[d = |x_1 - x_2| + |y_1 - y_2|\]</span> where:</p>
 <p><span class="math inline">\(|\)</span> to denote the absolute value.<br>
@@ -585,8 +694,8 @@ where:</p>
 <p>We could use Manhattan distance to cluster these customers into groups based on their similarity. For example, we might find that younger customers with higher incomes tend to spend more money than older customers with lower incomes. This information could be used to develop marketing campaigns that target specific customer groups.</p>
 <p>Manhattan distance is a powerful tool that can be used for a variety of tasks in multivariate analysis. It is a robust and versatile metric that is suitable for both continuous and discrete variables.</p>
 </section>
-<section id="sec-cluster" class="level3" data-number="6.5">
-<h3 data-number="6.5" class="anchored" data-anchor-id="sec-cluster"><span class="header-section-number">6.5</span> Cluster analysis</h3>
+<section id="sec-cluster" class="level3" data-number="6.8">
+<h3 data-number="6.8" class="anchored" data-anchor-id="sec-cluster"><span class="header-section-number">6.8</span> Cluster analysis</h3>
 <p>Cluster analysis is a multivariate analysis technique that groups data points together based on their similarity. It is an <strong>unsupervised learning</strong> technique, meaning that it does not require any prior knowledge of the data.</p>
 <p>There are many different cluster analysis algorithms, but they all work by finding groups of data points that are close to each other and far from other data points. The most common cluster analysis algorithms are:</p>
 <ul>
@@ -608,8 +717,8 @@ where:</p>
 </ul>
 <p>Cluster analysis is a powerful tool that can be used to analyze multivariate data. It is important to understand the different cluster analysis algorithms, their strengths and weaknesses, and the factors that can affect the results of cluster analysis in order to use it effectively.</p>
 </section>
-<section id="sec-dendrogram" class="level3" data-number="6.6">
-<h3 data-number="6.6" class="anchored" data-anchor-id="sec-dendrogram"><span class="header-section-number">6.6</span> Dendrogram</h3>
+<section id="sec-dendrogram" class="level3" data-number="6.9">
+<h3 data-number="6.9" class="anchored" data-anchor-id="sec-dendrogram"><span class="header-section-number">6.9</span> Dendrogram</h3>
 <p>A dendrogram is a tree-like diagram that shows the hierarchical relationships between objects. It is most commonly created as an output from hierarchical clustering, a method of cluster analysis that groups similar objects together.</p>
 <p>The dendrogram is a way to visualize the results of the clustering algorithm. The branches of the dendrogram represent the clusters, and the distance between the branches represents the similarity between the clusters. The closer two clusters are on the dendrogram, the more similar they are.</p>
 <p>Dendrograms are a powerful tool for visualizing the results of cluster analysis. They can help us to understand the hierarchical relationships between objects, and to identify clusters of similar objects.</p>
@@ -621,8 +730,8 @@ where:</p>
 </ul>
 <p>Dendrograms are a valuable tool for data visualization and analysis. They can help us to understand the hierarchical relationships between objects, to identify clusters of similar objects, and to visualize the results of clustering algorithms.</p>
 </section>
-<section id="sec-kmeans" class="level3" data-number="6.7">
-<h3 data-number="6.7" class="anchored" data-anchor-id="sec-kmeans"><span class="header-section-number">6.7</span> K-Means Clustering</h3>
+<section id="sec-kmeans" class="level3" data-number="6.10">
+<h3 data-number="6.10" class="anchored" data-anchor-id="sec-kmeans"><span class="header-section-number">6.10</span> K-Means Clustering</h3>
 <p>K-means clustering is a popular unsupervised learning algorithm that can be used to group data points into clusters based on their similarity. The algorithm works by iteratively assigning data points to clusters until the within-cluster sum of squares is minimized.</p>
 <p>In multivariate analysis, K-means clustering can be used for a variety of tasks, including:</p>
 <ul>
@@ -651,8 +760,8 @@ where:</p>
 <li>It can be difficult to interpret the results of K-means clustering.</li>
 </ul>
 </section>
-<section id="sec-pca" class="level3" data-number="6.8">
-<h3 data-number="6.8" class="anchored" data-anchor-id="sec-pca"><span class="header-section-number">6.8</span> Principal component analysis</h3>
+<section id="sec-pca" class="level3" data-number="6.11">
+<h3 data-number="6.11" class="anchored" data-anchor-id="sec-pca"><span class="header-section-number">6.11</span> Principal component analysis</h3>
 <p>Principal component analysis (PCA) is a statistical procedure that uses an orthogonal transformation to convert a set of observations of possibly correlated variables into a set of values of linearly uncorrelated variables called principal components.</p>
 <p>In multivariate analysis, PCA can be used for a variety of tasks, including:</p>
 <ul>
@@ -681,8 +790,8 @@ where:</p>
 <li>It can be difficult to interpret the results of PCA.</li>
 </ul>
 </section>
-<section id="sec-NMDS" class="level3" data-number="6.9">
-<h3 data-number="6.9" class="anchored" data-anchor-id="sec-NMDS"><span class="header-section-number">6.9</span> Non-metric Multidimensional Scaling</h3>
+<section id="sec-NMDS" class="level3" data-number="6.12">
+<h3 data-number="6.12" class="anchored" data-anchor-id="sec-NMDS"><span class="header-section-number">6.12</span> Non-metric Multidimensional Scaling</h3>
 <p>Non-metric multidimensional scaling (NMDS) is a multivariate analysis technique that is used to reduce the dimensionality of data while preserving the distances between objects. NMDS is a non-parametric technique, which means that it does not make any assumptions about the distribution of the data. This makes NMDS a versatile technique that can be used with a wide variety of data sets.</p>
 <p>NMDS works by first calculating the distances between all pairs of objects in the data set. These distances can be calculated using any distance metric, such as the Euclidean distance or the Manhattan distance. Once the distances have been calculated, NMDS then finds a configuration of points in a lower-dimensional space (typically two or three dimensions) such that the distances between the points in the lower-dimensional space are as close as possible to the distances in the original data set.</p>
 <p>NMDS can be used for a variety of purposes, including:</p>
@@ -705,8 +814,8 @@ where:</p>
 <li>It can be difficult to interpret the results of NMDS, especially if the data set is large or complex.</li>
 </ul>
 <p>Overall, NMDS is a powerful multivariate analysis technique that can be used for a variety of purposes. However, it is important to be aware of the limitations of NMDS before using it.</p>
-<section id="sec-Shepard" class="level4" data-number="6.9.1">
-<h4 data-number="6.9.1" class="anchored" data-anchor-id="sec-Shepard"><span class="header-section-number">6.9.1</span> Shepard Plot</h4>
+<section id="sec-Shepard" class="level4" data-number="6.12.1">
+<h4 data-number="6.12.1" class="anchored" data-anchor-id="sec-Shepard"><span class="header-section-number">6.12.1</span> Shepard Plot</h4>
 <p>A Shepard plot is a type of graph used in statistics to visualize the results of a multidimensional scaling (MDS) analysis. MDS is a statistical technique that is used to reduce the dimensionality of a data set by finding a lower-dimensional representation of the data that preserves the distances between the data points.</p>
 <p>A Shepard plot shows the relationship between the true distances between the data points in the original high-dimensional space and the distances between the data points in the lower-dimensional representation. If the MDS analysis has been successful, the points in the Shepard plot will be well-correlated, and the line will be a straight line. This indicates that the distances between the data points in the lower-dimensional representation are a good approximation of the true distances between the data points in the original high-dimensional space.</p>
 <p>Shepard plots can be used to assess the quality of an MDS analysis. If the points in the Shepard plot are not well-correlated, or if the line is not a straight line, then the MDS analysis may not have been successful. In this case, the analyst may need to try different parameters for the MDS analysis or use a different dimensionality reduction technique.</p>
@@ -714,8 +823,8 @@ where:</p>
 <p>Shepard plots can be used to visualize the results of MDS analysis, and to assess the quality of the analysis. They are a useful tool for understanding the relationships between data points in a high-dimensional space.</p>
 </section>
 </section>
-<section id="sec-ANOSIM" class="level3" data-number="6.10">
-<h3 data-number="6.10" class="anchored" data-anchor-id="sec-ANOSIM"><span class="header-section-number">6.10</span> ANOSIM</h3>
+<section id="sec-ANOSIM" class="level3" data-number="6.13">
+<h3 data-number="6.13" class="anchored" data-anchor-id="sec-ANOSIM"><span class="header-section-number">6.13</span> ANOSIM</h3>
 <p>The Analysis of Similarities (ANOSIM) test is a non-parametric statistical test used to determine whether there are significant differences between two or more groups of data. ANOSIM is a multivariate test, meaning that it can be used to compare data sets with more than one variable.</p>
 <p>ANOSIM works by comparing the distances between observations within and between groups. If the distances between observations within groups are smaller than the distances between observations between groups, then the ANOSIM test will be significant. This indicates that there are real differences between the groups of data.</p>
 <p>ANOSIM is a versatile test that can be used in a variety of fields, including ecology, biology, and medicine. It is a powerful tool for identifying and understanding differences between groups of data.</p>

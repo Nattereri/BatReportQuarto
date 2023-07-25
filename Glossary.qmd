@@ -11,7 +11,7 @@ number-sections: true
 
 A box plot is a standardized way of displaying the distribution of data based on a five-number summary. The five-number summary is the minimum, first quartile (Q1), median, third quartile (Q3), and maximum.
 
-For a description of the quartile see @sec-quartiles.
+For a description of the quartile see [Glossary @sec-quartiles]. 
 
 A box plot is drawn as a rectangle with the minimum and maximum values at the ends, the first and third quartiles at the middle, and the median at the center. The interquartile range (IQR) is the distance between the first and third quartiles.
 
@@ -191,12 +191,12 @@ For example, there is a correlation between the height and weight of a group of 
 
 It is important to note that a statistically significant correlation does not necessarily mean that there is a causal relationship between the two variables. For example, the correlation between height and weight could be due to the fact that both variables are influenced by genetics.
 
-@sec-pvalue describes the general use of the p-value in statistics.
+[Glossary @sec-pvalue] describes the general use of the p-value in statistics.
 
 
 #### Spearman Correlation Confidence Limits {#sec-spearmanCI}
 
-A confidence interval for Spearman correlation (@sec-spearmanCI) is a range of values that is likely to contain the true correlation between two variables. The confidence interval is calculated based on the sample correlation coefficient, the sample size, and the level of confidence desired. For example, a 95% confidence interval means that there is a 95% chance that the true correlation lies within the interval.
+A confidence interval for Spearman correlation ([Glossary @sec-spearmanCI]) is a range of values that is likely to contain the true correlation between two variables. The confidence interval is calculated based on the sample correlation coefficient, the sample size, and the level of confidence desired. For example, a 95% confidence interval means that there is a 95% chance that the true correlation lies within the interval.
 
 The confidence interval for Spearman correlation can be interpreted as follows:
 
@@ -265,7 +265,7 @@ Overall, hypothesis tests are a useful tool for statistical analysis, but they s
 
 ### p value {#sec-pvalue}
 
-A p-value is a number between 0 and 1 that tells you the probability of getting the results you did, or results that are even more extreme, if the null hypothesis is true (@sec-hypothesis explains hypothesis tests). The null hypothesis is the hypothesis that there is no difference between two groups or that there is no relationship between two variables. A p-value of 0.05 or less is generally considered statistically significant, which means that there is less than a 5% chance that the results could have occurred by chance.
+A p-value is a number between 0 and 1 that tells you the probability of getting the results you did, or results that are even more extreme, if the null hypothesis is true ([Glossary @sec-hypothesis] explains hypothesis tests). The null hypothesis is the hypothesis that there is no difference between two groups or that there is no relationship between two variables. A p-value of 0.05 or less is generally considered statistically significant, which means that there is less than a 5% chance that the results could have occurred by chance.
 
 For example, it would be interesting to know whether there is a difference in the average height of men and women. You collect data on the heights of 100 men and 100 women and find that the average height of men is 6 feet tall and the average height of women is 5 feet 10 inches tall. The p-value for this test is 0.001, which is less than 0.05. This means that there is less than a 1% chance that the results could have occurred by chance. Therefore, you can conclude that there is a statistically significant difference in the average height of men and women.
 
@@ -323,7 +323,7 @@ There are many different pre-treatment techniques, but some of the most common i
 
 * **Missing value imputation:** This involves filling in missing values in the data. There are many different imputation techniques, such as mean imputation, median imputation, and hot deck imputation.
 * **Outlier detection and removal:** This involves identifying and removing outliers from the data. Outliers are data points that are significantly different from the rest of the data. They can skew the results of multivariate analysis, so it is important to remove them.
-* **Data normalization:** This involves scaling the data so that all of the variables have a similar range of values. This can help to improve the performance of multivariate analysis algorithms.
+* **Data Normalisation:** This involves scaling the data so that all of the variables have a similar range of values. This can help to improve the performance of multivariate analysis algorithms.
 * **Feature selection:** This involves selecting a subset of the variables for analysis. This can be helpful if the data set is large or if there are a lot of correlated variables.
 
 The specific pre-treatment techniques that are used will depend on the specific data set and the type of multivariate analysis that is being performed. However, in general, pre-treatment is an important step in the multivariate analysis process. It can help to improve the quality of the data and make it more suitable for analysis.
@@ -364,13 +364,95 @@ Here are some examples of how these transformations can be used in multivariate 
 
 It is important to note that there is no single "best" pre-treatment technique. The best technique to use will depend on the specific data set and the type of multivariate analysis that is being performed. However, the transformations described above are all good starting points.
 
+### Normalisation {#sec-normalise}
+
+Normalisation is the process of transforming data into a common scale or range, eliminating differences in units or distributions. 
+
+There are two main types of normalisation:
+
+* **Min-max normalisation:** This is the most common type of normalisation. It involves transforming the data so that the values fall within a specific range, such as 0 to 1 or -1 to 1.
+
+$$\frac{x - min(x)}{max(x) - min(x)}$$    
+
+* **Z-score normalisation:** This type of normalisation involves subtracting the mean from each value and then dividing by the standard deviation. This results in a distribution with a mean of 0 and a standard deviation of 1.
+
+$$z = \frac{x - \mu}{\sigma}$$
+
+where:
+
+* $z$ is the z-score
+* $x$ is the original value
+* $\mu$ is the mean of the distribution
+* $\sigma$ is the standard deviation of the distribution
+
+
+Normalisation can be a useful preprocessing step for data analysis. It can make it easier to compare different datasets. It can also help to identify outliers in the data and make the data more consistent and reliable
+
+See also [Glossary @sec-diffsn] for the difference between Standardisation and Normalisation.
+
+### Standardisation {#sec-standardise}
+
+In statistics, standardisation is the process of transforming data so that it has a mean of 0 and a standard deviation of 1. This is done by subtracting the mean from each value and then dividing by the standard deviation.
+
+Standardisation is often used to compare different variables that have different scales.
+
+The formula for standardising data is:
+
+$$z = \frac{x - \mu}{\sigma}$$
+
+where:
+
+* $z$ is the z-score
+* $x$ is the original value
+* $\mu$ is the mean of the distribution
+* $\sigma$ is the standard deviation of the distribution
+
+See also [Glossary @sec-diffsn] for the difference between Standardisation and Normalisation.
+
+### Difference between Standardisation and Normalisation {#sec-diffsn}
+
+
+Standardisation and Normalisation are two data preprocessing techniques that are used to transform data so that it is easier to analyze. However, there are some key differences between the two techniques.
+
+**Standardisation**
+
+* Standardisation transforms data so that it has a mean of 0 and a standard deviation of 1. This is done by subtracting the mean from each value and then dividing by the standard deviation.
+* Standardisation is often used to compare different variables that have different scales. For example, you could standardize height and weight so that you could compare them directly.
+* Standardisation can also be used to make data more normally distributed, which can make it easier to analyze.
+
+**Normalisation**
+
+* Normalisation transforms data so that it falls within a specific range, such as [0, 1] or [-1, 1]. This is done by subtracting the minimum value from each value and then dividing by the difference between the maximum and minimum values.
+* Normalisation is often used to make data more comparable across different datasets. For example, you could normalize images so that they all have the same dimensions.
+* Normalisation can also be used to improve the performance of machine learning algorithms.
+
+The table below summarizes the key differences between Standardisation and Normalisation:
+
+| Feature | Standardisation | Normalisation |
+|---|---|---|
+| Mean | 0 | Varies |
+| Standard deviation | 1 | Varies |
+| Range | Varies | Specific range |
+| Purpose | Compare different variables, make data more normally distributed | Make data comparable, improve machine learning performance |
+
+In general, Standardisation is a more powerful technique than Normalisation. However, Normalisation is often easier to implement and can be more effective in some cases.
+
+Examples of when to use Standardisation and Normalisation:
+
+* **Standardisation:**
+    * When you need to compare different variables that have different scales.
+    * When you want to make data more normally distributed.
+    * When you are using a machine learning algorithm that is sensitive to the scale of the data.
+* **Normalisation:**
+    * When you need to make data comparable across different datasets.
+    * When you are using a machine learning algorithm that is sensitive to the range of the data.
+    * When you want to improve the performance of a machine learning algorithm.
+
 ### Bray-Curtis distance measurement {#sec-bray}
 
 Bray-Curtis distance measurement as used in multivariate analysis.
 
-
 Bray-Curtis distance is a metric used to measure the dissimilarity between two samples. It is based on the relative abundance of species in each sample. The Bray-Curtis distance is calculated as follows:
-
 
 $$\frac{\sum|A_i - B_i|}{\sum(A_i + B_i)}$$    
 where:  
@@ -417,7 +499,7 @@ However, the Euclidean distance can be sensitive to the scale of the variables. 
 
 The Euclidean distance can be used in a variety of multivariate analysis techniques, including:
 
-* Cluster analysis (@sec-cluster). 
+* Cluster analysis ([Glossary @sec-cluster]). 
 * Principal component analysis. 
 * Linear discriminant analysis. 
 * k-nearest neighbors. 
