@@ -92,7 +92,7 @@ A prime resource for learning `r glue("{ds_txt}")` with R are the the online boo
 
 ## General
 
-[R for Data Science](http://r4ds.had.co.nz/index.html) (R4DS) is an excellent overview of data science with R; it introduces the [`tidyverse`](https://www.tidyverse.org/) a collection of packages providing essential data science tools [@tidyverse2019; @R-tidyverse]; many of these individual packages are referenced below. The tidyverse packages have been widely adopted by R Data Scientists; all packages share an underlying design philosophy, grammar, and data structures.
+[R for Data Science](https://r4ds.hadley.nz/) (R4DS), now in its 2^nd^ edition, is an excellent overview of data science with R; it introduces the [`tidyverse`](https://www.tidyverse.org/) a collection of packages providing essential data science tools [@tidyverse2019; @R-tidyverse]; many of these individual packages are referenced below. The tidyverse packages have been widely adopted by R Data Scientists; all packages share an underlying design philosophy, grammar, and data structures.
 
 There are many free learning resources online; well structured courses are:
 
