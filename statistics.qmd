@@ -811,15 +811,11 @@ MatrixTable %>%
 
 To assess the differences of activity (in the bat assemblage) between locations (or months, habitat, etc.) we measure the distance between every point of activity with every other point. So activity (e.g. a median or count) at one location for a species is compared(measured) with every other activity for all the species and locations.
 
-There are many _distance_ measurements to investigate species similarity/dissimilarity^[note it is the dissimilarity that is used, 1- similarity]:   
+There are many _distance_ measurements to investigate species similarity/dissimilarity^[note it is the dissimilarity that is used, 1- similarity] for more information see the [Glossary](https://bat-survey-reporting.netlify.app/glossary#sec-distance).   
 
-* [Euclidean distance](https://bat-survey-reporting.netlify.app/glossary#sec-euclid) natural distance between two points  
-* [Manhattan distance](https://bat-survey-reporting.netlify.app/glossary#sec-manhattan) walking around a New York block  
-* [Bray-Curtis](https://bat-survey-reporting.netlify.app/glossary#sec-bray) a dissimilarity very useful for ecologists  
+In this example the [Bray-Curtis](https://bat-survey-reporting.netlify.app/glossary#sec-bray) distance measurement has been applied to @tbl-table05 to produce the Bray-Curtis dissimilarity matrix in @tbl-table06.
 
-For species similarities it may be worth considering the removal of the rarer species (_i.e. the less observed_) and repeating the analysis. 
-
-In this example the _Bray-Curtis_ distance measurement has been applied to @tbl-table05 to produce the Bray-Curtis dissimilarity matrix in @tbl-table06.
+(For species similarities it may be worth considering the removal of the rarer species (_i.e. the less observed_) and repeating the analysis.)
 
 ```{r}
 #| warning: false

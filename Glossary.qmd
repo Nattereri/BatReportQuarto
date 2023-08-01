@@ -448,35 +448,29 @@ Examples of when to use Standardisation and Normalisation:
     * When you are using a machine learning algorithm that is sensitive to the range of the data.
     * When you want to improve the performance of a machine learning algorithm.
 
-### Bray-Curtis distance measurement {#sec-bray}
 
-Bray-Curtis distance measurement as used in multivariate analysis.
+### Distance measurements for ecological data {#sec-distance}
 
-Bray-Curtis distance is a metric used to measure the dissimilarity between two samples. It is based on the relative abundance of species in each sample. The Bray-Curtis distance is calculated as follows:
 
-$$\frac{\sum|A_i - B_i|}{\sum(A_i + B_i)}$$    
-where:  
-$A_i$ is the abundance of species i in sample A    
-$B_i$ is the abundance of species i in sample B    
-$\sum$ is the sum of all values    
+The following are some of the most common distance measurements used in the multivariate analysis of ecological data:
 
-The Bray-Curtis distance ranges from 0 to 1, with 0 indicating that the two samples are identical and 1 indicating that the two samples are completely different.
+* **Euclidean distance:** [Glossary @sec-euclid] This is the most common distance measure, and it is calculated by taking the square root of the sum of the squared differences between the two points. It is a good choice for data that is normally distributed.
+* **Manhattan distance:** [Glossary @sec-manhattan] This distance measure is calculated by taking the sum of the absolute differences between the two points. It is a good choice for data that is not normally distributed.
+* **Minkowski distance:** [Glossary @sec-minkowski] This is a generalization of the Euclidean and Manhattan distances, and it is calculated using a power of the absolute differences between the two points. It is a good choice for data that is not normally distributed and has different scales.
+* **Bray-Curtis distance:** [Glossary @sec-bray] This distance measure is based on the proportion of species that are shared between two communities. It is a good choice for data that is compositional, such as species abundance data.
+* **Jaccard distance:** [Glossary @sec-jaccard] This distance measure is based on the number of species that are shared between two communities and the total number of species in the two communities. It is a good choice for data that is compositional, such as species abundance data.
 
-Bray-Curtis distance is a popular choice for multivariate analysis because it is relatively easy to calculate and it is sensitive to changes in the relative abundance of species. It is often used in ecology to compare the composition of different communities.
+The choice of distance measure depends on the specific data set and the analysis that is being performed. For example, the Euclidean distance is a good choice for data that is normally distributed and has similar scales, while the Bray-Curtis distance is a good choice for data that is compositional and has different scales.
 
-Here are some of the advantages of using Bray-Curtis distance:
+The table below summarizes some of the key properties of the different distance measures:
 
-* It is relatively easy to calculate.  
-* It is sensitive to changes in the relative abundance of species.  
-* It is a metric, which means that it satisfies the triangle inequality.  
-
-Here are some of the disadvantages of using Bray-Curtis distance:
-
-* It is not a true distance, because it does not satisfy the triangle inequality.   
-* It can be sensitive to the order of the species in the data set.   
-* It can be sensitive to the presence of rare species.  
-
-Overall, Bray-Curtis distance is a useful metric for measuring the dissimilarity between two samples. It is relatively easy to calculate and it is sensitive to changes in the relative abundance of species. However, it is important to be aware of its limitations before using it.
+| Distance measure | Property |
+|---|---|
+| Euclidean distance | Symmetric, non-negative, and satisfies the triangle inequality |
+| Manhattan distance | Symmetric, non-negative, and satisfies the triangle inequality |
+| Minkowski distance | Symmetric, non-negative, and satisfies the triangle inequality |
+| Bray-Curtis distance | Not symmetric, non-negative, and does not always satisfy the triangle inequality |
+| Jaccard distance | Symmetric, non-negative, and always equals 0 if the two communities have no species in common |
 
 ### Euclidean distance {#sec-euclid}
 
@@ -535,6 +529,108 @@ Here is an example of how Manhattan distance can be used in multivariate analysi
 We could use Manhattan distance to cluster these customers into groups based on their similarity. For example, we might find that younger customers with higher incomes tend to spend more money than older customers with lower incomes. This information could be used to develop marketing campaigns that target specific customer groups.
 
 Manhattan distance is a powerful tool that can be used for a variety of tasks in multivariate analysis. It is a robust and versatile metric that is suitable for both continuous and discrete variables.
+
+### Minkowski distance {#sec-minkowski}
+
+The Minkowski distance is a metric in a normed vector space which can be considered as a generalization of both the Euclidean distance [Glossary @sec-euclid] and the Manhattan distance [Glossary @sec-manhattan]. It is named after the German mathematician Hermann Minkowski.
+
+In multivariate analysis, the Minkowski distance is used to measure the distance between two points in a multidimensional space. The formula for the Minkowski distance is as follows:
+
+\begin{align*}
+d(x, y) &= \left( \sum_{i=1}^n |x_i - y_i|^p \right)^{1/p} \\
+&= \left( |x_1 - y_1|^p + |x_2 - y_2|^p + \dots + |x_n - y_n|^p \right)^{1/p}
+\end{align*}
+
+where:
+
+* $x$ and $y$ are the two points in multidimensional space
+* $n$ is the number of dimensions
+* $p$ is a parameter that controls the type of distance measure
+
+The value of $p$ can be any real number greater than or equal to 1. When $p$ = 1, the Minkowski distance is equivalent to the Manhattan distance. When $p$ = 2, the Minkowski distance is equivalent to the Euclidean distance.
+
+The Minkowski distance can be used in a variety of multivariate analysis tasks, such as:
+
+* Cluster analysis
+* Nearest neighbor search
+* Similarity measures (e.g. PCA and NMDS)
+
+The choice of the parameter $p$ depends on the specific application. In general, a higher value of $p$ will give more weight to the larger distances between points, while a lower value of $p$ will give more weight to the smaller distances between points.
+
+Here are some examples of how the Minkowski distance can be used in multivariate analysis:
+
+* In cluster analysis, the Minkowski distance can be used to cluster data points into groups based on their similarity.
+* In nearest neighbor search, the Minkowski distance can be used to find the nearest neighbor of a given data point.
+* In similarity measures, the Minkowski distance can be used to measure the similarity between two data points.
+
+The Minkowski distance is a versatile metric that can be used in a variety of multivariate analysis tasks. It is a good choice for applications where the distance between points is not necessarily Euclidean.
+
+### Bray-Curtis distance measurement {#sec-bray}
+
+Bray-Curtis distance measurement as used in multivariate analysis.
+
+Bray-Curtis distance is a metric used to measure the dissimilarity between two samples. It is based on the relative abundance of species in each sample. The Bray-Curtis distance is calculated as follows:
+
+$$\frac{\sum|A_i - B_i|}{\sum(A_i + B_i)}$$    
+where:  
+$A_i$ is the abundance of species i in sample A    
+$B_i$ is the abundance of species i in sample B    
+$\sum$ is the sum of all values    
+
+The Bray-Curtis distance ranges from 0 to 1, with 0 indicating that the two samples are identical and 1 indicating that the two samples are completely different.
+
+Bray-Curtis distance is a popular choice for multivariate analysis because it is relatively easy to calculate and it is sensitive to changes in the relative abundance of species. It is often used in ecology to compare the composition of different communities.
+
+Here are some of the advantages of using Bray-Curtis distance:
+
+* It is relatively easy to calculate.  
+* It is sensitive to changes in the relative abundance of species.  
+* It is a metric, which means that it satisfies the triangle inequality.  
+
+Here are some of the disadvantages of using Bray-Curtis distance:
+
+* It is not a true distance, because it does not satisfy the triangle inequality.   
+* It can be sensitive to the order of the species in the data set.   
+* It can be sensitive to the presence of rare species.  
+
+Overall, Bray-Curtis distance is a useful metric for measuring the dissimilarity between two samples. It is relatively easy to calculate and it is sensitive to changes in the relative abundance of species. However, it is important to be aware of its limitations before using it.
+
+
+### Jaccard distance {#sec-jaccard}
+
+The Jaccard distance is a metric that measures the dissimilarity between two sets. It is defined as the complement of the Jaccard similarity coefficient, which is a measure of how similar two sets are.
+
+The Jaccard distance can be calculated as follows:
+
+```
+d(A, B) = 1 - SIM(A, B)
+```
+
+where:
+
+* `A` and `B` are the two sets
+* `SIM(A, B)` is the Jaccard similarity coefficient of `A` and `B`
+
+The Jaccard similarity coefficient is defined as follows:
+
+$$d(A, B) = 1 - \frac{|A \cap B|}{|A \cup B|}$$
+
+
+where:
+
+* `A` and `B` are the two sets
+* `|A \cap B|` is the size of the intersection of sets `A` and `B`
+* `|A \cup B|` is the size of the union of sets `A` and `B`
+
+Here is an explanation of the equation:
+
+* The first term, `1`, represents the maximum possible distance between two sets. This is the case when the two sets are completely disjoint.
+* The second term, `|A \cap B| / |A \cup B|`, is the Jaccard similarity coefficient. This coefficient represents the similarity between two sets. A value of 1 indicates that the two sets are identical, while a value of 0 indicates that the two sets are completely different.
+* The final term, `-1`, represents the minimum possible distance between two sets. This is the case when the two sets are equal.
+
+The Jaccard distance is a metric that measures the dissimilarity between two sets. It is defined as the complement of the Jaccard similarity coefficient. The Jaccard distance can be used in multivariate analysis to measure the dissimilarity between two multivariate data sets. This can be useful for tasks such as clustering, classification, and outlier detection.
+
+
 
 ### Cluster analysis {#sec-cluster}
 
