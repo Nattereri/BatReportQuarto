@@ -148,10 +148,13 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#frequency-measures-and-graphical-representation" id="toc-frequency-measures-and-graphical-representation" class="nav-link active" data-scroll-target="#frequency-measures-and-graphical-representation"><span class="header-section-number">1</span> Frequency Measures and Graphical Representation</a>
   <ul class="collapse">
-  <li><a href="#sec-boxplot" id="toc-sec-boxplot" class="nav-link" data-scroll-target="#sec-boxplot"><span class="header-section-number">1.1</span> Box Plot</a></li>
-  <li><a href="#sec-histogram" id="toc-sec-histogram" class="nav-link" data-scroll-target="#sec-histogram"><span class="header-section-number">1.2</span> Histogram</a></li>
-  <li><a href="#sec-kernel" id="toc-sec-kernel" class="nav-link" data-scroll-target="#sec-kernel"><span class="header-section-number">1.3</span> Kernel Density</a></li>
-  <li><a href="#sec-loess" id="toc-sec-loess" class="nav-link" data-scroll-target="#sec-loess"><span class="header-section-number">1.4</span> LOESS curve</a></li>
+  <li><a href="#sec-summary" id="toc-sec-summary" class="nav-link" data-scroll-target="#sec-summary"><span class="header-section-number">1.1</span> Summary Statistics</a></li>
+  <li><a href="#sec-boxplot" id="toc-sec-boxplot" class="nav-link" data-scroll-target="#sec-boxplot"><span class="header-section-number">1.2</span> Box Plot</a></li>
+  <li><a href="#sec-histogram" id="toc-sec-histogram" class="nav-link" data-scroll-target="#sec-histogram"><span class="header-section-number">1.3</span> Histogram</a></li>
+  <li><a href="#sec-kernel" id="toc-sec-kernel" class="nav-link" data-scroll-target="#sec-kernel"><span class="header-section-number">1.4</span> Kernel Density</a></li>
+  <li><a href="#sec-scatter" id="toc-sec-scatter" class="nav-link" data-scroll-target="#sec-scatter"><span class="header-section-number">1.5</span> Scatter Plot</a></li>
+  <li><a href="#sec-loess" id="toc-sec-loess" class="nav-link" data-scroll-target="#sec-loess"><span class="header-section-number">1.6</span> LOESS curve</a></li>
+  <li><a href="#sec-linear" id="toc-sec-linear" class="nav-link" data-scroll-target="#sec-linear"><span class="header-section-number">1.7</span> Linear Regression</a></li>
   </ul></li>
   <li><a href="#measures-of-central-tendency-and-dispersion" id="toc-measures-of-central-tendency-and-dispersion" class="nav-link" data-scroll-target="#measures-of-central-tendency-and-dispersion"><span class="header-section-number">2</span> Measures of Central Tendency and Dispersion</a>
   <ul class="collapse">
@@ -219,29 +222,65 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="frequency-measures-and-graphical-representation" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="frequency-measures-and-graphical-representation"><span class="header-section-number">1</span> Frequency Measures and Graphical Representation</h2>
-<section id="sec-boxplot" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="sec-boxplot"><span class="header-section-number">1.1</span> Box Plot</h3>
+<section id="sec-summary" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="sec-summary"><span class="header-section-number">1.1</span> Summary Statistics</h3>
+<p>The summary statistics undertaken at the beginning of data analysis typically include the following:</p>
+<ul>
+<li><strong>Mean:</strong> The mean is the average of all the values in the data set.</li>
+<li><strong>Median:</strong> The median is the middle value of all the values in the data set, when arranged in increasing or decreasing order.</li>
+<li><strong>Mode:</strong> The mode is the most frequent value in the data set.</li>
+<li><strong>Range:</strong> The range is the difference between the largest and smallest values in the data set.</li>
+<li><strong>Variance:</strong> The variance is a measure of how spread out the data is around the mean.</li>
+<li><strong>Standard deviation:</strong> The standard deviation is the square root of the variance. It is a measure of how much variation there is from the mean.</li>
+</ul>
+<p>The vector of data is the set of all the values in the data set. It is often represented as a list or an array.</p>
+<p>The summary statistics can be used to get a general overview of the data set and to identify any outliers. Outliers are data points that are very different from the rest of the data. They can be caused by errors in data entry or by unusual events. Outliers can sometimes be removed from the data set before further analysis is performed.</p>
+<p>The summary statistics can also be used to calculate other statistical measures, such as the correlation coefficient and the coefficient of determination. These measures can be used to determine the strength of the relationship between two or more variables.</p>
+<p>Summary statistics are an important first step in data analysis. They can be used to get a general overview of the data set, to identify outliers, and to calculate other statistical measures.</p>
+</section>
+<section id="sec-boxplot" class="level3" data-number="1.2">
+<h3 data-number="1.2" class="anchored" data-anchor-id="sec-boxplot"><span class="header-section-number">1.2</span> Box Plot</h3>
 <p>A box plot is a standardized way of displaying the distribution of data based on a five-number summary. The five-number summary is the minimum, first quartile (Q1), median, third quartile (Q3), and maximum.</p>
 <p>For a description of the quartile see <a href="#sec-quartiles">Glossary&nbsp;2.1</a>.</p>
-<p>A box plot is drawn as a rectangle with the minimum and maximum values at the ends, the first and third quartiles at the middle, and the median at the center. The interquartile range (IQR) is the distance between the first and third quartiles.</p>
+<p>A box plot, see <a href="#fig-box">Figure&nbsp;1</a>, is drawn as a rectangle with the minimum and maximum values at the ends, the first and third quartiles at the middle, and the median at the center. The interquartile range (IQR) is the distance between the first and third quartiles; the IQR contains 50% of the values.</p>
 <p>Outliers are data points that fall outside the interquartile range. Outliers are usually represented by small circles or asterisks.</p>
 <p>Box plots can be used to compare the distributions of data from different groups. For example, you could use a box plot to compare the heights of men and women.</p>
 <p>Box plots can also be used to identify outliers. If there are any outliers in a data set, they will be represented by small circles or asterisks.</p>
 <p>Box plots are a versatile tool that can be used to visualize the distribution of data. They are considered easy to understand and can be used to compare the distributions of data from different groups.</p>
+<div class="cell" data-layout-align="left">
+<div class="cell-output-display">
+<div id="fig-box" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="Glossary_files/figure-html/fig-box-1.png" class="img-fluid figure-img" width="480"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Example Box Plot</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="sec-histogram" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="sec-histogram"><span class="header-section-number">1.2</span> Histogram</h3>
-<p>A histogram is a graphical representation of the distribution of data. It is a type of bar chart that shows the frequency or number of observations within different numerical ranges, called bins. The bins are usually specified as consecutive, non-overlapping intervals of a variable. The histogram provides a visual representation of the distribution of the data, showing the number of observations that fall within each bin. This can be useful for identifying patterns and trends in the data, and for making comparisons between different datasets.</p>
+<section id="sec-histogram" class="level3" data-number="1.3">
+<h3 data-number="1.3" class="anchored" data-anchor-id="sec-histogram"><span class="header-section-number">1.3</span> Histogram</h3>
+<p>A histogram is a graphical representation, see <a href="#fig-hist">Figure&nbsp;2</a>, of the distribution of data. It is a type of bar chart that shows the frequency or number of observations within different numerical ranges, called bins; <a href="#fig-hist">Figure&nbsp;2</a> has 30 bins. The bins are usually specified as consecutive, non-overlapping intervals of a variable. The histogram provides a visual representation of the distribution of the data, showing the number of observations that fall within each bin. This can be useful for identifying patterns and trends in the data, and for making comparisons between different datasets.</p>
 <p>To construct a histogram, the first step is to “bin” (or “bucket”) the range of values—that is, divide the entire range of values into a series of intervals—and then count how many values fall into each interval. The bins are usually specified as consecutive, non-overlapping intervals of a variable. The bins (intervals) must be adjacent and are often (but not required to be) of equal size.</p>
 <p>Once the bins have been created, the next step is to count the number of observations that fall into each bin. This can be done manually or using a statistical software package. The number of observations in each bin is then plotted as a bar on the histogram. The height of each bar represents the frequency of the data in that bin.</p>
 <p>Histograms can be used to visualize a variety of different types of data. They are often used to visualize the distribution of continuous data, such as height, weight, or income. Histograms can also be used to visualize the distribution of discrete data, such as the number of children in a family or the number of cars owned by a household.</p>
-<p>Histograms are a valuable tool for data analysis. They can be used to identify patterns and trends in the data, to compare different datasets, and to make inferences about the population from which the data was drawn. Histograms are a simple and easy-to-understand way to visualize data, and they can be used by people with a variety of levels of statistical expertise.</p>
+<p>Histograms are a valuable tool for data analysis. They can be used to identify patterns and trends in the data, to compare different datasets, and to make inferences about the population from which the data was drawn. <a href="#fig-hist">Figure&nbsp;2</a> is annotated with the mean, median and 5% and 95% percentiles. Histograms are a simple and easy-to-understand way to visualize data, and they can be used by people with a variety of levels of statistical expertise.</p>
+<div class="cell" data-layout-align="left">
+<div class="cell-output-display">
+<div id="fig-hist" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="Glossary_files/figure-html/fig-hist-1.png" class="img-fluid figure-img" width="480"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Example Histogram</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="sec-kernel" class="level3" data-number="1.3">
-<h3 data-number="1.3" class="anchored" data-anchor-id="sec-kernel"><span class="header-section-number">1.3</span> Kernel Density</h3>
-<p>Kernel density estimation (KDE) is a non-parametric way to estimate the probability density function of a random variable. It is a smooth, continuous function that is constructed by “smoothing” the data points. The smoothing is done by using a kernel function, which is a bell-shaped function that is centered at each data point. The height of the kernel function at a given point is proportional to the amount of data that is near that point.</p>
-<p>The kernel density estimate is a powerful tool for visualizing data and for making inferences about the population from which the data was drawn. It can be used to compare different groups of data, to identify outliers, and to estimate the mean, median, and other properties of the population.</p>
-<p>Here are some examples of how kernel density estimation can be used:</p>
+<section id="sec-kernel" class="level3" data-number="1.4">
+<h3 data-number="1.4" class="anchored" data-anchor-id="sec-kernel"><span class="header-section-number">1.4</span> Kernel Density</h3>
+<p>Kernel density estimation (KDE), see <a href="#fig-kern">Figure&nbsp;3</a>, is a non-parametric way to estimate the probability density function of a random variable. It is a smooth, continuous function that is constructed by “smoothing” the data points. The smoothing is done by using a kernel function, which is a bell-shaped function that is centered at each data point. The height of the kernel function at a given point is proportional to the amount of data that is near that point.</p>
+<p>The kernel density estimate is a powerful tool for visualizing data and for making inferences about the population from which the data was drawn. It can be used to compare different groups of data, to identify outliers, and to estimate the mean, median, and other properties of the population; the calculated mean, median and 5%ile and 95%ile are annotated on <a href="#fig-kern">Figure&nbsp;3</a>.</p>
+<p>Kernel density estimation can be used to:</p>
 <ul>
 <li>To visualize the distribution of data.<br>
 </li>
@@ -252,7 +291,7 @@ ul.task-list li input[type="checkbox"] {
 <li>To estimate the mean, median, and other properties of the population.</li>
 </ul>
 <p>Kernel density estimation is a versatile and powerful tool that can be used to analyze a wide variety of data. It is a valuable tool for data scientists, statisticians, and anyone who needs to make sense of data.</p>
-<p>Here are some of the advantages of using kernel density estimation:</p>
+<p>The advantages of using kernel density estimation are:</p>
 <ul>
 <li>It is a non-parametric method, which means that it does not make any assumptions about the distribution of the data.<br>
 </li>
@@ -260,7 +299,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
 <li>It is a versatile tool that can be used for a variety of tasks, such as comparing different groups of data, identifying outliers, and estimating the mean, median, and other properties of the population.</li>
 </ul>
-<p>Here are some of the disadvantages of using kernel density estimation:</p>
+<p>Some of the disadvantages of using kernel density estimation are:</p>
 <ul>
 <li>It can be computationally expensive, especially for large datasets.<br>
 </li>
@@ -271,9 +310,27 @@ ul.task-list li input[type="checkbox"] {
 <li>Overall, kernel density estimation is a powerful and versatile tool that can be used to analyze a wide variety of data.</li>
 <li>It is a valuable tool for data scientists, statisticians, and anyone who needs to make sense of data.</li>
 </ul>
+<div class="cell" data-layout-align="left">
+<div class="cell-output-display">
+<div id="fig-kern" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="Glossary_files/figure-html/fig-kern-1.png" class="img-fluid figure-img" width="480"></p>
+<figcaption class="figure-caption">Figure&nbsp;3: Example Kernel Density</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="sec-loess" class="level3" data-number="1.4">
-<h3 data-number="1.4" class="anchored" data-anchor-id="sec-loess"><span class="header-section-number">1.4</span> LOESS curve</h3>
+<section id="sec-scatter" class="level3" data-number="1.5">
+<h3 data-number="1.5" class="anchored" data-anchor-id="sec-scatter"><span class="header-section-number">1.5</span> Scatter Plot</h3>
+<p>A scatter plot graph is a type of chart that uses dots to show the relationship between two variables. The horizontal axis (x-axis) represents one variable, and the vertical axis (y-axis) represents the other variable. Each dot on the graph represents a single data point, and the position of the dot on the x-axis and y-axis indicates the values of the two variables for that data point.</p>
+<p>Scatter plots are used to identify relationships between variables. For example, a scatter plot of height and weight might show that there is a positive correlation between the two variables, meaning that taller people tend to weigh more. A scatter plot of test scores and hours studied might show that there is a negative correlation between the two variables, meaning that students who study more tend to get lower test scores.</p>
+<p>Scatter plots can also be used to identify outliers, which are data points that fall far outside the general trend of the data. Outliers can be helpful for identifying errors in data, or for finding unusual patterns in data.</p>
+<p>Overall, scatter plots are a versatile tool for visualizing and analyzing data. They are easy to understand and interpret, and they can be used to identify a variety of relationships between variables.</p>
+<p>The scatter plot is often combined with a loess curve <a href="#sec-loess">Glossary&nbsp;1.6</a> or linear regression <a href="#sec-linear">Glossary&nbsp;1.7</a>.</p>
+</section>
+<section id="sec-loess" class="level3" data-number="1.6">
+<h3 data-number="1.6" class="anchored" data-anchor-id="sec-loess"><span class="header-section-number">1.6</span> LOESS curve</h3>
 <p>The LOESS curve is a type of smooth curve that is used in <code>ggplot2</code> graphs to fit a line to a set of data points. It is a non-parametric method, which means that it does not make any assumptions about the underlying distribution of the data. This makes it a versatile tool for fitting curves to a wide variety of data.</p>
 <p>The LOESS curve is calculated using a process called locally weighted regression. This means that the curve is fit to the data points in a local neighborhood around each point. The size of the neighborhood is determined by a parameter called the bandwidth. The bandwidth controls how smooth the curve is. A larger bandwidth will result in a smoother curve, while a smaller bandwidth will result in a more wiggly curve.</p>
 <p>The LOESS curve can be used to visualize the relationship between two variables. It can also be used to make predictions about the value of one variable based on the value of another variable.</p>
@@ -290,6 +347,20 @@ ul.task-list li input[type="checkbox"] {
 <li>It can be computationally expensive to fit a LOESS curve to a large dataset.</li>
 <li>The LOESS curve can be sensitive to the choice of the bandwidth parameter.</li>
 <li>The LOESS curve can be difficult to interpret in some cases.</li>
+</ul>
+</section>
+<section id="sec-linear" class="level3" data-number="1.7">
+<h3 data-number="1.7" class="anchored" data-anchor-id="sec-linear"><span class="header-section-number">1.7</span> Linear Regression</h3>
+<p>A linear regression on a scatter plot graph is a line that is fitted to the data points in order to represent the relationship between the two variables. The line is fitted so that it minimizes the sum of the squared residuals, which are the distances between the data points and the line.</p>
+<p>The linear regression line can be used to predict the value of one variable from the value of the other variable. For example, if we have a scatter plot of height and weight, we can use the linear regression line to predict someone’s weight from their height.</p>
+<p>The linear regression line can also be used to measure the strength of the relationship between the two variables. The stronger the relationship, the closer the data points will be to the line. The R-squared value is a measure of the strength of the relationship, and it can be interpreted as the percentage of the variation in the dependent variable that is explained by the independent variable.</p>
+<p>Overall, linear regression is a powerful tool for analyzing the relationship between two variables. It can be used to visualize the relationship, to make predictions, and to measure the strength of the relationship.</p>
+<p>Here are some additional details about linear regression on a scatter plot graph:</p>
+<ul>
+<li>The equation of the linear regression line is Y = mX + b, where Y is the dependent variable, X is the independent variable, m is the slope of the line, and b is the y-intercept.</li>
+<li>The slope of the line tells us how much the dependent variable changes for a 1-unit increase in the independent variable.</li>
+<li>The y-intercept tells us the value of the dependent variable when the independent variable is 0.</li>
+<li>The R-squared value is a measure of the strength of the relationship between the two variables. An R-squared value of 1 means that there is a perfect linear relationship between the two variables, and an R-squared value of 0 means that there is no linear relationship between the two variables.</li>
 </ul>
 </section>
 </section>
@@ -619,6 +690,12 @@ ul.task-list li input[type="checkbox"] {
 <li>When you are using a machine learning algorithm that is sensitive to the range of the data.</li>
 <li>When you want to improve the performance of a machine learning algorithm.</li>
 </ul></li>
+</ul>
+<p>A rule of thumb:</p>
+<ul>
+<li><strong>Normalisation:</strong> When you know the bounds of your input and outliers are rare.<br>
+</li>
+<li><strong>Standardisation:</strong> When the data has outliers or unknown bounds and the algorithm is sensitive to distribution.</li>
 </ul>
 </section>
 <section id="sec-distance" class="level3" data-number="6.5">

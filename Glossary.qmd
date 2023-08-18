@@ -5,7 +5,37 @@ execute:
 number-sections: true
 ---
 
+```{r}
+#| include: false
+
+# Load the required packages
+library(tidyverse)
+library(detectnorm)
+
+
+```
+
+
 ## Frequency Measures and Graphical Representation
+
+### Summary Statistics {#sec-summary}
+
+The summary statistics undertaken at the beginning of data analysis typically include the following:
+
+* **Mean:** The mean is the average of all the values in the data set.
+* **Median:** The median is the middle value of all the values in the data set, when arranged in increasing or decreasing order.
+* **Mode:** The mode is the most frequent value in the data set.
+* **Range:** The range is the difference between the largest and smallest values in the data set.
+* **Variance:** The variance is a measure of how spread out the data is around the mean.
+* **Standard deviation:** The standard deviation is the square root of the variance. It is a measure of how much variation there is from the mean.
+
+The vector of data is the set of all the values in the data set. It is often represented as a list or an array.
+
+The summary statistics can be used to get a general overview of the data set and to identify any outliers. Outliers are data points that are very different from the rest of the data. They can be caused by errors in data entry or by unusual events. Outliers can sometimes be removed from the data set before further analysis is performed.
+
+The summary statistics can also be used to calculate other statistical measures, such as the correlation coefficient and the coefficient of determination. These measures can be used to determine the strength of the relationship between two or more variables.
+
+Summary statistics are an important first step in data analysis. They can be used to get a general overview of the data set, to identify outliers, and to calculate other statistical measures.
 
 ### Box Plot {#sec-boxplot}
 
@@ -13,7 +43,7 @@ A box plot is a standardized way of displaying the distribution of data based on
 
 For a description of the quartile see [Glossary @sec-quartiles]. 
 
-A box plot is drawn as a rectangle with the minimum and maximum values at the ends, the first and third quartiles at the middle, and the median at the center. The interquartile range (IQR) is the distance between the first and third quartiles.
+A box plot, see @fig-box,  is drawn as a rectangle with the minimum and maximum values at the ends, the first and third quartiles at the middle, and the median at the center. The interquartile range (IQR) is the distance between the first and third quartiles; the IQR contains 50% of the values.
 
 Outliers are data points that fall outside the interquartile range. Outliers are usually represented by small circles or asterisks.
 
@@ -23,9 +53,47 @@ Box plots can also be used to identify outliers. If there are any outliers in a 
 
 Box plots are a versatile tool that can be used to visualize the distribution of data. They are considered easy to understand and can be used to compare the distributions of data from different groups.
 
+```{r}
+#| label: fig-box
+#| fig-cap: "Example Box Plot"
+#| fig-height: 3.5
+#| fig-width: 5
+#| fig-align: left
+
+# Create a data frame
+df <- data.frame(
+  dataA = c("A", "B", "C", "D"),
+  value = c(10, 5, 15, 20)
+)
+
+# Create a box plot
+ggplot(df, aes(y=value)) +
+  geom_boxplot(fill = "grey85", colour = "grey20", alpha = 0.7) +
+  # Add annotations to the box plot
+  annotate("text", x=0, y=13, label="Q2 Median (50% 'ile)", colour = "blue") +
+  annotate("text", x=0, y=8, label="Q1 First quartile (25% 'ile)", colour = "forestgreen") +
+  annotate("text", x=0, y=17, label="Q3 Third quartile (75% 'ile)" , colour = "forestgreen") +
+  annotate("text", x=0, y=2, label="Minimum", colour = "red") +
+  annotate("text", x=0, y=22, label="Maximum", colour = "red") +
+  theme_minimal() + 
+  theme (legend.position = "none",
+         axis.text.x = element_blank(),
+         axis.text.y = element_blank(),
+         axis.title.x = element_blank(),
+         axis.title.y = element_blank(),
+         plot.title = element_text(size=14, face="bold"),
+         panel.grid.minor = element_blank(),
+         panel.grid.major.x = element_blank(),
+         panel.grid.minor.x = element_blank(),
+         panel.grid.major.y = element_blank())
+
+
+```
+
+
 ### Histogram {#sec-histogram}
 
-A histogram is a graphical representation of the distribution of data. It is a type of bar chart that shows the frequency or number of observations within different numerical ranges, called bins. The bins are usually specified as consecutive, non-overlapping intervals of a variable. The histogram provides a visual representation of the distribution of the data, showing the number of observations that fall within each bin. This can be useful for identifying patterns and trends in the data, and for making comparisons between different datasets.
+A histogram is a graphical representation, see @fig-hist, of the distribution of data. It is a type of bar chart that shows the frequency or number of observations within different numerical ranges, called bins; @fig-hist has 30 bins. The bins are usually specified as consecutive, non-overlapping intervals of a variable. The histogram provides a visual representation of the distribution of the data, showing the number of observations that fall within each bin. This can be useful for identifying patterns and trends in the data, and for making comparisons between different datasets.
 
 To construct a histogram, the first step is to "bin" (or "bucket") the range of values—that is, divide the entire range of values into a series of intervals—and then count how many values fall into each interval. The bins are usually specified as consecutive, non-overlapping intervals of a variable. The bins (intervals) must be adjacent and are often (but not required to be) of equal size.
 
@@ -33,16 +101,65 @@ Once the bins have been created, the next step is to count the number of observa
 
 Histograms can be used to visualize a variety of different types of data. They are often used to visualize the distribution of continuous data, such as height, weight, or income. Histograms can also be used to visualize the distribution of discrete data, such as the number of children in a family or the number of cars owned by a household.
 
-Histograms are a valuable tool for data analysis. They can be used to identify patterns and trends in the data, to compare different datasets, and to make inferences about the population from which the data was drawn. Histograms are a simple and easy-to-understand way to visualize data, and they can be used by people with a variety of levels of statistical expertise.
+Histograms are a valuable tool for data analysis. They can be used to identify patterns and trends in the data, to compare different datasets, and to make inferences about the population from which the data was drawn. @fig-hist is annotated with the mean, median and 5% and 95% percentiles. Histograms are a simple and easy-to-understand way to visualize data, and they can be used by people with a variety of levels of statistical expertise.
 
+```{r}
+#| label: fig-hist
+#| fig-cap: "Example Histogram"
+#| fig-height: 3.5
+#| fig-width: 5
+#| fig-align: left
+
+
+# Generate non-normal data with skewness = 3 and kurtosis = 2
+set.seed(123)
+data <- rnonnorm(n = 1000, mean = 0, sd = 1, skew = 3, kurt = 2)
+
+# Plot the distribution of the data
+#hist(data$dat)
+
+hist_data <- tibble(dat = data$dat)
+
+Gmean <- mean(hist_data$dat)
+Gmedian <- median(hist_data$dat)
+percent05 <- quantile(hist_data$dat, 0.05)
+percent95 <- quantile(hist_data$dat, 0.95)
+
+
+# Create a histogram of the data
+ggplot(hist_data, aes(x = dat)) +
+  geom_histogram(color = "black", fill = "grey85", bins = 30) +
+  labs(x = "Measurement", y = "Frequency") +
+  geom_vline(xintercept = Gmedian, linetype = "dashed", colour = "darkred", linewidth = 2, alpha = 0.4) +
+  geom_vline(xintercept = Gmean, linetype = "dashed", colour = "gold4", linewidth = 2, alpha = 0.4) +
+  geom_vline(xintercept = percent05, linetype = "dashed", colour = "forestgreen", linewidth = 2, alpha = 0.4) +
+  geom_vline(xintercept = percent95, linetype = "dashed", colour = "forestgreen", linewidth = 2, alpha = 0.4) +
+  theme_minimal() +
+  annotate("text", x = Gmean, y = 130, label = "Mean", color = "gold4") +
+  annotate("text", x = Gmedian, y = 160, label = "Median", color = "darkred") +
+  annotate("text", x = percent05, y = 195, label = "5%'ile", color = "forestgreen") +
+  annotate("text", x = percent95, y = 195, label = "95%'ile", color = "forestgreen") +
+  theme (legend.position = "none",
+         axis.text.x = element_blank(),
+         axis.text.y = element_blank(),
+         axis.title.x = element_text(size=14, face="bold"),
+         axis.title.y = element_text(size=14, face="bold"),
+         plot.title = element_text(size=14, face="bold"),
+         panel.grid.minor = element_blank(),
+         panel.grid.major.x = element_blank(),
+         panel.grid.minor.x = element_blank(),
+         panel.grid.major.y = element_blank())
+
+
+```
 
 ### Kernel Density  {#sec-kernel}
 
-Kernel density estimation (KDE) is a non-parametric way to estimate the probability density function of a random variable. It is a smooth, continuous function that is constructed by "smoothing" the data points. The smoothing is done by using a kernel function, which is a bell-shaped function that is centered at each data point. The height of the kernel function at a given point is proportional to the amount of data that is near that point.
+Kernel density estimation (KDE), see @fig-kern, is a non-parametric way to estimate the probability density function of a random variable. It is a smooth, continuous function that is constructed by "smoothing" the data points. The smoothing is done by using a kernel function, which is a bell-shaped function that is centered at each data point. The height of the kernel function at a given point is proportional to the amount of data that is near that point.
 
-The kernel density estimate is a powerful tool for visualizing data and for making inferences about the population from which the data was drawn. It can be used to compare different groups of data, to identify outliers, and to estimate the mean, median, and other properties of the population.
+The kernel density estimate is a powerful tool for visualizing data and for making inferences about the population from which the data was drawn. It can be used to compare different groups of data, to identify outliers, and to estimate the mean, median, and other properties of the population; the calculated mean, median and 5%ile and 95%ile are annotated on @fig-kern.
 
-Here are some examples of how kernel density estimation can be used:
+Kernel density estimation can be used to:
 
 * To visualize the distribution of data.  
 * To compare different groups of data.  
@@ -51,19 +168,83 @@ Here are some examples of how kernel density estimation can be used:
 
 Kernel density estimation is a versatile and powerful tool that can be used to analyze a wide variety of data. It is a valuable tool for data scientists, statisticians, and anyone who needs to make sense of data.
 
-Here are some of the advantages of using kernel density estimation:
+The advantages of using kernel density estimation are:
 
 * It is a non-parametric method, which means that it does not make any assumptions about the distribution of the data.  
 * It is a smooth, continuous function, which makes it easy to visualize and interpret.  
 * It is a versatile tool that can be used for a variety of tasks, such as comparing different groups of data, identifying outliers, and estimating the mean, median, and other properties of the population.  
 
-Here are some of the disadvantages of using kernel density estimation:
+Some of the disadvantages of using kernel density estimation are:
 
 * It can be computationally expensive, especially for large datasets.  
 * The results can be sensitive to the choice of kernel function and bandwidth.  
 * It can be difficult to interpret the results if the data is not normally distributed.  
 * Overall, kernel density estimation is a powerful and versatile tool that can be used to analyze a wide variety of data. 
 * It is a valuable tool for data scientists, statisticians, and anyone who needs to make sense of data.  
+
+```{r}
+#| label: fig-kern
+#| fig-cap: "Example Kernel Density"
+#| fig-height: 3.5
+#| fig-width: 5
+#| fig-align: left
+
+
+
+# Generate non-normal data with skewness = 3 and kurtosis = 2
+set.seed(123)
+data <- rnonnorm(n = 1000, mean = 0, sd = 1, skew = 3, kurt = 2)
+
+# Plot the distribution of the data
+#hist(data$dat)
+
+hist_data <- tibble(dat = data$dat)
+
+Gmean <- mean(hist_data$dat)
+Gmedian <- median(hist_data$dat)
+percent05 <- quantile(hist_data$dat, 0.05)
+percent95 <- quantile(hist_data$dat, 0.95)
+
+
+# Create a histogram of the data
+ggplot(hist_data, aes(x = dat)) +
+  geom_density(color = "black", fill = "grey85") +
+  labs(x = "Measurement", y = "Density") +
+  geom_vline(xintercept = Gmedian, linetype = "dashed", colour = "darkred", linewidth = 2, alpha = 0.4) +
+  geom_vline(xintercept = Gmean, linetype = "dashed", colour = "gold4", linewidth = 2, alpha = 0.4) +
+  geom_vline(xintercept = percent05, linetype = "dashed", colour = "forestgreen", linewidth = 2, alpha = 0.4) +
+  geom_vline(xintercept = percent95, linetype = "dashed", colour = "forestgreen", linewidth = 2, alpha = 0.4) +
+  theme_minimal() +
+  annotate("text", x = Gmean, y = 0.8, label = "Mean", color = "gold4") +
+  annotate("text", x = Gmedian, y = 0.7, label = "Median", color = "darkred") +
+  annotate("text", x = percent05, y = 0.5, label = "5%'ile", color = "forestgreen") +
+  annotate("text", x = percent95, y = 0.5, label = "95%'ile", color = "forestgreen") +
+  theme (legend.position = "none",
+         axis.text.x = element_blank(),
+         axis.text.y = element_blank(),
+         axis.title.x = element_text(size=14, face="bold"),
+         axis.title.y = element_text(size=14, face="bold"),
+         plot.title = element_text(size=14, face="bold"),
+         panel.grid.minor = element_blank(),
+         panel.grid.major.x = element_blank(),
+         panel.grid.minor.x = element_blank(),
+         panel.grid.major.y = element_blank())
+
+
+```
+
+
+### Scatter Plot {#sec-scatter}
+
+A scatter plot graph is a type of chart that uses dots to show the relationship between two variables. The horizontal axis (x-axis) represents one variable, and the vertical axis (y-axis) represents the other variable. Each dot on the graph represents a single data point, and the position of the dot on the x-axis and y-axis indicates the values of the two variables for that data point.
+
+Scatter plots are used to identify relationships between variables. For example, a scatter plot of height and weight might show that there is a positive correlation between the two variables, meaning that taller people tend to weigh more. A scatter plot of test scores and hours studied might show that there is a negative correlation between the two variables, meaning that students who study more tend to get lower test scores.
+
+Scatter plots can also be used to identify outliers, which are data points that fall far outside the general trend of the data. Outliers can be helpful for identifying errors in data, or for finding unusual patterns in data.
+
+Overall, scatter plots are a versatile tool for visualizing and analyzing data. They are easy to understand and interpret, and they can be used to identify a variety of relationships between variables.
+
+The scatter plot is often combined with a loess curve [Glossary @sec-loess] or linear regression [Glossary @sec-linear].
 
 ### LOESS curve {#sec-loess}
 
@@ -87,6 +268,23 @@ Some of the limitations of using the LOESS curve in graph:
 - It can be computationally expensive to fit a LOESS curve to a large dataset.
 - The LOESS curve can be sensitive to the choice of the bandwidth parameter.
 - The LOESS curve can be difficult to interpret in some cases.
+
+### Linear Regression {#sec-linear}
+
+A linear regression on a scatter plot graph is a line that is fitted to the data points in order to represent the relationship between the two variables. The line is fitted so that it minimizes the sum of the squared residuals, which are the distances between the data points and the line.
+
+The linear regression line can be used to predict the value of one variable from the value of the other variable. For example, if we have a scatter plot of height and weight, we can use the linear regression line to predict someone's weight from their height.
+
+The linear regression line can also be used to measure the strength of the relationship between the two variables. The stronger the relationship, the closer the data points will be to the line. The R-squared value is a measure of the strength of the relationship, and it can be interpreted as the percentage of the variation in the dependent variable that is explained by the independent variable.
+
+Overall, linear regression is a powerful tool for analyzing the relationship between two variables. It can be used to visualize the relationship, to make predictions, and to measure the strength of the relationship.
+
+Here are some additional details about linear regression on a scatter plot graph:
+
+* The equation of the linear regression line is Y = mX + b, where Y is the dependent variable, X is the independent variable, m is the slope of the line, and b is the y-intercept.
+* The slope of the line tells us how much the dependent variable changes for a 1-unit increase in the independent variable.
+* The y-intercept tells us the value of the dependent variable when the independent variable is 0.
+* The R-squared value is a measure of the strength of the relationship between the two variables. An R-squared value of 1 means that there is a perfect linear relationship between the two variables, and an R-squared value of 0 means that there is no linear relationship between the two variables.
 
 
 ## Measures of Central Tendency and Dispersion
@@ -447,6 +645,11 @@ Examples of when to use Standardisation and Normalisation:
     * When you need to make data comparable across different datasets.
     * When you are using a machine learning algorithm that is sensitive to the range of the data.
     * When you want to improve the performance of a machine learning algorithm.
+
+A rule of thumb:
+
+* **Normalisation:** When you know the bounds of your input and outliers are rare.  
+* **Standardisation:** When the data has outliers or unknown bounds and the algorithm is sensitive to distribution.
 
 
 ### Distance measurements for ecological data {#sec-distance}
