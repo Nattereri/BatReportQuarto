@@ -3,6 +3,7 @@ title: "Glossary"
 execute:
   echo: false
 number-sections: true
+bibliography: references.bib
 ---
 
 ```{r}
@@ -11,10 +12,41 @@ number-sections: true
 # Load the required packages
 library(tidyverse)
 library(detectnorm)
+library(glue)
 
 
 ```
 
+## Data Management {#sec-management}
+
+Data management encompasses a wide range of activities, including: collecting, organizing, storing, and securing data. It is a critical function for any organization or individual that wants to make effective use of its data.
+
+Data management is essential for:
+
+* Making informed decisions: By having access to accurate and timely data, organizations can make better decisions about their operations, marketing, and products.
+* Improving efficiency: By identifying and eliminating inefficiencies in their operations, organizations can save money and time.
+* Complying with regulations: By properly managing their data, organizations can avoid fines and penalties for non-compliance.
+* Protecting reputation: By preventing data breaches and other security incidents, organizations can protect their reputation and avoid financial losses.
+
+### Tidy Data {#sec-tidy}
+
+*Tidy Data* is a consistent way to organise data [@wickham_tidy_2014] [@JSSv105i07]. Getting data into this format requires some initial work, but that effort pays off in the long term. When data is tidy less time is spent wrangling data from one representation to another, allowing more time to on the analytic questions at hand. 
+
+There are three interrelated rules which make a data set tidy see @fig-threerules:
+
+-   Each variable must have its own column.
+-   Each observation must have its own row.
+-   Each value must have its own cell.
+
+![Rules for Tidy Data](Images/TidyDataBats.PNG){#fig-threerules}
+
+The advantages of tidy data when doing data analysis:
+
+* **Easier to understand and interpret:** Tidy data is easy to understand and interpret because it is structured in a logical way. Each variable is stored in its own column, and each observation is stored in its own row. This makes it easy to see how the different variables are related to each other.
+* **Easier to share and collaborate:** Tidy data is easy to share and collaborate on because it is a standard format. This means that anyone can open and understand tidy data, regardless of the software they are using.
+* **Easier to analyze:** Tidy data is easier to analyze because it is structured in a way that is compatible with many data analysis tools. This means that you can use a variety of tools to analyze your data without having to spend time converting it to a different format.
+* **Less error-prone:** Tidy data is less error-prone because it is easier to check for errors. The logical structure of tidy data makes it easier to identify inconsistencies and missing values.
+* **More efficient:** Tidy data is more efficient to work with because it is easier to access and manipulate. The structured format of tidy data makes it faster to find the information you need and to perform calculations.
 
 ## Frequency Measures and Graphical Representation
 
@@ -236,7 +268,7 @@ ggplot(hist_data, aes(x = dat)) +
 
 ### Scatter Plot {#sec-scatter}
 
-A scatter plot graph is a type of chart that uses dots to show the relationship between two variables. The horizontal axis (x-axis) represents one variable, and the vertical axis (y-axis) represents the other variable. Each dot on the graph represents a single data point, and the position of the dot on the x-axis and y-axis indicates the values of the two variables for that data point.
+A scatter plot graph is a type of chart that uses dots to show the relationship between two variables. The horizontal axis (x-axis) represents one variable, and the vertical axis (y-axis) represents the other variable. Each dot on the graph represents a single data point, and the position of the dot on the x-axis and y-axis indicates the values of the two variables for that data point. @fig-scatter shows a scatter plot of Ozone against Wind for New York City. 
 
 Scatter plots are used to identify relationships between variables. For example, a scatter plot of height and weight might show that there is a positive correlation between the two variables, meaning that taller people tend to weigh more. A scatter plot of test scores and hours studied might show that there is a negative correlation between the two variables, meaning that students who study more tend to get lower test scores.
 
@@ -246,9 +278,105 @@ Overall, scatter plots are a versatile tool for visualizing and analyzing data. 
 
 The scatter plot is often combined with a loess curve [Glossary @sec-loess] or linear regression [Glossary @sec-linear].
 
-### LOESS curve {#sec-loess}
+```{r}
+#| label: fig-scatter
+#| fig-cap: "Scatter Plot: New York City Air Quality"
+#| fig-height: 3.5
+#| fig-width: 5
+#| fig-align: left
 
-The LOESS curve is a type of smooth curve that is used in `ggplot2` graphs to fit a line to a set of data points. It is a non-parametric method, which means that it does not make any assumptions about the underlying distribution of the data. This makes it a versatile tool for fitting curves to a wide variety of data.
+
+air_data <- airquality %>% 
+  mutate(Date = glue("{Day}-{Month}-2023"),
+         Date = lubridate::dmy(Date)) %>% 
+  filter(!is.na(Ozone))
+
+# Create the scatter plot
+ggplot(data = air_data, aes(x = Wind, y = Ozone)) +
+  geom_point(colour = "dodgerblue", size = 2) +
+  #geom_smooth(method = "lm", se = FALSE) +
+  #geom_smooth() +
+  labs(x = "Wind (mph)",
+       y = "Ozone (ppb)") +
+  theme_minimal() +
+  theme (legend.position = "none",
+         axis.text.x = element_text(size=12, face="bold"),
+         axis.text.y = element_text(size=12, face="bold"),
+         axis.title.x = element_text(size=14, face="bold"),
+         axis.title.y = element_text(size=14, face="bold"),
+         plot.title = element_text(size=14, face="bold"),
+         panel.grid.minor = element_blank(),
+         panel.grid.major.x = element_blank(),
+         panel.grid.minor.x = element_blank(),
+         panel.grid.major.y = element_blank())
+```
+
+### Time Series Plot {#sec-timeseries}
+
+A time series graph is a graphical representation of data points plotted against time, see @fig-timeseries. The data points are typically connected by lines to show the trend over time. Time series graphs can be used to visualize trends, identify patterns, and make predictions.
+
+In data analysis, time series graphs can be used to:
+
+* **Identify trends:** By looking at a time series graph, you can see if there is an overall upward or downward trend in the data. You can also see if there are any seasonal trends, such as a spike in sales during the holiday season.
+* **Identify patterns:** Time series graphs can also be used to identify patterns in the data. For example, you might see that the data is increasing at a steady rate, or that it is increasing at a faster rate over time.
+* **Make predictions:** Time series graphs can be used to make predictions about future values. For example, if you see a trend of increasing sales, you might predict that sales will continue to increase in the future.
+
+To create a time series graph, you need to:
+
+1. Choose the data points you want to plot.
+2. Decide on the time intervals you want to use.
+3. Plot the data points on the graph.
+4. Connect the data points with lines or a trend.
+
+There are many different ways to customize a time series graph. You can change the colors, the line types, and the labels. You can also add additional information to the graph, such as trend lines (e.g. loess [Glossary @sec-loess] or linear regression [Glossary @sec-linear]) or error bars.
+
+Time series graphs are a powerful tool for data analysis. They can be used to visualize trends, identify patterns, and make predictions. If the data is a time series a time series graph invariably help understand the data.
+
+Some examples of how time series graphs can be used in data analysis:
+
+* A retail store might use a time series graph to track sales over time. This could help the store identify trends, such as seasonal fluctuations or changes in customer behavior.
+* A weather forecaster might use a time series graph to track the temperature over time. This could help them predict future weather conditions.
+* A financial analyst might use a time series graph to track the price of a stock over time. This could help them make investment decisions.
+
+
+```{r}
+#| label: fig-timeseries
+#| fig-cap: "Time Series Plot: Ozone Concentration New York City"
+#| fig-height: 3.5
+#| fig-width: 5
+#| fig-align: left
+
+library(ggplot2)
+
+air_data <- airquality %>% 
+  mutate(Date = glue("{Day}-{Month}-2023"),
+         Date = lubridate::dmy(Date)) %>% 
+  filter(!is.na(Ozone))
+
+# Create the time series plot
+ggplot(air_data, aes(x = Date, y = Ozone)) +
+  geom_line() +
+  geom_point(colour = "dodgerblue", size = 2) +
+  labs(y = "Ozone (ppb)") +
+  theme_minimal() +
+  theme (legend.position = "none",
+         axis.text.x = element_text(size=14, face="bold"),
+         axis.text.y = element_text(size=12, face="bold"),
+         axis.title.x = element_blank(),
+         axis.title.y = element_text(size=14, face="bold"),
+         plot.title = element_text(size=14, face="bold"),
+         panel.grid.minor = element_blank(),
+         panel.grid.major.x = element_blank(),
+         panel.grid.minor.x = element_blank(),
+         panel.grid.major.y = element_blank())
+
+
+```
+
+
+### LOESS Curve {#sec-loess}
+
+The LOESS curve is a type of smooth curve that is used in `ggplot2` graphs to fit a line to a set of data points. It is a non-parametric method, which means that it does not make any assumptions about the underlying distribution of the data. This makes it a versatile tool for fitting curves to a wide variety of data. @fig-loess shows a LOESS curve applied to the scatter plot of Ozone against Wind for New York City. 
 
 The LOESS curve is calculated using a process called locally weighted regression. This means that the curve is fit to the data points in a local neighborhood around each point. The size of the neighborhood is determined by a parameter called the bandwidth. The bandwidth controls how smooth the curve is. A larger bandwidth will result in a smoother curve, while a smaller bandwidth will result in a more wiggly curve.
 
@@ -269,9 +397,44 @@ Some of the limitations of using the LOESS curve in graph:
 - The LOESS curve can be sensitive to the choice of the bandwidth parameter.
 - The LOESS curve can be difficult to interpret in some cases.
 
+
+```{r}
+#| label: fig-loess
+#| fig-cap: "Scatter Plot with Loess Curve: New York City Air Quality"
+#| fig-height: 3.5
+#| fig-width: 5
+#| fig-align: left
+#| message: false
+
+
+air_data <- airquality %>% 
+  mutate(Date = glue("{Day}-{Month}-2023"),
+         Date = lubridate::dmy(Date)) %>% 
+  filter(!is.na(Ozone))
+
+# Create the scatter plot
+ggplot(data = air_data, aes(x = Wind, y = Ozone)) +
+  geom_point(colour = "dodgerblue", size = 2) +
+  #geom_smooth(method = "lm", se = FALSE) +
+  geom_smooth(colour = "darkred", linewidth = 2, se = F) +
+  labs(x = "Wind (mph)",
+       y = "Ozone (ppb)") +
+  theme_minimal() +
+  theme (legend.position = "none",
+         axis.text.x = element_text(size=12, face="bold"),
+         axis.text.y = element_text(size=12, face="bold"),
+         axis.title.x = element_text(size=14, face="bold"),
+         axis.title.y = element_text(size=14, face="bold"),
+         plot.title = element_text(size=14, face="bold"),
+         panel.grid.minor = element_blank(),
+         panel.grid.major.x = element_blank(),
+         panel.grid.minor.x = element_blank(),
+         panel.grid.major.y = element_blank())
+```
+
 ### Linear Regression {#sec-linear}
 
-A linear regression on a scatter plot graph is a line that is fitted to the data points in order to represent the relationship between the two variables. The line is fitted so that it minimizes the sum of the squared residuals, which are the distances between the data points and the line.
+A linear regression on a scatter plot graph is a line that is fitted to the data points in order to represent the relationship between the two variables. The line is fitted so that it minimizes the sum of the squared residuals, which are the distances between the data points and the line.   @fig-linear shows a linear regression applied to the scatter plot of Ozone against Wind for New York City. 
 
 The linear regression line can be used to predict the value of one variable from the value of the other variable. For example, if we have a scatter plot of height and weight, we can use the linear regression line to predict someone's weight from their height.
 
@@ -279,13 +442,54 @@ The linear regression line can also be used to measure the strength of the relat
 
 Overall, linear regression is a powerful tool for analyzing the relationship between two variables. It can be used to visualize the relationship, to make predictions, and to measure the strength of the relationship.
 
-Here are some additional details about linear regression on a scatter plot graph:
+Additional details about linear regression on a scatter plot graph:
 
-* The equation of the linear regression line is Y = mX + b, where Y is the dependent variable, X is the independent variable, m is the slope of the line, and b is the y-intercept.
-* The slope of the line tells us how much the dependent variable changes for a 1-unit increase in the independent variable.
-* The y-intercept tells us the value of the dependent variable when the independent variable is 0.
-* The R-squared value is a measure of the strength of the relationship between the two variables. An R-squared value of 1 means that there is a perfect linear relationship between the two variables, and an R-squared value of 0 means that there is no linear relationship between the two variables.
+* The equation of the linear regression line is $Y = mX + c$, where $Y$ is the dependent variable, $X$ is the independent variable, $m$ is the slope of the line, and $c$ is the y-intercept.
+* The slope $m$ of the line tells us how much the dependent variable changes for a 1-unit increase in the independent variable.
+* The $y$-intercept tells us the value of the dependent variable when the independent variable is 0.
+* The $R$-squared value is a measure of the strength of the relationship between the two variables. An $R$-squared value of 1 means that there is a perfect linear relationship between the two variables, and an $R$-squared value of 0 means that there is no linear relationship between the two variables.
 
+
+
+```{r}
+#| label: fig-linear
+#| fig-cap: "Scatter Plot with Linear Regression: New York City Air Quality"
+#| fig-height: 3.5
+#| fig-width: 5
+#| fig-align: left
+#| message: false
+
+library(ggpubr)
+
+air_data <- airquality %>% 
+  mutate(Date = glue("{Day}-{Month}-2023"),
+         Date = lubridate::dmy(Date)) %>% 
+  filter(!is.na(Ozone))
+
+# Create the scatter plot
+ggplot(data = air_data, aes(x = Wind, y = Ozone)) +
+  geom_point(colour = "dodgerblue", size = 2, alpha = 0.5) +
+ 
+  geom_smooth(method = "lm", colour = "darkred", linewidth = 2, se = F) +
+  stat_regline_equation(label.x = 13, label.y = 115, colour = "darkred") +
+  stat_cor(label.x = 13, label.y = 100, colour = "darkred") +
+  labs(x = "Wind (mph)",
+       y = "Ozone (ppb)") +
+  theme_minimal() +
+  theme (legend.position = "none",
+         axis.text.x = element_text(size=12, face="bold"),
+         axis.text.y = element_text(size=12, face="bold"),
+         axis.title.x = element_text(size=14, face="bold"),
+         axis.title.y = element_text(size=14, face="bold"),
+         plot.title = element_text(size=14, face="bold"),
+         panel.grid.minor = element_blank(),
+         panel.grid.major.x = element_blank(),
+         panel.grid.minor.x = element_blank(),
+         panel.grid.major.y = element_blank())
+
+
+
+```
 
 ## Measures of Central Tendency and Dispersion
 
@@ -326,7 +530,7 @@ Once you have specified these parameters, you can use the following steps to con
 3. Order the values of the statistic from the smallest to the largest.
 4. The 2.5th and 97.5th percentiles of the ordered values of the statistic will form the lower and upper bounds of the bootstrap confidence interval.
 
-For example, if you are interested in the 95% confidence interval for the mean of a dataset, you would order the values of the mean from the smallest to the largest, and then take the 2.5th and 97.5th percentiles as the lower and upper bounds of the confidence interval.
+For example, if you are interested in the 95% confidence interval for the mean of a dataset, you would order the values of the mean from the smallest to the largest, and then take the 2.5^th^ and 97.5^th^ percentiles as the lower and upper bounds of the confidence interval.
 
 Bootstrap confidence intervals are a powerful tool for estimating the uncertainty around a statistic. They are relatively easy to construct, and they do not require any assumptions about the underlying distribution of the data. This makes them a valuable tool for a wide variety of statistical applications.
 
@@ -406,7 +610,7 @@ It is important to note that the confidence interval for Spearman correlation wi
 
 Overall, the confidence interval for Spearman correlation is a useful tool for estimating the true correlation between two variables. The confidence interval can be used to make inferences about the relationship between the variables and to assess the statistical significance of the correlation.
 
-## Hypothesis Testing
+## Hypothesis Testing {#sec-hypotest}
 
 
 ### Wilcoxon rank sum test {#sec-mw}
@@ -504,12 +708,58 @@ Type I and Type II errors are an unavoidable part of hypothesis testing. However
 
 ### QQ-plot {#sec-QQ}
 
-In statistics, a QQ plot (quantile-quantile plot) is a probability plot, a graphical method for comparing two probability distributions by plotting their quantiles against each other. A point (x, y) on the plot corresponds to one of the quantiles of the second distribution (y-coordinate) plotted against the same quantile of the first distribution (x-coordinate). This defines a parametric curve where the parameter is the index of the quantile interval.
+A Q-Q plot (quantile-quantile plot) is a graphical method for comparing two probability distributions by plotting their quantiles against each other. In the context of regression, a Q-Q plot of the residuals can be used to assess whether the residuals are normally distributed. @fig-QQ shows the Q-Q plot of regression residuals for Ozone against Wind for New York City; see also @fig-linear.
 
-A QQ plot is a plot of the quantiles of two distributions against each other, or a plot based on estimates of the quantiles. The pattern of points in the plot is used to compare the two distributions. The main step in constructing a QQ plot is calculating or estimating the quantiles to be plotted. If one or both of the axes in a QQ plot is based on a theoretical distribution with a continuous cumulative distribution function (CDF), all quantiles are uniquely defined and can be obtained by inverting the CDF.
+The theoretical distribution for the Q-Q plot is usually the standard normal distribution, but other distributions can be used as well. The residuals are first standardized, which means that they are converted to z-scores by subtracting the mean and dividing by the standard deviation. The standardized residuals are then plotted against the theoretical quantiles of the normal distribution.
 
-QQ plots are often used to assess the normality of data. If the data is normally distributed, the points in the QQ plot will fall roughly along a straight line. If the data is not normally distributed, the points in the QQ plot will deviate from a straight line. The direction and amount of deviation can be used to assess the nature of the non-normality.
+If the residuals are normally distributed, the points on the Q-Q plot will fall along a straight line. Any deviations from the line suggest that the residuals are not normally distributed. For example, if the points are all above the line, this suggests that the residuals are more spread out than the normal distribution. If the points are all below the line, this suggests that the residuals are more concentrated than the normal distribution.
 
+In addition to the overall shape of the Q-Q plot, it is also important to look for any systematic patterns in the residuals. For example, if the points are all clustered at one end of the plot, this suggests that there is a problem with the model fit at that point.
+
+Overall, the Q-Q plot is a useful tool for assessing the normality of regression residuals. It is a relatively simple plot to interpret, and it can be used to identify potential problems with the model fit.
+
+Interpretation of Q-Q plot regression residuals:
+
+* The points should follow a straight line.
+* The points should be evenly distributed throughout the plot.
+* There should be no systematic patterns in the residuals.
+
+If the points do not follow a straight line, or if there are any systematic patterns, this suggests that the residuals are not normally distributed. This could be due to a number of factors, such as outliers, non-linear relationships, or heteroscedasticity.
+
+If concerned about the normality of your regression residuals, then use other statistical tests to confirm the findings. However, the Q-Q plot is a quick and easy way to get a visual assessment of the normality of residuals.
+
+
+```{r}
+#| label: fig-QQ
+#| fig-cap: "QQ plot of regression residuals for the linear model Ozone v Wind: New York City"
+#| fig-height: 3.5
+#| fig-width: 5
+#| fig-align: left
+#| message: false
+
+
+
+library(ggpubr)
+
+air_data <- airquality %>% 
+  mutate(Date = glue("{Day}-{Month}-2023"),
+         Date = lubridate::dmy(Date)) %>% 
+  filter(!is.na(Ozone))
+
+
+data("airquality")
+
+# fit a regression model
+model <- lm(air_data$Ozone~air_data$Wind)
+  
+# get list of residuals 
+air_data$res <- resid(model)
+
+ggqqplot(air_data, x = "res", color = "dodgerblue")
+
+
+
+```
 
 ## Unsupervised Learning
 
@@ -756,7 +1006,7 @@ The Minkowski distance can be used in a variety of multivariate analysis tasks, 
 
 * Cluster analysis
 * Nearest neighbor search
-* Similarity measures (e.g. PCA and NMDS)
+* Similarity measures (e.g. PCA [Glossary @sec-pca] and NMDS [Glossary @sec-NMDS])
 
 The choice of the parameter $p$ depends on the specific application. In general, a higher value of $p$ will give more weight to the larger distances between points, while a lower value of $p$ will give more weight to the smaller distances between points.
 
@@ -876,6 +1126,106 @@ The dendrogram can:
 * **Visualize the results of clustering algorithms:** The dendrogram is a way to visualize the results of clustering algorithms. This can help us to understand how the algorithm works, and to interpret the results.
 
 Dendrograms are a valuable tool for data visualization and analysis. They can help us to understand the hierarchical relationships between objects, to identify clusters of similar objects, and to visualize the results of clustering algorithms.
+
+```{r}
+#| label: fig-dendro
+#| fig-cap: "Dendrogram of Violent Crime Rates by US State"
+#| fig-height: 6.5
+#| fig-width: 5
+#| fig-align: left
+#| message: false
+
+#https://cran.r-project.org/web/packages/ggdendro/vignettes/ggdendro.html
+
+library(tidyverse)
+library(ggplot2)
+library(ggdendro)
+library(cluster)
+library(iBats)
+
+hc <- hclust(dist(USArrests), "ave")
+ggdendrogram(hc, rotate = TRUE, size = 2)
+
+# # Create a distance matrix
+# dist_mat <- dist(iris[, 1:4])
+# 
+# # Perform hierarchical clustering on the distance matrix
+# #hclust_obj <- hclust(dist_mat, method = "ward.D"))
+# 
+# # Plot the dendrogram
+# #plot(hclust_obj)
+# # Plot the dendrogram using ggplot
+# #ggdendrogram(hc, rotate = FALSE, size = 2)
+# 
+# hc <- hclust(dist_mat, method = "ward.D")
+# 
+# 
+# ggdendrogram(hc, rotate = FALSE, size = 2)
+# 
+# # model <- hclust(dist(USArrests), "ave")
+# # dhc <- as.dendrogram(model)
+# # # Rectangular lines
+# # ddata <- dendro_data(dhc, type = "rectangle")
+# # p <- ggplot(segment(ddata)) + 
+# #   geom_segment(aes(x = x, y = y, xend = xend, yend = yend)) + 
+# #   coord_flip() + 
+# #   scale_y_reverse(expand = c(0.2, 0))
+# # p
+
+# Tab_L_S <- statics %>% # Location - Species
+#   group_by(Species, Description) %>% 
+#   count() 
+# 
+# maxValue <- max(Tab_L_S$n, na.rm = T)
+# 
+# Tab_L_S <- Tab_L_S %>% 
+#   pivot_wider(names_from = Species, values_from = n) %>% 
+#   replace(is.na(.), 0)
+# 
+# SpeciesC <- Tab_L_S %>% 
+#   ungroup() %>% 
+#   select(2:ncol(.)) %>% 
+#   mutate_all(funs(sqrt(.)))
+# 
+# Table <- SpeciesC %>% 
+#   mutate_all(funs(round(., 2)))
+# 
+# Matrix <- Tab_L_S %>%
+#   ungroup() %>% 
+#   select(Description) %>% 
+#   bind_cols(SpeciesC)
+# 
+# 
+# MatrixTable <- Tab_L_S %>%
+#   ungroup() %>% 
+#   select(Description) %>% 
+#   bind_cols(Table)
+# 
+# Matrix <- data.matrix(Matrix[, 2:ncol(Matrix)])
+# 
+# r_names <- Tab_L_S %>%
+#   ungroup() %>% 
+#   pull(Description)
+# 
+# rownames(Matrix) <- r_names
+# 
+# library(vegan)
+# 
+# dist_bray <- vegdist(Matrix, method="bray")
+# 
+# dist_df <- tibble(dist_bray)
+# 
+# hc_bray <- hclust(dist_bray, method = "complete")
+# 
+# # Always visualse
+# library(ggdendro)
+# #Creates Dendrogram Plot Using ggplot.
+# ggdendrogram(hc_bray, rotate = TRUE, size = 2) +
+#   labs(title = "Static Location - Complete Cluster - Bray-Curtis")
+# 
+# dhc <- as.dendrogram(hc_bray)
+
+```
 
 
 ### K-Means Clustering {#sec-kmeans}

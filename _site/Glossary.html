@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -146,56 +165,61 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#frequency-measures-and-graphical-representation" id="toc-frequency-measures-and-graphical-representation" class="nav-link active" data-scroll-target="#frequency-measures-and-graphical-representation"><span class="header-section-number">1</span> Frequency Measures and Graphical Representation</a>
+  <li><a href="#sec-management" id="toc-sec-management" class="nav-link active" data-scroll-target="#sec-management"><span class="header-section-number">1</span> Data Management</a>
   <ul class="collapse">
-  <li><a href="#sec-summary" id="toc-sec-summary" class="nav-link" data-scroll-target="#sec-summary"><span class="header-section-number">1.1</span> Summary Statistics</a></li>
-  <li><a href="#sec-boxplot" id="toc-sec-boxplot" class="nav-link" data-scroll-target="#sec-boxplot"><span class="header-section-number">1.2</span> Box Plot</a></li>
-  <li><a href="#sec-histogram" id="toc-sec-histogram" class="nav-link" data-scroll-target="#sec-histogram"><span class="header-section-number">1.3</span> Histogram</a></li>
-  <li><a href="#sec-kernel" id="toc-sec-kernel" class="nav-link" data-scroll-target="#sec-kernel"><span class="header-section-number">1.4</span> Kernel Density</a></li>
-  <li><a href="#sec-scatter" id="toc-sec-scatter" class="nav-link" data-scroll-target="#sec-scatter"><span class="header-section-number">1.5</span> Scatter Plot</a></li>
-  <li><a href="#sec-loess" id="toc-sec-loess" class="nav-link" data-scroll-target="#sec-loess"><span class="header-section-number">1.6</span> LOESS curve</a></li>
-  <li><a href="#sec-linear" id="toc-sec-linear" class="nav-link" data-scroll-target="#sec-linear"><span class="header-section-number">1.7</span> Linear Regression</a></li>
+  <li><a href="#sec-tidy" id="toc-sec-tidy" class="nav-link" data-scroll-target="#sec-tidy"><span class="header-section-number">1.1</span> Tidy Data</a></li>
   </ul></li>
-  <li><a href="#measures-of-central-tendency-and-dispersion" id="toc-measures-of-central-tendency-and-dispersion" class="nav-link" data-scroll-target="#measures-of-central-tendency-and-dispersion"><span class="header-section-number">2</span> Measures of Central Tendency and Dispersion</a>
+  <li><a href="#frequency-measures-and-graphical-representation" id="toc-frequency-measures-and-graphical-representation" class="nav-link" data-scroll-target="#frequency-measures-and-graphical-representation"><span class="header-section-number">2</span> Frequency Measures and Graphical Representation</a>
   <ul class="collapse">
-  <li><a href="#sec-quartiles" id="toc-sec-quartiles" class="nav-link" data-scroll-target="#sec-quartiles"><span class="header-section-number">2.1</span> Quartiles</a></li>
-  <li><a href="#sec-boot" id="toc-sec-boot" class="nav-link" data-scroll-target="#sec-boot"><span class="header-section-number">2.2</span> Bootstrap Confidence Intervals</a></li>
+  <li><a href="#sec-summary" id="toc-sec-summary" class="nav-link" data-scroll-target="#sec-summary"><span class="header-section-number">2.1</span> Summary Statistics</a></li>
+  <li><a href="#sec-boxplot" id="toc-sec-boxplot" class="nav-link" data-scroll-target="#sec-boxplot"><span class="header-section-number">2.2</span> Box Plot</a></li>
+  <li><a href="#sec-histogram" id="toc-sec-histogram" class="nav-link" data-scroll-target="#sec-histogram"><span class="header-section-number">2.3</span> Histogram</a></li>
+  <li><a href="#sec-kernel" id="toc-sec-kernel" class="nav-link" data-scroll-target="#sec-kernel"><span class="header-section-number">2.4</span> Kernel Density</a></li>
+  <li><a href="#sec-scatter" id="toc-sec-scatter" class="nav-link" data-scroll-target="#sec-scatter"><span class="header-section-number">2.5</span> Scatter Plot</a></li>
+  <li><a href="#sec-timeseries" id="toc-sec-timeseries" class="nav-link" data-scroll-target="#sec-timeseries"><span class="header-section-number">2.6</span> Time Series Plot</a></li>
+  <li><a href="#sec-loess" id="toc-sec-loess" class="nav-link" data-scroll-target="#sec-loess"><span class="header-section-number">2.7</span> LOESS Curve</a></li>
+  <li><a href="#sec-linear" id="toc-sec-linear" class="nav-link" data-scroll-target="#sec-linear"><span class="header-section-number">2.8</span> Linear Regression</a></li>
   </ul></li>
-  <li><a href="#association-of-two-variables" id="toc-association-of-two-variables" class="nav-link" data-scroll-target="#association-of-two-variables"><span class="header-section-number">3</span> Association of Two Variables</a>
+  <li><a href="#measures-of-central-tendency-and-dispersion" id="toc-measures-of-central-tendency-and-dispersion" class="nav-link" data-scroll-target="#measures-of-central-tendency-and-dispersion"><span class="header-section-number">3</span> Measures of Central Tendency and Dispersion</a>
   <ul class="collapse">
-  <li><a href="#sec-pearson" id="toc-sec-pearson" class="nav-link" data-scroll-target="#sec-pearson"><span class="header-section-number">3.1</span> Pearson correlation</a></li>
-  <li><a href="#sec-spearmancorr" id="toc-sec-spearmancorr" class="nav-link" data-scroll-target="#sec-spearmancorr"><span class="header-section-number">3.2</span> Spearman Correlation</a></li>
+  <li><a href="#sec-quartiles" id="toc-sec-quartiles" class="nav-link" data-scroll-target="#sec-quartiles"><span class="header-section-number">3.1</span> Quartiles</a></li>
+  <li><a href="#sec-boot" id="toc-sec-boot" class="nav-link" data-scroll-target="#sec-boot"><span class="header-section-number">3.2</span> Bootstrap Confidence Intervals</a></li>
   </ul></li>
-  <li><a href="#hypothesis-testing" id="toc-hypothesis-testing" class="nav-link" data-scroll-target="#hypothesis-testing"><span class="header-section-number">4</span> Hypothesis Testing</a>
+  <li><a href="#association-of-two-variables" id="toc-association-of-two-variables" class="nav-link" data-scroll-target="#association-of-two-variables"><span class="header-section-number">4</span> Association of Two Variables</a>
   <ul class="collapse">
-  <li><a href="#sec-mw" id="toc-sec-mw" class="nav-link" data-scroll-target="#sec-mw"><span class="header-section-number">4.1</span> Wilcoxon rank sum test</a></li>
-  <li><a href="#sec-kruskal" id="toc-sec-kruskal" class="nav-link" data-scroll-target="#sec-kruskal"><span class="header-section-number">4.2</span> Kruskal Wallis</a></li>
-  <li><a href="#sec-hypothesis" id="toc-sec-hypothesis" class="nav-link" data-scroll-target="#sec-hypothesis"><span class="header-section-number">4.3</span> Hypothesis Tests</a></li>
-  <li><a href="#sec-pvalue" id="toc-sec-pvalue" class="nav-link" data-scroll-target="#sec-pvalue"><span class="header-section-number">4.4</span> p value</a></li>
-  <li><a href="#type-i-and-type-ii-errors" id="toc-type-i-and-type-ii-errors" class="nav-link" data-scroll-target="#type-i-and-type-ii-errors"><span class="header-section-number">4.5</span> Type I and Type II errors</a></li>
+  <li><a href="#sec-pearson" id="toc-sec-pearson" class="nav-link" data-scroll-target="#sec-pearson"><span class="header-section-number">4.1</span> Pearson correlation</a></li>
+  <li><a href="#sec-spearmancorr" id="toc-sec-spearmancorr" class="nav-link" data-scroll-target="#sec-spearmancorr"><span class="header-section-number">4.2</span> Spearman Correlation</a></li>
   </ul></li>
-  <li><a href="#supervised-learning" id="toc-supervised-learning" class="nav-link" data-scroll-target="#supervised-learning"><span class="header-section-number">5</span> Supervised Learning</a>
+  <li><a href="#sec-hypotest" id="toc-sec-hypotest" class="nav-link" data-scroll-target="#sec-hypotest"><span class="header-section-number">5</span> Hypothesis Testing</a>
   <ul class="collapse">
-  <li><a href="#sec-QQ" id="toc-sec-QQ" class="nav-link" data-scroll-target="#sec-QQ"><span class="header-section-number">5.1</span> QQ-plot</a></li>
+  <li><a href="#sec-mw" id="toc-sec-mw" class="nav-link" data-scroll-target="#sec-mw"><span class="header-section-number">5.1</span> Wilcoxon rank sum test</a></li>
+  <li><a href="#sec-kruskal" id="toc-sec-kruskal" class="nav-link" data-scroll-target="#sec-kruskal"><span class="header-section-number">5.2</span> Kruskal Wallis</a></li>
+  <li><a href="#sec-hypothesis" id="toc-sec-hypothesis" class="nav-link" data-scroll-target="#sec-hypothesis"><span class="header-section-number">5.3</span> Hypothesis Tests</a></li>
+  <li><a href="#sec-pvalue" id="toc-sec-pvalue" class="nav-link" data-scroll-target="#sec-pvalue"><span class="header-section-number">5.4</span> p value</a></li>
+  <li><a href="#type-i-and-type-ii-errors" id="toc-type-i-and-type-ii-errors" class="nav-link" data-scroll-target="#type-i-and-type-ii-errors"><span class="header-section-number">5.5</span> Type I and Type II errors</a></li>
   </ul></li>
-  <li><a href="#unsupervised-learning" id="toc-unsupervised-learning" class="nav-link" data-scroll-target="#unsupervised-learning"><span class="header-section-number">6</span> Unsupervised Learning</a>
+  <li><a href="#supervised-learning" id="toc-supervised-learning" class="nav-link" data-scroll-target="#supervised-learning"><span class="header-section-number">6</span> Supervised Learning</a>
   <ul class="collapse">
-  <li><a href="#sec-pretreatment" id="toc-sec-pretreatment" class="nav-link" data-scroll-target="#sec-pretreatment"><span class="header-section-number">6.1</span> Pretreament of Data</a></li>
-  <li><a href="#sec-normalise" id="toc-sec-normalise" class="nav-link" data-scroll-target="#sec-normalise"><span class="header-section-number">6.2</span> Normalisation</a></li>
-  <li><a href="#sec-standardise" id="toc-sec-standardise" class="nav-link" data-scroll-target="#sec-standardise"><span class="header-section-number">6.3</span> Standardisation</a></li>
-  <li><a href="#sec-diffsn" id="toc-sec-diffsn" class="nav-link" data-scroll-target="#sec-diffsn"><span class="header-section-number">6.4</span> Difference between Standardisation and Normalisation</a></li>
-  <li><a href="#sec-distance" id="toc-sec-distance" class="nav-link" data-scroll-target="#sec-distance"><span class="header-section-number">6.5</span> Distance measurements for ecological data</a></li>
-  <li><a href="#sec-euclid" id="toc-sec-euclid" class="nav-link" data-scroll-target="#sec-euclid"><span class="header-section-number">6.6</span> Euclidean distance</a></li>
-  <li><a href="#sec-manhattan" id="toc-sec-manhattan" class="nav-link" data-scroll-target="#sec-manhattan"><span class="header-section-number">6.7</span> Manhattan distance</a></li>
-  <li><a href="#sec-minkowski" id="toc-sec-minkowski" class="nav-link" data-scroll-target="#sec-minkowski"><span class="header-section-number">6.8</span> Minkowski distance</a></li>
-  <li><a href="#sec-bray" id="toc-sec-bray" class="nav-link" data-scroll-target="#sec-bray"><span class="header-section-number">6.9</span> Bray-Curtis distance measurement</a></li>
-  <li><a href="#sec-jaccard" id="toc-sec-jaccard" class="nav-link" data-scroll-target="#sec-jaccard"><span class="header-section-number">6.10</span> Jaccard distance</a></li>
-  <li><a href="#sec-cluster" id="toc-sec-cluster" class="nav-link" data-scroll-target="#sec-cluster"><span class="header-section-number">6.11</span> Cluster analysis</a></li>
-  <li><a href="#sec-dendrogram" id="toc-sec-dendrogram" class="nav-link" data-scroll-target="#sec-dendrogram"><span class="header-section-number">6.12</span> Dendrogram</a></li>
-  <li><a href="#sec-kmeans" id="toc-sec-kmeans" class="nav-link" data-scroll-target="#sec-kmeans"><span class="header-section-number">6.13</span> K-Means Clustering</a></li>
-  <li><a href="#sec-pca" id="toc-sec-pca" class="nav-link" data-scroll-target="#sec-pca"><span class="header-section-number">6.14</span> Principal component analysis</a></li>
-  <li><a href="#sec-NMDS" id="toc-sec-NMDS" class="nav-link" data-scroll-target="#sec-NMDS"><span class="header-section-number">6.15</span> Non-metric Multidimensional Scaling</a></li>
-  <li><a href="#sec-ANOSIM" id="toc-sec-ANOSIM" class="nav-link" data-scroll-target="#sec-ANOSIM"><span class="header-section-number">6.16</span> ANOSIM</a></li>
+  <li><a href="#sec-QQ" id="toc-sec-QQ" class="nav-link" data-scroll-target="#sec-QQ"><span class="header-section-number">6.1</span> QQ-plot</a></li>
+  </ul></li>
+  <li><a href="#unsupervised-learning" id="toc-unsupervised-learning" class="nav-link" data-scroll-target="#unsupervised-learning"><span class="header-section-number">7</span> Unsupervised Learning</a>
+  <ul class="collapse">
+  <li><a href="#sec-pretreatment" id="toc-sec-pretreatment" class="nav-link" data-scroll-target="#sec-pretreatment"><span class="header-section-number">7.1</span> Pretreament of Data</a></li>
+  <li><a href="#sec-normalise" id="toc-sec-normalise" class="nav-link" data-scroll-target="#sec-normalise"><span class="header-section-number">7.2</span> Normalisation</a></li>
+  <li><a href="#sec-standardise" id="toc-sec-standardise" class="nav-link" data-scroll-target="#sec-standardise"><span class="header-section-number">7.3</span> Standardisation</a></li>
+  <li><a href="#sec-diffsn" id="toc-sec-diffsn" class="nav-link" data-scroll-target="#sec-diffsn"><span class="header-section-number">7.4</span> Difference between Standardisation and Normalisation</a></li>
+  <li><a href="#sec-distance" id="toc-sec-distance" class="nav-link" data-scroll-target="#sec-distance"><span class="header-section-number">7.5</span> Distance measurements for ecological data</a></li>
+  <li><a href="#sec-euclid" id="toc-sec-euclid" class="nav-link" data-scroll-target="#sec-euclid"><span class="header-section-number">7.6</span> Euclidean distance</a></li>
+  <li><a href="#sec-manhattan" id="toc-sec-manhattan" class="nav-link" data-scroll-target="#sec-manhattan"><span class="header-section-number">7.7</span> Manhattan distance</a></li>
+  <li><a href="#sec-minkowski" id="toc-sec-minkowski" class="nav-link" data-scroll-target="#sec-minkowski"><span class="header-section-number">7.8</span> Minkowski distance</a></li>
+  <li><a href="#sec-bray" id="toc-sec-bray" class="nav-link" data-scroll-target="#sec-bray"><span class="header-section-number">7.9</span> Bray-Curtis distance measurement</a></li>
+  <li><a href="#sec-jaccard" id="toc-sec-jaccard" class="nav-link" data-scroll-target="#sec-jaccard"><span class="header-section-number">7.10</span> Jaccard distance</a></li>
+  <li><a href="#sec-cluster" id="toc-sec-cluster" class="nav-link" data-scroll-target="#sec-cluster"><span class="header-section-number">7.11</span> Cluster analysis</a></li>
+  <li><a href="#sec-dendrogram" id="toc-sec-dendrogram" class="nav-link" data-scroll-target="#sec-dendrogram"><span class="header-section-number">7.12</span> Dendrogram</a></li>
+  <li><a href="#sec-kmeans" id="toc-sec-kmeans" class="nav-link" data-scroll-target="#sec-kmeans"><span class="header-section-number">7.13</span> K-Means Clustering</a></li>
+  <li><a href="#sec-pca" id="toc-sec-pca" class="nav-link" data-scroll-target="#sec-pca"><span class="header-section-number">7.14</span> Principal component analysis</a></li>
+  <li><a href="#sec-NMDS" id="toc-sec-NMDS" class="nav-link" data-scroll-target="#sec-NMDS"><span class="header-section-number">7.15</span> Non-metric Multidimensional Scaling</a></li>
+  <li><a href="#sec-ANOSIM" id="toc-sec-ANOSIM" class="nav-link" data-scroll-target="#sec-ANOSIM"><span class="header-section-number">7.16</span> ANOSIM</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -220,10 +244,45 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="frequency-measures-and-graphical-representation" class="level2" data-number="1">
-<h2 data-number="1" class="anchored" data-anchor-id="frequency-measures-and-graphical-representation"><span class="header-section-number">1</span> Frequency Measures and Graphical Representation</h2>
-<section id="sec-summary" class="level3" data-number="1.1">
-<h3 data-number="1.1" class="anchored" data-anchor-id="sec-summary"><span class="header-section-number">1.1</span> Summary Statistics</h3>
+<section id="sec-management" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="sec-management"><span class="header-section-number">1</span> Data Management</h2>
+<p>Data management encompasses a wide range of activities, including: collecting, organizing, storing, and securing data. It is a critical function for any organization or individual that wants to make effective use of its data.</p>
+<p>Data management is essential for:</p>
+<ul>
+<li>Making informed decisions: By having access to accurate and timely data, organizations can make better decisions about their operations, marketing, and products.</li>
+<li>Improving efficiency: By identifying and eliminating inefficiencies in their operations, organizations can save money and time.</li>
+<li>Complying with regulations: By properly managing their data, organizations can avoid fines and penalties for non-compliance.</li>
+<li>Protecting reputation: By preventing data breaches and other security incidents, organizations can protect their reputation and avoid financial losses.</li>
+</ul>
+<section id="sec-tidy" class="level3" data-number="1.1">
+<h3 data-number="1.1" class="anchored" data-anchor-id="sec-tidy"><span class="header-section-number">1.1</span> Tidy Data</h3>
+<p><em>Tidy Data</em> is a consistent way to organise data <span class="citation" data-cites="wickham_tidy_2014">(<a href="#ref-wickham_tidy_2014" role="doc-biblioref">Wickham 2014</a>)</span> <span class="citation" data-cites="JSSv105i07">(<a href="#ref-JSSv105i07" role="doc-biblioref"><strong>JSSv105i07?</strong></a>)</span>. Getting data into this format requires some initial work, but that effort pays off in the long term. When data is tidy less time is spent wrangling data from one representation to another, allowing more time to on the analytic questions at hand.</p>
+<p>There are three interrelated rules which make a data set tidy see <a href="#fig-threerules">Figure&nbsp;1</a>:</p>
+<ul>
+<li>Each variable must have its own column.</li>
+<li>Each observation must have its own row.</li>
+<li>Each value must have its own cell.</li>
+</ul>
+<div id="fig-threerules" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Images/TidyDataBats.PNG" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Rules for Tidy Data</figcaption>
+</figure>
+</div>
+<p>The advantages of tidy data when doing data analysis:</p>
+<ul>
+<li><strong>Easier to understand and interpret:</strong> Tidy data is easy to understand and interpret because it is structured in a logical way. Each variable is stored in its own column, and each observation is stored in its own row. This makes it easy to see how the different variables are related to each other.</li>
+<li><strong>Easier to share and collaborate:</strong> Tidy data is easy to share and collaborate on because it is a standard format. This means that anyone can open and understand tidy data, regardless of the software they are using.</li>
+<li><strong>Easier to analyze:</strong> Tidy data is easier to analyze because it is structured in a way that is compatible with many data analysis tools. This means that you can use a variety of tools to analyze your data without having to spend time converting it to a different format.</li>
+<li><strong>Less error-prone:</strong> Tidy data is less error-prone because it is easier to check for errors. The logical structure of tidy data makes it easier to identify inconsistencies and missing values.</li>
+<li><strong>More efficient:</strong> Tidy data is more efficient to work with because it is easier to access and manipulate. The structured format of tidy data makes it faster to find the information you need and to perform calculations.</li>
+</ul>
+</section>
+</section>
+<section id="frequency-measures-and-graphical-representation" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="frequency-measures-and-graphical-representation"><span class="header-section-number">2</span> Frequency Measures and Graphical Representation</h2>
+<section id="sec-summary" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="sec-summary"><span class="header-section-number">2.1</span> Summary Statistics</h3>
 <p>The summary statistics undertaken at the beginning of data analysis typically include the following:</p>
 <ul>
 <li><strong>Mean:</strong> The mean is the average of all the values in the data set.</li>
@@ -238,11 +297,11 @@ ul.task-list li input[type="checkbox"] {
 <p>The summary statistics can also be used to calculate other statistical measures, such as the correlation coefficient and the coefficient of determination. These measures can be used to determine the strength of the relationship between two or more variables.</p>
 <p>Summary statistics are an important first step in data analysis. They can be used to get a general overview of the data set, to identify outliers, and to calculate other statistical measures.</p>
 </section>
-<section id="sec-boxplot" class="level3" data-number="1.2">
-<h3 data-number="1.2" class="anchored" data-anchor-id="sec-boxplot"><span class="header-section-number">1.2</span> Box Plot</h3>
+<section id="sec-boxplot" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="sec-boxplot"><span class="header-section-number">2.2</span> Box Plot</h3>
 <p>A box plot is a standardized way of displaying the distribution of data based on a five-number summary. The five-number summary is the minimum, first quartile (Q1), median, third quartile (Q3), and maximum.</p>
-<p>For a description of the quartile see <a href="#sec-quartiles">Glossary&nbsp;2.1</a>.</p>
-<p>A box plot, see <a href="#fig-box">Figure&nbsp;1</a>, is drawn as a rectangle with the minimum and maximum values at the ends, the first and third quartiles at the middle, and the median at the center. The interquartile range (IQR) is the distance between the first and third quartiles; the IQR contains 50% of the values.</p>
+<p>For a description of the quartile see <a href="#sec-quartiles">Glossary&nbsp;3.1</a>.</p>
+<p>A box plot, see <a href="#fig-box">Figure&nbsp;2</a>, is drawn as a rectangle with the minimum and maximum values at the ends, the first and third quartiles at the middle, and the median at the center. The interquartile range (IQR) is the distance between the first and third quartiles; the IQR contains 50% of the values.</p>
 <p>Outliers are data points that fall outside the interquartile range. Outliers are usually represented by small circles or asterisks.</p>
 <p>Box plots can be used to compare the distributions of data from different groups. For example, you could use a box plot to compare the heights of men and women.</p>
 <p>Box plots can also be used to identify outliers. If there are any outliers in a data set, they will be represented by small circles or asterisks.</p>
@@ -252,34 +311,34 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-box" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure">
 <p><img src="Glossary_files/figure-html/fig-box-1.png" class="img-fluid figure-img" width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;1: Example Box Plot</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;2: Example Box Plot</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="sec-histogram" class="level3" data-number="1.3">
-<h3 data-number="1.3" class="anchored" data-anchor-id="sec-histogram"><span class="header-section-number">1.3</span> Histogram</h3>
-<p>A histogram is a graphical representation, see <a href="#fig-hist">Figure&nbsp;2</a>, of the distribution of data. It is a type of bar chart that shows the frequency or number of observations within different numerical ranges, called bins; <a href="#fig-hist">Figure&nbsp;2</a> has 30 bins. The bins are usually specified as consecutive, non-overlapping intervals of a variable. The histogram provides a visual representation of the distribution of the data, showing the number of observations that fall within each bin. This can be useful for identifying patterns and trends in the data, and for making comparisons between different datasets.</p>
+<section id="sec-histogram" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="sec-histogram"><span class="header-section-number">2.3</span> Histogram</h3>
+<p>A histogram is a graphical representation, see <a href="#fig-hist">Figure&nbsp;3</a>, of the distribution of data. It is a type of bar chart that shows the frequency or number of observations within different numerical ranges, called bins; <a href="#fig-hist">Figure&nbsp;3</a> has 30 bins. The bins are usually specified as consecutive, non-overlapping intervals of a variable. The histogram provides a visual representation of the distribution of the data, showing the number of observations that fall within each bin. This can be useful for identifying patterns and trends in the data, and for making comparisons between different datasets.</p>
 <p>To construct a histogram, the first step is to “bin” (or “bucket”) the range of values—that is, divide the entire range of values into a series of intervals—and then count how many values fall into each interval. The bins are usually specified as consecutive, non-overlapping intervals of a variable. The bins (intervals) must be adjacent and are often (but not required to be) of equal size.</p>
 <p>Once the bins have been created, the next step is to count the number of observations that fall into each bin. This can be done manually or using a statistical software package. The number of observations in each bin is then plotted as a bar on the histogram. The height of each bar represents the frequency of the data in that bin.</p>
 <p>Histograms can be used to visualize a variety of different types of data. They are often used to visualize the distribution of continuous data, such as height, weight, or income. Histograms can also be used to visualize the distribution of discrete data, such as the number of children in a family or the number of cars owned by a household.</p>
-<p>Histograms are a valuable tool for data analysis. They can be used to identify patterns and trends in the data, to compare different datasets, and to make inferences about the population from which the data was drawn. <a href="#fig-hist">Figure&nbsp;2</a> is annotated with the mean, median and 5% and 95% percentiles. Histograms are a simple and easy-to-understand way to visualize data, and they can be used by people with a variety of levels of statistical expertise.</p>
+<p>Histograms are a valuable tool for data analysis. They can be used to identify patterns and trends in the data, to compare different datasets, and to make inferences about the population from which the data was drawn. <a href="#fig-hist">Figure&nbsp;3</a> is annotated with the mean, median and 5% and 95% percentiles. Histograms are a simple and easy-to-understand way to visualize data, and they can be used by people with a variety of levels of statistical expertise.</p>
 <div class="cell" data-layout-align="left">
 <div class="cell-output-display">
 <div id="fig-hist" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure">
 <p><img src="Glossary_files/figure-html/fig-hist-1.png" class="img-fluid figure-img" width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;2: Example Histogram</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;3: Example Histogram</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="sec-kernel" class="level3" data-number="1.4">
-<h3 data-number="1.4" class="anchored" data-anchor-id="sec-kernel"><span class="header-section-number">1.4</span> Kernel Density</h3>
-<p>Kernel density estimation (KDE), see <a href="#fig-kern">Figure&nbsp;3</a>, is a non-parametric way to estimate the probability density function of a random variable. It is a smooth, continuous function that is constructed by “smoothing” the data points. The smoothing is done by using a kernel function, which is a bell-shaped function that is centered at each data point. The height of the kernel function at a given point is proportional to the amount of data that is near that point.</p>
-<p>The kernel density estimate is a powerful tool for visualizing data and for making inferences about the population from which the data was drawn. It can be used to compare different groups of data, to identify outliers, and to estimate the mean, median, and other properties of the population; the calculated mean, median and 5%ile and 95%ile are annotated on <a href="#fig-kern">Figure&nbsp;3</a>.</p>
+<section id="sec-kernel" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="sec-kernel"><span class="header-section-number">2.4</span> Kernel Density</h3>
+<p>Kernel density estimation (KDE), see <a href="#fig-kern">Figure&nbsp;4</a>, is a non-parametric way to estimate the probability density function of a random variable. It is a smooth, continuous function that is constructed by “smoothing” the data points. The smoothing is done by using a kernel function, which is a bell-shaped function that is centered at each data point. The height of the kernel function at a given point is proportional to the amount of data that is near that point.</p>
+<p>The kernel density estimate is a powerful tool for visualizing data and for making inferences about the population from which the data was drawn. It can be used to compare different groups of data, to identify outliers, and to estimate the mean, median, and other properties of the population; the calculated mean, median and 5%ile and 95%ile are annotated on <a href="#fig-kern">Figure&nbsp;4</a>.</p>
 <p>Kernel density estimation can be used to:</p>
 <ul>
 <li>To visualize the distribution of data.<br>
@@ -315,23 +374,68 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-kern" class="quarto-figure quarto-figure-left anchored">
 <figure class="figure">
 <p><img src="Glossary_files/figure-html/fig-kern-1.png" class="img-fluid figure-img" width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;3: Example Kernel Density</figcaption>
+<figcaption class="figure-caption">Figure&nbsp;4: Example Kernel Density</figcaption>
 </figure>
 </div>
 </div>
 </div>
 </section>
-<section id="sec-scatter" class="level3" data-number="1.5">
-<h3 data-number="1.5" class="anchored" data-anchor-id="sec-scatter"><span class="header-section-number">1.5</span> Scatter Plot</h3>
-<p>A scatter plot graph is a type of chart that uses dots to show the relationship between two variables. The horizontal axis (x-axis) represents one variable, and the vertical axis (y-axis) represents the other variable. Each dot on the graph represents a single data point, and the position of the dot on the x-axis and y-axis indicates the values of the two variables for that data point.</p>
+<section id="sec-scatter" class="level3" data-number="2.5">
+<h3 data-number="2.5" class="anchored" data-anchor-id="sec-scatter"><span class="header-section-number">2.5</span> Scatter Plot</h3>
+<p>A scatter plot graph is a type of chart that uses dots to show the relationship between two variables. The horizontal axis (x-axis) represents one variable, and the vertical axis (y-axis) represents the other variable. Each dot on the graph represents a single data point, and the position of the dot on the x-axis and y-axis indicates the values of the two variables for that data point. <a href="#fig-scatter">Figure&nbsp;5</a> shows a scatter plot of Ozone against Wind for New York City.</p>
 <p>Scatter plots are used to identify relationships between variables. For example, a scatter plot of height and weight might show that there is a positive correlation between the two variables, meaning that taller people tend to weigh more. A scatter plot of test scores and hours studied might show that there is a negative correlation between the two variables, meaning that students who study more tend to get lower test scores.</p>
 <p>Scatter plots can also be used to identify outliers, which are data points that fall far outside the general trend of the data. Outliers can be helpful for identifying errors in data, or for finding unusual patterns in data.</p>
 <p>Overall, scatter plots are a versatile tool for visualizing and analyzing data. They are easy to understand and interpret, and they can be used to identify a variety of relationships between variables.</p>
-<p>The scatter plot is often combined with a loess curve <a href="#sec-loess">Glossary&nbsp;1.6</a> or linear regression <a href="#sec-linear">Glossary&nbsp;1.7</a>.</p>
+<p>The scatter plot is often combined with a loess curve <a href="#sec-loess">Glossary&nbsp;2.7</a> or linear regression <a href="#sec-linear">Glossary&nbsp;2.8</a>.</p>
+<div class="cell" data-layout-align="left">
+<div class="cell-output-display">
+<div id="fig-scatter" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="Glossary_files/figure-html/fig-scatter-1.png" class="img-fluid figure-img" width="480"></p>
+<figcaption class="figure-caption">Figure&nbsp;5: Scatter Plot: New York City Air Quality</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="sec-loess" class="level3" data-number="1.6">
-<h3 data-number="1.6" class="anchored" data-anchor-id="sec-loess"><span class="header-section-number">1.6</span> LOESS curve</h3>
-<p>The LOESS curve is a type of smooth curve that is used in <code>ggplot2</code> graphs to fit a line to a set of data points. It is a non-parametric method, which means that it does not make any assumptions about the underlying distribution of the data. This makes it a versatile tool for fitting curves to a wide variety of data.</p>
+<section id="sec-timeseries" class="level3" data-number="2.6">
+<h3 data-number="2.6" class="anchored" data-anchor-id="sec-timeseries"><span class="header-section-number">2.6</span> Time Series Plot</h3>
+<p>A time series graph is a graphical representation of data points plotted against time, see <a href="#fig-timeseries">Figure&nbsp;6</a>. The data points are typically connected by lines to show the trend over time. Time series graphs can be used to visualize trends, identify patterns, and make predictions.</p>
+<p>In data analysis, time series graphs can be used to:</p>
+<ul>
+<li><strong>Identify trends:</strong> By looking at a time series graph, you can see if there is an overall upward or downward trend in the data. You can also see if there are any seasonal trends, such as a spike in sales during the holiday season.</li>
+<li><strong>Identify patterns:</strong> Time series graphs can also be used to identify patterns in the data. For example, you might see that the data is increasing at a steady rate, or that it is increasing at a faster rate over time.</li>
+<li><strong>Make predictions:</strong> Time series graphs can be used to make predictions about future values. For example, if you see a trend of increasing sales, you might predict that sales will continue to increase in the future.</li>
+</ul>
+<p>To create a time series graph, you need to:</p>
+<ol type="1">
+<li>Choose the data points you want to plot.</li>
+<li>Decide on the time intervals you want to use.</li>
+<li>Plot the data points on the graph.</li>
+<li>Connect the data points with lines or a trend.</li>
+</ol>
+<p>There are many different ways to customize a time series graph. You can change the colors, the line types, and the labels. You can also add additional information to the graph, such as trend lines (e.g.&nbsp;loess <a href="#sec-loess">Glossary&nbsp;2.7</a> or linear regression <a href="#sec-linear">Glossary&nbsp;2.8</a>) or error bars.</p>
+<p>Time series graphs are a powerful tool for data analysis. They can be used to visualize trends, identify patterns, and make predictions. If the data is a time series a time series graph invariably help understand the data.</p>
+<p>Some examples of how time series graphs can be used in data analysis:</p>
+<ul>
+<li>A retail store might use a time series graph to track sales over time. This could help the store identify trends, such as seasonal fluctuations or changes in customer behavior.</li>
+<li>A weather forecaster might use a time series graph to track the temperature over time. This could help them predict future weather conditions.</li>
+<li>A financial analyst might use a time series graph to track the price of a stock over time. This could help them make investment decisions.</li>
+</ul>
+<div class="cell" data-layout-align="left">
+<div class="cell-output-display">
+<div id="fig-timeseries" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="Glossary_files/figure-html/fig-timeseries-1.png" class="img-fluid figure-img" width="480"></p>
+<figcaption class="figure-caption">Figure&nbsp;6: Time Series Plot: Ozone Concentration New York City</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-loess" class="level3" data-number="2.7">
+<h3 data-number="2.7" class="anchored" data-anchor-id="sec-loess"><span class="header-section-number">2.7</span> LOESS Curve</h3>
+<p>The LOESS curve is a type of smooth curve that is used in <code>ggplot2</code> graphs to fit a line to a set of data points. It is a non-parametric method, which means that it does not make any assumptions about the underlying distribution of the data. This makes it a versatile tool for fitting curves to a wide variety of data. <a href="#fig-loess">Figure&nbsp;7</a> shows a LOESS curve applied to the scatter plot of Ozone against Wind for New York City.</p>
 <p>The LOESS curve is calculated using a process called locally weighted regression. This means that the curve is fit to the data points in a local neighborhood around each point. The size of the neighborhood is determined by a parameter called the bandwidth. The bandwidth controls how smooth the curve is. A larger bandwidth will result in a smoother curve, while a smaller bandwidth will result in a more wiggly curve.</p>
 <p>The LOESS curve can be used to visualize the relationship between two variables. It can also be used to make predictions about the value of one variable based on the value of another variable.</p>
 <p>The LOESS curve is a powerful tool for visualizing and exploring data and can be applied to a wide variety of data.</p>
@@ -348,26 +452,46 @@ ul.task-list li input[type="checkbox"] {
 <li>The LOESS curve can be sensitive to the choice of the bandwidth parameter.</li>
 <li>The LOESS curve can be difficult to interpret in some cases.</li>
 </ul>
+<div class="cell" data-layout-align="left">
+<div class="cell-output-display">
+<div id="fig-loess" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="Glossary_files/figure-html/fig-loess-1.png" class="img-fluid figure-img" width="480"></p>
+<figcaption class="figure-caption">Figure&nbsp;7: Scatter Plot with Loess Curve: New York City Air Quality</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="sec-linear" class="level3" data-number="1.7">
-<h3 data-number="1.7" class="anchored" data-anchor-id="sec-linear"><span class="header-section-number">1.7</span> Linear Regression</h3>
-<p>A linear regression on a scatter plot graph is a line that is fitted to the data points in order to represent the relationship between the two variables. The line is fitted so that it minimizes the sum of the squared residuals, which are the distances between the data points and the line.</p>
+<section id="sec-linear" class="level3" data-number="2.8">
+<h3 data-number="2.8" class="anchored" data-anchor-id="sec-linear"><span class="header-section-number">2.8</span> Linear Regression</h3>
+<p>A linear regression on a scatter plot graph is a line that is fitted to the data points in order to represent the relationship between the two variables. The line is fitted so that it minimizes the sum of the squared residuals, which are the distances between the data points and the line. <a href="#fig-linear">Figure&nbsp;8</a> shows a linear regression applied to the scatter plot of Ozone against Wind for New York City.</p>
 <p>The linear regression line can be used to predict the value of one variable from the value of the other variable. For example, if we have a scatter plot of height and weight, we can use the linear regression line to predict someone’s weight from their height.</p>
 <p>The linear regression line can also be used to measure the strength of the relationship between the two variables. The stronger the relationship, the closer the data points will be to the line. The R-squared value is a measure of the strength of the relationship, and it can be interpreted as the percentage of the variation in the dependent variable that is explained by the independent variable.</p>
 <p>Overall, linear regression is a powerful tool for analyzing the relationship between two variables. It can be used to visualize the relationship, to make predictions, and to measure the strength of the relationship.</p>
-<p>Here are some additional details about linear regression on a scatter plot graph:</p>
+<p>Additional details about linear regression on a scatter plot graph:</p>
 <ul>
-<li>The equation of the linear regression line is Y = mX + b, where Y is the dependent variable, X is the independent variable, m is the slope of the line, and b is the y-intercept.</li>
-<li>The slope of the line tells us how much the dependent variable changes for a 1-unit increase in the independent variable.</li>
-<li>The y-intercept tells us the value of the dependent variable when the independent variable is 0.</li>
-<li>The R-squared value is a measure of the strength of the relationship between the two variables. An R-squared value of 1 means that there is a perfect linear relationship between the two variables, and an R-squared value of 0 means that there is no linear relationship between the two variables.</li>
+<li>The equation of the linear regression line is <span class="math inline">\(Y = mX + c\)</span>, where <span class="math inline">\(Y\)</span> is the dependent variable, <span class="math inline">\(X\)</span> is the independent variable, <span class="math inline">\(m\)</span> is the slope of the line, and <span class="math inline">\(c\)</span> is the y-intercept.</li>
+<li>The slope <span class="math inline">\(m\)</span> of the line tells us how much the dependent variable changes for a 1-unit increase in the independent variable.</li>
+<li>The <span class="math inline">\(y\)</span>-intercept tells us the value of the dependent variable when the independent variable is 0.</li>
+<li>The <span class="math inline">\(R\)</span>-squared value is a measure of the strength of the relationship between the two variables. An <span class="math inline">\(R\)</span>-squared value of 1 means that there is a perfect linear relationship between the two variables, and an <span class="math inline">\(R\)</span>-squared value of 0 means that there is no linear relationship between the two variables.</li>
 </ul>
+<div class="cell" data-layout-align="left">
+<div class="cell-output-display">
+<div id="fig-linear" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="Glossary_files/figure-html/fig-linear-1.png" class="img-fluid figure-img" width="480"></p>
+<figcaption class="figure-caption">Figure&nbsp;8: Scatter Plot with Linear Regression: New York City Air Quality</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 </section>
-<section id="measures-of-central-tendency-and-dispersion" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="measures-of-central-tendency-and-dispersion"><span class="header-section-number">2</span> Measures of Central Tendency and Dispersion</h2>
-<section id="sec-quartiles" class="level3" data-number="2.1">
-<h3 data-number="2.1" class="anchored" data-anchor-id="sec-quartiles"><span class="header-section-number">2.1</span> Quartiles</h3>
+<section id="measures-of-central-tendency-and-dispersion" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="measures-of-central-tendency-and-dispersion"><span class="header-section-number">3</span> Measures of Central Tendency and Dispersion</h2>
+<section id="sec-quartiles" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="sec-quartiles"><span class="header-section-number">3.1</span> Quartiles</h3>
 <p>Quartiles are a way of dividing a set of data into four equal parts. They are often used to describe the distribution of data and to identify outliers.</p>
 <p>The first quartile (Q1) is the middle number between the smallest number (minimum) and the median of the data set. It is also known as the lower or 25th empirical quartile, as 25% of the data is below this point.</p>
 <p>The second quartile (Q2) is the median of a data set; thus 50% of the data lies below this point.</p>
@@ -377,8 +501,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Quartiles can also be used to compare different data sets. For example, if you have two data sets of test scores, you can compare the quartiles to see how the two data sets are distributed. If the first quartile of the first data set is higher than the first quartile of the second data set, then you know that the lower 25% of the scores in the first data set are higher than the lower 25% of the scores in the second data set.</p>
 <p>Quartiles are a useful tool for describing the distribution of data and identifying outliers. They can be used to compare different data sets and to identify trends in data.</p>
 </section>
-<section id="sec-boot" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="sec-boot"><span class="header-section-number">2.2</span> Bootstrap Confidence Intervals</h3>
+<section id="sec-boot" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="sec-boot"><span class="header-section-number">3.2</span> Bootstrap Confidence Intervals</h3>
 <p>A bootstrap confidence interval is a non-parametric method for estimating the uncertainty around a statistic. It is based on the idea of resampling the original data with replacement, and then re-calculating the statistic of interest on each of the resampled datasets. This process is repeated many times, and the resulting distribution of the statistic is used to construct the confidence interval.</p>
 <p>The main advantage of bootstrap confidence intervals is that they do not require any assumptions about the underlying distribution of the data. This makes them a useful tool for situations where the data is not normally distributed, or where the distribution is unknown.</p>
 <p>To construct a bootstrap confidence interval, you will need to specify the following:</p>
@@ -394,14 +518,14 @@ ul.task-list li input[type="checkbox"] {
 <li>Order the values of the statistic from the smallest to the largest.</li>
 <li>The 2.5th and 97.5th percentiles of the ordered values of the statistic will form the lower and upper bounds of the bootstrap confidence interval.</li>
 </ol>
-<p>For example, if you are interested in the 95% confidence interval for the mean of a dataset, you would order the values of the mean from the smallest to the largest, and then take the 2.5th and 97.5th percentiles as the lower and upper bounds of the confidence interval.</p>
+<p>For example, if you are interested in the 95% confidence interval for the mean of a dataset, you would order the values of the mean from the smallest to the largest, and then take the 2.5<sup>th</sup> and 97.5<sup>th</sup> percentiles as the lower and upper bounds of the confidence interval.</p>
 <p>Bootstrap confidence intervals are a powerful tool for estimating the uncertainty around a statistic. They are relatively easy to construct, and they do not require any assumptions about the underlying distribution of the data. This makes them a valuable tool for a wide variety of statistical applications.</p>
 </section>
 </section>
-<section id="association-of-two-variables" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="association-of-two-variables"><span class="header-section-number">3</span> Association of Two Variables</h2>
-<section id="sec-pearson" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="sec-pearson"><span class="header-section-number">3.1</span> Pearson correlation</h3>
+<section id="association-of-two-variables" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="association-of-two-variables"><span class="header-section-number">4</span> Association of Two Variables</h2>
+<section id="sec-pearson" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="sec-pearson"><span class="header-section-number">4.1</span> Pearson correlation</h3>
 <p>Pearson correlation is a statistical measure that assesses the strength and direction of a linear relationship between two variables. It is a number between -1 and 1, with a value of 0 indicating no correlation, a positive value indicating a positive correlation, and a negative value indicating a negative correlation.</p>
 <p>The Pearson correlation coefficient is calculated by dividing the covariance of the two variables by the product of their standard deviations. The covariance is a measure of how much the two variables vary together, and the standard deviation is a measure of how much each variable varies from its mean.</p>
 <p>The Pearson correlation coefficient can be used to make predictions about one variable from the other. For example, if the correlation between height and weight is 0.7, then we can predict that someone who is 6 feet tall will weigh about 180 pounds.</p>
@@ -420,8 +544,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Overall, Pearson correlation is a useful tool for understanding the relationship between two variables. However, it is important to be aware of its limitations.</p>
 </section>
-<section id="sec-spearmancorr" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="sec-spearmancorr"><span class="header-section-number">3.2</span> Spearman Correlation</h3>
+<section id="sec-spearmancorr" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="sec-spearmancorr"><span class="header-section-number">4.2</span> Spearman Correlation</h3>
 <p>The Spearman correlation is a nonparametric measure of rank correlation. It is used to measure the strength and direction of the monotonic relationship between two variables. A monotonic relationship is one in which the variables tend to increase or decrease together, but not necessarily in a linear fashion.</p>
 <p>The Spearman correlation is calculated by first ranking the data for each variable. The ranks are then used to calculate the correlation coefficient. The correlation coefficient can range from -1 to +1. A correlation coefficient of +1 indicates a perfect positive correlation, a correlation coefficient of -1 indicates a perfect negative correlation, and a correlation coefficient of 0 indicates no correlation.</p>
 <p>The Spearman correlation is a robust measure of correlation, meaning that it is not affected by outliers or non-normality in the data. It is also a relatively simple measure to calculate, making it a popular choice for researchers.</p>
@@ -433,17 +557,17 @@ ul.task-list li input[type="checkbox"] {
 <li>To measure the relationship between satisfaction and loyalty</li>
 </ul>
 <p>The Spearman correlation is a versatile tool that can be used to measure the relationship between a wide variety of variables. For measuring the strength and direction of the monotonic relationship between two variables, the Spearman correlation is considered a good option.</p>
-<section id="sec-pvaluespearman" class="level4" data-number="3.2.1">
-<h4 data-number="3.2.1" class="anchored" data-anchor-id="sec-pvaluespearman"><span class="header-section-number">3.2.1</span> p value Spearman correlation</h4>
+<section id="sec-pvaluespearman" class="level4" data-number="4.2.1">
+<h4 data-number="4.2.1" class="anchored" data-anchor-id="sec-pvaluespearman"><span class="header-section-number">4.2.1</span> p value Spearman correlation</h4>
 <p>The p-value in Spearman correlation is a measure of the probability that the observed correlation between two variables is due to chance. It is calculated by comparing the observed correlation to the distribution of correlations that would be expected if the two variables were not correlated.</p>
 <p>A p-value of less than 0.05 is generally considered to be statistically significant, meaning that there is less than a 5% chance that the observed correlation is due to chance. A p-value of greater than 0.05 is not statistically significant, meaning that the observed correlation could be due to chance.</p>
 <p>For example, there is a correlation between the height and weight of a group of people. You calculate the Spearman correlation coefficient and find that it is r = 0.7. The p-value for this correlation is 0.001. This means that there is less than a 1% chance that the observed correlation is due to chance. Therefore, you can conclude that there is a statistically significant correlation between height and weight in this group of people.</p>
 <p>It is important to note that a statistically significant correlation does not necessarily mean that there is a causal relationship between the two variables. For example, the correlation between height and weight could be due to the fact that both variables are influenced by genetics.</p>
-<p><a href="#sec-pvalue">Glossary&nbsp;4.4</a> describes the general use of the p-value in statistics.</p>
+<p><a href="#sec-pvalue">Glossary&nbsp;5.4</a> describes the general use of the p-value in statistics.</p>
 </section>
-<section id="sec-spearmanCI" class="level4" data-number="3.2.2">
-<h4 data-number="3.2.2" class="anchored" data-anchor-id="sec-spearmanCI"><span class="header-section-number">3.2.2</span> Spearman Correlation Confidence Limits</h4>
-<p>A confidence interval for Spearman correlation (<a href="#sec-spearmanCI">Glossary&nbsp;3.2.2</a>) is a range of values that is likely to contain the true correlation between two variables. The confidence interval is calculated based on the sample correlation coefficient, the sample size, and the level of confidence desired. For example, a 95% confidence interval means that there is a 95% chance that the true correlation lies within the interval.</p>
+<section id="sec-spearmanCI" class="level4" data-number="4.2.2">
+<h4 data-number="4.2.2" class="anchored" data-anchor-id="sec-spearmanCI"><span class="header-section-number">4.2.2</span> Spearman Correlation Confidence Limits</h4>
+<p>A confidence interval for Spearman correlation (<a href="#sec-spearmanCI">Glossary&nbsp;4.2.2</a>) is a range of values that is likely to contain the true correlation between two variables. The confidence interval is calculated based on the sample correlation coefficient, the sample size, and the level of confidence desired. For example, a 95% confidence interval means that there is a 95% chance that the true correlation lies within the interval.</p>
 <p>The confidence interval for Spearman correlation can be interpreted as follows:</p>
 <ul>
 <li>The lower limit of the confidence interval (<em>Lower CI</em>) is the lower bound of the range of values that is likely to contain the true correlation.<br>
@@ -457,17 +581,17 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </section>
 </section>
-<section id="hypothesis-testing" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="hypothesis-testing"><span class="header-section-number">4</span> Hypothesis Testing</h2>
-<section id="sec-mw" class="level3" data-number="4.1">
-<h3 data-number="4.1" class="anchored" data-anchor-id="sec-mw"><span class="header-section-number">4.1</span> Wilcoxon rank sum test</h3>
+<section id="sec-hypotest" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="sec-hypotest"><span class="header-section-number">5</span> Hypothesis Testing</h2>
+<section id="sec-mw" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="sec-mw"><span class="header-section-number">5.1</span> Wilcoxon rank sum test</h3>
 <p>The Wilcoxon rank sum test is a nonparametric test for two populations when samples are independent. It is used to test the null hypothesis that the two populations have the same median, against the alternative hypothesis that they do not. The test is named after Frank Wilcoxon, who published it in 1945.</p>
 <p>The Wilcoxon rank sum test works by first ranking all of the data from both samples, regardless of which sample they come from. The ranks are then summed for each sample. The test statistic is the smaller of the two sums.</p>
 <p>The p-value for the Wilcoxon rank sum test can be calculated using a variety of methods, including tables, software, or by hand. The p-value is the probability of getting a test statistic as extreme as or more extreme than the one observed, under the assumption that the null hypothesis is true.</p>
 <p>The Wilcoxon rank sum test is a powerful and versatile test that can be used to compare two populations on a variety of variables. It is a good choice when the data is not normally distributed or when the sample sizes are small.</p>
 </section>
-<section id="sec-kruskal" class="level3" data-number="4.2">
-<h3 data-number="4.2" class="anchored" data-anchor-id="sec-kruskal"><span class="header-section-number">4.2</span> Kruskal Wallis</h3>
+<section id="sec-kruskal" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="sec-kruskal"><span class="header-section-number">5.2</span> Kruskal Wallis</h3>
 <p>The Kruskal-Wallis test is a non-parametric test that can be used to compare the medians of three or more groups. The Dunn’s test is a post-hoc test that can be used to determine which pairs of groups are significantly different after a Kruskal-Wallis test is significant. The Bonferroni correction is a method of adjusting the p-value for multiple comparisons.</p>
 <p>To perform a Kruskal-Wallis test with post hoc testing with the Dunn’s test and Bonferroni correction, requires data on the dependent variable for each group. The dependent variable should be continuous. The collected data is then ranked from lowest to highest, ignoring group membership. The mean rank for each group will then be calculated. The Kruskal-Wallis test statistic is calculated by dividing the sum of the squared differences between the mean ranks and the overall mean rank by the degrees of freedom.</p>
 <p>If the Kruskal-Wallis test statistic is significant, you can then perform a Dunn’s test to determine which pairs of groups are significantly different. The Dunn’s test is a pairwise comparison test, which means that it compares each pair of groups to each other. The Dunn’s test statistic is calculated by dividing the difference in the mean ranks for the two groups by the standard error of the difference in the mean ranks.</p>
@@ -475,8 +599,8 @@ ul.task-list li input[type="checkbox"] {
 <p>The Bonferroni correction is calculated by dividing the original p-value by the number of comparisons being made. For example, if you are conducting 10 comparisons, the Bonferroni corrected p-value would be 0.05/10 = 0.005.</p>
 <p>The Bonferroni correction is a conservative method of controlling the <em>familywise error rate</em>.</p>
 </section>
-<section id="sec-hypothesis" class="level3" data-number="4.3">
-<h3 data-number="4.3" class="anchored" data-anchor-id="sec-hypothesis"><span class="header-section-number">4.3</span> Hypothesis Tests</h3>
+<section id="sec-hypothesis" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="sec-hypothesis"><span class="header-section-number">5.3</span> Hypothesis Tests</h3>
 <p>A hypothesis test is a statistical procedure that is used to determine whether there is a significant difference between two groups or whether there is a significant relationship between two variables. There are two types of hypothesis tests:</p>
 <ul>
 <li><p>One-tailed tests: These tests are used to determine whether there is a difference between two groups or a relationship between two variables in one direction only. For example, you could use a one-tailed test to determine whether the average height of men is significantly greater than the average height of women.</p></li>
@@ -500,9 +624,9 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Overall, hypothesis tests are a useful tool for statistical analysis, but they should be interpreted with caution.</p>
 </section>
-<section id="sec-pvalue" class="level3" data-number="4.4">
-<h3 data-number="4.4" class="anchored" data-anchor-id="sec-pvalue"><span class="header-section-number">4.4</span> p value</h3>
-<p>A p-value is a number between 0 and 1 that tells you the probability of getting the results you did, or results that are even more extreme, if the null hypothesis is true (<a href="#sec-hypothesis">Glossary&nbsp;4.3</a> explains hypothesis tests). The null hypothesis is the hypothesis that there is no difference between two groups or that there is no relationship between two variables. A p-value of 0.05 or less is generally considered statistically significant, which means that there is less than a 5% chance that the results could have occurred by chance.</p>
+<section id="sec-pvalue" class="level3" data-number="5.4">
+<h3 data-number="5.4" class="anchored" data-anchor-id="sec-pvalue"><span class="header-section-number">5.4</span> p value</h3>
+<p>A p-value is a number between 0 and 1 that tells you the probability of getting the results you did, or results that are even more extreme, if the null hypothesis is true (<a href="#sec-hypothesis">Glossary&nbsp;5.3</a> explains hypothesis tests). The null hypothesis is the hypothesis that there is no difference between two groups or that there is no relationship between two variables. A p-value of 0.05 or less is generally considered statistically significant, which means that there is less than a 5% chance that the results could have occurred by chance.</p>
 <p>For example, it would be interesting to know whether there is a difference in the average height of men and women. You collect data on the heights of 100 men and 100 women and find that the average height of men is 6 feet tall and the average height of women is 5 feet 10 inches tall. The p-value for this test is 0.001, which is less than 0.05. This means that there is less than a 1% chance that the results could have occurred by chance. Therefore, you can conclude that there is a statistically significant difference in the average height of men and women.</p>
 <p>It is important to note that a p-value does not tell you the size of the difference between two groups or the strength of the relationship between two variables. A p-value can be small even if the difference between two groups is small or the relationship between two variables is weak. Therefore, it is important to consider the p-value in conjunction with other factors, such as the size of the difference or the strength of the relationship, when interpreting the results of a statistical test.</p>
 <p>Key points that help the interpretation of p-values:</p>
@@ -513,8 +637,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Overall, p-values are a useful tool for statistical analysis, but they should be interpreted carefully.</p>
 </section>
-<section id="type-i-and-type-ii-errors" class="level3" data-number="4.5">
-<h3 data-number="4.5" class="anchored" data-anchor-id="type-i-and-type-ii-errors"><span class="header-section-number">4.5</span> Type I and Type II errors</h3>
+<section id="type-i-and-type-ii-errors" class="level3" data-number="5.5">
+<h3 data-number="5.5" class="anchored" data-anchor-id="type-i-and-type-ii-errors"><span class="header-section-number">5.5</span> Type I and Type II errors</h3>
 <p>In hypothesis testing, there are two types of errors that can be made: Type I errors and Type II errors.</p>
 <ul>
 <li><strong>Type I error:</strong> A Type I error occurs when the null hypothesis is rejected, even though it is true. This is also known as a <strong>false positive</strong>.</li>
@@ -532,19 +656,39 @@ ul.task-list li input[type="checkbox"] {
 <p>Type I and Type II errors are an unavoidable part of hypothesis testing. However, by carefully planning our studies and by using large sample sizes, we can minimize the risk of making either type of error.</p>
 </section>
 </section>
-<section id="supervised-learning" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="supervised-learning"><span class="header-section-number">5</span> Supervised Learning</h2>
-<section id="sec-QQ" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored" data-anchor-id="sec-QQ"><span class="header-section-number">5.1</span> QQ-plot</h3>
-<p>In statistics, a QQ plot (quantile-quantile plot) is a probability plot, a graphical method for comparing two probability distributions by plotting their quantiles against each other. A point (x, y) on the plot corresponds to one of the quantiles of the second distribution (y-coordinate) plotted against the same quantile of the first distribution (x-coordinate). This defines a parametric curve where the parameter is the index of the quantile interval.</p>
-<p>A QQ plot is a plot of the quantiles of two distributions against each other, or a plot based on estimates of the quantiles. The pattern of points in the plot is used to compare the two distributions. The main step in constructing a QQ plot is calculating or estimating the quantiles to be plotted. If one or both of the axes in a QQ plot is based on a theoretical distribution with a continuous cumulative distribution function (CDF), all quantiles are uniquely defined and can be obtained by inverting the CDF.</p>
-<p>QQ plots are often used to assess the normality of data. If the data is normally distributed, the points in the QQ plot will fall roughly along a straight line. If the data is not normally distributed, the points in the QQ plot will deviate from a straight line. The direction and amount of deviation can be used to assess the nature of the non-normality.</p>
+<section id="supervised-learning" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="supervised-learning"><span class="header-section-number">6</span> Supervised Learning</h2>
+<section id="sec-QQ" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="sec-QQ"><span class="header-section-number">6.1</span> QQ-plot</h3>
+<p>A Q-Q plot (quantile-quantile plot) is a graphical method for comparing two probability distributions by plotting their quantiles against each other. In the context of regression, a Q-Q plot of the residuals can be used to assess whether the residuals are normally distributed. <a href="#fig-QQ">Figure&nbsp;9</a> shows the Q-Q plot of regression residuals for Ozone against Wind for New York City; see also <a href="#fig-linear">Figure&nbsp;8</a>.</p>
+<p>The theoretical distribution for the Q-Q plot is usually the standard normal distribution, but other distributions can be used as well. The residuals are first standardized, which means that they are converted to z-scores by subtracting the mean and dividing by the standard deviation. The standardized residuals are then plotted against the theoretical quantiles of the normal distribution.</p>
+<p>If the residuals are normally distributed, the points on the Q-Q plot will fall along a straight line. Any deviations from the line suggest that the residuals are not normally distributed. For example, if the points are all above the line, this suggests that the residuals are more spread out than the normal distribution. If the points are all below the line, this suggests that the residuals are more concentrated than the normal distribution.</p>
+<p>In addition to the overall shape of the Q-Q plot, it is also important to look for any systematic patterns in the residuals. For example, if the points are all clustered at one end of the plot, this suggests that there is a problem with the model fit at that point.</p>
+<p>Overall, the Q-Q plot is a useful tool for assessing the normality of regression residuals. It is a relatively simple plot to interpret, and it can be used to identify potential problems with the model fit.</p>
+<p>Interpretation of Q-Q plot regression residuals:</p>
+<ul>
+<li>The points should follow a straight line.</li>
+<li>The points should be evenly distributed throughout the plot.</li>
+<li>There should be no systematic patterns in the residuals.</li>
+</ul>
+<p>If the points do not follow a straight line, or if there are any systematic patterns, this suggests that the residuals are not normally distributed. This could be due to a number of factors, such as outliers, non-linear relationships, or heteroscedasticity.</p>
+<p>If concerned about the normality of your regression residuals, then use other statistical tests to confirm the findings. However, the Q-Q plot is a quick and easy way to get a visual assessment of the normality of residuals.</p>
+<div class="cell" data-layout-align="left">
+<div class="cell-output-display">
+<div id="fig-QQ" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="Glossary_files/figure-html/fig-QQ-1.png" class="img-fluid figure-img" width="480"></p>
+<figcaption class="figure-caption">Figure&nbsp;9: QQ plot of regression residuals for the linear model Ozone v Wind: New York City</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 </section>
-<section id="unsupervised-learning" class="level2" data-number="6">
-<h2 data-number="6" class="anchored" data-anchor-id="unsupervised-learning"><span class="header-section-number">6</span> Unsupervised Learning</h2>
-<section id="sec-pretreatment" class="level3" data-number="6.1">
-<h3 data-number="6.1" class="anchored" data-anchor-id="sec-pretreatment"><span class="header-section-number">6.1</span> Pretreament of Data</h3>
+<section id="unsupervised-learning" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="unsupervised-learning"><span class="header-section-number">7</span> Unsupervised Learning</h2>
+<section id="sec-pretreatment" class="level3" data-number="7.1">
+<h3 data-number="7.1" class="anchored" data-anchor-id="sec-pretreatment"><span class="header-section-number">7.1</span> Pretreament of Data</h3>
 <p>Pre-treatment of data is a set of techniques used to prepare data for multivariate analysis. The goal of pre-treatment is to improve the quality of the data and make it more suitable for analysis.</p>
 <p>There are many different pre-treatment techniques, but some of the most common include:</p>
 <ul>
@@ -586,8 +730,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>It is important to note that there is no single “best” pre-treatment technique. The best technique to use will depend on the specific data set and the type of multivariate analysis that is being performed. However, the transformations described above are all good starting points.</p>
 </section>
-<section id="sec-normalise" class="level3" data-number="6.2">
-<h3 data-number="6.2" class="anchored" data-anchor-id="sec-normalise"><span class="header-section-number">6.2</span> Normalisation</h3>
+<section id="sec-normalise" class="level3" data-number="7.2">
+<h3 data-number="7.2" class="anchored" data-anchor-id="sec-normalise"><span class="header-section-number">7.2</span> Normalisation</h3>
 <p>Normalisation is the process of transforming data into a common scale or range, eliminating differences in units or distributions.</p>
 <p>There are two main types of normalisation:</p>
 <ul>
@@ -606,10 +750,10 @@ ul.task-list li input[type="checkbox"] {
 <li><span class="math inline">\(\sigma\)</span> is the standard deviation of the distribution</li>
 </ul>
 <p>Normalisation can be a useful preprocessing step for data analysis. It can make it easier to compare different datasets. It can also help to identify outliers in the data and make the data more consistent and reliable</p>
-<p>See also <a href="#sec-diffsn">Glossary&nbsp;6.4</a> for the difference between Standardisation and Normalisation.</p>
+<p>See also <a href="#sec-diffsn">Glossary&nbsp;7.4</a> for the difference between Standardisation and Normalisation.</p>
 </section>
-<section id="sec-standardise" class="level3" data-number="6.3">
-<h3 data-number="6.3" class="anchored" data-anchor-id="sec-standardise"><span class="header-section-number">6.3</span> Standardisation</h3>
+<section id="sec-standardise" class="level3" data-number="7.3">
+<h3 data-number="7.3" class="anchored" data-anchor-id="sec-standardise"><span class="header-section-number">7.3</span> Standardisation</h3>
 <p>In statistics, standardisation is the process of transforming data so that it has a mean of 0 and a standard deviation of 1. This is done by subtracting the mean from each value and then dividing by the standard deviation.</p>
 <p>Standardisation is often used to compare different variables that have different scales.</p>
 <p>The formula for standardising data is:</p>
@@ -621,10 +765,10 @@ ul.task-list li input[type="checkbox"] {
 <li><span class="math inline">\(\mu\)</span> is the mean of the distribution</li>
 <li><span class="math inline">\(\sigma\)</span> is the standard deviation of the distribution</li>
 </ul>
-<p>See also <a href="#sec-diffsn">Glossary&nbsp;6.4</a> for the difference between Standardisation and Normalisation.</p>
+<p>See also <a href="#sec-diffsn">Glossary&nbsp;7.4</a> for the difference between Standardisation and Normalisation.</p>
 </section>
-<section id="sec-diffsn" class="level3" data-number="6.4">
-<h3 data-number="6.4" class="anchored" data-anchor-id="sec-diffsn"><span class="header-section-number">6.4</span> Difference between Standardisation and Normalisation</h3>
+<section id="sec-diffsn" class="level3" data-number="7.4">
+<h3 data-number="7.4" class="anchored" data-anchor-id="sec-diffsn"><span class="header-section-number">7.4</span> Difference between Standardisation and Normalisation</h3>
 <p>Standardisation and Normalisation are two data preprocessing techniques that are used to transform data so that it is easier to analyze. However, there are some key differences between the two techniques.</p>
 <p><strong>Standardisation</strong></p>
 <ul>
@@ -698,15 +842,15 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Standardisation:</strong> When the data has outliers or unknown bounds and the algorithm is sensitive to distribution.</li>
 </ul>
 </section>
-<section id="sec-distance" class="level3" data-number="6.5">
-<h3 data-number="6.5" class="anchored" data-anchor-id="sec-distance"><span class="header-section-number">6.5</span> Distance measurements for ecological data</h3>
+<section id="sec-distance" class="level3" data-number="7.5">
+<h3 data-number="7.5" class="anchored" data-anchor-id="sec-distance"><span class="header-section-number">7.5</span> Distance measurements for ecological data</h3>
 <p>The following are some of the most common distance measurements used in the multivariate analysis of ecological data:</p>
 <ul>
-<li><strong>Euclidean distance:</strong> <a href="#sec-euclid">Glossary&nbsp;6.6</a> This is the most common distance measure, and it is calculated by taking the square root of the sum of the squared differences between the two points. It is a good choice for data that is normally distributed.</li>
-<li><strong>Manhattan distance:</strong> <a href="#sec-manhattan">Glossary&nbsp;6.7</a> This distance measure is calculated by taking the sum of the absolute differences between the two points. It is a good choice for data that is not normally distributed.</li>
-<li><strong>Minkowski distance:</strong> <a href="#sec-minkowski">Glossary&nbsp;6.8</a> This is a generalization of the Euclidean and Manhattan distances, and it is calculated using a power of the absolute differences between the two points. It is a good choice for data that is not normally distributed and has different scales.</li>
-<li><strong>Bray-Curtis distance:</strong> <a href="#sec-bray">Glossary&nbsp;6.9</a> This distance measure is based on the proportion of species that are shared between two communities. It is a good choice for data that is compositional, such as species abundance data.</li>
-<li><strong>Jaccard distance:</strong> <a href="#sec-jaccard">Glossary&nbsp;6.10</a> This distance measure is based on the number of species that are shared between two communities and the total number of species in the two communities. It is a good choice for data that is compositional, such as species abundance data.</li>
+<li><strong>Euclidean distance:</strong> <a href="#sec-euclid">Glossary&nbsp;7.6</a> This is the most common distance measure, and it is calculated by taking the square root of the sum of the squared differences between the two points. It is a good choice for data that is normally distributed.</li>
+<li><strong>Manhattan distance:</strong> <a href="#sec-manhattan">Glossary&nbsp;7.7</a> This distance measure is calculated by taking the sum of the absolute differences between the two points. It is a good choice for data that is not normally distributed.</li>
+<li><strong>Minkowski distance:</strong> <a href="#sec-minkowski">Glossary&nbsp;7.8</a> This is a generalization of the Euclidean and Manhattan distances, and it is calculated using a power of the absolute differences between the two points. It is a good choice for data that is not normally distributed and has different scales.</li>
+<li><strong>Bray-Curtis distance:</strong> <a href="#sec-bray">Glossary&nbsp;7.9</a> This distance measure is based on the proportion of species that are shared between two communities. It is a good choice for data that is compositional, such as species abundance data.</li>
+<li><strong>Jaccard distance:</strong> <a href="#sec-jaccard">Glossary&nbsp;7.10</a> This distance measure is based on the number of species that are shared between two communities and the total number of species in the two communities. It is a good choice for data that is compositional, such as species abundance data.</li>
 </ul>
 <p>The choice of distance measure depends on the specific data set and the analysis that is being performed. For example, the Euclidean distance is a good choice for data that is normally distributed and has similar scales, while the Bray-Curtis distance is a good choice for data that is compositional and has different scales.</p>
 <p>The table below summarizes some of the key properties of the different distance measures:</p>
@@ -745,8 +889,8 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="sec-euclid" class="level3" data-number="6.6">
-<h3 data-number="6.6" class="anchored" data-anchor-id="sec-euclid"><span class="header-section-number">6.6</span> Euclidean distance</h3>
+<section id="sec-euclid" class="level3" data-number="7.6">
+<h3 data-number="7.6" class="anchored" data-anchor-id="sec-euclid"><span class="header-section-number">7.6</span> Euclidean distance</h3>
 <p>Euclidean distance is a measure of the distance between two points in a Euclidean space. In multivariate analysis, it is used to measure the distance between two data points, which are represented by vectors. The Euclidean distance between two data points is calculated as follows:</p>
 <p><span class="math display">\[d = \sqrt{\left( x_1 - x_2 \right)^2 + \left( y_1 - y_2 \right)^2}\]</span><br>
 where:</p>
@@ -762,7 +906,7 @@ where:</p>
 <p>However, the Euclidean distance can be sensitive to the scale of the variables. For example, a difference of 1 unit on a variable that is measured in centimeters is much less significant than a difference of 1 unit on a variable that is measured in meters. To address this issue, it is often helpful to standardize the variables before calculating the Euclidean distance.</p>
 <p>The Euclidean distance can be used in a variety of multivariate analysis techniques, including:</p>
 <ul>
-<li>Cluster analysis (<a href="#sec-cluster">Glossary&nbsp;6.11</a>).</li>
+<li>Cluster analysis (<a href="#sec-cluster">Glossary&nbsp;7.11</a>).</li>
 <li>Principal component analysis.</li>
 <li>Linear discriminant analysis.</li>
 <li>k-nearest neighbors.</li>
@@ -770,8 +914,8 @@ where:</p>
 <p>Cluster analysis is a technique for grouping data points together based on their similarity. Principal component analysis is a technique for reducing the dimensionality of data while preserving as much of the variation as possible. Linear discriminant analysis is a technique for classifying data points into two or more groups. k-nearest neighbors is a non-parametric machine learning algorithm that can be used for classification and regression tasks.</p>
 <p>The Euclidean distance is a powerful tool that can be used to analyze multivariate data. It is important to understand its strengths and weaknesses in order to use it effectively.</p>
 </section>
-<section id="sec-manhattan" class="level3" data-number="6.7">
-<h3 data-number="6.7" class="anchored" data-anchor-id="sec-manhattan"><span class="header-section-number">6.7</span> Manhattan distance</h3>
+<section id="sec-manhattan" class="level3" data-number="7.7">
+<h3 data-number="7.7" class="anchored" data-anchor-id="sec-manhattan"><span class="header-section-number">7.7</span> Manhattan distance</h3>
 <p>Manhattan distance, also known as L1 distance, is a distance metric that measures the distance between two points in a multidimensional space by taking the sum of the absolute differences between their coordinates. It is a more robust to outliers than Euclidean distance and is suitable for both continuous and discrete variables.</p>
 <p><span class="math display">\[d = |x_1 - x_2| + |y_1 - y_2|\]</span> where:</p>
 <p><span class="math inline">\(|\)</span> to denote the absolute value.<br>
@@ -792,9 +936,9 @@ where:</p>
 <p>We could use Manhattan distance to cluster these customers into groups based on their similarity. For example, we might find that younger customers with higher incomes tend to spend more money than older customers with lower incomes. This information could be used to develop marketing campaigns that target specific customer groups.</p>
 <p>Manhattan distance is a powerful tool that can be used for a variety of tasks in multivariate analysis. It is a robust and versatile metric that is suitable for both continuous and discrete variables.</p>
 </section>
-<section id="sec-minkowski" class="level3" data-number="6.8">
-<h3 data-number="6.8" class="anchored" data-anchor-id="sec-minkowski"><span class="header-section-number">6.8</span> Minkowski distance</h3>
-<p>The Minkowski distance is a metric in a normed vector space which can be considered as a generalization of both the Euclidean distance <a href="#sec-euclid">Glossary&nbsp;6.6</a> and the Manhattan distance <a href="#sec-manhattan">Glossary&nbsp;6.7</a>. It is named after the German mathematician Hermann Minkowski.</p>
+<section id="sec-minkowski" class="level3" data-number="7.8">
+<h3 data-number="7.8" class="anchored" data-anchor-id="sec-minkowski"><span class="header-section-number">7.8</span> Minkowski distance</h3>
+<p>The Minkowski distance is a metric in a normed vector space which can be considered as a generalization of both the Euclidean distance <a href="#sec-euclid">Glossary&nbsp;7.6</a> and the Manhattan distance <a href="#sec-manhattan">Glossary&nbsp;7.7</a>. It is named after the German mathematician Hermann Minkowski.</p>
 <p>In multivariate analysis, the Minkowski distance is used to measure the distance between two points in a multidimensional space. The formula for the Minkowski distance is as follows:</p>
 <p><span class="math display">\[\begin{align*}
 d(x, y) &amp;= \left( \sum_{i=1}^n |x_i - y_i|^p \right)^{1/p} \\
@@ -811,7 +955,7 @@ d(x, y) &amp;= \left( \sum_{i=1}^n |x_i - y_i|^p \right)^{1/p} \\
 <ul>
 <li>Cluster analysis</li>
 <li>Nearest neighbor search</li>
-<li>Similarity measures (e.g.&nbsp;PCA and NMDS)</li>
+<li>Similarity measures (e.g.&nbsp;PCA <a href="#sec-pca">Glossary&nbsp;7.14</a> and NMDS <a href="#sec-NMDS">Glossary&nbsp;7.15</a>)</li>
 </ul>
 <p>The choice of the parameter <span class="math inline">\(p\)</span> depends on the specific application. In general, a higher value of <span class="math inline">\(p\)</span> will give more weight to the larger distances between points, while a lower value of <span class="math inline">\(p\)</span> will give more weight to the smaller distances between points.</p>
 <p>Here are some examples of how the Minkowski distance can be used in multivariate analysis:</p>
@@ -822,8 +966,8 @@ d(x, y) &amp;= \left( \sum_{i=1}^n |x_i - y_i|^p \right)^{1/p} \\
 </ul>
 <p>The Minkowski distance is a versatile metric that can be used in a variety of multivariate analysis tasks. It is a good choice for applications where the distance between points is not necessarily Euclidean.</p>
 </section>
-<section id="sec-bray" class="level3" data-number="6.9">
-<h3 data-number="6.9" class="anchored" data-anchor-id="sec-bray"><span class="header-section-number">6.9</span> Bray-Curtis distance measurement</h3>
+<section id="sec-bray" class="level3" data-number="7.9">
+<h3 data-number="7.9" class="anchored" data-anchor-id="sec-bray"><span class="header-section-number">7.9</span> Bray-Curtis distance measurement</h3>
 <p>Bray-Curtis distance measurement as used in multivariate analysis.</p>
 <p>Bray-Curtis distance is a metric used to measure the dissimilarity between two samples. It is based on the relative abundance of species in each sample. The Bray-Curtis distance is calculated as follows:</p>
 <p><span class="math display">\[\frac{\sum|A_i - B_i|}{\sum(A_i + B_i)}\]</span><br>
@@ -851,8 +995,8 @@ where:<br>
 </ul>
 <p>Overall, Bray-Curtis distance is a useful metric for measuring the dissimilarity between two samples. It is relatively easy to calculate and it is sensitive to changes in the relative abundance of species. However, it is important to be aware of its limitations before using it.</p>
 </section>
-<section id="sec-jaccard" class="level3" data-number="6.10">
-<h3 data-number="6.10" class="anchored" data-anchor-id="sec-jaccard"><span class="header-section-number">6.10</span> Jaccard distance</h3>
+<section id="sec-jaccard" class="level3" data-number="7.10">
+<h3 data-number="7.10" class="anchored" data-anchor-id="sec-jaccard"><span class="header-section-number">7.10</span> Jaccard distance</h3>
 <p>The Jaccard distance is a metric that measures the dissimilarity between two sets. It is defined as the complement of the Jaccard similarity coefficient, which is a measure of how similar two sets are.</p>
 <p>The Jaccard distance can be calculated as follows:</p>
 <pre><code>d(A, B) = 1 - SIM(A, B)</code></pre>
@@ -877,8 +1021,8 @@ where:<br>
 </ul>
 <p>The Jaccard distance is a metric that measures the dissimilarity between two sets. It is defined as the complement of the Jaccard similarity coefficient. The Jaccard distance can be used in multivariate analysis to measure the dissimilarity between two multivariate data sets. This can be useful for tasks such as clustering, classification, and outlier detection.</p>
 </section>
-<section id="sec-cluster" class="level3" data-number="6.11">
-<h3 data-number="6.11" class="anchored" data-anchor-id="sec-cluster"><span class="header-section-number">6.11</span> Cluster analysis</h3>
+<section id="sec-cluster" class="level3" data-number="7.11">
+<h3 data-number="7.11" class="anchored" data-anchor-id="sec-cluster"><span class="header-section-number">7.11</span> Cluster analysis</h3>
 <p>Cluster analysis is a multivariate analysis technique that groups data points together based on their similarity. It is an <strong>unsupervised learning</strong> technique, meaning that it does not require any prior knowledge of the data.</p>
 <p>There are many different cluster analysis algorithms, but they all work by finding groups of data points that are close to each other and far from other data points. The most common cluster analysis algorithms are:</p>
 <ul>
@@ -900,8 +1044,8 @@ where:<br>
 </ul>
 <p>Cluster analysis is a powerful tool that can be used to analyze multivariate data. It is important to understand the different cluster analysis algorithms, their strengths and weaknesses, and the factors that can affect the results of cluster analysis in order to use it effectively.</p>
 </section>
-<section id="sec-dendrogram" class="level3" data-number="6.12">
-<h3 data-number="6.12" class="anchored" data-anchor-id="sec-dendrogram"><span class="header-section-number">6.12</span> Dendrogram</h3>
+<section id="sec-dendrogram" class="level3" data-number="7.12">
+<h3 data-number="7.12" class="anchored" data-anchor-id="sec-dendrogram"><span class="header-section-number">7.12</span> Dendrogram</h3>
 <p>A dendrogram is a tree-like diagram that shows the hierarchical relationships between objects. It is most commonly created as an output from hierarchical clustering, a method of cluster analysis that groups similar objects together.</p>
 <p>The dendrogram is a way to visualize the results of the clustering algorithm. The branches of the dendrogram represent the clusters, and the distance between the branches represents the similarity between the clusters. The closer two clusters are on the dendrogram, the more similar they are.</p>
 <p>Dendrograms are a powerful tool for visualizing the results of cluster analysis. They can help us to understand the hierarchical relationships between objects, and to identify clusters of similar objects.</p>
@@ -912,9 +1056,19 @@ where:<br>
 <li><strong>Visualize the results of clustering algorithms:</strong> The dendrogram is a way to visualize the results of clustering algorithms. This can help us to understand how the algorithm works, and to interpret the results.</li>
 </ul>
 <p>Dendrograms are a valuable tool for data visualization and analysis. They can help us to understand the hierarchical relationships between objects, to identify clusters of similar objects, and to visualize the results of clustering algorithms.</p>
+<div class="cell" data-layout-align="left">
+<div class="cell-output-display">
+<div id="fig-dendro" class="quarto-figure quarto-figure-left anchored">
+<figure class="figure">
+<p><img src="Glossary_files/figure-html/fig-dendro-1.png" class="img-fluid figure-img" width="480"></p>
+<figcaption class="figure-caption">Figure&nbsp;10: Dendrogram of Violent Crime Rates by US State</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="sec-kmeans" class="level3" data-number="6.13">
-<h3 data-number="6.13" class="anchored" data-anchor-id="sec-kmeans"><span class="header-section-number">6.13</span> K-Means Clustering</h3>
+<section id="sec-kmeans" class="level3" data-number="7.13">
+<h3 data-number="7.13" class="anchored" data-anchor-id="sec-kmeans"><span class="header-section-number">7.13</span> K-Means Clustering</h3>
 <p>K-means clustering is a popular unsupervised learning algorithm that can be used to group data points into clusters based on their similarity. The algorithm works by iteratively assigning data points to clusters until the within-cluster sum of squares is minimized.</p>
 <p>In multivariate analysis, K-means clustering can be used for a variety of tasks, including:</p>
 <ul>
@@ -943,8 +1097,8 @@ where:<br>
 <li>It can be difficult to interpret the results of K-means clustering.</li>
 </ul>
 </section>
-<section id="sec-pca" class="level3" data-number="6.14">
-<h3 data-number="6.14" class="anchored" data-anchor-id="sec-pca"><span class="header-section-number">6.14</span> Principal component analysis</h3>
+<section id="sec-pca" class="level3" data-number="7.14">
+<h3 data-number="7.14" class="anchored" data-anchor-id="sec-pca"><span class="header-section-number">7.14</span> Principal component analysis</h3>
 <p>Principal component analysis (PCA) is a statistical procedure that uses an orthogonal transformation to convert a set of observations of possibly correlated variables into a set of values of linearly uncorrelated variables called principal components.</p>
 <p>In multivariate analysis, PCA can be used for a variety of tasks, including:</p>
 <ul>
@@ -973,8 +1127,8 @@ where:<br>
 <li>It can be difficult to interpret the results of PCA.</li>
 </ul>
 </section>
-<section id="sec-NMDS" class="level3" data-number="6.15">
-<h3 data-number="6.15" class="anchored" data-anchor-id="sec-NMDS"><span class="header-section-number">6.15</span> Non-metric Multidimensional Scaling</h3>
+<section id="sec-NMDS" class="level3" data-number="7.15">
+<h3 data-number="7.15" class="anchored" data-anchor-id="sec-NMDS"><span class="header-section-number">7.15</span> Non-metric Multidimensional Scaling</h3>
 <p>Non-metric multidimensional scaling (NMDS) is a multivariate analysis technique that is used to reduce the dimensionality of data while preserving the distances between objects. NMDS is a non-parametric technique, which means that it does not make any assumptions about the distribution of the data. This makes NMDS a versatile technique that can be used with a wide variety of data sets.</p>
 <p>NMDS works by first calculating the distances between all pairs of objects in the data set. These distances can be calculated using any distance metric, such as the Euclidean distance or the Manhattan distance. Once the distances have been calculated, NMDS then finds a configuration of points in a lower-dimensional space (typically two or three dimensions) such that the distances between the points in the lower-dimensional space are as close as possible to the distances in the original data set.</p>
 <p>NMDS can be used for a variety of purposes, including:</p>
@@ -997,8 +1151,8 @@ where:<br>
 <li>It can be difficult to interpret the results of NMDS, especially if the data set is large or complex.</li>
 </ul>
 <p>Overall, NMDS is a powerful multivariate analysis technique that can be used for a variety of purposes. However, it is important to be aware of the limitations of NMDS before using it.</p>
-<section id="sec-Shepard" class="level4" data-number="6.15.1">
-<h4 data-number="6.15.1" class="anchored" data-anchor-id="sec-Shepard"><span class="header-section-number">6.15.1</span> Shepard Plot</h4>
+<section id="sec-Shepard" class="level4" data-number="7.15.1">
+<h4 data-number="7.15.1" class="anchored" data-anchor-id="sec-Shepard"><span class="header-section-number">7.15.1</span> Shepard Plot</h4>
 <p>A Shepard plot is a type of graph used in statistics to visualize the results of a multidimensional scaling (MDS) analysis. MDS is a statistical technique that is used to reduce the dimensionality of a data set by finding a lower-dimensional representation of the data that preserves the distances between the data points.</p>
 <p>A Shepard plot shows the relationship between the true distances between the data points in the original high-dimensional space and the distances between the data points in the lower-dimensional representation. If the MDS analysis has been successful, the points in the Shepard plot will be well-correlated, and the line will be a straight line. This indicates that the distances between the data points in the lower-dimensional representation are a good approximation of the true distances between the data points in the original high-dimensional space.</p>
 <p>Shepard plots can be used to assess the quality of an MDS analysis. If the points in the Shepard plot are not well-correlated, or if the line is not a straight line, then the MDS analysis may not have been successful. In this case, the analyst may need to try different parameters for the MDS analysis or use a different dimensionality reduction technique.</p>
@@ -1006,8 +1160,8 @@ where:<br>
 <p>Shepard plots can be used to visualize the results of MDS analysis, and to assess the quality of the analysis. They are a useful tool for understanding the relationships between data points in a high-dimensional space.</p>
 </section>
 </section>
-<section id="sec-ANOSIM" class="level3" data-number="6.16">
-<h3 data-number="6.16" class="anchored" data-anchor-id="sec-ANOSIM"><span class="header-section-number">6.16</span> ANOSIM</h3>
+<section id="sec-ANOSIM" class="level3" data-number="7.16">
+<h3 data-number="7.16" class="anchored" data-anchor-id="sec-ANOSIM"><span class="header-section-number">7.16</span> ANOSIM</h3>
 <p>The Analysis of Similarities (ANOSIM) test is a non-parametric statistical test used to determine whether there are significant differences between two or more groups of data. ANOSIM is a multivariate test, meaning that it can be used to compare data sets with more than one variable.</p>
 <p>ANOSIM works by comparing the distances between observations within and between groups. If the distances between observations within groups are smaller than the distances between observations between groups, then the ANOSIM test will be significant. This indicates that there are real differences between the groups of data.</p>
 <p>ANOSIM is a versatile test that can be used in a variety of fields, including ecology, biology, and medicine. It is a powerful tool for identifying and understanding differences between groups of data.</p>
@@ -1027,10 +1181,15 @@ where:<br>
 <p>Overall, ANOSIM is a powerful tool for identifying and understanding differences between groups of data. It is a versatile test that can be used with a variety of data sets. However, it is important to be aware of the limitations of the test before using it.</p>
 
 
+
 </section>
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-wickham_tidy_2014" class="csl-entry" role="listitem">
+Wickham, Hadley. 2014. <span>“Tidy Data.”</span> <em>The Journal of Statistical Software</em> 59. <a href="http://www.jstatsoft.org/v59/i10/">http://www.jstatsoft.org/v59/i10/</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
