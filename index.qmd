@@ -12,7 +12,7 @@ _Web site last updated `r format(Sys.time(), '%d %B %Y')`_
 # Introduction {.unnumbered}
 
 
-These web pages complement the *data science* chapter in the 4^th^ Edition of BCT's Bat Survey Guidelines, and hopefully encourage ecologists to make the most of their bat survey data. They also demonstrate literate programming with Quarto®[^1] and R Markdown[^13] which can vastly improve workflow[^23] (*welcome to the world beyond Excel*).
+These web pages complement the *data science* chapter in the 4^th^ Edition of BCT's [Bat Survey Guidelines](https://www.bats.org.uk/news/2023/09/bat-surveys-for--ecologists-good-practice-guidelines-4th-edition-launched), and hopefully encourage ecologists to make the most of their bat survey data. They also demonstrate literate programming with Quarto®[^1] and R Markdown[^13] which can vastly improve workflow[^23] (*welcome to the world beyond Excel*).
 
 The term _data science_ is used, as this covers data collection, management, processing, analysis, visualisation, interpretation, reporting and reproducibility. Statisticians would state this is what they have always done in statistics! There is no doubt the phenomenon of _data science_ is growing, most major universities now offer a degree course in the subject and together with the increasing power of computer algorithms; _data science_ is more than just a rebranding of statistics [@Daviddonoho201750:9bd5].
 
