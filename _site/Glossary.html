@@ -212,14 +212,15 @@ div.csl-indent {
   <li><a href="#sec-euclid" id="toc-sec-euclid" class="nav-link" data-scroll-target="#sec-euclid"><span class="header-section-number">7.6</span> Euclidean distance</a></li>
   <li><a href="#sec-manhattan" id="toc-sec-manhattan" class="nav-link" data-scroll-target="#sec-manhattan"><span class="header-section-number">7.7</span> Manhattan distance</a></li>
   <li><a href="#sec-minkowski" id="toc-sec-minkowski" class="nav-link" data-scroll-target="#sec-minkowski"><span class="header-section-number">7.8</span> Minkowski distance</a></li>
-  <li><a href="#sec-bray" id="toc-sec-bray" class="nav-link" data-scroll-target="#sec-bray"><span class="header-section-number">7.9</span> Bray-Curtis distance measurement</a></li>
-  <li><a href="#sec-jaccard" id="toc-sec-jaccard" class="nav-link" data-scroll-target="#sec-jaccard"><span class="header-section-number">7.10</span> Jaccard distance</a></li>
-  <li><a href="#sec-cluster" id="toc-sec-cluster" class="nav-link" data-scroll-target="#sec-cluster"><span class="header-section-number">7.11</span> Cluster analysis</a></li>
-  <li><a href="#sec-dendrogram" id="toc-sec-dendrogram" class="nav-link" data-scroll-target="#sec-dendrogram"><span class="header-section-number">7.12</span> Dendrogram</a></li>
-  <li><a href="#sec-kmeans" id="toc-sec-kmeans" class="nav-link" data-scroll-target="#sec-kmeans"><span class="header-section-number">7.13</span> K-Means Clustering</a></li>
-  <li><a href="#sec-pca" id="toc-sec-pca" class="nav-link" data-scroll-target="#sec-pca"><span class="header-section-number">7.14</span> Principal component analysis</a></li>
-  <li><a href="#sec-NMDS" id="toc-sec-NMDS" class="nav-link" data-scroll-target="#sec-NMDS"><span class="header-section-number">7.15</span> Non-metric Multidimensional Scaling</a></li>
-  <li><a href="#sec-ANOSIM" id="toc-sec-ANOSIM" class="nav-link" data-scroll-target="#sec-ANOSIM"><span class="header-section-number">7.16</span> ANOSIM</a></li>
+  <li><a href="#sec-gower" id="toc-sec-gower" class="nav-link" data-scroll-target="#sec-gower"><span class="header-section-number">7.9</span> Gower distance measurement</a></li>
+  <li><a href="#sec-bray" id="toc-sec-bray" class="nav-link" data-scroll-target="#sec-bray"><span class="header-section-number">7.10</span> Bray-Curtis distance measurement</a></li>
+  <li><a href="#sec-jaccard" id="toc-sec-jaccard" class="nav-link" data-scroll-target="#sec-jaccard"><span class="header-section-number">7.11</span> Jaccard distance</a></li>
+  <li><a href="#sec-cluster" id="toc-sec-cluster" class="nav-link" data-scroll-target="#sec-cluster"><span class="header-section-number">7.12</span> Cluster analysis</a></li>
+  <li><a href="#sec-dendrogram" id="toc-sec-dendrogram" class="nav-link" data-scroll-target="#sec-dendrogram"><span class="header-section-number">7.13</span> Dendrogram</a></li>
+  <li><a href="#sec-kmeans" id="toc-sec-kmeans" class="nav-link" data-scroll-target="#sec-kmeans"><span class="header-section-number">7.14</span> K-Means Clustering</a></li>
+  <li><a href="#sec-pca" id="toc-sec-pca" class="nav-link" data-scroll-target="#sec-pca"><span class="header-section-number">7.15</span> Principal component analysis</a></li>
+  <li><a href="#sec-NMDS" id="toc-sec-NMDS" class="nav-link" data-scroll-target="#sec-NMDS"><span class="header-section-number">7.16</span> Non-metric Multidimensional Scaling</a></li>
+  <li><a href="#sec-ANOSIM" id="toc-sec-ANOSIM" class="nav-link" data-scroll-target="#sec-ANOSIM"><span class="header-section-number">7.17</span> ANOSIM</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -511,7 +512,7 @@ div.csl-indent {
 <li>The number of bootstrap replicates. This is the number of times that you will resample the data with replacement. A common choice is 1000 bootstrap replicates.</li>
 <li>The confidence level. This is the probability that the confidence interval will contain the true value of the statistic. A common choice is 95%.</li>
 </ul>
-<p>Once you have specified these parameters, you can use the following steps to construct the bootstrap confidence interval:</p>
+<p>Once these parameters are specified, the following steps can be used to construct the bootstrap confidence interval:</p>
 <ol type="1">
 <li>Resample the original data with replacement, 1000 times.</li>
 <li>Calculate the statistic of interest on each of the resampled datasets.</li>
@@ -849,8 +850,8 @@ div.csl-indent {
 <li><strong>Euclidean distance:</strong> <a href="#sec-euclid">Glossary&nbsp;7.6</a> This is the most common distance measure, and it is calculated by taking the square root of the sum of the squared differences between the two points. It is a good choice for data that is normally distributed.</li>
 <li><strong>Manhattan distance:</strong> <a href="#sec-manhattan">Glossary&nbsp;7.7</a> This distance measure is calculated by taking the sum of the absolute differences between the two points. It is a good choice for data that is not normally distributed.</li>
 <li><strong>Minkowski distance:</strong> <a href="#sec-minkowski">Glossary&nbsp;7.8</a> This is a generalization of the Euclidean and Manhattan distances, and it is calculated using a power of the absolute differences between the two points. It is a good choice for data that is not normally distributed and has different scales.</li>
-<li><strong>Bray-Curtis distance:</strong> <a href="#sec-bray">Glossary&nbsp;7.9</a> This distance measure is based on the proportion of species that are shared between two communities. It is a good choice for data that is compositional, such as species abundance data.</li>
-<li><strong>Jaccard distance:</strong> <a href="#sec-jaccard">Glossary&nbsp;7.10</a> This distance measure is based on the number of species that are shared between two communities and the total number of species in the two communities. It is a good choice for data that is compositional, such as species abundance data.</li>
+<li><strong>Bray-Curtis distance:</strong> <a href="#sec-bray">Glossary&nbsp;7.10</a> This distance measure is based on the proportion of species that are shared between two communities. It is a good choice for data that is compositional, such as species abundance data.</li>
+<li><strong>Jaccard distance:</strong> <a href="#sec-jaccard">Glossary&nbsp;7.11</a> This distance measure is based on the number of species that are shared between two communities and the total number of species in the two communities. It is a good choice for data that is compositional, such as species abundance data.</li>
 </ul>
 <p>The choice of distance measure depends on the specific data set and the analysis that is being performed. For example, the Euclidean distance is a good choice for data that is normally distributed and has similar scales, while the Bray-Curtis distance is a good choice for data that is compositional and has different scales.</p>
 <p>The table below summarizes some of the key properties of the different distance measures:</p>
@@ -906,7 +907,7 @@ where:</p>
 <p>However, the Euclidean distance can be sensitive to the scale of the variables. For example, a difference of 1 unit on a variable that is measured in centimeters is much less significant than a difference of 1 unit on a variable that is measured in meters. To address this issue, it is often helpful to standardize the variables before calculating the Euclidean distance.</p>
 <p>The Euclidean distance can be used in a variety of multivariate analysis techniques, including:</p>
 <ul>
-<li>Cluster analysis (<a href="#sec-cluster">Glossary&nbsp;7.11</a>).</li>
+<li>Cluster analysis (<a href="#sec-cluster">Glossary&nbsp;7.12</a>).</li>
 <li>Principal component analysis.</li>
 <li>Linear discriminant analysis.</li>
 <li>k-nearest neighbors.</li>
@@ -955,7 +956,7 @@ d(x, y) &amp;= \left( \sum_{i=1}^n |x_i - y_i|^p \right)^{1/p} \\
 <ul>
 <li>Cluster analysis</li>
 <li>Nearest neighbor search</li>
-<li>Similarity measures (e.g.&nbsp;PCA <a href="#sec-pca">Glossary&nbsp;7.14</a> and NMDS <a href="#sec-NMDS">Glossary&nbsp;7.15</a>)</li>
+<li>Similarity measures (e.g.&nbsp;PCA <a href="#sec-pca">Glossary&nbsp;7.15</a> and NMDS <a href="#sec-NMDS">Glossary&nbsp;7.16</a>)</li>
 </ul>
 <p>The choice of the parameter <span class="math inline">\(p\)</span> depends on the specific application. In general, a higher value of <span class="math inline">\(p\)</span> will give more weight to the larger distances between points, while a lower value of <span class="math inline">\(p\)</span> will give more weight to the smaller distances between points.</p>
 <p>Here are some examples of how the Minkowski distance can be used in multivariate analysis:</p>
@@ -966,8 +967,37 @@ d(x, y) &amp;= \left( \sum_{i=1}^n |x_i - y_i|^p \right)^{1/p} \\
 </ul>
 <p>The Minkowski distance is a versatile metric that can be used in a variety of multivariate analysis tasks. It is a good choice for applications where the distance between points is not necessarily Euclidean.</p>
 </section>
-<section id="sec-bray" class="level3" data-number="7.9">
-<h3 data-number="7.9" class="anchored" data-anchor-id="sec-bray"><span class="header-section-number">7.9</span> Bray-Curtis distance measurement</h3>
+<section id="sec-gower" class="level3" data-number="7.9">
+<h3 data-number="7.9" class="anchored" data-anchor-id="sec-gower"><span class="header-section-number">7.9</span> Gower distance measurement</h3>
+<p>Gower’s distance is a dissimilarity measure that can be used to assess the similarity between two observations in a multivariate dataset. It is a generalized distance measure that can be applied to data of mixed types, including continuous, ordinal, and nominal variables.</p>
+<p>Gower’s distance is calculated as follows:</p>
+<p><span class="math display">\[d(i, j) = \frac{1}{p} \sum_{f=1}^p d_f(i, j)\]</span> where: * <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> are the two observations being compared * <span class="math inline">\(p\)</span> is the number of variables in the dataset * <span class="math inline">\(d_f(i, j)\)</span> is the distance between the two observations on variable <span class="math inline">\(f\)</span></p>
+<p><strong>Continuous Variables</strong></p>
+<p>The distance metric used for each variable depends on the type of data. For continuous variables, the Euclidean distance can be written as follows:</p>
+<p><span class="math display">\[d_f(i, j) = \sqrt{(x_i^f - x_j^f)^2}\]</span></p>
+<p>where <span class="math inline">\(x_i^f\)</span> and <span class="math inline">\(x_j^f\)</span> are the values of the <span class="math inline">\(f\)</span>th variable for observations <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, respectively.</p>
+<p><strong>Ordinal Variables</strong></p>
+<p>For ordinal variables, the rank distance can be written as follows:</p>
+<p><span class="math display">\[d_f(i, j) = \left| R_i^f - R_j^f \right|\]</span></p>
+<p>where <span class="math inline">\(R_i^f\)</span> and <span class="math inline">\(R_j^f\)</span> are the ranks of the <span class="math inline">\(f\)</span>th variable for observations <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, respectively.</p>
+<p><strong>Nominal Variables</strong></p>
+<p>For nominal variables, the simple matching coefficient can be written as follows:</p>
+<p><span class="math display">\[d_f(i, j) = 1 - \frac{m(x_i^f, x_j^f)}{n}\]</span></p>
+<p>where <span class="math inline">\(m(x_i^f, x_j^f)\)</span> is the number of variables for which the values of observations <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> are the same, and <span class="math inline">\(n\)</span> is the total number of variables.</p>
+<p>Once the Gower’s distance has been calculated for all pairs of observations, it can be used for various multivariate analysis tasks, such as clustering, classification, and ordination.</p>
+<p>The distance metric used for each variable depends on the type of data. For continuous variables, the Euclidean distance is typically used. For ordinal variables, the rank distance is typically used. For nominal variables, the simple matching coefficient is typically used.</p>
+<p>Gower’s distance is a normalized distance measure, meaning that it ranges from 0 to 1. A distance of 0 indicates that the two observations are identical, while a distance of 1 indicates that the two observations are as dissimilar as possible.</p>
+<p>Gower’s distance is a versatile distance measure that can be used in a variety of multivariate analysis applications, such as clustering, classification, and ordination. It is particularly useful for datasets that contain mixed types of data.</p>
+<p>Some examples of how Gower’s distance can be used in multivariate analysis:</p>
+<ul>
+<li><strong>Clustering:</strong> Gower’s distance can be used to cluster observations based on their similarity. For example, Gower’s distance could be used to cluster customers based on their demographic characteristics and purchase history.</li>
+<li><strong>Classification:</strong> Gower’s distance can be used to classify observations into different groups. For example, Gower’s distance could be used to classify patients into different disease groups based on their clinical symptoms and laboratory results.</li>
+<li><strong>Ordination:</strong> Gower’s distance can be used to create a visual representation of the relationships between observations in a multivariate dataset. For example, Gower’s distance could be used to create a scatter plot of patients based on their clinical symptoms and laboratory results.</li>
+</ul>
+<p>Overall, Gower’s distance is a powerful and versatile distance measure that can be used in a variety of multivariate analysis applications.</p>
+</section>
+<section id="sec-bray" class="level3" data-number="7.10">
+<h3 data-number="7.10" class="anchored" data-anchor-id="sec-bray"><span class="header-section-number">7.10</span> Bray-Curtis distance measurement</h3>
 <p>Bray-Curtis distance measurement as used in multivariate analysis.</p>
 <p>Bray-Curtis distance is a metric used to measure the dissimilarity between two samples. It is based on the relative abundance of species in each sample. The Bray-Curtis distance is calculated as follows:</p>
 <p><span class="math display">\[\frac{\sum|A_i - B_i|}{\sum(A_i + B_i)}\]</span><br>
@@ -995,8 +1025,8 @@ where:<br>
 </ul>
 <p>Overall, Bray-Curtis distance is a useful metric for measuring the dissimilarity between two samples. It is relatively easy to calculate and it is sensitive to changes in the relative abundance of species. However, it is important to be aware of its limitations before using it.</p>
 </section>
-<section id="sec-jaccard" class="level3" data-number="7.10">
-<h3 data-number="7.10" class="anchored" data-anchor-id="sec-jaccard"><span class="header-section-number">7.10</span> Jaccard distance</h3>
+<section id="sec-jaccard" class="level3" data-number="7.11">
+<h3 data-number="7.11" class="anchored" data-anchor-id="sec-jaccard"><span class="header-section-number">7.11</span> Jaccard distance</h3>
 <p>The Jaccard distance is a metric that measures the dissimilarity between two sets. It is defined as the complement of the Jaccard similarity coefficient, which is a measure of how similar two sets are.</p>
 <p>The Jaccard distance can be calculated as follows:</p>
 <pre><code>d(A, B) = 1 - SIM(A, B)</code></pre>
@@ -1021,8 +1051,8 @@ where:<br>
 </ul>
 <p>The Jaccard distance is a metric that measures the dissimilarity between two sets. It is defined as the complement of the Jaccard similarity coefficient. The Jaccard distance can be used in multivariate analysis to measure the dissimilarity between two multivariate data sets. This can be useful for tasks such as clustering, classification, and outlier detection.</p>
 </section>
-<section id="sec-cluster" class="level3" data-number="7.11">
-<h3 data-number="7.11" class="anchored" data-anchor-id="sec-cluster"><span class="header-section-number">7.11</span> Cluster analysis</h3>
+<section id="sec-cluster" class="level3" data-number="7.12">
+<h3 data-number="7.12" class="anchored" data-anchor-id="sec-cluster"><span class="header-section-number">7.12</span> Cluster analysis</h3>
 <p>Cluster analysis is a multivariate analysis technique that groups data points together based on their similarity. It is an <strong>unsupervised learning</strong> technique, meaning that it does not require any prior knowledge of the data.</p>
 <p>There are many different cluster analysis algorithms, but they all work by finding groups of data points that are close to each other and far from other data points. The most common cluster analysis algorithms are:</p>
 <ul>
@@ -1044,8 +1074,8 @@ where:<br>
 </ul>
 <p>Cluster analysis is a powerful tool that can be used to analyze multivariate data. It is important to understand the different cluster analysis algorithms, their strengths and weaknesses, and the factors that can affect the results of cluster analysis in order to use it effectively.</p>
 </section>
-<section id="sec-dendrogram" class="level3" data-number="7.12">
-<h3 data-number="7.12" class="anchored" data-anchor-id="sec-dendrogram"><span class="header-section-number">7.12</span> Dendrogram</h3>
+<section id="sec-dendrogram" class="level3" data-number="7.13">
+<h3 data-number="7.13" class="anchored" data-anchor-id="sec-dendrogram"><span class="header-section-number">7.13</span> Dendrogram</h3>
 <p>A dendrogram is a tree-like diagram that shows the hierarchical relationships between objects. It is most commonly created as an output from hierarchical clustering, a method of cluster analysis that groups similar objects together.</p>
 <p>The dendrogram is a way to visualize the results of the clustering algorithm. The branches of the dendrogram represent the clusters, and the distance between the branches represents the similarity between the clusters. The closer two clusters are on the dendrogram, the more similar they are.</p>
 <p>Dendrograms are a powerful tool for visualizing the results of cluster analysis. They can help us to understand the hierarchical relationships between objects, and to identify clusters of similar objects.</p>
@@ -1067,8 +1097,8 @@ where:<br>
 </div>
 </div>
 </section>
-<section id="sec-kmeans" class="level3" data-number="7.13">
-<h3 data-number="7.13" class="anchored" data-anchor-id="sec-kmeans"><span class="header-section-number">7.13</span> K-Means Clustering</h3>
+<section id="sec-kmeans" class="level3" data-number="7.14">
+<h3 data-number="7.14" class="anchored" data-anchor-id="sec-kmeans"><span class="header-section-number">7.14</span> K-Means Clustering</h3>
 <p>K-means clustering is a popular unsupervised learning algorithm that can be used to group data points into clusters based on their similarity. The algorithm works by iteratively assigning data points to clusters until the within-cluster sum of squares is minimized.</p>
 <p>In multivariate analysis, K-means clustering can be used for a variety of tasks, including:</p>
 <ul>
@@ -1097,8 +1127,8 @@ where:<br>
 <li>It can be difficult to interpret the results of K-means clustering.</li>
 </ul>
 </section>
-<section id="sec-pca" class="level3" data-number="7.14">
-<h3 data-number="7.14" class="anchored" data-anchor-id="sec-pca"><span class="header-section-number">7.14</span> Principal component analysis</h3>
+<section id="sec-pca" class="level3" data-number="7.15">
+<h3 data-number="7.15" class="anchored" data-anchor-id="sec-pca"><span class="header-section-number">7.15</span> Principal component analysis</h3>
 <p>Principal component analysis (PCA) is a statistical procedure that uses an orthogonal transformation to convert a set of observations of possibly correlated variables into a set of values of linearly uncorrelated variables called principal components.</p>
 <p>In multivariate analysis, PCA can be used for a variety of tasks, including:</p>
 <ul>
@@ -1127,8 +1157,8 @@ where:<br>
 <li>It can be difficult to interpret the results of PCA.</li>
 </ul>
 </section>
-<section id="sec-NMDS" class="level3" data-number="7.15">
-<h3 data-number="7.15" class="anchored" data-anchor-id="sec-NMDS"><span class="header-section-number">7.15</span> Non-metric Multidimensional Scaling</h3>
+<section id="sec-NMDS" class="level3" data-number="7.16">
+<h3 data-number="7.16" class="anchored" data-anchor-id="sec-NMDS"><span class="header-section-number">7.16</span> Non-metric Multidimensional Scaling</h3>
 <p>Non-metric multidimensional scaling (NMDS) is a multivariate analysis technique that is used to reduce the dimensionality of data while preserving the distances between objects. NMDS is a non-parametric technique, which means that it does not make any assumptions about the distribution of the data. This makes NMDS a versatile technique that can be used with a wide variety of data sets.</p>
 <p>NMDS works by first calculating the distances between all pairs of objects in the data set. These distances can be calculated using any distance metric, such as the Euclidean distance or the Manhattan distance. Once the distances have been calculated, NMDS then finds a configuration of points in a lower-dimensional space (typically two or three dimensions) such that the distances between the points in the lower-dimensional space are as close as possible to the distances in the original data set.</p>
 <p>NMDS can be used for a variety of purposes, including:</p>
@@ -1151,8 +1181,8 @@ where:<br>
 <li>It can be difficult to interpret the results of NMDS, especially if the data set is large or complex.</li>
 </ul>
 <p>Overall, NMDS is a powerful multivariate analysis technique that can be used for a variety of purposes. However, it is important to be aware of the limitations of NMDS before using it.</p>
-<section id="sec-Shepard" class="level4" data-number="7.15.1">
-<h4 data-number="7.15.1" class="anchored" data-anchor-id="sec-Shepard"><span class="header-section-number">7.15.1</span> Shepard Plot</h4>
+<section id="sec-Shepard" class="level4" data-number="7.16.1">
+<h4 data-number="7.16.1" class="anchored" data-anchor-id="sec-Shepard"><span class="header-section-number">7.16.1</span> Shepard Plot</h4>
 <p>A Shepard plot is a type of graph used in statistics to visualize the results of a multidimensional scaling (MDS) analysis. MDS is a statistical technique that is used to reduce the dimensionality of a data set by finding a lower-dimensional representation of the data that preserves the distances between the data points.</p>
 <p>A Shepard plot shows the relationship between the true distances between the data points in the original high-dimensional space and the distances between the data points in the lower-dimensional representation. If the MDS analysis has been successful, the points in the Shepard plot will be well-correlated, and the line will be a straight line. This indicates that the distances between the data points in the lower-dimensional representation are a good approximation of the true distances between the data points in the original high-dimensional space.</p>
 <p>Shepard plots can be used to assess the quality of an MDS analysis. If the points in the Shepard plot are not well-correlated, or if the line is not a straight line, then the MDS analysis may not have been successful. In this case, the analyst may need to try different parameters for the MDS analysis or use a different dimensionality reduction technique.</p>
@@ -1160,8 +1190,8 @@ where:<br>
 <p>Shepard plots can be used to visualize the results of MDS analysis, and to assess the quality of the analysis. They are a useful tool for understanding the relationships between data points in a high-dimensional space.</p>
 </section>
 </section>
-<section id="sec-ANOSIM" class="level3" data-number="7.16">
-<h3 data-number="7.16" class="anchored" data-anchor-id="sec-ANOSIM"><span class="header-section-number">7.16</span> ANOSIM</h3>
+<section id="sec-ANOSIM" class="level3" data-number="7.17">
+<h3 data-number="7.17" class="anchored" data-anchor-id="sec-ANOSIM"><span class="header-section-number">7.17</span> ANOSIM</h3>
 <p>The Analysis of Similarities (ANOSIM) test is a non-parametric statistical test used to determine whether there are significant differences between two or more groups of data. ANOSIM is a multivariate test, meaning that it can be used to compare data sets with more than one variable.</p>
 <p>ANOSIM works by comparing the distances between observations within and between groups. If the distances between observations within groups are smaller than the distances between observations between groups, then the ANOSIM test will be significant. This indicates that there are real differences between the groups of data.</p>
 <p>ANOSIM is a versatile test that can be used in a variety of fields, including ecology, biology, and medicine. It is a powerful tool for identifying and understanding differences between groups of data.</p>

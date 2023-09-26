@@ -523,7 +523,7 @@ To construct a bootstrap confidence interval, you will need to specify the follo
 * The number of bootstrap replicates. This is the number of times that you will resample the data with replacement. A common choice is 1000 bootstrap replicates.
 * The confidence level. This is the probability that the confidence interval will contain the true value of the statistic. A common choice is 95%.
 
-Once you have specified these parameters, you can use the following steps to construct the bootstrap confidence interval:
+Once these parameters are specified, the following steps can be used to construct the bootstrap confidence interval:
 
 1. Resample the original data with replacement, 1000 times.
 2. Calculate the statistic of interest on each of the resampled datasets.
@@ -1017,6 +1017,59 @@ Here are some examples of how the Minkowski distance can be used in multivariate
 * In similarity measures, the Minkowski distance can be used to measure the similarity between two data points.
 
 The Minkowski distance is a versatile metric that can be used in a variety of multivariate analysis tasks. It is a good choice for applications where the distance between points is not necessarily Euclidean.
+
+### Gower distance measurement {#sec-gower}
+
+Gower's distance is a dissimilarity measure that can be used to assess the similarity between two observations in a multivariate dataset. It is a generalized distance measure that can be applied to data of mixed types, including continuous, ordinal, and nominal variables.
+
+Gower's distance is calculated as follows:
+
+$$d(i, j) = \frac{1}{p} \sum_{f=1}^p d_f(i, j)$$
+where:
+* $i$ and $j$ are the two observations being compared
+* $p$ is the number of variables in the dataset
+* $d_f(i, j)$ is the distance between the two observations on variable $f$
+
+__Continuous Variables__
+
+The distance metric used for each variable depends on the type of data. For continuous variables, the Euclidean distance can be written as follows:
+
+$$d_f(i, j) = \sqrt{(x_i^f - x_j^f)^2}$$
+
+where $x_i^f$ and $x_j^f$ are the values of the $f$th variable for observations $i$ and $j$, respectively.
+
+__Ordinal Variables__
+
+For ordinal variables, the rank distance can be written as follows:
+
+$$d_f(i, j) = \left| R_i^f - R_j^f \right|$$
+
+where $R_i^f$ and $R_j^f$ are the ranks of the $f$th variable for observations $i$ and $j$, respectively.
+
+__Nominal Variables__
+
+For nominal variables, the simple matching coefficient can be written as follows:
+
+$$d_f(i, j) = 1 - \frac{m(x_i^f, x_j^f)}{n}$$
+
+where $m(x_i^f, x_j^f)$ is the number of variables for which the values of observations $i$ and $j$ are the same, and $n$ is the total number of variables.
+
+Once the Gower's distance has been calculated for all pairs of observations, it can be used for various multivariate analysis tasks, such as clustering, classification, and ordination.
+
+The distance metric used for each variable depends on the type of data. For continuous variables, the Euclidean distance is typically used. For ordinal variables, the rank distance is typically used. For nominal variables, the simple matching coefficient is typically used.
+
+Gower's distance is a normalized distance measure, meaning that it ranges from 0 to 1. A distance of 0 indicates that the two observations are identical, while a distance of 1 indicates that the two observations are as dissimilar as possible.
+
+Gower's distance is a versatile distance measure that can be used in a variety of multivariate analysis applications, such as clustering, classification, and ordination. It is particularly useful for datasets that contain mixed types of data.
+
+Some examples of how Gower's distance can be used in multivariate analysis:
+
+* **Clustering:** Gower's distance can be used to cluster observations based on their similarity. For example, Gower's distance could be used to cluster customers based on their demographic characteristics and purchase history.
+* **Classification:** Gower's distance can be used to classify observations into different groups. For example, Gower's distance could be used to classify patients into different disease groups based on their clinical symptoms and laboratory results.
+* **Ordination:** Gower's distance can be used to create a visual representation of the relationships between observations in a multivariate dataset. For example, Gower's distance could be used to create a scatter plot of patients based on their clinical symptoms and laboratory results.
+
+Overall, Gower's distance is a powerful and versatile distance measure that can be used in a variety of multivariate analysis applications.
+
 
 ### Bray-Curtis distance measurement {#sec-bray}
 

@@ -278,7 +278,7 @@ Always Use a Description
 </div>
 </div>
 <p><code>DateTime</code>: the date and time of the bat observation to BS ISO 8601:2004 i.e.&nbsp;<code>yyyymmdd hh:mm:ss</code>. The use of BS ISO 8601:2004 prevents confusion over the date format <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> . Reference bat activity to the local time and specifying an <em>iana</em><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> time zone allows for daylight saving times to considered; the <em>iana</em> code for the UK is <code>Europe/London</code>.</p>
-<p><code>Species</code>: bat species names should follow the “binomial nomenclature” from the International Code of Zoological Nomenclature (ICZN)<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> - e.g.&nbsp;<em>Barbastella barbastellus</em>, <em>Eptesicus serotinus</em>, etc… A column of local common names can always be added to the <em>tidy</em> data, i.e.&nbsp;in a separate column see <a href="https://bat-survey-reporting.netlify.app/meta.html#common-bat-names">Meta Data</a>. A compiled online database <a href="https://batnames.org/"><em>Bats of the World</em></a> provides taxonomic and geographic information on all Chiroptera <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. As of 10<sup>th</sup> Mar 2023, <strong>1462</strong> species are recognized. Sound analysis may not be able to distinguish calls to species level; in practice some calls may only be identified to genus or as acoustically similar, <a href="#tbl-UKbatNames">Table&nbsp;12</a> suggests a naming convention.</p>
+<p><code>Species</code>: bat species names should follow the “binomial nomenclature” from the International Code of Zoological Nomenclature (ICZN)<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> - e.g.&nbsp;<em>Barbastella barbastellus</em>, <em>Eptesicus serotinus</em>, etc… A column of local common names can always be added to the <em>tidy</em> data, i.e.&nbsp;in a separate column see <a href="https://bat-survey-reporting.netlify.app/meta.html#common-bat-names">Meta Data</a>. A compiled online database <a href="https://batnames.org/"><em>Bats of the World</em></a> provides taxonomic and geographic information on all Chiroptera <a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. As of 10<sup>th</sup> Mar 2023, <strong>1462</strong> species are recognized. Sound analysis may not be able to distinguish calls to species level; in practice some calls may only be identified to genus or as acoustically similar, <a href="#tbl-UKbatNames">Table&nbsp;13</a> suggests a naming convention.</p>
 <p><code>Longitude</code> and <code>Latitude</code>: World Geodetic System 1984<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> (WGS84); as used by Google earth. A digital, numeric, format should be used. Any other spatial reference system can be used, as these can be stored as an extra column in the <em>tidy data</em>; an example of British National Grid co-ordinates (Easting/Northing) is provided in <a href="https://bat-survey-reporting.netlify.app/meta.html#national-grid-coordinates">Meta Data</a>. The prerequisite is that the reference system can be converted to WGS84; which is the case for most national or state co-ordinate systems. Using a global co-ordinate system such as WSG84 gives access to the many open-source application programming interfaces (API) available that assist with data analysis (e.g.&nbsp;assessing sunset and sunrise times or the adjustment to daylight saving).</p>
 <div class="cell">
 <details>
@@ -6147,49 +6147,72 @@ The Original Information is Retainaed.
 <p>The exported <code>.csv</code> output from the <a href="https://www.wildlifeacoustics.com/products/kaleidoscope-pro">Kaleidoscope</a> has the following columns requiring manipulation to create <em>minimal data</em> (<em>an outline of the the manipulation is described in the brackets</em>):</p>
 <ul>
 <li><code>DATE</code>, <code>TIME</code> - (<em>combine <code>DATE</code> and <code>TIME</code> into <code>DateTime</code> convert date to BS ISO 8601:2004 <code>yyyymmdd hh:mm:ss</code> format</em>)</li>
-<li><code>AUTO-ID</code> or <code>MANUAL ID</code> - (<em>rename or copy column to <code>Species</code> and convert name codes e.g.&nbsp;<code>MYONAT</code>, <code>PIPPIP</code>, <code>NYCNOC</code>… to a Scientific Name</em>)</li>
+<li><code>AUTO-ID</code> or <code>MANUAL ID</code> - (<em>rename or copy column to <code>Species</code>; multiple species in a cell, separate into separate rows; and, convert name codes e.g.&nbsp;<code>MYONAT</code>, <code>PIPPIP</code>, <code>NYCNOC</code>… to a Scientific Name</em>)</li>
 <li><code>LATITUDE</code> - (<em>rename or copy column to <code>Latitude</code></em>)</li>
 <li><code>LONGITUDE</code> - (<em>rename or copy column to <code>Longitude</code></em>)</li>
 </ul>
-</section>
-<section id="anabat-insight" class="level3" data-number="3.4">
-<h3 data-number="3.4" class="anchored" data-anchor-id="anabat-insight"><span class="header-section-number">3.4</span> Anabat Insight</h3>
-</section>
-<section id="sonobat" class="level3" data-number="3.5">
-<h3 data-number="3.5" class="anchored" data-anchor-id="sonobat"><span class="header-section-number">3.5</span> SonoBat</h3>
-</section>
-</section>
-<section id="sound-analysis-and-naming-bats" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="sound-analysis-and-naming-bats"><span class="header-section-number">4</span> Sound Analysis and Naming Bats</h2>
-<p>Sound analysis may not be able to distinguish calls to species level; in practice some calls may only be identified to genus or as acoustically similar; <a href="#tbl-UKbatNames">Table&nbsp;12</a> suggests a naming convention for UK bat species<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<p>The <em>iBats</em> package has the <code>Kaleidoscope</code> dataset an exported <code>.csv</code> file from Wildlife Acoustics Kaleidoscope. The code below shows how to make <code>minimal data</code> from <code>Kaleidoscope</code>; the first ten lines are produced in <a href="#tbl-Kaleidoscope">Table&nbsp;12</a>.</p>
+<div class="cell">
+<details open="">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># minimal data </span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>minimal_Kaleidoscope <span class="ot">&lt;-</span> Kaleidoscope <span class="sc">%&gt;%</span> </span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">DateTime =</span> <span class="fu">glue</span>(<span class="st">"{DATE} {TIME}"</span>), <span class="co"># combine date and time</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">DateTime =</span> lubridate<span class="sc">::</span><span class="fu">dmy_hms</span>(DateTime), <span class="co"># make an ISO date (check format is dmy)</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">Species =</span> <span class="st">`</span><span class="at">MANUAL ID</span><span class="st">`</span>, <span class="co"># Species name</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">Latitude =</span> <span class="st">`</span><span class="at">LATITUDE</span><span class="st">`</span>,</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">Longitude =</span> <span class="st">`</span><span class="at">LONGITUDE</span><span class="st">`</span>,</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">Description =</span> <span class="st">"Roundabout"</span>) <span class="sc">%&gt;%</span> <span class="co"># add a description</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Note the everything() function retains all the original information</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Description, DateTime, Species, Latitude, Longitude, <span class="fu">everything</span>()) <span class="co"># </span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>minimal_Kaleidoscope <span class="ot">&lt;-</span> minimal_Kaleidoscope <span class="sc">%&gt;%</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Remove NA results</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Species)) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Adjust data for too many species in a cell</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>  tidyr<span class="sc">::</span><span class="fu">separate_rows</span>(Species) </span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Look up list of bat codes (always lower case)  and scientific names</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>BatScientific <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"pippip"</span> <span class="ot">=</span> <span class="st">"Pipistrellus pygmaeus"</span>,</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"pippyg "</span> <span class="ot">=</span> <span class="st">"Pipistrellus pipistrellus"</span>,</span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"pleaur"</span> <span class="ot">=</span> <span class="st">"Plecotus auritus"</span>)</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a><span class="co">#Convert Bat Codes to Scientific Name</span></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>minimal_Kaleidoscope<span class="sc">$</span>Species <span class="ot">&lt;-</span> iBats<span class="sc">::</span><span class="fu">make_scientific</span>(BatScientific,</span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>                                                       minimal_Kaleidoscope<span class="sc">$</span>Species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># UK_bat_names is from the iBats package</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>UK_bat_names <span class="sc">%&gt;%</span> </span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Common) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_if</span>(is.character, <span class="sc">~</span><span class="fu">replace_na</span>(.,<span class="st">""</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Species =</span> Binomial, <span class="st">`</span><span class="at">Acoustic Group 1</span><span class="st">`</span> <span class="ot">=</span> AcousticallySimilar1, <span class="st">`</span><span class="at">Acoustic Group 2</span><span class="st">`</span> <span class="ot">=</span> AcousticallySimilar2) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(</span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">"black"</span>),</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">weight =</span> <span class="st">"bold"</span>)</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(<span class="fu">everything</span>())</span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Make bat scientific name italic</span></span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(</span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">style =</span> <span class="st">"italic"</span>)</span>
-<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>      ),</span>
-<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(</span>
-<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(<span class="fu">everything</span>())</span>
-<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># reduce cell space</span></span>
-<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">2</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>minimal_Kaleidoscope <span class="sc">%&gt;%</span> </span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a> <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a> <span class="fu">select</span>(Description, DateTime, Species, Latitude, Longitude) <span class="sc">%&gt;%</span>  </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a> <span class="fu">gt</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">"black"</span>),</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">weight =</span> <span class="st">"bold"</span>)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(<span class="fu">everything</span>())</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Make bat scientific name italic</span></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(</span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">style =</span> <span class="st">"italic"</span>)</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(</span>
+<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(Species)</span>
+<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># reduce cell space</span></span>
+<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">2</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cols_align</span>(</span>
+<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">align =</span> <span class="st">"left"</span>,</span>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> DateTime</span>
+<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 
@@ -6605,9 +6628,553 @@ The Original Information is Retainaed.
 }
 </style>
 
+<div id="tbl-Kaleidoscope" class="anchored">
+<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Table&nbsp;12: Tidy Minimal Kaleidoscope Exported Data</caption>
+<thead class="gt_col_headings">
+<tr class="header">
+<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Description</th>
+<th id="DateTime" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">DateTime</th>
+<th id="Species" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Species</th>
+<th id="Latitude" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Latitude</th>
+<th id="Longitude" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Longitude</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Description">Roundabout</td>
+<td class="gt_row gt_left" headers="DateTime">2023-08-16 21:26:41</td>
+<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pygmaeus</td>
+<td class="gt_row gt_right" headers="Latitude">51.4064</td>
+<td class="gt_row gt_right" headers="Longitude">-0.6517</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Description">Roundabout</td>
+<td class="gt_row gt_left" headers="DateTime">2023-08-16 21:40:01</td>
+<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pygmaeus</td>
+<td class="gt_row gt_right" headers="Latitude">51.4064</td>
+<td class="gt_row gt_right" headers="Longitude">-0.6517</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Description">Roundabout</td>
+<td class="gt_row gt_left" headers="DateTime">2023-08-16 21:43:39</td>
+<td class="gt_row gt_left" headers="Species" style="font-style: italic">Plecotus auritus</td>
+<td class="gt_row gt_right" headers="Latitude">51.4064</td>
+<td class="gt_row gt_right" headers="Longitude">-0.6517</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Description">Roundabout</td>
+<td class="gt_row gt_left" headers="DateTime">2023-08-16 21:43:47</td>
+<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pygmaeus</td>
+<td class="gt_row gt_right" headers="Latitude">51.4064</td>
+<td class="gt_row gt_right" headers="Longitude">-0.6517</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Description">Roundabout</td>
+<td class="gt_row gt_left" headers="DateTime">2023-08-16 21:43:51</td>
+<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pygmaeus</td>
+<td class="gt_row gt_right" headers="Latitude">51.4064</td>
+<td class="gt_row gt_right" headers="Longitude">-0.6517</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Description">Roundabout</td>
+<td class="gt_row gt_left" headers="DateTime">2023-08-17 04:28:20</td>
+<td class="gt_row gt_left" headers="Species" style="font-style: italic">Plecotus auritus</td>
+<td class="gt_row gt_right" headers="Latitude">51.4064</td>
+<td class="gt_row gt_right" headers="Longitude">-0.6517</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Description">Roundabout</td>
+<td class="gt_row gt_left" headers="DateTime">2023-08-17 04:28:01</td>
+<td class="gt_row gt_left" headers="Species" style="font-style: italic">Plecotus auritus</td>
+<td class="gt_row gt_right" headers="Latitude">51.4064</td>
+<td class="gt_row gt_right" headers="Longitude">-0.6517</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Description">Roundabout</td>
+<td class="gt_row gt_left" headers="DateTime">2023-08-16 21:27:07</td>
+<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pygmaeus</td>
+<td class="gt_row gt_right" headers="Latitude">51.4064</td>
+<td class="gt_row gt_right" headers="Longitude">-0.6517</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Description">Roundabout</td>
+<td class="gt_row gt_left" headers="DateTime">2023-08-16 21:33:29</td>
+<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pygmaeus</td>
+<td class="gt_row gt_right" headers="Latitude">51.4064</td>
+<td class="gt_row gt_right" headers="Longitude">-0.6517</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Description">Roundabout</td>
+<td class="gt_row gt_left" headers="DateTime">2023-08-16 21:36:25</td>
+<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pygmaeus</td>
+<td class="gt_row gt_right" headers="Latitude">51.4064</td>
+<td class="gt_row gt_right" headers="Longitude">-0.6517</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+<section id="anabat-insight" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="anabat-insight"><span class="header-section-number">3.4</span> Anabat Insight</h3>
+</section>
+<section id="sonobat" class="level3" data-number="3.5">
+<h3 data-number="3.5" class="anchored" data-anchor-id="sonobat"><span class="header-section-number">3.5</span> SonoBat</h3>
+</section>
+</section>
+<section id="sound-analysis-and-naming-bats" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="sound-analysis-and-naming-bats"><span class="header-section-number">4</span> Sound Analysis and Naming Bats</h2>
+<p>Sound analysis may not be able to distinguish calls to species level; in practice some calls may only be identified to genus or as acoustically similar; <a href="#tbl-UKbatNames">Table&nbsp;13</a> suggests a naming convention for UK bat species<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
+<div class="cell">
+<details>
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># UK_bat_names is from the iBats package</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>UK_bat_names <span class="sc">%&gt;%</span> </span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>Common) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate_if</span>(is.character, <span class="sc">~</span><span class="fu">replace_na</span>(.,<span class="st">""</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Species =</span> Binomial, <span class="st">`</span><span class="at">Acoustic Group 1</span><span class="st">`</span> <span class="ot">=</span> AcousticallySimilar1, <span class="st">`</span><span class="at">Acoustic Group 2</span><span class="st">`</span> <span class="ot">=</span> AcousticallySimilar2) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">gt</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_fill</span>(<span class="at">color =</span> <span class="st">"black"</span>),</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">weight =</span> <span class="st">"bold"</span>)</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>(</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(<span class="fu">everything</span>())</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Make bat scientific name italic</span></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_style</span>(</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">style =</span> <span class="fu">list</span>(</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cell_text</span>(<span class="at">style =</span> <span class="st">"italic"</span>)</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">locations =</span> <span class="fu">cells_body</span>(</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">columns =</span> <span class="fu">c</span>(<span class="fu">everything</span>())</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>  )) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># reduce cell space</span></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">2</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+
+<div id="abjlgpjnqy" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#abjlgpjnqy .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#abjlgpjnqy .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#abjlgpjnqy .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#abjlgpjnqy .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#abjlgpjnqy .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#abjlgpjnqy .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#abjlgpjnqy .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#abjlgpjnqy .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#abjlgpjnqy .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#abjlgpjnqy .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#abjlgpjnqy .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#abjlgpjnqy .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#abjlgpjnqy .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#abjlgpjnqy .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#abjlgpjnqy .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#abjlgpjnqy .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#abjlgpjnqy .gt_row {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#abjlgpjnqy .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#abjlgpjnqy .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#abjlgpjnqy .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#abjlgpjnqy .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#abjlgpjnqy .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#abjlgpjnqy .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#abjlgpjnqy .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#abjlgpjnqy .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#abjlgpjnqy .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#abjlgpjnqy .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#abjlgpjnqy .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#abjlgpjnqy .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#abjlgpjnqy .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#abjlgpjnqy .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#abjlgpjnqy .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#abjlgpjnqy .gt_left {
+  text-align: left;
+}
+
+#abjlgpjnqy .gt_center {
+  text-align: center;
+}
+
+#abjlgpjnqy .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#abjlgpjnqy .gt_font_normal {
+  font-weight: normal;
+}
+
+#abjlgpjnqy .gt_font_bold {
+  font-weight: bold;
+}
+
+#abjlgpjnqy .gt_font_italic {
+  font-style: italic;
+}
+
+#abjlgpjnqy .gt_super {
+  font-size: 65%;
+}
+
+#abjlgpjnqy .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#abjlgpjnqy .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#abjlgpjnqy .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#abjlgpjnqy .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#abjlgpjnqy .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#abjlgpjnqy .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#abjlgpjnqy .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+
 <div id="tbl-UKbatNames" class="anchored">
 <table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;12: Sound Analysis and Naming Bats</caption>
+<caption>Table&nbsp;13: Sound Analysis and Naming Bats</caption>
 <thead class="gt_col_headings">
 <tr class="header">
 <th id="Species" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Species</th>
@@ -6733,101 +7300,101 @@ The Original Information is Retainaed.
 <div class="cell">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>SpeciesList <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Barbastella barbastellus"</span>,</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Myotis alcathoe"</span>,</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Myotis bechsteinii"</span>,</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Myotis brandtii"</span>,</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Myotis mystacinus"</span>,</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Myotis nattereri"</span>,</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Myotis daubentonii"</span>,</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Myotis spp."</span>,</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Plecotus auritus"</span>,</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Plecotus spp."</span>,</span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Plecotus austriacus"</span>,</span>
-<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Pipistrellus pipistrellus"</span>,</span>
-<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Pipistrellus nathusii"</span>,</span>
-<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Pipistrellus pygmaeus"</span>,</span>
-<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Pipistrellus spp."</span>,</span>
-<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Rhinolophus ferrumequinum"</span>,</span>
-<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Rhinolophus hipposideros"</span>,</span>
-<span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Nyctalus noctula"</span>,</span>
-<span id="cb17-20"><a href="#cb17-20" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Nyctalus leisleri"</span>,</span>
-<span id="cb17-21"><a href="#cb17-21" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Nyctalus spp."</span>,</span>
-<span id="cb17-22"><a href="#cb17-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Eptesicus serotinus"</span></span>
-<span id="cb17-23"><a href="#cb17-23" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a>rules <span class="ot">&lt;-</span> <span class="fu">validator</span>(</span>
-<span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Check column types are corrects class</span></span>
-<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">Description.col.type =</span> <span class="fu">is.character</span>(Description),</span>
-<span id="cb17-28"><a href="#cb17-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">DateTime.col.type =</span> <span class="fu">is.POSIXct</span>(DateTime),</span>
-<span id="cb17-29"><a href="#cb17-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">Species.col.type =</span> <span class="fu">is.character</span>(Species),</span>
-<span id="cb17-30"><a href="#cb17-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">Lat.col.type =</span> <span class="fu">is.numeric</span>(Latitude),</span>
-<span id="cb17-31"><a href="#cb17-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">Lon.col.type =</span> <span class="fu">is.numeric</span>(Longitude),</span>
-<span id="cb17-32"><a href="#cb17-32" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb17-33"><a href="#cb17-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Ensure that all DateTime values are the length for yyyy-mm-dd hh:mm:ss n = 19</span></span>
-<span id="cb17-34"><a href="#cb17-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">DateTime.len =</span> <span class="fu">field_length</span>(DateTime, <span class="at">n =</span> <span class="dv">19</span>),</span>
-<span id="cb17-35"><a href="#cb17-35" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-36"><a href="#cb17-36" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Ensure that there are no duplications of species pass and date/time</span></span>
-<span id="cb17-37"><a href="#cb17-37" aria-hidden="true" tabindex="-1"></a>  <span class="at">unique.bat.pass =</span><span class="fu">is_unique</span>(Species, DateTime),</span>
-<span id="cb17-38"><a href="#cb17-38" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-39"><a href="#cb17-39" aria-hidden="true" tabindex="-1"></a>  <span class="co"># location_vars := var_group(Latitude, Longitude),</span></span>
-<span id="cb17-40"><a href="#cb17-40" aria-hidden="true" tabindex="-1"></a>  <span class="co"># lat.missing = !is.na(location_vars),</span></span>
-<span id="cb17-41"><a href="#cb17-41" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-42"><a href="#cb17-42" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Ensure that Latitude and Longitude doesn't have any missing values</span></span>
-<span id="cb17-43"><a href="#cb17-43" aria-hidden="true" tabindex="-1"></a>  <span class="at">lat.missing =</span> <span class="sc">!</span><span class="fu">is.na</span>(Latitude),</span>
-<span id="cb17-44"><a href="#cb17-44" aria-hidden="true" tabindex="-1"></a>  <span class="at">lon.missing =</span> <span class="sc">!</span><span class="fu">is.na</span>(Longitude),</span>
-<span id="cb17-45"><a href="#cb17-45" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-46"><a href="#cb17-46" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Ensure latitude and longitude are valid locations</span></span>
-<span id="cb17-47"><a href="#cb17-47" aria-hidden="true" tabindex="-1"></a>  <span class="at">lat.within.range =</span> <span class="fu">in_range</span>(Latitude, <span class="at">min=</span><span class="sc">-</span><span class="dv">90</span>, <span class="at">max=</span><span class="dv">90</span>),</span>
-<span id="cb17-48"><a href="#cb17-48" aria-hidden="true" tabindex="-1"></a>  <span class="at">lon.within.range =</span> <span class="fu">in_range</span>(Longitude, <span class="at">min=</span><span class="sc">-</span><span class="dv">180</span>, <span class="at">max=</span><span class="dv">180</span>),</span>
-<span id="cb17-49"><a href="#cb17-49" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb17-50"><a href="#cb17-50" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Check species is valid name</span></span>
-<span id="cb17-51"><a href="#cb17-51" aria-hidden="true" tabindex="-1"></a>  <span class="at">species.names =</span> Species <span class="sc">%in%</span> SpeciesList</span>
-<span id="cb17-52"><a href="#cb17-52" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>SpeciesList <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Barbastella barbastellus"</span>,</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Myotis alcathoe"</span>,</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Myotis bechsteinii"</span>,</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Myotis brandtii"</span>,</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Myotis mystacinus"</span>,</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Myotis nattereri"</span>,</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Myotis daubentonii"</span>,</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Myotis spp."</span>,</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Plecotus auritus"</span>,</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Plecotus spp."</span>,</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Plecotus austriacus"</span>,</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Pipistrellus pipistrellus"</span>,</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Pipistrellus nathusii"</span>,</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Pipistrellus pygmaeus"</span>,</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Pipistrellus spp."</span>,</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Rhinolophus ferrumequinum"</span>,</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Rhinolophus hipposideros"</span>,</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Nyctalus noctula"</span>,</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Nyctalus leisleri"</span>,</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Nyctalus spp."</span>,</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Eptesicus serotinus"</span></span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>rules <span class="ot">&lt;-</span> <span class="fu">validator</span>(</span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Check column types are corrects class</span></span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">Description.col.type =</span> <span class="fu">is.character</span>(Description),</span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">DateTime.col.type =</span> <span class="fu">is.POSIXct</span>(DateTime),</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">Species.col.type =</span> <span class="fu">is.character</span>(Species),</span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">Lat.col.type =</span> <span class="fu">is.numeric</span>(Latitude),</span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>  <span class="at">Lon.col.type =</span> <span class="fu">is.numeric</span>(Longitude),</span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Ensure that all DateTime values are the length for yyyy-mm-dd hh:mm:ss n = 19</span></span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">DateTime.len =</span> <span class="fu">field_length</span>(DateTime, <span class="at">n =</span> <span class="dv">19</span>),</span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Ensure that there are no duplications of species pass and date/time</span></span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a>  <span class="at">unique.bat.pass =</span><span class="fu">is_unique</span>(Species, DateTime),</span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a>  <span class="co"># location_vars := var_group(Latitude, Longitude),</span></span>
+<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a>  <span class="co"># lat.missing = !is.na(location_vars),</span></span>
+<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Ensure that Latitude and Longitude doesn't have any missing values</span></span>
+<span id="cb19-43"><a href="#cb19-43" aria-hidden="true" tabindex="-1"></a>  <span class="at">lat.missing =</span> <span class="sc">!</span><span class="fu">is.na</span>(Latitude),</span>
+<span id="cb19-44"><a href="#cb19-44" aria-hidden="true" tabindex="-1"></a>  <span class="at">lon.missing =</span> <span class="sc">!</span><span class="fu">is.na</span>(Longitude),</span>
+<span id="cb19-45"><a href="#cb19-45" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Ensure latitude and longitude are valid locations</span></span>
+<span id="cb19-47"><a href="#cb19-47" aria-hidden="true" tabindex="-1"></a>  <span class="at">lat.within.range =</span> <span class="fu">in_range</span>(Latitude, <span class="at">min=</span><span class="sc">-</span><span class="dv">90</span>, <span class="at">max=</span><span class="dv">90</span>),</span>
+<span id="cb19-48"><a href="#cb19-48" aria-hidden="true" tabindex="-1"></a>  <span class="at">lon.within.range =</span> <span class="fu">in_range</span>(Longitude, <span class="at">min=</span><span class="sc">-</span><span class="dv">180</span>, <span class="at">max=</span><span class="dv">180</span>),</span>
+<span id="cb19-49"><a href="#cb19-49" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb19-50"><a href="#cb19-50" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Check species is valid name</span></span>
+<span id="cb19-51"><a href="#cb19-51" aria-hidden="true" tabindex="-1"></a>  <span class="at">species.names =</span> Species <span class="sc">%in%</span> SpeciesList</span>
+<span id="cb19-52"><a href="#cb19-52" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>The rules can then be applied to a data set with the <code>confront</code> function; below the<code>confront</code> function applies these rules to the <code>statics</code> data; an output summary is shown in <a href="#tbl-confront">Table&nbsp;13</a>. Rules can be constructed and applied to any data set used to make bat reports; the rules can then be re-applied when the data is modified; for example when new data is appended.</p>
+<p>The rules can then be applied to a data set with the <code>confront</code> function; below the<code>confront</code> function applies these rules to the <code>statics</code> data; an output summary is shown in <a href="#tbl-confront">Table&nbsp;14</a>. Rules can be constructed and applied to any data set used to make bat reports; the rules can then be re-applied when the data is modified; for example when new data is appended.</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">confront</span>(statics, rules) </span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(x) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">flextable</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autofit</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fontsize</span>(<span class="at">part =</span> <span class="st">"body"</span>, <span class="at">size =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bold</span>(<span class="at">part =</span> <span class="st">"header"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">bg =</span> <span class="st">"black"</span>, <span class="at">part =</span> <span class="st">"header"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">color</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">part =</span> <span class="st">"header"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">align</span>(<span class="at">j =</span> <span class="dv">1</span>, <span class="at">align =</span> <span class="st">"center"</span>, <span class="at">part =</span> <span class="st">"header"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">confront</span>(statics, rules) </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(x) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">flextable</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autofit</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fontsize</span>(<span class="at">part =</span> <span class="st">"body"</span>, <span class="at">size =</span> <span class="dv">10</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bold</span>(<span class="at">part =</span> <span class="st">"header"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">bg =</span> <span class="st">"black"</span>, <span class="at">part =</span> <span class="st">"header"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">color</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">part =</span> <span class="st">"header"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">align</span>(<span class="at">j =</span> <span class="dv">1</span>, <span class="at">align =</span> <span class="st">"center"</span>, <span class="at">part =</span> <span class="st">"header"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div id="tbl-confront" class="anchored">
 
-<div class="tabwid"><style>.cl-e4656644{}.cl-e455153c{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-e4551546{font-family:'Arial';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e45af56a{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e45af57e{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e45af588{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e45b1c8e{width:1.618in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1c98{width:0.668in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1ca2{width:0.769in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1ca3{width:0.557in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1cac{width:0.582in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1cad{width:0.769in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1cae{width:0.82in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1cb6{width:3.266in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1cb7{width:1.618in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1cc0{width:0.668in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1cc1{width:0.769in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1cc2{width:0.557in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1cca{width:0.582in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1ccb{width:0.769in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1ccc{width:0.82in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1cd4{width:3.266in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1cd5{width:1.618in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1cd6{width:0.668in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1cde{width:0.769in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1cdf{width:0.557in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1ce0{width:0.582in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1ce8{width:0.769in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1ce9{width:0.82in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1cea{width:3.266in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1cf2{width:1.618in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1cfc{width:0.668in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1cfd{width:0.769in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1d06{width:0.557in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1d07{width:0.582in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1d08{width:0.769in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1d10{width:0.82in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e45b1d11{width:3.266in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-e4656644"><caption>Table&nbsp;13:  <p>Validation Summary</p> </caption><thead><tr style="overflow-wrap:break-word;"><th class="cl-e45b1c8e"><p class="cl-e45af56a"><span class="cl-e455153c">name</span></p></th><th class="cl-e45b1c98"><p class="cl-e45af57e"><span class="cl-e455153c">items</span></p></th><th class="cl-e45b1ca2"><p class="cl-e45af57e"><span class="cl-e455153c">passes</span></p></th><th class="cl-e45b1ca3"><p class="cl-e45af57e"><span class="cl-e455153c">fails</span></p></th><th class="cl-e45b1cac"><p class="cl-e45af57e"><span class="cl-e455153c">nNA</span></p></th><th class="cl-e45b1cad"><p class="cl-e45af57e"><span class="cl-e455153c">error</span></p></th><th class="cl-e45b1cae"><p class="cl-e45af57e"><span class="cl-e455153c">warning</span></p></th><th class="cl-e45b1cb6"><p class="cl-e45af588"><span class="cl-e455153c">expression</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-e45b1cb7"><p class="cl-e45af588"><span class="cl-e4551546">Description.col.type</span></p></td><td class="cl-e45b1cc0"><p class="cl-e45af57e"><span class="cl-e4551546">1</span></p></td><td class="cl-e45b1cc1"><p class="cl-e45af57e"><span class="cl-e4551546">1</span></p></td><td class="cl-e45b1cc2"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1cca"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1ccb"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1ccc"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1cd4"><p class="cl-e45af588"><span class="cl-e4551546">is.character(Description)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e45b1cd5"><p class="cl-e45af588"><span class="cl-e4551546">DateTime.col.type</span></p></td><td class="cl-e45b1cd6"><p class="cl-e45af57e"><span class="cl-e4551546">1</span></p></td><td class="cl-e45b1cde"><p class="cl-e45af57e"><span class="cl-e4551546">1</span></p></td><td class="cl-e45b1cdf"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1ce0"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1ce8"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1ce9"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1cea"><p class="cl-e45af588"><span class="cl-e4551546">is.POSIXct(DateTime)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e45b1cb7"><p class="cl-e45af588"><span class="cl-e4551546">Species.col.type</span></p></td><td class="cl-e45b1cc0"><p class="cl-e45af57e"><span class="cl-e4551546">1</span></p></td><td class="cl-e45b1cc1"><p class="cl-e45af57e"><span class="cl-e4551546">1</span></p></td><td class="cl-e45b1cc2"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1cca"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1ccb"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1ccc"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1cd4"><p class="cl-e45af588"><span class="cl-e4551546">is.character(Species)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e45b1cb7"><p class="cl-e45af588"><span class="cl-e4551546">Lat.col.type</span></p></td><td class="cl-e45b1cc0"><p class="cl-e45af57e"><span class="cl-e4551546">1</span></p></td><td class="cl-e45b1cc1"><p class="cl-e45af57e"><span class="cl-e4551546">1</span></p></td><td class="cl-e45b1cc2"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1cca"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1ccb"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1ccc"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1cd4"><p class="cl-e45af588"><span class="cl-e4551546">is.numeric(Latitude)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e45b1cb7"><p class="cl-e45af588"><span class="cl-e4551546">Lon.col.type</span></p></td><td class="cl-e45b1cc0"><p class="cl-e45af57e"><span class="cl-e4551546">1</span></p></td><td class="cl-e45b1cc1"><p class="cl-e45af57e"><span class="cl-e4551546">1</span></p></td><td class="cl-e45b1cc2"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1cca"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1ccb"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1ccc"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1cd4"><p class="cl-e45af588"><span class="cl-e4551546">is.numeric(Longitude)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e45b1cb7"><p class="cl-e45af588"><span class="cl-e4551546">DateTime.len</span></p></td><td class="cl-e45b1cc0"><p class="cl-e45af57e"><span class="cl-e4551546">6,930</span></p></td><td class="cl-e45b1cc1"><p class="cl-e45af57e"><span class="cl-e4551546">6,930</span></p></td><td class="cl-e45b1cc2"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1cca"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1ccb"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1ccc"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1cd4"><p class="cl-e45af588"><span class="cl-e4551546">field_length(DateTime, n = 19)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e45b1cb7"><p class="cl-e45af588"><span class="cl-e4551546">unique.bat.pass</span></p></td><td class="cl-e45b1cc0"><p class="cl-e45af57e"><span class="cl-e4551546">6,930</span></p></td><td class="cl-e45b1cc1"><p class="cl-e45af57e"><span class="cl-e4551546">6,924</span></p></td><td class="cl-e45b1cc2"><p class="cl-e45af57e"><span class="cl-e4551546">6</span></p></td><td class="cl-e45b1cca"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1ccb"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1ccc"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1cd4"><p class="cl-e45af588"><span class="cl-e4551546">is_unique(Species, DateTime)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e45b1cb7"><p class="cl-e45af588"><span class="cl-e4551546">lat.missing</span></p></td><td class="cl-e45b1cc0"><p class="cl-e45af57e"><span class="cl-e4551546">6,930</span></p></td><td class="cl-e45b1cc1"><p class="cl-e45af57e"><span class="cl-e4551546">6,930</span></p></td><td class="cl-e45b1cc2"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1cca"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1ccb"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1ccc"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1cd4"><p class="cl-e45af588"><span class="cl-e4551546">!is.na(Latitude)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e45b1cb7"><p class="cl-e45af588"><span class="cl-e4551546">lon.missing</span></p></td><td class="cl-e45b1cc0"><p class="cl-e45af57e"><span class="cl-e4551546">6,930</span></p></td><td class="cl-e45b1cc1"><p class="cl-e45af57e"><span class="cl-e4551546">6,930</span></p></td><td class="cl-e45b1cc2"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1cca"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1ccb"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1ccc"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1cd4"><p class="cl-e45af588"><span class="cl-e4551546">!is.na(Longitude)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e45b1cb7"><p class="cl-e45af588"><span class="cl-e4551546">lat.within.range</span></p></td><td class="cl-e45b1cc0"><p class="cl-e45af57e"><span class="cl-e4551546">6,930</span></p></td><td class="cl-e45b1cc1"><p class="cl-e45af57e"><span class="cl-e4551546">6,930</span></p></td><td class="cl-e45b1cc2"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1cca"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1ccb"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1ccc"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1cd4"><p class="cl-e45af588"><span class="cl-e4551546">in_range(Latitude, min = -90, max = 90)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e45b1cb7"><p class="cl-e45af588"><span class="cl-e4551546">lon.within.range</span></p></td><td class="cl-e45b1cc0"><p class="cl-e45af57e"><span class="cl-e4551546">6,930</span></p></td><td class="cl-e45b1cc1"><p class="cl-e45af57e"><span class="cl-e4551546">6,930</span></p></td><td class="cl-e45b1cc2"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1cca"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1ccb"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1ccc"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1cd4"><p class="cl-e45af588"><span class="cl-e4551546">in_range(Longitude, min = -180, max = 180)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e45b1cf2"><p class="cl-e45af588"><span class="cl-e4551546">species.names</span></p></td><td class="cl-e45b1cfc"><p class="cl-e45af57e"><span class="cl-e4551546">6,930</span></p></td><td class="cl-e45b1cfd"><p class="cl-e45af57e"><span class="cl-e4551546">6,930</span></p></td><td class="cl-e45b1d06"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1d07"><p class="cl-e45af57e"><span class="cl-e4551546">0</span></p></td><td class="cl-e45b1d08"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1d10"><p class="cl-e45af57e"><span class="cl-e4551546">FALSE</span></p></td><td class="cl-e45b1d11"><p class="cl-e45af588"><span class="cl-e4551546">Species %vin% SpeciesList</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-3f29cf66{}.cl-3f18586c{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-3f185880{font-family:'Arial';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-3f1f9d5c{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-3f1f9d70{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-3f1f9d71{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-3f1fc5c0{width:1.618in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc5ca{width:0.668in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc5d4{width:0.769in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc5d5{width:0.557in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc5de{width:0.582in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc5df{width:0.769in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc5e8{width:0.82in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc5e9{width:3.266in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc5f2{width:1.618in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc5f3{width:0.668in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc5fc{width:0.769in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc5fd{width:0.557in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc5fe{width:0.582in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc606{width:0.769in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc607{width:0.82in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc610{width:3.266in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc611{width:1.618in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc61a{width:0.668in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc61b{width:0.769in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc61c{width:0.557in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc624{width:0.582in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc625{width:0.769in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc62e{width:0.82in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc62f{width:3.266in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc630{width:1.618in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc638{width:0.668in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc639{width:0.769in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc63a{width:0.557in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc642{width:0.582in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc643{width:0.769in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc644{width:0.82in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3f1fc64c{width:3.266in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-3f29cf66"><caption>Table&nbsp;14:  <p>Validation Summary</p> </caption><thead><tr style="overflow-wrap:break-word;"><th class="cl-3f1fc5c0"><p class="cl-3f1f9d5c"><span class="cl-3f18586c">name</span></p></th><th class="cl-3f1fc5ca"><p class="cl-3f1f9d70"><span class="cl-3f18586c">items</span></p></th><th class="cl-3f1fc5d4"><p class="cl-3f1f9d70"><span class="cl-3f18586c">passes</span></p></th><th class="cl-3f1fc5d5"><p class="cl-3f1f9d70"><span class="cl-3f18586c">fails</span></p></th><th class="cl-3f1fc5de"><p class="cl-3f1f9d70"><span class="cl-3f18586c">nNA</span></p></th><th class="cl-3f1fc5df"><p class="cl-3f1f9d70"><span class="cl-3f18586c">error</span></p></th><th class="cl-3f1fc5e8"><p class="cl-3f1f9d70"><span class="cl-3f18586c">warning</span></p></th><th class="cl-3f1fc5e9"><p class="cl-3f1f9d71"><span class="cl-3f18586c">expression</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-3f1fc5f2"><p class="cl-3f1f9d71"><span class="cl-3f185880">Description.col.type</span></p></td><td class="cl-3f1fc5f3"><p class="cl-3f1f9d70"><span class="cl-3f185880">1</span></p></td><td class="cl-3f1fc5fc"><p class="cl-3f1f9d70"><span class="cl-3f185880">1</span></p></td><td class="cl-3f1fc5fd"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc5fe"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc606"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc607"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc610"><p class="cl-3f1f9d71"><span class="cl-3f185880">is.character(Description)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-3f1fc611"><p class="cl-3f1f9d71"><span class="cl-3f185880">DateTime.col.type</span></p></td><td class="cl-3f1fc61a"><p class="cl-3f1f9d70"><span class="cl-3f185880">1</span></p></td><td class="cl-3f1fc61b"><p class="cl-3f1f9d70"><span class="cl-3f185880">1</span></p></td><td class="cl-3f1fc61c"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc624"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc625"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc62e"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc62f"><p class="cl-3f1f9d71"><span class="cl-3f185880">is.POSIXct(DateTime)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-3f1fc5f2"><p class="cl-3f1f9d71"><span class="cl-3f185880">Species.col.type</span></p></td><td class="cl-3f1fc5f3"><p class="cl-3f1f9d70"><span class="cl-3f185880">1</span></p></td><td class="cl-3f1fc5fc"><p class="cl-3f1f9d70"><span class="cl-3f185880">1</span></p></td><td class="cl-3f1fc5fd"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc5fe"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc606"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc607"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc610"><p class="cl-3f1f9d71"><span class="cl-3f185880">is.character(Species)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-3f1fc5f2"><p class="cl-3f1f9d71"><span class="cl-3f185880">Lat.col.type</span></p></td><td class="cl-3f1fc5f3"><p class="cl-3f1f9d70"><span class="cl-3f185880">1</span></p></td><td class="cl-3f1fc5fc"><p class="cl-3f1f9d70"><span class="cl-3f185880">1</span></p></td><td class="cl-3f1fc5fd"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc5fe"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc606"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc607"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc610"><p class="cl-3f1f9d71"><span class="cl-3f185880">is.numeric(Latitude)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-3f1fc5f2"><p class="cl-3f1f9d71"><span class="cl-3f185880">Lon.col.type</span></p></td><td class="cl-3f1fc5f3"><p class="cl-3f1f9d70"><span class="cl-3f185880">1</span></p></td><td class="cl-3f1fc5fc"><p class="cl-3f1f9d70"><span class="cl-3f185880">1</span></p></td><td class="cl-3f1fc5fd"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc5fe"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc606"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc607"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc610"><p class="cl-3f1f9d71"><span class="cl-3f185880">is.numeric(Longitude)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-3f1fc5f2"><p class="cl-3f1f9d71"><span class="cl-3f185880">DateTime.len</span></p></td><td class="cl-3f1fc5f3"><p class="cl-3f1f9d70"><span class="cl-3f185880">6,930</span></p></td><td class="cl-3f1fc5fc"><p class="cl-3f1f9d70"><span class="cl-3f185880">6,930</span></p></td><td class="cl-3f1fc5fd"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc5fe"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc606"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc607"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc610"><p class="cl-3f1f9d71"><span class="cl-3f185880">field_length(DateTime, n = 19)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-3f1fc5f2"><p class="cl-3f1f9d71"><span class="cl-3f185880">unique.bat.pass</span></p></td><td class="cl-3f1fc5f3"><p class="cl-3f1f9d70"><span class="cl-3f185880">6,930</span></p></td><td class="cl-3f1fc5fc"><p class="cl-3f1f9d70"><span class="cl-3f185880">6,924</span></p></td><td class="cl-3f1fc5fd"><p class="cl-3f1f9d70"><span class="cl-3f185880">6</span></p></td><td class="cl-3f1fc5fe"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc606"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc607"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc610"><p class="cl-3f1f9d71"><span class="cl-3f185880">is_unique(Species, DateTime)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-3f1fc5f2"><p class="cl-3f1f9d71"><span class="cl-3f185880">lat.missing</span></p></td><td class="cl-3f1fc5f3"><p class="cl-3f1f9d70"><span class="cl-3f185880">6,930</span></p></td><td class="cl-3f1fc5fc"><p class="cl-3f1f9d70"><span class="cl-3f185880">6,930</span></p></td><td class="cl-3f1fc5fd"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc5fe"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc606"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc607"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc610"><p class="cl-3f1f9d71"><span class="cl-3f185880">!is.na(Latitude)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-3f1fc5f2"><p class="cl-3f1f9d71"><span class="cl-3f185880">lon.missing</span></p></td><td class="cl-3f1fc5f3"><p class="cl-3f1f9d70"><span class="cl-3f185880">6,930</span></p></td><td class="cl-3f1fc5fc"><p class="cl-3f1f9d70"><span class="cl-3f185880">6,930</span></p></td><td class="cl-3f1fc5fd"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc5fe"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc606"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc607"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc610"><p class="cl-3f1f9d71"><span class="cl-3f185880">!is.na(Longitude)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-3f1fc5f2"><p class="cl-3f1f9d71"><span class="cl-3f185880">lat.within.range</span></p></td><td class="cl-3f1fc5f3"><p class="cl-3f1f9d70"><span class="cl-3f185880">6,930</span></p></td><td class="cl-3f1fc5fc"><p class="cl-3f1f9d70"><span class="cl-3f185880">6,930</span></p></td><td class="cl-3f1fc5fd"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc5fe"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc606"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc607"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc610"><p class="cl-3f1f9d71"><span class="cl-3f185880">in_range(Latitude, min = -90, max = 90)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-3f1fc5f2"><p class="cl-3f1f9d71"><span class="cl-3f185880">lon.within.range</span></p></td><td class="cl-3f1fc5f3"><p class="cl-3f1f9d70"><span class="cl-3f185880">6,930</span></p></td><td class="cl-3f1fc5fc"><p class="cl-3f1f9d70"><span class="cl-3f185880">6,930</span></p></td><td class="cl-3f1fc5fd"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc5fe"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc606"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc607"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc610"><p class="cl-3f1f9d71"><span class="cl-3f185880">in_range(Longitude, min = -180, max = 180)</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-3f1fc630"><p class="cl-3f1f9d71"><span class="cl-3f185880">species.names</span></p></td><td class="cl-3f1fc638"><p class="cl-3f1f9d70"><span class="cl-3f185880">6,930</span></p></td><td class="cl-3f1fc639"><p class="cl-3f1f9d70"><span class="cl-3f185880">6,930</span></p></td><td class="cl-3f1fc63a"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc642"><p class="cl-3f1f9d70"><span class="cl-3f185880">0</span></p></td><td class="cl-3f1fc643"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc644"><p class="cl-3f1f9d70"><span class="cl-3f185880">FALSE</span></p></td><td class="cl-3f1fc64c"><p class="cl-3f1f9d71"><span class="cl-3f185880">Species %vin% SpeciesList</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </div>
-<p>In <a href="#tbl-confront">Table&nbsp;13</a> the <code>is_unique(Species, DateTime)</code> rule shows 6 fails in the <code>statics</code> data; to view these <em>fails</em> the <code>violating</code> function is used. <a href="#tbl-violating">Table&nbsp;14</a> lists the <em>fails</em> in the <code>statics</code> data allowing the discrepancies in the data to be judged; although here the date/time and species is a duplication the <em>Description’s</em> are different (and therefore not a duplication). A better rule too use would be <code>validator(is_unique(Description, Species, DateTime))</code>.</p>
+<p>In <a href="#tbl-confront">Table&nbsp;14</a> the <code>is_unique(Species, DateTime)</code> rule shows 6 fails in the <code>statics</code> data; to view these <em>fails</em> the <code>violating</code> function is used. <a href="#tbl-violating">Table&nbsp;15</a> lists the <em>fails</em> in the <code>statics</code> data allowing the discrepancies in the data to be judged; although here the date/time and species is a duplication the <em>Description’s</em> are different (and therefore not a duplication). A better rule too use would be <code>validator(is_unique(Description, Species, DateTime))</code>.</p>
 <div class="cell">
 <details>
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>rule <span class="ot">&lt;-</span> <span class="fu">validator</span>(<span class="fu">is_unique</span>(Species, DateTime))</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">confront</span>(statics, rule)</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="fu">violating</span>(statics, out) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">flextable</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autofit</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bold</span>(<span class="at">part =</span> <span class="st">"header"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">bg =</span> <span class="st">"black"</span>, <span class="at">part =</span> <span class="st">"header"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">color</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">part =</span> <span class="st">"header"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">align</span>(<span class="at">j =</span> <span class="dv">1</span>, <span class="at">align =</span> <span class="st">"center"</span>, <span class="at">part =</span> <span class="st">"header"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>rule <span class="ot">&lt;-</span> <span class="fu">validator</span>(<span class="fu">is_unique</span>(Species, DateTime))</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">confront</span>(statics, rule)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">violating</span>(statics, out) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">flextable</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autofit</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bold</span>(<span class="at">part =</span> <span class="st">"header"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">bg</span>(<span class="at">bg =</span> <span class="st">"black"</span>, <span class="at">part =</span> <span class="st">"header"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">color</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">part =</span> <span class="st">"header"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">align</span>(<span class="at">j =</span> <span class="dv">1</span>, <span class="at">align =</span> <span class="st">"center"</span>, <span class="at">part =</span> <span class="st">"header"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div id="tbl-violating" class="anchored">
 
-<div class="tabwid"><style>.cl-e506ceee{}.cl-e4f7d650{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-e4f7d65a{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-e4fd418a{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e4fd419e{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e4fd419f{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-e4fd66f6{width:1.049in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e4fd6700{width:1.704in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e4fd670a{width:1.788in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e4fd670b{width:0.973in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e4fd670c{width:0.922in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e4fd6714{width:1.049in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e4fd6715{width:1.704in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e4fd671e{width:1.788in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e4fd6728{width:0.973in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e4fd6729{width:0.922in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e4fd672a{width:1.049in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e4fd6732{width:1.704in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e4fd6733{width:1.788in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e4fd673c{width:0.973in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-e4fd673d{width:0.922in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-e506ceee"><caption>Table&nbsp;14:  <p>Failed rows in the statics data</p> </caption><thead><tr style="overflow-wrap:break-word;"><th class="cl-e4fd66f6"><p class="cl-e4fd418a"><span class="cl-e4f7d650">Description</span></p></th><th class="cl-e4fd6700"><p class="cl-e4fd419e"><span class="cl-e4f7d650">DateTime</span></p></th><th class="cl-e4fd670a"><p class="cl-e4fd419f"><span class="cl-e4f7d650">Species</span></p></th><th class="cl-e4fd670b"><p class="cl-e4fd419e"><span class="cl-e4f7d650">Longitude</span></p></th><th class="cl-e4fd670c"><p class="cl-e4fd419e"><span class="cl-e4f7d650">Latitude</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-e4fd6714"><p class="cl-e4fd419f"><span class="cl-e4f7d65a">Static 2</span></p></td><td class="cl-e4fd6715"><p class="cl-e4fd419e"><span class="cl-e4f7d65a">2016-07-30 23:16:59</span></p></td><td class="cl-e4fd671e"><p class="cl-e4fd419f"><span class="cl-e4f7d65a">Pipistrellus pipistrellus</span></p></td><td class="cl-e4fd6728"><p class="cl-e4fd419e"><span class="cl-e4f7d65a">-3.592583</span></p></td><td class="cl-e4fd6729"><p class="cl-e4fd419e"><span class="cl-e4f7d65a">50.33323</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e4fd6714"><p class="cl-e4fd419f"><span class="cl-e4f7d65a">Static 4</span></p></td><td class="cl-e4fd6715"><p class="cl-e4fd419e"><span class="cl-e4f7d65a">2016-07-30 23:16:59</span></p></td><td class="cl-e4fd671e"><p class="cl-e4fd419f"><span class="cl-e4f7d65a">Pipistrellus pipistrellus</span></p></td><td class="cl-e4fd6728"><p class="cl-e4fd419e"><span class="cl-e4f7d65a">-3.591848</span></p></td><td class="cl-e4fd6729"><p class="cl-e4fd419e"><span class="cl-e4f7d65a">50.33130</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e4fd6714"><p class="cl-e4fd419f"><span class="cl-e4f7d65a">Static 2</span></p></td><td class="cl-e4fd6715"><p class="cl-e4fd419e"><span class="cl-e4f7d65a">2016-08-04 22:12:36</span></p></td><td class="cl-e4fd671e"><p class="cl-e4fd419f"><span class="cl-e4f7d65a">Pipistrellus pipistrellus</span></p></td><td class="cl-e4fd6728"><p class="cl-e4fd419e"><span class="cl-e4f7d65a">-3.592583</span></p></td><td class="cl-e4fd6729"><p class="cl-e4fd419e"><span class="cl-e4f7d65a">50.33323</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e4fd6714"><p class="cl-e4fd419f"><span class="cl-e4f7d65a">Static 4</span></p></td><td class="cl-e4fd6715"><p class="cl-e4fd419e"><span class="cl-e4f7d65a">2016-08-04 22:12:36</span></p></td><td class="cl-e4fd671e"><p class="cl-e4fd419f"><span class="cl-e4f7d65a">Pipistrellus pipistrellus</span></p></td><td class="cl-e4fd6728"><p class="cl-e4fd419e"><span class="cl-e4f7d65a">-3.591748</span></p></td><td class="cl-e4fd6729"><p class="cl-e4fd419e"><span class="cl-e4f7d65a">50.33136</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e4fd6714"><p class="cl-e4fd419f"><span class="cl-e4f7d65a">Static 4</span></p></td><td class="cl-e4fd6715"><p class="cl-e4fd419e"><span class="cl-e4f7d65a">2016-08-25 22:08:10</span></p></td><td class="cl-e4fd671e"><p class="cl-e4fd419f"><span class="cl-e4f7d65a">Pipistrellus pipistrellus</span></p></td><td class="cl-e4fd6728"><p class="cl-e4fd419e"><span class="cl-e4f7d65a">-3.591738</span></p></td><td class="cl-e4fd6729"><p class="cl-e4fd419e"><span class="cl-e4f7d65a">50.33133</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-e4fd672a"><p class="cl-e4fd419f"><span class="cl-e4f7d65a">Static 5</span></p></td><td class="cl-e4fd6732"><p class="cl-e4fd419e"><span class="cl-e4f7d65a">2016-08-25 22:08:10</span></p></td><td class="cl-e4fd6733"><p class="cl-e4fd419f"><span class="cl-e4f7d65a">Pipistrellus pipistrellus</span></p></td><td class="cl-e4fd673c"><p class="cl-e4fd419e"><span class="cl-e4f7d65a">-3.590958</span></p></td><td class="cl-e4fd673d"><p class="cl-e4fd419e"><span class="cl-e4f7d65a">50.33105</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-3fd2ac80{}.cl-3fc30c9e{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-3fc30cb2{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-3fc9d1d2{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-3fc9d1e6{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-3fc9d1f0{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-3fc9f7b6{width:1.049in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3fc9f7c0{width:1.704in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3fc9f7ca{width:1.788in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3fc9f7cb{width:0.973in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3fc9f7cc{width:0.922in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3fc9f7d4{width:1.049in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3fc9f7d5{width:1.704in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3fc9f7de{width:1.788in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3fc9f7df{width:0.973in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3fc9f7e8{width:0.922in;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3fc9f7e9{width:1.049in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3fc9f7f2{width:1.704in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3fc9f7f3{width:1.788in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3fc9f7fc{width:0.973in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-3fc9f7fd{width:0.922in;background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-3fd2ac80"><caption>Table&nbsp;15:  <p>Failed rows in the statics data</p> </caption><thead><tr style="overflow-wrap:break-word;"><th class="cl-3fc9f7b6"><p class="cl-3fc9d1d2"><span class="cl-3fc30c9e">Description</span></p></th><th class="cl-3fc9f7c0"><p class="cl-3fc9d1e6"><span class="cl-3fc30c9e">DateTime</span></p></th><th class="cl-3fc9f7ca"><p class="cl-3fc9d1f0"><span class="cl-3fc30c9e">Species</span></p></th><th class="cl-3fc9f7cb"><p class="cl-3fc9d1e6"><span class="cl-3fc30c9e">Longitude</span></p></th><th class="cl-3fc9f7cc"><p class="cl-3fc9d1e6"><span class="cl-3fc30c9e">Latitude</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-3fc9f7d4"><p class="cl-3fc9d1f0"><span class="cl-3fc30cb2">Static 2</span></p></td><td class="cl-3fc9f7d5"><p class="cl-3fc9d1e6"><span class="cl-3fc30cb2">2016-07-30 23:16:59</span></p></td><td class="cl-3fc9f7de"><p class="cl-3fc9d1f0"><span class="cl-3fc30cb2">Pipistrellus pipistrellus</span></p></td><td class="cl-3fc9f7df"><p class="cl-3fc9d1e6"><span class="cl-3fc30cb2">-3.592583</span></p></td><td class="cl-3fc9f7e8"><p class="cl-3fc9d1e6"><span class="cl-3fc30cb2">50.33323</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-3fc9f7d4"><p class="cl-3fc9d1f0"><span class="cl-3fc30cb2">Static 4</span></p></td><td class="cl-3fc9f7d5"><p class="cl-3fc9d1e6"><span class="cl-3fc30cb2">2016-07-30 23:16:59</span></p></td><td class="cl-3fc9f7de"><p class="cl-3fc9d1f0"><span class="cl-3fc30cb2">Pipistrellus pipistrellus</span></p></td><td class="cl-3fc9f7df"><p class="cl-3fc9d1e6"><span class="cl-3fc30cb2">-3.591848</span></p></td><td class="cl-3fc9f7e8"><p class="cl-3fc9d1e6"><span class="cl-3fc30cb2">50.33130</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-3fc9f7d4"><p class="cl-3fc9d1f0"><span class="cl-3fc30cb2">Static 2</span></p></td><td class="cl-3fc9f7d5"><p class="cl-3fc9d1e6"><span class="cl-3fc30cb2">2016-08-04 22:12:36</span></p></td><td class="cl-3fc9f7de"><p class="cl-3fc9d1f0"><span class="cl-3fc30cb2">Pipistrellus pipistrellus</span></p></td><td class="cl-3fc9f7df"><p class="cl-3fc9d1e6"><span class="cl-3fc30cb2">-3.592583</span></p></td><td class="cl-3fc9f7e8"><p class="cl-3fc9d1e6"><span class="cl-3fc30cb2">50.33323</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-3fc9f7d4"><p class="cl-3fc9d1f0"><span class="cl-3fc30cb2">Static 4</span></p></td><td class="cl-3fc9f7d5"><p class="cl-3fc9d1e6"><span class="cl-3fc30cb2">2016-08-04 22:12:36</span></p></td><td class="cl-3fc9f7de"><p class="cl-3fc9d1f0"><span class="cl-3fc30cb2">Pipistrellus pipistrellus</span></p></td><td class="cl-3fc9f7df"><p class="cl-3fc9d1e6"><span class="cl-3fc30cb2">-3.591748</span></p></td><td class="cl-3fc9f7e8"><p class="cl-3fc9d1e6"><span class="cl-3fc30cb2">50.33136</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-3fc9f7d4"><p class="cl-3fc9d1f0"><span class="cl-3fc30cb2">Static 4</span></p></td><td class="cl-3fc9f7d5"><p class="cl-3fc9d1e6"><span class="cl-3fc30cb2">2016-08-25 22:08:10</span></p></td><td class="cl-3fc9f7de"><p class="cl-3fc9d1f0"><span class="cl-3fc30cb2">Pipistrellus pipistrellus</span></p></td><td class="cl-3fc9f7df"><p class="cl-3fc9d1e6"><span class="cl-3fc30cb2">-3.591738</span></p></td><td class="cl-3fc9f7e8"><p class="cl-3fc9d1e6"><span class="cl-3fc30cb2">50.33133</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-3fc9f7e9"><p class="cl-3fc9d1f0"><span class="cl-3fc30cb2">Static 5</span></p></td><td class="cl-3fc9f7f2"><p class="cl-3fc9d1e6"><span class="cl-3fc30cb2">2016-08-25 22:08:10</span></p></td><td class="cl-3fc9f7f3"><p class="cl-3fc9d1f0"><span class="cl-3fc30cb2">Pipistrellus pipistrellus</span></p></td><td class="cl-3fc9f7fc"><p class="cl-3fc9d1e6"><span class="cl-3fc30cb2">-3.590958</span></p></td><td class="cl-3fc9f7fd"><p class="cl-3fc9d1e6"><span class="cl-3fc30cb2">50.33105</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </div>
