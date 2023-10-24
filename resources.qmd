@@ -60,7 +60,8 @@ knitr::write_bib(c('base',
                    'kableExtra',
                    'tinytex',
                    'validate', 
-                   "infer"), bib_loc)
+                   "infer",
+                   "rnrfa"), bib_loc)
 
 #Then add `bibliography: packages.bib` to the YAML frontmatter. Now you can cite packages. For example: the R language [@R-base] is awesome. We used the **knitr** package [@R-knitr; @knitr2015] in our analysis. We also build a Shiny app [@R-shiny].
 
@@ -132,7 +133,9 @@ The computation with dates and times can be accomplished with [`lubridate`](http
 
 Suntimes can be obtained with the [`suncalc`](https://github.com/datastorm-open/suncalc) [@R-suncalc] package.
 
-The [`hms`](https://hms.tidyverse.org/) [@R-hms] package package provides a simple class for storing durations or time-of-day values and displaying them in the `hh:mm:ss` format.
+The [`hms`](https://hms.tidyverse.org/) [@R-hms] package provides a simple class for storing durations or time-of-day values and displaying them in the `hh:mm:ss` format.
+
+The [`rnrfa`](https://ilapros.github.io/rnrfa/) [@R-rnrfa; @rnrfa2016] package has a useful function `osg_parse()` for converting British National Grid (BNG) to latitude and longitude in the WSGS84 (_Google Earth_) coordinate system (EPSG code: 4326).
 
 ## Aggregation
 

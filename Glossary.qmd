@@ -376,7 +376,7 @@ ggplot(air_data, aes(x = Date, y = Ozone)) +
 
 ### LOESS Curve {#sec-loess}
 
-The LOESS curve is a type of smooth curve that is used in `ggplot2` graphs to fit a line to a set of data points. It is a non-parametric method, which means that it does not make any assumptions about the underlying distribution of the data. This makes it a versatile tool for fitting curves to a wide variety of data. @fig-loess shows a LOESS curve applied to the scatter plot of Ozone against Wind for New York City. 
+The LOESS curve is a type of smooth curve that is used in `ggplot2` graphs, [Glossary @sec-ggplot], to fit a line to a set of data points. It is a non-parametric method, which means that it does not make any assumptions about the underlying distribution of the data. This makes it a versatile tool for fitting curves to a wide variety of data. @fig-loess shows a LOESS curve applied to the scatter plot of Ozone against Wind for New York City. 
 
 The LOESS curve is calculated using a process called locally weighted regression. This means that the curve is fit to the data points in a local neighborhood around each point. The size of the neighborhood is determined by a parameter called the bandwidth. The bandwidth controls how smooth the curve is. A larger bandwidth will result in a smoother curve, while a smaller bandwidth will result in a more wiggly curve.
 
@@ -1411,3 +1411,18 @@ Here are some of the disadvantages of using ANOSIM:
 * It is a relatively conservative test. This means that it is less likely to find significant results than other statistical tests.
 
 Overall, ANOSIM is a powerful tool for identifying and understanding differences between groups of data. It is a versatile test that can be used with a variety of data sets. However, it is important to be aware of the limitations of the test before using it.
+
+## Code Functions
+
+### `ggplot2` {#sec-ggplot} 
+
+ggplot2 is a system for declaratively creating graphics, based on the Grammar of Graphics. It is part of the tidyverse, a collection of R packages that share a unified philosophy and syntax. ggplot2 is known for its flexibility, elegance, and ease of use.
+
+ggplot2 is a powerful tool for creating data visualizations, and it is used by data scientists and analysts around the world. It is a good choice for anyone who wants to create high-quality, informative plots.
+
+Some of the benefits of using ggplot2 are:
+
+* It is declarative, which means that you specify what you want the plot to look like, and ggplot2 takes care of the details.
+* It is flexible, allowing you to create a wide variety of plots, from simple to complex.
+* It is elegant, producing plots that are visually appealing and easy to read.
+* It is easy to use, with a well-documented API and many tutorials available online.

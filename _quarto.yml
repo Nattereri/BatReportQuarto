@@ -17,8 +17,8 @@ website:
       - statistics.qmd
       - reporting.qmd
       - dynamic.qmd
-      - Glossary.qmd
       - resources.qmd
+      - Glossary.qmd
       - about.qmd
 
 format:
@@ -30,6 +30,7 @@ format:
 editor: source
 
   
+bibliography: [references.bib, packages.bib]
 
-bibliography: ["https://api.citedrive.com/bib/04a2efce-6ae6-418a-ab5b-dbef99b46587/references.bib?x=eyJpZCI6ICIwNGEyZWZjZS02YWU2LTQxOGEtYWI1Yi1kYmVmOTliNDY1ODciLCAidXNlciI6ICIyNTAwIiwgInNpZ25hdHVyZSI6ICJjOTUwMzBmZjAwMzI0NjRhM2FjYjI5MjQ3ZWM4YjM2ODdkZGYxNDdiZTdhMjljZTVjMGYxMjM3OTMxYzJiNmZhIn0=/bibliography.bib", packages.bib]
+#bibliography: ["https://api.citedrive.com/bib/04a2efce-6ae6-418a-ab5b-dbef99b46587/references.bib?x=eyJpZCI6ICIwNGEyZWZjZS02YWU2LTQxOGEtYWI1Yi1kYmVmOTliNDY1ODciLCAidXNlciI6ICIyNTAwIiwgInNpZ25hdHVyZSI6ICJjOTUwMzBmZjAwMzI0NjRhM2FjYjI5MjQ3ZWM4YjM2ODdkZGYxNDdiZTdhMjljZTVjMGYxMjM3OTMxYzJiNmZhIn0=/bibliography.bib", packages.bib]
 #csl: american-chemical-society.csl

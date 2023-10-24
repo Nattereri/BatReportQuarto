@@ -138,12 +138,12 @@ div.csl-indent {
  <span class="menu-text">Interactive</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./Glossary.html" rel="" target="" aria-current="page">
- <span class="menu-text">Glossary</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./resources.html" rel="" target="">
  <span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./Glossary.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Glossary</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./about.html" rel="" target="">
@@ -222,6 +222,10 @@ div.csl-indent {
   <li><a href="#sec-NMDS" id="toc-sec-NMDS" class="nav-link" data-scroll-target="#sec-NMDS"><span class="header-section-number">7.16</span> Non-metric Multidimensional Scaling</a></li>
   <li><a href="#sec-ANOSIM" id="toc-sec-ANOSIM" class="nav-link" data-scroll-target="#sec-ANOSIM"><span class="header-section-number">7.17</span> ANOSIM</a></li>
   </ul></li>
+  <li><a href="#code-functions" id="toc-code-functions" class="nav-link" data-scroll-target="#code-functions"><span class="header-section-number">8</span> Code Functions</a>
+  <ul class="collapse">
+  <li><a href="#sec-ggplot" id="toc-sec-ggplot" class="nav-link" data-scroll-target="#sec-ggplot"><span class="header-section-number">8.1</span> <code>ggplot2</code></a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -257,7 +261,7 @@ div.csl-indent {
 </ul>
 <section id="sec-tidy" class="level3" data-number="1.1">
 <h3 data-number="1.1" class="anchored" data-anchor-id="sec-tidy"><span class="header-section-number">1.1</span> Tidy Data</h3>
-<p><em>Tidy Data</em> is a consistent way to organise data <span class="citation" data-cites="wickham_tidy_2014">(<a href="#ref-wickham_tidy_2014" role="doc-biblioref">Wickham 2014</a>)</span> <span class="citation" data-cites="JSSv105i07">(<a href="#ref-JSSv105i07" role="doc-biblioref"><strong>JSSv105i07?</strong></a>)</span>. Getting data into this format requires some initial work, but that effort pays off in the long term. When data is tidy less time is spent wrangling data from one representation to another, allowing more time to on the analytic questions at hand.</p>
+<p><em>Tidy Data</em> is a consistent way to organise data <span class="citation" data-cites="wickham_tidy_2014">(<a href="#ref-wickham_tidy_2014" role="doc-biblioref">Wickham 2014</a>)</span> <span class="citation" data-cites="JSSv105i07">(<a href="#ref-JSSv105i07" role="doc-biblioref">Tierney and Cook 2023</a>)</span>. Getting data into this format requires some initial work, but that effort pays off in the long term. When data is tidy less time is spent wrangling data from one representation to another, allowing more time to on the analytic questions at hand.</p>
 <p>There are three interrelated rules which make a data set tidy see <a href="#fig-threerules">Figure&nbsp;1</a>:</p>
 <ul>
 <li>Each variable must have its own column.</li>
@@ -436,7 +440,7 @@ div.csl-indent {
 </section>
 <section id="sec-loess" class="level3" data-number="2.7">
 <h3 data-number="2.7" class="anchored" data-anchor-id="sec-loess"><span class="header-section-number">2.7</span> LOESS Curve</h3>
-<p>The LOESS curve is a type of smooth curve that is used in <code>ggplot2</code> graphs to fit a line to a set of data points. It is a non-parametric method, which means that it does not make any assumptions about the underlying distribution of the data. This makes it a versatile tool for fitting curves to a wide variety of data. <a href="#fig-loess">Figure&nbsp;7</a> shows a LOESS curve applied to the scatter plot of Ozone against Wind for New York City.</p>
+<p>The LOESS curve is a type of smooth curve that is used in <code>ggplot2</code> graphs, <a href="#sec-ggplot">Glossary&nbsp;8.1</a>, to fit a line to a set of data points. It is a non-parametric method, which means that it does not make any assumptions about the underlying distribution of the data. This makes it a versatile tool for fitting curves to a wide variety of data. <a href="#fig-loess">Figure&nbsp;7</a> shows a LOESS curve applied to the scatter plot of Ozone against Wind for New York City.</p>
 <p>The LOESS curve is calculated using a process called locally weighted regression. This means that the curve is fit to the data points in a local neighborhood around each point. The size of the neighborhood is determined by a parameter called the bandwidth. The bandwidth controls how smooth the curve is. A larger bandwidth will result in a smoother curve, while a smaller bandwidth will result in a more wiggly curve.</p>
 <p>The LOESS curve can be used to visualize the relationship between two variables. It can also be used to make predictions about the value of one variable based on the value of another variable.</p>
 <p>The LOESS curve is a powerful tool for visualizing and exploring data and can be applied to a wide variety of data.</p>
@@ -1209,6 +1213,21 @@ where:<br>
 <li>It is a relatively conservative test. This means that it is less likely to find significant results than other statistical tests.</li>
 </ul>
 <p>Overall, ANOSIM is a powerful tool for identifying and understanding differences between groups of data. It is a versatile test that can be used with a variety of data sets. However, it is important to be aware of the limitations of the test before using it.</p>
+</section>
+</section>
+<section id="code-functions" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="code-functions"><span class="header-section-number">8</span> Code Functions</h2>
+<section id="sec-ggplot" class="level3" data-number="8.1">
+<h3 data-number="8.1" class="anchored" data-anchor-id="sec-ggplot"><span class="header-section-number">8.1</span> <code>ggplot2</code></h3>
+<p>ggplot2 is a system for declaratively creating graphics, based on the Grammar of Graphics. It is part of the tidyverse, a collection of R packages that share a unified philosophy and syntax. ggplot2 is known for its flexibility, elegance, and ease of use.</p>
+<p>ggplot2 is a powerful tool for creating data visualizations, and it is used by data scientists and analysts around the world. It is a good choice for anyone who wants to create high-quality, informative plots.</p>
+<p>Some of the benefits of using ggplot2 are:</p>
+<ul>
+<li>It is declarative, which means that you specify what you want the plot to look like, and ggplot2 takes care of the details.</li>
+<li>It is flexible, allowing you to create a wide variety of plots, from simple to complex.</li>
+<li>It is elegant, producing plots that are visually appealing and easy to read.</li>
+<li>It is easy to use, with a well-documented API and many tutorials available online.</li>
+</ul>
 
 
 
@@ -1216,6 +1235,9 @@ where:<br>
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-JSSv105i07" class="csl-entry" role="listitem">
+Tierney, Nicholas, and Dianne Cook. 2023. <span>“Expanding Tidy Data Principles to Facilitate Missing Data Exploration, Visualization and Assessment of Imputations.”</span> <em>Journal of Statistical Software</em> 105 (1): 1–31. <a href="https://doi.org/10.18637/jss.v105.i07">https://doi.org/10.18637/jss.v105.i07</a>.
+</div>
 <div id="ref-wickham_tidy_2014" class="csl-entry" role="listitem">
 Wickham, Hadley. 2014. <span>“Tidy Data.”</span> <em>The Journal of Statistical Software</em> 59. <a href="http://www.jstatsoft.org/v59/i10/">http://www.jstatsoft.org/v59/i10/</a>.
 </div>
