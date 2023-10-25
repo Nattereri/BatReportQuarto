@@ -414,6 +414,8 @@ statics_plus %>%
 {{< include ../Common/bats/EPSG.qmd >}}
 
 
+{{< include ../Common/bats/BNG.qmd >}}
+
 ## Bat Activity Time  
 
 The limitation of _bat passes_ has been recognised [@sowler_bat_2013], bat identification software that use full spectrum recording, generate other characteristics from a bat call, or sequence of calls; these characteristics can be used to calculate other indices of activity. Elekon's BatExplorer[^3] and Wildlife Acoustics' Kaleidoscope[^4] produce the number of `calls` or `pulses` in an recording together with the:

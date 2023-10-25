@@ -603,7 +603,7 @@ BatExplorer %>%
 
 {{< include ../Common/bats/soundanalysisoutput.qmd >}}
 
-## Sound Analysis and Naming Bats
+## Naming Bats in Sound Analysis
 
 Sound analysis may not be able to distinguish calls to species level; in practice some calls may only be identified to genus or as acoustically similar; @tbl-UKbatNames suggests a naming convention for UK bat species[^6]
 
