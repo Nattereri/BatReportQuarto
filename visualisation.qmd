@@ -55,7 +55,7 @@ Diagrams, charts, figures are ubiquitous; do we still notice them? When a diagra
 
 Colour can enhance visualisation, the choice and combination of colours is important to the communication [@Fabiocrameri2020Misuse:917a]. A consistent colour applied to individual bat species and a group of colours accessible to people with a visual impairment, helps make the visualisations _readable_. Unfortunately, accessibility is challenging with more than 8 or 10 colours; if this is the case consider separating the visualisation into different components, creating more than one graph or just highlighting the key species with one colour, with the remaining species shaded as grey.
 
-@tbl-batcolours lists the set of colours used in the `iBats::bat_colours_default` function and are used for most of the visualisations on this page. The `iBats::bat_colours()` function allows any colour to be associated with any bat name (including common names); @sec-usercolours gives an example chart with common bat names.
+@tbl-batcolours lists the set of colours used in the `iBats::bat_colours_default` function and are used for most of the visualisations on this page. The `iBats::bat_colours()` function allows any colour to be associated with any bat name (including common names); @sec-usercolours gives an example chart with common bat names.  The colour palett resource provided by [coolors](https://coolors.co/) lends the ability to create and export a suite of colours; that could be assigned to individual species of bat.
 
 
 ```{r}
