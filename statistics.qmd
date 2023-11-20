@@ -763,10 +763,10 @@ In multivariate analysis the [pre-treament](https://bat-survey-reporting.netlify
 SpeciesC <- Tab_L_S %>% 
   ungroup() %>% 
   select(2:ncol(.)) %>% 
-  mutate_all(funs(sqrt(.)))
+  mutate_all( ~ sqrt(.))
 
 Table <- SpeciesC %>% 
-  mutate_all(funs(round(., 2)))
+  mutate_all( ~ round(., 2))
 
 Matrix <- Tab_L_S %>%
   ungroup() %>% 

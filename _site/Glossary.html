@@ -217,14 +217,18 @@ div.csl-indent {
   <li><a href="#sec-jaccard" id="toc-sec-jaccard" class="nav-link" data-scroll-target="#sec-jaccard"><span class="header-section-number">7.11</span> Jaccard distance</a></li>
   <li><a href="#sec-cluster" id="toc-sec-cluster" class="nav-link" data-scroll-target="#sec-cluster"><span class="header-section-number">7.12</span> Cluster analysis</a></li>
   <li><a href="#sec-dendrogram" id="toc-sec-dendrogram" class="nav-link" data-scroll-target="#sec-dendrogram"><span class="header-section-number">7.13</span> Dendrogram</a></li>
-  <li><a href="#sec-kmeans" id="toc-sec-kmeans" class="nav-link" data-scroll-target="#sec-kmeans"><span class="header-section-number">7.14</span> K-Means Clustering</a></li>
-  <li><a href="#sec-pca" id="toc-sec-pca" class="nav-link" data-scroll-target="#sec-pca"><span class="header-section-number">7.15</span> Principal component analysis</a></li>
-  <li><a href="#sec-NMDS" id="toc-sec-NMDS" class="nav-link" data-scroll-target="#sec-NMDS"><span class="header-section-number">7.16</span> Non-metric Multidimensional Scaling</a></li>
-  <li><a href="#sec-ANOSIM" id="toc-sec-ANOSIM" class="nav-link" data-scroll-target="#sec-ANOSIM"><span class="header-section-number">7.17</span> ANOSIM</a></li>
+  <li><a href="#sec-agglomeration" id="toc-sec-agglomeration" class="nav-link" data-scroll-target="#sec-agglomeration"><span class="header-section-number">7.14</span> Agglomeration methods</a></li>
+  <li><a href="#sec-kmeans" id="toc-sec-kmeans" class="nav-link" data-scroll-target="#sec-kmeans"><span class="header-section-number">7.15</span> K-Means Clustering</a></li>
+  <li><a href="#sec-pca" id="toc-sec-pca" class="nav-link" data-scroll-target="#sec-pca"><span class="header-section-number">7.16</span> Principal component analysis</a></li>
+  <li><a href="#sec-NMDS" id="toc-sec-NMDS" class="nav-link" data-scroll-target="#sec-NMDS"><span class="header-section-number">7.17</span> Non-metric Multidimensional Scaling</a></li>
+  <li><a href="#sec-ANOSIM" id="toc-sec-ANOSIM" class="nav-link" data-scroll-target="#sec-ANOSIM"><span class="header-section-number">7.18</span> ANOSIM</a></li>
   </ul></li>
-  <li><a href="#code-functions" id="toc-code-functions" class="nav-link" data-scroll-target="#code-functions"><span class="header-section-number">8</span> Code Functions</a>
+  <li><a href="#coding" id="toc-coding" class="nav-link" data-scroll-target="#coding"><span class="header-section-number">8</span> Coding</a>
   <ul class="collapse">
-  <li><a href="#sec-ggplot" id="toc-sec-ggplot" class="nav-link" data-scroll-target="#sec-ggplot"><span class="header-section-number">8.1</span> <code>ggplot2</code></a></li>
+  <li><a href="#sec-tidyverse" id="toc-sec-tidyverse" class="nav-link" data-scroll-target="#sec-tidyverse"><span class="header-section-number">8.1</span> <code>tidyverse</code></a></li>
+  <li><a href="#sec-ggplot" id="toc-sec-ggplot" class="nav-link" data-scroll-target="#sec-ggplot"><span class="header-section-number">8.2</span> <code>ggplot2</code></a></li>
+  <li><a href="#sec-lubridate" id="toc-sec-lubridate" class="nav-link" data-scroll-target="#sec-lubridate"><span class="header-section-number">8.3</span> <code>lubridate</code></a></li>
+  <li><a href="#sec-dplyr" id="toc-sec-dplyr" class="nav-link" data-scroll-target="#sec-dplyr"><span class="header-section-number">8.4</span> <code>dplyr</code></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -440,7 +444,7 @@ div.csl-indent {
 </section>
 <section id="sec-loess" class="level3" data-number="2.7">
 <h3 data-number="2.7" class="anchored" data-anchor-id="sec-loess"><span class="header-section-number">2.7</span> LOESS Curve</h3>
-<p>The LOESS curve is a type of smooth curve that is used in <code>ggplot2</code> graphs, <a href="#sec-ggplot">Glossary&nbsp;8.1</a>, to fit a line to a set of data points. It is a non-parametric method, which means that it does not make any assumptions about the underlying distribution of the data. This makes it a versatile tool for fitting curves to a wide variety of data. <a href="#fig-loess">Figure&nbsp;7</a> shows a LOESS curve applied to the scatter plot of Ozone against Wind for New York City.</p>
+<p>The LOESS curve is a type of smooth curve that is used in <code>ggplot2</code> graphs, <a href="#sec-ggplot">Glossary&nbsp;8.2</a>, to fit a line to a set of data points. It is a non-parametric method, which means that it does not make any assumptions about the underlying distribution of the data. This makes it a versatile tool for fitting curves to a wide variety of data. <a href="#fig-loess">Figure&nbsp;7</a> shows a LOESS curve applied to the scatter plot of Ozone against Wind for New York City.</p>
 <p>The LOESS curve is calculated using a process called locally weighted regression. This means that the curve is fit to the data points in a local neighborhood around each point. The size of the neighborhood is determined by a parameter called the bandwidth. The bandwidth controls how smooth the curve is. A larger bandwidth will result in a smoother curve, while a smaller bandwidth will result in a more wiggly curve.</p>
 <p>The LOESS curve can be used to visualize the relationship between two variables. It can also be used to make predictions about the value of one variable based on the value of another variable.</p>
 <p>The LOESS curve is a powerful tool for visualizing and exploring data and can be applied to a wide variety of data.</p>
@@ -960,7 +964,7 @@ d(x, y) &amp;= \left( \sum_{i=1}^n |x_i - y_i|^p \right)^{1/p} \\
 <ul>
 <li>Cluster analysis</li>
 <li>Nearest neighbor search</li>
-<li>Similarity measures (e.g.&nbsp;PCA <a href="#sec-pca">Glossary&nbsp;7.15</a> and NMDS <a href="#sec-NMDS">Glossary&nbsp;7.16</a>)</li>
+<li>Similarity measures (e.g.&nbsp;PCA <a href="#sec-pca">Glossary&nbsp;7.16</a> and NMDS <a href="#sec-NMDS">Glossary&nbsp;7.17</a>)</li>
 </ul>
 <p>The choice of the parameter <span class="math inline">\(p\)</span> depends on the specific application. In general, a higher value of <span class="math inline">\(p\)</span> will give more weight to the larger distances between points, while a lower value of <span class="math inline">\(p\)</span> will give more weight to the smaller distances between points.</p>
 <p>Here are some examples of how the Minkowski distance can be used in multivariate analysis:</p>
@@ -1101,8 +1105,69 @@ where:<br>
 </div>
 </div>
 </section>
-<section id="sec-kmeans" class="level3" data-number="7.14">
-<h3 data-number="7.14" class="anchored" data-anchor-id="sec-kmeans"><span class="header-section-number">7.14</span> K-Means Clustering</h3>
+<section id="sec-agglomeration" class="level3" data-number="7.14">
+<h3 data-number="7.14" class="anchored" data-anchor-id="sec-agglomeration"><span class="header-section-number">7.14</span> Agglomeration methods</h3>
+<p>Agglomeration methods are used in hierarchical clustering to merge clusters based on their similarity or proximity. These methods define how the distance between two clusters is calculated, which determines the order in which clusters are merged. There are several different agglomeration methods, each with its own strengths and weaknesses.</p>
+<ul>
+<li><p><strong>Single Linkage (Nearest Neighbor):</strong> This method measures the distance between two clusters as the minimum distance between any two points in the clusters. This method tends to produce elongated clusters, as it is sensitive to outliers.</p></li>
+<li><p><strong>Complete Linkage (Farthest Neighbor):</strong> This method measures the distance between two clusters as the maximum distance between any two points in the clusters. This method is not as sensitive to outliers as single linkage, but it can produce clusters that are too compact.</p></li>
+<li><p><strong>Average Linkage (UPGMA):</strong> This method measures the distance between two clusters as the average distance between all pairs of points in the clusters. This method is a compromise between single linkage and complete linkage, and it often produces clusters that are well-balanced in terms of size and shape.</p></li>
+<li><p><strong>Ward’s Method:</strong> This method aims to minimize the within-cluster variance when clusters are merged. It is considered to be more statistically sound than the other methods, as it is less sensitive to the scale of the data.</p></li>
+<li><p><strong>Centroid Linkage:</strong> This method measures the distance between two clusters as the distance between their centroids. This method is similar to average linkage, but it can be more sensitive to outliers.</p></li>
+</ul>
+<p>The choice of agglomeration method depends on the specific application and the nature of the data. In general, single linkage is a good choice for data with outliers, while complete linkage is a good choice for data that is well-structured. Average linkage and Ward’s method are more versatile and can be used in a wider range of applications. Centroid linkage is a good choice when the data is well-behaved and the clusters are assumed to be spherical.</p>
+<p>Below is a table summarising the different agglomeration methods:</p>
+<table class="table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Method</th>
+<th>Description</th>
+<th>Advantages</th>
+<th>Disadvantages</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Single Linkage</td>
+<td>Measures the distance between two clusters as the minimum distance between any two points in the clusters.</td>
+<td>Sensitive to outliers</td>
+<td>Can produce elongated clusters</td>
+</tr>
+<tr class="even">
+<td>Complete Linkage</td>
+<td>Measures the distance between two clusters as the maximum distance between any two points in the clusters.</td>
+<td>Not as sensitive to outliers as single linkage</td>
+<td>Can produce clusters that are too compact</td>
+</tr>
+<tr class="odd">
+<td>Average Linkage</td>
+<td>Measures the distance between two clusters as the average distance between all pairs of points in the clusters.</td>
+<td>A compromise between single linkage and complete linkage</td>
+<td>Can be sensitive to outliers</td>
+</tr>
+<tr class="even">
+<td>Ward’s Method</td>
+<td>Aims to minimize the within-cluster variance when clusters are merged.</td>
+<td>Considered to be more statistically sound than the other methods</td>
+<td>Can be computationally expensive</td>
+</tr>
+<tr class="odd">
+<td>Centroid Linkage</td>
+<td>Measures the distance between two clusters as the distance between their centroids.</td>
+<td>Similar to average linkage</td>
+<td>Can be sensitive to outliers</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="sec-kmeans" class="level3" data-number="7.15">
+<h3 data-number="7.15" class="anchored" data-anchor-id="sec-kmeans"><span class="header-section-number">7.15</span> K-Means Clustering</h3>
 <p>K-means clustering is a popular unsupervised learning algorithm that can be used to group data points into clusters based on their similarity. The algorithm works by iteratively assigning data points to clusters until the within-cluster sum of squares is minimized.</p>
 <p>In multivariate analysis, K-means clustering can be used for a variety of tasks, including:</p>
 <ul>
@@ -1131,8 +1196,8 @@ where:<br>
 <li>It can be difficult to interpret the results of K-means clustering.</li>
 </ul>
 </section>
-<section id="sec-pca" class="level3" data-number="7.15">
-<h3 data-number="7.15" class="anchored" data-anchor-id="sec-pca"><span class="header-section-number">7.15</span> Principal component analysis</h3>
+<section id="sec-pca" class="level3" data-number="7.16">
+<h3 data-number="7.16" class="anchored" data-anchor-id="sec-pca"><span class="header-section-number">7.16</span> Principal component analysis</h3>
 <p>Principal component analysis (PCA) is a statistical procedure that uses an orthogonal transformation to convert a set of observations of possibly correlated variables into a set of values of linearly uncorrelated variables called principal components.</p>
 <p>In multivariate analysis, PCA can be used for a variety of tasks, including:</p>
 <ul>
@@ -1161,8 +1226,8 @@ where:<br>
 <li>It can be difficult to interpret the results of PCA.</li>
 </ul>
 </section>
-<section id="sec-NMDS" class="level3" data-number="7.16">
-<h3 data-number="7.16" class="anchored" data-anchor-id="sec-NMDS"><span class="header-section-number">7.16</span> Non-metric Multidimensional Scaling</h3>
+<section id="sec-NMDS" class="level3" data-number="7.17">
+<h3 data-number="7.17" class="anchored" data-anchor-id="sec-NMDS"><span class="header-section-number">7.17</span> Non-metric Multidimensional Scaling</h3>
 <p>Non-metric multidimensional scaling (NMDS) is a multivariate analysis technique that is used to reduce the dimensionality of data while preserving the distances between objects. NMDS is a non-parametric technique, which means that it does not make any assumptions about the distribution of the data. This makes NMDS a versatile technique that can be used with a wide variety of data sets.</p>
 <p>NMDS works by first calculating the distances between all pairs of objects in the data set. These distances can be calculated using any distance metric, such as the Euclidean distance or the Manhattan distance. Once the distances have been calculated, NMDS then finds a configuration of points in a lower-dimensional space (typically two or three dimensions) such that the distances between the points in the lower-dimensional space are as close as possible to the distances in the original data set.</p>
 <p>NMDS can be used for a variety of purposes, including:</p>
@@ -1185,8 +1250,8 @@ where:<br>
 <li>It can be difficult to interpret the results of NMDS, especially if the data set is large or complex.</li>
 </ul>
 <p>Overall, NMDS is a powerful multivariate analysis technique that can be used for a variety of purposes. However, it is important to be aware of the limitations of NMDS before using it.</p>
-<section id="sec-Shepard" class="level4" data-number="7.16.1">
-<h4 data-number="7.16.1" class="anchored" data-anchor-id="sec-Shepard"><span class="header-section-number">7.16.1</span> Shepard Plot</h4>
+<section id="sec-Shepard" class="level4" data-number="7.17.1">
+<h4 data-number="7.17.1" class="anchored" data-anchor-id="sec-Shepard"><span class="header-section-number">7.17.1</span> Shepard Plot</h4>
 <p>A Shepard plot is a type of graph used in statistics to visualize the results of a multidimensional scaling (MDS) analysis. MDS is a statistical technique that is used to reduce the dimensionality of a data set by finding a lower-dimensional representation of the data that preserves the distances between the data points.</p>
 <p>A Shepard plot shows the relationship between the true distances between the data points in the original high-dimensional space and the distances between the data points in the lower-dimensional representation. If the MDS analysis has been successful, the points in the Shepard plot will be well-correlated, and the line will be a straight line. This indicates that the distances between the data points in the lower-dimensional representation are a good approximation of the true distances between the data points in the original high-dimensional space.</p>
 <p>Shepard plots can be used to assess the quality of an MDS analysis. If the points in the Shepard plot are not well-correlated, or if the line is not a straight line, then the MDS analysis may not have been successful. In this case, the analyst may need to try different parameters for the MDS analysis or use a different dimensionality reduction technique.</p>
@@ -1194,8 +1259,8 @@ where:<br>
 <p>Shepard plots can be used to visualize the results of MDS analysis, and to assess the quality of the analysis. They are a useful tool for understanding the relationships between data points in a high-dimensional space.</p>
 </section>
 </section>
-<section id="sec-ANOSIM" class="level3" data-number="7.17">
-<h3 data-number="7.17" class="anchored" data-anchor-id="sec-ANOSIM"><span class="header-section-number">7.17</span> ANOSIM</h3>
+<section id="sec-ANOSIM" class="level3" data-number="7.18">
+<h3 data-number="7.18" class="anchored" data-anchor-id="sec-ANOSIM"><span class="header-section-number">7.18</span> ANOSIM</h3>
 <p>The Analysis of Similarities (ANOSIM) test is a non-parametric statistical test used to determine whether there are significant differences between two or more groups of data. ANOSIM is a multivariate test, meaning that it can be used to compare data sets with more than one variable.</p>
 <p>ANOSIM works by comparing the distances between observations within and between groups. If the distances between observations within groups are smaller than the distances between observations between groups, then the ANOSIM test will be significant. This indicates that there are real differences between the groups of data.</p>
 <p>ANOSIM is a versatile test that can be used in a variety of fields, including ecology, biology, and medicine. It is a powerful tool for identifying and understanding differences between groups of data.</p>
@@ -1215,10 +1280,24 @@ where:<br>
 <p>Overall, ANOSIM is a powerful tool for identifying and understanding differences between groups of data. It is a versatile test that can be used with a variety of data sets. However, it is important to be aware of the limitations of the test before using it.</p>
 </section>
 </section>
-<section id="code-functions" class="level2" data-number="8">
-<h2 data-number="8" class="anchored" data-anchor-id="code-functions"><span class="header-section-number">8</span> Code Functions</h2>
-<section id="sec-ggplot" class="level3" data-number="8.1">
-<h3 data-number="8.1" class="anchored" data-anchor-id="sec-ggplot"><span class="header-section-number">8.1</span> <code>ggplot2</code></h3>
+<section id="coding" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="coding"><span class="header-section-number">8</span> Coding</h2>
+<section id="sec-tidyverse" class="level3" data-number="8.1">
+<h3 data-number="8.1" class="anchored" data-anchor-id="sec-tidyverse"><span class="header-section-number">8.1</span> <code>tidyverse</code></h3>
+<p>The tidyverse is a collection of R packages that share a unified philosophy and syntax for data science. It is designed to make data science easier and more efficient, and it is one of the most popular collections of R packages among data scientists.</p>
+<p>The tidyverse packages are all designed to work together seamlessly, making it easy to pipeline data from one step to the next. The packages also share a common design philosophy, which emphasizes the importance of data tidiness. Tidy data is data that is organized in a consistent and efficient way, making it easy to manipulate and analyze.</p>
+<p>Some of the most popular tidyverse packages:</p>
+<ul>
+<li><strong>ggplot2:</strong> This package provides a powerful and flexible system for creating data visualizations.</li>
+<li><strong>dplyr:</strong> This package provides a consistent set of verbs for selecting, filtering, arranging, and summarizing data.</li>
+<li><strong>tibble:</strong> This package provides a data structure that is specifically designed for data science.</li>
+<li><strong>readr:</strong> This package provides a fast and easy way to read data from a variety of sources.</li>
+<li><strong>purrr:</strong> This package provides a set of functions for functional programming in R.</li>
+</ul>
+<p>In addition to these core packages, there are many other tidyverse packages that provide specialized functionality for data science tasks such as machine learning, modeling, and statistical analysis.</p>
+</section>
+<section id="sec-ggplot" class="level3" data-number="8.2">
+<h3 data-number="8.2" class="anchored" data-anchor-id="sec-ggplot"><span class="header-section-number">8.2</span> <code>ggplot2</code></h3>
 <p>ggplot2 is a system for declaratively creating graphics, based on the Grammar of Graphics. It is part of the tidyverse, a collection of R packages that share a unified philosophy and syntax. ggplot2 is known for its flexibility, elegance, and ease of use.</p>
 <p>ggplot2 is a powerful tool for creating data visualizations, and it is used by data scientists and analysts around the world. It is a good choice for anyone who wants to create high-quality, informative plots.</p>
 <p>Some of the benefits of using ggplot2 are:</p>
@@ -1228,6 +1307,33 @@ where:<br>
 <li>It is elegant, producing plots that are visually appealing and easy to read.</li>
 <li>It is easy to use, with a well-documented API and many tutorials available online.</li>
 </ul>
+<p>For more information see the ggplot2 documentation: <a href="https://ggplot2.tidyverse.org/" class="uri">https://ggplot2.tidyverse.org/</a></p>
+</section>
+<section id="sec-lubridate" class="level3" data-number="8.3">
+<h3 data-number="8.3" class="anchored" data-anchor-id="sec-lubridate"><span class="header-section-number">8.3</span> <code>lubridate</code></h3>
+<p>Lubridate is a package in R that makes it easier to work with dates and times. It provides a consistent and memorable syntax for parsing, manipulating, and formatting date-time data. Lubridate also offers a number of features that are not available in the base R date-time functions, such as support for time zones, leap days, and daylight saving time.</p>
+<p>Some of the benefits of using lubridate include:</p>
+<ul>
+<li><strong>Easy and fast parsing of date-times:</strong> Lubridate provides a variety of functions for parsing date-time strings, including <code>ymd()</code>, <code>ymd_hms()</code>, <code>dmy()</code>, and <code>dmy_hms()</code>. These functions are much easier to use than the base R date-time parsing functions, and they are also much faster.</li>
+<li><strong>Simple functions to get and set components of a date-time:</strong> Lubridate provides a number of functions for getting and setting the individual components of a date-time object, such as <code>year()</code>, <code>month()</code>, <code>mday()</code>, <code>hour()</code>, <code>minute()</code>, and <code>second()</code>. These functions make it easy to manipulate date-time data in a variety of ways.</li>
+<li><strong>Helper functions for handling time zones:</strong> Lubridate provides a number of functions for handling time zones, such as <code>with_tz()</code> and <code>force_tz()</code>. These functions make it easy to convert date-time objects to and from different time zones.</li>
+<li><strong>Expanded mathematical operations for date-time objects:</strong> Lubridate expands the type of mathematical operations that can be performed with date-time objects. For example, you can use lubridate to add or subtract days, months, or years from a date-time object. You can also use lubridate to calculate the difference between two date-time objects in terms of days, hours, minutes, or seconds.</li>
+</ul>
+<p>Overall, lubridate is a powerful and flexible package for working with dates and times in R; a invaluable tool for any data scientist or analyst who works with date-time data.</p>
+<p>For more information see the lubridate documentation: <a href="https://lubridate.tidyverse.org/" class="uri">https://lubridate.tidyverse.org/</a></p>
+</section>
+<section id="sec-dplyr" class="level3" data-number="8.4">
+<h3 data-number="8.4" class="anchored" data-anchor-id="sec-dplyr"><span class="header-section-number">8.4</span> <code>dplyr</code></h3>
+<p>Dplyr is a package in R for data manipulation. It provides a consistent set of verbs for selecting, filtering, arranging, and summarizing data. The functions of dplyr are designed to be easy to use and efficient, and they can be used to manipulate data frames of any size.</p>
+<p>Some of the benefits of using dplyr include:</p>
+<ul>
+<li><strong>Easy to use:</strong> Dplyr functions have a consistent and intuitive syntax, making them easy to learn and use.</li>
+<li><strong>Efficient:</strong> Dplyr functions are highly optimized, making them fast and efficient, even for large datasets.</li>
+<li><strong>Tidyverse integration:</strong> Dplyr is part of the tidyverse, a collection of R packages that share a unified philosophy and syntax. This makes it easy to use dplyr functions in conjunction with other tidyverse packages.</li>
+</ul>
+<p>Dplyr can also be used to perform more complex data manipulation tasks, such as joining data frames, grouping data, and creating new variables. For more information, please see the dplyr documentation: https://dplyr.tidyverse.org/</p>
+<p>Dplyr is a powerful and versatile package for data manipulation in R and essential for any data scientist or analyst who works with data frames.</p>
+<p>For more information see the dplyr documentation: <a href="https://dplyr.tidyverse.org/" class="uri">https://dplyr.tidyverse.org/</a></p>
 
 
 

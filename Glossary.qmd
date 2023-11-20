@@ -1280,6 +1280,31 @@ ggdendrogram(hc, rotate = TRUE, size = 2)
 
 ```
 
+### Agglomeration methods {#sec-agglomeration}
+
+Agglomeration methods are used in hierarchical clustering to merge clusters based on their similarity or proximity. These methods define how the distance between two clusters is calculated, which determines the order in which clusters are merged. There are several different agglomeration methods, each with its own strengths and weaknesses.
+
+* **Single Linkage (Nearest Neighbor):** This method measures the distance between two clusters as the minimum distance between any two points in the clusters. This method tends to produce elongated clusters, as it is sensitive to outliers.
+
+* **Complete Linkage (Farthest Neighbor):** This method measures the distance between two clusters as the maximum distance between any two points in the clusters. This method is not as sensitive to outliers as single linkage, but it can produce clusters that are too compact.
+
+* **Average Linkage (UPGMA):** This method measures the distance between two clusters as the average distance between all pairs of points in the clusters. This method is a compromise between single linkage and complete linkage, and it often produces clusters that are well-balanced in terms of size and shape.
+
+* **Ward's Method:** This method aims to minimize the within-cluster variance when clusters are merged. It is considered to be more statistically sound than the other methods, as it is less sensitive to the scale of the data.
+
+* **Centroid Linkage:** This method measures the distance between two clusters as the distance between their centroids. This method is similar to average linkage, but it can be more sensitive to outliers.
+
+The choice of agglomeration method depends on the specific application and the nature of the data. In general, single linkage is a good choice for data with outliers, while complete linkage is a good choice for data that is well-structured. Average linkage and Ward's method are more versatile and can be used in a wider range of applications. Centroid linkage is a good choice when the data is well-behaved and the clusters are assumed to be spherical.
+
+Below is a table summarising the different agglomeration methods:
+
+| Method | Description | Advantages | Disadvantages |
+|---|---|---|---|
+| Single Linkage | Measures the distance between two clusters as the minimum distance between any two points in the clusters. | Sensitive to outliers | Can produce elongated clusters |
+| Complete Linkage | Measures the distance between two clusters as the maximum distance between any two points in the clusters. | Not as sensitive to outliers as single linkage | Can produce clusters that are too compact |
+| Average Linkage | Measures the distance between two clusters as the average distance between all pairs of points in the clusters. | A compromise between single linkage and complete linkage | Can be sensitive to outliers |
+| Ward's Method | Aims to minimize the within-cluster variance when clusters are merged. | Considered to be more statistically sound than the other methods | Can be computationally expensive |
+| Centroid Linkage | Measures the distance between two clusters as the distance between their centroids. | Similar to average linkage | Can be sensitive to outliers |
 
 ### K-Means Clustering {#sec-kmeans}
 
@@ -1412,7 +1437,23 @@ Here are some of the disadvantages of using ANOSIM:
 
 Overall, ANOSIM is a powerful tool for identifying and understanding differences between groups of data. It is a versatile test that can be used with a variety of data sets. However, it is important to be aware of the limitations of the test before using it.
 
-## Code Functions
+## Coding
+
+### `tidyverse` {#sec-tidyverse}
+
+The tidyverse is a collection of R packages that share a unified philosophy and syntax for data science. It is designed to make data science easier and more efficient, and it is one of the most popular collections of R packages among data scientists.
+
+The tidyverse packages are all designed to work together seamlessly, making it easy to pipeline data from one step to the next. The packages also share a common design philosophy, which emphasizes the importance of data tidiness. Tidy data is data that is organized in a consistent and efficient way, making it easy to manipulate and analyze.
+
+Some of the most popular tidyverse packages:
+
+* **ggplot2:** This package provides a powerful and flexible system for creating data visualizations.
+* **dplyr:** This package provides a consistent set of verbs for selecting, filtering, arranging, and summarizing data.
+* **tibble:** This package provides a data structure that is specifically designed for data science.
+* **readr:** This package provides a fast and easy way to read data from a variety of sources.
+* **purrr:** This package provides a set of functions for functional programming in R.
+
+In addition to these core packages, there are many other tidyverse packages that provide specialized functionality for data science tasks such as machine learning, modeling, and statistical analysis.
 
 ### `ggplot2` {#sec-ggplot} 
 
@@ -1426,3 +1467,38 @@ Some of the benefits of using ggplot2 are:
 * It is flexible, allowing you to create a wide variety of plots, from simple to complex.
 * It is elegant, producing plots that are visually appealing and easy to read.
 * It is easy to use, with a well-documented API and many tutorials available online.
+
+For more information see the ggplot2 documentation: <https://ggplot2.tidyverse.org/>
+
+### `lubridate` {#sec-lubridate} 
+
+Lubridate is a package in R that makes it easier to work with dates and times. It provides a consistent and memorable syntax for parsing, manipulating, and formatting date-time data. Lubridate also offers a number of features that are not available in the base R date-time functions, such as support for time zones, leap days, and daylight saving time.
+
+Some of the benefits of using lubridate include:
+
+* **Easy and fast parsing of date-times:** Lubridate provides a variety of functions for parsing date-time strings, including `ymd()`, `ymd_hms()`, `dmy()`, and `dmy_hms()`. These functions are much easier to use than the base R date-time parsing functions, and they are also much faster.
+* **Simple functions to get and set components of a date-time:** Lubridate provides a number of functions for getting and setting the individual components of a date-time object, such as `year()`, `month()`, `mday()`, `hour()`, `minute()`, and `second()`. These functions make it easy to manipulate date-time data in a variety of ways.
+* **Helper functions for handling time zones:** Lubridate provides a number of functions for handling time zones, such as `with_tz()` and `force_tz()`. These functions make it easy to convert date-time objects to and from different time zones.
+* **Expanded mathematical operations for date-time objects:** Lubridate expands the type of mathematical operations that can be performed with date-time objects. For example, you can use lubridate to add or subtract days, months, or years from a date-time object. You can also use lubridate to calculate the difference between two date-time objects in terms of days, hours, minutes, or seconds.
+
+Overall, lubridate is a powerful and flexible package for working with dates and times in R; a invaluable tool for any data scientist or analyst who works with date-time data.
+
+For more information see the lubridate documentation: <https://lubridate.tidyverse.org/>
+
+
+### `dplyr` {#sec-dplyr}
+
+Dplyr is a package in R for data manipulation. It provides a consistent set of verbs for selecting, filtering, arranging, and summarizing data. The functions of dplyr are designed to be easy to use and efficient, and they can be used to manipulate data frames of any size.
+
+Some of the benefits of using dplyr include:
+
+* **Easy to use:** Dplyr functions have a consistent and intuitive syntax, making them easy to learn and use.
+* **Efficient:** Dplyr functions are highly optimized, making them fast and efficient, even for large datasets.
+* **Tidyverse integration:** Dplyr is part of the tidyverse, a collection of R packages that share a unified philosophy and syntax. This makes it easy to use dplyr functions in conjunction with other tidyverse packages.
+
+
+Dplyr can also be used to perform more complex data manipulation tasks, such as joining data frames, grouping data, and creating new variables. For more information, please see the dplyr documentation: https://dplyr.tidyverse.org/
+
+Dplyr is a powerful and versatile package for data manipulation in R and essential for any data scientist or analyst who works with data frames.
+
+For more information see the dplyr documentation: <https://dplyr.tidyverse.org/>
