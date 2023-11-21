@@ -1163,6 +1163,29 @@ Here are some additional considerations when using cluster analysis:
 
 Cluster analysis is a powerful tool that can be used to analyze multivariate data. It is important to understand the different cluster analysis algorithms, their strengths and weaknesses, and the factors that can affect the results of cluster analysis in order to use it effectively.
 
+### Hierarchical clustering {#sec-hclustering}
+
+Hierarchical clustering, also known as hierarchical cluster analysis or HCA, is a technique for grouping a set of objects into a hierarchy of clusters. It is an unsupervised learning method, which means that it does not require any labeled training data. Instead, it groups objects together based on their similarity. The hierarchy can be visualized as a dendrogram [Glossary @sec-dendrogram], which is a tree-like diagram that shows the relationships between the clusters.
+
+Hierarchical clustering works by iteratively merging or splitting clusters. There are two main types of hierarchical clustering: agglomerative and divisive.
+
+* **Agglomerative hierarchical clustering:** This type of clustering starts with each object in its own cluster and then merges the most similar clusters together until there is only one cluster left.
+
+* **Divisive hierarchical clustering:** This type of clustering starts with all objects in one cluster and then splits the least similar cluster into two clusters until there is only one object left in each cluster.
+
+The choice of agglomerative or divisive hierarchical clustering depends on the specific application. Agglomerative hierarchical clustering is more commonly used, as it is less sensitive to outliers. The most common method for agglomerative clustering is single linkage [Glossary @sec-agglomeration], which merges the two clusters that are closest together. The most common method for divisive clustering is Ward's method, which minimizes the within-cluster variance when clusters are split.
+
+Hierarchical clustering is a versatile algorithm that can be used for a variety of tasks, including:
+
+* **Customer segmentation:** Businesses can use hierarchical clustering to segment their customers into groups based on their purchase history or other demographic data. This information can then be used to target marketing campaigns to specific customer segments.
+
+* **Biological taxonomy:** Scientists can use hierarchical clustering to classify organisms into different groups based on their physical characteristics or genetic makeup.
+
+* **Fraud detection:** Financial institutions can use hierarchical clustering to identify fraudulent activity by looking for patterns in transactions.
+
+Hierarchical clustering is a powerful tool for unsupervised learning, but it has some limitations. One limitation is that it is not always clear how many clusters to use. Another limitation is that it can be sensitive to outliers.
+
+Despite its limitations, hierarchical clustering is a valuable tool for exploratory data analysis and can be used to identify patterns in data that would be difficult to find with other methods.
 
 ### Dendrogram {#sec-dendrogram}
 
@@ -1280,9 +1303,9 @@ ggdendrogram(hc, rotate = TRUE, size = 2)
 
 ```
 
-### Agglomeration methods {#sec-agglomeration}
+### Linkage methods {#sec-agglomeration}
 
-Agglomeration methods are used in hierarchical clustering to merge clusters based on their similarity or proximity. These methods define how the distance between two clusters is calculated, which determines the order in which clusters are merged. There are several different agglomeration methods, each with its own strengths and weaknesses.
+Linkage (agglomeration) methods are used in hierarchical clustering to merge clusters based on their similarity or proximity. These methods define how the distance between two clusters is calculated, which determines the order in which clusters are merged. There are several different agglomeration methods, each with its own strengths and weaknesses.
 
 * **Single Linkage (Nearest Neighbor):** This method measures the distance between two clusters as the minimum distance between any two points in the clusters. This method tends to produce elongated clusters, as it is sensitive to outliers.
 
@@ -1335,9 +1358,12 @@ Here are some of the advantages of using K-means clustering for multivariate ana
 Here are some of the disadvantages of using K-means clustering for multivariate analysis:
 
 * It is a non-deterministic algorithm, which means that it may produce different results each time it is run.
-* It is sensitive to the choice of the number of clusters.
+* It is sensitive to the choice of the number of clusters; for choosing the number of clusters see [Glossary @sec-elbow].
 * It can be difficult to interpret the results of K-means clustering.
 
+### Number of clusters for k means clustering (elbow method) {#sec-elbow}
+
+The elbow method is a popular technique for determining the optimal number of clusters in k-means clustering. It is based on the idea that the total within-cluster sum of squares (WSS) should decrease as the number of clusters increases, but at a certain point, the decrease will start to level off. This point is often considered to be the elbow of the WSS curve, and the corresponding number of clusters is considered to be the optimal number for k-means.
 
 ### Principal component analysis {#sec-pca}
 

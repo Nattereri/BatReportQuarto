@@ -216,12 +216,14 @@ div.csl-indent {
   <li><a href="#sec-bray" id="toc-sec-bray" class="nav-link" data-scroll-target="#sec-bray"><span class="header-section-number">7.10</span> Bray-Curtis distance measurement</a></li>
   <li><a href="#sec-jaccard" id="toc-sec-jaccard" class="nav-link" data-scroll-target="#sec-jaccard"><span class="header-section-number">7.11</span> Jaccard distance</a></li>
   <li><a href="#sec-cluster" id="toc-sec-cluster" class="nav-link" data-scroll-target="#sec-cluster"><span class="header-section-number">7.12</span> Cluster analysis</a></li>
-  <li><a href="#sec-dendrogram" id="toc-sec-dendrogram" class="nav-link" data-scroll-target="#sec-dendrogram"><span class="header-section-number">7.13</span> Dendrogram</a></li>
-  <li><a href="#sec-agglomeration" id="toc-sec-agglomeration" class="nav-link" data-scroll-target="#sec-agglomeration"><span class="header-section-number">7.14</span> Agglomeration methods</a></li>
-  <li><a href="#sec-kmeans" id="toc-sec-kmeans" class="nav-link" data-scroll-target="#sec-kmeans"><span class="header-section-number">7.15</span> K-Means Clustering</a></li>
-  <li><a href="#sec-pca" id="toc-sec-pca" class="nav-link" data-scroll-target="#sec-pca"><span class="header-section-number">7.16</span> Principal component analysis</a></li>
-  <li><a href="#sec-NMDS" id="toc-sec-NMDS" class="nav-link" data-scroll-target="#sec-NMDS"><span class="header-section-number">7.17</span> Non-metric Multidimensional Scaling</a></li>
-  <li><a href="#sec-ANOSIM" id="toc-sec-ANOSIM" class="nav-link" data-scroll-target="#sec-ANOSIM"><span class="header-section-number">7.18</span> ANOSIM</a></li>
+  <li><a href="#sec-hclustering" id="toc-sec-hclustering" class="nav-link" data-scroll-target="#sec-hclustering"><span class="header-section-number">7.13</span> Hierarchical clustering</a></li>
+  <li><a href="#sec-dendrogram" id="toc-sec-dendrogram" class="nav-link" data-scroll-target="#sec-dendrogram"><span class="header-section-number">7.14</span> Dendrogram</a></li>
+  <li><a href="#sec-agglomeration" id="toc-sec-agglomeration" class="nav-link" data-scroll-target="#sec-agglomeration"><span class="header-section-number">7.15</span> Linkage methods</a></li>
+  <li><a href="#sec-kmeans" id="toc-sec-kmeans" class="nav-link" data-scroll-target="#sec-kmeans"><span class="header-section-number">7.16</span> K-Means Clustering</a></li>
+  <li><a href="#sec-elbow" id="toc-sec-elbow" class="nav-link" data-scroll-target="#sec-elbow"><span class="header-section-number">7.17</span> Number of clusters for k means clustering (elbow method)</a></li>
+  <li><a href="#sec-pca" id="toc-sec-pca" class="nav-link" data-scroll-target="#sec-pca"><span class="header-section-number">7.18</span> Principal component analysis</a></li>
+  <li><a href="#sec-NMDS" id="toc-sec-NMDS" class="nav-link" data-scroll-target="#sec-NMDS"><span class="header-section-number">7.19</span> Non-metric Multidimensional Scaling</a></li>
+  <li><a href="#sec-ANOSIM" id="toc-sec-ANOSIM" class="nav-link" data-scroll-target="#sec-ANOSIM"><span class="header-section-number">7.20</span> ANOSIM</a></li>
   </ul></li>
   <li><a href="#coding" id="toc-coding" class="nav-link" data-scroll-target="#coding"><span class="header-section-number">8</span> Coding</a>
   <ul class="collapse">
@@ -964,7 +966,7 @@ d(x, y) &amp;= \left( \sum_{i=1}^n |x_i - y_i|^p \right)^{1/p} \\
 <ul>
 <li>Cluster analysis</li>
 <li>Nearest neighbor search</li>
-<li>Similarity measures (e.g.&nbsp;PCA <a href="#sec-pca">Glossary&nbsp;7.16</a> and NMDS <a href="#sec-NMDS">Glossary&nbsp;7.17</a>)</li>
+<li>Similarity measures (e.g.&nbsp;PCA <a href="#sec-pca">Glossary&nbsp;7.18</a> and NMDS <a href="#sec-NMDS">Glossary&nbsp;7.19</a>)</li>
 </ul>
 <p>The choice of the parameter <span class="math inline">\(p\)</span> depends on the specific application. In general, a higher value of <span class="math inline">\(p\)</span> will give more weight to the larger distances between points, while a lower value of <span class="math inline">\(p\)</span> will give more weight to the smaller distances between points.</p>
 <p>Here are some examples of how the Minkowski distance can be used in multivariate analysis:</p>
@@ -1082,8 +1084,26 @@ where:<br>
 </ul>
 <p>Cluster analysis is a powerful tool that can be used to analyze multivariate data. It is important to understand the different cluster analysis algorithms, their strengths and weaknesses, and the factors that can affect the results of cluster analysis in order to use it effectively.</p>
 </section>
-<section id="sec-dendrogram" class="level3" data-number="7.13">
-<h3 data-number="7.13" class="anchored" data-anchor-id="sec-dendrogram"><span class="header-section-number">7.13</span> Dendrogram</h3>
+<section id="sec-hclustering" class="level3" data-number="7.13">
+<h3 data-number="7.13" class="anchored" data-anchor-id="sec-hclustering"><span class="header-section-number">7.13</span> Hierarchical clustering</h3>
+<p>Hierarchical clustering, also known as hierarchical cluster analysis or HCA, is a technique for grouping a set of objects into a hierarchy of clusters. It is an unsupervised learning method, which means that it does not require any labeled training data. Instead, it groups objects together based on their similarity. The hierarchy can be visualized as a dendrogram <a href="#sec-dendrogram">Glossary&nbsp;7.14</a>, which is a tree-like diagram that shows the relationships between the clusters.</p>
+<p>Hierarchical clustering works by iteratively merging or splitting clusters. There are two main types of hierarchical clustering: agglomerative and divisive.</p>
+<ul>
+<li><p><strong>Agglomerative hierarchical clustering:</strong> This type of clustering starts with each object in its own cluster and then merges the most similar clusters together until there is only one cluster left.</p></li>
+<li><p><strong>Divisive hierarchical clustering:</strong> This type of clustering starts with all objects in one cluster and then splits the least similar cluster into two clusters until there is only one object left in each cluster.</p></li>
+</ul>
+<p>The choice of agglomerative or divisive hierarchical clustering depends on the specific application. Agglomerative hierarchical clustering is more commonly used, as it is less sensitive to outliers. The most common method for agglomerative clustering is single linkage <a href="#sec-agglomeration">Glossary&nbsp;7.15</a>, which merges the two clusters that are closest together. The most common method for divisive clustering is Ward’s method, which minimizes the within-cluster variance when clusters are split.</p>
+<p>Hierarchical clustering is a versatile algorithm that can be used for a variety of tasks, including:</p>
+<ul>
+<li><p><strong>Customer segmentation:</strong> Businesses can use hierarchical clustering to segment their customers into groups based on their purchase history or other demographic data. This information can then be used to target marketing campaigns to specific customer segments.</p></li>
+<li><p><strong>Biological taxonomy:</strong> Scientists can use hierarchical clustering to classify organisms into different groups based on their physical characteristics or genetic makeup.</p></li>
+<li><p><strong>Fraud detection:</strong> Financial institutions can use hierarchical clustering to identify fraudulent activity by looking for patterns in transactions.</p></li>
+</ul>
+<p>Hierarchical clustering is a powerful tool for unsupervised learning, but it has some limitations. One limitation is that it is not always clear how many clusters to use. Another limitation is that it can be sensitive to outliers.</p>
+<p>Despite its limitations, hierarchical clustering is a valuable tool for exploratory data analysis and can be used to identify patterns in data that would be difficult to find with other methods.</p>
+</section>
+<section id="sec-dendrogram" class="level3" data-number="7.14">
+<h3 data-number="7.14" class="anchored" data-anchor-id="sec-dendrogram"><span class="header-section-number">7.14</span> Dendrogram</h3>
 <p>A dendrogram is a tree-like diagram that shows the hierarchical relationships between objects. It is most commonly created as an output from hierarchical clustering, a method of cluster analysis that groups similar objects together.</p>
 <p>The dendrogram is a way to visualize the results of the clustering algorithm. The branches of the dendrogram represent the clusters, and the distance between the branches represents the similarity between the clusters. The closer two clusters are on the dendrogram, the more similar they are.</p>
 <p>Dendrograms are a powerful tool for visualizing the results of cluster analysis. They can help us to understand the hierarchical relationships between objects, and to identify clusters of similar objects.</p>
@@ -1105,9 +1125,9 @@ where:<br>
 </div>
 </div>
 </section>
-<section id="sec-agglomeration" class="level3" data-number="7.14">
-<h3 data-number="7.14" class="anchored" data-anchor-id="sec-agglomeration"><span class="header-section-number">7.14</span> Agglomeration methods</h3>
-<p>Agglomeration methods are used in hierarchical clustering to merge clusters based on their similarity or proximity. These methods define how the distance between two clusters is calculated, which determines the order in which clusters are merged. There are several different agglomeration methods, each with its own strengths and weaknesses.</p>
+<section id="sec-agglomeration" class="level3" data-number="7.15">
+<h3 data-number="7.15" class="anchored" data-anchor-id="sec-agglomeration"><span class="header-section-number">7.15</span> Linkage methods</h3>
+<p>Linkage (agglomeration) methods are used in hierarchical clustering to merge clusters based on their similarity or proximity. These methods define how the distance between two clusters is calculated, which determines the order in which clusters are merged. There are several different agglomeration methods, each with its own strengths and weaknesses.</p>
 <ul>
 <li><p><strong>Single Linkage (Nearest Neighbor):</strong> This method measures the distance between two clusters as the minimum distance between any two points in the clusters. This method tends to produce elongated clusters, as it is sensitive to outliers.</p></li>
 <li><p><strong>Complete Linkage (Farthest Neighbor):</strong> This method measures the distance between two clusters as the maximum distance between any two points in the clusters. This method is not as sensitive to outliers as single linkage, but it can produce clusters that are too compact.</p></li>
@@ -1166,8 +1186,8 @@ where:<br>
 </tbody>
 </table>
 </section>
-<section id="sec-kmeans" class="level3" data-number="7.15">
-<h3 data-number="7.15" class="anchored" data-anchor-id="sec-kmeans"><span class="header-section-number">7.15</span> K-Means Clustering</h3>
+<section id="sec-kmeans" class="level3" data-number="7.16">
+<h3 data-number="7.16" class="anchored" data-anchor-id="sec-kmeans"><span class="header-section-number">7.16</span> K-Means Clustering</h3>
 <p>K-means clustering is a popular unsupervised learning algorithm that can be used to group data points into clusters based on their similarity. The algorithm works by iteratively assigning data points to clusters until the within-cluster sum of squares is minimized.</p>
 <p>In multivariate analysis, K-means clustering can be used for a variety of tasks, including:</p>
 <ul>
@@ -1192,12 +1212,16 @@ where:<br>
 <p>Here are some of the disadvantages of using K-means clustering for multivariate analysis:</p>
 <ul>
 <li>It is a non-deterministic algorithm, which means that it may produce different results each time it is run.</li>
-<li>It is sensitive to the choice of the number of clusters.</li>
+<li>It is sensitive to the choice of the number of clusters; for choosing the number of clusters see <a href="#sec-elbow">Glossary&nbsp;7.17</a>.</li>
 <li>It can be difficult to interpret the results of K-means clustering.</li>
 </ul>
 </section>
-<section id="sec-pca" class="level3" data-number="7.16">
-<h3 data-number="7.16" class="anchored" data-anchor-id="sec-pca"><span class="header-section-number">7.16</span> Principal component analysis</h3>
+<section id="sec-elbow" class="level3" data-number="7.17">
+<h3 data-number="7.17" class="anchored" data-anchor-id="sec-elbow"><span class="header-section-number">7.17</span> Number of clusters for k means clustering (elbow method)</h3>
+<p>The elbow method is a popular technique for determining the optimal number of clusters in k-means clustering. It is based on the idea that the total within-cluster sum of squares (WSS) should decrease as the number of clusters increases, but at a certain point, the decrease will start to level off. This point is often considered to be the elbow of the WSS curve, and the corresponding number of clusters is considered to be the optimal number for k-means.</p>
+</section>
+<section id="sec-pca" class="level3" data-number="7.18">
+<h3 data-number="7.18" class="anchored" data-anchor-id="sec-pca"><span class="header-section-number">7.18</span> Principal component analysis</h3>
 <p>Principal component analysis (PCA) is a statistical procedure that uses an orthogonal transformation to convert a set of observations of possibly correlated variables into a set of values of linearly uncorrelated variables called principal components.</p>
 <p>In multivariate analysis, PCA can be used for a variety of tasks, including:</p>
 <ul>
@@ -1226,8 +1250,8 @@ where:<br>
 <li>It can be difficult to interpret the results of PCA.</li>
 </ul>
 </section>
-<section id="sec-NMDS" class="level3" data-number="7.17">
-<h3 data-number="7.17" class="anchored" data-anchor-id="sec-NMDS"><span class="header-section-number">7.17</span> Non-metric Multidimensional Scaling</h3>
+<section id="sec-NMDS" class="level3" data-number="7.19">
+<h3 data-number="7.19" class="anchored" data-anchor-id="sec-NMDS"><span class="header-section-number">7.19</span> Non-metric Multidimensional Scaling</h3>
 <p>Non-metric multidimensional scaling (NMDS) is a multivariate analysis technique that is used to reduce the dimensionality of data while preserving the distances between objects. NMDS is a non-parametric technique, which means that it does not make any assumptions about the distribution of the data. This makes NMDS a versatile technique that can be used with a wide variety of data sets.</p>
 <p>NMDS works by first calculating the distances between all pairs of objects in the data set. These distances can be calculated using any distance metric, such as the Euclidean distance or the Manhattan distance. Once the distances have been calculated, NMDS then finds a configuration of points in a lower-dimensional space (typically two or three dimensions) such that the distances between the points in the lower-dimensional space are as close as possible to the distances in the original data set.</p>
 <p>NMDS can be used for a variety of purposes, including:</p>
@@ -1250,8 +1274,8 @@ where:<br>
 <li>It can be difficult to interpret the results of NMDS, especially if the data set is large or complex.</li>
 </ul>
 <p>Overall, NMDS is a powerful multivariate analysis technique that can be used for a variety of purposes. However, it is important to be aware of the limitations of NMDS before using it.</p>
-<section id="sec-Shepard" class="level4" data-number="7.17.1">
-<h4 data-number="7.17.1" class="anchored" data-anchor-id="sec-Shepard"><span class="header-section-number">7.17.1</span> Shepard Plot</h4>
+<section id="sec-Shepard" class="level4" data-number="7.19.1">
+<h4 data-number="7.19.1" class="anchored" data-anchor-id="sec-Shepard"><span class="header-section-number">7.19.1</span> Shepard Plot</h4>
 <p>A Shepard plot is a type of graph used in statistics to visualize the results of a multidimensional scaling (MDS) analysis. MDS is a statistical technique that is used to reduce the dimensionality of a data set by finding a lower-dimensional representation of the data that preserves the distances between the data points.</p>
 <p>A Shepard plot shows the relationship between the true distances between the data points in the original high-dimensional space and the distances between the data points in the lower-dimensional representation. If the MDS analysis has been successful, the points in the Shepard plot will be well-correlated, and the line will be a straight line. This indicates that the distances between the data points in the lower-dimensional representation are a good approximation of the true distances between the data points in the original high-dimensional space.</p>
 <p>Shepard plots can be used to assess the quality of an MDS analysis. If the points in the Shepard plot are not well-correlated, or if the line is not a straight line, then the MDS analysis may not have been successful. In this case, the analyst may need to try different parameters for the MDS analysis or use a different dimensionality reduction technique.</p>
@@ -1259,8 +1283,8 @@ where:<br>
 <p>Shepard plots can be used to visualize the results of MDS analysis, and to assess the quality of the analysis. They are a useful tool for understanding the relationships between data points in a high-dimensional space.</p>
 </section>
 </section>
-<section id="sec-ANOSIM" class="level3" data-number="7.18">
-<h3 data-number="7.18" class="anchored" data-anchor-id="sec-ANOSIM"><span class="header-section-number">7.18</span> ANOSIM</h3>
+<section id="sec-ANOSIM" class="level3" data-number="7.20">
+<h3 data-number="7.20" class="anchored" data-anchor-id="sec-ANOSIM"><span class="header-section-number">7.20</span> ANOSIM</h3>
 <p>The Analysis of Similarities (ANOSIM) test is a non-parametric statistical test used to determine whether there are significant differences between two or more groups of data. ANOSIM is a multivariate test, meaning that it can be used to compare data sets with more than one variable.</p>
 <p>ANOSIM works by comparing the distances between observations within and between groups. If the distances between observations within groups are smaller than the distances between observations between groups, then the ANOSIM test will be significant. This indicates that there are real differences between the groups of data.</p>
 <p>ANOSIM is a versatile test that can be used in a variety of fields, including ecology, biology, and medicine. It is a powerful tool for identifying and understanding differences between groups of data.</p>
