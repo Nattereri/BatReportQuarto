@@ -1089,7 +1089,7 @@ Transformed_Data %>%
 nMDS_results <- metaMDS(Transformed_Data, distance = "bray")
 
 # extract NMDS scores (x and y coordinates) for plotting
-nMDS_coords = as.tibble(scores(nMDS_results)$sites)
+nMDS_coords = as_tibble(scores(nMDS_results)$sites)
 
 # bind the factors (static location and month back)
 graph_data <- bind_cols(meta_data, nMDS_coords)
@@ -1107,7 +1107,7 @@ graph_data <- bind_cols(meta_data, nMDS_coords)
 nMDS_results <- metaMDS(Transformed_Data, distance = "bray")
 
 # extract NMDS scores (x and y coordinates) for plotting
-nMDS_coords = as.tibble(scores(nMDS_results)$sites)
+nMDS_coords = as_tibble(scores(nMDS_results)$sites)
 
 # bind the factors (static location and month back)
 graph_data <- bind_cols(meta_data, nMDS_coords)

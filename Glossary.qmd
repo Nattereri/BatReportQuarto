@@ -776,7 +776,7 @@ There are many different pre-treatment techniques, but some of the most common i
 
 The specific pre-treatment techniques that are used will depend on the specific data set and the type of multivariate analysis that is being performed. However, in general, pre-treatment is an important step in the multivariate analysis process. It can help to improve the quality of the data and make it more suitable for analysis.
 
-Here are some of the benefits of pre-treating data before multivariate analysis:
+Some of the benefits of pre-treating data before multivariate analysis are:
 
 * It can improve the accuracy of the results.
 * It can make the results more interpretable.
@@ -806,9 +806,9 @@ If you are planning to perform multivariate analysis, it is important to conside
 
 Here are some examples of how these transformations can be used in multivariate analysis:
 
-* In principal component analysis (PCA), the square root transformation is often used to improve the interpretability of the principal components.
+* In principal component analysis (PCA) [Glossary @sec-pca], the square root transformation is often used to improve the interpretability of the principal components.
 * In discriminant analysis, the log(x + 1) transformation is often used to improve the separation between the two groups.
-* In cluster analysis, the presence/absence transformation is often used to improve the compactness of the clusters.
+* In cluster analysis [Glossary @sec-cluster], the presence/absence transformation is often used to improve the compactness of the clusters.
 
 It is important to note that there is no single "best" pre-treatment technique. The best technique to use will depend on the specific data set and the type of multivariate analysis that is being performed. However, the transformations described above are all good starting points.
 
@@ -1004,7 +1004,7 @@ The value of $p$ can be any real number greater than or equal to 1. When $p$ = 1
 
 The Minkowski distance can be used in a variety of multivariate analysis tasks, such as:
 
-* Cluster analysis
+* Cluster analysis [Glossary @sec-cluster]
 * Nearest neighbor search
 * Similarity measures (e.g. PCA [Glossary @sec-pca] and NMDS [Glossary @sec-NMDS])
 
@@ -1106,17 +1106,6 @@ Overall, Bray-Curtis distance is a useful metric for measuring the dissimilarity
 
 The Jaccard distance is a metric that measures the dissimilarity between two sets. It is defined as the complement of the Jaccard similarity coefficient, which is a measure of how similar two sets are.
 
-The Jaccard distance can be calculated as follows:
-
-```
-d(A, B) = 1 - SIM(A, B)
-```
-
-where:
-
-* `A` and `B` are the two sets
-* `SIM(A, B)` is the Jaccard similarity coefficient of `A` and `B`
-
 The Jaccard similarity coefficient is defined as follows:
 
 $$d(A, B) = 1 - \frac{|A \cap B|}{|A \cup B|}$$
@@ -1136,6 +1125,18 @@ Here is an explanation of the equation:
 
 The Jaccard distance is a metric that measures the dissimilarity between two sets. It is defined as the complement of the Jaccard similarity coefficient. The Jaccard distance can be used in multivariate analysis to measure the dissimilarity between two multivariate data sets. This can be useful for tasks such as clustering, classification, and outlier detection.
 
+### Multivariate analysis {#sec-multivar}
+
+Multivariate analysis is a statistical technique that involves analyzing multiple variables at the same time. It is a powerful tool for understanding the relationships between variables and can be used to identify patterns, trends, and outliers in data. Multivariate analysis is used in a wide range of fields, including finance, marketing, social sciences, and medicine.
+
+There are many different types of multivariate analysis, but some of the most common techniques include:
+
+* **Principal component analysis (PCA)**: PCA [Glossary @sec-pca] is a technique for reducing the dimensionality of data by transforming a set of correlated variables into a smaller number of uncorrelated variables. This can be useful for data visualization and for identifying the most important variables in a dataset.
+* **Factor analysis**: Factor analysis is similar to PCA, but it is more focused on identifying the underlying latent variables that are causing the observed correlations between the variables. This can be useful for understanding the causal relationships between variables.
+* **Cluster analysis**: Cluster analysis [Glossary @sec-cluster] is a technique for grouping data points together based on their similarity. This can be useful for identifying different types of customers or for identifying outliers in data.
+* **Discriminant analysis**: Discriminant analysis is a technique for classifying data points into different groups. This can be useful for tasks such as fraud detection and medical diagnosis.
+
+Multivariate analysis can help in decision making by providing a more complete understanding of the data. By analyzing multiple variables at the same time, multivariate analysis can identify patterns and relationships that would be missed by univariate analysis. This information can then be used to make better decisions about things such as marketing campaigns, product development, and risk management.
 
 
 ### Cluster analysis {#sec-cluster}
@@ -1317,9 +1318,11 @@ Linkage (agglomeration) methods are used in hierarchical clustering to merge clu
 
 * **Centroid Linkage:** This method measures the distance between two clusters as the distance between their centroids. This method is similar to average linkage, but it can be more sensitive to outliers.
 
+* **McQuitty Linkage:** Developed by Louis L. McQuitty, is a hierarchical clustering technique that measures the distance between two clusters based on the average distance between pairs of points in each cluster. This method is less sensitive to outliers than other linkage methods, such as complete linkage and single linkage, as it does not consider the maximum or minimum distance between points in the clusters. The McQuitty linkage method is often used in social science research to identify groups of individuals with similar characteristics.
+
 The choice of agglomeration method depends on the specific application and the nature of the data. In general, single linkage is a good choice for data with outliers, while complete linkage is a good choice for data that is well-structured. Average linkage and Ward's method are more versatile and can be used in a wider range of applications. Centroid linkage is a good choice when the data is well-behaved and the clusters are assumed to be spherical.
 
-Below is a table summarising the different agglomeration methods:
+Below is a table summarising the most common agglomeration/linkage methods:
 
 | Method | Description | Advantages | Disadvantages |
 |---|---|---|---|
@@ -1528,3 +1531,25 @@ Dplyr can also be used to perform more complex data manipulation tasks, such as 
 Dplyr is a powerful and versatile package for data manipulation in R and essential for any data scientist or analyst who works with data frames.
 
 For more information see the dplyr documentation: <https://dplyr.tidyverse.org/>
+
+
+### `tidyr` {#sec-tidyr}
+
+`tidyr` is an R package that helps you tidy messy data. It is part of the tidyverse, a collection of packages that are designed to work together to make data science more efficient and reproducible.
+
+`tidyr` provides a set of functions for reshaping data, converting between long and wide formats, nesting and unnesting data, and working with missing values. These functions are designed to be easy to use and understand, even for beginners.
+
+Some examples of what `tidyr` can do:
+
+* **Pivoting:** Convert between long and wide formats. This is useful for data that is in a long format, where each row represents a single observation and each column represents a variable, and you want to convert it to a wide format, where each row represents a single observation and each column represents a value. For example, you could use `tidyr` to convert a data frame that contains information about the number of customers who purchased each product each year to a data frame that contains the total sales for each product each year.
+* **Rectangling:** Turn deeply nested lists into rectangular data frames. This is useful for data that is in a deeply nested format, such as JSON data, and you want to convert it to a rectangular format, where each row represents a single observation and each column represents a variable.
+* **Nesting and unnesting:** Nest or unnest data. Nesting is the process of converting grouped data to a form where each group becomes a single row containing a nested data frame. Unnesting is the opposite of nesting.
+* **Working with missing values:** Handle missing values. `tidyr` provides a number of functions for working with missing values, such as `fill_na()` and `replace_na()`.
+
+If you are working with messy data, `tidyr` is a valuable tool that can help you make your data more tidy and easier to analyze.
+
+To learn more about `tidyr` see:
+
+* The `tidyr` package documentation: [https://cran.r-project.org/web/packages/tidyr/tidyr.pdf](https://cran.r-project.org/web/packages/tidyr/tidyr.pdf)
+* The `tidyr` vignette: [https://cran.r-project.org/doc/contrib/Rossiter-RIntro-ITC.pdf](https://cran.r-project.org/doc/contrib/Rossiter-RIntro-ITC.pdf)
+* The `tidyverse` book: [https://bookdown.org/yihui/bookdown/](https://bookdown.org/yihui/bookdown/)
