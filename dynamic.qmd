@@ -26,6 +26,7 @@ library(ggrepel)
 library(treemapify)
 library(scales)
 library(ggthemes)
+library(glue)
 
 
 library(leaflet)

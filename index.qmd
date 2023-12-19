@@ -5,6 +5,13 @@ format:
      code-summary: "Show the code"
 ---
 
+```{r}
+#| include: false
+
+library(glue)
+```
+
+
 ![Bats face many challenges, making the most of data helps. © Steve Markham ](Images/P1000645.jpg){fig-align="center" width="750"}
 
 _Web site last updated `r format(Sys.time(), '%d %B %Y')`_ 

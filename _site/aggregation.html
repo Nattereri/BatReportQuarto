@@ -92,6 +92,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-submit-button-title": "Submit"
   }
 }</script>
+<link href="site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="site_libs/tabwid-1.1.3/tabwid.js"></script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -241,15 +243,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> DateTime)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
+<div id="tbl-aggtidy" class="anchored">
 
-<div id="pyrkexlevr" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<div id="qzpkxwmddz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#qzpkxwmddz table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-#pyrkexlevr .gt_table {
+#qzpkxwmddz thead, #qzpkxwmddz tbody, #qzpkxwmddz tfoot, #qzpkxwmddz tr, #qzpkxwmddz td, #qzpkxwmddz th {
+  border-style: none;
+}
+
+#qzpkxwmddz p {
+  margin: 0;
+  padding: 0;
+}
+
+#qzpkxwmddz .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -272,24 +287,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#pyrkexlevr .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#pyrkexlevr .gt_caption {
+#qzpkxwmddz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#pyrkexlevr .gt_title {
+#qzpkxwmddz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -301,25 +304,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#pyrkexlevr .gt_subtitle {
+#qzpkxwmddz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
 
-#pyrkexlevr .gt_bottom_border {
+#qzpkxwmddz .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#qzpkxwmddz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#pyrkexlevr .gt_col_headings {
+#qzpkxwmddz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -334,7 +349,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#pyrkexlevr .gt_col_heading {
+#qzpkxwmddz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -354,7 +369,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#pyrkexlevr .gt_column_spanner_outer {
+#qzpkxwmddz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -366,15 +381,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#pyrkexlevr .gt_column_spanner_outer:first-child {
+#qzpkxwmddz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#pyrkexlevr .gt_column_spanner_outer:last-child {
+#qzpkxwmddz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#pyrkexlevr .gt_column_spanner {
+#qzpkxwmddz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -386,7 +401,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#pyrkexlevr .gt_group_heading {
+#qzpkxwmddz .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#qzpkxwmddz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -412,7 +431,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#pyrkexlevr .gt_empty_group_heading {
+#qzpkxwmddz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -427,15 +446,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#pyrkexlevr .gt_from_md > :first-child {
+#qzpkxwmddz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#pyrkexlevr .gt_from_md > :last-child {
+#qzpkxwmddz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#pyrkexlevr .gt_row {
+#qzpkxwmddz .gt_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -454,7 +473,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#pyrkexlevr .gt_stub {
+#qzpkxwmddz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -467,7 +486,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#pyrkexlevr .gt_stub_row_group {
+#qzpkxwmddz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -481,11 +500,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#pyrkexlevr .gt_row_group_first td {
+#qzpkxwmddz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#pyrkexlevr .gt_summary_row {
+#qzpkxwmddz .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#qzpkxwmddz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -495,16 +518,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#pyrkexlevr .gt_first_summary_row {
+#qzpkxwmddz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#pyrkexlevr .gt_first_summary_row.thick {
+#qzpkxwmddz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#pyrkexlevr .gt_last_summary_row {
+#qzpkxwmddz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -514,7 +537,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#pyrkexlevr .gt_grand_summary_row {
+#qzpkxwmddz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -524,7 +547,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#pyrkexlevr .gt_first_grand_summary_row {
+#qzpkxwmddz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -534,11 +557,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#pyrkexlevr .gt_striped {
+#qzpkxwmddz .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#qzpkxwmddz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#pyrkexlevr .gt_table_body {
+#qzpkxwmddz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -547,7 +580,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#pyrkexlevr .gt_footnotes {
+#qzpkxwmddz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -561,30 +594,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#pyrkexlevr .gt_footnote {
+#qzpkxwmddz .gt_footnote {
   margin: 0px;
-  font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#pyrkexlevr .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#pyrkexlevr .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -592,120 +603,130 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#pyrkexlevr .gt_left {
+#qzpkxwmddz .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#qzpkxwmddz .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#qzpkxwmddz .gt_left {
   text-align: left;
 }
 
-#pyrkexlevr .gt_center {
+#qzpkxwmddz .gt_center {
   text-align: center;
 }
 
-#pyrkexlevr .gt_right {
+#qzpkxwmddz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#pyrkexlevr .gt_font_normal {
+#qzpkxwmddz .gt_font_normal {
   font-weight: normal;
 }
 
-#pyrkexlevr .gt_font_bold {
+#qzpkxwmddz .gt_font_bold {
   font-weight: bold;
 }
 
-#pyrkexlevr .gt_font_italic {
+#qzpkxwmddz .gt_font_italic {
   font-style: italic;
 }
 
-#pyrkexlevr .gt_super {
+#qzpkxwmddz .gt_super {
   font-size: 65%;
 }
 
-#pyrkexlevr .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
+#qzpkxwmddz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
-#pyrkexlevr .gt_asterisk {
+#qzpkxwmddz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#pyrkexlevr .gt_indent_1 {
+#qzpkxwmddz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#pyrkexlevr .gt_indent_2 {
+#qzpkxwmddz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#pyrkexlevr .gt_indent_3 {
+#qzpkxwmddz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#pyrkexlevr .gt_indent_4 {
+#qzpkxwmddz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#pyrkexlevr .gt_indent_5 {
+#qzpkxwmddz .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-
-<div id="tbl-aggtidy" class="anchored">
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;1: Statics Bat Survey Data (5 random selected rows)</caption>
-<thead class="gt_col_headings">
-<tr class="header">
-<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Description</th>
-<th id="DateTime" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">DateTime</th>
-<th id="Species" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Species</th>
-<th id="Longitude" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Longitude</th>
-<th id="Latitude" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Latitude</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="Description">Static 4</td>
-<td class="gt_row gt_left" headers="DateTime">2016-06-07 00:01:05</td>
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right" headers="Longitude">-3.591808</td>
-<td class="gt_row gt_right" headers="Latitude">50.33130</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Description">Static 4</td>
-<td class="gt_row gt_left" headers="DateTime">2016-08-05 00:45:21</td>
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right" headers="Longitude">-3.591748</td>
-<td class="gt_row gt_right" headers="Latitude">50.33136</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Description">Static 2</td>
-<td class="gt_row gt_left" headers="DateTime">2016-08-11 21:23:02</td>
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Nyctalus noctula</td>
-<td class="gt_row gt_right" headers="Longitude">-3.592583</td>
-<td class="gt_row gt_right" headers="Latitude">50.33323</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Description">Static 2</td>
-<td class="gt_row gt_left" headers="DateTime">2016-08-14 22:53:21</td>
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Myotis spp.</td>
-<td class="gt_row gt_right" headers="Longitude">-3.592583</td>
-<td class="gt_row gt_right" headers="Latitude">50.33323</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Description">Static 3</td>
-<td class="gt_row gt_left" headers="DateTime">2016-08-17 00:45:15</td>
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Myotis spp.</td>
-<td class="gt_row gt_right" headers="Longitude">-3.593168</td>
-<td class="gt_row gt_right" headers="Latitude">50.33096</td>
-</tr>
-</tbody>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption>Table&nbsp;1:  <p>Statics Bat Survey Data (5 random selected rows)</p> </caption>
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Description">Description</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="DateTime">DateTime</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Species">Species</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Longitude">Longitude</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Latitude">Latitude</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_left">2016-07-27 00:52:29</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Eptesicus serotinus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.591748</td>
+<td headers="Latitude" class="gt_row gt_right">50.33133</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_left">2016-08-01 02:41:19</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.591808</td>
+<td headers="Latitude" class="gt_row gt_right">50.33126</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_left">2016-08-02 00:54:06</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.591748</td>
+<td headers="Latitude" class="gt_row gt_right">50.33120</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_left">2016-08-27 21:51:00</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Barbastella barbastellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.591798</td>
+<td headers="Latitude" class="gt_row gt_right">50.33136</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_left">2016-08-29 03:54:41</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Barbastella barbastellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.591758</td>
+<td headers="Latitude" class="gt_row gt_right">50.33132</td></tr>
+  </tbody>
+  
+  
 </table>
 </div>
-
 </div>
 </div>
 </div>
@@ -752,15 +773,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">2</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
+<div id="tbl-simplecount" class="anchored">
 
-<div id="azvoeslrmu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<div id="wmgvdvakaf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wmgvdvakaf table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-#azvoeslrmu .gt_table {
+#wmgvdvakaf thead, #wmgvdvakaf tbody, #wmgvdvakaf tfoot, #wmgvdvakaf tr, #wmgvdvakaf td, #wmgvdvakaf th {
+  border-style: none;
+}
+
+#wmgvdvakaf p {
+  margin: 0;
+  padding: 0;
+}
+
+#wmgvdvakaf .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -783,24 +817,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#azvoeslrmu .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#azvoeslrmu .gt_caption {
+#wmgvdvakaf .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#azvoeslrmu .gt_title {
+#wmgvdvakaf .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -812,25 +834,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#azvoeslrmu .gt_subtitle {
+#wmgvdvakaf .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
 
-#azvoeslrmu .gt_bottom_border {
+#wmgvdvakaf .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#wmgvdvakaf .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#azvoeslrmu .gt_col_headings {
+#wmgvdvakaf .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -845,7 +879,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#azvoeslrmu .gt_col_heading {
+#wmgvdvakaf .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -865,7 +899,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#azvoeslrmu .gt_column_spanner_outer {
+#wmgvdvakaf .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -877,15 +911,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#azvoeslrmu .gt_column_spanner_outer:first-child {
+#wmgvdvakaf .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#azvoeslrmu .gt_column_spanner_outer:last-child {
+#wmgvdvakaf .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#azvoeslrmu .gt_column_spanner {
+#wmgvdvakaf .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -897,7 +931,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#azvoeslrmu .gt_group_heading {
+#wmgvdvakaf .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#wmgvdvakaf .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -923,7 +961,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#azvoeslrmu .gt_empty_group_heading {
+#wmgvdvakaf .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -938,15 +976,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#azvoeslrmu .gt_from_md > :first-child {
+#wmgvdvakaf .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#azvoeslrmu .gt_from_md > :last-child {
+#wmgvdvakaf .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#azvoeslrmu .gt_row {
+#wmgvdvakaf .gt_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -965,7 +1003,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#azvoeslrmu .gt_stub {
+#wmgvdvakaf .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -978,7 +1016,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#azvoeslrmu .gt_stub_row_group {
+#wmgvdvakaf .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -992,11 +1030,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#azvoeslrmu .gt_row_group_first td {
+#wmgvdvakaf .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#azvoeslrmu .gt_summary_row {
+#wmgvdvakaf .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#wmgvdvakaf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1006,16 +1048,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#azvoeslrmu .gt_first_summary_row {
+#wmgvdvakaf .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#azvoeslrmu .gt_first_summary_row.thick {
+#wmgvdvakaf .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#azvoeslrmu .gt_last_summary_row {
+#wmgvdvakaf .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1025,7 +1067,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#azvoeslrmu .gt_grand_summary_row {
+#wmgvdvakaf .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1035,7 +1077,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#azvoeslrmu .gt_first_grand_summary_row {
+#wmgvdvakaf .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1045,11 +1087,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#azvoeslrmu .gt_striped {
+#wmgvdvakaf .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#wmgvdvakaf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#azvoeslrmu .gt_table_body {
+#wmgvdvakaf .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1058,7 +1110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#azvoeslrmu .gt_footnotes {
+#wmgvdvakaf .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1072,30 +1124,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#azvoeslrmu .gt_footnote {
+#wmgvdvakaf .gt_footnote {
   margin: 0px;
-  font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#azvoeslrmu .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#azvoeslrmu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1103,138 +1133,130 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#azvoeslrmu .gt_left {
+#wmgvdvakaf .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#wmgvdvakaf .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#wmgvdvakaf .gt_left {
   text-align: left;
 }
 
-#azvoeslrmu .gt_center {
+#wmgvdvakaf .gt_center {
   text-align: center;
 }
 
-#azvoeslrmu .gt_right {
+#wmgvdvakaf .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#azvoeslrmu .gt_font_normal {
+#wmgvdvakaf .gt_font_normal {
   font-weight: normal;
 }
 
-#azvoeslrmu .gt_font_bold {
+#wmgvdvakaf .gt_font_bold {
   font-weight: bold;
 }
 
-#azvoeslrmu .gt_font_italic {
+#wmgvdvakaf .gt_font_italic {
   font-style: italic;
 }
 
-#azvoeslrmu .gt_super {
+#wmgvdvakaf .gt_super {
   font-size: 65%;
 }
 
-#azvoeslrmu .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
+#wmgvdvakaf .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
-#azvoeslrmu .gt_asterisk {
+#wmgvdvakaf .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#azvoeslrmu .gt_indent_1 {
+#wmgvdvakaf .gt_indent_1 {
   text-indent: 5px;
 }
 
-#azvoeslrmu .gt_indent_2 {
+#wmgvdvakaf .gt_indent_2 {
   text-indent: 10px;
 }
 
-#azvoeslrmu .gt_indent_3 {
+#wmgvdvakaf .gt_indent_3 {
   text-indent: 15px;
 }
 
-#azvoeslrmu .gt_indent_4 {
+#wmgvdvakaf .gt_indent_4 {
   text-indent: 20px;
 }
 
-#azvoeslrmu .gt_indent_5 {
+#wmgvdvakaf .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-
-<div id="tbl-simplecount" class="anchored">
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;2: A Count by Species</caption>
-<thead class="gt_col_headings">
-<tr class="header">
-<th id="Bat Species" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Bat Species</th>
-<th id="Count" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Count</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="Bat Species" style="font-style: italic">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right" headers="Count">4972</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Bat Species" style="font-style: italic">Myotis spp.</td>
-<td class="gt_row gt_right" headers="Count">435</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Bat Species" style="font-style: italic">Barbastella barbastellus</td>
-<td class="gt_row gt_right" headers="Count">419</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Bat Species" style="font-style: italic">Nyctalus noctula</td>
-<td class="gt_row gt_right" headers="Count">315</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Bat Species" style="font-style: italic">Pipistrellus spp.</td>
-<td class="gt_row gt_right" headers="Count">283</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Bat Species" style="font-style: italic">Rhinolophus ferrumequinum</td>
-<td class="gt_row gt_right" headers="Count">160</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Bat Species" style="font-style: italic">Plecotus spp.</td>
-<td class="gt_row gt_right" headers="Count">136</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Bat Species" style="font-style: italic">Pipistrellus pygmaeus</td>
-<td class="gt_row gt_right" headers="Count">86</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Bat Species" style="font-style: italic">Rhinolophus hipposideros</td>
-<td class="gt_row gt_right" headers="Count">73</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Bat Species" style="font-style: italic">Pipistrellus nathusii</td>
-<td class="gt_row gt_right" headers="Count">32</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Bat Species" style="font-style: italic">Eptesicus serotinus</td>
-<td class="gt_row gt_right" headers="Count">12</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Bat Species" style="font-style: italic">Nyctalus leisleri</td>
-<td class="gt_row gt_right" headers="Count">3</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Bat Species" style="font-style: italic">Myotis nattereri</td>
-<td class="gt_row gt_right" headers="Count">2</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Bat Species" style="font-style: italic">Nyctalus spp.</td>
-<td class="gt_row gt_right" headers="Count">2</td>
-</tr>
-</tbody>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption>Table&nbsp;2:  <p>A Count by Species</p> </caption>
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Bat Species">Bat Species</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Count">Count</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Bat Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Count" class="gt_row gt_right">4972</td></tr>
+    <tr><td headers="Bat Species" class="gt_row gt_left" style="font-style: italic;">Myotis spp.</td>
+<td headers="Count" class="gt_row gt_right">435</td></tr>
+    <tr><td headers="Bat Species" class="gt_row gt_left" style="font-style: italic;">Barbastella barbastellus</td>
+<td headers="Count" class="gt_row gt_right">419</td></tr>
+    <tr><td headers="Bat Species" class="gt_row gt_left" style="font-style: italic;">Nyctalus noctula</td>
+<td headers="Count" class="gt_row gt_right">315</td></tr>
+    <tr><td headers="Bat Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus spp.</td>
+<td headers="Count" class="gt_row gt_right">283</td></tr>
+    <tr><td headers="Bat Species" class="gt_row gt_left" style="font-style: italic;">Rhinolophus ferrumequinum</td>
+<td headers="Count" class="gt_row gt_right">160</td></tr>
+    <tr><td headers="Bat Species" class="gt_row gt_left" style="font-style: italic;">Plecotus spp.</td>
+<td headers="Count" class="gt_row gt_right">136</td></tr>
+    <tr><td headers="Bat Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pygmaeus</td>
+<td headers="Count" class="gt_row gt_right">86</td></tr>
+    <tr><td headers="Bat Species" class="gt_row gt_left" style="font-style: italic;">Rhinolophus hipposideros</td>
+<td headers="Count" class="gt_row gt_right">73</td></tr>
+    <tr><td headers="Bat Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus nathusii</td>
+<td headers="Count" class="gt_row gt_right">32</td></tr>
+    <tr><td headers="Bat Species" class="gt_row gt_left" style="font-style: italic;">Eptesicus serotinus</td>
+<td headers="Count" class="gt_row gt_right">12</td></tr>
+    <tr><td headers="Bat Species" class="gt_row gt_left" style="font-style: italic;">Nyctalus leisleri</td>
+<td headers="Count" class="gt_row gt_right">3</td></tr>
+    <tr><td headers="Bat Species" class="gt_row gt_left" style="font-style: italic;">Myotis nattereri</td>
+<td headers="Count" class="gt_row gt_right">2</td></tr>
+    <tr><td headers="Bat Species" class="gt_row gt_left" style="font-style: italic;">Nyctalus spp.</td>
+<td headers="Count" class="gt_row gt_right">2</td></tr>
+  </tbody>
+  
+  
 </table>
 </div>
-
 </div>
 </div>
 </div>
@@ -1288,7 +1310,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div id="tbl-countannex2" class="anchored">
 
-<div class="tabwid"><style>.cl-f7e21e76{}.cl-f7cf4166{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-f7cf417a{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f7cf417b{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f7d4ecf6{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f7d4ed00{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f7d512b2{width:2in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f7d512b3{width:2.5in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f7d512bc{width:1in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f7d512bd{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f7d512c6{width:2.5in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f7d512d0{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f7d512d1{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f7d512da{width:2.5in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f7d512db{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-f7e21e76"><caption>Table&nbsp;3:  <p>A Count of Annex II Bats Grouped by Month</p> </caption><thead><tr style="overflow-wrap:break-word;"><th class="cl-f7d512b2"><p class="cl-f7d4ecf6"><span class="cl-f7cf4166">Month</span></p></th><th class="cl-f7d512b3"><p class="cl-f7d4ecf6"><span class="cl-f7cf4166">Bat Species</span></p></th><th class="cl-f7d512bc"><p class="cl-f7d4ed00"><span class="cl-f7cf4166">Count</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-f7d512bd"><p class="cl-f7d4ecf6"><span class="cl-f7cf417a">May</span></p></td><td class="cl-f7d512c6"><p class="cl-f7d4ecf6"><span class="cl-f7cf417b">Barbastella barbastellus</span></p></td><td class="cl-f7d512d0"><p class="cl-f7d4ed00"><span class="cl-f7cf417a">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f7d512da"><p class="cl-f7d4ecf6"><span class="cl-f7cf417b">Rhinolophus ferrumequinum</span></p></td><td class="cl-f7d512db"><p class="cl-f7d4ed00"><span class="cl-f7cf417a">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f7d512da"><p class="cl-f7d4ecf6"><span class="cl-f7cf417b">Rhinolophus hipposideros</span></p></td><td class="cl-f7d512db"><p class="cl-f7d4ed00"><span class="cl-f7cf417a">10</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-f7d512d1"><p class="cl-f7d4ecf6"><span class="cl-f7cf417a">June</span></p></td><td class="cl-f7d512da"><p class="cl-f7d4ecf6"><span class="cl-f7cf417b">Barbastella barbastellus</span></p></td><td class="cl-f7d512db"><p class="cl-f7d4ed00"><span class="cl-f7cf417a">198</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f7d512da"><p class="cl-f7d4ecf6"><span class="cl-f7cf417b">Rhinolophus ferrumequinum</span></p></td><td class="cl-f7d512db"><p class="cl-f7d4ed00"><span class="cl-f7cf417a">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f7d512da"><p class="cl-f7d4ecf6"><span class="cl-f7cf417b">Rhinolophus hipposideros</span></p></td><td class="cl-f7d512db"><p class="cl-f7d4ed00"><span class="cl-f7cf417a">11</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-f7d512d1"><p class="cl-f7d4ecf6"><span class="cl-f7cf417a">July</span></p></td><td class="cl-f7d512da"><p class="cl-f7d4ecf6"><span class="cl-f7cf417b">Barbastella barbastellus</span></p></td><td class="cl-f7d512db"><p class="cl-f7d4ed00"><span class="cl-f7cf417a">49</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f7d512da"><p class="cl-f7d4ecf6"><span class="cl-f7cf417b">Rhinolophus ferrumequinum</span></p></td><td class="cl-f7d512db"><p class="cl-f7d4ed00"><span class="cl-f7cf417a">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f7d512da"><p class="cl-f7d4ecf6"><span class="cl-f7cf417b">Rhinolophus hipposideros</span></p></td><td class="cl-f7d512db"><p class="cl-f7d4ed00"><span class="cl-f7cf417a">4</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-f7d512d1"><p class="cl-f7d4ecf6"><span class="cl-f7cf417a">August</span></p></td><td class="cl-f7d512da"><p class="cl-f7d4ecf6"><span class="cl-f7cf417b">Barbastella barbastellus</span></p></td><td class="cl-f7d512db"><p class="cl-f7d4ed00"><span class="cl-f7cf417a">109</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f7d512da"><p class="cl-f7d4ecf6"><span class="cl-f7cf417b">Rhinolophus ferrumequinum</span></p></td><td class="cl-f7d512db"><p class="cl-f7d4ed00"><span class="cl-f7cf417a">31</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f7d512da"><p class="cl-f7d4ecf6"><span class="cl-f7cf417b">Rhinolophus hipposideros</span></p></td><td class="cl-f7d512db"><p class="cl-f7d4ed00"><span class="cl-f7cf417a">23</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-f7d512d1"><p class="cl-f7d4ecf6"><span class="cl-f7cf417a">September</span></p></td><td class="cl-f7d512da"><p class="cl-f7d4ecf6"><span class="cl-f7cf417b">Barbastella barbastellus</span></p></td><td class="cl-f7d512db"><p class="cl-f7d4ed00"><span class="cl-f7cf417a">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f7d512da"><p class="cl-f7d4ecf6"><span class="cl-f7cf417b">Rhinolophus ferrumequinum</span></p></td><td class="cl-f7d512db"><p class="cl-f7d4ed00"><span class="cl-f7cf417a">64</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f7d512da"><p class="cl-f7d4ecf6"><span class="cl-f7cf417b">Rhinolophus hipposideros</span></p></td><td class="cl-f7d512db"><p class="cl-f7d4ed00"><span class="cl-f7cf417a">17</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-f7d512d1"><p class="cl-f7d4ecf6"><span class="cl-f7cf417a">October</span></p></td><td class="cl-f7d512da"><p class="cl-f7d4ecf6"><span class="cl-f7cf417b">Barbastella barbastellus</span></p></td><td class="cl-f7d512db"><p class="cl-f7d4ed00"><span class="cl-f7cf417a">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f7d512da"><p class="cl-f7d4ecf6"><span class="cl-f7cf417b">Rhinolophus ferrumequinum</span></p></td><td class="cl-f7d512db"><p class="cl-f7d4ed00"><span class="cl-f7cf417a">2</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f7d512da"><p class="cl-f7d4ecf6"><span class="cl-f7cf417b">Rhinolophus hipposideros</span></p></td><td class="cl-f7d512db"><p class="cl-f7d4ed00"><span class="cl-f7cf417a">8</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-5d1b87d2{}.cl-5d03c584{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-5d03c598{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-5d03c599{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-5d09ca56{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-5d09ca6a{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-5d09f15c{width:2in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d09f166{width:2.5in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d09f170{width:1in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d09f171{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d09f172{width:2.5in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d09f17a{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d09f17b{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d09f17c{width:2.5in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d09f184{width:1in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-5d1b87d2"><caption>Table&nbsp;3:  <p>A Count of Annex II Bats Grouped by Month</p> </caption><thead><tr style="overflow-wrap:break-word;"><th class="cl-5d09f15c"><p class="cl-5d09ca56"><span class="cl-5d03c584">Month</span></p></th><th class="cl-5d09f166"><p class="cl-5d09ca56"><span class="cl-5d03c584">Bat Species</span></p></th><th class="cl-5d09f170"><p class="cl-5d09ca6a"><span class="cl-5d03c584">Count</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-5d09f171"><p class="cl-5d09ca56"><span class="cl-5d03c598">May</span></p></td><td class="cl-5d09f172"><p class="cl-5d09ca56"><span class="cl-5d03c599">Barbastella barbastellus</span></p></td><td class="cl-5d09f17a"><p class="cl-5d09ca6a"><span class="cl-5d03c598">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d09f17c"><p class="cl-5d09ca56"><span class="cl-5d03c599">Rhinolophus ferrumequinum</span></p></td><td class="cl-5d09f184"><p class="cl-5d09ca6a"><span class="cl-5d03c598">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d09f17c"><p class="cl-5d09ca56"><span class="cl-5d03c599">Rhinolophus hipposideros</span></p></td><td class="cl-5d09f184"><p class="cl-5d09ca6a"><span class="cl-5d03c598">10</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-5d09f17b"><p class="cl-5d09ca56"><span class="cl-5d03c598">June</span></p></td><td class="cl-5d09f17c"><p class="cl-5d09ca56"><span class="cl-5d03c599">Barbastella barbastellus</span></p></td><td class="cl-5d09f184"><p class="cl-5d09ca6a"><span class="cl-5d03c598">198</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d09f17c"><p class="cl-5d09ca56"><span class="cl-5d03c599">Rhinolophus ferrumequinum</span></p></td><td class="cl-5d09f184"><p class="cl-5d09ca6a"><span class="cl-5d03c598">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d09f17c"><p class="cl-5d09ca56"><span class="cl-5d03c599">Rhinolophus hipposideros</span></p></td><td class="cl-5d09f184"><p class="cl-5d09ca6a"><span class="cl-5d03c598">11</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-5d09f17b"><p class="cl-5d09ca56"><span class="cl-5d03c598">July</span></p></td><td class="cl-5d09f17c"><p class="cl-5d09ca56"><span class="cl-5d03c599">Barbastella barbastellus</span></p></td><td class="cl-5d09f184"><p class="cl-5d09ca6a"><span class="cl-5d03c598">49</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d09f17c"><p class="cl-5d09ca56"><span class="cl-5d03c599">Rhinolophus ferrumequinum</span></p></td><td class="cl-5d09f184"><p class="cl-5d09ca6a"><span class="cl-5d03c598">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d09f17c"><p class="cl-5d09ca56"><span class="cl-5d03c599">Rhinolophus hipposideros</span></p></td><td class="cl-5d09f184"><p class="cl-5d09ca6a"><span class="cl-5d03c598">4</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-5d09f17b"><p class="cl-5d09ca56"><span class="cl-5d03c598">August</span></p></td><td class="cl-5d09f17c"><p class="cl-5d09ca56"><span class="cl-5d03c599">Barbastella barbastellus</span></p></td><td class="cl-5d09f184"><p class="cl-5d09ca6a"><span class="cl-5d03c598">109</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d09f17c"><p class="cl-5d09ca56"><span class="cl-5d03c599">Rhinolophus ferrumequinum</span></p></td><td class="cl-5d09f184"><p class="cl-5d09ca6a"><span class="cl-5d03c598">31</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d09f17c"><p class="cl-5d09ca56"><span class="cl-5d03c599">Rhinolophus hipposideros</span></p></td><td class="cl-5d09f184"><p class="cl-5d09ca6a"><span class="cl-5d03c598">23</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-5d09f17b"><p class="cl-5d09ca56"><span class="cl-5d03c598">September</span></p></td><td class="cl-5d09f17c"><p class="cl-5d09ca56"><span class="cl-5d03c599">Barbastella barbastellus</span></p></td><td class="cl-5d09f184"><p class="cl-5d09ca6a"><span class="cl-5d03c598">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d09f17c"><p class="cl-5d09ca56"><span class="cl-5d03c599">Rhinolophus ferrumequinum</span></p></td><td class="cl-5d09f184"><p class="cl-5d09ca6a"><span class="cl-5d03c598">64</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d09f17c"><p class="cl-5d09ca56"><span class="cl-5d03c599">Rhinolophus hipposideros</span></p></td><td class="cl-5d09f184"><p class="cl-5d09ca6a"><span class="cl-5d03c598">17</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-5d09f17b"><p class="cl-5d09ca56"><span class="cl-5d03c598">October</span></p></td><td class="cl-5d09f17c"><p class="cl-5d09ca56"><span class="cl-5d03c599">Barbastella barbastellus</span></p></td><td class="cl-5d09f184"><p class="cl-5d09ca6a"><span class="cl-5d03c598">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d09f17c"><p class="cl-5d09ca56"><span class="cl-5d03c599">Rhinolophus ferrumequinum</span></p></td><td class="cl-5d09f184"><p class="cl-5d09ca6a"><span class="cl-5d03c598">2</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d09f17c"><p class="cl-5d09ca56"><span class="cl-5d03c599">Rhinolophus hipposideros</span></p></td><td class="cl-5d09f184"><p class="cl-5d09ca6a"><span class="cl-5d03c598">8</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </div>
@@ -1355,7 +1377,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output-display">
 <div id="tbl-countannex2c" class="anchored">
 
-<div class="tabwid"><style>.cl-f888dbc6{}.cl-f879a93a{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-f879a94e{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f879a94f{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f880042e{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f8800442{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f8802562{width:2in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f880256c{width:2.5in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f8802576{width:1in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f8802577{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f8802578{width:2.5in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f8802580{width:1in;background-color:rgba(255, 250, 248, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f880258a{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f880258b{width:2.5in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f8802594{width:1in;background-color:rgba(255, 249, 246, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f8802595{width:1in;background-color:rgba(255, 248, 244, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f880259e{width:1in;background-color:rgba(238, 64, 0, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f880259f{width:1in;background-color:rgba(255, 214, 197, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f88025a8{width:1in;background-color:rgba(255, 247, 243, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f88025a9{width:1in;background-color:rgba(255, 212, 194, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f88025b2{width:1in;background-color:rgba(255, 250, 248, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f88025b3{width:1in;background-color:rgba(255, 253, 252, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f88025bc{width:1in;background-color:rgba(255, 157, 120, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f88025bd{width:1in;background-color:rgba(255, 229, 217, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f88025be{width:1in;background-color:rgba(255, 236, 228, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f88025c6{width:1in;background-color:rgba(255, 199, 175, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f88025c7{width:1in;background-color:rgba(255, 241, 235, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f88025d0{width:1in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f88025d1{width:1in;background-color:rgba(255, 250, 247, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-f888dbc6"><caption>Table&nbsp;4:  <p>A Count (Highlighted) of Annex II Bats Grouped by Month</p> </caption><thead><tr style="overflow-wrap:break-word;"><th class="cl-f8802562"><p class="cl-f880042e"><span class="cl-f879a93a">Month</span></p></th><th class="cl-f880256c"><p class="cl-f880042e"><span class="cl-f879a93a">Bat Species</span></p></th><th class="cl-f8802576"><p class="cl-f8800442"><span class="cl-f879a93a">Count</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-f8802577"><p class="cl-f880042e"><span class="cl-f879a94e">May</span></p></td><td class="cl-f8802578"><p class="cl-f880042e"><span class="cl-f879a94f">Barbastella barbastellus</span></p></td><td class="cl-f8802580"><p class="cl-f8800442"><span class="cl-f879a94e">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f880258b"><p class="cl-f880042e"><span class="cl-f879a94f">Rhinolophus ferrumequinum</span></p></td><td class="cl-f8802594"><p class="cl-f8800442"><span class="cl-f879a94e">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f880258b"><p class="cl-f880042e"><span class="cl-f879a94f">Rhinolophus hipposideros</span></p></td><td class="cl-f8802595"><p class="cl-f8800442"><span class="cl-f879a94e">10</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-f880258a"><p class="cl-f880042e"><span class="cl-f879a94e">June</span></p></td><td class="cl-f880258b"><p class="cl-f880042e"><span class="cl-f879a94f">Barbastella barbastellus</span></p></td><td class="cl-f880259e"><p class="cl-f8800442"><span class="cl-f879a94e">198</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f880258b"><p class="cl-f880042e"><span class="cl-f879a94f">Rhinolophus ferrumequinum</span></p></td><td class="cl-f880259f"><p class="cl-f8800442"><span class="cl-f879a94e">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f880258b"><p class="cl-f880042e"><span class="cl-f879a94f">Rhinolophus hipposideros</span></p></td><td class="cl-f88025a8"><p class="cl-f8800442"><span class="cl-f879a94e">11</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-f880258a"><p class="cl-f880042e"><span class="cl-f879a94e">July</span></p></td><td class="cl-f880258b"><p class="cl-f880042e"><span class="cl-f879a94f">Barbastella barbastellus</span></p></td><td class="cl-f88025a9"><p class="cl-f8800442"><span class="cl-f879a94e">49</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f880258b"><p class="cl-f880042e"><span class="cl-f879a94f">Rhinolophus ferrumequinum</span></p></td><td class="cl-f88025b2"><p class="cl-f8800442"><span class="cl-f879a94e">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f880258b"><p class="cl-f880042e"><span class="cl-f879a94f">Rhinolophus hipposideros</span></p></td><td class="cl-f88025b3"><p class="cl-f8800442"><span class="cl-f879a94e">4</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-f880258a"><p class="cl-f880042e"><span class="cl-f879a94e">August</span></p></td><td class="cl-f880258b"><p class="cl-f880042e"><span class="cl-f879a94f">Barbastella barbastellus</span></p></td><td class="cl-f88025bc"><p class="cl-f8800442"><span class="cl-f879a94e">109</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f880258b"><p class="cl-f880042e"><span class="cl-f879a94f">Rhinolophus ferrumequinum</span></p></td><td class="cl-f88025bd"><p class="cl-f8800442"><span class="cl-f879a94e">31</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f880258b"><p class="cl-f880042e"><span class="cl-f879a94f">Rhinolophus hipposideros</span></p></td><td class="cl-f88025be"><p class="cl-f8800442"><span class="cl-f879a94e">23</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-f880258a"><p class="cl-f880042e"><span class="cl-f879a94e">September</span></p></td><td class="cl-f880258b"><p class="cl-f880042e"><span class="cl-f879a94f">Barbastella barbastellus</span></p></td><td class="cl-f8802594"><p class="cl-f8800442"><span class="cl-f879a94e">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f880258b"><p class="cl-f880042e"><span class="cl-f879a94f">Rhinolophus ferrumequinum</span></p></td><td class="cl-f88025c6"><p class="cl-f8800442"><span class="cl-f879a94e">64</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f880258b"><p class="cl-f880042e"><span class="cl-f879a94f">Rhinolophus hipposideros</span></p></td><td class="cl-f88025c7"><p class="cl-f8800442"><span class="cl-f879a94e">17</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-f880258a"><p class="cl-f880042e"><span class="cl-f879a94e">October</span></p></td><td class="cl-f880258b"><p class="cl-f880042e"><span class="cl-f879a94f">Barbastella barbastellus</span></p></td><td class="cl-f880259f"><p class="cl-f8800442"><span class="cl-f879a94e">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f880258b"><p class="cl-f880042e"><span class="cl-f879a94f">Rhinolophus ferrumequinum</span></p></td><td class="cl-f88025d0"><p class="cl-f8800442"><span class="cl-f879a94e">2</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f880258b"><p class="cl-f880042e"><span class="cl-f879a94f">Rhinolophus hipposideros</span></p></td><td class="cl-f88025d1"><p class="cl-f8800442"><span class="cl-f879a94e">8</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-5d790a7e{}.cl-5d630710{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-5d63071a{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-5d630724{font-family:'Arial';font-size:12pt;font-weight:normal;font-style:italic;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-5d696826{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-5d69683a{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-5d698a5e{width:2in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d698a68{width:2.5in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d698a69{width:1in;background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d698a72{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d698a73{width:2.5in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d698a7c{width:1in;background-color:rgba(255, 250, 248, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d698a7d{width:2in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d698a7e{width:2.5in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d698a86{width:1in;background-color:rgba(255, 249, 246, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d698a87{width:1in;background-color:rgba(255, 248, 244, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d698a90{width:1in;background-color:rgba(238, 64, 0, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d698a91{width:1in;background-color:rgba(255, 214, 197, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d698a9a{width:1in;background-color:rgba(255, 247, 243, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d698a9b{width:1in;background-color:rgba(255, 212, 194, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d698aa4{width:1in;background-color:rgba(255, 250, 248, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d698aa5{width:1in;background-color:rgba(255, 253, 252, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d698aae{width:1in;background-color:rgba(255, 157, 120, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d698aaf{width:1in;background-color:rgba(255, 229, 217, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d698ab8{width:1in;background-color:rgba(255, 236, 228, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d698ab9{width:1in;background-color:rgba(255, 199, 175, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d698aba{width:1in;background-color:rgba(255, 241, 235, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d698ac2{width:1in;background-color:rgba(255, 255, 255, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5d698ac3{width:1in;background-color:rgba(255, 250, 247, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(0, 0, 0, 1.00);border-top: 1pt solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-5d790a7e"><caption>Table&nbsp;4:  <p>A Count (Highlighted) of Annex II Bats Grouped by Month</p> </caption><thead><tr style="overflow-wrap:break-word;"><th class="cl-5d698a5e"><p class="cl-5d696826"><span class="cl-5d630710">Month</span></p></th><th class="cl-5d698a68"><p class="cl-5d696826"><span class="cl-5d630710">Bat Species</span></p></th><th class="cl-5d698a69"><p class="cl-5d69683a"><span class="cl-5d630710">Count</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-5d698a72"><p class="cl-5d696826"><span class="cl-5d63071a">May</span></p></td><td class="cl-5d698a73"><p class="cl-5d696826"><span class="cl-5d630724">Barbastella barbastellus</span></p></td><td class="cl-5d698a7c"><p class="cl-5d69683a"><span class="cl-5d63071a">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d698a7e"><p class="cl-5d696826"><span class="cl-5d630724">Rhinolophus ferrumequinum</span></p></td><td class="cl-5d698a86"><p class="cl-5d69683a"><span class="cl-5d63071a">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d698a7e"><p class="cl-5d696826"><span class="cl-5d630724">Rhinolophus hipposideros</span></p></td><td class="cl-5d698a87"><p class="cl-5d69683a"><span class="cl-5d63071a">10</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-5d698a7d"><p class="cl-5d696826"><span class="cl-5d63071a">June</span></p></td><td class="cl-5d698a7e"><p class="cl-5d696826"><span class="cl-5d630724">Barbastella barbastellus</span></p></td><td class="cl-5d698a90"><p class="cl-5d69683a"><span class="cl-5d63071a">198</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d698a7e"><p class="cl-5d696826"><span class="cl-5d630724">Rhinolophus ferrumequinum</span></p></td><td class="cl-5d698a91"><p class="cl-5d69683a"><span class="cl-5d63071a">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d698a7e"><p class="cl-5d696826"><span class="cl-5d630724">Rhinolophus hipposideros</span></p></td><td class="cl-5d698a9a"><p class="cl-5d69683a"><span class="cl-5d63071a">11</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-5d698a7d"><p class="cl-5d696826"><span class="cl-5d63071a">July</span></p></td><td class="cl-5d698a7e"><p class="cl-5d696826"><span class="cl-5d630724">Barbastella barbastellus</span></p></td><td class="cl-5d698a9b"><p class="cl-5d69683a"><span class="cl-5d63071a">49</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d698a7e"><p class="cl-5d696826"><span class="cl-5d630724">Rhinolophus ferrumequinum</span></p></td><td class="cl-5d698aa4"><p class="cl-5d69683a"><span class="cl-5d63071a">7</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d698a7e"><p class="cl-5d696826"><span class="cl-5d630724">Rhinolophus hipposideros</span></p></td><td class="cl-5d698aa5"><p class="cl-5d69683a"><span class="cl-5d63071a">4</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-5d698a7d"><p class="cl-5d696826"><span class="cl-5d63071a">August</span></p></td><td class="cl-5d698a7e"><p class="cl-5d696826"><span class="cl-5d630724">Barbastella barbastellus</span></p></td><td class="cl-5d698aae"><p class="cl-5d69683a"><span class="cl-5d63071a">109</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d698a7e"><p class="cl-5d696826"><span class="cl-5d630724">Rhinolophus ferrumequinum</span></p></td><td class="cl-5d698aaf"><p class="cl-5d69683a"><span class="cl-5d63071a">31</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d698a7e"><p class="cl-5d696826"><span class="cl-5d630724">Rhinolophus hipposideros</span></p></td><td class="cl-5d698ab8"><p class="cl-5d69683a"><span class="cl-5d63071a">23</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-5d698a7d"><p class="cl-5d696826"><span class="cl-5d63071a">September</span></p></td><td class="cl-5d698a7e"><p class="cl-5d696826"><span class="cl-5d630724">Barbastella barbastellus</span></p></td><td class="cl-5d698a86"><p class="cl-5d69683a"><span class="cl-5d63071a">9</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d698a7e"><p class="cl-5d696826"><span class="cl-5d630724">Rhinolophus ferrumequinum</span></p></td><td class="cl-5d698ab9"><p class="cl-5d69683a"><span class="cl-5d63071a">64</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d698a7e"><p class="cl-5d696826"><span class="cl-5d630724">Rhinolophus hipposideros</span></p></td><td class="cl-5d698aba"><p class="cl-5d69683a"><span class="cl-5d63071a">17</span></p></td></tr><tr style="overflow-wrap:break-word;"><td rowspan="3" class="cl-5d698a7d"><p class="cl-5d696826"><span class="cl-5d63071a">October</span></p></td><td class="cl-5d698a7e"><p class="cl-5d696826"><span class="cl-5d630724">Barbastella barbastellus</span></p></td><td class="cl-5d698a91"><p class="cl-5d69683a"><span class="cl-5d63071a">47</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d698a7e"><p class="cl-5d696826"><span class="cl-5d630724">Rhinolophus ferrumequinum</span></p></td><td class="cl-5d698ac2"><p class="cl-5d69683a"><span class="cl-5d63071a">2</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5d698a7e"><p class="cl-5d696826"><span class="cl-5d630724">Rhinolophus hipposideros</span></p></td><td class="cl-5d698ac3"><p class="cl-5d69683a"><span class="cl-5d63071a">8</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </div>
@@ -1402,15 +1424,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">2</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
+<div id="tbl-sumstatcount" class="anchored">
 
-<div id="nxcxichjtu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<div id="ijkgieatbg" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#ijkgieatbg table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-#nxcxichjtu .gt_table {
+#ijkgieatbg thead, #ijkgieatbg tbody, #ijkgieatbg tfoot, #ijkgieatbg tr, #ijkgieatbg td, #ijkgieatbg th {
+  border-style: none;
+}
+
+#ijkgieatbg p {
+  margin: 0;
+  padding: 0;
+}
+
+#ijkgieatbg .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -1433,24 +1468,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#nxcxichjtu .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#nxcxichjtu .gt_caption {
+#ijkgieatbg .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#nxcxichjtu .gt_title {
+#ijkgieatbg .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1462,25 +1485,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#nxcxichjtu .gt_subtitle {
+#ijkgieatbg .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
 
-#nxcxichjtu .gt_bottom_border {
+#ijkgieatbg .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#ijkgieatbg .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#nxcxichjtu .gt_col_headings {
+#ijkgieatbg .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1495,7 +1530,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#nxcxichjtu .gt_col_heading {
+#ijkgieatbg .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1515,7 +1550,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#nxcxichjtu .gt_column_spanner_outer {
+#ijkgieatbg .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1527,15 +1562,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#nxcxichjtu .gt_column_spanner_outer:first-child {
+#ijkgieatbg .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#nxcxichjtu .gt_column_spanner_outer:last-child {
+#ijkgieatbg .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#nxcxichjtu .gt_column_spanner {
+#ijkgieatbg .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1547,7 +1582,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#nxcxichjtu .gt_group_heading {
+#ijkgieatbg .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#ijkgieatbg .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1573,7 +1612,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#nxcxichjtu .gt_empty_group_heading {
+#ijkgieatbg .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1588,15 +1627,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#nxcxichjtu .gt_from_md > :first-child {
+#ijkgieatbg .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#nxcxichjtu .gt_from_md > :last-child {
+#ijkgieatbg .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#nxcxichjtu .gt_row {
+#ijkgieatbg .gt_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -1615,7 +1654,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#nxcxichjtu .gt_stub {
+#ijkgieatbg .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1628,7 +1667,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#nxcxichjtu .gt_stub_row_group {
+#ijkgieatbg .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1642,11 +1681,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#nxcxichjtu .gt_row_group_first td {
+#ijkgieatbg .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#nxcxichjtu .gt_summary_row {
+#ijkgieatbg .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#ijkgieatbg .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1656,16 +1699,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#nxcxichjtu .gt_first_summary_row {
+#ijkgieatbg .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#nxcxichjtu .gt_first_summary_row.thick {
+#ijkgieatbg .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#nxcxichjtu .gt_last_summary_row {
+#ijkgieatbg .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1675,7 +1718,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#nxcxichjtu .gt_grand_summary_row {
+#ijkgieatbg .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1685,7 +1728,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#nxcxichjtu .gt_first_grand_summary_row {
+#ijkgieatbg .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1695,11 +1738,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#nxcxichjtu .gt_striped {
+#ijkgieatbg .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#ijkgieatbg .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#nxcxichjtu .gt_table_body {
+#ijkgieatbg .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1708,7 +1761,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#nxcxichjtu .gt_footnotes {
+#ijkgieatbg .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1722,30 +1775,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#nxcxichjtu .gt_footnote {
+#ijkgieatbg .gt_footnote {
   margin: 0px;
-  font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#nxcxichjtu .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#nxcxichjtu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1753,150 +1784,160 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#nxcxichjtu .gt_left {
+#ijkgieatbg .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#ijkgieatbg .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#ijkgieatbg .gt_left {
   text-align: left;
 }
 
-#nxcxichjtu .gt_center {
+#ijkgieatbg .gt_center {
   text-align: center;
 }
 
-#nxcxichjtu .gt_right {
+#ijkgieatbg .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#nxcxichjtu .gt_font_normal {
+#ijkgieatbg .gt_font_normal {
   font-weight: normal;
 }
 
-#nxcxichjtu .gt_font_bold {
+#ijkgieatbg .gt_font_bold {
   font-weight: bold;
 }
 
-#nxcxichjtu .gt_font_italic {
+#ijkgieatbg .gt_font_italic {
   font-style: italic;
 }
 
-#nxcxichjtu .gt_super {
+#ijkgieatbg .gt_super {
   font-size: 65%;
 }
 
-#nxcxichjtu .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
+#ijkgieatbg .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
-#nxcxichjtu .gt_asterisk {
+#ijkgieatbg .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#nxcxichjtu .gt_indent_1 {
+#ijkgieatbg .gt_indent_1 {
   text-indent: 5px;
 }
 
-#nxcxichjtu .gt_indent_2 {
+#ijkgieatbg .gt_indent_2 {
   text-indent: 10px;
 }
 
-#nxcxichjtu .gt_indent_3 {
+#ijkgieatbg .gt_indent_3 {
   text-indent: 15px;
 }
 
-#nxcxichjtu .gt_indent_4 {
+#ijkgieatbg .gt_indent_4 {
   text-indent: 20px;
 }
 
-#nxcxichjtu .gt_indent_5 {
+#ijkgieatbg .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-
-<div id="tbl-sumstatcount" class="anchored">
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;5: Common Pipstrelle Observations (Passes) at the Static Locations</caption>
-<thead class="gt_col_headings">
-<tr class="header">
-<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Description</th>
-<th id="min" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">min</th>
-<th id="Q1" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Q1</th>
-<th id="median" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">median</th>
-<th id="Q3" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Q3</th>
-<th id="max" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">max</th>
-<th id="mean" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">mean</th>
-<th id="sd" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">sd</th>
-<th id="n" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">n</th>
-<th id="missing" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">missing</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="Description">Static 1</td>
-<td class="gt_row gt_right" headers="min">1</td>
-<td class="gt_row gt_right" headers="Q1">1.0</td>
-<td class="gt_row gt_right" headers="median" style="background-color: #FFFDE7; color: #000000">2</td>
-<td class="gt_row gt_right" headers="Q3">3.5</td>
-<td class="gt_row gt_right" headers="max">73</td>
-<td class="gt_row gt_right" headers="mean">6.391304</td>
-<td class="gt_row gt_right" headers="sd">15.570190</td>
-<td class="gt_row gt_right" headers="n">23</td>
-<td class="gt_row gt_right" headers="missing">0</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Description">Static 2</td>
-<td class="gt_row gt_right" headers="min">1</td>
-<td class="gt_row gt_right" headers="Q1">6.0</td>
-<td class="gt_row gt_right" headers="median" style="background-color: #FFF9C6; color: #000000">10</td>
-<td class="gt_row gt_right" headers="Q3">17.5</td>
-<td class="gt_row gt_right" headers="max">42</td>
-<td class="gt_row gt_right" headers="mean">12.031746</td>
-<td class="gt_row gt_right" headers="sd">8.820738</td>
-<td class="gt_row gt_right" headers="n">63</td>
-<td class="gt_row gt_right" headers="missing">0</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Description">Static 3</td>
-<td class="gt_row gt_right" headers="min">1</td>
-<td class="gt_row gt_right" headers="Q1">3.5</td>
-<td class="gt_row gt_right" headers="median" style="background-color: #FFFBD6; color: #000000">6</td>
-<td class="gt_row gt_right" headers="Q3">11.0</td>
-<td class="gt_row gt_right" headers="max">40</td>
-<td class="gt_row gt_right" headers="mean">9.740741</td>
-<td class="gt_row gt_right" headers="sd">10.323955</td>
-<td class="gt_row gt_right" headers="n">27</td>
-<td class="gt_row gt_right" headers="missing">0</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Description">Static 4</td>
-<td class="gt_row gt_right" headers="min">10</td>
-<td class="gt_row gt_right" headers="Q1">33.5</td>
-<td class="gt_row gt_right" headers="median" style="background-color: #F57F17; color: #FFFFFF">78</td>
-<td class="gt_row gt_right" headers="Q3">155.5</td>
-<td class="gt_row gt_right" headers="max">438</td>
-<td class="gt_row gt_right" headers="mean">115.129032</td>
-<td class="gt_row gt_right" headers="sd">121.519749</td>
-<td class="gt_row gt_right" headers="n">31</td>
-<td class="gt_row gt_right" headers="missing">0</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Description">Static 5</td>
-<td class="gt_row gt_right" headers="min">1</td>
-<td class="gt_row gt_right" headers="Q1">4.0</td>
-<td class="gt_row gt_right" headers="median" style="background-color: #FFFBD2; color: #000000">7</td>
-<td class="gt_row gt_right" headers="Q3">9.0</td>
-<td class="gt_row gt_right" headers="max">31</td>
-<td class="gt_row gt_right" headers="mean">8.103448</td>
-<td class="gt_row gt_right" headers="sd">6.586484</td>
-<td class="gt_row gt_right" headers="n">29</td>
-<td class="gt_row gt_right" headers="missing">0</td>
-</tr>
-</tbody>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption>Table&nbsp;5:  <p>Common Pipstrelle Observations (Passes) at the Static Locations</p> </caption>
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Description">Description</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="min">min</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Q1">Q1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="median">median</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Q3">Q3</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="max">max</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="mean">mean</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="sd">sd</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="n">n</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="missing">missing</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Description" class="gt_row gt_left">Static 1</td>
+<td headers="min" class="gt_row gt_right">1</td>
+<td headers="Q1" class="gt_row gt_right">1.0</td>
+<td headers="median" class="gt_row gt_right" style="background-color: #FFFDE7; color: #000000;">2</td>
+<td headers="Q3" class="gt_row gt_right">3.5</td>
+<td headers="max" class="gt_row gt_right">73</td>
+<td headers="mean" class="gt_row gt_right">6.391304</td>
+<td headers="sd" class="gt_row gt_right">15.570190</td>
+<td headers="n" class="gt_row gt_right">23</td>
+<td headers="missing" class="gt_row gt_right">0</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 2</td>
+<td headers="min" class="gt_row gt_right">1</td>
+<td headers="Q1" class="gt_row gt_right">6.0</td>
+<td headers="median" class="gt_row gt_right" style="background-color: #FFF9C6; color: #000000;">10</td>
+<td headers="Q3" class="gt_row gt_right">17.5</td>
+<td headers="max" class="gt_row gt_right">42</td>
+<td headers="mean" class="gt_row gt_right">12.031746</td>
+<td headers="sd" class="gt_row gt_right">8.820738</td>
+<td headers="n" class="gt_row gt_right">63</td>
+<td headers="missing" class="gt_row gt_right">0</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 3</td>
+<td headers="min" class="gt_row gt_right">1</td>
+<td headers="Q1" class="gt_row gt_right">3.5</td>
+<td headers="median" class="gt_row gt_right" style="background-color: #FFFBD6; color: #000000;">6</td>
+<td headers="Q3" class="gt_row gt_right">11.0</td>
+<td headers="max" class="gt_row gt_right">40</td>
+<td headers="mean" class="gt_row gt_right">9.740741</td>
+<td headers="sd" class="gt_row gt_right">10.323955</td>
+<td headers="n" class="gt_row gt_right">27</td>
+<td headers="missing" class="gt_row gt_right">0</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="min" class="gt_row gt_right">10</td>
+<td headers="Q1" class="gt_row gt_right">33.5</td>
+<td headers="median" class="gt_row gt_right" style="background-color: #F57F17; color: #FFFFFF;">78</td>
+<td headers="Q3" class="gt_row gt_right">155.5</td>
+<td headers="max" class="gt_row gt_right">438</td>
+<td headers="mean" class="gt_row gt_right">115.129032</td>
+<td headers="sd" class="gt_row gt_right">121.519749</td>
+<td headers="n" class="gt_row gt_right">31</td>
+<td headers="missing" class="gt_row gt_right">0</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 5</td>
+<td headers="min" class="gt_row gt_right">1</td>
+<td headers="Q1" class="gt_row gt_right">4.0</td>
+<td headers="median" class="gt_row gt_right" style="background-color: #FFFBD2; color: #000000;">7</td>
+<td headers="Q3" class="gt_row gt_right">9.0</td>
+<td headers="max" class="gt_row gt_right">31</td>
+<td headers="mean" class="gt_row gt_right">8.103448</td>
+<td headers="sd" class="gt_row gt_right">6.586484</td>
+<td headers="n" class="gt_row gt_right">29</td>
+<td headers="missing" class="gt_row gt_right">0</td></tr>
+  </tbody>
+  
+  
 </table>
 </div>
-
 </div>
 </div>
 </div>
@@ -1967,15 +2008,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-61"><a href="#cb6-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">2</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
+<div id="tbl-monspec" class="anchored">
 
-<div id="exsuiehgca" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<div id="gulclqozhc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gulclqozhc table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-#exsuiehgca .gt_table {
+#gulclqozhc thead, #gulclqozhc tbody, #gulclqozhc tfoot, #gulclqozhc tr, #gulclqozhc td, #gulclqozhc th {
+  border-style: none;
+}
+
+#gulclqozhc p {
+  margin: 0;
+  padding: 0;
+}
+
+#gulclqozhc .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -1998,24 +2052,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#exsuiehgca .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#exsuiehgca .gt_caption {
+#gulclqozhc .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#exsuiehgca .gt_title {
+#gulclqozhc .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2027,25 +2069,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#exsuiehgca .gt_subtitle {
+#gulclqozhc .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
 
-#exsuiehgca .gt_bottom_border {
+#gulclqozhc .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#gulclqozhc .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#exsuiehgca .gt_col_headings {
+#gulclqozhc .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2060,7 +2114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#exsuiehgca .gt_col_heading {
+#gulclqozhc .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2080,7 +2134,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#exsuiehgca .gt_column_spanner_outer {
+#gulclqozhc .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2092,15 +2146,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#exsuiehgca .gt_column_spanner_outer:first-child {
+#gulclqozhc .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#exsuiehgca .gt_column_spanner_outer:last-child {
+#gulclqozhc .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#exsuiehgca .gt_column_spanner {
+#gulclqozhc .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2112,7 +2166,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#exsuiehgca .gt_group_heading {
+#gulclqozhc .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#gulclqozhc .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2138,7 +2196,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#exsuiehgca .gt_empty_group_heading {
+#gulclqozhc .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2153,15 +2211,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#exsuiehgca .gt_from_md > :first-child {
+#gulclqozhc .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#exsuiehgca .gt_from_md > :last-child {
+#gulclqozhc .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#exsuiehgca .gt_row {
+#gulclqozhc .gt_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -2180,7 +2238,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#exsuiehgca .gt_stub {
+#gulclqozhc .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2193,7 +2251,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#exsuiehgca .gt_stub_row_group {
+#gulclqozhc .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2207,11 +2265,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#exsuiehgca .gt_row_group_first td {
+#gulclqozhc .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#exsuiehgca .gt_summary_row {
+#gulclqozhc .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#gulclqozhc .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2221,16 +2283,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#exsuiehgca .gt_first_summary_row {
+#gulclqozhc .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#exsuiehgca .gt_first_summary_row.thick {
+#gulclqozhc .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#exsuiehgca .gt_last_summary_row {
+#gulclqozhc .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2240,7 +2302,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#exsuiehgca .gt_grand_summary_row {
+#gulclqozhc .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2250,7 +2312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#exsuiehgca .gt_first_grand_summary_row {
+#gulclqozhc .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2260,11 +2322,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#exsuiehgca .gt_striped {
+#gulclqozhc .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#gulclqozhc .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#exsuiehgca .gt_table_body {
+#gulclqozhc .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2273,7 +2345,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#exsuiehgca .gt_footnotes {
+#gulclqozhc .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2287,30 +2359,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#exsuiehgca .gt_footnote {
+#gulclqozhc .gt_footnote {
   margin: 0px;
-  font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#exsuiehgca .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#exsuiehgca .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2318,296 +2368,280 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#exsuiehgca .gt_left {
+#gulclqozhc .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#gulclqozhc .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#gulclqozhc .gt_left {
   text-align: left;
 }
 
-#exsuiehgca .gt_center {
+#gulclqozhc .gt_center {
   text-align: center;
 }
 
-#exsuiehgca .gt_right {
+#gulclqozhc .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#exsuiehgca .gt_font_normal {
+#gulclqozhc .gt_font_normal {
   font-weight: normal;
 }
 
-#exsuiehgca .gt_font_bold {
+#gulclqozhc .gt_font_bold {
   font-weight: bold;
 }
 
-#exsuiehgca .gt_font_italic {
+#gulclqozhc .gt_font_italic {
   font-style: italic;
 }
 
-#exsuiehgca .gt_super {
+#gulclqozhc .gt_super {
   font-size: 65%;
 }
 
-#exsuiehgca .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
+#gulclqozhc .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
-#exsuiehgca .gt_asterisk {
+#gulclqozhc .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#exsuiehgca .gt_indent_1 {
+#gulclqozhc .gt_indent_1 {
   text-indent: 5px;
 }
 
-#exsuiehgca .gt_indent_2 {
+#gulclqozhc .gt_indent_2 {
   text-indent: 10px;
 }
 
-#exsuiehgca .gt_indent_3 {
+#gulclqozhc .gt_indent_3 {
   text-indent: 15px;
 }
 
-#exsuiehgca .gt_indent_4 {
+#gulclqozhc .gt_indent_4 {
   text-indent: 20px;
 }
 
-#exsuiehgca .gt_indent_5 {
+#gulclqozhc .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-
-<div id="tbl-monspec" class="anchored">
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;6: Nightly Species Observations (Passes) by Month</caption>
-<thead class="gt_col_headings">
-<tr class="header">
-<th class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
-<th id="Minimum" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Minimum</th>
-<th id="Q1" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Q1</th>
-<th id="Mean" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Mean</th>
-<th id="Median" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Median</th>
-<th id="Q3" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Q3</th>
-<th id="Maximum" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Maximum</th>
-<th id="SD" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">SD</th>
-<th id="Nr" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Nr</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd gt_group_heading_row">
-<td colspan="9" id="Barbastelle" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Barbastelle</td>
-</tr>
-<tr class="even gt_row_group_first">
-<td id="stub_1_1" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">May</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_1 Minimum">1</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_1 Q1">1.00</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_1 Mean">1.75</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_1 Median">1.5</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_1 Q3">2.25</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_1 Maximum" style="background-color: #EBD4EF; color: #000000">3</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_1 SD">0.96</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_1 Nr">4</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_2" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">June</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_2 Minimum">1</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_2 Q1">1.50</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_2 Mean">18.00</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_2 Median">18.0</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_2 Q3">31.50</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_2 Maximum" style="background-color: #51158F; color: #FFFFFF">42</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_2 SD">15.67</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_2 Nr">11</td>
-</tr>
-<tr class="even">
-<td id="stub_1_3" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">July</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_3 Minimum">4</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_3 Q1">5.75</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_3 Mean">8.17</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_3 Median">8.0</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_3 Q3">10.25</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_3 Maximum" style="background-color: #C37BCF; color: #FFFFFF">13</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_3 SD">3.43</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_3 Nr">6</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_4" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">August</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_4 Minimum">1</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_4 Q1">3.00</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_4 Mean">7.27</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_4 Median">6.0</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_4 Q3">8.00</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_4 Maximum" style="background-color: #A438B6; color: #FFFFFF">22</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_4 SD">6.13</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_4 Nr">15</td>
-</tr>
-<tr class="even">
-<td id="stub_1_5" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">September</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_5 Minimum">1</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_5 Q1">1.00</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_5 Mean">1.80</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_5 Median">1.0</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_5 Q3">2.00</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_5 Maximum" style="background-color: #E8CCEC; color: #000000">4</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_5 SD">1.30</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_5 Nr">5</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_6" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">October</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_6 Minimum">4</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_6 Q1">5.00</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_6 Mean">6.71</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_6 Median">6.0</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_6 Q3">7.00</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_6 Maximum" style="background-color: #C37BCF; color: #FFFFFF">13</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_6 SD">2.98</td>
-<td class="gt_row gt_right" headers="Barbastelle stub_1_6 Nr">7</td>
-</tr>
-<tr class="even gt_group_heading_row">
-<td colspan="9" id="Greater horseshoe" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Greater horseshoe</td>
-</tr>
-<tr class="odd gt_row_group_first">
-<td id="stub_1_7" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">May</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_7 Minimum">2</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_7 Q1">2.50</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_7 Mean">3.00</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_7 Median">3.0</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_7 Q3">3.50</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_7 Maximum" style="background-color: #E8CCEC; color: #000000">4</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_7 SD">1.00</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_7 Nr">3</td>
-</tr>
-<tr class="even">
-<td id="stub_1_8" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">June</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_8 Minimum">1</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_8 Q1">1.50</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_8 Mean">3.13</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_8 Median">3.0</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_8 Q3">4.00</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_8 Maximum" style="background-color: #DCB2E3; color: #000000">7</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_8 SD">1.81</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_8 Nr">15</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_9" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">July</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_9 Minimum">1</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_9 Q1">1.00</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_9 Mean">1.75</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_9 Median">1.5</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_9 Q3">2.25</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_9 Maximum" style="background-color: #EBD4EF; color: #000000">3</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_9 SD">0.96</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_9 Nr">4</td>
-</tr>
-<tr class="even">
-<td id="stub_1_10" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">August</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_10 Minimum">1</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_10 Q1">1.00</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_10 Mean">2.07</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_10 Median">2.0</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_10 Q3">3.00</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_10 Maximum" style="background-color: #E0BBE6; color: #000000">6</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_10 SD">1.39</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_10 Nr">15</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_11" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">September</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_11 Minimum">3</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_11 Q1">3.25</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_11 Mean">10.67</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_11 Median">4.0</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_11 Q3">6.25</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_11 Maximum" style="background-color: #4A148C; color: #FFFFFF">43</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_11 SD">15.91</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_11 Nr">6</td>
-</tr>
-<tr class="even">
-<td id="stub_1_12" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">October</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_12 Minimum">1</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_12 Q1">1.00</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_12 Mean">1.00</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_12 Median">1.0</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_12 Q3">1.00</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_12 Maximum" style="background-color: #F3E5F5; color: #000000">1</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_12 SD">0.00</td>
-<td class="gt_row gt_right" headers="Greater horseshoe stub_1_12 Nr">2</td>
-</tr>
-<tr class="odd gt_group_heading_row">
-<td colspan="9" id="Lesser horseshoe" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">Lesser horseshoe</td>
-</tr>
-<tr class="even gt_row_group_first">
-<td id="stub_1_13" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">May</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_13 Minimum">1</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_13 Q1">1.00</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_13 Mean">2.50</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_13 Median">1.5</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_13 Q3">3.00</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_13 Maximum" style="background-color: #E0BBE6; color: #000000">6</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_13 SD">2.38</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_13 Nr">4</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_14" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">June</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_14 Minimum">1</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_14 Q1">1.00</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_14 Mean">1.38</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_14 Median">1.0</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_14 Q3">2.00</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_14 Maximum" style="background-color: #EFDDF2; color: #000000">2</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_14 SD">0.52</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_14 Nr">8</td>
-</tr>
-<tr class="even">
-<td id="stub_1_15" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">July</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_15 Minimum">1</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_15 Q1">1.50</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_15 Mean">2.00</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_15 Median">2.0</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_15 Q3">2.50</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_15 Maximum" style="background-color: #EBD4EF; color: #000000">3</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_15 SD">1.41</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_15 Nr">2</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_16" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">August</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_16 Minimum">1</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_16 Q1">1.00</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_16 Mean">2.30</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_16 Median">1.5</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_16 Q3">3.00</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_16 Maximum" style="background-color: #E0BBE6; color: #000000">6</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_16 SD">1.70</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_16 Nr">10</td>
-</tr>
-<tr class="even">
-<td id="stub_1_17" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">September</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_17 Minimum">1</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_17 Q1">1.50</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_17 Mean">2.43</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_17 Median">3.0</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_17 Q3">3.00</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_17 Maximum" style="background-color: #E8CCEC; color: #000000">4</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_17 SD">1.13</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_17 Nr">7</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_18" class="gt_row gt_center gt_stub" data-quarto-table-cell-role="th" scope="row">October</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_18 Minimum">1</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_18 Q1">1.00</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_18 Mean">2.67</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_18 Median">1.0</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_18 Q3">3.50</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_18 Maximum" style="background-color: #E0BBE6; color: #000000">6</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_18 SD">2.89</td>
-<td class="gt_row gt_right" headers="Lesser horseshoe stub_1_18 Nr">3</td>
-</tr>
-</tbody>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption>Table&nbsp;6:  <p>Nightly Species Observations (Passes) by Month</p> </caption>
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id=""></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Minimum">Minimum</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Q1">Q1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Mean">Mean</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Median">Median</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Q3">Q3</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Maximum">Maximum</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="SD">SD</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Nr">Nr</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <th colspan="9" class="gt_group_heading" scope="colgroup" id="Barbastelle">Barbastelle</th>
+    </tr>
+    <tr class="gt_row_group_first"><th id="stub_1_1" scope="row" class="gt_row gt_center gt_stub">May</th>
+<td headers="Barbastelle stub_1_1 Minimum" class="gt_row gt_right">1</td>
+<td headers="Barbastelle stub_1_1 Q1" class="gt_row gt_right">1.00</td>
+<td headers="Barbastelle stub_1_1 Mean" class="gt_row gt_right">1.75</td>
+<td headers="Barbastelle stub_1_1 Median" class="gt_row gt_right">1.5</td>
+<td headers="Barbastelle stub_1_1 Q3" class="gt_row gt_right">2.25</td>
+<td headers="Barbastelle stub_1_1 Maximum" class="gt_row gt_right" style="background-color: #EBD4EF; color: #000000;">3</td>
+<td headers="Barbastelle stub_1_1 SD" class="gt_row gt_right">0.96</td>
+<td headers="Barbastelle stub_1_1 Nr" class="gt_row gt_right">4</td></tr>
+    <tr><th id="stub_1_2" scope="row" class="gt_row gt_center gt_stub">June</th>
+<td headers="Barbastelle stub_1_2 Minimum" class="gt_row gt_right">1</td>
+<td headers="Barbastelle stub_1_2 Q1" class="gt_row gt_right">1.50</td>
+<td headers="Barbastelle stub_1_2 Mean" class="gt_row gt_right">18.00</td>
+<td headers="Barbastelle stub_1_2 Median" class="gt_row gt_right">18.0</td>
+<td headers="Barbastelle stub_1_2 Q3" class="gt_row gt_right">31.50</td>
+<td headers="Barbastelle stub_1_2 Maximum" class="gt_row gt_right" style="background-color: #51158F; color: #FFFFFF;">42</td>
+<td headers="Barbastelle stub_1_2 SD" class="gt_row gt_right">15.67</td>
+<td headers="Barbastelle stub_1_2 Nr" class="gt_row gt_right">11</td></tr>
+    <tr><th id="stub_1_3" scope="row" class="gt_row gt_center gt_stub">July</th>
+<td headers="Barbastelle stub_1_3 Minimum" class="gt_row gt_right">4</td>
+<td headers="Barbastelle stub_1_3 Q1" class="gt_row gt_right">5.75</td>
+<td headers="Barbastelle stub_1_3 Mean" class="gt_row gt_right">8.17</td>
+<td headers="Barbastelle stub_1_3 Median" class="gt_row gt_right">8.0</td>
+<td headers="Barbastelle stub_1_3 Q3" class="gt_row gt_right">10.25</td>
+<td headers="Barbastelle stub_1_3 Maximum" class="gt_row gt_right" style="background-color: #C37BCF; color: #FFFFFF;">13</td>
+<td headers="Barbastelle stub_1_3 SD" class="gt_row gt_right">3.43</td>
+<td headers="Barbastelle stub_1_3 Nr" class="gt_row gt_right">6</td></tr>
+    <tr><th id="stub_1_4" scope="row" class="gt_row gt_center gt_stub">August</th>
+<td headers="Barbastelle stub_1_4 Minimum" class="gt_row gt_right">1</td>
+<td headers="Barbastelle stub_1_4 Q1" class="gt_row gt_right">3.00</td>
+<td headers="Barbastelle stub_1_4 Mean" class="gt_row gt_right">7.27</td>
+<td headers="Barbastelle stub_1_4 Median" class="gt_row gt_right">6.0</td>
+<td headers="Barbastelle stub_1_4 Q3" class="gt_row gt_right">8.00</td>
+<td headers="Barbastelle stub_1_4 Maximum" class="gt_row gt_right" style="background-color: #A438B6; color: #FFFFFF;">22</td>
+<td headers="Barbastelle stub_1_4 SD" class="gt_row gt_right">6.13</td>
+<td headers="Barbastelle stub_1_4 Nr" class="gt_row gt_right">15</td></tr>
+    <tr><th id="stub_1_5" scope="row" class="gt_row gt_center gt_stub">September</th>
+<td headers="Barbastelle stub_1_5 Minimum" class="gt_row gt_right">1</td>
+<td headers="Barbastelle stub_1_5 Q1" class="gt_row gt_right">1.00</td>
+<td headers="Barbastelle stub_1_5 Mean" class="gt_row gt_right">1.80</td>
+<td headers="Barbastelle stub_1_5 Median" class="gt_row gt_right">1.0</td>
+<td headers="Barbastelle stub_1_5 Q3" class="gt_row gt_right">2.00</td>
+<td headers="Barbastelle stub_1_5 Maximum" class="gt_row gt_right" style="background-color: #E8CCEC; color: #000000;">4</td>
+<td headers="Barbastelle stub_1_5 SD" class="gt_row gt_right">1.30</td>
+<td headers="Barbastelle stub_1_5 Nr" class="gt_row gt_right">5</td></tr>
+    <tr><th id="stub_1_6" scope="row" class="gt_row gt_center gt_stub">October</th>
+<td headers="Barbastelle stub_1_6 Minimum" class="gt_row gt_right">4</td>
+<td headers="Barbastelle stub_1_6 Q1" class="gt_row gt_right">5.00</td>
+<td headers="Barbastelle stub_1_6 Mean" class="gt_row gt_right">6.71</td>
+<td headers="Barbastelle stub_1_6 Median" class="gt_row gt_right">6.0</td>
+<td headers="Barbastelle stub_1_6 Q3" class="gt_row gt_right">7.00</td>
+<td headers="Barbastelle stub_1_6 Maximum" class="gt_row gt_right" style="background-color: #C37BCF; color: #FFFFFF;">13</td>
+<td headers="Barbastelle stub_1_6 SD" class="gt_row gt_right">2.98</td>
+<td headers="Barbastelle stub_1_6 Nr" class="gt_row gt_right">7</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="9" class="gt_group_heading" scope="colgroup" id="Greater horseshoe">Greater horseshoe</th>
+    </tr>
+    <tr class="gt_row_group_first"><th id="stub_1_7" scope="row" class="gt_row gt_center gt_stub">May</th>
+<td headers="Greater horseshoe stub_1_7 Minimum" class="gt_row gt_right">2</td>
+<td headers="Greater horseshoe stub_1_7 Q1" class="gt_row gt_right">2.50</td>
+<td headers="Greater horseshoe stub_1_7 Mean" class="gt_row gt_right">3.00</td>
+<td headers="Greater horseshoe stub_1_7 Median" class="gt_row gt_right">3.0</td>
+<td headers="Greater horseshoe stub_1_7 Q3" class="gt_row gt_right">3.50</td>
+<td headers="Greater horseshoe stub_1_7 Maximum" class="gt_row gt_right" style="background-color: #E8CCEC; color: #000000;">4</td>
+<td headers="Greater horseshoe stub_1_7 SD" class="gt_row gt_right">1.00</td>
+<td headers="Greater horseshoe stub_1_7 Nr" class="gt_row gt_right">3</td></tr>
+    <tr><th id="stub_1_8" scope="row" class="gt_row gt_center gt_stub">June</th>
+<td headers="Greater horseshoe stub_1_8 Minimum" class="gt_row gt_right">1</td>
+<td headers="Greater horseshoe stub_1_8 Q1" class="gt_row gt_right">1.50</td>
+<td headers="Greater horseshoe stub_1_8 Mean" class="gt_row gt_right">3.13</td>
+<td headers="Greater horseshoe stub_1_8 Median" class="gt_row gt_right">3.0</td>
+<td headers="Greater horseshoe stub_1_8 Q3" class="gt_row gt_right">4.00</td>
+<td headers="Greater horseshoe stub_1_8 Maximum" class="gt_row gt_right" style="background-color: #DCB2E3; color: #000000;">7</td>
+<td headers="Greater horseshoe stub_1_8 SD" class="gt_row gt_right">1.81</td>
+<td headers="Greater horseshoe stub_1_8 Nr" class="gt_row gt_right">15</td></tr>
+    <tr><th id="stub_1_9" scope="row" class="gt_row gt_center gt_stub">July</th>
+<td headers="Greater horseshoe stub_1_9 Minimum" class="gt_row gt_right">1</td>
+<td headers="Greater horseshoe stub_1_9 Q1" class="gt_row gt_right">1.00</td>
+<td headers="Greater horseshoe stub_1_9 Mean" class="gt_row gt_right">1.75</td>
+<td headers="Greater horseshoe stub_1_9 Median" class="gt_row gt_right">1.5</td>
+<td headers="Greater horseshoe stub_1_9 Q3" class="gt_row gt_right">2.25</td>
+<td headers="Greater horseshoe stub_1_9 Maximum" class="gt_row gt_right" style="background-color: #EBD4EF; color: #000000;">3</td>
+<td headers="Greater horseshoe stub_1_9 SD" class="gt_row gt_right">0.96</td>
+<td headers="Greater horseshoe stub_1_9 Nr" class="gt_row gt_right">4</td></tr>
+    <tr><th id="stub_1_10" scope="row" class="gt_row gt_center gt_stub">August</th>
+<td headers="Greater horseshoe stub_1_10 Minimum" class="gt_row gt_right">1</td>
+<td headers="Greater horseshoe stub_1_10 Q1" class="gt_row gt_right">1.00</td>
+<td headers="Greater horseshoe stub_1_10 Mean" class="gt_row gt_right">2.07</td>
+<td headers="Greater horseshoe stub_1_10 Median" class="gt_row gt_right">2.0</td>
+<td headers="Greater horseshoe stub_1_10 Q3" class="gt_row gt_right">3.00</td>
+<td headers="Greater horseshoe stub_1_10 Maximum" class="gt_row gt_right" style="background-color: #E0BBE6; color: #000000;">6</td>
+<td headers="Greater horseshoe stub_1_10 SD" class="gt_row gt_right">1.39</td>
+<td headers="Greater horseshoe stub_1_10 Nr" class="gt_row gt_right">15</td></tr>
+    <tr><th id="stub_1_11" scope="row" class="gt_row gt_center gt_stub">September</th>
+<td headers="Greater horseshoe stub_1_11 Minimum" class="gt_row gt_right">3</td>
+<td headers="Greater horseshoe stub_1_11 Q1" class="gt_row gt_right">3.25</td>
+<td headers="Greater horseshoe stub_1_11 Mean" class="gt_row gt_right">10.67</td>
+<td headers="Greater horseshoe stub_1_11 Median" class="gt_row gt_right">4.0</td>
+<td headers="Greater horseshoe stub_1_11 Q3" class="gt_row gt_right">6.25</td>
+<td headers="Greater horseshoe stub_1_11 Maximum" class="gt_row gt_right" style="background-color: #4A148C; color: #FFFFFF;">43</td>
+<td headers="Greater horseshoe stub_1_11 SD" class="gt_row gt_right">15.91</td>
+<td headers="Greater horseshoe stub_1_11 Nr" class="gt_row gt_right">6</td></tr>
+    <tr><th id="stub_1_12" scope="row" class="gt_row gt_center gt_stub">October</th>
+<td headers="Greater horseshoe stub_1_12 Minimum" class="gt_row gt_right">1</td>
+<td headers="Greater horseshoe stub_1_12 Q1" class="gt_row gt_right">1.00</td>
+<td headers="Greater horseshoe stub_1_12 Mean" class="gt_row gt_right">1.00</td>
+<td headers="Greater horseshoe stub_1_12 Median" class="gt_row gt_right">1.0</td>
+<td headers="Greater horseshoe stub_1_12 Q3" class="gt_row gt_right">1.00</td>
+<td headers="Greater horseshoe stub_1_12 Maximum" class="gt_row gt_right" style="background-color: #F3E5F5; color: #000000;">1</td>
+<td headers="Greater horseshoe stub_1_12 SD" class="gt_row gt_right">0.00</td>
+<td headers="Greater horseshoe stub_1_12 Nr" class="gt_row gt_right">2</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="9" class="gt_group_heading" scope="colgroup" id="Lesser horseshoe">Lesser horseshoe</th>
+    </tr>
+    <tr class="gt_row_group_first"><th id="stub_1_13" scope="row" class="gt_row gt_center gt_stub">May</th>
+<td headers="Lesser horseshoe stub_1_13 Minimum" class="gt_row gt_right">1</td>
+<td headers="Lesser horseshoe stub_1_13 Q1" class="gt_row gt_right">1.00</td>
+<td headers="Lesser horseshoe stub_1_13 Mean" class="gt_row gt_right">2.50</td>
+<td headers="Lesser horseshoe stub_1_13 Median" class="gt_row gt_right">1.5</td>
+<td headers="Lesser horseshoe stub_1_13 Q3" class="gt_row gt_right">3.00</td>
+<td headers="Lesser horseshoe stub_1_13 Maximum" class="gt_row gt_right" style="background-color: #E0BBE6; color: #000000;">6</td>
+<td headers="Lesser horseshoe stub_1_13 SD" class="gt_row gt_right">2.38</td>
+<td headers="Lesser horseshoe stub_1_13 Nr" class="gt_row gt_right">4</td></tr>
+    <tr><th id="stub_1_14" scope="row" class="gt_row gt_center gt_stub">June</th>
+<td headers="Lesser horseshoe stub_1_14 Minimum" class="gt_row gt_right">1</td>
+<td headers="Lesser horseshoe stub_1_14 Q1" class="gt_row gt_right">1.00</td>
+<td headers="Lesser horseshoe stub_1_14 Mean" class="gt_row gt_right">1.38</td>
+<td headers="Lesser horseshoe stub_1_14 Median" class="gt_row gt_right">1.0</td>
+<td headers="Lesser horseshoe stub_1_14 Q3" class="gt_row gt_right">2.00</td>
+<td headers="Lesser horseshoe stub_1_14 Maximum" class="gt_row gt_right" style="background-color: #EFDDF2; color: #000000;">2</td>
+<td headers="Lesser horseshoe stub_1_14 SD" class="gt_row gt_right">0.52</td>
+<td headers="Lesser horseshoe stub_1_14 Nr" class="gt_row gt_right">8</td></tr>
+    <tr><th id="stub_1_15" scope="row" class="gt_row gt_center gt_stub">July</th>
+<td headers="Lesser horseshoe stub_1_15 Minimum" class="gt_row gt_right">1</td>
+<td headers="Lesser horseshoe stub_1_15 Q1" class="gt_row gt_right">1.50</td>
+<td headers="Lesser horseshoe stub_1_15 Mean" class="gt_row gt_right">2.00</td>
+<td headers="Lesser horseshoe stub_1_15 Median" class="gt_row gt_right">2.0</td>
+<td headers="Lesser horseshoe stub_1_15 Q3" class="gt_row gt_right">2.50</td>
+<td headers="Lesser horseshoe stub_1_15 Maximum" class="gt_row gt_right" style="background-color: #EBD4EF; color: #000000;">3</td>
+<td headers="Lesser horseshoe stub_1_15 SD" class="gt_row gt_right">1.41</td>
+<td headers="Lesser horseshoe stub_1_15 Nr" class="gt_row gt_right">2</td></tr>
+    <tr><th id="stub_1_16" scope="row" class="gt_row gt_center gt_stub">August</th>
+<td headers="Lesser horseshoe stub_1_16 Minimum" class="gt_row gt_right">1</td>
+<td headers="Lesser horseshoe stub_1_16 Q1" class="gt_row gt_right">1.00</td>
+<td headers="Lesser horseshoe stub_1_16 Mean" class="gt_row gt_right">2.30</td>
+<td headers="Lesser horseshoe stub_1_16 Median" class="gt_row gt_right">1.5</td>
+<td headers="Lesser horseshoe stub_1_16 Q3" class="gt_row gt_right">3.00</td>
+<td headers="Lesser horseshoe stub_1_16 Maximum" class="gt_row gt_right" style="background-color: #E0BBE6; color: #000000;">6</td>
+<td headers="Lesser horseshoe stub_1_16 SD" class="gt_row gt_right">1.70</td>
+<td headers="Lesser horseshoe stub_1_16 Nr" class="gt_row gt_right">10</td></tr>
+    <tr><th id="stub_1_17" scope="row" class="gt_row gt_center gt_stub">September</th>
+<td headers="Lesser horseshoe stub_1_17 Minimum" class="gt_row gt_right">1</td>
+<td headers="Lesser horseshoe stub_1_17 Q1" class="gt_row gt_right">1.50</td>
+<td headers="Lesser horseshoe stub_1_17 Mean" class="gt_row gt_right">2.43</td>
+<td headers="Lesser horseshoe stub_1_17 Median" class="gt_row gt_right">3.0</td>
+<td headers="Lesser horseshoe stub_1_17 Q3" class="gt_row gt_right">3.00</td>
+<td headers="Lesser horseshoe stub_1_17 Maximum" class="gt_row gt_right" style="background-color: #E8CCEC; color: #000000;">4</td>
+<td headers="Lesser horseshoe stub_1_17 SD" class="gt_row gt_right">1.13</td>
+<td headers="Lesser horseshoe stub_1_17 Nr" class="gt_row gt_right">7</td></tr>
+    <tr><th id="stub_1_18" scope="row" class="gt_row gt_center gt_stub">October</th>
+<td headers="Lesser horseshoe stub_1_18 Minimum" class="gt_row gt_right">1</td>
+<td headers="Lesser horseshoe stub_1_18 Q1" class="gt_row gt_right">1.00</td>
+<td headers="Lesser horseshoe stub_1_18 Mean" class="gt_row gt_right">2.67</td>
+<td headers="Lesser horseshoe stub_1_18 Median" class="gt_row gt_right">1.0</td>
+<td headers="Lesser horseshoe stub_1_18 Q3" class="gt_row gt_right">3.50</td>
+<td headers="Lesser horseshoe stub_1_18 Maximum" class="gt_row gt_right" style="background-color: #E0BBE6; color: #000000;">6</td>
+<td headers="Lesser horseshoe stub_1_18 SD" class="gt_row gt_right">2.89</td>
+<td headers="Lesser horseshoe stub_1_18 Nr" class="gt_row gt_right">3</td></tr>
+  </tbody>
+  
+  
 </table>
 </div>
-
 </div>
 </div>
 </div>
@@ -2670,15 +2704,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">2</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
+<div id="tbl-monspecb" class="anchored">
 
-<div id="hmvevprzey" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<div id="sgyrmmenjz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#sgyrmmenjz table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-#hmvevprzey .gt_table {
+#sgyrmmenjz thead, #sgyrmmenjz tbody, #sgyrmmenjz tfoot, #sgyrmmenjz tr, #sgyrmmenjz td, #sgyrmmenjz th {
+  border-style: none;
+}
+
+#sgyrmmenjz p {
+  margin: 0;
+  padding: 0;
+}
+
+#sgyrmmenjz .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -2701,24 +2748,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#hmvevprzey .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#hmvevprzey .gt_caption {
+#sgyrmmenjz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#hmvevprzey .gt_title {
+#sgyrmmenjz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2730,25 +2765,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#hmvevprzey .gt_subtitle {
+#sgyrmmenjz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
 }
 
-#hmvevprzey .gt_bottom_border {
+#sgyrmmenjz .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#sgyrmmenjz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#hmvevprzey .gt_col_headings {
+#sgyrmmenjz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2763,7 +2810,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#hmvevprzey .gt_col_heading {
+#sgyrmmenjz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2783,7 +2830,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#hmvevprzey .gt_column_spanner_outer {
+#sgyrmmenjz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2795,15 +2842,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#hmvevprzey .gt_column_spanner_outer:first-child {
+#sgyrmmenjz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#hmvevprzey .gt_column_spanner_outer:last-child {
+#sgyrmmenjz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#hmvevprzey .gt_column_spanner {
+#sgyrmmenjz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2815,7 +2862,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#hmvevprzey .gt_group_heading {
+#sgyrmmenjz .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#sgyrmmenjz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2841,7 +2892,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#hmvevprzey .gt_empty_group_heading {
+#sgyrmmenjz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2856,15 +2907,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#hmvevprzey .gt_from_md > :first-child {
+#sgyrmmenjz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#hmvevprzey .gt_from_md > :last-child {
+#sgyrmmenjz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#hmvevprzey .gt_row {
+#sgyrmmenjz .gt_row {
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 5px;
@@ -2883,7 +2934,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#hmvevprzey .gt_stub {
+#sgyrmmenjz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2896,7 +2947,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#hmvevprzey .gt_stub_row_group {
+#sgyrmmenjz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2910,11 +2961,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#hmvevprzey .gt_row_group_first td {
+#sgyrmmenjz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#hmvevprzey .gt_summary_row {
+#sgyrmmenjz .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#sgyrmmenjz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2924,16 +2979,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#hmvevprzey .gt_first_summary_row {
+#sgyrmmenjz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#hmvevprzey .gt_first_summary_row.thick {
+#sgyrmmenjz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#hmvevprzey .gt_last_summary_row {
+#sgyrmmenjz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2943,7 +2998,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#hmvevprzey .gt_grand_summary_row {
+#sgyrmmenjz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2953,7 +3008,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#hmvevprzey .gt_first_grand_summary_row {
+#sgyrmmenjz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2963,11 +3018,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#hmvevprzey .gt_striped {
+#sgyrmmenjz .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sgyrmmenjz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#hmvevprzey .gt_table_body {
+#sgyrmmenjz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2976,7 +3041,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#hmvevprzey .gt_footnotes {
+#sgyrmmenjz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2990,30 +3055,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#hmvevprzey .gt_footnote {
+#sgyrmmenjz .gt_footnote {
   margin: 0px;
-  font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#hmvevprzey .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#hmvevprzey .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -3021,305 +3064,289 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#hmvevprzey .gt_left {
+#sgyrmmenjz .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#sgyrmmenjz .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sgyrmmenjz .gt_left {
   text-align: left;
 }
 
-#hmvevprzey .gt_center {
+#sgyrmmenjz .gt_center {
   text-align: center;
 }
 
-#hmvevprzey .gt_right {
+#sgyrmmenjz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#hmvevprzey .gt_font_normal {
+#sgyrmmenjz .gt_font_normal {
   font-weight: normal;
 }
 
-#hmvevprzey .gt_font_bold {
+#sgyrmmenjz .gt_font_bold {
   font-weight: bold;
 }
 
-#hmvevprzey .gt_font_italic {
+#sgyrmmenjz .gt_font_italic {
   font-style: italic;
 }
 
-#hmvevprzey .gt_super {
+#sgyrmmenjz .gt_super {
   font-size: 65%;
 }
 
-#hmvevprzey .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
+#sgyrmmenjz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
-#hmvevprzey .gt_asterisk {
+#sgyrmmenjz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#hmvevprzey .gt_indent_1 {
+#sgyrmmenjz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#hmvevprzey .gt_indent_2 {
+#sgyrmmenjz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#hmvevprzey .gt_indent_3 {
+#sgyrmmenjz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#hmvevprzey .gt_indent_4 {
+#sgyrmmenjz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#hmvevprzey .gt_indent_5 {
+#sgyrmmenjz .gt_indent_5 {
   text-indent: 25px;
 }
 </style>
-
-<div id="tbl-monspecb" class="anchored">
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;7: Nightly Species Observations by Month (Alternative Grouping)</caption>
-<thead class="gt_col_headings">
-<tr class="header">
-<th class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"></th>
-<th id="Minimum" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Minimum</th>
-<th id="Q1" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Q1</th>
-<th id="Mean" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Mean</th>
-<th id="Median" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Median</th>
-<th id="Q3" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Q3</th>
-<th id="Maximum" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Maximum</th>
-<th id="SD" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">SD</th>
-<th id="Nr" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Nr</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd gt_group_heading_row">
-<td colspan="9" id="May" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">May</td>
-</tr>
-<tr class="even gt_row_group_first">
-<td id="stub_1_1" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Barbastelle</td>
-<td class="gt_row gt_right" headers="May stub_1_1 Minimum">1</td>
-<td class="gt_row gt_right" headers="May stub_1_1 Q1">1.00</td>
-<td class="gt_row gt_right" headers="May stub_1_1 Mean" style="background-color: #DBEFDC; color: #000000">1.75</td>
-<td class="gt_row gt_right" headers="May stub_1_1 Median">1.5</td>
-<td class="gt_row gt_right" headers="May stub_1_1 Q3">2.25</td>
-<td class="gt_row gt_right" headers="May stub_1_1 Maximum">3</td>
-<td class="gt_row gt_right" headers="May stub_1_1 SD">0.96</td>
-<td class="gt_row gt_right" headers="May stub_1_1 Nr">4</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_2" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Greater horseshoe</td>
-<td class="gt_row gt_right" headers="May stub_1_2 Minimum">2</td>
-<td class="gt_row gt_right" headers="May stub_1_2 Q1">2.50</td>
-<td class="gt_row gt_right" headers="May stub_1_2 Mean" style="background-color: #C6E5C7; color: #000000">3.00</td>
-<td class="gt_row gt_right" headers="May stub_1_2 Median">3.0</td>
-<td class="gt_row gt_right" headers="May stub_1_2 Q3">3.50</td>
-<td class="gt_row gt_right" headers="May stub_1_2 Maximum">4</td>
-<td class="gt_row gt_right" headers="May stub_1_2 SD">1.00</td>
-<td class="gt_row gt_right" headers="May stub_1_2 Nr">3</td>
-</tr>
-<tr class="even">
-<td id="stub_1_3" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Lesser horseshoe</td>
-<td class="gt_row gt_right" headers="May stub_1_3 Minimum">1</td>
-<td class="gt_row gt_right" headers="May stub_1_3 Q1">1.00</td>
-<td class="gt_row gt_right" headers="May stub_1_3 Mean" style="background-color: #CFE9D0; color: #000000">2.50</td>
-<td class="gt_row gt_right" headers="May stub_1_3 Median">1.5</td>
-<td class="gt_row gt_right" headers="May stub_1_3 Q3">3.00</td>
-<td class="gt_row gt_right" headers="May stub_1_3 Maximum">6</td>
-<td class="gt_row gt_right" headers="May stub_1_3 SD">2.38</td>
-<td class="gt_row gt_right" headers="May stub_1_3 Nr">4</td>
-</tr>
-<tr class="odd gt_group_heading_row">
-<td colspan="9" id="June" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">June</td>
-</tr>
-<tr class="even gt_row_group_first">
-<td id="stub_1_4" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Barbastelle</td>
-<td class="gt_row gt_right" headers="June stub_1_4 Minimum">1</td>
-<td class="gt_row gt_right" headers="June stub_1_4 Q1">1.50</td>
-<td class="gt_row gt_right" headers="June stub_1_4 Mean" style="background-color: #1B5E20; color: #FFFFFF">18.00</td>
-<td class="gt_row gt_right" headers="June stub_1_4 Median">18.0</td>
-<td class="gt_row gt_right" headers="June stub_1_4 Q3">31.50</td>
-<td class="gt_row gt_right" headers="June stub_1_4 Maximum">42</td>
-<td class="gt_row gt_right" headers="June stub_1_4 SD">15.67</td>
-<td class="gt_row gt_right" headers="June stub_1_4 Nr">11</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_5" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Greater horseshoe</td>
-<td class="gt_row gt_right" headers="June stub_1_5 Minimum">1</td>
-<td class="gt_row gt_right" headers="June stub_1_5 Q1">1.50</td>
-<td class="gt_row gt_right" headers="June stub_1_5 Mean" style="background-color: #C4E4C5; color: #000000">3.13</td>
-<td class="gt_row gt_right" headers="June stub_1_5 Median">3.0</td>
-<td class="gt_row gt_right" headers="June stub_1_5 Q3">4.00</td>
-<td class="gt_row gt_right" headers="June stub_1_5 Maximum">7</td>
-<td class="gt_row gt_right" headers="June stub_1_5 SD">1.81</td>
-<td class="gt_row gt_right" headers="June stub_1_5 Nr">15</td>
-</tr>
-<tr class="even">
-<td id="stub_1_6" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Lesser horseshoe</td>
-<td class="gt_row gt_right" headers="June stub_1_6 Minimum">1</td>
-<td class="gt_row gt_right" headers="June stub_1_6 Q1">1.00</td>
-<td class="gt_row gt_right" headers="June stub_1_6 Mean" style="background-color: #E2F2E3; color: #000000">1.38</td>
-<td class="gt_row gt_right" headers="June stub_1_6 Median">1.0</td>
-<td class="gt_row gt_right" headers="June stub_1_6 Q3">2.00</td>
-<td class="gt_row gt_right" headers="June stub_1_6 Maximum">2</td>
-<td class="gt_row gt_right" headers="June stub_1_6 SD">0.52</td>
-<td class="gt_row gt_right" headers="June stub_1_6 Nr">8</td>
-</tr>
-<tr class="odd gt_group_heading_row">
-<td colspan="9" id="July" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">July</td>
-</tr>
-<tr class="even gt_row_group_first">
-<td id="stub_1_7" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Barbastelle</td>
-<td class="gt_row gt_right" headers="July stub_1_7 Minimum">4</td>
-<td class="gt_row gt_right" headers="July stub_1_7 Q1">5.75</td>
-<td class="gt_row gt_right" headers="July stub_1_7 Mean" style="background-color: #6CBD6F; color: #000000">8.17</td>
-<td class="gt_row gt_right" headers="July stub_1_7 Median">8.0</td>
-<td class="gt_row gt_right" headers="July stub_1_7 Q3">10.25</td>
-<td class="gt_row gt_right" headers="July stub_1_7 Maximum">13</td>
-<td class="gt_row gt_right" headers="July stub_1_7 SD">3.43</td>
-<td class="gt_row gt_right" headers="July stub_1_7 Nr">6</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_8" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Greater horseshoe</td>
-<td class="gt_row gt_right" headers="July stub_1_8 Minimum">1</td>
-<td class="gt_row gt_right" headers="July stub_1_8 Q1">1.00</td>
-<td class="gt_row gt_right" headers="July stub_1_8 Mean" style="background-color: #DBEFDC; color: #000000">1.75</td>
-<td class="gt_row gt_right" headers="July stub_1_8 Median">1.5</td>
-<td class="gt_row gt_right" headers="July stub_1_8 Q3">2.25</td>
-<td class="gt_row gt_right" headers="July stub_1_8 Maximum">3</td>
-<td class="gt_row gt_right" headers="July stub_1_8 SD">0.96</td>
-<td class="gt_row gt_right" headers="July stub_1_8 Nr">4</td>
-</tr>
-<tr class="even">
-<td id="stub_1_9" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Lesser horseshoe</td>
-<td class="gt_row gt_right" headers="July stub_1_9 Minimum">1</td>
-<td class="gt_row gt_right" headers="July stub_1_9 Q1">1.50</td>
-<td class="gt_row gt_right" headers="July stub_1_9 Mean" style="background-color: #D7EDD8; color: #000000">2.00</td>
-<td class="gt_row gt_right" headers="July stub_1_9 Median">2.0</td>
-<td class="gt_row gt_right" headers="July stub_1_9 Q3">2.50</td>
-<td class="gt_row gt_right" headers="July stub_1_9 Maximum">3</td>
-<td class="gt_row gt_right" headers="July stub_1_9 SD">1.41</td>
-<td class="gt_row gt_right" headers="July stub_1_9 Nr">2</td>
-</tr>
-<tr class="odd gt_group_heading_row">
-<td colspan="9" id="August" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">August</td>
-</tr>
-<tr class="even gt_row_group_first">
-<td id="stub_1_10" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Barbastelle</td>
-<td class="gt_row gt_right" headers="August stub_1_10 Minimum">1</td>
-<td class="gt_row gt_right" headers="August stub_1_10 Q1">3.00</td>
-<td class="gt_row gt_right" headers="August stub_1_10 Mean" style="background-color: #79C37C; color: #000000">7.27</td>
-<td class="gt_row gt_right" headers="August stub_1_10 Median">6.0</td>
-<td class="gt_row gt_right" headers="August stub_1_10 Q3">8.00</td>
-<td class="gt_row gt_right" headers="August stub_1_10 Maximum">22</td>
-<td class="gt_row gt_right" headers="August stub_1_10 SD">6.13</td>
-<td class="gt_row gt_right" headers="August stub_1_10 Nr">15</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_11" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Greater horseshoe</td>
-<td class="gt_row gt_right" headers="August stub_1_11 Minimum">1</td>
-<td class="gt_row gt_right" headers="August stub_1_11 Q1">1.00</td>
-<td class="gt_row gt_right" headers="August stub_1_11 Mean" style="background-color: #D6EDD7; color: #000000">2.07</td>
-<td class="gt_row gt_right" headers="August stub_1_11 Median">2.0</td>
-<td class="gt_row gt_right" headers="August stub_1_11 Q3">3.00</td>
-<td class="gt_row gt_right" headers="August stub_1_11 Maximum">6</td>
-<td class="gt_row gt_right" headers="August stub_1_11 SD">1.39</td>
-<td class="gt_row gt_right" headers="August stub_1_11 Nr">15</td>
-</tr>
-<tr class="even">
-<td id="stub_1_12" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Lesser horseshoe</td>
-<td class="gt_row gt_right" headers="August stub_1_12 Minimum">1</td>
-<td class="gt_row gt_right" headers="August stub_1_12 Q1">1.00</td>
-<td class="gt_row gt_right" headers="August stub_1_12 Mean" style="background-color: #D2EBD3; color: #000000">2.30</td>
-<td class="gt_row gt_right" headers="August stub_1_12 Median">1.5</td>
-<td class="gt_row gt_right" headers="August stub_1_12 Q3">3.00</td>
-<td class="gt_row gt_right" headers="August stub_1_12 Maximum">6</td>
-<td class="gt_row gt_right" headers="August stub_1_12 SD">1.70</td>
-<td class="gt_row gt_right" headers="August stub_1_12 Nr">10</td>
-</tr>
-<tr class="odd gt_group_heading_row">
-<td colspan="9" id="September" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">September</td>
-</tr>
-<tr class="even gt_row_group_first">
-<td id="stub_1_13" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Barbastelle</td>
-<td class="gt_row gt_right" headers="September stub_1_13 Minimum">1</td>
-<td class="gt_row gt_right" headers="September stub_1_13 Q1">1.00</td>
-<td class="gt_row gt_right" headers="September stub_1_13 Mean" style="background-color: #DAEFDB; color: #000000">1.80</td>
-<td class="gt_row gt_right" headers="September stub_1_13 Median">1.0</td>
-<td class="gt_row gt_right" headers="September stub_1_13 Q3">2.00</td>
-<td class="gt_row gt_right" headers="September stub_1_13 Maximum">4</td>
-<td class="gt_row gt_right" headers="September stub_1_13 SD">1.30</td>
-<td class="gt_row gt_right" headers="September stub_1_13 Nr">5</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_14" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Greater horseshoe</td>
-<td class="gt_row gt_right" headers="September stub_1_14 Minimum">3</td>
-<td class="gt_row gt_right" headers="September stub_1_14 Q1">3.25</td>
-<td class="gt_row gt_right" headers="September stub_1_14 Mean" style="background-color: #4BAD4F; color: #FFFFFF">10.67</td>
-<td class="gt_row gt_right" headers="September stub_1_14 Median">4.0</td>
-<td class="gt_row gt_right" headers="September stub_1_14 Q3">6.25</td>
-<td class="gt_row gt_right" headers="September stub_1_14 Maximum">43</td>
-<td class="gt_row gt_right" headers="September stub_1_14 SD">15.91</td>
-<td class="gt_row gt_right" headers="September stub_1_14 Nr">6</td>
-</tr>
-<tr class="even">
-<td id="stub_1_15" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Lesser horseshoe</td>
-<td class="gt_row gt_right" headers="September stub_1_15 Minimum">1</td>
-<td class="gt_row gt_right" headers="September stub_1_15 Q1">1.50</td>
-<td class="gt_row gt_right" headers="September stub_1_15 Mean" style="background-color: #D0EAD1; color: #000000">2.43</td>
-<td class="gt_row gt_right" headers="September stub_1_15 Median">3.0</td>
-<td class="gt_row gt_right" headers="September stub_1_15 Q3">3.00</td>
-<td class="gt_row gt_right" headers="September stub_1_15 Maximum">4</td>
-<td class="gt_row gt_right" headers="September stub_1_15 SD">1.13</td>
-<td class="gt_row gt_right" headers="September stub_1_15 Nr">7</td>
-</tr>
-<tr class="odd gt_group_heading_row">
-<td colspan="9" id="October" class="gt_group_heading" data-quarto-table-cell-role="th" scope="colgroup">October</td>
-</tr>
-<tr class="even gt_row_group_first">
-<td id="stub_1_16" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Barbastelle</td>
-<td class="gt_row gt_right" headers="October stub_1_16 Minimum">4</td>
-<td class="gt_row gt_right" headers="October stub_1_16 Q1">5.00</td>
-<td class="gt_row gt_right" headers="October stub_1_16 Mean" style="background-color: #80C783; color: #000000">6.71</td>
-<td class="gt_row gt_right" headers="October stub_1_16 Median">6.0</td>
-<td class="gt_row gt_right" headers="October stub_1_16 Q3">7.00</td>
-<td class="gt_row gt_right" headers="October stub_1_16 Maximum">13</td>
-<td class="gt_row gt_right" headers="October stub_1_16 SD">2.98</td>
-<td class="gt_row gt_right" headers="October stub_1_16 Nr">7</td>
-</tr>
-<tr class="odd">
-<td id="stub_1_17" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Greater horseshoe</td>
-<td class="gt_row gt_right" headers="October stub_1_17 Minimum">1</td>
-<td class="gt_row gt_right" headers="October stub_1_17 Q1">1.00</td>
-<td class="gt_row gt_right" headers="October stub_1_17 Mean" style="background-color: #E8F5E9; color: #000000">1.00</td>
-<td class="gt_row gt_right" headers="October stub_1_17 Median">1.0</td>
-<td class="gt_row gt_right" headers="October stub_1_17 Q3">1.00</td>
-<td class="gt_row gt_right" headers="October stub_1_17 Maximum">1</td>
-<td class="gt_row gt_right" headers="October stub_1_17 SD">0.00</td>
-<td class="gt_row gt_right" headers="October stub_1_17 Nr">2</td>
-</tr>
-<tr class="even">
-<td id="stub_1_18" class="gt_row gt_left gt_stub" data-quarto-table-cell-role="th" scope="row">Lesser horseshoe</td>
-<td class="gt_row gt_right" headers="October stub_1_18 Minimum">1</td>
-<td class="gt_row gt_right" headers="October stub_1_18 Q1">1.00</td>
-<td class="gt_row gt_right" headers="October stub_1_18 Mean" style="background-color: #CCE8CD; color: #000000">2.67</td>
-<td class="gt_row gt_right" headers="October stub_1_18 Median">1.0</td>
-<td class="gt_row gt_right" headers="October stub_1_18 Q3">3.50</td>
-<td class="gt_row gt_right" headers="October stub_1_18 Maximum">6</td>
-<td class="gt_row gt_right" headers="October stub_1_18 SD">2.89</td>
-<td class="gt_row gt_right" headers="October stub_1_18 Nr">3</td>
-</tr>
-</tbody>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption>Table&nbsp;7:  <p>Nightly Species Observations by Month (Alternative Grouping)</p> </caption>
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id=""></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Minimum">Minimum</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Q1">Q1</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Mean">Mean</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Median">Median</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Q3">Q3</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Maximum">Maximum</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="SD">SD</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Nr">Nr</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr class="gt_group_heading_row">
+      <th colspan="9" class="gt_group_heading" scope="colgroup" id="May">May</th>
+    </tr>
+    <tr class="gt_row_group_first"><th id="stub_1_1" scope="row" class="gt_row gt_left gt_stub">Barbastelle</th>
+<td headers="May stub_1_1 Minimum" class="gt_row gt_right">1</td>
+<td headers="May stub_1_1 Q1" class="gt_row gt_right">1.00</td>
+<td headers="May stub_1_1 Mean" class="gt_row gt_right" style="background-color: #DBEFDC; color: #000000;">1.75</td>
+<td headers="May stub_1_1 Median" class="gt_row gt_right">1.5</td>
+<td headers="May stub_1_1 Q3" class="gt_row gt_right">2.25</td>
+<td headers="May stub_1_1 Maximum" class="gt_row gt_right">3</td>
+<td headers="May stub_1_1 SD" class="gt_row gt_right">0.96</td>
+<td headers="May stub_1_1 Nr" class="gt_row gt_right">4</td></tr>
+    <tr><th id="stub_1_2" scope="row" class="gt_row gt_left gt_stub">Greater horseshoe</th>
+<td headers="May stub_1_2 Minimum" class="gt_row gt_right">2</td>
+<td headers="May stub_1_2 Q1" class="gt_row gt_right">2.50</td>
+<td headers="May stub_1_2 Mean" class="gt_row gt_right" style="background-color: #C6E5C7; color: #000000;">3.00</td>
+<td headers="May stub_1_2 Median" class="gt_row gt_right">3.0</td>
+<td headers="May stub_1_2 Q3" class="gt_row gt_right">3.50</td>
+<td headers="May stub_1_2 Maximum" class="gt_row gt_right">4</td>
+<td headers="May stub_1_2 SD" class="gt_row gt_right">1.00</td>
+<td headers="May stub_1_2 Nr" class="gt_row gt_right">3</td></tr>
+    <tr><th id="stub_1_3" scope="row" class="gt_row gt_left gt_stub">Lesser horseshoe</th>
+<td headers="May stub_1_3 Minimum" class="gt_row gt_right">1</td>
+<td headers="May stub_1_3 Q1" class="gt_row gt_right">1.00</td>
+<td headers="May stub_1_3 Mean" class="gt_row gt_right" style="background-color: #CFE9D0; color: #000000;">2.50</td>
+<td headers="May stub_1_3 Median" class="gt_row gt_right">1.5</td>
+<td headers="May stub_1_3 Q3" class="gt_row gt_right">3.00</td>
+<td headers="May stub_1_3 Maximum" class="gt_row gt_right">6</td>
+<td headers="May stub_1_3 SD" class="gt_row gt_right">2.38</td>
+<td headers="May stub_1_3 Nr" class="gt_row gt_right">4</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="9" class="gt_group_heading" scope="colgroup" id="June">June</th>
+    </tr>
+    <tr class="gt_row_group_first"><th id="stub_1_4" scope="row" class="gt_row gt_left gt_stub">Barbastelle</th>
+<td headers="June stub_1_4 Minimum" class="gt_row gt_right">1</td>
+<td headers="June stub_1_4 Q1" class="gt_row gt_right">1.50</td>
+<td headers="June stub_1_4 Mean" class="gt_row gt_right" style="background-color: #1B5E20; color: #FFFFFF;">18.00</td>
+<td headers="June stub_1_4 Median" class="gt_row gt_right">18.0</td>
+<td headers="June stub_1_4 Q3" class="gt_row gt_right">31.50</td>
+<td headers="June stub_1_4 Maximum" class="gt_row gt_right">42</td>
+<td headers="June stub_1_4 SD" class="gt_row gt_right">15.67</td>
+<td headers="June stub_1_4 Nr" class="gt_row gt_right">11</td></tr>
+    <tr><th id="stub_1_5" scope="row" class="gt_row gt_left gt_stub">Greater horseshoe</th>
+<td headers="June stub_1_5 Minimum" class="gt_row gt_right">1</td>
+<td headers="June stub_1_5 Q1" class="gt_row gt_right">1.50</td>
+<td headers="June stub_1_5 Mean" class="gt_row gt_right" style="background-color: #C4E4C5; color: #000000;">3.13</td>
+<td headers="June stub_1_5 Median" class="gt_row gt_right">3.0</td>
+<td headers="June stub_1_5 Q3" class="gt_row gt_right">4.00</td>
+<td headers="June stub_1_5 Maximum" class="gt_row gt_right">7</td>
+<td headers="June stub_1_5 SD" class="gt_row gt_right">1.81</td>
+<td headers="June stub_1_5 Nr" class="gt_row gt_right">15</td></tr>
+    <tr><th id="stub_1_6" scope="row" class="gt_row gt_left gt_stub">Lesser horseshoe</th>
+<td headers="June stub_1_6 Minimum" class="gt_row gt_right">1</td>
+<td headers="June stub_1_6 Q1" class="gt_row gt_right">1.00</td>
+<td headers="June stub_1_6 Mean" class="gt_row gt_right" style="background-color: #E2F2E3; color: #000000;">1.38</td>
+<td headers="June stub_1_6 Median" class="gt_row gt_right">1.0</td>
+<td headers="June stub_1_6 Q3" class="gt_row gt_right">2.00</td>
+<td headers="June stub_1_6 Maximum" class="gt_row gt_right">2</td>
+<td headers="June stub_1_6 SD" class="gt_row gt_right">0.52</td>
+<td headers="June stub_1_6 Nr" class="gt_row gt_right">8</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="9" class="gt_group_heading" scope="colgroup" id="July">July</th>
+    </tr>
+    <tr class="gt_row_group_first"><th id="stub_1_7" scope="row" class="gt_row gt_left gt_stub">Barbastelle</th>
+<td headers="July stub_1_7 Minimum" class="gt_row gt_right">4</td>
+<td headers="July stub_1_7 Q1" class="gt_row gt_right">5.75</td>
+<td headers="July stub_1_7 Mean" class="gt_row gt_right" style="background-color: #6CBD6F; color: #000000;">8.17</td>
+<td headers="July stub_1_7 Median" class="gt_row gt_right">8.0</td>
+<td headers="July stub_1_7 Q3" class="gt_row gt_right">10.25</td>
+<td headers="July stub_1_7 Maximum" class="gt_row gt_right">13</td>
+<td headers="July stub_1_7 SD" class="gt_row gt_right">3.43</td>
+<td headers="July stub_1_7 Nr" class="gt_row gt_right">6</td></tr>
+    <tr><th id="stub_1_8" scope="row" class="gt_row gt_left gt_stub">Greater horseshoe</th>
+<td headers="July stub_1_8 Minimum" class="gt_row gt_right">1</td>
+<td headers="July stub_1_8 Q1" class="gt_row gt_right">1.00</td>
+<td headers="July stub_1_8 Mean" class="gt_row gt_right" style="background-color: #DBEFDC; color: #000000;">1.75</td>
+<td headers="July stub_1_8 Median" class="gt_row gt_right">1.5</td>
+<td headers="July stub_1_8 Q3" class="gt_row gt_right">2.25</td>
+<td headers="July stub_1_8 Maximum" class="gt_row gt_right">3</td>
+<td headers="July stub_1_8 SD" class="gt_row gt_right">0.96</td>
+<td headers="July stub_1_8 Nr" class="gt_row gt_right">4</td></tr>
+    <tr><th id="stub_1_9" scope="row" class="gt_row gt_left gt_stub">Lesser horseshoe</th>
+<td headers="July stub_1_9 Minimum" class="gt_row gt_right">1</td>
+<td headers="July stub_1_9 Q1" class="gt_row gt_right">1.50</td>
+<td headers="July stub_1_9 Mean" class="gt_row gt_right" style="background-color: #D7EDD8; color: #000000;">2.00</td>
+<td headers="July stub_1_9 Median" class="gt_row gt_right">2.0</td>
+<td headers="July stub_1_9 Q3" class="gt_row gt_right">2.50</td>
+<td headers="July stub_1_9 Maximum" class="gt_row gt_right">3</td>
+<td headers="July stub_1_9 SD" class="gt_row gt_right">1.41</td>
+<td headers="July stub_1_9 Nr" class="gt_row gt_right">2</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="9" class="gt_group_heading" scope="colgroup" id="August">August</th>
+    </tr>
+    <tr class="gt_row_group_first"><th id="stub_1_10" scope="row" class="gt_row gt_left gt_stub">Barbastelle</th>
+<td headers="August stub_1_10 Minimum" class="gt_row gt_right">1</td>
+<td headers="August stub_1_10 Q1" class="gt_row gt_right">3.00</td>
+<td headers="August stub_1_10 Mean" class="gt_row gt_right" style="background-color: #79C37C; color: #000000;">7.27</td>
+<td headers="August stub_1_10 Median" class="gt_row gt_right">6.0</td>
+<td headers="August stub_1_10 Q3" class="gt_row gt_right">8.00</td>
+<td headers="August stub_1_10 Maximum" class="gt_row gt_right">22</td>
+<td headers="August stub_1_10 SD" class="gt_row gt_right">6.13</td>
+<td headers="August stub_1_10 Nr" class="gt_row gt_right">15</td></tr>
+    <tr><th id="stub_1_11" scope="row" class="gt_row gt_left gt_stub">Greater horseshoe</th>
+<td headers="August stub_1_11 Minimum" class="gt_row gt_right">1</td>
+<td headers="August stub_1_11 Q1" class="gt_row gt_right">1.00</td>
+<td headers="August stub_1_11 Mean" class="gt_row gt_right" style="background-color: #D6EDD7; color: #000000;">2.07</td>
+<td headers="August stub_1_11 Median" class="gt_row gt_right">2.0</td>
+<td headers="August stub_1_11 Q3" class="gt_row gt_right">3.00</td>
+<td headers="August stub_1_11 Maximum" class="gt_row gt_right">6</td>
+<td headers="August stub_1_11 SD" class="gt_row gt_right">1.39</td>
+<td headers="August stub_1_11 Nr" class="gt_row gt_right">15</td></tr>
+    <tr><th id="stub_1_12" scope="row" class="gt_row gt_left gt_stub">Lesser horseshoe</th>
+<td headers="August stub_1_12 Minimum" class="gt_row gt_right">1</td>
+<td headers="August stub_1_12 Q1" class="gt_row gt_right">1.00</td>
+<td headers="August stub_1_12 Mean" class="gt_row gt_right" style="background-color: #D2EBD3; color: #000000;">2.30</td>
+<td headers="August stub_1_12 Median" class="gt_row gt_right">1.5</td>
+<td headers="August stub_1_12 Q3" class="gt_row gt_right">3.00</td>
+<td headers="August stub_1_12 Maximum" class="gt_row gt_right">6</td>
+<td headers="August stub_1_12 SD" class="gt_row gt_right">1.70</td>
+<td headers="August stub_1_12 Nr" class="gt_row gt_right">10</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="9" class="gt_group_heading" scope="colgroup" id="September">September</th>
+    </tr>
+    <tr class="gt_row_group_first"><th id="stub_1_13" scope="row" class="gt_row gt_left gt_stub">Barbastelle</th>
+<td headers="September stub_1_13 Minimum" class="gt_row gt_right">1</td>
+<td headers="September stub_1_13 Q1" class="gt_row gt_right">1.00</td>
+<td headers="September stub_1_13 Mean" class="gt_row gt_right" style="background-color: #DAEFDB; color: #000000;">1.80</td>
+<td headers="September stub_1_13 Median" class="gt_row gt_right">1.0</td>
+<td headers="September stub_1_13 Q3" class="gt_row gt_right">2.00</td>
+<td headers="September stub_1_13 Maximum" class="gt_row gt_right">4</td>
+<td headers="September stub_1_13 SD" class="gt_row gt_right">1.30</td>
+<td headers="September stub_1_13 Nr" class="gt_row gt_right">5</td></tr>
+    <tr><th id="stub_1_14" scope="row" class="gt_row gt_left gt_stub">Greater horseshoe</th>
+<td headers="September stub_1_14 Minimum" class="gt_row gt_right">3</td>
+<td headers="September stub_1_14 Q1" class="gt_row gt_right">3.25</td>
+<td headers="September stub_1_14 Mean" class="gt_row gt_right" style="background-color: #4BAD4F; color: #FFFFFF;">10.67</td>
+<td headers="September stub_1_14 Median" class="gt_row gt_right">4.0</td>
+<td headers="September stub_1_14 Q3" class="gt_row gt_right">6.25</td>
+<td headers="September stub_1_14 Maximum" class="gt_row gt_right">43</td>
+<td headers="September stub_1_14 SD" class="gt_row gt_right">15.91</td>
+<td headers="September stub_1_14 Nr" class="gt_row gt_right">6</td></tr>
+    <tr><th id="stub_1_15" scope="row" class="gt_row gt_left gt_stub">Lesser horseshoe</th>
+<td headers="September stub_1_15 Minimum" class="gt_row gt_right">1</td>
+<td headers="September stub_1_15 Q1" class="gt_row gt_right">1.50</td>
+<td headers="September stub_1_15 Mean" class="gt_row gt_right" style="background-color: #D0EAD1; color: #000000;">2.43</td>
+<td headers="September stub_1_15 Median" class="gt_row gt_right">3.0</td>
+<td headers="September stub_1_15 Q3" class="gt_row gt_right">3.00</td>
+<td headers="September stub_1_15 Maximum" class="gt_row gt_right">4</td>
+<td headers="September stub_1_15 SD" class="gt_row gt_right">1.13</td>
+<td headers="September stub_1_15 Nr" class="gt_row gt_right">7</td></tr>
+    <tr class="gt_group_heading_row">
+      <th colspan="9" class="gt_group_heading" scope="colgroup" id="October">October</th>
+    </tr>
+    <tr class="gt_row_group_first"><th id="stub_1_16" scope="row" class="gt_row gt_left gt_stub">Barbastelle</th>
+<td headers="October stub_1_16 Minimum" class="gt_row gt_right">4</td>
+<td headers="October stub_1_16 Q1" class="gt_row gt_right">5.00</td>
+<td headers="October stub_1_16 Mean" class="gt_row gt_right" style="background-color: #80C783; color: #000000;">6.71</td>
+<td headers="October stub_1_16 Median" class="gt_row gt_right">6.0</td>
+<td headers="October stub_1_16 Q3" class="gt_row gt_right">7.00</td>
+<td headers="October stub_1_16 Maximum" class="gt_row gt_right">13</td>
+<td headers="October stub_1_16 SD" class="gt_row gt_right">2.98</td>
+<td headers="October stub_1_16 Nr" class="gt_row gt_right">7</td></tr>
+    <tr><th id="stub_1_17" scope="row" class="gt_row gt_left gt_stub">Greater horseshoe</th>
+<td headers="October stub_1_17 Minimum" class="gt_row gt_right">1</td>
+<td headers="October stub_1_17 Q1" class="gt_row gt_right">1.00</td>
+<td headers="October stub_1_17 Mean" class="gt_row gt_right" style="background-color: #E8F5E9; color: #000000;">1.00</td>
+<td headers="October stub_1_17 Median" class="gt_row gt_right">1.0</td>
+<td headers="October stub_1_17 Q3" class="gt_row gt_right">1.00</td>
+<td headers="October stub_1_17 Maximum" class="gt_row gt_right">1</td>
+<td headers="October stub_1_17 SD" class="gt_row gt_right">0.00</td>
+<td headers="October stub_1_17 Nr" class="gt_row gt_right">2</td></tr>
+    <tr><th id="stub_1_18" scope="row" class="gt_row gt_left gt_stub">Lesser horseshoe</th>
+<td headers="October stub_1_18 Minimum" class="gt_row gt_right">1</td>
+<td headers="October stub_1_18 Q1" class="gt_row gt_right">1.00</td>
+<td headers="October stub_1_18 Mean" class="gt_row gt_right" style="background-color: #CCE8CD; color: #000000;">2.67</td>
+<td headers="October stub_1_18 Median" class="gt_row gt_right">1.0</td>
+<td headers="October stub_1_18 Q3" class="gt_row gt_right">3.50</td>
+<td headers="October stub_1_18 Maximum" class="gt_row gt_right">6</td>
+<td headers="October stub_1_18 SD" class="gt_row gt_right">2.89</td>
+<td headers="October stub_1_18 Nr" class="gt_row gt_right">3</td></tr>
+  </tbody>
+  
+  
 </table>
 </div>
-
 </div>
 </div>
 </div>

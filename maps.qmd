@@ -37,6 +37,7 @@ library(tidyverse)
 library(sf)
 library(ggspatial)
 library(iBats)
+library(glue)
 
 spatial_data <- Lydford%>% 
   select(Species, longitude = Longitude, latitude = Latitude)

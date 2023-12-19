@@ -111,6 +111,8 @@ div.csl-indent {
     "search-submit-button-title": "Submit"
   }
 }</script>
+<link href="site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+<script src="site_libs/tabwid-1.1.3/tabwid.js"></script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -287,15 +289,28 @@ div.csl-indent {
 <span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
+<div id="tbl-night" class="anchored">
 
 <div id="epsuwfvagd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<style>#epsuwfvagd table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#epsuwfvagd thead, #epsuwfvagd tbody, #epsuwfvagd tfoot, #epsuwfvagd tr, #epsuwfvagd td, #epsuwfvagd th {
+  border-style: none;
+}
+
+#epsuwfvagd p {
+  margin: 0;
+  padding: 0;
 }
 
 #epsuwfvagd .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -316,18 +331,6 @@ div.csl-indent {
   border-left-style: none;
   border-left-width: 2px;
   border-left-color: #D3D3D3;
-}
-
-#epsuwfvagd .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
 }
 
 #epsuwfvagd .gt_caption {
@@ -351,12 +354,24 @@ div.csl-indent {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
+}
+
+#epsuwfvagd .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
 }
 
 #epsuwfvagd .gt_bottom_border {
@@ -430,6 +445,10 @@ div.csl-indent {
   overflow-x: hidden;
   display: inline-block;
   width: 100%;
+}
+
+#epsuwfvagd .gt_spanner_row {
+  border-bottom-style: hidden;
 }
 
 #epsuwfvagd .gt_group_heading {
@@ -531,6 +550,10 @@ div.csl-indent {
   border-top-width: 2px;
 }
 
+#epsuwfvagd .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
 #epsuwfvagd .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
@@ -580,6 +603,16 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
+#epsuwfvagd .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
 #epsuwfvagd .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
@@ -610,8 +643,8 @@ div.csl-indent {
 #epsuwfvagd .gt_footnote {
   margin: 0px;
   font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -668,10 +701,9 @@ div.csl-indent {
 }
 
 #epsuwfvagd .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
 #epsuwfvagd .gt_asterisk {
@@ -699,53 +731,42 @@ div.csl-indent {
   text-indent: 25px;
 }
 </style>
-
-<div id="tbl-night" class="anchored">
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;1: The Night from the DateTime Column</caption>
-<thead class="gt_col_headings">
-<tr class="header">
-<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
-<th id="Night" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="background-color: #191970; color: #FFFFFF; font-weight: bold" scope="col">Night</th>
-<th id="DateTime" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">DateTime</th>
-<th id="Species" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Species</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="Description">Static 4</td>
-<td class="gt_row gt_left" headers="Night" style="background-color: #191970; color: #FFFFFF; font-weight: normal">2016-08-24</td>
-<td class="gt_row gt_left" headers="DateTime">2016-08-25 01:58:59</td>
-<td class="gt_row gt_left" headers="Species">Pipistrellus pipistrellus</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Description">Static 4</td>
-<td class="gt_row gt_left" headers="Night" style="background-color: #191970; color: #FFFFFF; font-weight: normal">2016-08-04</td>
-<td class="gt_row gt_left" headers="DateTime">2016-08-04 23:11:37</td>
-<td class="gt_row gt_left" headers="Species">Pipistrellus pipistrellus</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Description">Static 4</td>
-<td class="gt_row gt_left" headers="Night" style="background-color: #191970; color: #FFFFFF; font-weight: normal">2016-06-12</td>
-<td class="gt_row gt_left" headers="DateTime">2016-06-13 01:50:48</td>
-<td class="gt_row gt_left" headers="Species">Pipistrellus pipistrellus</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Description">Static 4</td>
-<td class="gt_row gt_left" headers="Night" style="background-color: #191970; color: #FFFFFF; font-weight: normal">2016-07-30</td>
-<td class="gt_row gt_left" headers="DateTime">2016-07-31 01:08:12</td>
-<td class="gt_row gt_left" headers="Species">Pipistrellus pipistrellus</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Description">Static 2</td>
-<td class="gt_row gt_left" headers="Night" style="background-color: #191970; color: #FFFFFF; font-weight: normal">2016-10-10</td>
-<td class="gt_row gt_left" headers="DateTime">2016-10-10 19:39:35</td>
-<td class="gt_row gt_left" headers="Species">Plecotus spp.</td>
-</tr>
-</tbody>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption>Table&nbsp;1:  <p>The Night from the DateTime Column</p> </caption>
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Description">Description</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #191970; color: #FFFFFF; font-weight: bold;" scope="col" id="Night">Night</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="DateTime">DateTime</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Species">Species</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="Night" class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-08-24</td>
+<td headers="DateTime" class="gt_row gt_left">2016-08-25 01:58:59</td>
+<td headers="Species" class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="Night" class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-08-04</td>
+<td headers="DateTime" class="gt_row gt_left">2016-08-04 23:11:37</td>
+<td headers="Species" class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="Night" class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-06-12</td>
+<td headers="DateTime" class="gt_row gt_left">2016-06-13 01:50:48</td>
+<td headers="Species" class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="Night" class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-07-30</td>
+<td headers="DateTime" class="gt_row gt_left">2016-07-31 01:08:12</td>
+<td headers="Species" class="gt_row gt_left">Pipistrellus pipistrellus</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 2</td>
+<td headers="Night" class="gt_row gt_left" style="background-color: #191970; color: #FFFFFF; font-weight: normal;">2016-10-10</td>
+<td headers="DateTime" class="gt_row gt_left">2016-10-10 19:39:35</td>
+<td headers="Species" class="gt_row gt_left">Plecotus spp.</td></tr>
+  </tbody>
+  
+  
 </table>
 </div>
-
 </div>
 </div>
 </div>
@@ -787,15 +808,28 @@ div.csl-indent {
 <span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> DateTime)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
+<div id="tbl-other" class="anchored">
 
 <div id="giftspehwa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<style>#giftspehwa table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#giftspehwa thead, #giftspehwa tbody, #giftspehwa tfoot, #giftspehwa tr, #giftspehwa td, #giftspehwa th {
+  border-style: none;
+}
+
+#giftspehwa p {
+  margin: 0;
+  padding: 0;
 }
 
 #giftspehwa .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -816,18 +850,6 @@ div.csl-indent {
   border-left-style: none;
   border-left-width: 2px;
   border-left-color: #D3D3D3;
-}
-
-#giftspehwa .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
 }
 
 #giftspehwa .gt_caption {
@@ -851,12 +873,24 @@ div.csl-indent {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
+}
+
+#giftspehwa .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
 }
 
 #giftspehwa .gt_bottom_border {
@@ -930,6 +964,10 @@ div.csl-indent {
   overflow-x: hidden;
   display: inline-block;
   width: 100%;
+}
+
+#giftspehwa .gt_spanner_row {
+  border-bottom-style: hidden;
 }
 
 #giftspehwa .gt_group_heading {
@@ -1031,6 +1069,10 @@ div.csl-indent {
   border-top-width: 2px;
 }
 
+#giftspehwa .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
 #giftspehwa .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
@@ -1080,6 +1122,16 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
+#giftspehwa .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
 #giftspehwa .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
@@ -1110,8 +1162,8 @@ div.csl-indent {
 #giftspehwa .gt_footnote {
   margin: 0px;
   font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -1168,10 +1220,9 @@ div.csl-indent {
 }
 
 #giftspehwa .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
 #giftspehwa .gt_asterisk {
@@ -1199,71 +1250,60 @@ div.csl-indent {
   text-indent: 25px;
 }
 </style>
-
-<div id="tbl-other" class="anchored">
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;2: Other Date and Time Information from the DateTime Column</caption>
-<thead class="gt_col_headings">
-<tr class="header">
-<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Description</th>
-<th id="DateTime" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">DateTime</th>
-<th id="Species" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Species</th>
-<th id="Month" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="background-color: #E0FFFF; color: #000000; font-weight: bold" scope="col">Month</th>
-<th id="MonthFull" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="background-color: #E0FFFF; color: #000000; font-weight: bold" scope="col">MonthFull</th>
-<th id="Year" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #E0FFFF; color: #000000; font-weight: bold" scope="col">Year</th>
-<th id="JustTime" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" style="background-color: #E0FFFF; color: #000000; font-weight: bold" scope="col">JustTime</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="Description">Static 2</td>
-<td class="gt_row gt_left" headers="DateTime">2016-08-15 01:44:55</td>
-<td class="gt_row gt_left" headers="Species">Pipistrellus pygmaeus</td>
-<td class="gt_row gt_center" headers="Month" style="background-color: #E0FFFF; color: #000000; font-weight: normal">Aug</td>
-<td class="gt_row gt_center" headers="MonthFull" style="background-color: #E0FFFF; color: #000000; font-weight: normal">August</td>
-<td class="gt_row gt_right" headers="Year" style="background-color: #E0FFFF; color: #000000; font-weight: normal">2016</td>
-<td class="gt_row gt_center" headers="JustTime" style="background-color: #E0FFFF; color: #000000; font-weight: normal">13:44:55</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Description">Static 3</td>
-<td class="gt_row gt_left" headers="DateTime">2016-08-13 22:10:52</td>
-<td class="gt_row gt_left" headers="Species">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_center" headers="Month" style="background-color: #E0FFFF; color: #000000; font-weight: normal">Aug</td>
-<td class="gt_row gt_center" headers="MonthFull" style="background-color: #E0FFFF; color: #000000; font-weight: normal">August</td>
-<td class="gt_row gt_right" headers="Year" style="background-color: #E0FFFF; color: #000000; font-weight: normal">2016</td>
-<td class="gt_row gt_center" headers="JustTime" style="background-color: #E0FFFF; color: #000000; font-weight: normal">10:10:52</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Description">Static 2</td>
-<td class="gt_row gt_left" headers="DateTime">2016-06-26 00:19:49</td>
-<td class="gt_row gt_left" headers="Species">Rhinolophus ferrumequinum</td>
-<td class="gt_row gt_center" headers="Month" style="background-color: #E0FFFF; color: #000000; font-weight: normal">Jun</td>
-<td class="gt_row gt_center" headers="MonthFull" style="background-color: #E0FFFF; color: #000000; font-weight: normal">June</td>
-<td class="gt_row gt_right" headers="Year" style="background-color: #E0FFFF; color: #000000; font-weight: normal">2016</td>
-<td class="gt_row gt_center" headers="JustTime" style="background-color: #E0FFFF; color: #000000; font-weight: normal">12:19:49</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Description">Static 2</td>
-<td class="gt_row gt_left" headers="DateTime">2016-06-05 04:11:35</td>
-<td class="gt_row gt_left" headers="Species">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_center" headers="Month" style="background-color: #E0FFFF; color: #000000; font-weight: normal">Jun</td>
-<td class="gt_row gt_center" headers="MonthFull" style="background-color: #E0FFFF; color: #000000; font-weight: normal">June</td>
-<td class="gt_row gt_right" headers="Year" style="background-color: #E0FFFF; color: #000000; font-weight: normal">2016</td>
-<td class="gt_row gt_center" headers="JustTime" style="background-color: #E0FFFF; color: #000000; font-weight: normal">16:11:35</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Description">Static 4</td>
-<td class="gt_row gt_left" headers="DateTime">2016-07-31 21:16:24</td>
-<td class="gt_row gt_left" headers="Species">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_center" headers="Month" style="background-color: #E0FFFF; color: #000000; font-weight: normal">Jul</td>
-<td class="gt_row gt_center" headers="MonthFull" style="background-color: #E0FFFF; color: #000000; font-weight: normal">July</td>
-<td class="gt_row gt_right" headers="Year" style="background-color: #E0FFFF; color: #000000; font-weight: normal">2016</td>
-<td class="gt_row gt_center" headers="JustTime" style="background-color: #E0FFFF; color: #000000; font-weight: normal">09:16:24</td>
-</tr>
-</tbody>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption>Table&nbsp;2:  <p>Other Date and Time Information from the DateTime Column</p> </caption>
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Description">Description</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="DateTime">DateTime</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Species">Species</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #E0FFFF; color: #000000; font-weight: bold;" scope="col" id="Month">Month</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #E0FFFF; color: #000000; font-weight: bold;" scope="col" id="MonthFull">MonthFull</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #E0FFFF; color: #000000; font-weight: bold;" scope="col" id="Year">Year</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" style="background-color: #E0FFFF; color: #000000; font-weight: bold;" scope="col" id="JustTime">JustTime</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Description" class="gt_row gt_left">Static 2</td>
+<td headers="DateTime" class="gt_row gt_left">2016-08-15 01:44:55</td>
+<td headers="Species" class="gt_row gt_left">Pipistrellus pygmaeus</td>
+<td headers="Month" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Aug</td>
+<td headers="MonthFull" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">August</td>
+<td headers="Year" class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
+<td headers="JustTime" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">13:44:55</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 3</td>
+<td headers="DateTime" class="gt_row gt_left">2016-08-13 22:10:52</td>
+<td headers="Species" class="gt_row gt_left">Pipistrellus pipistrellus</td>
+<td headers="Month" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Aug</td>
+<td headers="MonthFull" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">August</td>
+<td headers="Year" class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
+<td headers="JustTime" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">10:10:52</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 2</td>
+<td headers="DateTime" class="gt_row gt_left">2016-06-26 00:19:49</td>
+<td headers="Species" class="gt_row gt_left">Rhinolophus ferrumequinum</td>
+<td headers="Month" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Jun</td>
+<td headers="MonthFull" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">June</td>
+<td headers="Year" class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
+<td headers="JustTime" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">12:19:49</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 2</td>
+<td headers="DateTime" class="gt_row gt_left">2016-06-05 04:11:35</td>
+<td headers="Species" class="gt_row gt_left">Pipistrellus pipistrellus</td>
+<td headers="Month" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Jun</td>
+<td headers="MonthFull" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">June</td>
+<td headers="Year" class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
+<td headers="JustTime" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">16:11:35</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_left">2016-07-31 21:16:24</td>
+<td headers="Species" class="gt_row gt_left">Pipistrellus pipistrellus</td>
+<td headers="Month" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">Jul</td>
+<td headers="MonthFull" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">July</td>
+<td headers="Year" class="gt_row gt_right" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">2016</td>
+<td headers="JustTime" class="gt_row gt_center" style="background-color: #E0FFFF; color: #000000; font-weight: normal;">09:16:24</td></tr>
+  </tbody>
+  
+  
 </table>
 </div>
-
 </div>
 </div>
 </div>
@@ -1350,15 +1390,28 @@ div.csl-indent {
 <span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> <span class="fu">c</span>(Night, DateTime, sunset))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
+<div id="tbl-suntimes" class="anchored">
 
 <div id="bovfmtvsha" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<style>#bovfmtvsha table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#bovfmtvsha thead, #bovfmtvsha tbody, #bovfmtvsha tfoot, #bovfmtvsha tr, #bovfmtvsha td, #bovfmtvsha th {
+  border-style: none;
+}
+
+#bovfmtvsha p {
+  margin: 0;
+  padding: 0;
 }
 
 #bovfmtvsha .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -1379,18 +1432,6 @@ div.csl-indent {
   border-left-style: none;
   border-left-width: 2px;
   border-left-color: #D3D3D3;
-}
-
-#bovfmtvsha .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
 }
 
 #bovfmtvsha .gt_caption {
@@ -1414,12 +1455,24 @@ div.csl-indent {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
+}
+
+#bovfmtvsha .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
 }
 
 #bovfmtvsha .gt_bottom_border {
@@ -1493,6 +1546,10 @@ div.csl-indent {
   overflow-x: hidden;
   display: inline-block;
   width: 100%;
+}
+
+#bovfmtvsha .gt_spanner_row {
+  border-bottom-style: hidden;
 }
 
 #bovfmtvsha .gt_group_heading {
@@ -1594,6 +1651,10 @@ div.csl-indent {
   border-top-width: 2px;
 }
 
+#bovfmtvsha .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
 #bovfmtvsha .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
@@ -1643,6 +1704,16 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
+#bovfmtvsha .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
 #bovfmtvsha .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
@@ -1673,8 +1744,8 @@ div.csl-indent {
 #bovfmtvsha .gt_footnote {
   margin: 0px;
   font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -1731,10 +1802,9 @@ div.csl-indent {
 }
 
 #bovfmtvsha .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
 #bovfmtvsha .gt_asterisk {
@@ -1762,59 +1832,48 @@ div.csl-indent {
   text-indent: 25px;
 }
 </style>
-
-<div id="tbl-suntimes" class="anchored">
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;3: Sun Time Information from the Night and DateTime Columns</caption>
-<thead class="gt_col_headings">
-<tr class="header">
-<th id="Night" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Night</th>
-<th id="DateTime" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">DateTime</th>
-<th id="sunset" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="background-color: #FFC0CB; color: #000000; font-weight: bold" scope="col">sunset</th>
-<th id="post_set_min" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #FFC0CB; color: #000000; font-weight: bold" scope="col">post_set_min</th>
-<th id="post_set_hr_int" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #FFC0CB; color: #000000; font-weight: bold" scope="col">post_set_hr_int</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="Night">2016-07-29</td>
-<td class="gt_row gt_left" headers="DateTime">2016-07-30 03:04:26</td>
-<td class="gt_row gt_left" headers="sunset" style="background-color: #FFC0CB; color: #000000; font-weight: normal">2016-07-29 21:04:06</td>
-<td class="gt_row gt_right" headers="post_set_min" style="background-color: #FFC0CB; color: #000000; font-weight: normal">360.33333</td>
-<td class="gt_row gt_right" headers="post_set_hr_int" style="background-color: #FFC0CB; color: #000000; font-weight: normal">6</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Night">2016-08-04</td>
-<td class="gt_row gt_left" headers="DateTime">2016-08-04 22:47:09</td>
-<td class="gt_row gt_left" headers="sunset" style="background-color: #FFC0CB; color: #000000; font-weight: normal">2016-08-04 20:54:49</td>
-<td class="gt_row gt_right" headers="post_set_min" style="background-color: #FFC0CB; color: #000000; font-weight: normal">112.33333</td>
-<td class="gt_row gt_right" headers="post_set_hr_int" style="background-color: #FFC0CB; color: #000000; font-weight: normal">2</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Night">2016-06-07</td>
-<td class="gt_row gt_left" headers="DateTime">2016-06-07 22:45:34</td>
-<td class="gt_row gt_left" headers="sunset" style="background-color: #FFC0CB; color: #000000; font-weight: normal">2016-06-07 21:23:08</td>
-<td class="gt_row gt_right" headers="post_set_min" style="background-color: #FFC0CB; color: #000000; font-weight: normal">82.43333</td>
-<td class="gt_row gt_right" headers="post_set_hr_int" style="background-color: #FFC0CB; color: #000000; font-weight: normal">1</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Night">2016-07-29</td>
-<td class="gt_row gt_left" headers="DateTime">2016-07-30 05:15:40</td>
-<td class="gt_row gt_left" headers="sunset" style="background-color: #FFC0CB; color: #000000; font-weight: normal">2016-07-29 21:04:06</td>
-<td class="gt_row gt_right" headers="post_set_min" style="background-color: #FFC0CB; color: #000000; font-weight: normal">491.56667</td>
-<td class="gt_row gt_right" headers="post_set_hr_int" style="background-color: #FFC0CB; color: #000000; font-weight: normal">8</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Night">2016-06-07</td>
-<td class="gt_row gt_left" headers="DateTime">2016-06-07 22:00:01</td>
-<td class="gt_row gt_left" headers="sunset" style="background-color: #FFC0CB; color: #000000; font-weight: normal">2016-06-07 21:23:08</td>
-<td class="gt_row gt_right" headers="post_set_min" style="background-color: #FFC0CB; color: #000000; font-weight: normal">36.88333</td>
-<td class="gt_row gt_right" headers="post_set_hr_int" style="background-color: #FFC0CB; color: #000000; font-weight: normal">1</td>
-</tr>
-</tbody>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption>Table&nbsp;3:  <p>Sun Time Information from the Night and DateTime Columns</p> </caption>
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Night">Night</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="DateTime">DateTime</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #FFC0CB; color: #000000; font-weight: bold;" scope="col" id="sunset">sunset</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #FFC0CB; color: #000000; font-weight: bold;" scope="col" id="post_set_min">post_set_min</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #FFC0CB; color: #000000; font-weight: bold;" scope="col" id="post_set_hr_int">post_set_hr_int</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Night" class="gt_row gt_left">2016-07-29</td>
+<td headers="DateTime" class="gt_row gt_left">2016-07-30 03:04:26</td>
+<td headers="sunset" class="gt_row gt_left" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2016-07-29 21:04:06</td>
+<td headers="post_set_min" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">360.33333</td>
+<td headers="post_set_hr_int" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">6</td></tr>
+    <tr><td headers="Night" class="gt_row gt_left">2016-08-04</td>
+<td headers="DateTime" class="gt_row gt_left">2016-08-04 22:47:09</td>
+<td headers="sunset" class="gt_row gt_left" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2016-08-04 20:54:49</td>
+<td headers="post_set_min" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">112.33333</td>
+<td headers="post_set_hr_int" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2</td></tr>
+    <tr><td headers="Night" class="gt_row gt_left">2016-06-07</td>
+<td headers="DateTime" class="gt_row gt_left">2016-06-07 22:45:34</td>
+<td headers="sunset" class="gt_row gt_left" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2016-06-07 21:23:08</td>
+<td headers="post_set_min" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">82.43333</td>
+<td headers="post_set_hr_int" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">1</td></tr>
+    <tr><td headers="Night" class="gt_row gt_left">2016-07-29</td>
+<td headers="DateTime" class="gt_row gt_left">2016-07-30 05:15:40</td>
+<td headers="sunset" class="gt_row gt_left" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2016-07-29 21:04:06</td>
+<td headers="post_set_min" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">491.56667</td>
+<td headers="post_set_hr_int" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">8</td></tr>
+    <tr><td headers="Night" class="gt_row gt_left">2016-06-07</td>
+<td headers="DateTime" class="gt_row gt_left">2016-06-07 22:00:01</td>
+<td headers="sunset" class="gt_row gt_left" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">2016-06-07 21:23:08</td>
+<td headers="post_set_min" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">36.88333</td>
+<td headers="post_set_hr_int" class="gt_row gt_right" style="background-color: #FFC0CB; color: #000000; font-weight: normal;">1</td></tr>
+  </tbody>
+  
+  
 </table>
 </div>
-
 </div>
 </div>
 </div>
@@ -1899,15 +1958,28 @@ div.csl-indent {
 <span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">columns =</span> DateTime)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
+<div id="tbl-common" class="anchored">
 
 <div id="lhlsguvxpa" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<style>#lhlsguvxpa table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#lhlsguvxpa thead, #lhlsguvxpa tbody, #lhlsguvxpa tfoot, #lhlsguvxpa tr, #lhlsguvxpa td, #lhlsguvxpa th {
+  border-style: none;
+}
+
+#lhlsguvxpa p {
+  margin: 0;
+  padding: 0;
 }
 
 #lhlsguvxpa .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -1928,18 +2000,6 @@ div.csl-indent {
   border-left-style: none;
   border-left-width: 2px;
   border-left-color: #D3D3D3;
-}
-
-#lhlsguvxpa .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
 }
 
 #lhlsguvxpa .gt_caption {
@@ -1963,12 +2023,24 @@ div.csl-indent {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
+}
+
+#lhlsguvxpa .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
 }
 
 #lhlsguvxpa .gt_bottom_border {
@@ -2042,6 +2114,10 @@ div.csl-indent {
   overflow-x: hidden;
   display: inline-block;
   width: 100%;
+}
+
+#lhlsguvxpa .gt_spanner_row {
+  border-bottom-style: hidden;
 }
 
 #lhlsguvxpa .gt_group_heading {
@@ -2143,6 +2219,10 @@ div.csl-indent {
   border-top-width: 2px;
 }
 
+#lhlsguvxpa .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
 #lhlsguvxpa .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
@@ -2192,6 +2272,16 @@ div.csl-indent {
   border-top-color: #D3D3D3;
 }
 
+#lhlsguvxpa .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
 #lhlsguvxpa .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
@@ -2222,8 +2312,8 @@ div.csl-indent {
 #lhlsguvxpa .gt_footnote {
   margin: 0px;
   font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -2280,10 +2370,9 @@ div.csl-indent {
 }
 
 #lhlsguvxpa .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
 #lhlsguvxpa .gt_asterisk {
@@ -2311,83 +2400,62 @@ div.csl-indent {
   text-indent: 25px;
 }
 </style>
-
-<div id="tbl-common" class="anchored">
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;4: From the Scientific Name Create a Common Name Vector</caption>
-<thead class="gt_col_headings">
-<tr class="header">
-<th id="Description" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Description</th>
-<th id="DateTime" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">DateTime</th>
-<th id="Species" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Species</th>
-<th id="Common" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Common</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="Description">Static 4</td>
-<td class="gt_row gt_left" headers="DateTime">2016-06-13 02:14:51</td>
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_left" headers="Common" style="font-weight: bold">Common pipistrelle</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Description">Static 1</td>
-<td class="gt_row gt_left" headers="DateTime">2016-06-06 00:20:18</td>
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_left" headers="Common" style="font-weight: bold">Common pipistrelle</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Description">Static 4</td>
-<td class="gt_row gt_left" headers="DateTime">2016-07-30 22:25:21</td>
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_left" headers="Common" style="font-weight: bold">Common pipistrelle</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Description">Static 4</td>
-<td class="gt_row gt_left" headers="DateTime">2016-07-29 00:07:42</td>
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_left" headers="Common" style="font-weight: bold">Common pipistrelle</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Description">Static 4</td>
-<td class="gt_row gt_left" headers="DateTime">2016-07-27 03:54:21</td>
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_left" headers="Common" style="font-weight: bold">Common pipistrelle</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Description">Static 2</td>
-<td class="gt_row gt_left" headers="DateTime">2016-09-19 21:01:39</td>
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus spp.</td>
-<td class="gt_row gt_left" headers="Common" style="font-weight: bold">Pipistrelle</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Description">Static 4</td>
-<td class="gt_row gt_left" headers="DateTime">2016-07-31 22:39:33</td>
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_left" headers="Common" style="font-weight: bold">Common pipistrelle</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Description">Static 4</td>
-<td class="gt_row gt_left" headers="DateTime">2016-07-29 01:26:49</td>
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_left" headers="Common" style="font-weight: bold">Common pipistrelle</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Description">Static 1</td>
-<td class="gt_row gt_left" headers="DateTime">2016-06-21 01:06:47</td>
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_left" headers="Common" style="font-weight: bold">Common pipistrelle</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Description">Static 4</td>
-<td class="gt_row gt_left" headers="DateTime">2016-10-16 19:13:08</td>
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_left" headers="Common" style="font-weight: bold">Common pipistrelle</td>
-</tr>
-</tbody>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption>Table&nbsp;4:  <p>From the Scientific Name Create a Common Name Vector</p> </caption>
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Description">Description</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="DateTime">DateTime</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Species">Species</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Common">Common</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_left">2016-06-13 02:14:51</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Common" class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 1</td>
+<td headers="DateTime" class="gt_row gt_left">2016-06-06 00:20:18</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Common" class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_left">2016-07-30 22:25:21</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Common" class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_left">2016-07-29 00:07:42</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Common" class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_left">2016-07-27 03:54:21</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Common" class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 2</td>
+<td headers="DateTime" class="gt_row gt_left">2016-09-19 21:01:39</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus spp.</td>
+<td headers="Common" class="gt_row gt_left" style="font-weight: bold;">Pipistrelle</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_left">2016-07-31 22:39:33</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Common" class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_left">2016-07-29 01:26:49</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Common" class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 1</td>
+<td headers="DateTime" class="gt_row gt_left">2016-06-21 01:06:47</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Common" class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
+    <tr><td headers="Description" class="gt_row gt_left">Static 4</td>
+<td headers="DateTime" class="gt_row gt_left">2016-10-16 19:13:08</td>
+<td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Common" class="gt_row gt_left" style="font-weight: bold;">Common pipistrelle</td></tr>
+  </tbody>
+  
+  
 </table>
 </div>
-
 </div>
 </div>
 </div>
@@ -2642,15 +2710,28 @@ Tip
 <span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
+<div id="tbl-NGR" class="anchored">
 
 <div id="ccdmqeiwyx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<style>#ccdmqeiwyx table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ccdmqeiwyx thead, #ccdmqeiwyx tbody, #ccdmqeiwyx tfoot, #ccdmqeiwyx tr, #ccdmqeiwyx td, #ccdmqeiwyx th {
+  border-style: none;
+}
+
+#ccdmqeiwyx p {
+  margin: 0;
+  padding: 0;
 }
 
 #ccdmqeiwyx .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -2671,18 +2752,6 @@ Tip
   border-left-style: none;
   border-left-width: 2px;
   border-left-color: #D3D3D3;
-}
-
-#ccdmqeiwyx .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
 }
 
 #ccdmqeiwyx .gt_caption {
@@ -2706,12 +2775,24 @@ Tip
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
+}
+
+#ccdmqeiwyx .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
 }
 
 #ccdmqeiwyx .gt_bottom_border {
@@ -2785,6 +2866,10 @@ Tip
   overflow-x: hidden;
   display: inline-block;
   width: 100%;
+}
+
+#ccdmqeiwyx .gt_spanner_row {
+  border-bottom-style: hidden;
 }
 
 #ccdmqeiwyx .gt_group_heading {
@@ -2886,6 +2971,10 @@ Tip
   border-top-width: 2px;
 }
 
+#ccdmqeiwyx .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
 #ccdmqeiwyx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
@@ -2935,6 +3024,16 @@ Tip
   border-top-color: #D3D3D3;
 }
 
+#ccdmqeiwyx .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
 #ccdmqeiwyx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
@@ -2965,8 +3064,8 @@ Tip
 #ccdmqeiwyx .gt_footnote {
   margin: 0px;
   font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -3023,10 +3122,9 @@ Tip
 }
 
 #ccdmqeiwyx .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
 #ccdmqeiwyx .gt_asterisk {
@@ -3054,83 +3152,63 @@ Tip
   text-indent: 25px;
 }
 </style>
-
-<div id="tbl-NGR" class="anchored">
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;5: From the Longitude and Latitude Create a Vector of the British National Grid Coordinates</caption>
-<thead class="gt_col_headings">
-<tr class="header">
-<th id="Species" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Species</th>
-<th id="Longitude" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Longitude</th>
-<th id="Latitude" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Latitude</th>
-<th id="GridRef" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #228B22; color: #FFFFFF; font-weight: normal" scope="col">GridRef</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right" headers="Longitude">-3.591048</td>
-<td class="gt_row gt_right" headers="Latitude">50.33094</td>
-<td class="gt_row gt_right" headers="GridRef" style="background-color: #228B22; color: #FFFFFF; font-weight: normal">286854.431403263,49101.2549532561</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Myotis spp.</td>
-<td class="gt_row gt_right" headers="Longitude">-3.591808</td>
-<td class="gt_row gt_right" headers="Latitude">50.33126</td>
-<td class="gt_row gt_right" headers="GridRef" style="background-color: #228B22; color: #FFFFFF; font-weight: normal">286801.102694949,49137.9914956368</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right" headers="Longitude">-3.591798</td>
-<td class="gt_row gt_right" headers="Latitude">50.33132</td>
-<td class="gt_row gt_right" headers="GridRef" style="background-color: #228B22; color: #FFFFFF; font-weight: normal">286801.957123455,49144.6474465514</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right" headers="Longitude">-3.591878</td>
-<td class="gt_row gt_right" headers="Latitude">50.33141</td>
-<td class="gt_row gt_right" headers="GridRef" style="background-color: #228B22; color: #FFFFFF; font-weight: normal">286796.477591845,49154.7760258182</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right" headers="Longitude">-3.595008</td>
-<td class="gt_row gt_right" headers="Latitude">50.33221</td>
-<td class="gt_row gt_right" headers="GridRef" style="background-color: #228B22; color: #FFFFFF; font-weight: normal">286575.621663931,49248.4957881758</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right" headers="Longitude">-3.591768</td>
-<td class="gt_row gt_right" headers="Latitude">50.33133</td>
-<td class="gt_row gt_right" headers="GridRef" style="background-color: #228B22; color: #FFFFFF; font-weight: normal">286804.11602111,49145.7136310115</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right" headers="Longitude">-3.591758</td>
-<td class="gt_row gt_right" headers="Latitude">50.33132</td>
-<td class="gt_row gt_right" headers="GridRef" style="background-color: #228B22; color: #FFFFFF; font-weight: normal">286804.803937794,49144.5865421783</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right" headers="Longitude">-3.592228</td>
-<td class="gt_row gt_right" headers="Latitude">50.33091</td>
-<td class="gt_row gt_right" headers="GridRef" style="background-color: #228B22; color: #FFFFFF; font-weight: normal">286770.378328093,49099.7158903753</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Plecotus spp.</td>
-<td class="gt_row gt_right" headers="Longitude">-3.592583</td>
-<td class="gt_row gt_right" headers="Latitude">50.33323</td>
-<td class="gt_row gt_right" headers="GridRef" style="background-color: #228B22; color: #FFFFFF; font-weight: normal">286750.61980236,49357.5417145688</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pipistrellus</td>
-<td class="gt_row gt_right" headers="Longitude">-3.593018</td>
-<td class="gt_row gt_right" headers="Latitude">50.33101</td>
-<td class="gt_row gt_right" headers="GridRef" style="background-color: #228B22; color: #FFFFFF; font-weight: normal">286714.381797414,49111.5932755259</td>
-</tr>
-</tbody>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption>Table&nbsp;5:  <p>From the Longitude and Latitude Create a Vector of the British
+National Grid Coordinates</p> </caption>
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Species">Species</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Longitude">Longitude</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Latitude">Latitude</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;" scope="col" id="GridRef">GridRef</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.591048</td>
+<td headers="Latitude" class="gt_row gt_right">50.33094</td>
+<td headers="GridRef" class="gt_row gt_right" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286854.431403263,49101.2549532561</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Myotis spp.</td>
+<td headers="Longitude" class="gt_row gt_right">-3.591808</td>
+<td headers="Latitude" class="gt_row gt_right">50.33126</td>
+<td headers="GridRef" class="gt_row gt_right" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286801.102694949,49137.9914956368</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.591798</td>
+<td headers="Latitude" class="gt_row gt_right">50.33132</td>
+<td headers="GridRef" class="gt_row gt_right" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286801.957123455,49144.6474465514</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.591878</td>
+<td headers="Latitude" class="gt_row gt_right">50.33141</td>
+<td headers="GridRef" class="gt_row gt_right" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286796.477591845,49154.7760258182</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.595008</td>
+<td headers="Latitude" class="gt_row gt_right">50.33221</td>
+<td headers="GridRef" class="gt_row gt_right" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286575.621663931,49248.4957881758</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.591768</td>
+<td headers="Latitude" class="gt_row gt_right">50.33133</td>
+<td headers="GridRef" class="gt_row gt_right" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286804.11602111,49145.7136310115</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.591758</td>
+<td headers="Latitude" class="gt_row gt_right">50.33132</td>
+<td headers="GridRef" class="gt_row gt_right" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286804.803937794,49144.5865421783</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.592228</td>
+<td headers="Latitude" class="gt_row gt_right">50.33091</td>
+<td headers="GridRef" class="gt_row gt_right" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286770.378328093,49099.7158903753</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Plecotus spp.</td>
+<td headers="Longitude" class="gt_row gt_right">-3.592583</td>
+<td headers="Latitude" class="gt_row gt_right">50.33323</td>
+<td headers="GridRef" class="gt_row gt_right" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286750.61980236,49357.5417145688</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pipistrellus</td>
+<td headers="Longitude" class="gt_row gt_right">-3.593018</td>
+<td headers="Latitude" class="gt_row gt_right">50.33101</td>
+<td headers="GridRef" class="gt_row gt_right" style="background-color: #228B22; color: #FFFFFF; font-weight: normal;">286714.381797414,49111.5932755259</td></tr>
+  </tbody>
+  
+  
 </table>
 </div>
-
 </div>
 </div>
 </div>
@@ -3179,8 +3257,8 @@ Tip
 <div class="cell-output-display">
 <div id="tbl-BNG" class="anchored">
 
-<div class="tabwid"><style>.cl-4a740640{table-layout:auto;width:80%;}.cl-4a65682e{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-4a656842{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-4a6b0248{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4a6b025c{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-4a6b29a8{background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a6b29a9{background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a6b29b2{background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a6b29bc{background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a6b29bd{background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-4a6b29be{background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-4a740640"><caption>Table&nbsp;6:  <p>British National Grid Coordinators with there Latitude and
-Longitude</p> </caption><thead><tr style="overflow-wrap:break-word;"><th class="cl-4a6b29a8"><p class="cl-4a6b0248"><span class="cl-4a65682e">BNG</span></p></th><th class="cl-4a6b29a9"><p class="cl-4a6b025c"><span class="cl-4a65682e">Latitude</span></p></th><th class="cl-4a6b29a9"><p class="cl-4a6b025c"><span class="cl-4a65682e">Longitude</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-4a6b29b2"><p class="cl-4a6b0248"><span class="cl-4a656842">SX4749865034</span></p></td><td class="cl-4a6b29bc"><p class="cl-4a6b025c"><span class="cl-4a656842">50.46525</span></p></td><td class="cl-4a6b29bc"><p class="cl-4a6b025c"><span class="cl-4a656842">-4.150118</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4a6b29b2"><p class="cl-4a6b0248"><span class="cl-4a656842">SX4761368174</span></p></td><td class="cl-4a6b29bc"><p class="cl-4a6b025c"><span class="cl-4a656842">50.49350</span></p></td><td class="cl-4a6b29bc"><p class="cl-4a6b025c"><span class="cl-4a656842">-4.149779</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4a6b29b2"><p class="cl-4a6b0248"><span class="cl-4a656842">SX4830174511</span></p></td><td class="cl-4a6b29bc"><p class="cl-4a6b025c"><span class="cl-4a656842">50.55063</span></p></td><td class="cl-4a6b29bc"><p class="cl-4a6b025c"><span class="cl-4a656842">-4.142665</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-4a6b29bd"><p class="cl-4a6b0248"><span class="cl-4a656842">SX531803</span></p></td><td class="cl-4a6b29be"><p class="cl-4a6b025c"><span class="cl-4a656842">50.60388</span></p></td><td class="cl-4a6b29be"><p class="cl-4a6b025c"><span class="cl-4a656842">-4.077261</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-aed1d0c2{table-layout:auto;width:80%;}.cl-aec36e88{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-aec36e92{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-aec92cec{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-aec92d00{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-aec95028{background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-aec95032{background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-aec9503c{background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-aec9503d{background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-aec95046{background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-aec95047{background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-aed1d0c2"><caption>Table&nbsp;6:  <p>British National Grid Coordinators with there Latitude and
+Longitude</p> </caption><thead><tr style="overflow-wrap:break-word;"><th class="cl-aec95028"><p class="cl-aec92cec"><span class="cl-aec36e88">BNG</span></p></th><th class="cl-aec95032"><p class="cl-aec92d00"><span class="cl-aec36e88">Latitude</span></p></th><th class="cl-aec95032"><p class="cl-aec92d00"><span class="cl-aec36e88">Longitude</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-aec9503c"><p class="cl-aec92cec"><span class="cl-aec36e92">SX4749865034</span></p></td><td class="cl-aec9503d"><p class="cl-aec92d00"><span class="cl-aec36e92">50.46525</span></p></td><td class="cl-aec9503d"><p class="cl-aec92d00"><span class="cl-aec36e92">-4.150118</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-aec9503c"><p class="cl-aec92cec"><span class="cl-aec36e92">SX4761368174</span></p></td><td class="cl-aec9503d"><p class="cl-aec92d00"><span class="cl-aec36e92">50.49350</span></p></td><td class="cl-aec9503d"><p class="cl-aec92d00"><span class="cl-aec36e92">-4.149779</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-aec9503c"><p class="cl-aec92cec"><span class="cl-aec36e92">SX4830174511</span></p></td><td class="cl-aec9503d"><p class="cl-aec92d00"><span class="cl-aec36e92">50.55063</span></p></td><td class="cl-aec9503d"><p class="cl-aec92d00"><span class="cl-aec36e92">-4.142665</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-aec95046"><p class="cl-aec92cec"><span class="cl-aec36e92">SX531803</span></p></td><td class="cl-aec95047"><p class="cl-aec92d00"><span class="cl-aec36e92">50.60388</span></p></td><td class="cl-aec95047"><p class="cl-aec92d00"><span class="cl-aec36e92">-4.077261</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </div>
@@ -3309,15 +3387,28 @@ Note
 <span id="cb17-55"><a href="#cb17-55" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_options</span>(<span class="at">data_row.padding =</span> <span class="fu">px</span>(<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
+<div id="tbl-BatActivityTime" class="anchored">
 
 <div id="paxrgpzeqk" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<style>#paxrgpzeqk table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#paxrgpzeqk thead, #paxrgpzeqk tbody, #paxrgpzeqk tfoot, #paxrgpzeqk tr, #paxrgpzeqk td, #paxrgpzeqk th {
+  border-style: none;
+}
+
+#paxrgpzeqk p {
+  margin: 0;
+  padding: 0;
 }
 
 #paxrgpzeqk .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -3338,18 +3429,6 @@ Note
   border-left-style: none;
   border-left-width: 2px;
   border-left-color: #D3D3D3;
-}
-
-#paxrgpzeqk .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
 }
 
 #paxrgpzeqk .gt_caption {
@@ -3373,12 +3452,24 @@ Note
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
+}
+
+#paxrgpzeqk .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
 }
 
 #paxrgpzeqk .gt_bottom_border {
@@ -3452,6 +3543,10 @@ Note
   overflow-x: hidden;
   display: inline-block;
   width: 100%;
+}
+
+#paxrgpzeqk .gt_spanner_row {
+  border-bottom-style: hidden;
 }
 
 #paxrgpzeqk .gt_group_heading {
@@ -3553,6 +3648,10 @@ Note
   border-top-width: 2px;
 }
 
+#paxrgpzeqk .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
 #paxrgpzeqk .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
@@ -3602,6 +3701,16 @@ Note
   border-top-color: #D3D3D3;
 }
 
+#paxrgpzeqk .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
 #paxrgpzeqk .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
@@ -3632,8 +3741,8 @@ Note
 #paxrgpzeqk .gt_footnote {
   margin: 0px;
   font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -3690,10 +3799,9 @@ Note
 }
 
 #paxrgpzeqk .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
 #paxrgpzeqk .gt_asterisk {
@@ -3721,94 +3829,73 @@ Note
   text-indent: 25px;
 }
 </style>
-
-<div id="tbl-BatActivityTime" class="anchored">
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true">
-<caption>Table&nbsp;7: BatActivityTime from a .csv exported from BatExplorer</caption>
-<thead class="gt_col_headings">
-<tr class="header">
-<th id="Species" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">Species</th>
-<th id="calls" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">calls</th>
-<th id="duration" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">duration</th>
-<th id="span" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #000000; color: #FFFFFF; font-weight: bold" scope="col">span</th>
-<th id="BatActivityTime (seconds)" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" style="background-color: #F5DEB3; color: #000000; font-weight: bold" scope="col">BatActivityTime (seconds)</th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pygmaeus</td>
-<td class="gt_row gt_right" headers="calls">12</td>
-<td class="gt_row gt_right" headers="duration">7.0</td>
-<td class="gt_row gt_right" headers="span">90</td>
-<td class="gt_row gt_right" headers="BatActivityTime (seconds)" style="background-color: #F5DEB3; color: #000000; font-weight: bold">1.1640</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Nyctalus noctula</td>
-<td class="gt_row gt_right" headers="calls">18</td>
-<td class="gt_row gt_right" headers="duration">23.8</td>
-<td class="gt_row gt_right" headers="span">340</td>
-<td class="gt_row gt_right" headers="BatActivityTime (seconds)" style="background-color: #F5DEB3; color: #000000; font-weight: bold">6.5484</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Nyctalus noctula</td>
-<td class="gt_row gt_right" headers="calls">34</td>
-<td class="gt_row gt_right" headers="duration">16.0</td>
-<td class="gt_row gt_right" headers="span">150</td>
-<td class="gt_row gt_right" headers="BatActivityTime (seconds)" style="background-color: #F5DEB3; color: #000000; font-weight: bold">5.6440</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Nyctalus noctula</td>
-<td class="gt_row gt_right" headers="calls">10</td>
-<td class="gt_row gt_right" headers="duration">14.0</td>
-<td class="gt_row gt_right" headers="span">480</td>
-<td class="gt_row gt_right" headers="BatActivityTime (seconds)" style="background-color: #F5DEB3; color: #000000; font-weight: bold">4.9400</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pygmaeus</td>
-<td class="gt_row gt_right" headers="calls">30</td>
-<td class="gt_row gt_right" headers="duration">7.0</td>
-<td class="gt_row gt_right" headers="span">90</td>
-<td class="gt_row gt_right" headers="BatActivityTime (seconds)" style="background-color: #F5DEB3; color: #000000; font-weight: bold">2.9100</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pygmaeus</td>
-<td class="gt_row gt_right" headers="calls">31</td>
-<td class="gt_row gt_right" headers="duration">5.0</td>
-<td class="gt_row gt_right" headers="span">80</td>
-<td class="gt_row gt_right" headers="BatActivityTime (seconds)" style="background-color: #F5DEB3; color: #000000; font-weight: bold">2.6350</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pygmaeus</td>
-<td class="gt_row gt_right" headers="calls">30</td>
-<td class="gt_row gt_right" headers="duration">5.0</td>
-<td class="gt_row gt_right" headers="span">80</td>
-<td class="gt_row gt_right" headers="BatActivityTime (seconds)" style="background-color: #F5DEB3; color: #000000; font-weight: bold">2.5500</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pygmaeus</td>
-<td class="gt_row gt_right" headers="calls">39</td>
-<td class="gt_row gt_right" headers="duration">5.0</td>
-<td class="gt_row gt_right" headers="span">90</td>
-<td class="gt_row gt_right" headers="BatActivityTime (seconds)" style="background-color: #F5DEB3; color: #000000; font-weight: bold">3.7050</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Pipistrellus pygmaeus</td>
-<td class="gt_row gt_right" headers="calls">48</td>
-<td class="gt_row gt_right" headers="duration">5.0</td>
-<td class="gt_row gt_right" headers="span">90</td>
-<td class="gt_row gt_right" headers="BatActivityTime (seconds)" style="background-color: #F5DEB3; color: #000000; font-weight: bold">4.5600</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="Species" style="font-style: italic">Nyctalus noctula</td>
-<td class="gt_row gt_right" headers="calls">1</td>
-<td class="gt_row gt_right" headers="duration">8.5</td>
-<td class="gt_row gt_right" headers="span">0</td>
-<td class="gt_row gt_right" headers="BatActivityTime (seconds)" style="background-color: #F5DEB3; color: #000000; font-weight: bold">0.0085</td>
-</tr>
-</tbody>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false"><caption>Table&nbsp;7:  <p>BatActivityTime from a .csv exported from BatExplorer</p> </caption>
+  <thead>
+    
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="Species">Species</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="calls">calls</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="duration">duration</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #000000; color: #FFFFFF; font-weight: bold;" scope="col" id="span">span</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1" style="background-color: #F5DEB3; color: #000000; font-weight: bold;" scope="col" id="BatActivityTime (seconds)">BatActivityTime (seconds)</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pygmaeus</td>
+<td headers="calls" class="gt_row gt_right">12</td>
+<td headers="duration" class="gt_row gt_right">7.0</td>
+<td headers="span" class="gt_row gt_right">90</td>
+<td headers="BatActivityTime (seconds)" class="gt_row gt_right" style="background-color: #F5DEB3; color: #000000; font-weight: bold;">1.1640</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Nyctalus noctula</td>
+<td headers="calls" class="gt_row gt_right">18</td>
+<td headers="duration" class="gt_row gt_right">23.8</td>
+<td headers="span" class="gt_row gt_right">340</td>
+<td headers="BatActivityTime (seconds)" class="gt_row gt_right" style="background-color: #F5DEB3; color: #000000; font-weight: bold;">6.5484</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Nyctalus noctula</td>
+<td headers="calls" class="gt_row gt_right">34</td>
+<td headers="duration" class="gt_row gt_right">16.0</td>
+<td headers="span" class="gt_row gt_right">150</td>
+<td headers="BatActivityTime (seconds)" class="gt_row gt_right" style="background-color: #F5DEB3; color: #000000; font-weight: bold;">5.6440</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Nyctalus noctula</td>
+<td headers="calls" class="gt_row gt_right">10</td>
+<td headers="duration" class="gt_row gt_right">14.0</td>
+<td headers="span" class="gt_row gt_right">480</td>
+<td headers="BatActivityTime (seconds)" class="gt_row gt_right" style="background-color: #F5DEB3; color: #000000; font-weight: bold;">4.9400</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pygmaeus</td>
+<td headers="calls" class="gt_row gt_right">30</td>
+<td headers="duration" class="gt_row gt_right">7.0</td>
+<td headers="span" class="gt_row gt_right">90</td>
+<td headers="BatActivityTime (seconds)" class="gt_row gt_right" style="background-color: #F5DEB3; color: #000000; font-weight: bold;">2.9100</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pygmaeus</td>
+<td headers="calls" class="gt_row gt_right">31</td>
+<td headers="duration" class="gt_row gt_right">5.0</td>
+<td headers="span" class="gt_row gt_right">80</td>
+<td headers="BatActivityTime (seconds)" class="gt_row gt_right" style="background-color: #F5DEB3; color: #000000; font-weight: bold;">2.6350</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pygmaeus</td>
+<td headers="calls" class="gt_row gt_right">30</td>
+<td headers="duration" class="gt_row gt_right">5.0</td>
+<td headers="span" class="gt_row gt_right">80</td>
+<td headers="BatActivityTime (seconds)" class="gt_row gt_right" style="background-color: #F5DEB3; color: #000000; font-weight: bold;">2.5500</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pygmaeus</td>
+<td headers="calls" class="gt_row gt_right">39</td>
+<td headers="duration" class="gt_row gt_right">5.0</td>
+<td headers="span" class="gt_row gt_right">90</td>
+<td headers="BatActivityTime (seconds)" class="gt_row gt_right" style="background-color: #F5DEB3; color: #000000; font-weight: bold;">3.7050</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Pipistrellus pygmaeus</td>
+<td headers="calls" class="gt_row gt_right">48</td>
+<td headers="duration" class="gt_row gt_right">5.0</td>
+<td headers="span" class="gt_row gt_right">90</td>
+<td headers="BatActivityTime (seconds)" class="gt_row gt_right" style="background-color: #F5DEB3; color: #000000; font-weight: bold;">4.5600</td></tr>
+    <tr><td headers="Species" class="gt_row gt_left" style="font-style: italic;">Nyctalus noctula</td>
+<td headers="calls" class="gt_row gt_right">1</td>
+<td headers="duration" class="gt_row gt_right">8.5</td>
+<td headers="span" class="gt_row gt_right">0</td>
+<td headers="BatActivityTime (seconds)" class="gt_row gt_right" style="background-color: #F5DEB3; color: #000000; font-weight: bold;">0.0085</td></tr>
+  </tbody>
+  
+  
 </table>
 </div>
-
 </div>
 </div>
 </div>
