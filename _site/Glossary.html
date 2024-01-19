@@ -233,6 +233,8 @@ div.csl-indent {
   <li><a href="#sec-lubridate" id="toc-sec-lubridate" class="nav-link" data-scroll-target="#sec-lubridate"><span class="header-section-number">8.3</span> <code>lubridate</code></a></li>
   <li><a href="#sec-dplyr" id="toc-sec-dplyr" class="nav-link" data-scroll-target="#sec-dplyr"><span class="header-section-number">8.4</span> <code>dplyr</code></a></li>
   <li><a href="#sec-tidyr" id="toc-sec-tidyr" class="nav-link" data-scroll-target="#sec-tidyr"><span class="header-section-number">8.5</span> <code>tidyr</code></a></li>
+  <li><a href="#sec-vegan" id="toc-sec-vegan" class="nav-link" data-scroll-target="#sec-vegan"><span class="header-section-number">8.6</span> <code>vegan</code></a></li>
+  <li><a href="#sec-measurements" id="toc-sec-measurements" class="nav-link" data-scroll-target="#sec-measurements"><span class="header-section-number">8.7</span> <code>measurements</code></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1384,6 +1386,84 @@ where:<br>
 <li>The <code>tidyr</code> package documentation: <a href="https://cran.r-project.org/web/packages/tidyr/tidyr.pdf">https://cran.r-project.org/web/packages/tidyr/tidyr.pdf</a></li>
 <li>The <code>tidyr</code> vignette: <a href="https://cran.r-project.org/doc/contrib/Rossiter-RIntro-ITC.pdf">https://cran.r-project.org/doc/contrib/Rossiter-RIntro-ITC.pdf</a></li>
 <li>The <code>tidyverse</code> book: <a href="https://bookdown.org/yihui/bookdown/">https://bookdown.org/yihui/bookdown/</a></li>
+</ul>
+</section>
+<section id="sec-vegan" class="level3" data-number="8.6">
+<h3 data-number="8.6" class="anchored" data-anchor-id="sec-vegan"><span class="header-section-number">8.6</span> <code>vegan</code></h3>
+<p>The vegan package is a comprehensive tool for performing multivariate analysis in R, particularly in the context of community ecology. It offers a wide range of functions for diversity analysis, ordination, and dissimilarity analysis, making it a valuable resource for ecologists and other researchers working with multivariate data.</p>
+<p><strong>Diversity Analysis:</strong></p>
+<ul>
+<li>Shannon diversity index (H’)</li>
+<li>Simpson diversity index (D)</li>
+<li>Fisher alpha diversity index (J’)</li>
+<li>Rényi diversities</li>
+<li>Hill numbers</li>
+</ul>
+<p><strong>Ordination:</strong></p>
+<ul>
+<li>Nonmetric multidimensional scaling (NMDS)</li>
+<li>Redundancy analysis (RDA)</li>
+<li>Constrained correspondence analysis (CCA)</li>
+<li>Constrained analysis of proximities (CAP)</li>
+<li>Partial redundancy analysis (pRDA)</li>
+<li>Partial constrained correspondence analysis (pCCA)</li>
+</ul>
+<p><strong>Dissimilarity Analysis:</strong></p>
+<ul>
+<li>ANOVA using dissimilarities (ANOSIM)</li>
+<li>Multiresponse permutation procedure (MRPP)</li>
+<li>BIOENV</li>
+<li>Mantel and partial Mantel tests</li>
+</ul>
+<p><strong>Data Standardization:</strong></p>
+<ul>
+<li>Hellinger transformation</li>
+<li>Wisconsin double standardization</li>
+<li>Chi-square standardization</li>
+<li>Beals smoothing</li>
+</ul>
+<p><strong>Additional Features:</strong></p>
+<ul>
+<li>Species abundance models (Fisher and Preston models)</li>
+<li>Species richness analysis (species accumulation curves, extrapolated richness)</li>
+<li>Support and meta functions for ordination</li>
+<li>Dissimilarity indices, extended dissimilarities, Procrustes analysis, ordination diagnostics, permutation tests</li>
+<li>Vector fitting, centroid fitting, and smooth surface fitting</li>
+<li>Adding species scores as weighted averages, adding convex hull, SD ellipses, arrows, etc. to ordination</li>
+</ul>
+<p>The vegan package is widely used in community ecology due to its ease of use, comprehensiveness, and flexibility. It provides a user-friendly interface for performing various multivariate analyses, making it accessible to researchers with varying levels of expertise. Additionally, the package is actively maintained and updated, ensuring it remains compatible with current R versions and data formats.</p>
+<p>In summary, the vegan package is an essential tool for researchers conducting community ecology studies. Its extensive collection of functions for diversity analysis, ordination, and dissimilarity analysis allows for comprehensive examination of multivariate data and the identification of patterns and relationships within biological communities.</p>
+</section>
+<section id="sec-measurements" class="level3" data-number="8.7">
+<h3 data-number="8.7" class="anchored" data-anchor-id="sec-measurements"><span class="header-section-number">8.7</span> <code>measurements</code></h3>
+<p><strong>Purpose:</strong></p>
+<ul>
+<li>Simplifies working with physical measurements in R.</li>
+<li>Primary functions:
+<ul>
+<li>Unit conversion between different systems (e.g., metric to imperial).</li>
+<li>Calculation of unknown dimensions based on known measurements.</li>
+</ul></li>
+</ul>
+<p><strong>Key Functions:</strong></p>
+<ul>
+<li><strong>conv_unit(value, from, to):</strong> Converts a value from one unit to another.
+<ul>
+<li>Example: <code>conv_unit(10, "cm", "in")</code> converts 10 centimeters to inches.</li>
+</ul></li>
+<li><strong>conv_dim(value, from, to):</strong> Converts a value within a specific dimension (e.g., length, area, volume).</li>
+<li><strong>conv_multiunit(value, from, to):</strong> Converts units composed of multiple base units (e.g., speed, density).</li>
+<li><strong>conv_unit_options():</strong> Displays available units and conversion options.</li>
+<li><strong>measurements:</strong> Lists all supported units and their definitions.</li>
+</ul>
+<p><strong>Supported Units:</strong></p>
+<ul>
+<li>Length, area, volume, mass, time, temperature, pressure, energy, power, speed, flow, coordinates, duration, angles, etc.</li>
+</ul>
+<p><strong>Additional Notes:</strong></p>
+<ul>
+<li>Consider the “units” package for more comprehensive unit handling and automated dimensional analysis.</li>
+<li>Always consult package documentation for detailed usage and examples.</li>
 </ul>
 
 

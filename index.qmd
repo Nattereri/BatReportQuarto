@@ -14,7 +14,8 @@ library(glue)
 
 ![Bats face many challenges, making the most of data helps. © Steve Markham ](Images/P1000645.jpg){fig-align="center" width="750"}
 
-_Web site last updated `r format(Sys.time(), '%d %B %Y')`_ 
+_Web site last updated `r format(Sys.time(), '%d %B %Y')`_    
+**An extended book version of these pages is available [here](https://bat-survey-data.netlify.app/).**
 
 # Introduction {.unnumbered}
 
