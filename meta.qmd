@@ -543,3 +543,5 @@ BatExplorer %>%
 
 ```
 
+
+{{< include ../Common/bats/TSandHibernation.qmd >}}

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -108,7 +108,8 @@ div.csl-indent {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <link href="site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
@@ -209,7 +210,7 @@ div.csl-indent {
   <li><a href="#sun-times" id="toc-sun-times" class="nav-link" data-scroll-target="#sun-times"><span class="header-section-number">2</span> Sun Times</a></li>
   <li><a href="#common-bat-names" id="toc-common-bat-names" class="nav-link" data-scroll-target="#common-bat-names"><span class="header-section-number">3</span> Common Bat Names</a>
   <ul class="collapse">
-  <li><a href="#bat-name-lookup-list-for-other-regions" id="toc-bat-name-lookup-list-for-other-regions" class="nav-link" data-scroll-target="#bat-name-lookup-list-for-other-regions"><span class="header-section-number">3.1</span> Bat Name Lookup List for other Regions</a></li>
+  <li><a href="#sec-regionlist" id="toc-sec-regionlist" class="nav-link" data-scroll-target="#sec-regionlist"><span class="header-section-number">3.1</span> Bat Name Lookup List for other Regions</a></li>
   </ul></li>
   <li><a href="#national-grid-coordinates" id="toc-national-grid-coordinates" class="nav-link" data-scroll-target="#national-grid-coordinates"><span class="header-section-number">4</span> National Grid Coordinates</a>
   <ul class="collapse">
@@ -217,6 +218,10 @@ div.csl-indent {
   <li><a href="#british-national-grid-to-latitudelongitude" id="toc-british-national-grid-to-latitudelongitude" class="nav-link" data-scroll-target="#british-national-grid-to-latitudelongitude"><span class="header-section-number">4.2</span> British National Grid to Latitude/Longitude</a></li>
   </ul></li>
   <li><a href="#bat-activity-time" id="toc-bat-activity-time" class="nav-link" data-scroll-target="#bat-activity-time"><span class="header-section-number">5</span> Bat Activity Time</a></li>
+  <li><a href="#time-series" id="toc-time-series" class="nav-link" data-scroll-target="#time-series"><span class="header-section-number">6</span> Time Series</a>
+  <ul class="collapse">
+  <li><a href="#time-series-and-bat-activity-within-hibernacula" id="toc-time-series-and-bat-activity-within-hibernacula" class="nav-link" data-scroll-target="#time-series-and-bat-activity-within-hibernacula"><span class="header-section-number">6.1</span> Time Series and Bat Activity within Hibernacula</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -250,13 +255,13 @@ div.csl-indent {
 <p>The code below takes the <code>statics</code> set from the <em>iBats</em> package and adds the <em>Night</em> column, <a href="#tbl-night">Table&nbsp;1</a> shows a selection of 5 rows from the <code>statics</code> data.</p>
 <div class="cell">
 <details open="">
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>statics_with_night <span class="ot">&lt;-</span> iBats<span class="sc">::</span><span class="fu">date_time_info</span>(statics)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
 <details>
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>statics_with_night <span class="sc">%&gt;%</span> </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Description, Night, DateTime, Species) <span class="sc">%&gt;%</span> </span>
@@ -775,7 +780,7 @@ div.csl-indent {
 <p>The function <code>iBats::date_time_info()</code> adds the date and time information: month, year and time see <a href="#tbl-other">Table&nbsp;2</a>. (Note: the JustTime column is plus 12 hours this aids plotting continuously on one axis as shown in this <a href="https://bat-survey-reporting.netlify.app/visualisation.html#fig-timebat">graph</a>). Only a random selection of 5 rows from the <code>statics</code> set is shown in <a href="#tbl-other">Table&nbsp;2</a>.</p>
 <div class="cell">
 <details>
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>statics_with_night <span class="sc">%&gt;%</span> </span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sample_n</span>(<span class="dv">5</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Description, DateTime, Species, Month, MonthFull, Year, JustTime) <span class="sc">%&gt;%</span> </span>
@@ -1326,7 +1331,7 @@ div.csl-indent {
 <p><a href="#tbl-suntimes">Table&nbsp;3</a> shows a selection of 5 rows from the <code>statics</code> data with the <code>DateTime</code> column and the <code>Night</code> column already added<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, the function <code>iBats::sun_night_metrics()</code> calculates the columns listed above, the following columns are shown: <code>sunset</code>, <code>post_set_min</code>, and, <code>post_set_hr_int</code>.</p>
 <div class="cell">
 <details>
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Libraries Used</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># Data Science packages - see https://www.tidyverse.org/</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1343,7 +1348,7 @@ div.csl-indent {
 <pre><code>Loading required package: usethis</code></pre>
 </div>
 <details>
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If iBats not installed load from Github</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="sc">!</span><span class="fu">require</span>(iBats)){</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"Nattereri/iBats"</span>)</span>
@@ -1881,7 +1886,7 @@ div.csl-indent {
 <p>By convention scientific names are written as <em>italic</em>; to highlight the common names in <a href="#tbl-common">Table&nbsp;4</a> the column is written in <strong>bold</strong>.</p>
 <div class="cell">
 <details open="">
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(iBats)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Look up list of Uk bat common names and the scientific names</span></span>
@@ -1914,7 +1919,7 @@ div.csl-indent {
 </div>
 <div class="cell">
 <details>
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2455,9 +2460,10 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<section id="bat-name-lookup-list-for-other-regions" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="bat-name-lookup-list-for-other-regions"><span class="header-section-number">3.1</span> Bat Name Lookup List for other Regions</h3>
+<section id="sec-regionlist" class="level3" data-number="3.1">
+<h3 data-number="3.1" class="anchored" data-anchor-id="sec-regionlist"><span class="header-section-number">3.1</span> Bat Name Lookup List for other Regions</h3>
 <p>A look up list of bat common names is easily created for other regions; rather than write the list yourself ask a Large Language Model (LLM) to do this for you (e.g.&nbsp;Bard<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> or ChatGPT<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>)</p>
+<p>For a comprehensive approach to Large Language Models see <strong>?@sec-chatgpt</strong>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -2477,7 +2483,7 @@ Tip
 <p>The scientific and common bat name list for Europe; click the <em>Show the code</em> below.</p>
 <div class="cell">
 <details>
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is the output from Bard/ChatGPT for Europe</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>scientific_common_lookup <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Rhinolophus ferrumequinum"</span> <span class="ot">=</span> <span class="st">"Greater horseshoe bat"</span>,</span>
@@ -2528,7 +2534,7 @@ Tip
 <p>The scientific and common bat name list for North America; click the <em>Show the code</em> below.</p>
 <div class="cell">
 <details>
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is the output from Bard for North America</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>scientific_common_lookup <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Macrotus californicus"</span> <span class="ot">=</span> <span class="st">"California leaf-nosed bat"</span>,</span>
@@ -2559,7 +2565,7 @@ Tip
 <p>The scientific and common bat name list for Australia; click the <em>Show the code</em> below.</p>
 <div class="cell">
 <details>
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This is the output from ChatGPT for Australia</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>scientific_common_lookup <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Chalinolobus dwyeri"</span> <span class="ot">=</span> <span class="st">"Large-footed Myotis"</span>,</span>
@@ -2601,7 +2607,7 @@ Tip
 <p>Adding a A Country’s grid reference coordinates as meta data is useful; it allows a friendly export to other GIS and engineering drawing software (e.g.&nbsp;QGIS, ArcView® and AutoCAD®). A Country’s grid reference coordinates can be transformed from the <code>Longitude</code> and <code>Latitude</code>; in the tidy <code>statics</code> data longitude and latitude are based on the World Geodetic System 1984<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> (WGS84), the green column in <a href="#tbl-NGR">Table&nbsp;5</a> shows the British National Grid coordinates obtained from the longitude and latitude.</p>
 <div class="cell">
 <details open="">
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Libraries Used </span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># Data Science packages - see https://www.tidyverse.org/</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf) <span class="co"># Simple features access between data and GIS</span></span>
@@ -2657,7 +2663,7 @@ Tip
 </div>
 <div class="cell">
 <details>
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3231,7 +3237,7 @@ National Grid Coordinates</p> </caption>
 <p>Converting spatial meta data that has British National Grid (BNG) coordinators to latitude and longitude allows it to be viewed/merged/joined with bat observation data that has spatial information as latitude and longitude. The <code>rnrfa</code> package has a useful function <code>osg_parse()</code> for converting British National Grid (BNG) to latitude and longitude in the WSGS84 (Google Earth) coordinate system (EPSG code: 4326). The code below converts the following grid references, SX4749865034, SX4761368174, SX4830174511, and SX531803, to latitude and longitude; the grid reference must be a string without any spaces. <a href="#tbl-BNG">Table&nbsp;6</a> shows the British National Grid coordinators with there Latitude and Longitude.</p>
 <div class="cell">
 <details>
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The inrfa package has the osg_parse function. </span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rnrfa) </span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3252,8 +3258,8 @@ National Grid Coordinates</p> </caption>
 <div class="cell-output-display">
 <div id="tbl-BNG" class="anchored">
 
-<div class="tabwid"><style>.cl-ada10968{table-layout:auto;width:80%;}.cl-ad920b34{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-ad920b48{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-ad97e54a{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-ad97e55e{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-ad980b74{background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ad980b7e{background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ad980b88{background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ad980b89{background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ad980b92{background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-ad980b93{background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-ada10968"><caption>Table&nbsp;6:  <p>British National Grid Coordinators with there Latitude and
-Longitude</p> </caption><thead><tr style="overflow-wrap:break-word;"><th class="cl-ad980b74"><p class="cl-ad97e54a"><span class="cl-ad920b34">BNG</span></p></th><th class="cl-ad980b7e"><p class="cl-ad97e55e"><span class="cl-ad920b34">Latitude</span></p></th><th class="cl-ad980b7e"><p class="cl-ad97e55e"><span class="cl-ad920b34">Longitude</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-ad980b88"><p class="cl-ad97e54a"><span class="cl-ad920b48">SX4749865034</span></p></td><td class="cl-ad980b89"><p class="cl-ad97e55e"><span class="cl-ad920b48">50.46525</span></p></td><td class="cl-ad980b89"><p class="cl-ad97e55e"><span class="cl-ad920b48">-4.150118</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ad980b88"><p class="cl-ad97e54a"><span class="cl-ad920b48">SX4761368174</span></p></td><td class="cl-ad980b89"><p class="cl-ad97e55e"><span class="cl-ad920b48">50.49350</span></p></td><td class="cl-ad980b89"><p class="cl-ad97e55e"><span class="cl-ad920b48">-4.149779</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ad980b88"><p class="cl-ad97e54a"><span class="cl-ad920b48">SX4830174511</span></p></td><td class="cl-ad980b89"><p class="cl-ad97e55e"><span class="cl-ad920b48">50.55063</span></p></td><td class="cl-ad980b89"><p class="cl-ad97e55e"><span class="cl-ad920b48">-4.142665</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-ad980b92"><p class="cl-ad97e54a"><span class="cl-ad920b48">SX531803</span></p></td><td class="cl-ad980b93"><p class="cl-ad97e55e"><span class="cl-ad920b48">50.60388</span></p></td><td class="cl-ad980b93"><p class="cl-ad97e55e"><span class="cl-ad920b48">-4.077261</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-7be56664{table-layout:auto;width:80%;}.cl-7bd4b8f0{font-family:'Arial';font-size:11pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(255, 255, 255, 1.00);background-color:transparent;}.cl-7bd4b904{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-7bdb09da{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-7bdb09e4{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-7bdb3036{background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7bdb3040{background-color:rgba(0, 0, 0, 1.00);vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 1.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7bdb304a{background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7bdb304b{background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7bdb3054{background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-7bdb3055{background-color:transparent;vertical-align: middle;border-bottom: 1.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-7be56664"><caption>Table&nbsp;6:  <p>British National Grid Coordinators with there Latitude and
+Longitude</p> </caption><thead><tr style="overflow-wrap:break-word;"><th class="cl-7bdb3036"><p class="cl-7bdb09da"><span class="cl-7bd4b8f0">BNG</span></p></th><th class="cl-7bdb3040"><p class="cl-7bdb09e4"><span class="cl-7bd4b8f0">Latitude</span></p></th><th class="cl-7bdb3040"><p class="cl-7bdb09e4"><span class="cl-7bd4b8f0">Longitude</span></p></th></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-7bdb304a"><p class="cl-7bdb09da"><span class="cl-7bd4b904">SX4749865034</span></p></td><td class="cl-7bdb304b"><p class="cl-7bdb09e4"><span class="cl-7bd4b904">50.46525</span></p></td><td class="cl-7bdb304b"><p class="cl-7bdb09e4"><span class="cl-7bd4b904">-4.150118</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-7bdb304a"><p class="cl-7bdb09da"><span class="cl-7bd4b904">SX4761368174</span></p></td><td class="cl-7bdb304b"><p class="cl-7bdb09e4"><span class="cl-7bd4b904">50.49350</span></p></td><td class="cl-7bdb304b"><p class="cl-7bdb09e4"><span class="cl-7bd4b904">-4.149779</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-7bdb304a"><p class="cl-7bdb09da"><span class="cl-7bd4b904">SX4830174511</span></p></td><td class="cl-7bdb304b"><p class="cl-7bdb09e4"><span class="cl-7bd4b904">50.55063</span></p></td><td class="cl-7bdb304b"><p class="cl-7bdb09e4"><span class="cl-7bd4b904">-4.142665</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-7bdb3054"><p class="cl-7bdb09da"><span class="cl-7bd4b904">SX531803</span></p></td><td class="cl-7bdb3055"><p class="cl-7bdb09e4"><span class="cl-7bd4b904">50.60388</span></p></td><td class="cl-7bdb3055"><p class="cl-7bdb09e4"><span class="cl-7bd4b904">-4.077261</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 </div>
@@ -3297,7 +3303,7 @@ Note
 <p><a href="#tbl-BatActivityTime">Table&nbsp;7</a> shows the calculated <code>BatActivityTime</code> from a .csv file(<code>BatExplorer</code>) exported from Elekon AG BatExplorer software. The <code>BatExplorer</code> csv file is in the <em>iBats</em> package and describes a transect recorded with a Batlogger M bat detector near the the River Tavy, West Devon.</p>
 <div class="cell">
 <details open="">
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Libraries Used </span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># Data Science packages - see https://www.tidyverse.org/</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3324,7 +3330,7 @@ Note
 </div>
 <div class="cell">
 <details>
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gt)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>BatExplorer <span class="sc">%&gt;%</span> </span>
@@ -3893,9 +3899,155 @@ Note
 </div>
 </div>
 </div>
+</section>
+<section id="time-series" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="time-series"><span class="header-section-number">6</span> Time Series</h2>
+<p>A time series dataset captures <strong>measurements at various points in time</strong>, ordered chronologically.</p>
+<p><strong>time series data set have the following characteristics:</strong></p>
+<ul>
+<li><strong>Ordered</strong>: Data points are arranged in the order they were collected, highlighting the <strong>temporal relationship</strong> between them.</li>
+<li><strong>Frequency</strong>: The data is collected at <strong>consistent intervals</strong>, such as hourly, daily, weekly, etc. This frequency determines the level of detail captured in the data.</li>
+<li><strong>Potential for dependence</strong>: Observations close together in time are more likely to be <strong>influenced by each other</strong> compared to observations further apart.</li>
+</ul>
+<p>Time series data allows you to:</p>
+<ul>
+<li><strong>Track trends</strong>: Analyze how average temperature and humidity change over time, revealing seasonal patterns or gradual shifts.</li>
+<li><strong>Identify patterns</strong>: Look for recurring patterns within the data, such as daily fluctuations in temperature or correlations between temperature and humidity.</li>
+<li><strong>Make predictions</strong>: Based on historical data and appropriate statistical models, you might forecast future temperature and humidity values.</li>
+</ul>
+<section id="time-series-and-bat-activity-within-hibernacula" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="time-series-and-bat-activity-within-hibernacula"><span class="header-section-number">6.1</span> Time Series and Bat Activity within Hibernacula</h3>
+<p>Here we relate the time series of <strong>climate data</strong> to <strong>bat activity</strong> within potential hibernacula. The <code>iBats</code> package has a time series of climate data (<code>hibernacula_climate</code>) that has recorded temperature, <a href="#fig-hibTemp">Figure&nbsp;2</a> and humidity for a group of building that have potential to be bat hibernacula. For these buildings there is an associated dataset (<code>hibernacula_bats</code>) of bat activity including the species of bat and the number of calls recorded in each buildings, see <a href="#fig-activity1">Figure&nbsp;3</a>.</p>
+<p>We can merge these two datasets to see if there is any relationship between the temperature of the building and the bat activity, see <a href="#fig-activity2">Figure&nbsp;4</a>. The key to merging these datasets is to aggregate the bat activity data to the same time intervals as the climate data.</p>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>hib_data <span class="sc">%&gt;%</span> </span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>DateTime, <span class="at">y =</span> Temp, <span class="at">fill =</span> Location, <span class="at">color =</span> Location)) <span class="sc">+</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">shape =</span> <span class="dv">21</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">colour =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_datetime</span>(<span class="at">date_breaks =</span> <span class="st">"1 week"</span>,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">date_labels =</span> <span class="st">"%d %b %y"</span>) <span class="sc">+</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>) <span class="sc">+</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_brewer</span>(<span class="at">palette =</span> <span class="st">"Dark2"</span>) <span class="sc">+</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Building Tempertures"</span>,</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>          <span class="at">y =</span> <span class="st">"Temperature (\u00B0C)"</span>) <span class="sc">+</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Location, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span> (<span class="at">legend.position =</span> <span class="st">"none"</span>,</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>         <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>, <span class="at">face=</span><span class="st">"bold"</span>, <span class="at">angle =</span> <span class="dv">270</span>),</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>         <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>, <span class="at">face=</span><span class="st">"bold"</span>),</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>         <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>         <span class="at">axis.title.y =</span> <span class="fu">element_markdown</span>(<span class="at">size=</span><span class="dv">10</span>),</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">14</span>, <span class="at">face=</span><span class="st">"bold"</span>),</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>         <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>         <span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"grey80"</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>), </span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>         <span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>         <span class="at">panel.grid.major.x =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"grey80"</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>),</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot.caption =</span> <span class="fu">element_markdown</span>(),</span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>         <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face=</span><span class="st">"bold"</span>, <span class="at">colour =</span> <span class="st">"white"</span>),</span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>         <span class="at">strip.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"black"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-hibTemp" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="meta_files/figure-html/fig-hibTemp-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;2: Buidling Temperatures</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>MinDate <span class="ot">&lt;-</span> <span class="fu">min</span>(bat_data<span class="sc">$</span>From)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>MaxDate <span class="ot">&lt;-</span> <span class="fu">max</span>(bat_data<span class="sc">$</span>To)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(bat_data) <span class="sc">+</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> To, <span class="at">y =</span> Location, <span class="at">fill =</span> Species, <span class="at">size =</span> Calls), <span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">shape =</span> <span class="dv">21</span>) <span class="sc">+</span></span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_datetime</span>(<span class="at">date_breaks =</span> <span class="st">"1 week"</span>,</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">date_labels =</span> <span class="st">"%d %b %y"</span>,</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">limits =</span> <span class="fu">c</span>(MinDate, MaxDate)) <span class="sc">+</span> </span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Plectus auritus"</span> <span class="ot">=</span> <span class="st">"#8b0000"</span>, <span class="st">"Pipistrellus pipistrellus"</span> <span class="ot">=</span> <span class="st">"#ffff99"</span>)) <span class="sc">+</span></span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>)) <span class="sc">+</span></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Recorded Bat  Active"</span>,</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">y =</span> <span class="st">"Humidity (%)"</span>) <span class="sc">+</span></span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span> (<span class="at">legend.position =</span> <span class="st">"right"</span>,</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>         <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">8</span>, <span class="at">face=</span><span class="st">"bold"</span>, <span class="at">angle =</span> <span class="dv">270</span>),</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>         <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>, <span class="at">face=</span><span class="st">"bold"</span>),</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>         <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>         <span class="at">axis.title.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">14</span>, <span class="at">face=</span><span class="st">"bold"</span>),</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>         <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>         <span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"grey80"</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>), </span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>         <span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>         <span class="at">panel.grid.major.x =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"grey80"</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>),</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot.caption =</span> <span class="fu">element_markdown</span>(),</span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>         <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face=</span><span class="st">"bold"</span>, <span class="at">colour =</span> <span class="st">"white"</span>),</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>         <span class="at">strip.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"black"</span>)) <span class="sc">+</span></span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">override.aes =</span> <span class="fu">list</span>(<span class="at">size=</span><span class="dv">7</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-activity1" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="meta_files/figure-html/fig-activity1-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;3: Buidling Bat Activity</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>bat_activity <span class="ot">&lt;-</span> merged_data <span class="sc">%&gt;%</span> </span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Species <span class="sc">!=</span> <span class="st">"No Activity"</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>     <span class="fu">geom_point</span>(<span class="at">data =</span> merged_data, <span class="fu">aes</span>(<span class="at">x=</span>DateTime, <span class="at">y =</span> Temp), <span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">color =</span> <span class="st">"grey90"</span>) <span class="sc">+</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>     <span class="fu">geom_point</span>(<span class="at">data =</span> bat_activity, <span class="fu">aes</span>(<span class="at">x=</span>DateTime, <span class="at">y=</span>Temp, <span class="at">fill =</span> Species, <span class="at">size =</span> Calls), <span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">shape =</span> <span class="dv">21</span>) <span class="sc">+</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>     <span class="fu">scale_x_datetime</span>(<span class="at">date_breaks =</span> <span class="st">"1 week"</span>,</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>                 <span class="at">date_labels =</span> <span class="st">"%d %b %y"</span>) <span class="sc">+</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>     <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Plectus auritus"</span> <span class="ot">=</span> <span class="st">"#8b0000"</span>, <span class="st">"Pipistrellus pipistrellus"</span> <span class="ot">=</span> <span class="st">"#ffff99"</span>)) <span class="sc">+</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>     <span class="fu">scale_size</span>(<span class="at">range =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">7</span>)) <span class="sc">+</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a>     <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Temperture and Bat Activity"</span>,</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>              <span class="at">y =</span> <span class="st">"Temperature (\u00B0C)"</span>,</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a>          <span class="at">size =</span> <span class="st">"Number of </span><span class="sc">\n</span><span class="st">Calls"</span>,</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>          <span class="at">colour =</span> <span class="st">"Bat Species"</span>) <span class="sc">+</span></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span>Location, <span class="at">ncol =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span> </span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span> (<span class="at">legend.position =</span> <span class="st">"right"</span>,</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>         <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">8</span>, <span class="at">face=</span><span class="st">"bold"</span>, <span class="at">angle =</span> <span class="dv">270</span>),</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>         <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>, <span class="at">face=</span><span class="st">"bold"</span>),</span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>         <span class="at">axis.title.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>         <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">10</span>, <span class="at">face=</span><span class="st">"bold"</span>),</span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">14</span>, <span class="at">face=</span><span class="st">"bold"</span>),</span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>         <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a>         <span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"grey80"</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>), </span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a>         <span class="at">panel.grid.minor.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a>         <span class="at">panel.grid.major.x =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"grey80"</span>, <span class="at">linetype =</span> <span class="st">"dotted"</span>),</span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a>         <span class="at">plot.caption =</span> <span class="fu">element_markdown</span>(),</span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a>         <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face=</span><span class="st">"bold"</span>, <span class="at">colour =</span> <span class="st">"white"</span>),</span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a>         <span class="at">strip.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"black"</span>)) <span class="sc">+</span></span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a>  <span class="co">#Make the point size larger on the legend to show the colour</span></span>
+<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">override.aes =</span> <span class="fu">list</span>(<span class="at">size=</span><span class="dv">7</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div id="fig-activity2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="meta_files/figure-html/fig-activity2-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;4: Buidling Bat Activity and Temperature</figcaption>
+</figure>
+</div>
+</div>
+</div>
 
 
 
+</section>
 </section>
 
 
